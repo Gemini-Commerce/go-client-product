@@ -16,8 +16,8 @@ import (
 
 // RpcStatus struct for RpcStatus
 type RpcStatus struct {
-	Code    *int32        `json:"code,omitempty"`
-	Message *string       `json:"message,omitempty"`
+	Code *int32 `json:"code,omitempty"`
+	Message *string `json:"message,omitempty"`
 	Details []ProtobufAny `json:"details,omitempty"`
 }
 
@@ -51,7 +51,7 @@ func (o *RpcStatus) GetCode() int32 {
 // and a boolean to check if the value has been set.
 func (o *RpcStatus) GetCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -83,7 +83,7 @@ func (o *RpcStatus) GetMessage() string {
 // and a boolean to check if the value has been set.
 func (o *RpcStatus) GetMessageOk() (*string, bool) {
 	if o == nil || isNil(o.Message) {
-		return nil, false
+    return nil, false
 	}
 	return o.Message, true
 }
@@ -115,7 +115,7 @@ func (o *RpcStatus) GetDetails() []ProtobufAny {
 // and a boolean to check if the value has been set.
 func (o *RpcStatus) GetDetailsOk() ([]ProtobufAny, bool) {
 	if o == nil || isNil(o.Details) {
-		return nil, false
+    return nil, false
 	}
 	return o.Details, true
 }
@@ -183,3 +183,5 @@ func (v *NullableRpcStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

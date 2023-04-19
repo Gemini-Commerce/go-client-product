@@ -49,7 +49,7 @@ func (o *EntitymanagerListAttributeOptionsResponse) GetOptions() []Entitymanager
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerListAttributeOptionsResponse) GetOptionsOk() ([]EntitymanagerAttributeOption, bool) {
 	if o == nil || isNil(o.Options) {
-		return nil, false
+    return nil, false
 	}
 	return o.Options, true
 }
@@ -111,3 +111,5 @@ func (v *NullableEntitymanagerListAttributeOptionsResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

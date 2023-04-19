@@ -16,9 +16,9 @@ import (
 
 // ProductRemoveMediaGalleryEntryRequest struct for ProductRemoveMediaGalleryEntryRequest
 type ProductRemoveMediaGalleryEntryRequest struct {
-	TenantId  *string `json:"tenantId,omitempty"`
+	TenantId *string `json:"tenantId,omitempty"`
 	ProductId *string `json:"productId,omitempty"`
-	Id        *string `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 }
 
 // NewProductRemoveMediaGalleryEntryRequest instantiates a new ProductRemoveMediaGalleryEntryRequest object
@@ -51,7 +51,7 @@ func (o *ProductRemoveMediaGalleryEntryRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductRemoveMediaGalleryEntryRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -83,7 +83,7 @@ func (o *ProductRemoveMediaGalleryEntryRequest) GetProductId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductRemoveMediaGalleryEntryRequest) GetProductIdOk() (*string, bool) {
 	if o == nil || isNil(o.ProductId) {
-		return nil, false
+    return nil, false
 	}
 	return o.ProductId, true
 }
@@ -115,7 +115,7 @@ func (o *ProductRemoveMediaGalleryEntryRequest) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductRemoveMediaGalleryEntryRequest) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-		return nil, false
+    return nil, false
 	}
 	return o.Id, true
 }
@@ -183,3 +183,5 @@ func (v *NullableProductRemoveMediaGalleryEntryRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

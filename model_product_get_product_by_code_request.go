@@ -17,7 +17,7 @@ import (
 // ProductGetProductByCodeRequest struct for ProductGetProductByCodeRequest
 type ProductGetProductByCodeRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
-	Code     *string `json:"code,omitempty"`
+	Code *string `json:"code,omitempty"`
 }
 
 // NewProductGetProductByCodeRequest instantiates a new ProductGetProductByCodeRequest object
@@ -50,7 +50,7 @@ func (o *ProductGetProductByCodeRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductGetProductByCodeRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -82,7 +82,7 @@ func (o *ProductGetProductByCodeRequest) GetCode() string {
 // and a boolean to check if the value has been set.
 func (o *ProductGetProductByCodeRequest) GetCodeOk() (*string, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -147,3 +147,5 @@ func (v *NullableProductGetProductByCodeRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

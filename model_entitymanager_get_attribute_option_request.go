@@ -51,7 +51,7 @@ func (o *EntitymanagerGetAttributeOptionRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerGetAttributeOptionRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -83,7 +83,7 @@ func (o *EntitymanagerGetAttributeOptionRequest) GetListCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerGetAttributeOptionRequest) GetListCodeOk() (*string, bool) {
 	if o == nil || isNil(o.ListCode) {
-		return nil, false
+    return nil, false
 	}
 	return o.ListCode, true
 }
@@ -115,7 +115,7 @@ func (o *EntitymanagerGetAttributeOptionRequest) GetOptionId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerGetAttributeOptionRequest) GetOptionIdOk() (*string, bool) {
 	if o == nil || isNil(o.OptionId) {
-		return nil, false
+    return nil, false
 	}
 	return o.OptionId, true
 }
@@ -183,3 +183,5 @@ func (v *NullableEntitymanagerGetAttributeOptionRequest) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

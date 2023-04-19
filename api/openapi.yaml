@@ -672,7 +672,7 @@ components:
         success: true
         attributes:
           key:
-            typeUrl: typeUrl
+            '@type': '@type'
             value: value
       properties:
         productId:
@@ -1492,13 +1492,13 @@ components:
           success: true
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
         - productId: productId
           success: true
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
       properties:
         productResponse:
@@ -1607,7 +1607,7 @@ components:
             key:
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
           urlKey:
@@ -1652,7 +1652,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -1684,7 +1684,7 @@ components:
             key:
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
           urlKey:
@@ -1729,7 +1729,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -1759,7 +1759,7 @@ components:
             key:
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
           urlKey:
@@ -1804,7 +1804,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -1836,7 +1836,7 @@ components:
             key:
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
           urlKey:
@@ -1881,7 +1881,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -1897,7 +1897,7 @@ components:
             key:
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
           urlKey:
@@ -1942,7 +1942,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -1978,7 +1978,7 @@ components:
             key:
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
           urlKey:
@@ -2023,7 +2023,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -2039,7 +2039,7 @@ components:
             key:
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
           urlKey:
@@ -2084,7 +2084,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -2208,7 +2208,7 @@ components:
           key:
             attributes:
               key:
-                typeUrl: typeUrl
+                '@type': '@type'
                 value: value
             id: id
         urlKey:
@@ -2253,7 +2253,7 @@ components:
             position: 0
         attributes:
           key:
-            typeUrl: typeUrl
+            '@type': '@type'
             value: value
         id: id
         isVirtual: true
@@ -2312,7 +2312,7 @@ components:
       example:
         attributes:
           key:
-            typeUrl: typeUrl
+            '@type': '@type'
             value: value
         id: id
       properties:
@@ -2497,10 +2497,10 @@ components:
               "value": "1.212s"
             }
       example:
-        typeUrl: typeUrl
+        '@type': '@type'
         value: value
       properties:
-        typeUrl:
+        '@type':
           description: |-
             A URL/resource name that uniquely identifies the type of the serialized
             protocol buffer message. This string must contain at least

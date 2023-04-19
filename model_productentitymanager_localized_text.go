@@ -49,7 +49,7 @@ func (o *ProductentitymanagerLocalizedText) GetValue() map[string]string {
 // and a boolean to check if the value has been set.
 func (o *ProductentitymanagerLocalizedText) GetValueOk() (*map[string]string, bool) {
 	if o == nil || isNil(o.Value) {
-		return nil, false
+    return nil, false
 	}
 	return o.Value, true
 }
@@ -111,3 +111,5 @@ func (v *NullableProductentitymanagerLocalizedText) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -16,7 +16,7 @@ import (
 
 // ProductProductResponseError struct for ProductProductResponseError
 type ProductProductResponseError struct {
-	Code    *string `json:"code,omitempty"`
+	Code *string `json:"code,omitempty"`
 	Message *string `json:"message,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func (o *ProductProductResponseError) GetCode() string {
 // and a boolean to check if the value has been set.
 func (o *ProductProductResponseError) GetCodeOk() (*string, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -82,7 +82,7 @@ func (o *ProductProductResponseError) GetMessage() string {
 // and a boolean to check if the value has been set.
 func (o *ProductProductResponseError) GetMessageOk() (*string, bool) {
 	if o == nil || isNil(o.Message) {
-		return nil, false
+    return nil, false
 	}
 	return o.Message, true
 }
@@ -147,3 +147,5 @@ func (v *NullableProductProductResponseError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

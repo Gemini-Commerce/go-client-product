@@ -16,17 +16,17 @@ import (
 
 // ProductCreateProductRequest struct for ProductCreateProductRequest
 type ProductCreateProductRequest struct {
-	TenantId          *string                           `json:"tenantId,omitempty"`
-	EntityType        *string                           `json:"entityType,omitempty"`
-	EntityCode        *string                           `json:"entityCode,omitempty"`
-	Code              *string                           `json:"code,omitempty"`
-	IsConfigurable    *bool                             `json:"isConfigurable,omitempty"`
-	VariantAttributes []string                          `json:"variantAttributes,omitempty"`
-	IsVirtual         *bool                             `json:"isVirtual,omitempty"`
-	IsGiftcard        *bool                             `json:"isGiftcard,omitempty"`
-	UrlKey            *ProductLocalizedText             `json:"urlKey,omitempty"`
-	Attributes        *map[string]ProtobufAny           `json:"attributes,omitempty"`
-	Variants          *map[string]ProductProductVariant `json:"variants,omitempty"`
+	TenantId *string `json:"tenantId,omitempty"`
+	EntityType *string `json:"entityType,omitempty"`
+	EntityCode *string `json:"entityCode,omitempty"`
+	Code *string `json:"code,omitempty"`
+	IsConfigurable *bool `json:"isConfigurable,omitempty"`
+	VariantAttributes []string `json:"variantAttributes,omitempty"`
+	IsVirtual *bool `json:"isVirtual,omitempty"`
+	IsGiftcard *bool `json:"isGiftcard,omitempty"`
+	UrlKey *ProductLocalizedText `json:"urlKey,omitempty"`
+	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
+	Variants *map[string]ProductProductVariant `json:"variants,omitempty"`
 }
 
 // NewProductCreateProductRequest instantiates a new ProductCreateProductRequest object
@@ -59,7 +59,7 @@ func (o *ProductCreateProductRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -91,7 +91,7 @@ func (o *ProductCreateProductRequest) GetEntityType() string {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductRequest) GetEntityTypeOk() (*string, bool) {
 	if o == nil || isNil(o.EntityType) {
-		return nil, false
+    return nil, false
 	}
 	return o.EntityType, true
 }
@@ -123,7 +123,7 @@ func (o *ProductCreateProductRequest) GetEntityCode() string {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductRequest) GetEntityCodeOk() (*string, bool) {
 	if o == nil || isNil(o.EntityCode) {
-		return nil, false
+    return nil, false
 	}
 	return o.EntityCode, true
 }
@@ -155,7 +155,7 @@ func (o *ProductCreateProductRequest) GetCode() string {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductRequest) GetCodeOk() (*string, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -187,7 +187,7 @@ func (o *ProductCreateProductRequest) GetIsConfigurable() bool {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductRequest) GetIsConfigurableOk() (*bool, bool) {
 	if o == nil || isNil(o.IsConfigurable) {
-		return nil, false
+    return nil, false
 	}
 	return o.IsConfigurable, true
 }
@@ -219,7 +219,7 @@ func (o *ProductCreateProductRequest) GetVariantAttributes() []string {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductRequest) GetVariantAttributesOk() ([]string, bool) {
 	if o == nil || isNil(o.VariantAttributes) {
-		return nil, false
+    return nil, false
 	}
 	return o.VariantAttributes, true
 }
@@ -251,7 +251,7 @@ func (o *ProductCreateProductRequest) GetIsVirtual() bool {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductRequest) GetIsVirtualOk() (*bool, bool) {
 	if o == nil || isNil(o.IsVirtual) {
-		return nil, false
+    return nil, false
 	}
 	return o.IsVirtual, true
 }
@@ -283,7 +283,7 @@ func (o *ProductCreateProductRequest) GetIsGiftcard() bool {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductRequest) GetIsGiftcardOk() (*bool, bool) {
 	if o == nil || isNil(o.IsGiftcard) {
-		return nil, false
+    return nil, false
 	}
 	return o.IsGiftcard, true
 }
@@ -315,7 +315,7 @@ func (o *ProductCreateProductRequest) GetUrlKey() ProductLocalizedText {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductRequest) GetUrlKeyOk() (*ProductLocalizedText, bool) {
 	if o == nil || isNil(o.UrlKey) {
-		return nil, false
+    return nil, false
 	}
 	return o.UrlKey, true
 }
@@ -347,7 +347,7 @@ func (o *ProductCreateProductRequest) GetAttributes() map[string]ProtobufAny {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductRequest) GetAttributesOk() (*map[string]ProtobufAny, bool) {
 	if o == nil || isNil(o.Attributes) {
-		return nil, false
+    return nil, false
 	}
 	return o.Attributes, true
 }
@@ -379,7 +379,7 @@ func (o *ProductCreateProductRequest) GetVariants() map[string]ProductProductVar
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductRequest) GetVariantsOk() (*map[string]ProductProductVariant, bool) {
 	if o == nil || isNil(o.Variants) {
-		return nil, false
+    return nil, false
 	}
 	return o.Variants, true
 }
@@ -471,3 +471,5 @@ func (v *NullableProductCreateProductRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

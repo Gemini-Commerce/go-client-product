@@ -16,21 +16,21 @@ import (
 
 // ProductProductEntity struct for ProductProductEntity
 type ProductProductEntity struct {
-	TenantId          *string                           `json:"tenantId,omitempty"`
-	EntityType        *string                           `json:"entityType,omitempty"`
-	EntityCode        *string                           `json:"entityCode,omitempty"`
-	Id                *string                           `json:"id,omitempty"`
-	Code              *string                           `json:"code,omitempty"`
-	VariantAttributes []string                          `json:"variantAttributes,omitempty"`
-	IsConfigurable    *bool                             `json:"isConfigurable,omitempty"`
-	IsVirtual         *bool                             `json:"isVirtual,omitempty"`
-	IsGiftcard        *bool                             `json:"isGiftcard,omitempty"`
-	UrlKey            *ProductLocalizedText             `json:"urlKey,omitempty"`
-	Attributes        *map[string]ProtobufAny           `json:"attributes,omitempty"`
-	Variants          *map[string]ProductProductVariant `json:"variants,omitempty"`
-	MediaGallery      *ProductMediaGallery              `json:"mediaGallery,omitempty"`
-	CreatedAt         *string                           `json:"createdAt,omitempty"`
-	UpdatedAt         *string                           `json:"updatedAt,omitempty"`
+	TenantId *string `json:"tenantId,omitempty"`
+	EntityType *string `json:"entityType,omitempty"`
+	EntityCode *string `json:"entityCode,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Code *string `json:"code,omitempty"`
+	VariantAttributes []string `json:"variantAttributes,omitempty"`
+	IsConfigurable *bool `json:"isConfigurable,omitempty"`
+	IsVirtual *bool `json:"isVirtual,omitempty"`
+	IsGiftcard *bool `json:"isGiftcard,omitempty"`
+	UrlKey *ProductLocalizedText `json:"urlKey,omitempty"`
+	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
+	Variants *map[string]ProductProductVariant `json:"variants,omitempty"`
+	MediaGallery *ProductMediaGallery `json:"mediaGallery,omitempty"`
+	CreatedAt *string `json:"createdAt,omitempty"`
+	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
 
 // NewProductProductEntity instantiates a new ProductProductEntity object
@@ -63,7 +63,7 @@ func (o *ProductProductEntity) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -95,7 +95,7 @@ func (o *ProductProductEntity) GetEntityType() string {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetEntityTypeOk() (*string, bool) {
 	if o == nil || isNil(o.EntityType) {
-		return nil, false
+    return nil, false
 	}
 	return o.EntityType, true
 }
@@ -127,7 +127,7 @@ func (o *ProductProductEntity) GetEntityCode() string {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetEntityCodeOk() (*string, bool) {
 	if o == nil || isNil(o.EntityCode) {
-		return nil, false
+    return nil, false
 	}
 	return o.EntityCode, true
 }
@@ -159,7 +159,7 @@ func (o *ProductProductEntity) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-		return nil, false
+    return nil, false
 	}
 	return o.Id, true
 }
@@ -191,7 +191,7 @@ func (o *ProductProductEntity) GetCode() string {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetCodeOk() (*string, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -223,7 +223,7 @@ func (o *ProductProductEntity) GetVariantAttributes() []string {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetVariantAttributesOk() ([]string, bool) {
 	if o == nil || isNil(o.VariantAttributes) {
-		return nil, false
+    return nil, false
 	}
 	return o.VariantAttributes, true
 }
@@ -255,7 +255,7 @@ func (o *ProductProductEntity) GetIsConfigurable() bool {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetIsConfigurableOk() (*bool, bool) {
 	if o == nil || isNil(o.IsConfigurable) {
-		return nil, false
+    return nil, false
 	}
 	return o.IsConfigurable, true
 }
@@ -287,7 +287,7 @@ func (o *ProductProductEntity) GetIsVirtual() bool {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetIsVirtualOk() (*bool, bool) {
 	if o == nil || isNil(o.IsVirtual) {
-		return nil, false
+    return nil, false
 	}
 	return o.IsVirtual, true
 }
@@ -319,7 +319,7 @@ func (o *ProductProductEntity) GetIsGiftcard() bool {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetIsGiftcardOk() (*bool, bool) {
 	if o == nil || isNil(o.IsGiftcard) {
-		return nil, false
+    return nil, false
 	}
 	return o.IsGiftcard, true
 }
@@ -351,7 +351,7 @@ func (o *ProductProductEntity) GetUrlKey() ProductLocalizedText {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetUrlKeyOk() (*ProductLocalizedText, bool) {
 	if o == nil || isNil(o.UrlKey) {
-		return nil, false
+    return nil, false
 	}
 	return o.UrlKey, true
 }
@@ -383,7 +383,7 @@ func (o *ProductProductEntity) GetAttributes() map[string]ProtobufAny {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetAttributesOk() (*map[string]ProtobufAny, bool) {
 	if o == nil || isNil(o.Attributes) {
-		return nil, false
+    return nil, false
 	}
 	return o.Attributes, true
 }
@@ -415,7 +415,7 @@ func (o *ProductProductEntity) GetVariants() map[string]ProductProductVariant {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetVariantsOk() (*map[string]ProductProductVariant, bool) {
 	if o == nil || isNil(o.Variants) {
-		return nil, false
+    return nil, false
 	}
 	return o.Variants, true
 }
@@ -447,7 +447,7 @@ func (o *ProductProductEntity) GetMediaGallery() ProductMediaGallery {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetMediaGalleryOk() (*ProductMediaGallery, bool) {
 	if o == nil || isNil(o.MediaGallery) {
-		return nil, false
+    return nil, false
 	}
 	return o.MediaGallery, true
 }
@@ -479,7 +479,7 @@ func (o *ProductProductEntity) GetCreatedAt() string {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetCreatedAtOk() (*string, bool) {
 	if o == nil || isNil(o.CreatedAt) {
-		return nil, false
+    return nil, false
 	}
 	return o.CreatedAt, true
 }
@@ -511,7 +511,7 @@ func (o *ProductProductEntity) GetUpdatedAt() string {
 // and a boolean to check if the value has been set.
 func (o *ProductProductEntity) GetUpdatedAtOk() (*string, bool) {
 	if o == nil || isNil(o.UpdatedAt) {
-		return nil, false
+    return nil, false
 	}
 	return o.UpdatedAt, true
 }
@@ -615,3 +615,5 @@ func (v *NullableProductProductEntity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -16,8 +16,8 @@ import (
 
 // ProductUpdateProductResponse struct for ProductUpdateProductResponse
 type ProductUpdateProductResponse struct {
-	Success         *bool                           `json:"success,omitempty"`
-	ProductErrors   []ProductProductResponseError   `json:"productErrors,omitempty"`
+	Success *bool `json:"success,omitempty"`
+	ProductErrors []ProductProductResponseError `json:"productErrors,omitempty"`
 	AttributeErrors []ProductAttributeResponseError `json:"attributeErrors,omitempty"`
 }
 
@@ -51,7 +51,7 @@ func (o *ProductUpdateProductResponse) GetSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *ProductUpdateProductResponse) GetSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.Success) {
-		return nil, false
+    return nil, false
 	}
 	return o.Success, true
 }
@@ -83,7 +83,7 @@ func (o *ProductUpdateProductResponse) GetProductErrors() []ProductProductRespon
 // and a boolean to check if the value has been set.
 func (o *ProductUpdateProductResponse) GetProductErrorsOk() ([]ProductProductResponseError, bool) {
 	if o == nil || isNil(o.ProductErrors) {
-		return nil, false
+    return nil, false
 	}
 	return o.ProductErrors, true
 }
@@ -115,7 +115,7 @@ func (o *ProductUpdateProductResponse) GetAttributeErrors() []ProductAttributeRe
 // and a boolean to check if the value has been set.
 func (o *ProductUpdateProductResponse) GetAttributeErrorsOk() ([]ProductAttributeResponseError, bool) {
 	if o == nil || isNil(o.AttributeErrors) {
-		return nil, false
+    return nil, false
 	}
 	return o.AttributeErrors, true
 }
@@ -183,3 +183,5 @@ func (v *NullableProductUpdateProductResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

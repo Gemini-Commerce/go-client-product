@@ -16,8 +16,8 @@ import (
 
 // EntitymanagerGetAttributeOptionsResponseOption struct for EntitymanagerGetAttributeOptionsResponseOption
 type EntitymanagerGetAttributeOptionsResponseOption struct {
-	ListCode *string                       `json:"listCode,omitempty"`
-	Option   *EntitymanagerAttributeOption `json:"option,omitempty"`
+	ListCode *string `json:"listCode,omitempty"`
+	Option *EntitymanagerAttributeOption `json:"option,omitempty"`
 }
 
 // NewEntitymanagerGetAttributeOptionsResponseOption instantiates a new EntitymanagerGetAttributeOptionsResponseOption object
@@ -50,7 +50,7 @@ func (o *EntitymanagerGetAttributeOptionsResponseOption) GetListCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerGetAttributeOptionsResponseOption) GetListCodeOk() (*string, bool) {
 	if o == nil || isNil(o.ListCode) {
-		return nil, false
+    return nil, false
 	}
 	return o.ListCode, true
 }
@@ -82,7 +82,7 @@ func (o *EntitymanagerGetAttributeOptionsResponseOption) GetOption() Entitymanag
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerGetAttributeOptionsResponseOption) GetOptionOk() (*EntitymanagerAttributeOption, bool) {
 	if o == nil || isNil(o.Option) {
-		return nil, false
+    return nil, false
 	}
 	return o.Option, true
 }
@@ -147,3 +147,5 @@ func (v *NullableEntitymanagerGetAttributeOptionsResponseOption) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

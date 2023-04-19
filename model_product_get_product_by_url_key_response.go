@@ -49,7 +49,7 @@ func (o *ProductGetProductByUrlKeyResponse) GetProduct() ProductProductEntity {
 // and a boolean to check if the value has been set.
 func (o *ProductGetProductByUrlKeyResponse) GetProductOk() (*ProductProductEntity, bool) {
 	if o == nil || isNil(o.Product) {
-		return nil, false
+    return nil, false
 	}
 	return o.Product, true
 }
@@ -111,3 +111,5 @@ func (v *NullableProductGetProductByUrlKeyResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

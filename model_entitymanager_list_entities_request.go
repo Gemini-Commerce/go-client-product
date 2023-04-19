@@ -17,7 +17,7 @@ import (
 // EntitymanagerListEntitiesRequest struct for EntitymanagerListEntitiesRequest
 type EntitymanagerListEntitiesRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
-	PageSize *int32  `json:"pageSize,omitempty"`
+	PageSize *int32 `json:"pageSize,omitempty"`
 }
 
 // NewEntitymanagerListEntitiesRequest instantiates a new EntitymanagerListEntitiesRequest object
@@ -50,7 +50,7 @@ func (o *EntitymanagerListEntitiesRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerListEntitiesRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -82,7 +82,7 @@ func (o *EntitymanagerListEntitiesRequest) GetPageSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerListEntitiesRequest) GetPageSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.PageSize) {
-		return nil, false
+    return nil, false
 	}
 	return o.PageSize, true
 }
@@ -147,3 +147,5 @@ func (v *NullableEntitymanagerListEntitiesRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

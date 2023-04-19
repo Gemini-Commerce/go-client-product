@@ -17,7 +17,7 @@ import (
 // EntitymanagerCreateEntityResponse struct for EntitymanagerCreateEntityResponse
 type EntitymanagerCreateEntityResponse struct {
 	AttributeWriteErrors *EntitymanagerAttributeWriteErrors `json:"attributeWriteErrors,omitempty"`
-	Entity               *EntitymanagerEntity               `json:"entity,omitempty"`
+	Entity *EntitymanagerEntity `json:"entity,omitempty"`
 }
 
 // NewEntitymanagerCreateEntityResponse instantiates a new EntitymanagerCreateEntityResponse object
@@ -50,7 +50,7 @@ func (o *EntitymanagerCreateEntityResponse) GetAttributeWriteErrors() Entitymana
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerCreateEntityResponse) GetAttributeWriteErrorsOk() (*EntitymanagerAttributeWriteErrors, bool) {
 	if o == nil || isNil(o.AttributeWriteErrors) {
-		return nil, false
+    return nil, false
 	}
 	return o.AttributeWriteErrors, true
 }
@@ -82,7 +82,7 @@ func (o *EntitymanagerCreateEntityResponse) GetEntity() EntitymanagerEntity {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerCreateEntityResponse) GetEntityOk() (*EntitymanagerEntity, bool) {
 	if o == nil || isNil(o.Entity) {
-		return nil, false
+    return nil, false
 	}
 	return o.Entity, true
 }
@@ -147,3 +147,5 @@ func (v *NullableEntitymanagerCreateEntityResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

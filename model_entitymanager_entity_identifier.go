@@ -50,7 +50,7 @@ func (o *EntitymanagerEntityIdentifier) GetType() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntityIdentifier) GetTypeOk() (*string, bool) {
 	if o == nil || isNil(o.Type) {
-		return nil, false
+    return nil, false
 	}
 	return o.Type, true
 }
@@ -82,7 +82,7 @@ func (o *EntitymanagerEntityIdentifier) GetCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntityIdentifier) GetCodeOk() (*string, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -147,3 +147,5 @@ func (v *NullableEntitymanagerEntityIdentifier) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -16,14 +16,14 @@ import (
 
 // EntitymanagerEntity struct for EntitymanagerEntity
 type EntitymanagerEntity struct {
-	TenantId      *string                  `json:"tenantId,omitempty"`
-	Id            *string                  `json:"id,omitempty"`
-	Type          *string                  `json:"type,omitempty"`
-	Code          *string                  `json:"code,omitempty"`
-	ParentCode    *string                  `json:"parentCode,omitempty"`
-	Label         *string                  `json:"label,omitempty"`
-	Relationships []string                 `json:"relationships,omitempty"`
-	Attributes    []EntitymanagerAttribute `json:"attributes,omitempty"`
+	TenantId *string `json:"tenantId,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Code *string `json:"code,omitempty"`
+	ParentCode *string `json:"parentCode,omitempty"`
+	Label *string `json:"label,omitempty"`
+	Relationships []string `json:"relationships,omitempty"`
+	Attributes []EntitymanagerAttribute `json:"attributes,omitempty"`
 }
 
 // NewEntitymanagerEntity instantiates a new EntitymanagerEntity object
@@ -56,7 +56,7 @@ func (o *EntitymanagerEntity) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntity) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -88,7 +88,7 @@ func (o *EntitymanagerEntity) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntity) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-		return nil, false
+    return nil, false
 	}
 	return o.Id, true
 }
@@ -120,7 +120,7 @@ func (o *EntitymanagerEntity) GetType() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntity) GetTypeOk() (*string, bool) {
 	if o == nil || isNil(o.Type) {
-		return nil, false
+    return nil, false
 	}
 	return o.Type, true
 }
@@ -152,7 +152,7 @@ func (o *EntitymanagerEntity) GetCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntity) GetCodeOk() (*string, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -184,7 +184,7 @@ func (o *EntitymanagerEntity) GetParentCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntity) GetParentCodeOk() (*string, bool) {
 	if o == nil || isNil(o.ParentCode) {
-		return nil, false
+    return nil, false
 	}
 	return o.ParentCode, true
 }
@@ -216,7 +216,7 @@ func (o *EntitymanagerEntity) GetLabel() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntity) GetLabelOk() (*string, bool) {
 	if o == nil || isNil(o.Label) {
-		return nil, false
+    return nil, false
 	}
 	return o.Label, true
 }
@@ -248,7 +248,7 @@ func (o *EntitymanagerEntity) GetRelationships() []string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntity) GetRelationshipsOk() ([]string, bool) {
 	if o == nil || isNil(o.Relationships) {
-		return nil, false
+    return nil, false
 	}
 	return o.Relationships, true
 }
@@ -280,7 +280,7 @@ func (o *EntitymanagerEntity) GetAttributes() []EntitymanagerAttribute {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntity) GetAttributesOk() ([]EntitymanagerAttribute, bool) {
 	if o == nil || isNil(o.Attributes) {
-		return nil, false
+    return nil, false
 	}
 	return o.Attributes, true
 }
@@ -363,3 +363,5 @@ func (v *NullableEntitymanagerEntity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

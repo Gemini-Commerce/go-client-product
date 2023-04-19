@@ -16,13 +16,13 @@ import (
 
 // ProductUpdateProductRequest struct for ProductUpdateProductRequest
 type ProductUpdateProductRequest struct {
-	TenantId       *string                           `json:"tenantId,omitempty"`
-	Id             *string                           `json:"id,omitempty"`
-	Code           *string                           `json:"code,omitempty"`
-	AttributesMask *ProductFieldMask                 `json:"attributesMask,omitempty"`
-	UrlKey         *ProductLocalizedText             `json:"urlKey,omitempty"`
-	Attributes     *map[string]ProtobufAny           `json:"attributes,omitempty"`
-	Variants       *map[string]ProductProductVariant `json:"variants,omitempty"`
+	TenantId *string `json:"tenantId,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Code *string `json:"code,omitempty"`
+	AttributesMask *ProductFieldMask `json:"attributesMask,omitempty"`
+	UrlKey *ProductLocalizedText `json:"urlKey,omitempty"`
+	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
+	Variants *map[string]ProductProductVariant `json:"variants,omitempty"`
 }
 
 // NewProductUpdateProductRequest instantiates a new ProductUpdateProductRequest object
@@ -55,7 +55,7 @@ func (o *ProductUpdateProductRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductUpdateProductRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -87,7 +87,7 @@ func (o *ProductUpdateProductRequest) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductUpdateProductRequest) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-		return nil, false
+    return nil, false
 	}
 	return o.Id, true
 }
@@ -119,7 +119,7 @@ func (o *ProductUpdateProductRequest) GetCode() string {
 // and a boolean to check if the value has been set.
 func (o *ProductUpdateProductRequest) GetCodeOk() (*string, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -151,7 +151,7 @@ func (o *ProductUpdateProductRequest) GetAttributesMask() ProductFieldMask {
 // and a boolean to check if the value has been set.
 func (o *ProductUpdateProductRequest) GetAttributesMaskOk() (*ProductFieldMask, bool) {
 	if o == nil || isNil(o.AttributesMask) {
-		return nil, false
+    return nil, false
 	}
 	return o.AttributesMask, true
 }
@@ -183,7 +183,7 @@ func (o *ProductUpdateProductRequest) GetUrlKey() ProductLocalizedText {
 // and a boolean to check if the value has been set.
 func (o *ProductUpdateProductRequest) GetUrlKeyOk() (*ProductLocalizedText, bool) {
 	if o == nil || isNil(o.UrlKey) {
-		return nil, false
+    return nil, false
 	}
 	return o.UrlKey, true
 }
@@ -215,7 +215,7 @@ func (o *ProductUpdateProductRequest) GetAttributes() map[string]ProtobufAny {
 // and a boolean to check if the value has been set.
 func (o *ProductUpdateProductRequest) GetAttributesOk() (*map[string]ProtobufAny, bool) {
 	if o == nil || isNil(o.Attributes) {
-		return nil, false
+    return nil, false
 	}
 	return o.Attributes, true
 }
@@ -247,7 +247,7 @@ func (o *ProductUpdateProductRequest) GetVariants() map[string]ProductProductVar
 // and a boolean to check if the value has been set.
 func (o *ProductUpdateProductRequest) GetVariantsOk() (*map[string]ProductProductVariant, bool) {
 	if o == nil || isNil(o.Variants) {
-		return nil, false
+    return nil, false
 	}
 	return o.Variants, true
 }
@@ -327,3 +327,5 @@ func (v *NullableProductUpdateProductRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

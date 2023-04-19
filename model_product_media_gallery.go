@@ -49,7 +49,7 @@ func (o *ProductMediaGallery) GetEntries() []ProductMediaGalleryEntry {
 // and a boolean to check if the value has been set.
 func (o *ProductMediaGallery) GetEntriesOk() ([]ProductMediaGalleryEntry, bool) {
 	if o == nil || isNil(o.Entries) {
-		return nil, false
+    return nil, false
 	}
 	return o.Entries, true
 }
@@ -111,3 +111,5 @@ func (v *NullableProductMediaGallery) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

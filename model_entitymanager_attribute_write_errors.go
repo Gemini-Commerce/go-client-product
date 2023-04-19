@@ -49,7 +49,7 @@ func (o *EntitymanagerAttributeWriteErrors) GetAttributeWriteErrors() []Entityma
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeWriteErrors) GetAttributeWriteErrorsOk() ([]EntitymanagerAttributeWriteError, bool) {
 	if o == nil || isNil(o.AttributeWriteErrors) {
-		return nil, false
+    return nil, false
 	}
 	return o.AttributeWriteErrors, true
 }
@@ -111,3 +111,5 @@ func (v *NullableEntitymanagerAttributeWriteErrors) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

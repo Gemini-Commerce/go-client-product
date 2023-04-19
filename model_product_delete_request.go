@@ -49,7 +49,7 @@ func (o *ProductDeleteRequest) GetProduct() ProductProductEntity {
 // and a boolean to check if the value has been set.
 func (o *ProductDeleteRequest) GetProductOk() (*ProductProductEntity, bool) {
 	if o == nil || isNil(o.Product) {
-		return nil, false
+    return nil, false
 	}
 	return o.Product, true
 }
@@ -111,3 +111,5 @@ func (v *NullableProductDeleteRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

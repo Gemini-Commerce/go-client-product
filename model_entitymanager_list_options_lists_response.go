@@ -49,7 +49,7 @@ func (o *EntitymanagerListOptionsListsResponse) GetOptions() []EntitymanagerOpti
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerListOptionsListsResponse) GetOptionsOk() ([]EntitymanagerOptionsList, bool) {
 	if o == nil || isNil(o.Options) {
-		return nil, false
+    return nil, false
 	}
 	return o.Options, true
 }
@@ -111,3 +111,5 @@ func (v *NullableEntitymanagerListOptionsListsResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

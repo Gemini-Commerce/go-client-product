@@ -16,8 +16,8 @@ import (
 
 // ProductListProductsResponse struct for ProductListProductsResponse
 type ProductListProductsResponse struct {
-	Products      []ProductProductEntity `json:"products,omitempty"`
-	NextPageToken *string                `json:"nextPageToken,omitempty"`
+	Products []ProductProductEntity `json:"products,omitempty"`
+	NextPageToken *string `json:"nextPageToken,omitempty"`
 }
 
 // NewProductListProductsResponse instantiates a new ProductListProductsResponse object
@@ -50,7 +50,7 @@ func (o *ProductListProductsResponse) GetProducts() []ProductProductEntity {
 // and a boolean to check if the value has been set.
 func (o *ProductListProductsResponse) GetProductsOk() ([]ProductProductEntity, bool) {
 	if o == nil || isNil(o.Products) {
-		return nil, false
+    return nil, false
 	}
 	return o.Products, true
 }
@@ -82,7 +82,7 @@ func (o *ProductListProductsResponse) GetNextPageToken() string {
 // and a boolean to check if the value has been set.
 func (o *ProductListProductsResponse) GetNextPageTokenOk() (*string, bool) {
 	if o == nil || isNil(o.NextPageToken) {
-		return nil, false
+    return nil, false
 	}
 	return o.NextPageToken, true
 }
@@ -147,3 +147,5 @@ func (v *NullableProductListProductsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

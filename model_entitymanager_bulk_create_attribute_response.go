@@ -49,7 +49,7 @@ func (o *EntitymanagerBulkCreateAttributeResponse) GetAttributes() []Entitymanag
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerBulkCreateAttributeResponse) GetAttributesOk() ([]EntitymanagerAttribute, bool) {
 	if o == nil || isNil(o.Attributes) {
-		return nil, false
+    return nil, false
 	}
 	return o.Attributes, true
 }
@@ -111,3 +111,5 @@ func (v *NullableEntitymanagerBulkCreateAttributeResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -16,7 +16,7 @@ import (
 
 // EntitymanagerAttributeOptionErrors struct for EntitymanagerAttributeOptionErrors
 type EntitymanagerAttributeOptionErrors struct {
-	Error  *string            `json:"error,omitempty"`
+	Error *string `json:"error,omitempty"`
 	Option *map[string]string `json:"option,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func (o *EntitymanagerAttributeOptionErrors) GetError() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeOptionErrors) GetErrorOk() (*string, bool) {
 	if o == nil || isNil(o.Error) {
-		return nil, false
+    return nil, false
 	}
 	return o.Error, true
 }
@@ -82,7 +82,7 @@ func (o *EntitymanagerAttributeOptionErrors) GetOption() map[string]string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeOptionErrors) GetOptionOk() (*map[string]string, bool) {
 	if o == nil || isNil(o.Option) {
-		return nil, false
+    return nil, false
 	}
 	return o.Option, true
 }
@@ -147,3 +147,5 @@ func (v *NullableEntitymanagerAttributeOptionErrors) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

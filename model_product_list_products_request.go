@@ -16,8 +16,8 @@ import (
 
 // ProductListProductsRequest struct for ProductListProductsRequest
 type ProductListProductsRequest struct {
-	TenantId  *string `json:"tenantId,omitempty"`
-	PageSize  *string `json:"pageSize,omitempty"`
+	TenantId *string `json:"tenantId,omitempty"`
+	PageSize *string `json:"pageSize,omitempty"`
 	PageToken *string `json:"pageToken,omitempty"`
 }
 
@@ -51,7 +51,7 @@ func (o *ProductListProductsRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductListProductsRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -83,7 +83,7 @@ func (o *ProductListProductsRequest) GetPageSize() string {
 // and a boolean to check if the value has been set.
 func (o *ProductListProductsRequest) GetPageSizeOk() (*string, bool) {
 	if o == nil || isNil(o.PageSize) {
-		return nil, false
+    return nil, false
 	}
 	return o.PageSize, true
 }
@@ -115,7 +115,7 @@ func (o *ProductListProductsRequest) GetPageToken() string {
 // and a boolean to check if the value has been set.
 func (o *ProductListProductsRequest) GetPageTokenOk() (*string, bool) {
 	if o == nil || isNil(o.PageToken) {
-		return nil, false
+    return nil, false
 	}
 	return o.PageToken, true
 }
@@ -183,3 +183,5 @@ func (v *NullableProductListProductsRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

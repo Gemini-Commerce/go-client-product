@@ -49,7 +49,7 @@ func (o *ProductDeleteResponse) GetSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *ProductDeleteResponse) GetSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.Success) {
-		return nil, false
+    return nil, false
 	}
 	return o.Success, true
 }
@@ -111,3 +111,5 @@ func (v *NullableProductDeleteResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

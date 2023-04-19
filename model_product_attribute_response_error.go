@@ -16,8 +16,8 @@ import (
 
 // ProductAttributeResponseError struct for ProductAttributeResponseError
 type ProductAttributeResponseError struct {
-	Code          *string `json:"code,omitempty"`
-	Message       *string `json:"message,omitempty"`
+	Code *string `json:"code,omitempty"`
+	Message *string `json:"message,omitempty"`
 	AttributeCode *string `json:"attributeCode,omitempty"`
 }
 
@@ -51,7 +51,7 @@ func (o *ProductAttributeResponseError) GetCode() string {
 // and a boolean to check if the value has been set.
 func (o *ProductAttributeResponseError) GetCodeOk() (*string, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -83,7 +83,7 @@ func (o *ProductAttributeResponseError) GetMessage() string {
 // and a boolean to check if the value has been set.
 func (o *ProductAttributeResponseError) GetMessageOk() (*string, bool) {
 	if o == nil || isNil(o.Message) {
-		return nil, false
+    return nil, false
 	}
 	return o.Message, true
 }
@@ -115,7 +115,7 @@ func (o *ProductAttributeResponseError) GetAttributeCode() string {
 // and a boolean to check if the value has been set.
 func (o *ProductAttributeResponseError) GetAttributeCodeOk() (*string, bool) {
 	if o == nil || isNil(o.AttributeCode) {
-		return nil, false
+    return nil, false
 	}
 	return o.AttributeCode, true
 }
@@ -183,3 +183,5 @@ func (v *NullableProductAttributeResponseError) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

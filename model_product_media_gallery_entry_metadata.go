@@ -16,8 +16,8 @@ import (
 
 // ProductMediaGalleryEntryMetadata struct for ProductMediaGalleryEntryMetadata
 type ProductMediaGalleryEntryMetadata struct {
-	Roles []string              `json:"roles,omitempty"`
-	Alt   *ProductLocalizedText `json:"alt,omitempty"`
+	Roles []string `json:"roles,omitempty"`
+	Alt *ProductLocalizedText `json:"alt,omitempty"`
 }
 
 // NewProductMediaGalleryEntryMetadata instantiates a new ProductMediaGalleryEntryMetadata object
@@ -50,7 +50,7 @@ func (o *ProductMediaGalleryEntryMetadata) GetRoles() []string {
 // and a boolean to check if the value has been set.
 func (o *ProductMediaGalleryEntryMetadata) GetRolesOk() ([]string, bool) {
 	if o == nil || isNil(o.Roles) {
-		return nil, false
+    return nil, false
 	}
 	return o.Roles, true
 }
@@ -82,7 +82,7 @@ func (o *ProductMediaGalleryEntryMetadata) GetAlt() ProductLocalizedText {
 // and a boolean to check if the value has been set.
 func (o *ProductMediaGalleryEntryMetadata) GetAltOk() (*ProductLocalizedText, bool) {
 	if o == nil || isNil(o.Alt) {
-		return nil, false
+    return nil, false
 	}
 	return o.Alt, true
 }
@@ -147,3 +147,5 @@ func (v *NullableProductMediaGalleryEntryMetadata) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

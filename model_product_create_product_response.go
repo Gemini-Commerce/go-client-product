@@ -16,9 +16,9 @@ import (
 
 // ProductCreateProductResponse struct for ProductCreateProductResponse
 type ProductCreateProductResponse struct {
-	Success         *bool                           `json:"success,omitempty"`
-	Id              *string                         `json:"id,omitempty"`
-	ProductErrors   []ProductProductResponseError   `json:"productErrors,omitempty"`
+	Success *bool `json:"success,omitempty"`
+	Id *string `json:"id,omitempty"`
+	ProductErrors []ProductProductResponseError `json:"productErrors,omitempty"`
 	AttributeErrors []ProductAttributeResponseError `json:"attributeErrors,omitempty"`
 }
 
@@ -52,7 +52,7 @@ func (o *ProductCreateProductResponse) GetSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductResponse) GetSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.Success) {
-		return nil, false
+    return nil, false
 	}
 	return o.Success, true
 }
@@ -84,7 +84,7 @@ func (o *ProductCreateProductResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductResponse) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-		return nil, false
+    return nil, false
 	}
 	return o.Id, true
 }
@@ -116,7 +116,7 @@ func (o *ProductCreateProductResponse) GetProductErrors() []ProductProductRespon
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductResponse) GetProductErrorsOk() ([]ProductProductResponseError, bool) {
 	if o == nil || isNil(o.ProductErrors) {
-		return nil, false
+    return nil, false
 	}
 	return o.ProductErrors, true
 }
@@ -148,7 +148,7 @@ func (o *ProductCreateProductResponse) GetAttributeErrors() []ProductAttributeRe
 // and a boolean to check if the value has been set.
 func (o *ProductCreateProductResponse) GetAttributeErrorsOk() ([]ProductAttributeResponseError, bool) {
 	if o == nil || isNil(o.AttributeErrors) {
-		return nil, false
+    return nil, false
 	}
 	return o.AttributeErrors, true
 }
@@ -219,3 +219,5 @@ func (v *NullableProductCreateProductResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

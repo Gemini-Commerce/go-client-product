@@ -17,8 +17,8 @@ import (
 // ProductGetProductByUrlKeyRequest struct for ProductGetProductByUrlKeyRequest
 type ProductGetProductByUrlKeyRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
-	UrlKey   *string `json:"urlKey,omitempty"`
-	Locale   *string `json:"locale,omitempty"`
+	UrlKey *string `json:"urlKey,omitempty"`
+	Locale *string `json:"locale,omitempty"`
 }
 
 // NewProductGetProductByUrlKeyRequest instantiates a new ProductGetProductByUrlKeyRequest object
@@ -51,7 +51,7 @@ func (o *ProductGetProductByUrlKeyRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductGetProductByUrlKeyRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -83,7 +83,7 @@ func (o *ProductGetProductByUrlKeyRequest) GetUrlKey() string {
 // and a boolean to check if the value has been set.
 func (o *ProductGetProductByUrlKeyRequest) GetUrlKeyOk() (*string, bool) {
 	if o == nil || isNil(o.UrlKey) {
-		return nil, false
+    return nil, false
 	}
 	return o.UrlKey, true
 }
@@ -115,7 +115,7 @@ func (o *ProductGetProductByUrlKeyRequest) GetLocale() string {
 // and a boolean to check if the value has been set.
 func (o *ProductGetProductByUrlKeyRequest) GetLocaleOk() (*string, bool) {
 	if o == nil || isNil(o.Locale) {
-		return nil, false
+    return nil, false
 	}
 	return o.Locale, true
 }
@@ -183,3 +183,5 @@ func (v *NullableProductGetProductByUrlKeyRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

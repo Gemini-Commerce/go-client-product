@@ -50,7 +50,7 @@ func (o *EntitymanagerAttributeOptionSwatch) GetGrn() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeOptionSwatch) GetGrnOk() (*string, bool) {
 	if o == nil || isNil(o.Grn) {
-		return nil, false
+    return nil, false
 	}
 	return o.Grn, true
 }
@@ -82,7 +82,7 @@ func (o *EntitymanagerAttributeOptionSwatch) GetHex() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeOptionSwatch) GetHexOk() (*string, bool) {
 	if o == nil || isNil(o.Hex) {
-		return nil, false
+    return nil, false
 	}
 	return o.Hex, true
 }
@@ -147,3 +147,5 @@ func (v *NullableEntitymanagerAttributeOptionSwatch) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

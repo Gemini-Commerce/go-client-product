@@ -49,7 +49,7 @@ func (o *ProductBulkUpdateResponse) GetProductResponse() []BulkUpdateResponseRes
 // and a boolean to check if the value has been set.
 func (o *ProductBulkUpdateResponse) GetProductResponseOk() ([]BulkUpdateResponseResponse, bool) {
 	if o == nil || isNil(o.ProductResponse) {
-		return nil, false
+    return nil, false
 	}
 	return o.ProductResponse, true
 }
@@ -111,3 +111,5 @@ func (v *NullableProductBulkUpdateResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

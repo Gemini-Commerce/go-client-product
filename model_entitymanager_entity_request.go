@@ -16,9 +16,9 @@ import (
 
 // EntitymanagerEntityRequest struct for EntitymanagerEntityRequest
 type EntitymanagerEntityRequest struct {
-	TenantId   *string                        `json:"tenantId,omitempty"`
+	TenantId *string `json:"tenantId,omitempty"`
 	EntityData *EntitymanagerEntityIdentifier `json:"entityData,omitempty"`
-	EntityId   *string                        `json:"entityId,omitempty"`
+	EntityId *string `json:"entityId,omitempty"`
 }
 
 // NewEntitymanagerEntityRequest instantiates a new EntitymanagerEntityRequest object
@@ -51,7 +51,7 @@ func (o *EntitymanagerEntityRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntityRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -83,7 +83,7 @@ func (o *EntitymanagerEntityRequest) GetEntityData() EntitymanagerEntityIdentifi
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntityRequest) GetEntityDataOk() (*EntitymanagerEntityIdentifier, bool) {
 	if o == nil || isNil(o.EntityData) {
-		return nil, false
+    return nil, false
 	}
 	return o.EntityData, true
 }
@@ -115,7 +115,7 @@ func (o *EntitymanagerEntityRequest) GetEntityId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerEntityRequest) GetEntityIdOk() (*string, bool) {
 	if o == nil || isNil(o.EntityId) {
-		return nil, false
+    return nil, false
 	}
 	return o.EntityId, true
 }
@@ -183,3 +183,5 @@ func (v *NullableEntitymanagerEntityRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

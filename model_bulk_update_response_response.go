@@ -16,8 +16,8 @@ import (
 
 // BulkUpdateResponseResponse struct for BulkUpdateResponseResponse
 type BulkUpdateResponseResponse struct {
-	ProductId  *string                 `json:"productId,omitempty"`
-	Success    *bool                   `json:"success,omitempty"`
+	ProductId *string `json:"productId,omitempty"`
+	Success *bool `json:"success,omitempty"`
 	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
 }
 
@@ -51,7 +51,7 @@ func (o *BulkUpdateResponseResponse) GetProductId() string {
 // and a boolean to check if the value has been set.
 func (o *BulkUpdateResponseResponse) GetProductIdOk() (*string, bool) {
 	if o == nil || isNil(o.ProductId) {
-		return nil, false
+    return nil, false
 	}
 	return o.ProductId, true
 }
@@ -83,7 +83,7 @@ func (o *BulkUpdateResponseResponse) GetSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *BulkUpdateResponseResponse) GetSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.Success) {
-		return nil, false
+    return nil, false
 	}
 	return o.Success, true
 }
@@ -115,7 +115,7 @@ func (o *BulkUpdateResponseResponse) GetAttributes() map[string]ProtobufAny {
 // and a boolean to check if the value has been set.
 func (o *BulkUpdateResponseResponse) GetAttributesOk() (*map[string]ProtobufAny, bool) {
 	if o == nil || isNil(o.Attributes) {
-		return nil, false
+    return nil, false
 	}
 	return o.Attributes, true
 }
@@ -183,3 +183,5 @@ func (v *NullableBulkUpdateResponseResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

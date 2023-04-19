@@ -50,7 +50,7 @@ func (o *EntitymanagerOptionsList) GetCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerOptionsList) GetCodeOk() (*string, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -82,7 +82,7 @@ func (o *EntitymanagerOptionsList) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerOptionsList) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-		return nil, false
+    return nil, false
 	}
 	return o.Name, true
 }
@@ -147,3 +147,5 @@ func (v *NullableEntitymanagerOptionsList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

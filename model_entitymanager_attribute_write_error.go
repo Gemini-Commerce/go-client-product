@@ -16,9 +16,9 @@ import (
 
 // EntitymanagerAttributeWriteError struct for EntitymanagerAttributeWriteError
 type EntitymanagerAttributeWriteError struct {
-	ErrorCode     *string `json:"errorCode,omitempty"`
+	ErrorCode *string `json:"errorCode,omitempty"`
 	AttributeCode *string `json:"attributeCode,omitempty"`
-	Message       *string `json:"message,omitempty"`
+	Message *string `json:"message,omitempty"`
 }
 
 // NewEntitymanagerAttributeWriteError instantiates a new EntitymanagerAttributeWriteError object
@@ -51,7 +51,7 @@ func (o *EntitymanagerAttributeWriteError) GetErrorCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeWriteError) GetErrorCodeOk() (*string, bool) {
 	if o == nil || isNil(o.ErrorCode) {
-		return nil, false
+    return nil, false
 	}
 	return o.ErrorCode, true
 }
@@ -83,7 +83,7 @@ func (o *EntitymanagerAttributeWriteError) GetAttributeCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeWriteError) GetAttributeCodeOk() (*string, bool) {
 	if o == nil || isNil(o.AttributeCode) {
-		return nil, false
+    return nil, false
 	}
 	return o.AttributeCode, true
 }
@@ -115,7 +115,7 @@ func (o *EntitymanagerAttributeWriteError) GetMessage() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeWriteError) GetMessageOk() (*string, bool) {
 	if o == nil || isNil(o.Message) {
-		return nil, false
+    return nil, false
 	}
 	return o.Message, true
 }
@@ -183,3 +183,5 @@ func (v *NullableEntitymanagerAttributeWriteError) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

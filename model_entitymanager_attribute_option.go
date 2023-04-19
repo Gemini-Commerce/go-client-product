@@ -16,11 +16,11 @@ import (
 
 // EntitymanagerAttributeOption struct for EntitymanagerAttributeOption
 type EntitymanagerAttributeOption struct {
-	Option   *map[string]string                   `json:"option,omitempty"`
-	Sort     *int64                               `json:"sort,omitempty"`
-	Id       *string                              `json:"id,omitempty"`
-	Code     *string                              `json:"code,omitempty"`
-	Value    *ProductentitymanagerLocalizedText   `json:"value,omitempty"`
+	Option *map[string]string `json:"option,omitempty"`
+	Sort *int64 `json:"sort,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Code *string `json:"code,omitempty"`
+	Value *ProductentitymanagerLocalizedText `json:"value,omitempty"`
 	Swatches []EntitymanagerAttributeOptionSwatch `json:"swatches,omitempty"`
 }
 
@@ -54,7 +54,7 @@ func (o *EntitymanagerAttributeOption) GetOption() map[string]string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeOption) GetOptionOk() (*map[string]string, bool) {
 	if o == nil || isNil(o.Option) {
-		return nil, false
+    return nil, false
 	}
 	return o.Option, true
 }
@@ -86,7 +86,7 @@ func (o *EntitymanagerAttributeOption) GetSort() int64 {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeOption) GetSortOk() (*int64, bool) {
 	if o == nil || isNil(o.Sort) {
-		return nil, false
+    return nil, false
 	}
 	return o.Sort, true
 }
@@ -118,7 +118,7 @@ func (o *EntitymanagerAttributeOption) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeOption) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-		return nil, false
+    return nil, false
 	}
 	return o.Id, true
 }
@@ -150,7 +150,7 @@ func (o *EntitymanagerAttributeOption) GetCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeOption) GetCodeOk() (*string, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -182,7 +182,7 @@ func (o *EntitymanagerAttributeOption) GetValue() ProductentitymanagerLocalizedT
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeOption) GetValueOk() (*ProductentitymanagerLocalizedText, bool) {
 	if o == nil || isNil(o.Value) {
-		return nil, false
+    return nil, false
 	}
 	return o.Value, true
 }
@@ -214,7 +214,7 @@ func (o *EntitymanagerAttributeOption) GetSwatches() []EntitymanagerAttributeOpt
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttributeOption) GetSwatchesOk() ([]EntitymanagerAttributeOptionSwatch, bool) {
 	if o == nil || isNil(o.Swatches) {
-		return nil, false
+    return nil, false
 	}
 	return o.Swatches, true
 }
@@ -291,3 +291,5 @@ func (v *NullableEntitymanagerAttributeOption) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

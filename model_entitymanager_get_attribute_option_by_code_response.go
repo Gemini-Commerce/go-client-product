@@ -49,7 +49,7 @@ func (o *EntitymanagerGetAttributeOptionByCodeResponse) GetOption() Entitymanage
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerGetAttributeOptionByCodeResponse) GetOptionOk() (*EntitymanagerAttributeOption, bool) {
 	if o == nil || isNil(o.Option) {
-		return nil, false
+    return nil, false
 	}
 	return o.Option, true
 }
@@ -111,3 +111,5 @@ func (v *NullableEntitymanagerGetAttributeOptionByCodeResponse) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

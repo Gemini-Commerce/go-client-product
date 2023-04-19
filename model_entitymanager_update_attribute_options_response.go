@@ -16,8 +16,8 @@ import (
 
 // EntitymanagerUpdateAttributeOptionsResponse struct for EntitymanagerUpdateAttributeOptionsResponse
 type EntitymanagerUpdateAttributeOptionsResponse struct {
-	Options []EntitymanagerAttributeOption       `json:"options,omitempty"`
-	Errors  []EntitymanagerAttributeOptionErrors `json:"errors,omitempty"`
+	Options []EntitymanagerAttributeOption `json:"options,omitempty"`
+	Errors []EntitymanagerAttributeOptionErrors `json:"errors,omitempty"`
 }
 
 // NewEntitymanagerUpdateAttributeOptionsResponse instantiates a new EntitymanagerUpdateAttributeOptionsResponse object
@@ -50,7 +50,7 @@ func (o *EntitymanagerUpdateAttributeOptionsResponse) GetOptions() []Entitymanag
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerUpdateAttributeOptionsResponse) GetOptionsOk() ([]EntitymanagerAttributeOption, bool) {
 	if o == nil || isNil(o.Options) {
-		return nil, false
+    return nil, false
 	}
 	return o.Options, true
 }
@@ -82,7 +82,7 @@ func (o *EntitymanagerUpdateAttributeOptionsResponse) GetErrors() []Entitymanage
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerUpdateAttributeOptionsResponse) GetErrorsOk() ([]EntitymanagerAttributeOptionErrors, bool) {
 	if o == nil || isNil(o.Errors) {
-		return nil, false
+    return nil, false
 	}
 	return o.Errors, true
 }
@@ -147,3 +147,5 @@ func (v *NullableEntitymanagerUpdateAttributeOptionsResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

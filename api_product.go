@@ -18,13 +18,14 @@ import (
 	"net/url"
 )
 
+
 // ProductApiService ProductApi service
 type ProductApiService service
 
 type ApiProductAddMediaGalleryEntryRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductAddMediaGalleryEntryRequest
+	body *ProductAddMediaGalleryEntryRequest
 }
 
 func (r ApiProductAddMediaGalleryEntryRequest) Body(body ProductAddMediaGalleryEntryRequest) ApiProductAddMediaGalleryEntryRequest {
@@ -45,7 +46,7 @@ ProductAddMediaGalleryEntry Method for ProductAddMediaGalleryEntry
 func (a *ProductApiService) ProductAddMediaGalleryEntry(ctx context.Context) ApiProductAddMediaGalleryEntryRequest {
 	return ApiProductAddMediaGalleryEntryRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -53,10 +54,10 @@ func (a *ProductApiService) ProductAddMediaGalleryEntry(ctx context.Context) Api
 //  @return ProductAddMediaGalleryEntryResponse
 func (a *ProductApiService) ProductAddMediaGalleryEntryExecute(r ApiProductAddMediaGalleryEntryRequest) (*ProductAddMediaGalleryEntryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProductAddMediaGalleryEntryResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductAddMediaGalleryEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductAddMediaGalleryEntry")
@@ -114,14 +115,14 @@ func (a *ProductApiService) ProductAddMediaGalleryEntryExecute(r ApiProductAddMe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -138,9 +139,9 @@ func (a *ProductApiService) ProductAddMediaGalleryEntryExecute(r ApiProductAddMe
 }
 
 type ApiProductBulkCreateAttributeRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerBulkCreateAttributeRequest
+	body *EntitymanagerBulkCreateAttributeRequest
 }
 
 func (r ApiProductBulkCreateAttributeRequest) Body(body EntitymanagerBulkCreateAttributeRequest) ApiProductBulkCreateAttributeRequest {
@@ -161,7 +162,7 @@ ProductBulkCreateAttribute Method for ProductBulkCreateAttribute
 func (a *ProductApiService) ProductBulkCreateAttribute(ctx context.Context) ApiProductBulkCreateAttributeRequest {
 	return ApiProductBulkCreateAttributeRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -169,10 +170,10 @@ func (a *ProductApiService) ProductBulkCreateAttribute(ctx context.Context) ApiP
 //  @return EntitymanagerBulkCreateAttributeResponse
 func (a *ProductApiService) ProductBulkCreateAttributeExecute(r ApiProductBulkCreateAttributeRequest) (*EntitymanagerBulkCreateAttributeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerBulkCreateAttributeResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerBulkCreateAttributeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductBulkCreateAttribute")
@@ -230,14 +231,14 @@ func (a *ProductApiService) ProductBulkCreateAttributeExecute(r ApiProductBulkCr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -254,9 +255,9 @@ func (a *ProductApiService) ProductBulkCreateAttributeExecute(r ApiProductBulkCr
 }
 
 type ApiProductBulkUpdateRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductBulkUpdateRequest
+	body *ProductBulkUpdateRequest
 }
 
 func (r ApiProductBulkUpdateRequest) Body(body ProductBulkUpdateRequest) ApiProductBulkUpdateRequest {
@@ -277,7 +278,7 @@ ProductBulkUpdate Method for ProductBulkUpdate
 func (a *ProductApiService) ProductBulkUpdate(ctx context.Context) ApiProductBulkUpdateRequest {
 	return ApiProductBulkUpdateRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -285,10 +286,10 @@ func (a *ProductApiService) ProductBulkUpdate(ctx context.Context) ApiProductBul
 //  @return ProductBulkUpdateResponse
 func (a *ProductApiService) ProductBulkUpdateExecute(r ApiProductBulkUpdateRequest) (*ProductBulkUpdateResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProductBulkUpdateResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductBulkUpdateResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductBulkUpdate")
@@ -346,14 +347,14 @@ func (a *ProductApiService) ProductBulkUpdateExecute(r ApiProductBulkUpdateReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -370,9 +371,9 @@ func (a *ProductApiService) ProductBulkUpdateExecute(r ApiProductBulkUpdateReque
 }
 
 type ApiProductCreateAttributeOptionsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerCreateAttributeOptionsRequest
+	body *EntitymanagerCreateAttributeOptionsRequest
 }
 
 func (r ApiProductCreateAttributeOptionsRequest) Body(body EntitymanagerCreateAttributeOptionsRequest) ApiProductCreateAttributeOptionsRequest {
@@ -393,7 +394,7 @@ ProductCreateAttributeOptions Method for ProductCreateAttributeOptions
 func (a *ProductApiService) ProductCreateAttributeOptions(ctx context.Context) ApiProductCreateAttributeOptionsRequest {
 	return ApiProductCreateAttributeOptionsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -401,10 +402,10 @@ func (a *ProductApiService) ProductCreateAttributeOptions(ctx context.Context) A
 //  @return EntitymanagerCreateAttributeOptionsResponse
 func (a *ProductApiService) ProductCreateAttributeOptionsExecute(r ApiProductCreateAttributeOptionsRequest) (*EntitymanagerCreateAttributeOptionsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerCreateAttributeOptionsResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerCreateAttributeOptionsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductCreateAttributeOptions")
@@ -462,14 +463,14 @@ func (a *ProductApiService) ProductCreateAttributeOptionsExecute(r ApiProductCre
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -486,9 +487,9 @@ func (a *ProductApiService) ProductCreateAttributeOptionsExecute(r ApiProductCre
 }
 
 type ApiProductCreateEntityRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerEntity
+	body *EntitymanagerEntity
 }
 
 func (r ApiProductCreateEntityRequest) Body(body EntitymanagerEntity) ApiProductCreateEntityRequest {
@@ -509,7 +510,7 @@ ProductCreateEntity Method for ProductCreateEntity
 func (a *ProductApiService) ProductCreateEntity(ctx context.Context) ApiProductCreateEntityRequest {
 	return ApiProductCreateEntityRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -517,10 +518,10 @@ func (a *ProductApiService) ProductCreateEntity(ctx context.Context) ApiProductC
 //  @return EntitymanagerCreateEntityResponse
 func (a *ProductApiService) ProductCreateEntityExecute(r ApiProductCreateEntityRequest) (*EntitymanagerCreateEntityResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerCreateEntityResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerCreateEntityResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductCreateEntity")
@@ -578,14 +579,14 @@ func (a *ProductApiService) ProductCreateEntityExecute(r ApiProductCreateEntityR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -602,9 +603,9 @@ func (a *ProductApiService) ProductCreateEntityExecute(r ApiProductCreateEntityR
 }
 
 type ApiProductCreateOptionsListRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerCreateOptionsListRequest
+	body *EntitymanagerCreateOptionsListRequest
 }
 
 func (r ApiProductCreateOptionsListRequest) Body(body EntitymanagerCreateOptionsListRequest) ApiProductCreateOptionsListRequest {
@@ -625,7 +626,7 @@ ProductCreateOptionsList Method for ProductCreateOptionsList
 func (a *ProductApiService) ProductCreateOptionsList(ctx context.Context) ApiProductCreateOptionsListRequest {
 	return ApiProductCreateOptionsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -633,10 +634,10 @@ func (a *ProductApiService) ProductCreateOptionsList(ctx context.Context) ApiPro
 //  @return EntitymanagerCreateOptionsListResponse
 func (a *ProductApiService) ProductCreateOptionsListExecute(r ApiProductCreateOptionsListRequest) (*EntitymanagerCreateOptionsListResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerCreateOptionsListResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerCreateOptionsListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductCreateOptionsList")
@@ -694,14 +695,14 @@ func (a *ProductApiService) ProductCreateOptionsListExecute(r ApiProductCreateOp
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -718,9 +719,9 @@ func (a *ProductApiService) ProductCreateOptionsListExecute(r ApiProductCreateOp
 }
 
 type ApiProductCreateProductRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductCreateProductRequest
+	body *ProductCreateProductRequest
 }
 
 func (r ApiProductCreateProductRequest) Body(body ProductCreateProductRequest) ApiProductCreateProductRequest {
@@ -741,7 +742,7 @@ ProductCreateProduct Method for ProductCreateProduct
 func (a *ProductApiService) ProductCreateProduct(ctx context.Context) ApiProductCreateProductRequest {
 	return ApiProductCreateProductRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -749,10 +750,10 @@ func (a *ProductApiService) ProductCreateProduct(ctx context.Context) ApiProduct
 //  @return ProductCreateProductResponse
 func (a *ProductApiService) ProductCreateProductExecute(r ApiProductCreateProductRequest) (*ProductCreateProductResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProductCreateProductResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductCreateProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductCreateProduct")
@@ -810,14 +811,14 @@ func (a *ProductApiService) ProductCreateProductExecute(r ApiProductCreateProduc
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -834,9 +835,9 @@ func (a *ProductApiService) ProductCreateProductExecute(r ApiProductCreateProduc
 }
 
 type ApiProductDeleteRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductDeleteRequest
+	body *ProductDeleteRequest
 }
 
 func (r ApiProductDeleteRequest) Body(body ProductDeleteRequest) ApiProductDeleteRequest {
@@ -857,7 +858,7 @@ ProductDelete Method for ProductDelete
 func (a *ProductApiService) ProductDelete(ctx context.Context) ApiProductDeleteRequest {
 	return ApiProductDeleteRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -865,10 +866,10 @@ func (a *ProductApiService) ProductDelete(ctx context.Context) ApiProductDeleteR
 //  @return ProductDeleteResponse
 func (a *ProductApiService) ProductDeleteExecute(r ApiProductDeleteRequest) (*ProductDeleteResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProductDeleteResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductDeleteResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductDelete")
@@ -926,14 +927,14 @@ func (a *ProductApiService) ProductDeleteExecute(r ApiProductDeleteRequest) (*Pr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -950,9 +951,9 @@ func (a *ProductApiService) ProductDeleteExecute(r ApiProductDeleteRequest) (*Pr
 }
 
 type ApiProductGetAttributeOptionRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerGetAttributeOptionRequest
+	body *EntitymanagerGetAttributeOptionRequest
 }
 
 func (r ApiProductGetAttributeOptionRequest) Body(body EntitymanagerGetAttributeOptionRequest) ApiProductGetAttributeOptionRequest {
@@ -973,7 +974,7 @@ ProductGetAttributeOption Method for ProductGetAttributeOption
 func (a *ProductApiService) ProductGetAttributeOption(ctx context.Context) ApiProductGetAttributeOptionRequest {
 	return ApiProductGetAttributeOptionRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -981,10 +982,10 @@ func (a *ProductApiService) ProductGetAttributeOption(ctx context.Context) ApiPr
 //  @return EntitymanagerGetAttributeOptionResponse
 func (a *ProductApiService) ProductGetAttributeOptionExecute(r ApiProductGetAttributeOptionRequest) (*EntitymanagerGetAttributeOptionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerGetAttributeOptionResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerGetAttributeOptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductGetAttributeOption")
@@ -1042,14 +1043,14 @@ func (a *ProductApiService) ProductGetAttributeOptionExecute(r ApiProductGetAttr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1066,9 +1067,9 @@ func (a *ProductApiService) ProductGetAttributeOptionExecute(r ApiProductGetAttr
 }
 
 type ApiProductGetAttributeOptionByCodeRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerGetAttributeOptionByCodeRequest
+	body *EntitymanagerGetAttributeOptionByCodeRequest
 }
 
 func (r ApiProductGetAttributeOptionByCodeRequest) Body(body EntitymanagerGetAttributeOptionByCodeRequest) ApiProductGetAttributeOptionByCodeRequest {
@@ -1089,7 +1090,7 @@ ProductGetAttributeOptionByCode Method for ProductGetAttributeOptionByCode
 func (a *ProductApiService) ProductGetAttributeOptionByCode(ctx context.Context) ApiProductGetAttributeOptionByCodeRequest {
 	return ApiProductGetAttributeOptionByCodeRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1097,10 +1098,10 @@ func (a *ProductApiService) ProductGetAttributeOptionByCode(ctx context.Context)
 //  @return EntitymanagerGetAttributeOptionByCodeResponse
 func (a *ProductApiService) ProductGetAttributeOptionByCodeExecute(r ApiProductGetAttributeOptionByCodeRequest) (*EntitymanagerGetAttributeOptionByCodeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerGetAttributeOptionByCodeResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerGetAttributeOptionByCodeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductGetAttributeOptionByCode")
@@ -1158,14 +1159,14 @@ func (a *ProductApiService) ProductGetAttributeOptionByCodeExecute(r ApiProductG
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1182,9 +1183,9 @@ func (a *ProductApiService) ProductGetAttributeOptionByCodeExecute(r ApiProductG
 }
 
 type ApiProductGetAttributeOptionsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerGetAttributeOptionsRequest
+	body *EntitymanagerGetAttributeOptionsRequest
 }
 
 func (r ApiProductGetAttributeOptionsRequest) Body(body EntitymanagerGetAttributeOptionsRequest) ApiProductGetAttributeOptionsRequest {
@@ -1205,7 +1206,7 @@ ProductGetAttributeOptions Method for ProductGetAttributeOptions
 func (a *ProductApiService) ProductGetAttributeOptions(ctx context.Context) ApiProductGetAttributeOptionsRequest {
 	return ApiProductGetAttributeOptionsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1213,10 +1214,10 @@ func (a *ProductApiService) ProductGetAttributeOptions(ctx context.Context) ApiP
 //  @return EntitymanagerGetAttributeOptionsResponse
 func (a *ProductApiService) ProductGetAttributeOptionsExecute(r ApiProductGetAttributeOptionsRequest) (*EntitymanagerGetAttributeOptionsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerGetAttributeOptionsResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerGetAttributeOptionsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductGetAttributeOptions")
@@ -1274,14 +1275,14 @@ func (a *ProductApiService) ProductGetAttributeOptionsExecute(r ApiProductGetAtt
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1298,9 +1299,9 @@ func (a *ProductApiService) ProductGetAttributeOptionsExecute(r ApiProductGetAtt
 }
 
 type ApiProductGetEntityRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerEntityRequest
+	body *EntitymanagerEntityRequest
 }
 
 func (r ApiProductGetEntityRequest) Body(body EntitymanagerEntityRequest) ApiProductGetEntityRequest {
@@ -1321,7 +1322,7 @@ ProductGetEntity Method for ProductGetEntity
 func (a *ProductApiService) ProductGetEntity(ctx context.Context) ApiProductGetEntityRequest {
 	return ApiProductGetEntityRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1329,10 +1330,10 @@ func (a *ProductApiService) ProductGetEntity(ctx context.Context) ApiProductGetE
 //  @return EntitymanagerEntity
 func (a *ProductApiService) ProductGetEntityExecute(r ApiProductGetEntityRequest) (*EntitymanagerEntity, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerEntity
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerEntity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductGetEntity")
@@ -1390,14 +1391,14 @@ func (a *ProductApiService) ProductGetEntityExecute(r ApiProductGetEntityRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1414,9 +1415,9 @@ func (a *ProductApiService) ProductGetEntityExecute(r ApiProductGetEntityRequest
 }
 
 type ApiProductGetOptionsListRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerGetOptionsListRequest
+	body *EntitymanagerGetOptionsListRequest
 }
 
 func (r ApiProductGetOptionsListRequest) Body(body EntitymanagerGetOptionsListRequest) ApiProductGetOptionsListRequest {
@@ -1437,7 +1438,7 @@ ProductGetOptionsList Method for ProductGetOptionsList
 func (a *ProductApiService) ProductGetOptionsList(ctx context.Context) ApiProductGetOptionsListRequest {
 	return ApiProductGetOptionsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1445,10 +1446,10 @@ func (a *ProductApiService) ProductGetOptionsList(ctx context.Context) ApiProduc
 //  @return EntitymanagerGetOptionsListResponse
 func (a *ProductApiService) ProductGetOptionsListExecute(r ApiProductGetOptionsListRequest) (*EntitymanagerGetOptionsListResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerGetOptionsListResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerGetOptionsListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductGetOptionsList")
@@ -1506,14 +1507,14 @@ func (a *ProductApiService) ProductGetOptionsListExecute(r ApiProductGetOptionsL
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1530,9 +1531,9 @@ func (a *ProductApiService) ProductGetOptionsListExecute(r ApiProductGetOptionsL
 }
 
 type ApiProductGetProductRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductGetProductRequest
+	body *ProductGetProductRequest
 }
 
 func (r ApiProductGetProductRequest) Body(body ProductGetProductRequest) ApiProductGetProductRequest {
@@ -1553,7 +1554,7 @@ ProductGetProduct Method for ProductGetProduct
 func (a *ProductApiService) ProductGetProduct(ctx context.Context) ApiProductGetProductRequest {
 	return ApiProductGetProductRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1561,10 +1562,10 @@ func (a *ProductApiService) ProductGetProduct(ctx context.Context) ApiProductGet
 //  @return ProductGetProductResponse
 func (a *ProductApiService) ProductGetProductExecute(r ApiProductGetProductRequest) (*ProductGetProductResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProductGetProductResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductGetProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductGetProduct")
@@ -1622,14 +1623,14 @@ func (a *ProductApiService) ProductGetProductExecute(r ApiProductGetProductReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1646,9 +1647,9 @@ func (a *ProductApiService) ProductGetProductExecute(r ApiProductGetProductReque
 }
 
 type ApiProductGetProductByCodeRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductGetProductByCodeRequest
+	body *ProductGetProductByCodeRequest
 }
 
 func (r ApiProductGetProductByCodeRequest) Body(body ProductGetProductByCodeRequest) ApiProductGetProductByCodeRequest {
@@ -1669,7 +1670,7 @@ ProductGetProductByCode Method for ProductGetProductByCode
 func (a *ProductApiService) ProductGetProductByCode(ctx context.Context) ApiProductGetProductByCodeRequest {
 	return ApiProductGetProductByCodeRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1677,10 +1678,10 @@ func (a *ProductApiService) ProductGetProductByCode(ctx context.Context) ApiProd
 //  @return ProductGetProductByCodeResponse
 func (a *ProductApiService) ProductGetProductByCodeExecute(r ApiProductGetProductByCodeRequest) (*ProductGetProductByCodeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProductGetProductByCodeResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductGetProductByCodeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductGetProductByCode")
@@ -1738,14 +1739,14 @@ func (a *ProductApiService) ProductGetProductByCodeExecute(r ApiProductGetProduc
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1762,9 +1763,9 @@ func (a *ProductApiService) ProductGetProductByCodeExecute(r ApiProductGetProduc
 }
 
 type ApiProductGetProductByUrlKeyRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductGetProductByUrlKeyRequest
+	body *ProductGetProductByUrlKeyRequest
 }
 
 func (r ApiProductGetProductByUrlKeyRequest) Body(body ProductGetProductByUrlKeyRequest) ApiProductGetProductByUrlKeyRequest {
@@ -1785,7 +1786,7 @@ ProductGetProductByUrlKey Method for ProductGetProductByUrlKey
 func (a *ProductApiService) ProductGetProductByUrlKey(ctx context.Context) ApiProductGetProductByUrlKeyRequest {
 	return ApiProductGetProductByUrlKeyRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1793,10 +1794,10 @@ func (a *ProductApiService) ProductGetProductByUrlKey(ctx context.Context) ApiPr
 //  @return ProductGetProductByUrlKeyResponse
 func (a *ProductApiService) ProductGetProductByUrlKeyExecute(r ApiProductGetProductByUrlKeyRequest) (*ProductGetProductByUrlKeyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProductGetProductByUrlKeyResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductGetProductByUrlKeyResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductGetProductByUrlKey")
@@ -1854,14 +1855,14 @@ func (a *ProductApiService) ProductGetProductByUrlKeyExecute(r ApiProductGetProd
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1878,9 +1879,9 @@ func (a *ProductApiService) ProductGetProductByUrlKeyExecute(r ApiProductGetProd
 }
 
 type ApiProductListAttributeOptionsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerListAttributeOptionsRequest
+	body *EntitymanagerListAttributeOptionsRequest
 }
 
 func (r ApiProductListAttributeOptionsRequest) Body(body EntitymanagerListAttributeOptionsRequest) ApiProductListAttributeOptionsRequest {
@@ -1901,7 +1902,7 @@ ProductListAttributeOptions Method for ProductListAttributeOptions
 func (a *ProductApiService) ProductListAttributeOptions(ctx context.Context) ApiProductListAttributeOptionsRequest {
 	return ApiProductListAttributeOptionsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1909,10 +1910,10 @@ func (a *ProductApiService) ProductListAttributeOptions(ctx context.Context) Api
 //  @return EntitymanagerListAttributeOptionsResponse
 func (a *ProductApiService) ProductListAttributeOptionsExecute(r ApiProductListAttributeOptionsRequest) (*EntitymanagerListAttributeOptionsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerListAttributeOptionsResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerListAttributeOptionsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductListAttributeOptions")
@@ -1970,14 +1971,14 @@ func (a *ProductApiService) ProductListAttributeOptionsExecute(r ApiProductListA
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1994,9 +1995,9 @@ func (a *ProductApiService) ProductListAttributeOptionsExecute(r ApiProductListA
 }
 
 type ApiProductListEntitiesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerListEntitiesRequest
+	body *EntitymanagerListEntitiesRequest
 }
 
 func (r ApiProductListEntitiesRequest) Body(body EntitymanagerListEntitiesRequest) ApiProductListEntitiesRequest {
@@ -2017,7 +2018,7 @@ ProductListEntities Method for ProductListEntities
 func (a *ProductApiService) ProductListEntities(ctx context.Context) ApiProductListEntitiesRequest {
 	return ApiProductListEntitiesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -2025,10 +2026,10 @@ func (a *ProductApiService) ProductListEntities(ctx context.Context) ApiProductL
 //  @return EntitymanagerListEntitiesResponse
 func (a *ProductApiService) ProductListEntitiesExecute(r ApiProductListEntitiesRequest) (*EntitymanagerListEntitiesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerListEntitiesResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerListEntitiesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductListEntities")
@@ -2086,14 +2087,14 @@ func (a *ProductApiService) ProductListEntitiesExecute(r ApiProductListEntitiesR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2110,9 +2111,9 @@ func (a *ProductApiService) ProductListEntitiesExecute(r ApiProductListEntitiesR
 }
 
 type ApiProductListOptionsListsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerListOptionsListsRequest
+	body *EntitymanagerListOptionsListsRequest
 }
 
 func (r ApiProductListOptionsListsRequest) Body(body EntitymanagerListOptionsListsRequest) ApiProductListOptionsListsRequest {
@@ -2133,7 +2134,7 @@ ProductListOptionsLists Method for ProductListOptionsLists
 func (a *ProductApiService) ProductListOptionsLists(ctx context.Context) ApiProductListOptionsListsRequest {
 	return ApiProductListOptionsListsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -2141,10 +2142,10 @@ func (a *ProductApiService) ProductListOptionsLists(ctx context.Context) ApiProd
 //  @return EntitymanagerListOptionsListsResponse
 func (a *ProductApiService) ProductListOptionsListsExecute(r ApiProductListOptionsListsRequest) (*EntitymanagerListOptionsListsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerListOptionsListsResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerListOptionsListsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductListOptionsLists")
@@ -2202,14 +2203,14 @@ func (a *ProductApiService) ProductListOptionsListsExecute(r ApiProductListOptio
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2226,9 +2227,9 @@ func (a *ProductApiService) ProductListOptionsListsExecute(r ApiProductListOptio
 }
 
 type ApiProductListProductsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductListProductsRequest
+	body *ProductListProductsRequest
 }
 
 func (r ApiProductListProductsRequest) Body(body ProductListProductsRequest) ApiProductListProductsRequest {
@@ -2249,7 +2250,7 @@ ProductListProducts Method for ProductListProducts
 func (a *ProductApiService) ProductListProducts(ctx context.Context) ApiProductListProductsRequest {
 	return ApiProductListProductsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -2257,10 +2258,10 @@ func (a *ProductApiService) ProductListProducts(ctx context.Context) ApiProductL
 //  @return ProductListProductsResponse
 func (a *ProductApiService) ProductListProductsExecute(r ApiProductListProductsRequest) (*ProductListProductsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProductListProductsResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductListProductsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductListProducts")
@@ -2318,14 +2319,14 @@ func (a *ProductApiService) ProductListProductsExecute(r ApiProductListProductsR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2342,9 +2343,9 @@ func (a *ProductApiService) ProductListProductsExecute(r ApiProductListProductsR
 }
 
 type ApiProductListProductsByIdsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductListProductsByIdsRequest
+	body *ProductListProductsByIdsRequest
 }
 
 func (r ApiProductListProductsByIdsRequest) Body(body ProductListProductsByIdsRequest) ApiProductListProductsByIdsRequest {
@@ -2365,7 +2366,7 @@ ProductListProductsByIds Method for ProductListProductsByIds
 func (a *ProductApiService) ProductListProductsByIds(ctx context.Context) ApiProductListProductsByIdsRequest {
 	return ApiProductListProductsByIdsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -2373,10 +2374,10 @@ func (a *ProductApiService) ProductListProductsByIds(ctx context.Context) ApiPro
 //  @return ProductListProductsByIdsResponse
 func (a *ProductApiService) ProductListProductsByIdsExecute(r ApiProductListProductsByIdsRequest) (*ProductListProductsByIdsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProductListProductsByIdsResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductListProductsByIdsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductListProductsByIds")
@@ -2434,14 +2435,14 @@ func (a *ProductApiService) ProductListProductsByIdsExecute(r ApiProductListProd
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2458,9 +2459,9 @@ func (a *ProductApiService) ProductListProductsByIdsExecute(r ApiProductListProd
 }
 
 type ApiProductRemoveMediaGalleryEntryRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductRemoveMediaGalleryEntryRequest
+	body *ProductRemoveMediaGalleryEntryRequest
 }
 
 func (r ApiProductRemoveMediaGalleryEntryRequest) Body(body ProductRemoveMediaGalleryEntryRequest) ApiProductRemoveMediaGalleryEntryRequest {
@@ -2481,7 +2482,7 @@ ProductRemoveMediaGalleryEntry Method for ProductRemoveMediaGalleryEntry
 func (a *ProductApiService) ProductRemoveMediaGalleryEntry(ctx context.Context) ApiProductRemoveMediaGalleryEntryRequest {
 	return ApiProductRemoveMediaGalleryEntryRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -2489,10 +2490,10 @@ func (a *ProductApiService) ProductRemoveMediaGalleryEntry(ctx context.Context) 
 //  @return map[string]interface{}
 func (a *ProductApiService) ProductRemoveMediaGalleryEntryExecute(r ApiProductRemoveMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue map[string]interface{}
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductRemoveMediaGalleryEntry")
@@ -2550,14 +2551,14 @@ func (a *ProductApiService) ProductRemoveMediaGalleryEntryExecute(r ApiProductRe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2574,9 +2575,9 @@ func (a *ProductApiService) ProductRemoveMediaGalleryEntryExecute(r ApiProductRe
 }
 
 type ApiProductUpdateAttributeOptionsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerUpdateAttributeOptionsRequest
+	body *EntitymanagerUpdateAttributeOptionsRequest
 }
 
 func (r ApiProductUpdateAttributeOptionsRequest) Body(body EntitymanagerUpdateAttributeOptionsRequest) ApiProductUpdateAttributeOptionsRequest {
@@ -2597,7 +2598,7 @@ ProductUpdateAttributeOptions Method for ProductUpdateAttributeOptions
 func (a *ProductApiService) ProductUpdateAttributeOptions(ctx context.Context) ApiProductUpdateAttributeOptionsRequest {
 	return ApiProductUpdateAttributeOptionsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -2605,10 +2606,10 @@ func (a *ProductApiService) ProductUpdateAttributeOptions(ctx context.Context) A
 //  @return EntitymanagerUpdateAttributeOptionsResponse
 func (a *ProductApiService) ProductUpdateAttributeOptionsExecute(r ApiProductUpdateAttributeOptionsRequest) (*EntitymanagerUpdateAttributeOptionsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerUpdateAttributeOptionsResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerUpdateAttributeOptionsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductUpdateAttributeOptions")
@@ -2666,14 +2667,14 @@ func (a *ProductApiService) ProductUpdateAttributeOptionsExecute(r ApiProductUpd
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2690,9 +2691,9 @@ func (a *ProductApiService) ProductUpdateAttributeOptionsExecute(r ApiProductUpd
 }
 
 type ApiProductUpdateMediaGalleryEntryRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductUpdateMediaGalleryEntryRequest
+	body *ProductUpdateMediaGalleryEntryRequest
 }
 
 func (r ApiProductUpdateMediaGalleryEntryRequest) Body(body ProductUpdateMediaGalleryEntryRequest) ApiProductUpdateMediaGalleryEntryRequest {
@@ -2713,7 +2714,7 @@ ProductUpdateMediaGalleryEntry Method for ProductUpdateMediaGalleryEntry
 func (a *ProductApiService) ProductUpdateMediaGalleryEntry(ctx context.Context) ApiProductUpdateMediaGalleryEntryRequest {
 	return ApiProductUpdateMediaGalleryEntryRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -2721,10 +2722,10 @@ func (a *ProductApiService) ProductUpdateMediaGalleryEntry(ctx context.Context) 
 //  @return map[string]interface{}
 func (a *ProductApiService) ProductUpdateMediaGalleryEntryExecute(r ApiProductUpdateMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue map[string]interface{}
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductUpdateMediaGalleryEntry")
@@ -2782,14 +2783,14 @@ func (a *ProductApiService) ProductUpdateMediaGalleryEntryExecute(r ApiProductUp
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2806,9 +2807,9 @@ func (a *ProductApiService) ProductUpdateMediaGalleryEntryExecute(r ApiProductUp
 }
 
 type ApiProductUpdateOptionsListRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *EntitymanagerUpdateOptionsListRequest
+	body *EntitymanagerUpdateOptionsListRequest
 }
 
 func (r ApiProductUpdateOptionsListRequest) Body(body EntitymanagerUpdateOptionsListRequest) ApiProductUpdateOptionsListRequest {
@@ -2829,7 +2830,7 @@ ProductUpdateOptionsList Method for ProductUpdateOptionsList
 func (a *ProductApiService) ProductUpdateOptionsList(ctx context.Context) ApiProductUpdateOptionsListRequest {
 	return ApiProductUpdateOptionsListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -2837,10 +2838,10 @@ func (a *ProductApiService) ProductUpdateOptionsList(ctx context.Context) ApiPro
 //  @return EntitymanagerUpdateOptionsListResponse
 func (a *ProductApiService) ProductUpdateOptionsListExecute(r ApiProductUpdateOptionsListRequest) (*EntitymanagerUpdateOptionsListResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *EntitymanagerUpdateOptionsListResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EntitymanagerUpdateOptionsListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductUpdateOptionsList")
@@ -2898,14 +2899,14 @@ func (a *ProductApiService) ProductUpdateOptionsListExecute(r ApiProductUpdateOp
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2922,9 +2923,9 @@ func (a *ProductApiService) ProductUpdateOptionsListExecute(r ApiProductUpdateOp
 }
 
 type ApiProductUpdateProductRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProductApiService
-	body       *ProductUpdateProductRequest
+	body *ProductUpdateProductRequest
 }
 
 func (r ApiProductUpdateProductRequest) Body(body ProductUpdateProductRequest) ApiProductUpdateProductRequest {
@@ -2945,7 +2946,7 @@ ProductUpdateProduct Method for ProductUpdateProduct
 func (a *ProductApiService) ProductUpdateProduct(ctx context.Context) ApiProductUpdateProductRequest {
 	return ApiProductUpdateProductRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -2953,10 +2954,10 @@ func (a *ProductApiService) ProductUpdateProduct(ctx context.Context) ApiProduct
 //  @return ProductUpdateProductResponse
 func (a *ProductApiService) ProductUpdateProductExecute(r ApiProductUpdateProductRequest) (*ProductUpdateProductResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProductUpdateProductResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductUpdateProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductApiService.ProductUpdateProduct")
@@ -3014,14 +3015,14 @@ func (a *ProductApiService) ProductUpdateProductExecute(r ApiProductUpdateProduc
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v RpcStatus
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

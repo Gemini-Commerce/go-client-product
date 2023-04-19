@@ -50,7 +50,7 @@ func (o *EntitymanagerGetAttributeOptionsRequestOption) GetListCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerGetAttributeOptionsRequestOption) GetListCodeOk() (*string, bool) {
 	if o == nil || isNil(o.ListCode) {
-		return nil, false
+    return nil, false
 	}
 	return o.ListCode, true
 }
@@ -82,7 +82,7 @@ func (o *EntitymanagerGetAttributeOptionsRequestOption) GetOptionId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerGetAttributeOptionsRequestOption) GetOptionIdOk() (*string, bool) {
 	if o == nil || isNil(o.OptionId) {
-		return nil, false
+    return nil, false
 	}
 	return o.OptionId, true
 }
@@ -147,3 +147,5 @@ func (v *NullableEntitymanagerGetAttributeOptionsRequestOption) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

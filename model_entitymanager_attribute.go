@@ -16,16 +16,16 @@ import (
 
 // EntitymanagerAttribute struct for EntitymanagerAttribute
 type EntitymanagerAttribute struct {
-	EntityId   *string             `json:"entityId,omitempty"`
-	Code       *string             `json:"code,omitempty"`
-	Label      *string             `json:"label,omitempty"`
-	Type       *EntitymanagerTypes `json:"type,omitempty"`
-	OptionList *string             `json:"optionList,omitempty"`
-	Entity     *string             `json:"entity,omitempty"`
-	Default    *string             `json:"default,omitempty"`
-	IsRequired *bool               `json:"isRequired,omitempty"`
-	IsSystem   *bool               `json:"isSystem,omitempty"`
-	IsRepeated *bool               `json:"isRepeated,omitempty"`
+	EntityId *string `json:"entityId,omitempty"`
+	Code *string `json:"code,omitempty"`
+	Label *string `json:"label,omitempty"`
+	Type *EntitymanagerTypes `json:"type,omitempty"`
+	OptionList *string `json:"optionList,omitempty"`
+	Entity *string `json:"entity,omitempty"`
+	Default *string `json:"default,omitempty"`
+	IsRequired *bool `json:"isRequired,omitempty"`
+	IsSystem *bool `json:"isSystem,omitempty"`
+	IsRepeated *bool `json:"isRepeated,omitempty"`
 }
 
 // NewEntitymanagerAttribute instantiates a new EntitymanagerAttribute object
@@ -62,7 +62,7 @@ func (o *EntitymanagerAttribute) GetEntityId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttribute) GetEntityIdOk() (*string, bool) {
 	if o == nil || isNil(o.EntityId) {
-		return nil, false
+    return nil, false
 	}
 	return o.EntityId, true
 }
@@ -94,7 +94,7 @@ func (o *EntitymanagerAttribute) GetCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttribute) GetCodeOk() (*string, bool) {
 	if o == nil || isNil(o.Code) {
-		return nil, false
+    return nil, false
 	}
 	return o.Code, true
 }
@@ -126,7 +126,7 @@ func (o *EntitymanagerAttribute) GetLabel() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttribute) GetLabelOk() (*string, bool) {
 	if o == nil || isNil(o.Label) {
-		return nil, false
+    return nil, false
 	}
 	return o.Label, true
 }
@@ -158,7 +158,7 @@ func (o *EntitymanagerAttribute) GetType() EntitymanagerTypes {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttribute) GetTypeOk() (*EntitymanagerTypes, bool) {
 	if o == nil || isNil(o.Type) {
-		return nil, false
+    return nil, false
 	}
 	return o.Type, true
 }
@@ -190,7 +190,7 @@ func (o *EntitymanagerAttribute) GetOptionList() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttribute) GetOptionListOk() (*string, bool) {
 	if o == nil || isNil(o.OptionList) {
-		return nil, false
+    return nil, false
 	}
 	return o.OptionList, true
 }
@@ -222,7 +222,7 @@ func (o *EntitymanagerAttribute) GetEntity() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttribute) GetEntityOk() (*string, bool) {
 	if o == nil || isNil(o.Entity) {
-		return nil, false
+    return nil, false
 	}
 	return o.Entity, true
 }
@@ -254,7 +254,7 @@ func (o *EntitymanagerAttribute) GetDefault() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttribute) GetDefaultOk() (*string, bool) {
 	if o == nil || isNil(o.Default) {
-		return nil, false
+    return nil, false
 	}
 	return o.Default, true
 }
@@ -286,7 +286,7 @@ func (o *EntitymanagerAttribute) GetIsRequired() bool {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttribute) GetIsRequiredOk() (*bool, bool) {
 	if o == nil || isNil(o.IsRequired) {
-		return nil, false
+    return nil, false
 	}
 	return o.IsRequired, true
 }
@@ -318,7 +318,7 @@ func (o *EntitymanagerAttribute) GetIsSystem() bool {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttribute) GetIsSystemOk() (*bool, bool) {
 	if o == nil || isNil(o.IsSystem) {
-		return nil, false
+    return nil, false
 	}
 	return o.IsSystem, true
 }
@@ -350,7 +350,7 @@ func (o *EntitymanagerAttribute) GetIsRepeated() bool {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerAttribute) GetIsRepeatedOk() (*bool, bool) {
 	if o == nil || isNil(o.IsRepeated) {
-		return nil, false
+    return nil, false
 	}
 	return o.IsRepeated, true
 }
@@ -439,3 +439,5 @@ func (v *NullableEntitymanagerAttribute) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

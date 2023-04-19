@@ -16,7 +16,7 @@ import (
 
 // BulkUpdateRequestPayload struct for BulkUpdateRequestPayload
 type BulkUpdateRequestPayload struct {
-	UpdateMask *ProductFieldMask       `json:"updateMask,omitempty"`
+	UpdateMask *ProductFieldMask `json:"updateMask,omitempty"`
 	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func (o *BulkUpdateRequestPayload) GetUpdateMask() ProductFieldMask {
 // and a boolean to check if the value has been set.
 func (o *BulkUpdateRequestPayload) GetUpdateMaskOk() (*ProductFieldMask, bool) {
 	if o == nil || isNil(o.UpdateMask) {
-		return nil, false
+    return nil, false
 	}
 	return o.UpdateMask, true
 }
@@ -82,7 +82,7 @@ func (o *BulkUpdateRequestPayload) GetAttributes() map[string]ProtobufAny {
 // and a boolean to check if the value has been set.
 func (o *BulkUpdateRequestPayload) GetAttributesOk() (*map[string]ProtobufAny, bool) {
 	if o == nil || isNil(o.Attributes) {
-		return nil, false
+    return nil, false
 	}
 	return o.Attributes, true
 }
@@ -147,3 +147,5 @@ func (v *NullableBulkUpdateRequestPayload) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

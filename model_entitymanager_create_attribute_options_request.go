@@ -16,9 +16,9 @@ import (
 
 // EntitymanagerCreateAttributeOptionsRequest struct for EntitymanagerCreateAttributeOptionsRequest
 type EntitymanagerCreateAttributeOptionsRequest struct {
-	TenantId *string                        `json:"tenantId,omitempty"`
-	ListCode *string                        `json:"listCode,omitempty"`
-	Options  []EntitymanagerAttributeOption `json:"options,omitempty"`
+	TenantId *string `json:"tenantId,omitempty"`
+	ListCode *string `json:"listCode,omitempty"`
+	Options []EntitymanagerAttributeOption `json:"options,omitempty"`
 }
 
 // NewEntitymanagerCreateAttributeOptionsRequest instantiates a new EntitymanagerCreateAttributeOptionsRequest object
@@ -51,7 +51,7 @@ func (o *EntitymanagerCreateAttributeOptionsRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerCreateAttributeOptionsRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -83,7 +83,7 @@ func (o *EntitymanagerCreateAttributeOptionsRequest) GetListCode() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerCreateAttributeOptionsRequest) GetListCodeOk() (*string, bool) {
 	if o == nil || isNil(o.ListCode) {
-		return nil, false
+    return nil, false
 	}
 	return o.ListCode, true
 }
@@ -115,7 +115,7 @@ func (o *EntitymanagerCreateAttributeOptionsRequest) GetOptions() []Entitymanage
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerCreateAttributeOptionsRequest) GetOptionsOk() ([]EntitymanagerAttributeOption, bool) {
 	if o == nil || isNil(o.Options) {
-		return nil, false
+    return nil, false
 	}
 	return o.Options, true
 }
@@ -183,3 +183,5 @@ func (v *NullableEntitymanagerCreateAttributeOptionsRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

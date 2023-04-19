@@ -16,7 +16,7 @@ import (
 
 // ProductProductVariant struct for ProductProductVariant
 type ProductProductVariant struct {
-	Id         *string                 `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func (o *ProductProductVariant) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductProductVariant) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-		return nil, false
+    return nil, false
 	}
 	return o.Id, true
 }
@@ -82,7 +82,7 @@ func (o *ProductProductVariant) GetAttributes() map[string]ProtobufAny {
 // and a boolean to check if the value has been set.
 func (o *ProductProductVariant) GetAttributesOk() (*map[string]ProtobufAny, bool) {
 	if o == nil || isNil(o.Attributes) {
-		return nil, false
+    return nil, false
 	}
 	return o.Attributes, true
 }
@@ -147,3 +147,5 @@ func (v *NullableProductProductVariant) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

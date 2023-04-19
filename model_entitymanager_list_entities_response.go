@@ -17,7 +17,7 @@ import (
 // EntitymanagerListEntitiesResponse struct for EntitymanagerListEntitiesResponse
 type EntitymanagerListEntitiesResponse struct {
 	Entities []EntitymanagerEntity `json:"entities,omitempty"`
-	NextPage *int32                `json:"nextPage,omitempty"`
+	NextPage *int32 `json:"nextPage,omitempty"`
 }
 
 // NewEntitymanagerListEntitiesResponse instantiates a new EntitymanagerListEntitiesResponse object
@@ -50,7 +50,7 @@ func (o *EntitymanagerListEntitiesResponse) GetEntities() []EntitymanagerEntity 
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerListEntitiesResponse) GetEntitiesOk() ([]EntitymanagerEntity, bool) {
 	if o == nil || isNil(o.Entities) {
-		return nil, false
+    return nil, false
 	}
 	return o.Entities, true
 }
@@ -82,7 +82,7 @@ func (o *EntitymanagerListEntitiesResponse) GetNextPage() int32 {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerListEntitiesResponse) GetNextPageOk() (*int32, bool) {
 	if o == nil || isNil(o.NextPage) {
-		return nil, false
+    return nil, false
 	}
 	return o.NextPage, true
 }
@@ -147,3 +147,5 @@ func (v *NullableEntitymanagerListEntitiesResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

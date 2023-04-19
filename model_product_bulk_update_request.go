@@ -16,9 +16,9 @@ import (
 
 // ProductBulkUpdateRequest struct for ProductBulkUpdateRequest
 type ProductBulkUpdateRequest struct {
-	TenantId   *string                   `json:"tenantId,omitempty"`
-	ProductIds []string                  `json:"productIds,omitempty"`
-	Payload    *BulkUpdateRequestPayload `json:"payload,omitempty"`
+	TenantId *string `json:"tenantId,omitempty"`
+	ProductIds []string `json:"productIds,omitempty"`
+	Payload *BulkUpdateRequestPayload `json:"payload,omitempty"`
 }
 
 // NewProductBulkUpdateRequest instantiates a new ProductBulkUpdateRequest object
@@ -51,7 +51,7 @@ func (o *ProductBulkUpdateRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductBulkUpdateRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -83,7 +83,7 @@ func (o *ProductBulkUpdateRequest) GetProductIds() []string {
 // and a boolean to check if the value has been set.
 func (o *ProductBulkUpdateRequest) GetProductIdsOk() ([]string, bool) {
 	if o == nil || isNil(o.ProductIds) {
-		return nil, false
+    return nil, false
 	}
 	return o.ProductIds, true
 }
@@ -115,7 +115,7 @@ func (o *ProductBulkUpdateRequest) GetPayload() BulkUpdateRequestPayload {
 // and a boolean to check if the value has been set.
 func (o *ProductBulkUpdateRequest) GetPayloadOk() (*BulkUpdateRequestPayload, bool) {
 	if o == nil || isNil(o.Payload) {
-		return nil, false
+    return nil, false
 	}
 	return o.Payload, true
 }
@@ -183,3 +183,5 @@ func (v *NullableProductBulkUpdateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

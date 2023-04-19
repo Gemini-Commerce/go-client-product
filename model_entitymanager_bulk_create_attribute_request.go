@@ -16,10 +16,10 @@ import (
 
 // EntitymanagerBulkCreateAttributeRequest struct for EntitymanagerBulkCreateAttributeRequest
 type EntitymanagerBulkCreateAttributeRequest struct {
-	TenantId   *string                        `json:"tenantId,omitempty"`
+	TenantId *string `json:"tenantId,omitempty"`
 	EntityData *EntitymanagerEntityIdentifier `json:"entityData,omitempty"`
-	EntityId   *string                        `json:"entityId,omitempty"`
-	Attributes []EntitymanagerAttribute       `json:"attributes,omitempty"`
+	EntityId *string `json:"entityId,omitempty"`
+	Attributes []EntitymanagerAttribute `json:"attributes,omitempty"`
 }
 
 // NewEntitymanagerBulkCreateAttributeRequest instantiates a new EntitymanagerBulkCreateAttributeRequest object
@@ -52,7 +52,7 @@ func (o *EntitymanagerBulkCreateAttributeRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerBulkCreateAttributeRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -84,7 +84,7 @@ func (o *EntitymanagerBulkCreateAttributeRequest) GetEntityData() EntitymanagerE
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerBulkCreateAttributeRequest) GetEntityDataOk() (*EntitymanagerEntityIdentifier, bool) {
 	if o == nil || isNil(o.EntityData) {
-		return nil, false
+    return nil, false
 	}
 	return o.EntityData, true
 }
@@ -116,7 +116,7 @@ func (o *EntitymanagerBulkCreateAttributeRequest) GetEntityId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerBulkCreateAttributeRequest) GetEntityIdOk() (*string, bool) {
 	if o == nil || isNil(o.EntityId) {
-		return nil, false
+    return nil, false
 	}
 	return o.EntityId, true
 }
@@ -148,7 +148,7 @@ func (o *EntitymanagerBulkCreateAttributeRequest) GetAttributes() []Entitymanage
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerBulkCreateAttributeRequest) GetAttributesOk() ([]EntitymanagerAttribute, bool) {
 	if o == nil || isNil(o.Attributes) {
-		return nil, false
+    return nil, false
 	}
 	return o.Attributes, true
 }
@@ -219,3 +219,5 @@ func (v *NullableEntitymanagerBulkCreateAttributeRequest) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

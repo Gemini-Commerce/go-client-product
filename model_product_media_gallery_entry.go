@@ -16,9 +16,9 @@ import (
 
 // ProductMediaGalleryEntry struct for ProductMediaGalleryEntry
 type ProductMediaGalleryEntry struct {
-	Id       *string                            `json:"id,omitempty"`
-	AssetGrn *string                            `json:"assetGrn,omitempty"`
-	Position *int64                             `json:"position,omitempty"`
+	Id *string `json:"id,omitempty"`
+	AssetGrn *string `json:"assetGrn,omitempty"`
+	Position *int64 `json:"position,omitempty"`
 	Metadata []ProductMediaGalleryEntryMetadata `json:"metadata,omitempty"`
 }
 
@@ -52,7 +52,7 @@ func (o *ProductMediaGalleryEntry) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ProductMediaGalleryEntry) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-		return nil, false
+    return nil, false
 	}
 	return o.Id, true
 }
@@ -84,7 +84,7 @@ func (o *ProductMediaGalleryEntry) GetAssetGrn() string {
 // and a boolean to check if the value has been set.
 func (o *ProductMediaGalleryEntry) GetAssetGrnOk() (*string, bool) {
 	if o == nil || isNil(o.AssetGrn) {
-		return nil, false
+    return nil, false
 	}
 	return o.AssetGrn, true
 }
@@ -116,7 +116,7 @@ func (o *ProductMediaGalleryEntry) GetPosition() int64 {
 // and a boolean to check if the value has been set.
 func (o *ProductMediaGalleryEntry) GetPositionOk() (*int64, bool) {
 	if o == nil || isNil(o.Position) {
-		return nil, false
+    return nil, false
 	}
 	return o.Position, true
 }
@@ -148,7 +148,7 @@ func (o *ProductMediaGalleryEntry) GetMetadata() []ProductMediaGalleryEntryMetad
 // and a boolean to check if the value has been set.
 func (o *ProductMediaGalleryEntry) GetMetadataOk() ([]ProductMediaGalleryEntryMetadata, bool) {
 	if o == nil || isNil(o.Metadata) {
-		return nil, false
+    return nil, false
 	}
 	return o.Metadata, true
 }
@@ -219,3 +219,5 @@ func (v *NullableProductMediaGalleryEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -16,7 +16,7 @@ import (
 
 // EntitymanagerGetAttributeOptionsRequest struct for EntitymanagerGetAttributeOptionsRequest
 type EntitymanagerGetAttributeOptionsRequest struct {
-	TenantId  *string                                         `json:"tenantId,omitempty"`
+	TenantId *string `json:"tenantId,omitempty"`
 	OptionIds []EntitymanagerGetAttributeOptionsRequestOption `json:"optionIds,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func (o *EntitymanagerGetAttributeOptionsRequest) GetTenantId() string {
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerGetAttributeOptionsRequest) GetTenantIdOk() (*string, bool) {
 	if o == nil || isNil(o.TenantId) {
-		return nil, false
+    return nil, false
 	}
 	return o.TenantId, true
 }
@@ -82,7 +82,7 @@ func (o *EntitymanagerGetAttributeOptionsRequest) GetOptionIds() []Entitymanager
 // and a boolean to check if the value has been set.
 func (o *EntitymanagerGetAttributeOptionsRequest) GetOptionIdsOk() ([]EntitymanagerGetAttributeOptionsRequestOption, bool) {
 	if o == nil || isNil(o.OptionIds) {
-		return nil, false
+    return nil, false
 	}
 	return o.OptionIds, true
 }
@@ -147,3 +147,5 @@ func (v *NullableEntitymanagerGetAttributeOptionsRequest) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+
