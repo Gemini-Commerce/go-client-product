@@ -1,9 +1,23 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "product/product.proto",
-    "version": "version not set"
+    "title": "Product Service",
+    "description": "Introducing our revolutionary Product Management Service! Designed to streamline your product inventory and elevate customer experiences, our cutting-edge protobuf service is a game-changer in the world of efficient product management.\n\nWith our service, you can effortlessly create new products, allowing you to quickly bring your ideas to life and expand your catalog. Retrieve product information in a snap, providing accurate and personalized details to your customers based on their specific needs and preferences.\n\nStay ahead of the competition by easily updating product information, ensuring your catalog is always up-to-date and optimized. Seamlessly remove products from your inventory when needed, maintaining a clean and relevant product selection.\n\nEnhance the visual appeal of your products with our advanced media gallery functionalities. Effortlessly add and update captivating images and videos to showcase your products in the best possible light, engaging your customers and driving conversions.\n\nPersonalization is key in today's market, and our service enables you to offer unique options to your customers. Easily create and manage lists of customizable options for your products, providing flexibility and tailoring to individual preferences.\n\nAttributes play a vital role in defining products, and our service empowers you to effectively manage them. From bulk attribute creation to listing and retrieving attribute options, our service ensures your product information is rich and comprehensive.\n\nOur service extends its capabilities to entity management, allowing you to effortlessly handle different entities and create customized options lists associated with them. This provides further flexibility and customization options for your product offerings.\n\nWhen it comes to bulk updates, our service has you covered. Effortlessly update multiple products simultaneously, saving you time and streamlining your operations.\n\nFinding specific products and variants is a breeze with our service. Quickly locate products based on their unique stock keeping unit (SKU) values, ensuring efficient inventory management and smooth order fulfillment.\n\nExperience a new level of efficiency and productivity with our Product Management Service. Unlock the full potential of streamlined product management and empower your business to thrive in today's competitive market. Try our service today and elevate your product management to new heights!",
+    "version": "v1",
+    "contact": {
+      "name": "Gemini Team",
+      "email": "info@gemini-commerce.com"
+    },
+    "license": {
+      "name": "Gemini fair use license",
+      "url": "https://gemini-commerce.com/api/fair-use-license"
+    }
   },
+  "host": "product.api.gogemini.io",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],
@@ -13,12 +27,26 @@
   "paths": {
     "/product.Product/AddMediaGalleryEntry": {
       "post": {
-        "operationId": "Product_AddMediaGalleryEntry",
+        "summary": "Add Media Gallery Entry",
+        "description": "The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added.\nAdditionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.",
+        "operationId": "AddMediaGalleryEntry",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productAddMediaGalleryEntryResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -40,17 +68,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/BulkCreateAttribute": {
       "post": {
-        "operationId": "Product_BulkCreateAttribute",
+        "summary": "Bulk Create Attribute",
+        "operationId": "BulkCreateAttribute",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerBulkCreateAttributeResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -72,17 +118,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/BulkUpdate": {
       "post": {
-        "operationId": "Product_BulkUpdate",
+        "summary": "Bulk Update Products",
+        "operationId": "BulkUpdate",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productBulkUpdateResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -104,17 +168,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/CreateAttributeOptions": {
       "post": {
-        "operationId": "Product_CreateAttributeOptions",
+        "summary": "Create Attribute Options",
+        "operationId": "CreateAttributeOptions",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerCreateAttributeOptionsResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -136,17 +218,30 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/CreateEntity": {
       "post": {
-        "operationId": "Product_CreateEntity",
+        "summary": "Create Entity",
+        "description": "The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system's data model to accommodate diverse business requirements and efficiently manage various types of entities.",
+        "operationId": "CreateEntity",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerCreateEntityResponse"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -168,17 +263,36 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/CreateOptionsList": {
       "post": {
-        "operationId": "Product_CreateOptionsList",
+        "summary": "Create Options List",
+        "description": "The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.",
+        "operationId": "CreateOptionsList",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerCreateOptionsListResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -200,17 +314,36 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/CreateProduct": {
       "post": {
-        "operationId": "Product_CreateProduct",
+        "summary": "Create Product",
+        "description": " The CreateProduct endpoint enables users to create a new product within the system. By sending a request to this endpoint, users can add a new product to the database, providing essential details such as name, description, status, and other relevant attributes. This endpoint facilitates seamless product management and expansion of the product catalog.",
+        "operationId": "CreateProduct",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productCreateProductResponse"
+            }
+          },
+          "401": {
+            "description": "When an endpoint receives a request with an invalid or unauthorized JWT token, a 401 error (Unauthorized) is thrown. This error indicates that the client is not authenticated or lacks the necessary permissions to access the requested resource. The server responds with the 401 error to enforce security measures and restrict unauthorized access. Clients should handle this error by taking appropriate actions, such as re-authenticating or obtaining a valid token, to gain authorized access.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -232,17 +365,36 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/Delete": {
       "post": {
-        "operationId": "Product_Delete",
+        "summary": "Delete Product",
+        "description": "The DeleteProduct endpoint enables users to delete a product from the system. By sending a request to this endpoint, users can delete a product by providing its unique identifier.",
+        "operationId": "DeleteProduct",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productDeleteResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -264,17 +416,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/GetAttributeOption": {
       "post": {
-        "operationId": "Product_GetAttributeOption",
+        "summary": "Get Attribute Option",
+        "operationId": "GetAttributeOption",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerGetAttributeOptionResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -296,17 +466,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/GetAttributeOptionByCode": {
       "post": {
-        "operationId": "Product_GetAttributeOptionByCode",
+        "summary": "Get Attribute Option By Code",
+        "operationId": "GetAttributeOptionByCode",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerGetAttributeOptionByCodeResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -328,17 +516,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/GetAttributeOptions": {
       "post": {
-        "operationId": "Product_GetAttributeOptions",
+        "summary": "Get Attribute Options",
+        "operationId": "GetAttributeOptions",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerGetAttributeOptionsResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -360,17 +566,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/GetEntity": {
       "post": {
-        "operationId": "Product_GetEntity",
+        "summary": "Get Entity",
+        "operationId": "GetEntity",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerEntity"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -392,17 +616,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/GetOptionsList": {
       "post": {
-        "operationId": "Product_GetOptionsList",
+        "summary": "Get Options List",
+        "operationId": "GetOptionsList",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerGetOptionsListResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -424,17 +666,36 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/GetProduct": {
       "post": {
-        "operationId": "Product_GetProduct",
+        "summary": "Get Product",
+        "description": "The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.",
+        "operationId": "GetProduct",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productGetProductResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -456,17 +717,36 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/GetProductByCode": {
       "post": {
-        "operationId": "Product_GetProductByCode",
+        "summary": "Get Product By Code",
+        "description": "The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.",
+        "operationId": "GetProductByCode",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productGetProductByCodeResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -488,17 +768,36 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/GetProductByUrlKey": {
       "post": {
-        "operationId": "Product_GetProductByUrlKey",
+        "summary": "Get Product By Url Key",
+        "description": "The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.",
+        "operationId": "GetProductByUrlKey",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productGetProductByUrlKeyResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -520,17 +819,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/ListAttributeOptions": {
       "post": {
-        "operationId": "Product_ListAttributeOptions",
+        "summary": "List Attribute Options",
+        "operationId": "ListAttributeOptions",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerListAttributeOptionsResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -552,17 +869,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/ListEntities": {
       "post": {
-        "operationId": "Product_ListEntities",
+        "summary": "List Entities",
+        "operationId": "ListEntities",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerListEntitiesResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -584,17 +919,36 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/ListOptionsLists": {
       "post": {
-        "operationId": "Product_ListOptionsLists",
+        "summary": "List Options Lists",
+        "description": "The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.",
+        "operationId": "ListOptionsLists",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerListOptionsListsResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -616,17 +970,36 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/ListProducts": {
       "post": {
-        "operationId": "Product_ListProducts",
+        "summary": "List Products",
+        "description": "The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.",
+        "operationId": "ListProducts",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productListProductsResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -648,17 +1021,36 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/ListProductsByIds": {
       "post": {
-        "operationId": "Product_ListProductsByIds",
+        "summary": "List Products By Ids",
+        "description": "The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.",
+        "operationId": "ListProductsByIds",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productListProductsByIdsResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -680,17 +1072,136 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
+        ]
+      }
+    },
+    "/product.Product/ListProductsBySku": {
+      "post": {
+        "summary": "List Products By Sku",
+        "operationId": "ListProductsBySku",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/productListProductsBySkuResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productListProductsBySkuRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
+        ]
+      }
+    },
+    "/product.Product/ListVariantsBySku": {
+      "post": {
+        "summary": "List Product Variants By Sku",
+        "operationId": "ListVariantsBySku",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/productListVariantsBySkuResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productListVariantsBySkuRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/RemoveMediaGalleryEntry": {
       "post": {
-        "operationId": "Product_RemoveMediaGalleryEntry",
+        "summary": "Remove Media Gallery Entry",
+        "description": "The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product's gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product's gallery. ",
+        "operationId": "RemoveMediaGalleryEntry",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productRemoveMediaGalleryEntryResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -712,17 +1223,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/UpdateAttributeOptions": {
       "post": {
-        "operationId": "Product_UpdateAttributeOptions",
+        "summary": "Update Attribute Options",
+        "operationId": "UpdateAttributeOptions",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerUpdateAttributeOptionsResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -744,17 +1273,36 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/UpdateMediaGalleryEntry": {
       "post": {
-        "operationId": "Product_UpdateMediaGalleryEntry",
+        "summary": "Update Media Gallery Entry",
+        "description": "The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product's gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.",
+        "operationId": "UpdateMediaGalleryEntry",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productUpdateMediaGalleryEntryResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -776,17 +1324,35 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/UpdateOptionsList": {
       "post": {
-        "operationId": "Product_UpdateOptionsList",
+        "summary": "Update Options List",
+        "operationId": "UpdateOptionsList",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/entitymanagerUpdateOptionsListResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -808,17 +1374,36 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     },
     "/product.Product/UpdateProduct": {
       "post": {
-        "operationId": "Product_UpdateProduct",
+        "summary": "Update Product",
+        "description": "The UpdateProduct endpoint allows users to modify and update the details of an existing product within the system. By sending a request to this endpoint and specifying the product ID along with the updated attributes, users can make changes to the product's name, description, price, availability, or any other relevant properties. This endpoint provides a flexible and efficient way to keep product information up-to-date and accurately reflect changes in your catalog.",
+        "operationId": "UpdateProduct",
         "responses": {
           "200": {
-            "description": "A successful response.",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/productUpdateProductResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          },
+          "500": {
+            "description": "An internal error occurred is thrown when an incompatible payload is sent",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
             }
           },
           "default": {
@@ -840,6 +1425,11 @@
         ],
         "tags": [
           "Product"
+        ],
+        "security": [
+          {
+            "standardAuthorization": []
+          }
         ]
       }
     }
@@ -873,6 +1463,31 @@
           "additionalProperties": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "ListProductsRequestFilter": {
+      "type": "object",
+      "properties": {
+        "createdAtStart": {
+          "type": "string",
+          "format": "date-time",
+          "title": "optional"
+        },
+        "createdAtEnd": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAtStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAtEnd": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "boolean"
         }
       }
     },
@@ -1477,73 +2092,132 @@
     },
     "productCreateProductRequest": {
       "type": "object",
+      "example": {
+        "tenant_id": "00000000-0000-0000-0000-000000000000",
+        "entity_type": "product",
+        "entity_code": "__DEFAULT__",
+        "code": "best-sneakers",
+        "is_configurable": false,
+        "url_key": {
+          "value": {
+            "default": "best-sneakers",
+            "en_US": "best-sneakers",
+            "it_IT": "migliori-sneakers"
+          }
+        },
+        "attributes": {
+          "name": {
+            "@type": "type.googleapis.com/google.protobuf.StringValue",
+            "value": "Best Sneakers"
+          }
+        }
+      },
       "properties": {
         "tenantId": {
-          "type": "string"
+          "type": "string",
+          "description": "Represents the ID of the tenant associated with the product.",
+          "title": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
         },
         "entityType": {
-          "type": "string"
+          "type": "string",
+          "description": "Specifies the type of entity for the product.",
+          "title": "string"
         },
         "entityCode": {
-          "type": "string"
+          "type": "string",
+          "description": "Indicates the code of the entity associated with the product.",
+          "title": "string"
         },
         "code": {
-          "type": "string"
+          "type": "string",
+          "description": "Represents the unique code or identifier for the product.",
+          "title": "string"
         },
         "isConfigurable": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Specifies whether the product has variants or not.",
+          "title": "boolean"
         },
         "variantAttributes": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "description": "Contains a list of attributes specific to the product variants.",
+          "title": "string[]"
         },
         "isVirtual": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Indicates whether the product is virtual or not.",
+          "title": "boolean"
         },
         "isGiftcard": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Specifies whether the product is a gift card or not.",
+          "title": "boolean"
         },
         "urlKey": {
-          "$ref": "#/definitions/productLocalizedText"
+          "$ref": "#/definitions/productLocalizedText",
+          "description": "Represents the localized text used as the URL key for the product.",
+          "title": "object"
+        },
+        "maxSaleableQuantity": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Specifies the maximum quantity that can be sold for the product in each order.",
+          "title": "int64"
         },
         "attributes": {
           "type": "object",
           "additionalProperties": {
             "$ref": "#/definitions/protobufAny"
-          }
+          },
+          "description": "Contains a map of additional attributes associated with the product, where the key is the attribute name and the value is any type of value."
         },
         "variants": {
           "type": "object",
           "additionalProperties": {
             "$ref": "#/definitions/productProductVariant"
-          }
+          },
+          "description": "Represents a map of product variants associated with the product, where the key is the variant ID or code, and the value is a ProductVariant message."
         }
-      }
+      },
+      "description": "The CreateProductRequest message is used to create a new product within the system. It contains various fields that allow specifying the details and attributes of the product.",
+      "title": "Create Product Request"
     },
     "productCreateProductResponse": {
       "type": "object",
       "properties": {
         "success": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Indicates whether the product creation was successful or not.",
+          "title": "boolean"
         },
         "id": {
-          "type": "string"
+          "type": "string",
+          "description": "Represents the ID of the created product.",
+          "title": "string"
         },
         "productErrors": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/productProductResponseError"
-          }
+          },
+          "description": "Contains a list of ProductResponseError messages, indicating any errors related to the product creation.",
+          "title": "ProductResponseError[]"
         },
         "attributeErrors": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/productAttributeResponseError"
-          }
+          },
+          "description": "Contains a list of AttributeResponseError messages, indicating any errors related to the attributes of the product.",
+          "title": "AttributeResponseError[]"
         }
-      }
+      },
+      "description": "The CreateProductResponse message is used to provide a response after creating a product within the system. It includes fields that indicate the success of the product creation and any errors encountered during the process.",
+      "title": "Create Product Response"
     },
     "productDeleteRequest": {
       "type": "object",
@@ -1657,6 +2331,28 @@
         }
       }
     },
+    "productListProductsBySkuRequest": {
+      "type": "object",
+      "properties": {
+        "tenantId": {
+          "type": "string"
+        },
+        "sku": {
+          "type": "string"
+        }
+      }
+    },
+    "productListProductsBySkuResponse": {
+      "type": "object",
+      "properties": {
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProductEntity"
+          }
+        }
+      }
+    },
     "productListProductsRequest": {
       "type": "object",
       "properties": {
@@ -1669,6 +2365,15 @@
         },
         "pageToken": {
           "type": "string"
+        },
+        "filter": {
+          "$ref": "#/definitions/ListProductsRequestFilter"
+        },
+        "filterMask": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -1683,6 +2388,28 @@
         },
         "nextPageToken": {
           "type": "string"
+        }
+      }
+    },
+    "productListVariantsBySkuRequest": {
+      "type": "object",
+      "properties": {
+        "tenantId": {
+          "type": "string"
+        },
+        "sku": {
+          "type": "string"
+        }
+      }
+    },
+    "productListVariantsBySkuResponse": {
+      "type": "object",
+      "properties": {
+        "variants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProductVariant"
+          }
         }
       }
     },
@@ -1749,6 +2476,9 @@
         "tenantId": {
           "type": "string"
         },
+        "grn": {
+          "type": "string"
+        },
         "entityType": {
           "type": "string"
         },
@@ -1794,6 +2524,10 @@
         "mediaGallery": {
           "$ref": "#/definitions/productMediaGallery"
         },
+        "maxSaleableQuantity": {
+          "type": "integer",
+          "format": "int64"
+        },
         "createdAt": {
           "type": "string",
           "format": "int64"
@@ -1820,6 +2554,13 @@
       "properties": {
         "id": {
           "type": "string"
+        },
+        "grn": {
+          "type": "string"
+        },
+        "maxSaleableQuantity": {
+          "type": "integer",
+          "format": "int64"
         },
         "attributes": {
           "type": "object",
@@ -1894,6 +2635,10 @@
         "urlKey": {
           "$ref": "#/definitions/productLocalizedText"
         },
+        "maxSaleableQuantity": {
+          "type": "integer",
+          "format": "int64"
+        },
         "attributes": {
           "type": "object",
           "additionalProperties": {
@@ -1952,7 +2697,7 @@
           "description": "Must be a valid serialized protocol buffer of the above specified type."
         }
       },
-      "description": "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(\u0026foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\n Example 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\n Example 4: Pack and unpack a message in Go\n\n     foo := \u0026pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := \u0026pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": \u003cstring\u003e,\n      \"lastName\": \u003cstring\u003e\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
+      "description": "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(\u0026foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\nExample 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\nExample 4: Pack and unpack a message in Go\n\n     foo := \u0026pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := \u0026pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": \u003cstring\u003e,\n      \"lastName\": \u003cstring\u003e\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
     },
     "rpcStatus": {
       "type": "object",
@@ -1974,15 +2719,11 @@
     }
   },
   "securityDefinitions": {
-    "geminiAuthorization": {
-      "type": "apiKey",
-      "name": "X-Gem-Token",
-      "in": "header"
-    },
     "standardAuthorization": {
-      "type": "apiKey",
+      "type": "oauth2",
       "name": "Authorization",
-      "in": "header"
+      "in": "header",
+      "flow": "implicit"
     }
   }
 }
