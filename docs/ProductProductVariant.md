@@ -7,6 +7,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id**| **string** |   | [optional]
+**Grn**| **string** |   | [optional]
+**MaxSaleableQuantity**| **int64** |   | [optional]
 **Attributes**| [**map[string]ProtobufAny**](ProtobufAny.md) |   | [optional]
 
 

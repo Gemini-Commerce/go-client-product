@@ -1,13 +1,42 @@
 openapi: 3.0.1
 info:
-  title: product/product.proto
-  version: version not set
+  contact:
+    email: info@gemini-commerce.com
+    name: Gemini Team
+  description: |-
+    Introducing our revolutionary Product Management Service! Designed to streamline your product inventory and elevate customer experiences, our cutting-edge protobuf service is a game-changer in the world of efficient product management.
+
+    With our service, you can effortlessly create new products, allowing you to quickly bring your ideas to life and expand your catalog. Retrieve product information in a snap, providing accurate and personalized details to your customers based on their specific needs and preferences.
+
+    Stay ahead of the competition by easily updating product information, ensuring your catalog is always up-to-date and optimized. Seamlessly remove products from your inventory when needed, maintaining a clean and relevant product selection.
+
+    Enhance the visual appeal of your products with our advanced media gallery functionalities. Effortlessly add and update captivating images and videos to showcase your products in the best possible light, engaging your customers and driving conversions.
+
+    Personalization is key in today's market, and our service enables you to offer unique options to your customers. Easily create and manage lists of customizable options for your products, providing flexibility and tailoring to individual preferences.
+
+    Attributes play a vital role in defining products, and our service empowers you to effectively manage them. From bulk attribute creation to listing and retrieving attribute options, our service ensures your product information is rich and comprehensive.
+
+    Our service extends its capabilities to entity management, allowing you to effortlessly handle different entities and create customized options lists associated with them. This provides further flexibility and customization options for your product offerings.
+
+    When it comes to bulk updates, our service has you covered. Effortlessly update multiple products simultaneously, saving you time and streamlining your operations.
+
+    Finding specific products and variants is a breeze with our service. Quickly locate products based on their unique stock keeping unit (SKU) values, ensuring efficient inventory management and smooth order fulfillment.
+
+    Experience a new level of efficiency and productivity with our Product Management Service. Unlock the full potential of streamlined product management and empower your business to thrive in today's competitive market. Try our service today and elevate your product management to new heights!
+  license:
+    name: Gemini fair use license
+    url: https://gemini-commerce.com/api/fair-use-license
+  title: Product Service
+  version: v1
 servers:
-- url: /
+- url: https://product.api.gogemini.io/
 paths:
   /product.Product/AddMediaGalleryEntry:
     post:
-      operationId: Product_AddMediaGalleryEntry
+      description: |-
+        The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added.
+        Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+      operationId: AddMediaGalleryEntry
       requestBody:
         content:
           application/json:
@@ -20,19 +49,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productAddMediaGalleryEntryResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Add Media Gallery Entry
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/BulkCreateAttribute:
     post:
-      operationId: Product_BulkCreateAttribute
+      operationId: BulkCreateAttribute
       requestBody:
         content:
           application/json:
@@ -45,19 +90,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerBulkCreateAttributeResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Bulk Create Attribute
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/BulkUpdate:
     post:
-      operationId: Product_BulkUpdate
+      operationId: BulkUpdate
       requestBody:
         content:
           application/json:
@@ -70,19 +131,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productBulkUpdateResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Bulk Update Products
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/CreateAttributeOptions:
     post:
-      operationId: Product_CreateAttributeOptions
+      operationId: CreateAttributeOptions
       requestBody:
         content:
           application/json:
@@ -95,19 +172,45 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerCreateAttributeOptionsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Create Attribute Options
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/CreateEntity:
     post:
-      operationId: Product_CreateEntity
+      description: "The CreateEntity endpoint allows users to define and create a\
+        \ new entity with custom attributes, providing a flexible way to represent\
+        \ and manage different data structures within the system. By making a request\
+        \ to this endpoint, users can create a new entity that serves as an abstraction\
+        \ of a product or any other domain-specific object. This endpoint empowers\
+        \ users to define the specific attributes that compose the entity, such as\
+        \ color, composition, technical details, or any other relevant properties.\
+        \ Utilize the CreateEntity endpoint to dynamically extend and adapt your system's\
+        \ data model to accommodate diverse business requirements and efficiently\
+        \ manage various types of entities."
+      operationId: CreateEntity
       requestBody:
         content:
           application/json:
@@ -120,19 +223,36 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerCreateEntityResponse'
-          description: A successful response.
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Create Entity
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/CreateOptionsList:
     post:
-      operationId: Product_CreateOptionsList
+      description: "The CreateOptionsList endpoint allows users to create an OptionList,\
+        \ which represents a list of predefined options for assigning to an attribute.\
+        \ By making a request to this endpoint with the provided request format, users\
+        \ can create a new OptionList by specifying the relevant tenant ID and providing\
+        \ the OptionList object containing the predefined options. This functionality\
+        \ facilitates efficient management and assignment of predefined attribute\
+        \ values, ensuring consistency and flexibility within the system."
+      operationId: CreateOptionsList
       requestBody:
         content:
           application/json:
@@ -145,19 +265,40 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerCreateOptionsListResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Create Options List
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/CreateProduct:
     post:
-      operationId: Product_CreateProduct
+      description: " The CreateProduct endpoint enables users to create a new product\
+        \ within the system. By sending a request to this endpoint, users can add\
+        \ a new product to the database, providing essential details such as name,\
+        \ description, status, and other relevant attributes. This endpoint facilitates\
+        \ seamless product management and expansion of the product catalog."
+      operationId: CreateProduct
       requestBody:
         content:
           application/json:
@@ -170,19 +311,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productCreateProductResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Create Product
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/Delete:
     post:
-      operationId: Product_Delete
+      description: "The DeleteProduct endpoint enables users to delete a product from\
+        \ the system. By sending a request to this endpoint, users can delete a product\
+        \ by providing its unique identifier."
+      operationId: DeleteProduct
       requestBody:
         content:
           application/json:
@@ -195,19 +361,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productDeleteResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Delete Product
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/GetAttributeOption:
     post:
-      operationId: Product_GetAttributeOption
+      operationId: GetAttributeOption
       requestBody:
         content:
           application/json:
@@ -220,19 +402,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerGetAttributeOptionResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Get Attribute Option
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/GetAttributeOptionByCode:
     post:
-      operationId: Product_GetAttributeOptionByCode
+      operationId: GetAttributeOptionByCode
       requestBody:
         content:
           application/json:
@@ -245,19 +443,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerGetAttributeOptionByCodeResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Get Attribute Option By Code
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/GetAttributeOptions:
     post:
-      operationId: Product_GetAttributeOptions
+      operationId: GetAttributeOptions
       requestBody:
         content:
           application/json:
@@ -270,19 +484,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerGetAttributeOptionsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Get Attribute Options
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/GetEntity:
     post:
-      operationId: Product_GetEntity
+      operationId: GetEntity
       requestBody:
         content:
           application/json:
@@ -295,19 +525,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerEntity'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Get Entity
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/GetOptionsList:
     post:
-      operationId: Product_GetOptionsList
+      operationId: GetOptionsList
       requestBody:
         content:
           application/json:
@@ -320,19 +566,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerGetOptionsListResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Get Options List
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/GetProduct:
     post:
-      operationId: Product_GetProduct
+      description: "The GetProduct endpoint enables users to retrieve a product from\
+        \ the system. By sending a request to this endpoint, users can retrieve a\
+        \ product by providing its unique identifier."
+      operationId: GetProduct
       requestBody:
         content:
           application/json:
@@ -345,19 +610,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productGetProductResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Get Product
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/GetProductByCode:
     post:
-      operationId: Product_GetProductByCode
+      description: "The GetProductByCode endpoint enables users to retrieve a product\
+        \ from the system. By sending a request to this endpoint, users can retrieve\
+        \ a product by providing its unique code."
+      operationId: GetProductByCode
       requestBody:
         content:
           application/json:
@@ -370,19 +654,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productGetProductByCodeResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Get Product By Code
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/GetProductByUrlKey:
     post:
-      operationId: Product_GetProductByUrlKey
+      description: "The GetProductByUrlKey endpoint enables users to retrieve a product\
+        \ from the system. By sending a request to this endpoint, users can retrieve\
+        \ a product by providing its unique url key."
+      operationId: GetProductByUrlKey
       requestBody:
         content:
           application/json:
@@ -395,19 +698,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productGetProductByUrlKeyResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Get Product By Url Key
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/ListAttributeOptions:
     post:
-      operationId: Product_ListAttributeOptions
+      operationId: ListAttributeOptions
       requestBody:
         content:
           application/json:
@@ -420,19 +739,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerListAttributeOptionsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Attribute Options
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/ListEntities:
     post:
-      operationId: Product_ListEntities
+      operationId: ListEntities
       requestBody:
         content:
           application/json:
@@ -445,19 +780,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerListEntitiesResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Entities
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/ListOptionsLists:
     post:
-      operationId: Product_ListOptionsLists
+      description: "The ListOptionsLists endpoint allows users to retrieve a list\
+        \ of OptionLists available in the system. By making a request to this endpoint\
+        \ with the provided request format, users can obtain all the OptionLists associated\
+        \ with the specified tenant. This functionality enables users to access and\
+        \ manage the predefined options available for various attributes within the\
+        \ system. Utilizing the ListOptionsLists endpoint provides a convenient way\
+        \ to retrieve and work with OptionLists, facilitating efficient management\
+        \ of attribute options and ensuring consistency in attribute values throughout\
+        \ the system."
+      operationId: ListOptionsLists
       requestBody:
         content:
           application/json:
@@ -470,19 +830,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerListOptionsListsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Options Lists
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/ListProducts:
     post:
-      operationId: Product_ListProducts
+      description: "The ListProducts endpoint provides users with the ability to retrieve\
+        \ a filtered list of products based on specific criteria. By including filter\
+        \ parameters in the request, users can customize the response to only include\
+        \ products that meet certain conditions, such as price range, category, availability,\
+        \ or any other relevant attributes. This endpoint empowers users to efficiently\
+        \ narrow down the product selection and retrieve tailored results."
+      operationId: ListProducts
       requestBody:
         content:
           application/json:
@@ -495,19 +877,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productListProductsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Products
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/ListProductsByIds:
     post:
-      operationId: Product_ListProductsByIds
+      description: "The ListProductsByIds endpoint allows users to retrieve a list\
+        \ of products based on provided IDs. By making a request to this endpoint\
+        \ and specifying a set of product IDs, users can retrieve detailed information\
+        \ about the corresponding products. This endpoint facilitates efficient retrieval\
+        \ of specific products, enabling applications to display accurate and targeted\
+        \ product information to users."
+      operationId: ListProductsByIds
       requestBody:
         content:
           application/json:
@@ -520,19 +924,122 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productListProductsByIdsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Products By Ids
+      tags:
+      - Product
+      x-codegen-request-body-name: body
+  /product.Product/ListProductsBySku:
+    post:
+      operationId: ListProductsBySku
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/productListProductsBySkuRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/productListProductsBySkuResponse'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Products By Sku
+      tags:
+      - Product
+      x-codegen-request-body-name: body
+  /product.Product/ListVariantsBySku:
+    post:
+      operationId: ListVariantsBySku
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/productListVariantsBySkuRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/productListVariantsBySkuResponse'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Product Variants By Sku
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/RemoveMediaGalleryEntry:
     post:
-      operationId: Product_RemoveMediaGalleryEntry
+      description: "The RemoveMediaGalleryEntry endpoint allows users to remove a\
+        \ specific media entry from a product's gallery. By making a request to this\
+        \ endpoint and providing the tenant ID, product ID, and the unique identifier\
+        \ of the media entry, users can easily manage and update the visual content\
+        \ of a product's gallery. "
+      operationId: RemoveMediaGalleryEntry
       requestBody:
         content:
           application/json:
@@ -545,19 +1052,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productRemoveMediaGalleryEntryResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Remove Media Gallery Entry
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/UpdateAttributeOptions:
     post:
-      operationId: Product_UpdateAttributeOptions
+      operationId: UpdateAttributeOptions
       requestBody:
         content:
           application/json:
@@ -570,19 +1093,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerUpdateAttributeOptionsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Update Attribute Options
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/UpdateMediaGalleryEntry:
     post:
-      operationId: Product_UpdateMediaGalleryEntry
+      description: "The UpdateMediaGalleryEntry endpoint allows users to modify and\
+        \ update a specific media entry within a product's gallery. By sending a request\
+        \ to this endpoint and providing the necessary information, users can efficiently\
+        \ update the media asset, position, and metadata associated with the entry."
+      operationId: UpdateMediaGalleryEntry
       requestBody:
         content:
           application/json:
@@ -595,19 +1138,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productUpdateMediaGalleryEntryResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Update Media Gallery Entry
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/UpdateOptionsList:
     post:
-      operationId: Product_UpdateOptionsList
+      operationId: UpdateOptionsList
       requestBody:
         content:
           application/json:
@@ -620,19 +1179,42 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerUpdateOptionsListResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Update Options List
       tags:
       - Product
       x-codegen-request-body-name: body
   /product.Product/UpdateProduct:
     post:
-      operationId: Product_UpdateProduct
+      description: "The UpdateProduct endpoint allows users to modify and update the\
+        \ details of an existing product within the system. By sending a request to\
+        \ this endpoint and specifying the product ID along with the updated attributes,\
+        \ users can make changes to the product's name, description, price, availability,\
+        \ or any other relevant properties. This endpoint provides a flexible and\
+        \ efficient way to keep product information up-to-date and accurately reflect\
+        \ changes in your catalog."
+      operationId: UpdateProduct
       requestBody:
         content:
           application/json:
@@ -645,13 +1227,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productUpdateProductResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Update Product
       tags:
       - Product
       x-codegen-request-body-name: body
@@ -683,6 +1281,24 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/protobufAny'
           type: object
+      type: object
+    ListProductsRequestFilter:
+      properties:
+        createdAtStart:
+          format: date-time
+          title: optional
+          type: string
+        createdAtEnd:
+          format: date-time
+          type: string
+        updatedAtStart:
+          format: date-time
+          type: string
+        updatedAtEnd:
+          format: date-time
+          type: string
+        status:
+          type: boolean
       type: object
     entitymanagerAttribute:
       example:
@@ -1507,37 +2123,89 @@ components:
           type: array
       type: object
     productCreateProductRequest:
+      description: The CreateProductRequest message is used to create a new product
+        within the system. It contains various fields that allow specifying the details
+        and attributes of the product.
+      example:
+        tenant_id: 00000000-0000-0000-0000-000000000000
+        entity_type: product
+        entity_code: __DEFAULT__
+        code: best-sneakers
+        is_configurable: false
+        url_key:
+          value:
+            default: best-sneakers
+            en_US: best-sneakers
+            it_IT: migliori-sneakers
+        attributes:
+          name:
+            '@type': type.googleapis.com/google.protobuf.StringValue
+            value: Best Sneakers
       properties:
         tenantId:
+          description: Represents the ID of the tenant associated with the product.
+          pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          title: string
           type: string
         entityType:
+          description: Specifies the type of entity for the product.
+          title: string
           type: string
         entityCode:
+          description: Indicates the code of the entity associated with the product.
+          title: string
           type: string
         code:
+          description: Represents the unique code or identifier for the product.
+          title: string
           type: string
         isConfigurable:
+          description: Specifies whether the product has variants or not.
+          title: boolean
           type: boolean
         variantAttributes:
+          description: Contains a list of attributes specific to the product variants.
           items:
             type: string
+          title: "string[]"
           type: array
         isVirtual:
+          description: Indicates whether the product is virtual or not.
+          title: boolean
           type: boolean
         isGiftcard:
+          description: Specifies whether the product is a gift card or not.
+          title: boolean
           type: boolean
         urlKey:
           $ref: '#/components/schemas/productLocalizedText'
+        maxSaleableQuantity:
+          description: Specifies the maximum quantity that can be sold for the product
+            in each order.
+          format: int64
+          title: int64
+          type: integer
         attributes:
           additionalProperties:
             $ref: '#/components/schemas/protobufAny'
+          description: "Contains a map of additional attributes associated with the\
+            \ product, where the key is the attribute name and the value is any type\
+            \ of value."
           type: object
         variants:
           additionalProperties:
             $ref: '#/components/schemas/productProductVariant'
+          description: "Represents a map of product variants associated with the product,\
+            \ where the key is the variant ID or code, and the value is a ProductVariant\
+            \ message."
           type: object
+      title: Create Product Request
       type: object
     productCreateProductResponse:
+      description: The CreateProductResponse message is used to provide a response
+        after creating a product within the system. It includes fields that indicate
+        the success of the product creation and any errors encountered during the
+        process.
       example:
         attributeErrors:
         - attributeCode: attributeCode
@@ -1555,17 +2223,28 @@ components:
         id: id
       properties:
         success:
+          description: Indicates whether the product creation was successful or not.
+          title: boolean
           type: boolean
         id:
+          description: Represents the ID of the created product.
+          title: string
           type: string
         productErrors:
+          description: "Contains a list of ProductResponseError messages, indicating\
+            \ any errors related to the product creation."
           items:
             $ref: '#/components/schemas/productProductResponseError'
+          title: "ProductResponseError[]"
           type: array
         attributeErrors:
+          description: "Contains a list of AttributeResponseError messages, indicating\
+            \ any errors related to the attributes of the product."
           items:
             $ref: '#/components/schemas/productAttributeResponseError'
+          title: "AttributeResponseError[]"
           type: array
+      title: Create Product Response
       type: object
     productDeleteRequest:
       properties:
@@ -1596,6 +2275,7 @@ components:
     productGetProductByCodeResponse:
       example:
         product:
+          grn: grn
           entityCode: entityCode
           code: code
           variantAttributes:
@@ -1605,11 +2285,14 @@ components:
           entityType: entityType
           variants:
             key:
+              grn: grn
               attributes:
                 key:
                   '@type': '@type'
                   value: value
               id: id
+              maxSaleableQuantity: 0
+          maxSaleableQuantity: 6
           urlKey:
             value:
               key: value
@@ -1673,6 +2356,7 @@ components:
     productGetProductByUrlKeyResponse:
       example:
         product:
+          grn: grn
           entityCode: entityCode
           code: code
           variantAttributes:
@@ -1682,11 +2366,14 @@ components:
           entityType: entityType
           variants:
             key:
+              grn: grn
               attributes:
                 key:
                   '@type': '@type'
                   value: value
               id: id
+              maxSaleableQuantity: 0
+          maxSaleableQuantity: 6
           urlKey:
             value:
               key: value
@@ -1748,6 +2435,7 @@ components:
     productGetProductResponse:
       example:
         product:
+          grn: grn
           entityCode: entityCode
           code: code
           variantAttributes:
@@ -1757,11 +2445,14 @@ components:
           entityType: entityType
           variants:
             key:
+              grn: grn
               attributes:
                 key:
                   '@type': '@type'
                   value: value
               id: id
+              maxSaleableQuantity: 0
+          maxSaleableQuantity: 6
           urlKey:
             value:
               key: value
@@ -1825,7 +2516,8 @@ components:
     productListProductsByIdsResponse:
       example:
         products:
-        - entityCode: entityCode
+        - grn: grn
+          entityCode: entityCode
           code: code
           variantAttributes:
           - variantAttributes
@@ -1834,11 +2526,14 @@ components:
           entityType: entityType
           variants:
             key:
+              grn: grn
               attributes:
                 key:
                   '@type': '@type'
                   value: value
               id: id
+              maxSaleableQuantity: 0
+          maxSaleableQuantity: 6
           urlKey:
             value:
               key: value
@@ -1886,7 +2581,8 @@ components:
           id: id
           isVirtual: true
           updatedAt: updatedAt
-        - entityCode: entityCode
+        - grn: grn
+          entityCode: entityCode
           code: code
           variantAttributes:
           - variantAttributes
@@ -1895,11 +2591,160 @@ components:
           entityType: entityType
           variants:
             key:
+              grn: grn
               attributes:
                 key:
                   '@type': '@type'
                   value: value
               id: id
+              maxSaleableQuantity: 0
+          maxSaleableQuantity: 6
+          urlKey:
+            value:
+              key: value
+          createdAt: createdAt
+          isGiftcard: true
+          tenantId: tenantId
+          mediaGallery:
+            entries:
+            - assetGrn: assetGrn
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              id: id
+              position: 0
+            - assetGrn: assetGrn
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              id: id
+              position: 0
+          attributes:
+            key:
+              '@type': '@type'
+              value: value
+          id: id
+          isVirtual: true
+          updatedAt: updatedAt
+      properties:
+        products:
+          items:
+            $ref: '#/components/schemas/productProductEntity'
+          type: array
+      type: object
+    productListProductsBySkuRequest:
+      properties:
+        tenantId:
+          type: string
+        sku:
+          type: string
+      type: object
+    productListProductsBySkuResponse:
+      example:
+        products:
+        - grn: grn
+          entityCode: entityCode
+          code: code
+          variantAttributes:
+          - variantAttributes
+          - variantAttributes
+          isConfigurable: true
+          entityType: entityType
+          variants:
+            key:
+              grn: grn
+              attributes:
+                key:
+                  '@type': '@type'
+                  value: value
+              id: id
+              maxSaleableQuantity: 0
+          maxSaleableQuantity: 6
+          urlKey:
+            value:
+              key: value
+          createdAt: createdAt
+          isGiftcard: true
+          tenantId: tenantId
+          mediaGallery:
+            entries:
+            - assetGrn: assetGrn
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              id: id
+              position: 0
+            - assetGrn: assetGrn
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              id: id
+              position: 0
+          attributes:
+            key:
+              '@type': '@type'
+              value: value
+          id: id
+          isVirtual: true
+          updatedAt: updatedAt
+        - grn: grn
+          entityCode: entityCode
+          code: code
+          variantAttributes:
+          - variantAttributes
+          - variantAttributes
+          isConfigurable: true
+          entityType: entityType
+          variants:
+            key:
+              grn: grn
+              attributes:
+                key:
+                  '@type': '@type'
+                  value: value
+              id: id
+              maxSaleableQuantity: 0
+          maxSaleableQuantity: 6
           urlKey:
             value:
               key: value
@@ -1962,12 +2807,19 @@ components:
           type: string
         pageToken:
           type: string
+        filter:
+          $ref: '#/components/schemas/ListProductsRequestFilter'
+        filterMask:
+          items:
+            type: string
+          type: array
       type: object
     productListProductsResponse:
       example:
         nextPageToken: nextPageToken
         products:
-        - entityCode: entityCode
+        - grn: grn
+          entityCode: entityCode
           code: code
           variantAttributes:
           - variantAttributes
@@ -1976,11 +2828,14 @@ components:
           entityType: entityType
           variants:
             key:
+              grn: grn
               attributes:
                 key:
                   '@type': '@type'
                   value: value
               id: id
+              maxSaleableQuantity: 0
+          maxSaleableQuantity: 6
           urlKey:
             value:
               key: value
@@ -2028,7 +2883,8 @@ components:
           id: id
           isVirtual: true
           updatedAt: updatedAt
-        - entityCode: entityCode
+        - grn: grn
+          entityCode: entityCode
           code: code
           variantAttributes:
           - variantAttributes
@@ -2037,11 +2893,14 @@ components:
           entityType: entityType
           variants:
             key:
+              grn: grn
               attributes:
                 key:
                   '@type': '@type'
                   value: value
               id: id
+              maxSaleableQuantity: 0
+          maxSaleableQuantity: 6
           urlKey:
             value:
               key: value
@@ -2096,6 +2955,36 @@ components:
           type: array
         nextPageToken:
           type: string
+      type: object
+    productListVariantsBySkuRequest:
+      properties:
+        tenantId:
+          type: string
+        sku:
+          type: string
+      type: object
+    productListVariantsBySkuResponse:
+      example:
+        variants:
+        - grn: grn
+          attributes:
+            key:
+              '@type': '@type'
+              value: value
+          id: id
+          maxSaleableQuantity: 0
+        - grn: grn
+          attributes:
+            key:
+              '@type': '@type'
+              value: value
+          id: id
+          maxSaleableQuantity: 0
+      properties:
+        variants:
+          items:
+            $ref: '#/components/schemas/productProductVariant'
+          type: array
       type: object
     productLocalizedText:
       example:
@@ -2197,6 +3086,7 @@ components:
       type: object
     productProductEntity:
       example:
+        grn: grn
         entityCode: entityCode
         code: code
         variantAttributes:
@@ -2206,11 +3096,14 @@ components:
         entityType: entityType
         variants:
           key:
+            grn: grn
             attributes:
               key:
                 '@type': '@type'
                 value: value
             id: id
+            maxSaleableQuantity: 0
+        maxSaleableQuantity: 6
         urlKey:
           value:
             key: value
@@ -2261,6 +3154,8 @@ components:
       properties:
         tenantId:
           type: string
+        grn:
+          type: string
         entityType:
           type: string
         entityCode:
@@ -2291,6 +3186,9 @@ components:
           type: object
         mediaGallery:
           $ref: '#/components/schemas/productMediaGallery'
+        maxSaleableQuantity:
+          format: int64
+          type: integer
         createdAt:
           format: int64
           type: string
@@ -2310,14 +3208,21 @@ components:
       type: object
     productProductVariant:
       example:
+        grn: grn
         attributes:
           key:
             '@type': '@type'
             value: value
         id: id
+        maxSaleableQuantity: 0
       properties:
         id:
           type: string
+        grn:
+          type: string
+        maxSaleableQuantity:
+          format: int64
+          type: integer
         attributes:
           additionalProperties:
             $ref: '#/components/schemas/protobufAny'
@@ -2366,6 +3271,9 @@ components:
           $ref: '#/components/schemas/productFieldMask'
         urlKey:
           $ref: '#/components/schemas/productLocalizedText'
+        maxSaleableQuantity:
+          format: int64
+          type: integer
         attributes:
           additionalProperties:
             $ref: '#/components/schemas/protobufAny'
@@ -2439,7 +3347,7 @@ components:
               foo = any.unpack(Foo.class);
             }
 
-         Example 3: Pack and unpack a message in Python.
+        Example 3: Pack and unpack a message in Python.
 
             foo = Foo(...)
             any = Any()
@@ -2449,7 +3357,7 @@ components:
               any.Unpack(foo)
               ...
 
-         Example 4: Pack and unpack a message in Go
+        Example 4: Pack and unpack a message in Go
 
              foo := &pb.Foo{...}
              any, err := anypb.New(foo)
@@ -2470,7 +3378,7 @@ components:
 
 
         JSON
-        ====
+
         The JSON representation of an `Any` value uses the regular
         representation of the deserialized, embedded message, with an
         additional field `@type` which contains the type URL. Example:
@@ -2550,12 +3458,9 @@ components:
           type: array
       type: object
   securitySchemes:
-    geminiAuthorization:
-      in: header
-      name: X-Gem-Token
-      type: apiKey
     standardAuthorization:
-      in: header
-      name: Authorization
-      type: apiKey
+      flows:
+        implicit:
+          scopes: {}
+      type: oauth2
 x-original-swagger-version: "2.0"

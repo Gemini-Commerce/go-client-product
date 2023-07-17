@@ -45,6 +45,7 @@ docs/EntitymanagerUpdateAttributeOptionsRequest.md
 docs/EntitymanagerUpdateAttributeOptionsResponse.md
 docs/EntitymanagerUpdateOptionsListRequest.md
 docs/EntitymanagerUpdateOptionsListResponse.md
+docs/ListProductsRequestFilter.md
 docs/ProductAddMediaGalleryEntryRequest.md
 docs/ProductAddMediaGalleryEntryResponse.md
 docs/ProductApi.md
@@ -64,8 +65,12 @@ docs/ProductGetProductRequest.md
 docs/ProductGetProductResponse.md
 docs/ProductListProductsByIdsRequest.md
 docs/ProductListProductsByIdsResponse.md
+docs/ProductListProductsBySkuRequest.md
+docs/ProductListProductsBySkuResponse.md
 docs/ProductListProductsRequest.md
 docs/ProductListProductsResponse.md
+docs/ProductListVariantsBySkuRequest.md
+docs/ProductListVariantsBySkuResponse.md
 docs/ProductLocalizedText.md
 docs/ProductMediaGallery.md
 docs/ProductMediaGalleryEntry.md
@@ -123,6 +128,7 @@ model_entitymanager_update_attribute_options_request.go
 model_entitymanager_update_attribute_options_response.go
 model_entitymanager_update_options_list_request.go
 model_entitymanager_update_options_list_response.go
+model_list_products_request_filter.go
 model_product_add_media_gallery_entry_request.go
 model_product_add_media_gallery_entry_response.go
 model_product_attribute_response_error.go
@@ -141,8 +147,12 @@ model_product_get_product_request.go
 model_product_get_product_response.go
 model_product_list_products_by_ids_request.go
 model_product_list_products_by_ids_response.go
+model_product_list_products_by_sku_request.go
+model_product_list_products_by_sku_response.go
 model_product_list_products_request.go
 model_product_list_products_response.go
+model_product_list_variants_by_sku_request.go
+model_product_list_variants_by_sku_response.go
 model_product_localized_text.go
 model_product_media_gallery.go
 model_product_media_gallery_entry.go
