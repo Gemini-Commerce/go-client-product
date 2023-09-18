@@ -16,6 +16,10 @@ Name | Type | Description | Notes
 **IsRequired**| **bool** |   | [optional]
 **IsSystem**| **bool** |   | [optional]
 **IsRepeated**| **bool** |   | [optional]
+**Sort**| **int32** |   | [optional]
+**GroupCode**| **string** |   | [optional]
+**Title**| **map[string]string** |   | [optional]
+**RenderAs**| [**EntitymanagerRenderAs**](EntitymanagerRenderAs.md) |  for more information please, see Model/EntitymanagerRenderAs.php  | [optional] [default to DEFAULT]
 
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
