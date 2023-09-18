@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **AttributesMask**| [**ProductFieldMask**](ProductFieldMask.md) |   | [optional]
 **UrlKey**| [**ProductLocalizedText**](ProductLocalizedText.md) |   | [optional]
 **MaxSaleableQuantity**| **int64** |   | [optional]
+**MediaVariantAttributes**| **[]string** |   | [optional]
 **Attributes**| [**map[string]ProtobufAny**](ProtobufAny.md) |   | [optional]
 **Variants**| [**map[string]ProductProductVariant**](ProductProductVariant.md) |   | [optional]
 

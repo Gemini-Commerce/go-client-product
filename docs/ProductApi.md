@@ -1,45 +1,54 @@
 # \ProductApi
 
-All URIs are relative to *https://product.api.gogemini.io*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddMediaGalleryEntry**](ProductApi.md#AddMediaGalleryEntry) | **Post** /product.Product/AddMediaGalleryEntry | Add Media Gallery Entry
-[**BulkCreateAttribute**](ProductApi.md#BulkCreateAttribute) | **Post** /product.Product/BulkCreateAttribute | Bulk Create Attribute
-[**BulkUpdate**](ProductApi.md#BulkUpdate) | **Post** /product.Product/BulkUpdate | Bulk Update Products
-[**CreateAttributeOptions**](ProductApi.md#CreateAttributeOptions) | **Post** /product.Product/CreateAttributeOptions | Create Attribute Options
-[**CreateEntity**](ProductApi.md#CreateEntity) | **Post** /product.Product/CreateEntity | Create Entity
-[**CreateOptionsList**](ProductApi.md#CreateOptionsList) | **Post** /product.Product/CreateOptionsList | Create Options List
-[**CreateProduct**](ProductApi.md#CreateProduct) | **Post** /product.Product/CreateProduct | Create Product
-[**DeleteProduct**](ProductApi.md#DeleteProduct) | **Post** /product.Product/Delete | Delete Product
-[**GetAttributeOption**](ProductApi.md#GetAttributeOption) | **Post** /product.Product/GetAttributeOption | Get Attribute Option
-[**GetAttributeOptionByCode**](ProductApi.md#GetAttributeOptionByCode) | **Post** /product.Product/GetAttributeOptionByCode | Get Attribute Option By Code
-[**GetAttributeOptions**](ProductApi.md#GetAttributeOptions) | **Post** /product.Product/GetAttributeOptions | Get Attribute Options
-[**GetEntity**](ProductApi.md#GetEntity) | **Post** /product.Product/GetEntity | Get Entity
-[**GetOptionsList**](ProductApi.md#GetOptionsList) | **Post** /product.Product/GetOptionsList | Get Options List
-[**GetProduct**](ProductApi.md#GetProduct) | **Post** /product.Product/GetProduct | Get Product
-[**GetProductByCode**](ProductApi.md#GetProductByCode) | **Post** /product.Product/GetProductByCode | Get Product By Code
-[**GetProductByUrlKey**](ProductApi.md#GetProductByUrlKey) | **Post** /product.Product/GetProductByUrlKey | Get Product By Url Key
-[**ListAttributeOptions**](ProductApi.md#ListAttributeOptions) | **Post** /product.Product/ListAttributeOptions | List Attribute Options
-[**ListEntities**](ProductApi.md#ListEntities) | **Post** /product.Product/ListEntities | List Entities
-[**ListOptionsLists**](ProductApi.md#ListOptionsLists) | **Post** /product.Product/ListOptionsLists | List Options Lists
-[**ListProducts**](ProductApi.md#ListProducts) | **Post** /product.Product/ListProducts | List Products
-[**ListProductsByIds**](ProductApi.md#ListProductsByIds) | **Post** /product.Product/ListProductsByIds | List Products By Ids
-[**ListProductsBySku**](ProductApi.md#ListProductsBySku) | **Post** /product.Product/ListProductsBySku | List Products By Sku
-[**ListVariantsBySku**](ProductApi.md#ListVariantsBySku) | **Post** /product.Product/ListVariantsBySku | List Product Variants By Sku
-[**RemoveMediaGalleryEntry**](ProductApi.md#RemoveMediaGalleryEntry) | **Post** /product.Product/RemoveMediaGalleryEntry | Remove Media Gallery Entry
-[**UpdateAttributeOptions**](ProductApi.md#UpdateAttributeOptions) | **Post** /product.Product/UpdateAttributeOptions | Update Attribute Options
-[**UpdateMediaGalleryEntry**](ProductApi.md#UpdateMediaGalleryEntry) | **Post** /product.Product/UpdateMediaGalleryEntry | Update Media Gallery Entry
-[**UpdateOptionsList**](ProductApi.md#UpdateOptionsList) | **Post** /product.Product/UpdateOptionsList | Update Options List
-[**UpdateProduct**](ProductApi.md#UpdateProduct) | **Post** /product.Product/UpdateProduct | Update Product
+[**ProductAddMediaGalleryEntry**](ProductApi.md#ProductAddMediaGalleryEntry) | **Post** /product.Product/AddMediaGalleryEntry | 
+[**ProductBulkCreateAttribute**](ProductApi.md#ProductBulkCreateAttribute) | **Post** /product.Product/BulkCreateAttribute | 
+[**ProductBulkDeleteProducts**](ProductApi.md#ProductBulkDeleteProducts) | **Post** /product.Product/BulkDeleteProducts | 
+[**ProductBulkUpdate**](ProductApi.md#ProductBulkUpdate) | **Post** /product.Product/BulkUpdate | 
+[**ProductBulkUpdateV2**](ProductApi.md#ProductBulkUpdateV2) | **Post** /product.Product/BulkUpdateV2 | 
+[**ProductCreateAttributeGroup**](ProductApi.md#ProductCreateAttributeGroup) | **Post** /product.Product/CreateAttributeGroup | 
+[**ProductCreateAttributeOptions**](ProductApi.md#ProductCreateAttributeOptions) | **Post** /product.Product/CreateAttributeOptions | 
+[**ProductCreateEntity**](ProductApi.md#ProductCreateEntity) | **Post** /product.Product/CreateEntity | 
+[**ProductCreateOptionsList**](ProductApi.md#ProductCreateOptionsList) | **Post** /product.Product/CreateOptionsList | 
+[**ProductCreateProduct**](ProductApi.md#ProductCreateProduct) | **Post** /product.Product/CreateProduct | 
+[**ProductCreateProductV2**](ProductApi.md#ProductCreateProductV2) | **Post** /product.Product/CreateProductV2 | 
+[**ProductDelete**](ProductApi.md#ProductDelete) | **Post** /product.Product/Delete | 
+[**ProductDeleteAttribute**](ProductApi.md#ProductDeleteAttribute) | **Post** /product.Product/DeleteAttribute | 
+[**ProductDeleteProduct**](ProductApi.md#ProductDeleteProduct) | **Post** /product.Product/DeleteProduct | 
+[**ProductGetAttributeGroup**](ProductApi.md#ProductGetAttributeGroup) | **Post** /product.Product/GetAttributeGroup | 
+[**ProductGetAttributeOption**](ProductApi.md#ProductGetAttributeOption) | **Post** /product.Product/GetAttributeOption | 
+[**ProductGetAttributeOptionByCode**](ProductApi.md#ProductGetAttributeOptionByCode) | **Post** /product.Product/GetAttributeOptionByCode | 
+[**ProductGetAttributeOptions**](ProductApi.md#ProductGetAttributeOptions) | **Post** /product.Product/GetAttributeOptions | 
+[**ProductGetEntity**](ProductApi.md#ProductGetEntity) | **Post** /product.Product/GetEntity | 
+[**ProductGetOptionsList**](ProductApi.md#ProductGetOptionsList) | **Post** /product.Product/GetOptionsList | 
+[**ProductGetProduct**](ProductApi.md#ProductGetProduct) | **Post** /product.Product/GetProduct | 
+[**ProductGetProductByCode**](ProductApi.md#ProductGetProductByCode) | **Post** /product.Product/GetProductByCode | 
+[**ProductGetProductByUrlKey**](ProductApi.md#ProductGetProductByUrlKey) | **Post** /product.Product/GetProductByUrlKey | 
+[**ProductListAttributeGroups**](ProductApi.md#ProductListAttributeGroups) | **Post** /product.Product/ListAttributeGroups | Attribute Groups endpoints
+[**ProductListAttributeOptions**](ProductApi.md#ProductListAttributeOptions) | **Post** /product.Product/ListAttributeOptions | 
+[**ProductListEntities**](ProductApi.md#ProductListEntities) | **Post** /product.Product/ListEntities | 
+[**ProductListOptionsLists**](ProductApi.md#ProductListOptionsLists) | **Post** /product.Product/ListOptionsLists | 
+[**ProductListProducts**](ProductApi.md#ProductListProducts) | **Post** /product.Product/ListProducts | 
+[**ProductListProductsByIds**](ProductApi.md#ProductListProductsByIds) | **Post** /product.Product/ListProductsByIds | 
+[**ProductListProductsBySku**](ProductApi.md#ProductListProductsBySku) | **Post** /product.Product/ListProductsBySku | 
+[**ProductListVariantsBySku**](ProductApi.md#ProductListVariantsBySku) | **Post** /product.Product/ListVariantsBySku | 
+[**ProductRemoveMediaGalleryEntry**](ProductApi.md#ProductRemoveMediaGalleryEntry) | **Post** /product.Product/RemoveMediaGalleryEntry | 
+[**ProductUpdateAttribute**](ProductApi.md#ProductUpdateAttribute) | **Post** /product.Product/UpdateAttribute | 
+[**ProductUpdateAttributeGroup**](ProductApi.md#ProductUpdateAttributeGroup) | **Post** /product.Product/UpdateAttributeGroup | 
+[**ProductUpdateAttributeOptions**](ProductApi.md#ProductUpdateAttributeOptions) | **Post** /product.Product/UpdateAttributeOptions | 
+[**ProductUpdateMediaGalleryEntry**](ProductApi.md#ProductUpdateMediaGalleryEntry) | **Post** /product.Product/UpdateMediaGalleryEntry | 
+[**ProductUpdateOptionsList**](ProductApi.md#ProductUpdateOptionsList) | **Post** /product.Product/UpdateOptionsList | 
+[**ProductUpdateProduct**](ProductApi.md#ProductUpdateProduct) | **Post** /product.Product/UpdateProduct | 
+[**ProductUpdateProductV2**](ProductApi.md#ProductUpdateProductV2) | **Post** /product.Product/UpdateProductV2 | 
 
 
 
-## AddMediaGalleryEntry
+## ProductAddMediaGalleryEntry
 
-> ProductAddMediaGalleryEntryResponse AddMediaGalleryEntry(ctx).Body(body).Execute()
-
-Add Media Gallery Entry
+> ProductAddMediaGalleryEntryResponse ProductAddMediaGalleryEntry(ctx).Body(body).Execute()
 
 
 
@@ -60,13 +69,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.AddMediaGalleryEntry(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductAddMediaGalleryEntry(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.AddMediaGalleryEntry``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductAddMediaGalleryEntry``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AddMediaGalleryEntry`: ProductAddMediaGalleryEntryResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.AddMediaGalleryEntry`: %v\n", resp)
+    // response from `ProductAddMediaGalleryEntry`: ProductAddMediaGalleryEntryResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductAddMediaGalleryEntry`: %v\n", resp)
 }
 ```
 
@@ -76,7 +85,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAddMediaGalleryEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductAddMediaGalleryEntryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -89,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -101,11 +110,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## BulkCreateAttribute
+## ProductBulkCreateAttribute
 
-> EntitymanagerBulkCreateAttributeResponse BulkCreateAttribute(ctx).Body(body).Execute()
+> EntitymanagerBulkCreateAttributeResponse ProductBulkCreateAttribute(ctx).Body(body).Execute()
 
-Bulk Create Attribute
+
 
 ### Example
 
@@ -124,13 +133,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.BulkCreateAttribute(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductBulkCreateAttribute(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.BulkCreateAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductBulkCreateAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `BulkCreateAttribute`: EntitymanagerBulkCreateAttributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.BulkCreateAttribute`: %v\n", resp)
+    // response from `ProductBulkCreateAttribute`: EntitymanagerBulkCreateAttributeResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductBulkCreateAttribute`: %v\n", resp)
 }
 ```
 
@@ -140,7 +149,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiBulkCreateAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductBulkCreateAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -153,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -165,11 +174,75 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## BulkUpdate
+## ProductBulkDeleteProducts
 
-> ProductBulkUpdateResponse BulkUpdate(ctx).Body(body).Execute()
+> map[string]interface{} ProductBulkDeleteProducts(ctx).Body(body).Execute()
 
-Bulk Update Products
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewProductBulkDeleteProductsRequest() // ProductBulkDeleteProductsRequest | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProductApi.ProductBulkDeleteProducts(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductBulkDeleteProducts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ProductBulkDeleteProducts`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductBulkDeleteProducts`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiProductBulkDeleteProductsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductBulkDeleteProductsRequest**](ProductBulkDeleteProductsRequest.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProductBulkUpdate
+
+> ProductBulkUpdateResponse ProductBulkUpdate(ctx).Body(body).Execute()
+
+
 
 ### Example
 
@@ -188,13 +261,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.BulkUpdate(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductBulkUpdate(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.BulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `BulkUpdate`: ProductBulkUpdateResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.BulkUpdate`: %v\n", resp)
+    // response from `ProductBulkUpdate`: ProductBulkUpdateResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -204,7 +277,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiBulkUpdateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductBulkUpdateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -217,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -229,11 +302,139 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateAttributeOptions
+## ProductBulkUpdateV2
 
-> EntitymanagerCreateAttributeOptionsResponse CreateAttributeOptions(ctx).Body(body).Execute()
+> ProductBulkUpdateResponseV2 ProductBulkUpdateV2(ctx).Body(body).Execute()
 
-Create Attribute Options
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewProductBulkUpdateRequestV2() // ProductBulkUpdateRequestV2 | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProductApi.ProductBulkUpdateV2(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductBulkUpdateV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ProductBulkUpdateV2`: ProductBulkUpdateResponseV2
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductBulkUpdateV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiProductBulkUpdateV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductBulkUpdateRequestV2**](ProductBulkUpdateRequestV2.md) |  | 
+
+### Return type
+
+[**ProductBulkUpdateResponseV2**](ProductBulkUpdateResponseV2.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProductCreateAttributeGroup
+
+> EntitymanagerAttributeGroup ProductCreateAttributeGroup(ctx).Body(body).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewEntitymanagerCreateAttributeGroupRequest() // EntitymanagerCreateAttributeGroupRequest | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProductApi.ProductCreateAttributeGroup(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateAttributeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ProductCreateAttributeGroup`: EntitymanagerAttributeGroup
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateAttributeGroup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiProductCreateAttributeGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerCreateAttributeGroupRequest**](EntitymanagerCreateAttributeGroupRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerAttributeGroup**](EntitymanagerAttributeGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProductCreateAttributeOptions
+
+> EntitymanagerCreateAttributeOptionsResponse ProductCreateAttributeOptions(ctx).Body(body).Execute()
+
+
 
 ### Example
 
@@ -252,13 +453,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.CreateAttributeOptions(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductCreateAttributeOptions(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.CreateAttributeOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateAttributeOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateAttributeOptions`: EntitymanagerCreateAttributeOptionsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.CreateAttributeOptions`: %v\n", resp)
+    // response from `ProductCreateAttributeOptions`: EntitymanagerCreateAttributeOptionsResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateAttributeOptions`: %v\n", resp)
 }
 ```
 
@@ -268,7 +469,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateAttributeOptionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductCreateAttributeOptionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -281,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -293,11 +494,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateEntity
+## ProductCreateEntity
 
-> EntitymanagerCreateEntityResponse CreateEntity(ctx).Body(body).Execute()
-
-Create Entity
+> EntitymanagerCreateEntityResponse ProductCreateEntity(ctx).Body(body).Execute()
 
 
 
@@ -318,13 +517,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.CreateEntity(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductCreateEntity(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.CreateEntity``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateEntity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateEntity`: EntitymanagerCreateEntityResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.CreateEntity`: %v\n", resp)
+    // response from `ProductCreateEntity`: EntitymanagerCreateEntityResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateEntity`: %v\n", resp)
 }
 ```
 
@@ -334,7 +533,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateEntityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductCreateEntityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -347,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -359,11 +558,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateOptionsList
+## ProductCreateOptionsList
 
-> EntitymanagerCreateOptionsListResponse CreateOptionsList(ctx).Body(body).Execute()
-
-Create Options List
+> EntitymanagerCreateOptionsListResponse ProductCreateOptionsList(ctx).Body(body).Execute()
 
 
 
@@ -384,13 +581,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.CreateOptionsList(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductCreateOptionsList(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.CreateOptionsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateOptionsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateOptionsList`: EntitymanagerCreateOptionsListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.CreateOptionsList`: %v\n", resp)
+    // response from `ProductCreateOptionsList`: EntitymanagerCreateOptionsListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateOptionsList`: %v\n", resp)
 }
 ```
 
@@ -400,7 +597,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateOptionsListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductCreateOptionsListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -413,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -425,11 +622,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateProduct
+## ProductCreateProduct
 
-> ProductCreateProductResponse CreateProduct(ctx).Body(body).Execute()
-
-Create Product
+> ProductCreateProductResponse ProductCreateProduct(ctx).Body(body).Execute()
 
 
 
@@ -450,13 +645,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.CreateProduct(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductCreateProduct(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.CreateProduct``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateProduct``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateProduct`: ProductCreateProductResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.CreateProduct`: %v\n", resp)
+    // response from `ProductCreateProduct`: ProductCreateProductResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateProduct`: %v\n", resp)
 }
 ```
 
@@ -466,7 +661,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateProductRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductCreateProductRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -479,7 +674,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -491,11 +686,73 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteProduct
+## ProductCreateProductV2
 
-> ProductDeleteResponse DeleteProduct(ctx).Body(body).Execute()
+> ProductCreateProductResponseV2 ProductCreateProductV2(ctx).Body(body).Execute()
 
-Delete Product
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewProductCreateProductRequestV2() // ProductCreateProductRequestV2 | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProductApi.ProductCreateProductV2(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateProductV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ProductCreateProductV2`: ProductCreateProductResponseV2
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateProductV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiProductCreateProductV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductCreateProductRequestV2**](ProductCreateProductRequestV2.md) |  | 
+
+### Return type
+
+[**ProductCreateProductResponseV2**](ProductCreateProductResponseV2.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProductDelete
+
+> ProductDeleteResponse ProductDelete(ctx).Body(body).Execute()
 
 
 
@@ -516,13 +773,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.DeleteProduct(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductDelete(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.DeleteProduct``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeleteProduct`: ProductDeleteResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.DeleteProduct`: %v\n", resp)
+    // response from `ProductDelete`: ProductDeleteResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductDelete`: %v\n", resp)
 }
 ```
 
@@ -532,7 +789,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteProductRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductDeleteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -545,7 +802,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -557,11 +814,203 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAttributeOption
+## ProductDeleteAttribute
 
-> EntitymanagerGetAttributeOptionResponse GetAttributeOption(ctx).Body(body).Execute()
+> map[string]interface{} ProductDeleteAttribute(ctx).Body(body).Execute()
 
-Get Attribute Option
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewEntitymanagerDeleteAttributeRequest() // EntitymanagerDeleteAttributeRequest | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProductApi.ProductDeleteAttribute(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductDeleteAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ProductDeleteAttribute`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductDeleteAttribute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiProductDeleteAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerDeleteAttributeRequest**](EntitymanagerDeleteAttributeRequest.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProductDeleteProduct
+
+> map[string]interface{} ProductDeleteProduct(ctx).Body(body).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewProductDeleteProductRequest() // ProductDeleteProductRequest | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProductApi.ProductDeleteProduct(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductDeleteProduct``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ProductDeleteProduct`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductDeleteProduct`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiProductDeleteProductRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductDeleteProductRequest**](ProductDeleteProductRequest.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProductGetAttributeGroup
+
+> EntitymanagerAttributeGroup ProductGetAttributeGroup(ctx).Body(body).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewEntitymanagerGetAttributeGroupRequest() // EntitymanagerGetAttributeGroupRequest | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProductApi.ProductGetAttributeGroup(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetAttributeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ProductGetAttributeGroup`: EntitymanagerAttributeGroup
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetAttributeGroup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiProductGetAttributeGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerGetAttributeGroupRequest**](EntitymanagerGetAttributeGroupRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerAttributeGroup**](EntitymanagerAttributeGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProductGetAttributeOption
+
+> EntitymanagerGetAttributeOptionResponse ProductGetAttributeOption(ctx).Body(body).Execute()
+
+
 
 ### Example
 
@@ -580,13 +1029,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.GetAttributeOption(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductGetAttributeOption(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.GetAttributeOption``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetAttributeOption``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAttributeOption`: EntitymanagerGetAttributeOptionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.GetAttributeOption`: %v\n", resp)
+    // response from `ProductGetAttributeOption`: EntitymanagerGetAttributeOptionResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetAttributeOption`: %v\n", resp)
 }
 ```
 
@@ -596,7 +1045,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAttributeOptionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductGetAttributeOptionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -609,7 +1058,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -621,11 +1070,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAttributeOptionByCode
+## ProductGetAttributeOptionByCode
 
-> EntitymanagerGetAttributeOptionByCodeResponse GetAttributeOptionByCode(ctx).Body(body).Execute()
+> EntitymanagerGetAttributeOptionByCodeResponse ProductGetAttributeOptionByCode(ctx).Body(body).Execute()
 
-Get Attribute Option By Code
+
 
 ### Example
 
@@ -644,13 +1093,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.GetAttributeOptionByCode(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductGetAttributeOptionByCode(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.GetAttributeOptionByCode``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetAttributeOptionByCode``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAttributeOptionByCode`: EntitymanagerGetAttributeOptionByCodeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.GetAttributeOptionByCode`: %v\n", resp)
+    // response from `ProductGetAttributeOptionByCode`: EntitymanagerGetAttributeOptionByCodeResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetAttributeOptionByCode`: %v\n", resp)
 }
 ```
 
@@ -660,7 +1109,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAttributeOptionByCodeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductGetAttributeOptionByCodeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -673,7 +1122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -685,11 +1134,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAttributeOptions
+## ProductGetAttributeOptions
 
-> EntitymanagerGetAttributeOptionsResponse GetAttributeOptions(ctx).Body(body).Execute()
+> EntitymanagerGetAttributeOptionsResponse ProductGetAttributeOptions(ctx).Body(body).Execute()
 
-Get Attribute Options
+
 
 ### Example
 
@@ -708,13 +1157,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.GetAttributeOptions(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductGetAttributeOptions(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.GetAttributeOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetAttributeOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAttributeOptions`: EntitymanagerGetAttributeOptionsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.GetAttributeOptions`: %v\n", resp)
+    // response from `ProductGetAttributeOptions`: EntitymanagerGetAttributeOptionsResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetAttributeOptions`: %v\n", resp)
 }
 ```
 
@@ -724,7 +1173,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAttributeOptionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductGetAttributeOptionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -737,7 +1186,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -749,11 +1198,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetEntity
+## ProductGetEntity
 
-> EntitymanagerEntity GetEntity(ctx).Body(body).Execute()
+> EntitymanagerEntity ProductGetEntity(ctx).Body(body).Execute()
 
-Get Entity
+
 
 ### Example
 
@@ -772,13 +1221,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.GetEntity(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductGetEntity(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.GetEntity``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetEntity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetEntity`: EntitymanagerEntity
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.GetEntity`: %v\n", resp)
+    // response from `ProductGetEntity`: EntitymanagerEntity
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetEntity`: %v\n", resp)
 }
 ```
 
@@ -788,7 +1237,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetEntityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductGetEntityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -801,7 +1250,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -813,11 +1262,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetOptionsList
+## ProductGetOptionsList
 
-> EntitymanagerGetOptionsListResponse GetOptionsList(ctx).Body(body).Execute()
+> EntitymanagerGetOptionsListResponse ProductGetOptionsList(ctx).Body(body).Execute()
 
-Get Options List
+
 
 ### Example
 
@@ -836,13 +1285,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.GetOptionsList(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductGetOptionsList(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.GetOptionsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetOptionsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetOptionsList`: EntitymanagerGetOptionsListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.GetOptionsList`: %v\n", resp)
+    // response from `ProductGetOptionsList`: EntitymanagerGetOptionsListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetOptionsList`: %v\n", resp)
 }
 ```
 
@@ -852,7 +1301,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetOptionsListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductGetOptionsListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -865,7 +1314,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -877,11 +1326,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetProduct
+## ProductGetProduct
 
-> ProductGetProductResponse GetProduct(ctx).Body(body).Execute()
-
-Get Product
+> ProductGetProductResponse ProductGetProduct(ctx).Body(body).Execute()
 
 
 
@@ -902,13 +1349,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.GetProduct(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductGetProduct(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.GetProduct``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetProduct``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetProduct`: ProductGetProductResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.GetProduct`: %v\n", resp)
+    // response from `ProductGetProduct`: ProductGetProductResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetProduct`: %v\n", resp)
 }
 ```
 
@@ -918,7 +1365,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetProductRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductGetProductRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -931,7 +1378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -943,11 +1390,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetProductByCode
+## ProductGetProductByCode
 
-> ProductGetProductByCodeResponse GetProductByCode(ctx).Body(body).Execute()
-
-Get Product By Code
+> ProductGetProductByCodeResponse ProductGetProductByCode(ctx).Body(body).Execute()
 
 
 
@@ -968,13 +1413,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.GetProductByCode(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductGetProductByCode(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.GetProductByCode``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetProductByCode``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetProductByCode`: ProductGetProductByCodeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.GetProductByCode`: %v\n", resp)
+    // response from `ProductGetProductByCode`: ProductGetProductByCodeResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetProductByCode`: %v\n", resp)
 }
 ```
 
@@ -984,7 +1429,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetProductByCodeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductGetProductByCodeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -997,7 +1442,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1009,11 +1454,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetProductByUrlKey
+## ProductGetProductByUrlKey
 
-> ProductGetProductByUrlKeyResponse GetProductByUrlKey(ctx).Body(body).Execute()
-
-Get Product By Url Key
+> ProductGetProductByUrlKeyResponse ProductGetProductByUrlKey(ctx).Body(body).Execute()
 
 
 
@@ -1034,13 +1477,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.GetProductByUrlKey(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductGetProductByUrlKey(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.GetProductByUrlKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetProductByUrlKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetProductByUrlKey`: ProductGetProductByUrlKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.GetProductByUrlKey`: %v\n", resp)
+    // response from `ProductGetProductByUrlKey`: ProductGetProductByUrlKeyResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetProductByUrlKey`: %v\n", resp)
 }
 ```
 
@@ -1050,7 +1493,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetProductByUrlKeyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductGetProductByUrlKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1063,7 +1506,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1075,11 +1518,75 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListAttributeOptions
+## ProductListAttributeGroups
 
-> EntitymanagerListAttributeOptionsResponse ListAttributeOptions(ctx).Body(body).Execute()
+> EntitymanagerListAttributeGroupsResponse ProductListAttributeGroups(ctx).Body(body).Execute()
 
-List Attribute Options
+Attribute Groups endpoints
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewEntitymanagerListAttributeGroupsRequest() // EntitymanagerListAttributeGroupsRequest | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProductApi.ProductListAttributeGroups(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListAttributeGroups``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ProductListAttributeGroups`: EntitymanagerListAttributeGroupsResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListAttributeGroups`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiProductListAttributeGroupsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerListAttributeGroupsRequest**](EntitymanagerListAttributeGroupsRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerListAttributeGroupsResponse**](EntitymanagerListAttributeGroupsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProductListAttributeOptions
+
+> EntitymanagerListAttributeOptionsResponse ProductListAttributeOptions(ctx).Body(body).Execute()
+
+
 
 ### Example
 
@@ -1098,13 +1605,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ListAttributeOptions(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductListAttributeOptions(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ListAttributeOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListAttributeOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListAttributeOptions`: EntitymanagerListAttributeOptionsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ListAttributeOptions`: %v\n", resp)
+    // response from `ProductListAttributeOptions`: EntitymanagerListAttributeOptionsResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListAttributeOptions`: %v\n", resp)
 }
 ```
 
@@ -1114,7 +1621,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListAttributeOptionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductListAttributeOptionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1127,7 +1634,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1139,11 +1646,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListEntities
+## ProductListEntities
 
-> EntitymanagerListEntitiesResponse ListEntities(ctx).Body(body).Execute()
+> EntitymanagerListEntitiesResponse ProductListEntities(ctx).Body(body).Execute()
 
-List Entities
+
 
 ### Example
 
@@ -1162,13 +1669,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ListEntities(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductListEntities(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ListEntities``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListEntities``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListEntities`: EntitymanagerListEntitiesResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ListEntities`: %v\n", resp)
+    // response from `ProductListEntities`: EntitymanagerListEntitiesResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListEntities`: %v\n", resp)
 }
 ```
 
@@ -1178,7 +1685,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListEntitiesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductListEntitiesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1191,7 +1698,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1203,11 +1710,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListOptionsLists
+## ProductListOptionsLists
 
-> EntitymanagerListOptionsListsResponse ListOptionsLists(ctx).Body(body).Execute()
-
-List Options Lists
+> EntitymanagerListOptionsListsResponse ProductListOptionsLists(ctx).Body(body).Execute()
 
 
 
@@ -1228,13 +1733,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ListOptionsLists(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductListOptionsLists(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ListOptionsLists``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListOptionsLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListOptionsLists`: EntitymanagerListOptionsListsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ListOptionsLists`: %v\n", resp)
+    // response from `ProductListOptionsLists`: EntitymanagerListOptionsListsResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListOptionsLists`: %v\n", resp)
 }
 ```
 
@@ -1244,7 +1749,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListOptionsListsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductListOptionsListsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1257,7 +1762,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1269,11 +1774,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListProducts
+## ProductListProducts
 
-> ProductListProductsResponse ListProducts(ctx).Body(body).Execute()
-
-List Products
+> ProductListProductsResponse ProductListProducts(ctx).Body(body).Execute()
 
 
 
@@ -1294,13 +1797,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ListProducts(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductListProducts(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ListProducts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListProducts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListProducts`: ProductListProductsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ListProducts`: %v\n", resp)
+    // response from `ProductListProducts`: ProductListProductsResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListProducts`: %v\n", resp)
 }
 ```
 
@@ -1310,7 +1813,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListProductsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductListProductsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1323,7 +1826,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1335,11 +1838,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListProductsByIds
+## ProductListProductsByIds
 
-> ProductListProductsByIdsResponse ListProductsByIds(ctx).Body(body).Execute()
-
-List Products By Ids
+> ProductListProductsByIdsResponse ProductListProductsByIds(ctx).Body(body).Execute()
 
 
 
@@ -1360,13 +1861,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ListProductsByIds(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductListProductsByIds(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ListProductsByIds``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListProductsByIds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListProductsByIds`: ProductListProductsByIdsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ListProductsByIds`: %v\n", resp)
+    // response from `ProductListProductsByIds`: ProductListProductsByIdsResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListProductsByIds`: %v\n", resp)
 }
 ```
 
@@ -1376,7 +1877,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListProductsByIdsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductListProductsByIdsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1389,7 +1890,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1401,11 +1902,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListProductsBySku
+## ProductListProductsBySku
 
-> ProductListProductsBySkuResponse ListProductsBySku(ctx).Body(body).Execute()
+> ProductListProductsBySkuResponse ProductListProductsBySku(ctx).Body(body).Execute()
 
-List Products By Sku
+
 
 ### Example
 
@@ -1424,13 +1925,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ListProductsBySku(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductListProductsBySku(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ListProductsBySku``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListProductsBySku``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListProductsBySku`: ProductListProductsBySkuResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ListProductsBySku`: %v\n", resp)
+    // response from `ProductListProductsBySku`: ProductListProductsBySkuResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListProductsBySku`: %v\n", resp)
 }
 ```
 
@@ -1440,7 +1941,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListProductsBySkuRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductListProductsBySkuRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1453,7 +1954,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1465,11 +1966,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListVariantsBySku
+## ProductListVariantsBySku
 
-> ProductListVariantsBySkuResponse ListVariantsBySku(ctx).Body(body).Execute()
+> ProductListVariantsBySkuResponse ProductListVariantsBySku(ctx).Body(body).Execute()
 
-List Product Variants By Sku
+
 
 ### Example
 
@@ -1488,13 +1989,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ListVariantsBySku(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductListVariantsBySku(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ListVariantsBySku``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListVariantsBySku``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListVariantsBySku`: ProductListVariantsBySkuResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ListVariantsBySku`: %v\n", resp)
+    // response from `ProductListVariantsBySku`: ProductListVariantsBySkuResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListVariantsBySku`: %v\n", resp)
 }
 ```
 
@@ -1504,7 +2005,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListVariantsBySkuRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductListVariantsBySkuRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1517,7 +2018,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1529,11 +2030,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RemoveMediaGalleryEntry
+## ProductRemoveMediaGalleryEntry
 
-> map[string]interface{} RemoveMediaGalleryEntry(ctx).Body(body).Execute()
-
-Remove Media Gallery Entry
+> map[string]interface{} ProductRemoveMediaGalleryEntry(ctx).Body(body).Execute()
 
 
 
@@ -1554,13 +2053,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.RemoveMediaGalleryEntry(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductRemoveMediaGalleryEntry(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.RemoveMediaGalleryEntry``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductRemoveMediaGalleryEntry``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `RemoveMediaGalleryEntry`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.RemoveMediaGalleryEntry`: %v\n", resp)
+    // response from `ProductRemoveMediaGalleryEntry`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductRemoveMediaGalleryEntry`: %v\n", resp)
 }
 ```
 
@@ -1570,7 +2069,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRemoveMediaGalleryEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductRemoveMediaGalleryEntryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1583,7 +2082,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1595,11 +2094,139 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateAttributeOptions
+## ProductUpdateAttribute
 
-> EntitymanagerUpdateAttributeOptionsResponse UpdateAttributeOptions(ctx).Body(body).Execute()
+> EntitymanagerAttribute ProductUpdateAttribute(ctx).Body(body).Execute()
 
-Update Attribute Options
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewEntitymanagerUpdateAttributeRequest() // EntitymanagerUpdateAttributeRequest | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProductApi.ProductUpdateAttribute(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ProductUpdateAttribute`: EntitymanagerAttribute
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateAttribute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiProductUpdateAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerUpdateAttributeRequest**](EntitymanagerUpdateAttributeRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerAttribute**](EntitymanagerAttribute.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProductUpdateAttributeGroup
+
+> EntitymanagerAttributeGroup ProductUpdateAttributeGroup(ctx).Body(body).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewEntitymanagerUpdateAttributeGroupRequest() // EntitymanagerUpdateAttributeGroupRequest | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProductApi.ProductUpdateAttributeGroup(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateAttributeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ProductUpdateAttributeGroup`: EntitymanagerAttributeGroup
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateAttributeGroup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiProductUpdateAttributeGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerUpdateAttributeGroupRequest**](EntitymanagerUpdateAttributeGroupRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerAttributeGroup**](EntitymanagerAttributeGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProductUpdateAttributeOptions
+
+> EntitymanagerUpdateAttributeOptionsResponse ProductUpdateAttributeOptions(ctx).Body(body).Execute()
+
+
 
 ### Example
 
@@ -1618,13 +2245,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.UpdateAttributeOptions(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductUpdateAttributeOptions(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.UpdateAttributeOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateAttributeOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateAttributeOptions`: EntitymanagerUpdateAttributeOptionsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.UpdateAttributeOptions`: %v\n", resp)
+    // response from `ProductUpdateAttributeOptions`: EntitymanagerUpdateAttributeOptionsResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateAttributeOptions`: %v\n", resp)
 }
 ```
 
@@ -1634,7 +2261,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateAttributeOptionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductUpdateAttributeOptionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1647,7 +2274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1659,11 +2286,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateMediaGalleryEntry
+## ProductUpdateMediaGalleryEntry
 
-> map[string]interface{} UpdateMediaGalleryEntry(ctx).Body(body).Execute()
-
-Update Media Gallery Entry
+> map[string]interface{} ProductUpdateMediaGalleryEntry(ctx).Body(body).Execute()
 
 
 
@@ -1684,13 +2309,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.UpdateMediaGalleryEntry(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductUpdateMediaGalleryEntry(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.UpdateMediaGalleryEntry``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateMediaGalleryEntry``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateMediaGalleryEntry`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.UpdateMediaGalleryEntry`: %v\n", resp)
+    // response from `ProductUpdateMediaGalleryEntry`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateMediaGalleryEntry`: %v\n", resp)
 }
 ```
 
@@ -1700,7 +2325,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateMediaGalleryEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductUpdateMediaGalleryEntryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1713,7 +2338,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1725,11 +2350,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateOptionsList
+## ProductUpdateOptionsList
 
-> EntitymanagerUpdateOptionsListResponse UpdateOptionsList(ctx).Body(body).Execute()
+> EntitymanagerUpdateOptionsListResponse ProductUpdateOptionsList(ctx).Body(body).Execute()
 
-Update Options List
+
 
 ### Example
 
@@ -1748,13 +2373,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.UpdateOptionsList(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductUpdateOptionsList(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.UpdateOptionsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateOptionsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateOptionsList`: EntitymanagerUpdateOptionsListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.UpdateOptionsList`: %v\n", resp)
+    // response from `ProductUpdateOptionsList`: EntitymanagerUpdateOptionsListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateOptionsList`: %v\n", resp)
 }
 ```
 
@@ -1764,7 +2389,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateOptionsListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductUpdateOptionsListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1777,7 +2402,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1789,11 +2414,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateProduct
+## ProductUpdateProduct
 
-> ProductUpdateProductResponse UpdateProduct(ctx).Body(body).Execute()
-
-Update Product
+> ProductUpdateProductResponse ProductUpdateProduct(ctx).Body(body).Execute()
 
 
 
@@ -1814,13 +2437,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.UpdateProduct(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductApi.ProductUpdateProduct(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.UpdateProduct``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateProduct``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateProduct`: ProductUpdateProductResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.UpdateProduct`: %v\n", resp)
+    // response from `ProductUpdateProduct`: ProductUpdateProductResponse
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateProduct`: %v\n", resp)
 }
 ```
 
@@ -1830,7 +2453,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateProductRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiProductUpdateProductRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1843,7 +2466,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProductUpdateProductV2
+
+> map[string]interface{} ProductUpdateProductV2(ctx).Body(body).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewProductUpdateProductRequestV2() // ProductUpdateProductRequestV2 | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProductApi.ProductUpdateProductV2(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateProductV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ProductUpdateProductV2`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateProductV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiProductUpdateProductV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductUpdateProductRequestV2**](ProductUpdateProductRequestV2.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
