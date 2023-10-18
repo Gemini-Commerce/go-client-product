@@ -2051,13 +2051,13 @@ components:
           success: true
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
         - productId: productId
           success: true
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
       properties:
         productResponse:
@@ -2071,7 +2071,7 @@ components:
         success: true
         attributes:
           key:
-            type: type
+            typeUrl: typeUrl
             value: value
       properties:
         productId:
@@ -2089,12 +2089,12 @@ components:
         - productId: productId
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
         - productId: productId
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
       properties:
         productResponse:
@@ -2107,7 +2107,7 @@ components:
         productId: productId
         attributes:
           key:
-            type: type
+            typeUrl: typeUrl
             value: value
       properties:
         productId:
@@ -2285,7 +2285,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  type: type
+                  typeUrl: typeUrl
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2333,7 +2333,7 @@ components:
               position: 0
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
           id: id
           isVirtual: true
@@ -2370,7 +2370,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  type: type
+                  typeUrl: typeUrl
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2418,7 +2418,7 @@ components:
               position: 0
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
           id: id
           isVirtual: true
@@ -2453,7 +2453,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  type: type
+                  typeUrl: typeUrl
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2501,7 +2501,7 @@ components:
               position: 0
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
           id: id
           isVirtual: true
@@ -2538,7 +2538,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  type: type
+                  typeUrl: typeUrl
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2586,7 +2586,7 @@ components:
               position: 0
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
           id: id
           isVirtual: true
@@ -2607,7 +2607,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  type: type
+                  typeUrl: typeUrl
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2655,7 +2655,7 @@ components:
               position: 0
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
           id: id
           isVirtual: true
@@ -2692,7 +2692,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  type: type
+                  typeUrl: typeUrl
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2740,7 +2740,7 @@ components:
               position: 0
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
           id: id
           isVirtual: true
@@ -2761,7 +2761,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  type: type
+                  typeUrl: typeUrl
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2809,7 +2809,7 @@ components:
               position: 0
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
           id: id
           isVirtual: true
@@ -2856,7 +2856,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  type: type
+                  typeUrl: typeUrl
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2904,7 +2904,7 @@ components:
               position: 0
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
           id: id
           isVirtual: true
@@ -2925,7 +2925,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  type: type
+                  typeUrl: typeUrl
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2973,7 +2973,7 @@ components:
               position: 0
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
           id: id
           isVirtual: true
@@ -3002,14 +3002,14 @@ components:
         - grn: grn
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
           id: id
           maxSaleableQuantity: 0
         - grn: grn
           attributes:
             key:
-              type: type
+              typeUrl: typeUrl
               value: value
           id: id
           maxSaleableQuantity: 0
@@ -3132,7 +3132,7 @@ components:
             grn: grn
             attributes:
               key:
-                type: type
+                typeUrl: typeUrl
                 value: value
             id: id
             maxSaleableQuantity: 0
@@ -3180,7 +3180,7 @@ components:
             position: 0
         attributes:
           key:
-            type: type
+            typeUrl: typeUrl
             value: value
         id: id
         isVirtual: true
@@ -3254,7 +3254,7 @@ components:
         grn: grn
         attributes:
           key:
-            type: type
+            typeUrl: typeUrl
             value: value
         id: id
         maxSaleableQuantity: 0
@@ -3482,10 +3482,10 @@ components:
               "value": "1.212s"
             }
       example:
-        type: type
+        typeUrl: typeUrl
         value: value
       properties:
-        type:
+        typeUrl:
           description: |-
             A URL/resource name that uniquely identifies the type of the serialized
             protocol buffer message. This string must contain at least
