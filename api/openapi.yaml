@@ -1,9 +1,16 @@
 openapi: 3.0.1
 info:
-  title: product/product.proto
-  version: version not set
+  contact:
+    email: info@gemini-commerce.com
+    name: Gemini Team
+  description: API for managing products
+  license:
+    name: Gemini fair use license
+    url: https://gemini-commerce.com/api/fair-use-license
+  title: Product Service
+  version: v1
 servers:
-- url: /
+- url: https://product.api.gogemini.io/
 paths:
   /product.Product/AddMediaGalleryEntry:
     post:
@@ -2051,13 +2058,13 @@ components:
           success: true
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
         - productId: productId
           success: true
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
       properties:
         productResponse:
@@ -2071,7 +2078,7 @@ components:
         success: true
         attributes:
           key:
-            typeUrl: typeUrl
+            '@type': '@type'
             value: value
       properties:
         productId:
@@ -2089,12 +2096,12 @@ components:
         - productId: productId
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
         - productId: productId
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
       properties:
         productResponse:
@@ -2107,7 +2114,7 @@ components:
         productId: productId
         attributes:
           key:
-            typeUrl: typeUrl
+            '@type': '@type'
             value: value
       properties:
         productId:
@@ -2285,7 +2292,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2333,7 +2340,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -2370,7 +2377,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2418,7 +2425,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -2453,7 +2460,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2501,7 +2508,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -2538,7 +2545,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2586,7 +2593,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -2607,7 +2614,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2655,7 +2662,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -2692,7 +2699,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2740,7 +2747,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -2761,7 +2768,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2809,7 +2816,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -2856,7 +2863,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2904,7 +2911,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -2925,7 +2932,7 @@ components:
               grn: grn
               attributes:
                 key:
-                  typeUrl: typeUrl
+                  '@type': '@type'
                   value: value
               id: id
               maxSaleableQuantity: 0
@@ -2973,7 +2980,7 @@ components:
               position: 0
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           isVirtual: true
@@ -3002,14 +3009,14 @@ components:
         - grn: grn
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           maxSaleableQuantity: 0
         - grn: grn
           attributes:
             key:
-              typeUrl: typeUrl
+              '@type': '@type'
               value: value
           id: id
           maxSaleableQuantity: 0
@@ -3132,7 +3139,7 @@ components:
             grn: grn
             attributes:
               key:
-                typeUrl: typeUrl
+                '@type': '@type'
                 value: value
             id: id
             maxSaleableQuantity: 0
@@ -3180,7 +3187,7 @@ components:
             position: 0
         attributes:
           key:
-            typeUrl: typeUrl
+            '@type': '@type'
             value: value
         id: id
         isVirtual: true
@@ -3254,7 +3261,7 @@ components:
         grn: grn
         attributes:
           key:
-            typeUrl: typeUrl
+            '@type': '@type'
             value: value
         id: id
         maxSaleableQuantity: 0
@@ -3482,10 +3489,10 @@ components:
               "value": "1.212s"
             }
       example:
-        typeUrl: typeUrl
+        '@type': '@type'
         value: value
       properties:
-        typeUrl:
+        '@type':
           description: |-
             A URL/resource name that uniquely identifies the type of the serialized
             protocol buffer message. This string must contain at least
@@ -3535,12 +3542,9 @@ components:
           type: array
       type: object
   securitySchemes:
-    geminiAuthorization:
-      in: header
-      name: X-Gem-Token
-      type: apiKey
     standardAuthorization:
-      in: header
-      name: Authorization
-      type: apiKey
+      flows:
+        implicit:
+          scopes: {}
+      type: oauth2
 x-original-swagger-version: "2.0"

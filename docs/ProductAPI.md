@@ -1,48 +1,48 @@
-# \ProductApi
+# \ProductAPI
 
 All URIs are relative to *https://product.api.gogemini.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ProductAddMediaGalleryEntry**](ProductApi.md#ProductAddMediaGalleryEntry) | **Post** /product.Product/AddMediaGalleryEntry | 
-[**ProductBulkCreateAttribute**](ProductApi.md#ProductBulkCreateAttribute) | **Post** /product.Product/BulkCreateAttribute | 
-[**ProductBulkDeleteProducts**](ProductApi.md#ProductBulkDeleteProducts) | **Post** /product.Product/BulkDeleteProducts | 
-[**ProductBulkUpdate**](ProductApi.md#ProductBulkUpdate) | **Post** /product.Product/BulkUpdate | 
-[**ProductBulkUpdateV2**](ProductApi.md#ProductBulkUpdateV2) | **Post** /product.Product/BulkUpdateV2 | 
-[**ProductCreateAttributeGroup**](ProductApi.md#ProductCreateAttributeGroup) | **Post** /product.Product/CreateAttributeGroup | 
-[**ProductCreateAttributeOptions**](ProductApi.md#ProductCreateAttributeOptions) | **Post** /product.Product/CreateAttributeOptions | 
-[**ProductCreateEntity**](ProductApi.md#ProductCreateEntity) | **Post** /product.Product/CreateEntity | 
-[**ProductCreateOptionsList**](ProductApi.md#ProductCreateOptionsList) | **Post** /product.Product/CreateOptionsList | 
-[**ProductCreateProduct**](ProductApi.md#ProductCreateProduct) | **Post** /product.Product/CreateProduct | 
-[**ProductCreateProductV2**](ProductApi.md#ProductCreateProductV2) | **Post** /product.Product/CreateProductV2 | 
-[**ProductDelete**](ProductApi.md#ProductDelete) | **Post** /product.Product/Delete | 
-[**ProductDeleteAttribute**](ProductApi.md#ProductDeleteAttribute) | **Post** /product.Product/DeleteAttribute | 
-[**ProductDeleteProduct**](ProductApi.md#ProductDeleteProduct) | **Post** /product.Product/DeleteProduct | 
-[**ProductGetAttributeGroup**](ProductApi.md#ProductGetAttributeGroup) | **Post** /product.Product/GetAttributeGroup | 
-[**ProductGetAttributeOption**](ProductApi.md#ProductGetAttributeOption) | **Post** /product.Product/GetAttributeOption | 
-[**ProductGetAttributeOptionByCode**](ProductApi.md#ProductGetAttributeOptionByCode) | **Post** /product.Product/GetAttributeOptionByCode | 
-[**ProductGetAttributeOptions**](ProductApi.md#ProductGetAttributeOptions) | **Post** /product.Product/GetAttributeOptions | 
-[**ProductGetEntity**](ProductApi.md#ProductGetEntity) | **Post** /product.Product/GetEntity | 
-[**ProductGetOptionsList**](ProductApi.md#ProductGetOptionsList) | **Post** /product.Product/GetOptionsList | 
-[**ProductGetProduct**](ProductApi.md#ProductGetProduct) | **Post** /product.Product/GetProduct | 
-[**ProductGetProductByCode**](ProductApi.md#ProductGetProductByCode) | **Post** /product.Product/GetProductByCode | 
-[**ProductGetProductByUrlKey**](ProductApi.md#ProductGetProductByUrlKey) | **Post** /product.Product/GetProductByUrlKey | 
-[**ProductListAttributeGroups**](ProductApi.md#ProductListAttributeGroups) | **Post** /product.Product/ListAttributeGroups | Attribute Groups endpoints
-[**ProductListAttributeOptions**](ProductApi.md#ProductListAttributeOptions) | **Post** /product.Product/ListAttributeOptions | 
-[**ProductListEntities**](ProductApi.md#ProductListEntities) | **Post** /product.Product/ListEntities | 
-[**ProductListOptionsLists**](ProductApi.md#ProductListOptionsLists) | **Post** /product.Product/ListOptionsLists | 
-[**ProductListProducts**](ProductApi.md#ProductListProducts) | **Post** /product.Product/ListProducts | 
-[**ProductListProductsByIds**](ProductApi.md#ProductListProductsByIds) | **Post** /product.Product/ListProductsByIds | 
-[**ProductListProductsBySku**](ProductApi.md#ProductListProductsBySku) | **Post** /product.Product/ListProductsBySku | 
-[**ProductListVariantsBySku**](ProductApi.md#ProductListVariantsBySku) | **Post** /product.Product/ListVariantsBySku | 
-[**ProductRemoveMediaGalleryEntry**](ProductApi.md#ProductRemoveMediaGalleryEntry) | **Post** /product.Product/RemoveMediaGalleryEntry | 
-[**ProductUpdateAttribute**](ProductApi.md#ProductUpdateAttribute) | **Post** /product.Product/UpdateAttribute | 
-[**ProductUpdateAttributeGroup**](ProductApi.md#ProductUpdateAttributeGroup) | **Post** /product.Product/UpdateAttributeGroup | 
-[**ProductUpdateAttributeOptions**](ProductApi.md#ProductUpdateAttributeOptions) | **Post** /product.Product/UpdateAttributeOptions | 
-[**ProductUpdateMediaGalleryEntry**](ProductApi.md#ProductUpdateMediaGalleryEntry) | **Post** /product.Product/UpdateMediaGalleryEntry | 
-[**ProductUpdateOptionsList**](ProductApi.md#ProductUpdateOptionsList) | **Post** /product.Product/UpdateOptionsList | 
-[**ProductUpdateProduct**](ProductApi.md#ProductUpdateProduct) | **Post** /product.Product/UpdateProduct | 
-[**ProductUpdateProductV2**](ProductApi.md#ProductUpdateProductV2) | **Post** /product.Product/UpdateProductV2 | 
+[**ProductAddMediaGalleryEntry**](ProductAPI.md#ProductAddMediaGalleryEntry) | **Post** /product.Product/AddMediaGalleryEntry | 
+[**ProductBulkCreateAttribute**](ProductAPI.md#ProductBulkCreateAttribute) | **Post** /product.Product/BulkCreateAttribute | 
+[**ProductBulkDeleteProducts**](ProductAPI.md#ProductBulkDeleteProducts) | **Post** /product.Product/BulkDeleteProducts | 
+[**ProductBulkUpdate**](ProductAPI.md#ProductBulkUpdate) | **Post** /product.Product/BulkUpdate | 
+[**ProductBulkUpdateV2**](ProductAPI.md#ProductBulkUpdateV2) | **Post** /product.Product/BulkUpdateV2 | 
+[**ProductCreateAttributeGroup**](ProductAPI.md#ProductCreateAttributeGroup) | **Post** /product.Product/CreateAttributeGroup | 
+[**ProductCreateAttributeOptions**](ProductAPI.md#ProductCreateAttributeOptions) | **Post** /product.Product/CreateAttributeOptions | 
+[**ProductCreateEntity**](ProductAPI.md#ProductCreateEntity) | **Post** /product.Product/CreateEntity | 
+[**ProductCreateOptionsList**](ProductAPI.md#ProductCreateOptionsList) | **Post** /product.Product/CreateOptionsList | 
+[**ProductCreateProduct**](ProductAPI.md#ProductCreateProduct) | **Post** /product.Product/CreateProduct | 
+[**ProductCreateProductV2**](ProductAPI.md#ProductCreateProductV2) | **Post** /product.Product/CreateProductV2 | 
+[**ProductDelete**](ProductAPI.md#ProductDelete) | **Post** /product.Product/Delete | 
+[**ProductDeleteAttribute**](ProductAPI.md#ProductDeleteAttribute) | **Post** /product.Product/DeleteAttribute | 
+[**ProductDeleteProduct**](ProductAPI.md#ProductDeleteProduct) | **Post** /product.Product/DeleteProduct | 
+[**ProductGetAttributeGroup**](ProductAPI.md#ProductGetAttributeGroup) | **Post** /product.Product/GetAttributeGroup | 
+[**ProductGetAttributeOption**](ProductAPI.md#ProductGetAttributeOption) | **Post** /product.Product/GetAttributeOption | 
+[**ProductGetAttributeOptionByCode**](ProductAPI.md#ProductGetAttributeOptionByCode) | **Post** /product.Product/GetAttributeOptionByCode | 
+[**ProductGetAttributeOptions**](ProductAPI.md#ProductGetAttributeOptions) | **Post** /product.Product/GetAttributeOptions | 
+[**ProductGetEntity**](ProductAPI.md#ProductGetEntity) | **Post** /product.Product/GetEntity | 
+[**ProductGetOptionsList**](ProductAPI.md#ProductGetOptionsList) | **Post** /product.Product/GetOptionsList | 
+[**ProductGetProduct**](ProductAPI.md#ProductGetProduct) | **Post** /product.Product/GetProduct | 
+[**ProductGetProductByCode**](ProductAPI.md#ProductGetProductByCode) | **Post** /product.Product/GetProductByCode | 
+[**ProductGetProductByUrlKey**](ProductAPI.md#ProductGetProductByUrlKey) | **Post** /product.Product/GetProductByUrlKey | 
+[**ProductListAttributeGroups**](ProductAPI.md#ProductListAttributeGroups) | **Post** /product.Product/ListAttributeGroups | Attribute Groups endpoints
+[**ProductListAttributeOptions**](ProductAPI.md#ProductListAttributeOptions) | **Post** /product.Product/ListAttributeOptions | 
+[**ProductListEntities**](ProductAPI.md#ProductListEntities) | **Post** /product.Product/ListEntities | 
+[**ProductListOptionsLists**](ProductAPI.md#ProductListOptionsLists) | **Post** /product.Product/ListOptionsLists | 
+[**ProductListProducts**](ProductAPI.md#ProductListProducts) | **Post** /product.Product/ListProducts | 
+[**ProductListProductsByIds**](ProductAPI.md#ProductListProductsByIds) | **Post** /product.Product/ListProductsByIds | 
+[**ProductListProductsBySku**](ProductAPI.md#ProductListProductsBySku) | **Post** /product.Product/ListProductsBySku | 
+[**ProductListVariantsBySku**](ProductAPI.md#ProductListVariantsBySku) | **Post** /product.Product/ListVariantsBySku | 
+[**ProductRemoveMediaGalleryEntry**](ProductAPI.md#ProductRemoveMediaGalleryEntry) | **Post** /product.Product/RemoveMediaGalleryEntry | 
+[**ProductUpdateAttribute**](ProductAPI.md#ProductUpdateAttribute) | **Post** /product.Product/UpdateAttribute | 
+[**ProductUpdateAttributeGroup**](ProductAPI.md#ProductUpdateAttributeGroup) | **Post** /product.Product/UpdateAttributeGroup | 
+[**ProductUpdateAttributeOptions**](ProductAPI.md#ProductUpdateAttributeOptions) | **Post** /product.Product/UpdateAttributeOptions | 
+[**ProductUpdateMediaGalleryEntry**](ProductAPI.md#ProductUpdateMediaGalleryEntry) | **Post** /product.Product/UpdateMediaGalleryEntry | 
+[**ProductUpdateOptionsList**](ProductAPI.md#ProductUpdateOptionsList) | **Post** /product.Product/UpdateOptionsList | 
+[**ProductUpdateProduct**](ProductAPI.md#ProductUpdateProduct) | **Post** /product.Product/UpdateProduct | 
+[**ProductUpdateProductV2**](ProductAPI.md#ProductUpdateProductV2) | **Post** /product.Product/UpdateProductV2 | 
 
 
 
@@ -61,7 +61,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -69,13 +69,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductAddMediaGalleryEntry(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductAddMediaGalleryEntry(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductAddMediaGalleryEntry``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductAddMediaGalleryEntry``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductAddMediaGalleryEntry`: ProductAddMediaGalleryEntryResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductAddMediaGalleryEntry`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductAddMediaGalleryEntry`: %v\n", resp)
 }
 ```
 
@@ -125,7 +125,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -133,13 +133,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductBulkCreateAttribute(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductBulkCreateAttribute(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductBulkCreateAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductBulkCreateAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductBulkCreateAttribute`: EntitymanagerBulkCreateAttributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductBulkCreateAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductBulkCreateAttribute`: %v\n", resp)
 }
 ```
 
@@ -189,7 +189,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -197,13 +197,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductBulkDeleteProducts(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductBulkDeleteProducts(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductBulkDeleteProducts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductBulkDeleteProducts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductBulkDeleteProducts`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductBulkDeleteProducts`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductBulkDeleteProducts`: %v\n", resp)
 }
 ```
 
@@ -253,7 +253,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -261,13 +261,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductBulkUpdate(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductBulkUpdate(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductBulkUpdate`: ProductBulkUpdateResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -317,7 +317,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -325,13 +325,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductBulkUpdateV2(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductBulkUpdateV2(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductBulkUpdateV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductBulkUpdateV2``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductBulkUpdateV2`: ProductBulkUpdateResponseV2
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductBulkUpdateV2`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductBulkUpdateV2`: %v\n", resp)
 }
 ```
 
@@ -381,7 +381,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -389,13 +389,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductCreateAttributeGroup(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductCreateAttributeGroup(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateAttributeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductCreateAttributeGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductCreateAttributeGroup`: EntitymanagerAttributeGroup
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateAttributeGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductCreateAttributeGroup`: %v\n", resp)
 }
 ```
 
@@ -445,7 +445,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -453,13 +453,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductCreateAttributeOptions(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductCreateAttributeOptions(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateAttributeOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductCreateAttributeOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductCreateAttributeOptions`: EntitymanagerCreateAttributeOptionsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateAttributeOptions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductCreateAttributeOptions`: %v\n", resp)
 }
 ```
 
@@ -509,7 +509,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -517,13 +517,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductCreateEntity(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductCreateEntity(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateEntity``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductCreateEntity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductCreateEntity`: EntitymanagerCreateEntityResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateEntity`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductCreateEntity`: %v\n", resp)
 }
 ```
 
@@ -573,7 +573,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -581,13 +581,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductCreateOptionsList(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductCreateOptionsList(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateOptionsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductCreateOptionsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductCreateOptionsList`: EntitymanagerCreateOptionsListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateOptionsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductCreateOptionsList`: %v\n", resp)
 }
 ```
 
@@ -637,7 +637,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -645,13 +645,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductCreateProduct(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductCreateProduct(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateProduct``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductCreateProduct``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductCreateProduct`: ProductCreateProductResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateProduct`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductCreateProduct`: %v\n", resp)
 }
 ```
 
@@ -701,7 +701,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -709,13 +709,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductCreateProductV2(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductCreateProductV2(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductCreateProductV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductCreateProductV2``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductCreateProductV2`: ProductCreateProductResponseV2
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductCreateProductV2`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductCreateProductV2`: %v\n", resp)
 }
 ```
 
@@ -765,7 +765,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -773,13 +773,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductDelete(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductDelete(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductDelete`: ProductDeleteResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductDelete`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductDelete`: %v\n", resp)
 }
 ```
 
@@ -829,7 +829,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -837,13 +837,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductDeleteAttribute(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductDeleteAttribute(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductDeleteAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductDeleteAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductDeleteAttribute`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductDeleteAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductDeleteAttribute`: %v\n", resp)
 }
 ```
 
@@ -893,7 +893,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -901,13 +901,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductDeleteProduct(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductDeleteProduct(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductDeleteProduct``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductDeleteProduct``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductDeleteProduct`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductDeleteProduct`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductDeleteProduct`: %v\n", resp)
 }
 ```
 
@@ -957,7 +957,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -965,13 +965,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductGetAttributeGroup(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductGetAttributeGroup(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetAttributeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetAttributeGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductGetAttributeGroup`: EntitymanagerAttributeGroup
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetAttributeGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetAttributeGroup`: %v\n", resp)
 }
 ```
 
@@ -1021,7 +1021,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1029,13 +1029,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductGetAttributeOption(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductGetAttributeOption(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetAttributeOption``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetAttributeOption``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductGetAttributeOption`: EntitymanagerGetAttributeOptionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetAttributeOption`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetAttributeOption`: %v\n", resp)
 }
 ```
 
@@ -1085,7 +1085,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1093,13 +1093,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductGetAttributeOptionByCode(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductGetAttributeOptionByCode(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetAttributeOptionByCode``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetAttributeOptionByCode``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductGetAttributeOptionByCode`: EntitymanagerGetAttributeOptionByCodeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetAttributeOptionByCode`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetAttributeOptionByCode`: %v\n", resp)
 }
 ```
 
@@ -1149,7 +1149,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1157,13 +1157,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductGetAttributeOptions(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductGetAttributeOptions(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetAttributeOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetAttributeOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductGetAttributeOptions`: EntitymanagerGetAttributeOptionsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetAttributeOptions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetAttributeOptions`: %v\n", resp)
 }
 ```
 
@@ -1213,7 +1213,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1221,13 +1221,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductGetEntity(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductGetEntity(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetEntity``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetEntity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductGetEntity`: EntitymanagerEntity
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetEntity`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetEntity`: %v\n", resp)
 }
 ```
 
@@ -1277,7 +1277,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1285,13 +1285,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductGetOptionsList(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductGetOptionsList(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetOptionsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetOptionsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductGetOptionsList`: EntitymanagerGetOptionsListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetOptionsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetOptionsList`: %v\n", resp)
 }
 ```
 
@@ -1341,7 +1341,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1349,13 +1349,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductGetProduct(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductGetProduct(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetProduct``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetProduct``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductGetProduct`: ProductGetProductResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetProduct`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetProduct`: %v\n", resp)
 }
 ```
 
@@ -1405,7 +1405,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1413,13 +1413,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductGetProductByCode(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductGetProductByCode(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetProductByCode``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetProductByCode``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductGetProductByCode`: ProductGetProductByCodeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetProductByCode`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetProductByCode`: %v\n", resp)
 }
 ```
 
@@ -1469,7 +1469,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1477,13 +1477,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductGetProductByUrlKey(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductGetProductByUrlKey(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductGetProductByUrlKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetProductByUrlKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductGetProductByUrlKey`: ProductGetProductByUrlKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductGetProductByUrlKey`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetProductByUrlKey`: %v\n", resp)
 }
 ```
 
@@ -1533,7 +1533,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1541,13 +1541,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductListAttributeGroups(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductListAttributeGroups(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListAttributeGroups``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListAttributeGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductListAttributeGroups`: EntitymanagerListAttributeGroupsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListAttributeGroups`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListAttributeGroups`: %v\n", resp)
 }
 ```
 
@@ -1597,7 +1597,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1605,13 +1605,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductListAttributeOptions(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductListAttributeOptions(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListAttributeOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListAttributeOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductListAttributeOptions`: EntitymanagerListAttributeOptionsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListAttributeOptions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListAttributeOptions`: %v\n", resp)
 }
 ```
 
@@ -1661,7 +1661,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1669,13 +1669,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductListEntities(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductListEntities(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListEntities``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListEntities``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductListEntities`: EntitymanagerListEntitiesResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListEntities`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListEntities`: %v\n", resp)
 }
 ```
 
@@ -1725,7 +1725,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1733,13 +1733,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductListOptionsLists(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductListOptionsLists(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListOptionsLists``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListOptionsLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductListOptionsLists`: EntitymanagerListOptionsListsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListOptionsLists`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListOptionsLists`: %v\n", resp)
 }
 ```
 
@@ -1789,7 +1789,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1797,13 +1797,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductListProducts(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductListProducts(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListProducts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListProducts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductListProducts`: ProductListProductsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListProducts`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListProducts`: %v\n", resp)
 }
 ```
 
@@ -1853,7 +1853,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1861,13 +1861,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductListProductsByIds(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductListProductsByIds(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListProductsByIds``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListProductsByIds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductListProductsByIds`: ProductListProductsByIdsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListProductsByIds`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListProductsByIds`: %v\n", resp)
 }
 ```
 
@@ -1917,7 +1917,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1925,13 +1925,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductListProductsBySku(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductListProductsBySku(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListProductsBySku``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListProductsBySku``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductListProductsBySku`: ProductListProductsBySkuResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListProductsBySku`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListProductsBySku`: %v\n", resp)
 }
 ```
 
@@ -1981,7 +1981,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -1989,13 +1989,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductListVariantsBySku(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductListVariantsBySku(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductListVariantsBySku``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListVariantsBySku``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductListVariantsBySku`: ProductListVariantsBySkuResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductListVariantsBySku`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListVariantsBySku`: %v\n", resp)
 }
 ```
 
@@ -2045,7 +2045,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -2053,13 +2053,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductRemoveMediaGalleryEntry(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductRemoveMediaGalleryEntry(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductRemoveMediaGalleryEntry``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductRemoveMediaGalleryEntry``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductRemoveMediaGalleryEntry`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductRemoveMediaGalleryEntry`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductRemoveMediaGalleryEntry`: %v\n", resp)
 }
 ```
 
@@ -2109,7 +2109,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -2117,13 +2117,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductUpdateAttribute(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductUpdateAttribute(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductUpdateAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductUpdateAttribute`: EntitymanagerAttribute
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductUpdateAttribute`: %v\n", resp)
 }
 ```
 
@@ -2173,7 +2173,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -2181,13 +2181,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductUpdateAttributeGroup(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductUpdateAttributeGroup(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateAttributeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductUpdateAttributeGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductUpdateAttributeGroup`: EntitymanagerAttributeGroup
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateAttributeGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductUpdateAttributeGroup`: %v\n", resp)
 }
 ```
 
@@ -2237,7 +2237,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -2245,13 +2245,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductUpdateAttributeOptions(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductUpdateAttributeOptions(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateAttributeOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductUpdateAttributeOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductUpdateAttributeOptions`: EntitymanagerUpdateAttributeOptionsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateAttributeOptions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductUpdateAttributeOptions`: %v\n", resp)
 }
 ```
 
@@ -2301,7 +2301,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -2309,13 +2309,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductUpdateMediaGalleryEntry(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductUpdateMediaGalleryEntry(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateMediaGalleryEntry``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductUpdateMediaGalleryEntry``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductUpdateMediaGalleryEntry`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateMediaGalleryEntry`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductUpdateMediaGalleryEntry`: %v\n", resp)
 }
 ```
 
@@ -2365,7 +2365,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -2373,13 +2373,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductUpdateOptionsList(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductUpdateOptionsList(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateOptionsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductUpdateOptionsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductUpdateOptionsList`: EntitymanagerUpdateOptionsListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateOptionsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductUpdateOptionsList`: %v\n", resp)
 }
 ```
 
@@ -2429,7 +2429,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -2437,13 +2437,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductUpdateProduct(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductUpdateProduct(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateProduct``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductUpdateProduct``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductUpdateProduct`: ProductUpdateProductResponse
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateProduct`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductUpdateProduct`: %v\n", resp)
 }
 ```
 
@@ -2493,7 +2493,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/gemini-commerce/go-client-product"
 )
 
 func main() {
@@ -2501,13 +2501,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductApi.ProductUpdateProductV2(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ProductAPI.ProductUpdateProductV2(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductApi.ProductUpdateProductV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductUpdateProductV2``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ProductUpdateProductV2`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `ProductApi.ProductUpdateProductV2`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductUpdateProductV2`: %v\n", resp)
 }
 ```
 

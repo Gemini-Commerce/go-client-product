@@ -55,9 +55,9 @@ docs/EntitymanagerUpdateAttributeRequestPayload.md
 docs/EntitymanagerUpdateOptionsListRequest.md
 docs/EntitymanagerUpdateOptionsListResponse.md
 docs/ListProductsRequestFilter.md
+docs/ProductAPI.md
 docs/ProductAddMediaGalleryEntryRequest.md
 docs/ProductAddMediaGalleryEntryResponse.md
-docs/ProductApi.md
 docs/ProductAttributeResponseError.md
 docs/ProductBulkDeleteProductsRequest.md
 docs/ProductBulkUpdateRequest.md
@@ -208,5 +208,4 @@ model_productentitymanager_localized_text.go
 model_protobuf_any.go
 model_rpc_status.go
 response.go
-test/api_product_test.go
 utils.go
