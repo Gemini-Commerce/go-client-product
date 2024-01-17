@@ -25,7 +25,7 @@ type EntitymanagerUpdateAttributeRequest struct {
 	EntityData *EntitymanagerEntityIdentifier `json:"entityData,omitempty"`
 	EntityId *string `json:"entityId,omitempty"`
 	Payload *EntitymanagerUpdateAttributeRequestPayload `json:"payload,omitempty"`
-	FieldMask []string `json:"fieldMask,omitempty"`
+	FieldMask *string `json:"fieldMask,omitempty"`
 }
 
 // NewEntitymanagerUpdateAttributeRequest instantiates a new EntitymanagerUpdateAttributeRequest object
@@ -206,17 +206,17 @@ func (o *EntitymanagerUpdateAttributeRequest) SetPayload(v EntitymanagerUpdateAt
 }
 
 // GetFieldMask returns the FieldMask field value if set, zero value otherwise.
-func (o *EntitymanagerUpdateAttributeRequest) GetFieldMask() []string {
+func (o *EntitymanagerUpdateAttributeRequest) GetFieldMask() string {
 	if o == nil || IsNil(o.FieldMask) {
-		var ret []string
+		var ret string
 		return ret
 	}
-	return o.FieldMask
+	return *o.FieldMask
 }
 
 // GetFieldMaskOk returns a tuple with the FieldMask field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EntitymanagerUpdateAttributeRequest) GetFieldMaskOk() ([]string, bool) {
+func (o *EntitymanagerUpdateAttributeRequest) GetFieldMaskOk() (*string, bool) {
 	if o == nil || IsNil(o.FieldMask) {
 		return nil, false
 	}
@@ -232,9 +232,9 @@ func (o *EntitymanagerUpdateAttributeRequest) HasFieldMask() bool {
 	return false
 }
 
-// SetFieldMask gets a reference to the given []string and assigns it to the FieldMask field.
-func (o *EntitymanagerUpdateAttributeRequest) SetFieldMask(v []string) {
-	o.FieldMask = v
+// SetFieldMask gets a reference to the given string and assigns it to the FieldMask field.
+func (o *EntitymanagerUpdateAttributeRequest) SetFieldMask(v string) {
+	o.FieldMask = &v
 }
 
 func (o EntitymanagerUpdateAttributeRequest) MarshalJSON() ([]byte, error) {

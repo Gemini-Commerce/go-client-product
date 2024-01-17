@@ -24,7 +24,7 @@ type ProductListProductsRequest struct {
 	PageSize *string `json:"pageSize,omitempty"`
 	PageToken *string `json:"pageToken,omitempty"`
 	Filter *ListProductsRequestFilter `json:"filter,omitempty"`
-	FilterMask []string `json:"filterMask,omitempty"`
+	FilterMask *string `json:"filterMask,omitempty"`
 }
 
 // NewProductListProductsRequest instantiates a new ProductListProductsRequest object
@@ -173,17 +173,17 @@ func (o *ProductListProductsRequest) SetFilter(v ListProductsRequestFilter) {
 }
 
 // GetFilterMask returns the FilterMask field value if set, zero value otherwise.
-func (o *ProductListProductsRequest) GetFilterMask() []string {
+func (o *ProductListProductsRequest) GetFilterMask() string {
 	if o == nil || IsNil(o.FilterMask) {
-		var ret []string
+		var ret string
 		return ret
 	}
-	return o.FilterMask
+	return *o.FilterMask
 }
 
 // GetFilterMaskOk returns a tuple with the FilterMask field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductListProductsRequest) GetFilterMaskOk() ([]string, bool) {
+func (o *ProductListProductsRequest) GetFilterMaskOk() (*string, bool) {
 	if o == nil || IsNil(o.FilterMask) {
 		return nil, false
 	}
@@ -199,9 +199,9 @@ func (o *ProductListProductsRequest) HasFilterMask() bool {
 	return false
 }
 
-// SetFilterMask gets a reference to the given []string and assigns it to the FilterMask field.
-func (o *ProductListProductsRequest) SetFilterMask(v []string) {
-	o.FilterMask = v
+// SetFilterMask gets a reference to the given string and assigns it to the FilterMask field.
+func (o *ProductListProductsRequest) SetFilterMask(v string) {
+	o.FilterMask = &v
 }
 
 func (o ProductListProductsRequest) MarshalJSON() ([]byte, error) {

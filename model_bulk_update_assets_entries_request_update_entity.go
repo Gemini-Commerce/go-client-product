@@ -22,7 +22,7 @@ var _ MappedNullable = &BulkUpdateAssetsEntriesRequestUpdateEntity{}
 type BulkUpdateAssetsEntriesRequestUpdateEntity struct {
 	Id *string `json:"id,omitempty"`
 	Payload *ProductUpdateAssetEntryPayload `json:"payload,omitempty"`
-	PayloadMask []string `json:"payloadMask,omitempty"`
+	PayloadMask *string `json:"payloadMask,omitempty"`
 }
 
 // NewBulkUpdateAssetsEntriesRequestUpdateEntity instantiates a new BulkUpdateAssetsEntriesRequestUpdateEntity object
@@ -107,17 +107,17 @@ func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) SetPayload(v ProductUpdateA
 }
 
 // GetPayloadMask returns the PayloadMask field value if set, zero value otherwise.
-func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetPayloadMask() []string {
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetPayloadMask() string {
 	if o == nil || IsNil(o.PayloadMask) {
-		var ret []string
+		var ret string
 		return ret
 	}
-	return o.PayloadMask
+	return *o.PayloadMask
 }
 
 // GetPayloadMaskOk returns a tuple with the PayloadMask field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetPayloadMaskOk() ([]string, bool) {
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetPayloadMaskOk() (*string, bool) {
 	if o == nil || IsNil(o.PayloadMask) {
 		return nil, false
 	}
@@ -133,9 +133,9 @@ func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) HasPayloadMask() bool {
 	return false
 }
 
-// SetPayloadMask gets a reference to the given []string and assigns it to the PayloadMask field.
-func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) SetPayloadMask(v []string) {
-	o.PayloadMask = v
+// SetPayloadMask gets a reference to the given string and assigns it to the PayloadMask field.
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) SetPayloadMask(v string) {
+	o.PayloadMask = &v
 }
 
 func (o BulkUpdateAssetsEntriesRequestUpdateEntity) MarshalJSON() ([]byte, error) {

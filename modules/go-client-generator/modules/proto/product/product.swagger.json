@@ -13,6 +13,11 @@
       "url": "https://gemini-commerce.com/api/fair-use-license"
     }
   },
+  "tags": [
+    {
+      "name": "Product"
+    }
+  ],
   "host": "product.api.gogemini.io",
   "basePath": "/",
   "schemes": [
@@ -516,6 +521,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
+              "type": "object",
               "properties": {}
             }
           },
@@ -1356,10 +1362,7 @@
           "$ref": "#/definitions/productUpdateAssetEntryPayload"
         },
         "payloadMask": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         }
       }
     },
@@ -1456,7 +1459,8 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "array of section codes (e.g. \"pim\", \"configurator\"), in which the attribute group is visible (empty array means visible everywhere)"
         }
       }
     },
@@ -1485,6 +1489,7 @@
         "swatches": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttributeOptionSwatch"
           }
         }
@@ -1535,6 +1540,7 @@
         "attributeWriteErrors": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttributeWriteError"
           }
         }
@@ -1555,6 +1561,7 @@
         "attributes": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttribute"
           }
         }
@@ -1566,6 +1573,7 @@
         "attributes": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttribute"
           }
         }
@@ -1591,7 +1599,8 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "array of section codes (e.g. \"pim\", \"configurator\"), in which the attribute group is visible (empty array means visible everywhere)"
         }
       }
     },
@@ -1607,6 +1616,7 @@
         "options": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttributeOption"
           }
         }
@@ -1618,12 +1628,14 @@
         "options": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttributeOption"
           }
         },
         "errors": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttributeOptionErrors"
           }
         }
@@ -1706,6 +1718,7 @@
         "attributes": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttribute"
           }
         }
@@ -1778,6 +1791,7 @@
         "optionIds": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerGetAttributeOptionsRequestOption"
           }
         }
@@ -1800,6 +1814,7 @@
         "options": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerGetAttributeOptionsResponseOption"
           }
         }
@@ -1849,6 +1864,7 @@
         "attributeGroups": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttributeGroup"
           }
         }
@@ -1871,6 +1887,7 @@
         "options": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttributeOption"
           }
         }
@@ -1894,6 +1911,7 @@
         "entities": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerEntity"
           }
         },
@@ -1917,6 +1935,7 @@
         "options": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerOptionsList"
           }
         }
@@ -1967,10 +1986,7 @@
           "$ref": "#/definitions/entitymanagerUpdateAttributeGroupRequestPayload"
         },
         "fieldMask": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         }
       }
     },
@@ -1988,7 +2004,8 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "array of section codes (e.g. \"pim\", \"configurator\"), in which the attribute group is visible (empty array means visible everywhere)"
         }
       }
     },
@@ -2004,6 +2021,7 @@
         "options": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttributeOption"
           }
         }
@@ -2015,12 +2033,14 @@
         "options": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttributeOption"
           }
         },
         "errors": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/entitymanagerAttributeOptionErrors"
           }
         }
@@ -2045,10 +2065,7 @@
           "$ref": "#/definitions/entitymanagerUpdateAttributeRequestPayload"
         },
         "fieldMask": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         }
       }
     },
@@ -2117,6 +2134,7 @@
         "metadata": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productMediaGalleryEntryMetadata"
           }
         }
@@ -2146,6 +2164,7 @@
         "metadata": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productAssetsEntryMetadata"
           }
         }
@@ -2157,6 +2176,7 @@
         "entries": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productAssetsEntry"
           }
         }
@@ -2187,6 +2207,7 @@
         "metadata": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productAssetsEntryMetadata"
           }
         }
@@ -2232,6 +2253,7 @@
         "assets": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productAssetData"
           }
         }
@@ -2243,6 +2265,7 @@
         "assets": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productAssetsEntry"
           }
         }
@@ -2297,6 +2320,7 @@
         "assets": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/BulkUpdateAssetsEntriesRequestUpdateEntity"
           }
         }
@@ -2308,6 +2332,7 @@
         "assets": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productAssetsEntry"
           }
         }
@@ -2381,6 +2406,7 @@
         "productResponse": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productBulkUpdateResponseResponse"
           }
         }
@@ -2409,6 +2435,7 @@
         "productResponse": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productBulkUpdateResponseV2Response"
           }
         }
@@ -2560,12 +2587,14 @@
         "productErrors": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productProductResponseError"
           }
         },
         "attributeErrors": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productAttributeResponseError"
           }
         }
@@ -2700,6 +2729,7 @@
         "products": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productProductEntity"
           }
         }
@@ -2722,6 +2752,7 @@
         "products": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productProductEntity"
           }
         }
@@ -2744,10 +2775,7 @@
           "$ref": "#/definitions/ListProductsRequestFilter"
         },
         "filterMask": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         }
       }
     },
@@ -2757,6 +2785,7 @@
         "products": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productProductEntity"
           }
         },
@@ -2782,6 +2811,7 @@
         "variants": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productProductVariant"
           }
         }
@@ -2815,6 +2845,7 @@
         "entries": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productMediaGalleryEntry"
           }
         }
@@ -2836,6 +2867,7 @@
         "metadata": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productMediaGalleryEntryMetadata"
           }
         }
@@ -2862,7 +2894,8 @@
           "type": "string"
         },
         "grn": {
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "entityType": {
           "type": "string"
@@ -2953,7 +2986,8 @@
           "type": "string"
         },
         "grn": {
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "maxSaleableQuantity": {
           "type": "integer",
@@ -3000,6 +3034,7 @@
         "metadata": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productAssetsEntryMetadata"
           }
         }
@@ -3027,6 +3062,7 @@
         "metadata": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productMediaGalleryEntryMetadata"
           }
         }
@@ -3128,12 +3164,14 @@
         "productErrors": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productProductResponseError"
           }
         },
         "attributeErrors": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/productAttributeResponseError"
           }
         }
@@ -3159,14 +3197,10 @@
         "@type": {
           "type": "string",
           "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
-        },
-        "value": {
-          "type": "string",
-          "format": "byte",
-          "description": "Must be a valid serialized protocol buffer of the above specified type."
         }
       },
-      "description": "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(\u0026foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\n Example 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\n Example 4: Pack and unpack a message in Go\n\n     foo := \u0026pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := \u0026pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": \u003cstring\u003e,\n      \"lastName\": \u003cstring\u003e\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
+      "additionalProperties": {},
+      "description": "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(\u0026foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\nExample 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\nExample 4: Pack and unpack a message in Go\n\n     foo := \u0026pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := \u0026pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": \u003cstring\u003e,\n      \"lastName\": \u003cstring\u003e\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
     },
     "rpcStatus": {
       "type": "object",
@@ -3181,6 +3215,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -3188,11 +3223,21 @@
     }
   },
   "securityDefinitions": {
+    "Authorization": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    },
     "standardAuthorization": {
       "type": "oauth2",
       "name": "Authorization",
       "in": "header",
       "flow": "implicit"
     }
-  }
+  },
+  "security": [
+    {
+      "Authorization": []
+    }
+  ]
 }

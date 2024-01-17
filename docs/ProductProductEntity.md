@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TenantId**| **string** |   | [optional]
-**Grn**| **string** |   | [optional]
+**Grn**| **string** |   | [optional] [readonly]
 **EntityType**| **string** |   | [optional]
 **EntityCode**| **string** |   | [optional]
 **Id**| **string** |   | [optional]
