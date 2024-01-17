@@ -1,4 +1,4 @@
-# # BulkUpdateResponseResponse
+# # ProductBulkRemoveAssetsEntriesRequest
 
 
 ## Properties 
@@ -6,9 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**TenantId**| **string** |   | [optional]
 **ProductId**| **string** |   | [optional]
-**Success**| **bool** |   | [optional]
-**Attributes**| [**map[string]ProtobufAny**](ProtobufAny.md) |   | [optional]
+**Ids**| **[]string** |   | [optional]
 
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

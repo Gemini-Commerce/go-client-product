@@ -139,6 +139,122 @@ func (a *ProductAPIService) ProductAddMediaGalleryEntryExecute(r ProductAPIProdu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ProductAPIProductBulkAddAssetsEntriesRequest struct {
+	ctx context.Context
+	ApiService *ProductAPIService
+	body *ProductBulkAddAssetsEntriesRequest
+}
+
+func (r ProductAPIProductBulkAddAssetsEntriesRequest) Body(body ProductBulkAddAssetsEntriesRequest) ProductAPIProductBulkAddAssetsEntriesRequest {
+	r.body = &body
+	return r
+}
+
+func (r ProductAPIProductBulkAddAssetsEntriesRequest) Execute() (*ProductBulkAddAssetsEntriesResponse, *http.Response, error) {
+	return r.ApiService.ProductBulkAddAssetsEntriesExecute(r)
+}
+
+/*
+ProductBulkAddAssetsEntries Assets endpoints
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ProductAPIProductBulkAddAssetsEntriesRequest
+*/
+func (a *ProductAPIService) ProductBulkAddAssetsEntries(ctx context.Context) ProductAPIProductBulkAddAssetsEntriesRequest {
+	return ProductAPIProductBulkAddAssetsEntriesRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return ProductBulkAddAssetsEntriesResponse
+func (a *ProductAPIService) ProductBulkAddAssetsEntriesExecute(r ProductAPIProductBulkAddAssetsEntriesRequest) (*ProductBulkAddAssetsEntriesResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductBulkAddAssetsEntriesResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.ProductBulkAddAssetsEntries")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/product.Product/BulkAddAssetsEntries"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.body == nil {
+		return localVarReturnValue, nil, reportError("body is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ProductAPIProductBulkCreateAttributeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
@@ -371,6 +487,122 @@ func (a *ProductAPIService) ProductBulkDeleteProductsExecute(r ProductAPIProduct
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ProductAPIProductBulkRemoveAssetsEntriesRequest struct {
+	ctx context.Context
+	ApiService *ProductAPIService
+	body *ProductBulkRemoveAssetsEntriesRequest
+}
+
+func (r ProductAPIProductBulkRemoveAssetsEntriesRequest) Body(body ProductBulkRemoveAssetsEntriesRequest) ProductAPIProductBulkRemoveAssetsEntriesRequest {
+	r.body = &body
+	return r
+}
+
+func (r ProductAPIProductBulkRemoveAssetsEntriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.ProductBulkRemoveAssetsEntriesExecute(r)
+}
+
+/*
+ProductBulkRemoveAssetsEntries Method for ProductBulkRemoveAssetsEntries
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ProductAPIProductBulkRemoveAssetsEntriesRequest
+*/
+func (a *ProductAPIService) ProductBulkRemoveAssetsEntries(ctx context.Context) ProductAPIProductBulkRemoveAssetsEntriesRequest {
+	return ProductAPIProductBulkRemoveAssetsEntriesRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return map[string]interface{}
+func (a *ProductAPIService) ProductBulkRemoveAssetsEntriesExecute(r ProductAPIProductBulkRemoveAssetsEntriesRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.ProductBulkRemoveAssetsEntries")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/product.Product/BulkRemoveAssetsEntries"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.body == nil {
+		return localVarReturnValue, nil, reportError("body is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ProductAPIProductBulkUpdateRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
@@ -418,6 +650,122 @@ func (a *ProductAPIService) ProductBulkUpdateExecute(r ProductAPIProductBulkUpda
 	}
 
 	localVarPath := localBasePath + "/product.Product/BulkUpdate"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.body == nil {
+		return localVarReturnValue, nil, reportError("body is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+			var v RpcStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ProductAPIProductBulkUpdateAssetsEntriesRequest struct {
+	ctx context.Context
+	ApiService *ProductAPIService
+	body *ProductBulkUpdateAssetsEntriesRequest
+}
+
+func (r ProductAPIProductBulkUpdateAssetsEntriesRequest) Body(body ProductBulkUpdateAssetsEntriesRequest) ProductAPIProductBulkUpdateAssetsEntriesRequest {
+	r.body = &body
+	return r
+}
+
+func (r ProductAPIProductBulkUpdateAssetsEntriesRequest) Execute() (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error) {
+	return r.ApiService.ProductBulkUpdateAssetsEntriesExecute(r)
+}
+
+/*
+ProductBulkUpdateAssetsEntries Method for ProductBulkUpdateAssetsEntries
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ProductAPIProductBulkUpdateAssetsEntriesRequest
+*/
+func (a *ProductAPIService) ProductBulkUpdateAssetsEntries(ctx context.Context) ProductAPIProductBulkUpdateAssetsEntriesRequest {
+	return ProductAPIProductBulkUpdateAssetsEntriesRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return ProductBulkUpdateAssetsEntriesResponse
+func (a *ProductAPIService) ProductBulkUpdateAssetsEntriesExecute(r ProductAPIProductBulkUpdateAssetsEntriesRequest) (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProductBulkUpdateAssetsEntriesResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.ProductBulkUpdateAssetsEntries")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/product.Product/BulkUpdateAssetsEntries"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1816,122 +2164,6 @@ func (a *ProductAPIService) ProductGetAttributeOptionExecute(r ProductAPIProduct
 	}
 
 	localVarPath := localBasePath + "/product.Product/GetAttributeOption"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.body == nil {
-		return localVarReturnValue, nil, reportError("body is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.body
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ProductAPIProductGetAttributeOptionByCodeRequest struct {
-	ctx context.Context
-	ApiService *ProductAPIService
-	body *EntitymanagerGetAttributeOptionByCodeRequest
-}
-
-func (r ProductAPIProductGetAttributeOptionByCodeRequest) Body(body EntitymanagerGetAttributeOptionByCodeRequest) ProductAPIProductGetAttributeOptionByCodeRequest {
-	r.body = &body
-	return r
-}
-
-func (r ProductAPIProductGetAttributeOptionByCodeRequest) Execute() (*EntitymanagerGetAttributeOptionByCodeResponse, *http.Response, error) {
-	return r.ApiService.ProductGetAttributeOptionByCodeExecute(r)
-}
-
-/*
-ProductGetAttributeOptionByCode Method for ProductGetAttributeOptionByCode
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductGetAttributeOptionByCodeRequest
-*/
-func (a *ProductAPIService) ProductGetAttributeOptionByCode(ctx context.Context) ProductAPIProductGetAttributeOptionByCodeRequest {
-	return ProductAPIProductGetAttributeOptionByCodeRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return EntitymanagerGetAttributeOptionByCodeResponse
-func (a *ProductAPIService) ProductGetAttributeOptionByCodeExecute(r ProductAPIProductGetAttributeOptionByCodeRequest) (*EntitymanagerGetAttributeOptionByCodeResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EntitymanagerGetAttributeOptionByCodeResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductAPIService.ProductGetAttributeOptionByCode")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/product.Product/GetAttributeOptionByCode"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3992,7 +4224,7 @@ func (r ProductAPIProductUpdateAttributeOptionsRequest) Execute() (*Entitymanage
 }
 
 /*
-ProductUpdateAttributeOptions Method for ProductUpdateAttributeOptions
+ProductUpdateAttributeOptions rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ProductAPIProductUpdateAttributeOptionsRequest

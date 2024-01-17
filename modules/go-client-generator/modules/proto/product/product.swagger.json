@@ -57,6 +57,39 @@
         ]
       }
     },
+    "/product.Product/BulkAddAssetsEntries": {
+      "post": {
+        "summary": "Assets endpoints",
+        "operationId": "Product_BulkAddAssetsEntries",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/productBulkAddAssetsEntriesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productBulkAddAssetsEntriesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Product"
+        ]
+      }
+    },
     "/product.Product/BulkCreateAttribute": {
       "post": {
         "operationId": "Product_BulkCreateAttribute",
@@ -121,6 +154,38 @@
         ]
       }
     },
+    "/product.Product/BulkRemoveAssetsEntries": {
+      "post": {
+        "operationId": "Product_BulkRemoveAssetsEntries",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/productBulkRemoveAssetsEntriesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productBulkRemoveAssetsEntriesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Product"
+        ]
+      }
+    },
     "/product.Product/BulkUpdate": {
       "post": {
         "operationId": "Product_BulkUpdate",
@@ -152,6 +217,38 @@
           "Product"
         ],
         "deprecated": true
+      }
+    },
+    "/product.Product/BulkUpdateAssetsEntries": {
+      "post": {
+        "operationId": "Product_BulkUpdateAssetsEntries",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/productBulkUpdateAssetsEntriesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productBulkUpdateAssetsEntriesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Product"
+        ]
       }
     },
     "/product.Product/BulkUpdateV2": {
@@ -532,38 +629,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/entitymanagerGetAttributeOptionRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Product"
-        ]
-      }
-    },
-    "/product.Product/GetAttributeOptionByCode": {
-      "post": {
-        "operationId": "Product_GetAttributeOptionByCode",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/entitymanagerGetAttributeOptionByCodeResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/entitymanagerGetAttributeOptionByCodeRequest"
             }
           }
         ],
@@ -1119,6 +1184,7 @@
     },
     "/product.Product/UpdateAttributeOptions": {
       "post": {
+        "summary": "rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}",
         "operationId": "Product_UpdateAttributeOptions",
         "responses": {
           "200": {
@@ -1280,6 +1346,23 @@
     }
   },
   "definitions": {
+    "BulkUpdateAssetsEntriesRequestUpdateEntity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/definitions/productUpdateAssetEntryPayload"
+        },
+        "payloadMask": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "ListProductsRequestFilter": {
       "type": "object",
       "properties": {
@@ -1368,6 +1451,12 @@
         "sort": {
           "type": "integer",
           "format": "int32"
+        },
+        "visibility": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -1497,6 +1586,12 @@
         "sort": {
           "type": "integer",
           "format": "int32"
+        },
+        "visibility": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -1649,28 +1744,6 @@
         },
         "code": {
           "type": "string"
-        }
-      }
-    },
-    "entitymanagerGetAttributeOptionByCodeRequest": {
-      "type": "object",
-      "properties": {
-        "tenantId": {
-          "type": "string"
-        },
-        "listCode": {
-          "type": "string"
-        },
-        "code": {
-          "type": "string"
-        }
-      }
-    },
-    "entitymanagerGetAttributeOptionByCodeResponse": {
-      "type": "object",
-      "properties": {
-        "option": {
-          "$ref": "#/definitions/entitymanagerAttributeOption"
         }
       }
     },
@@ -1910,6 +1983,12 @@
         "sort": {
           "type": "integer",
           "format": "int32"
+        },
+        "visibility": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -2051,6 +2130,82 @@
         }
       }
     },
+    "productAssetData": {
+      "type": "object",
+      "properties": {
+        "assetGrn": {
+          "type": "string"
+        },
+        "localizedAssetGrn": {
+          "$ref": "#/definitions/productLocalizedAsset"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "metadata": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productAssetsEntryMetadata"
+          }
+        }
+      }
+    },
+    "productAssets": {
+      "type": "object",
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productAssetsEntry"
+          }
+        }
+      }
+    },
+    "productAssetsEntry": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "assetGrn": {
+          "type": "string"
+        },
+        "localizedAssetGrn": {
+          "$ref": "#/definitions/productLocalizedAsset"
+        },
+        "locales": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "position": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "metadata": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productAssetsEntryMetadata"
+          }
+        }
+      }
+    },
+    "productAssetsEntryMetadata": {
+      "type": "object",
+      "properties": {
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alt": {
+          "$ref": "#/definitions/productLocalizedText"
+        }
+      }
+    },
     "productAttributeResponseError": {
       "type": "object",
       "properties": {
@@ -2062,6 +2217,34 @@
         },
         "attributeCode": {
           "type": "string"
+        }
+      }
+    },
+    "productBulkAddAssetsEntriesRequest": {
+      "type": "object",
+      "properties": {
+        "tenantId": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productAssetData"
+          }
+        }
+      }
+    },
+    "productBulkAddAssetsEntriesResponse": {
+      "type": "object",
+      "properties": {
+        "assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productAssetsEntry"
+          }
         }
       }
     },
@@ -2081,6 +2264,54 @@
     },
     "productBulkDeleteProductsResponse": {
       "type": "object"
+    },
+    "productBulkRemoveAssetsEntriesRequest": {
+      "type": "object",
+      "properties": {
+        "tenantId": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "productBulkRemoveAssetsEntriesResponse": {
+      "type": "object"
+    },
+    "productBulkUpdateAssetsEntriesRequest": {
+      "type": "object",
+      "properties": {
+        "tenantId": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BulkUpdateAssetsEntriesRequestUpdateEntity"
+          }
+        }
+      }
+    },
+    "productBulkUpdateAssetsEntriesResponse": {
+      "type": "object",
+      "properties": {
+        "assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productAssetsEntry"
+          }
+        }
+      }
     },
     "productBulkUpdateRequest": {
       "type": "object",
@@ -2556,6 +2787,17 @@
         }
       }
     },
+    "productLocalizedAsset": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "productLocalizedText": {
       "type": "object",
       "properties": {
@@ -2680,6 +2922,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "assets": {
+          "$ref": "#/definitions/productAssets"
+        },
         "createdAt": {
           "type": "string",
           "format": "int64"
@@ -2738,6 +2983,27 @@
     },
     "productRemoveMediaGalleryEntryResponse": {
       "type": "object"
+    },
+    "productUpdateAssetEntryPayload": {
+      "type": "object",
+      "properties": {
+        "assetGrn": {
+          "type": "string"
+        },
+        "localizedAssetGrn": {
+          "$ref": "#/definitions/productLocalizedAsset"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "metadata": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productAssetsEntryMetadata"
+          }
+        }
+      }
     },
     "productUpdateMediaGalleryEntryRequest": {
       "type": "object",

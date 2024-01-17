@@ -37,6 +37,32 @@ paths:
       tags:
       - Product
       x-codegen-request-body-name: body
+  /product.Product/BulkAddAssetsEntries:
+    post:
+      operationId: Product_BulkAddAssetsEntries
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/productBulkAddAssetsEntriesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/productBulkAddAssetsEntriesResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Assets endpoints
+      tags:
+      - Product
+      x-codegen-request-body-name: body
   /product.Product/BulkCreateAttribute:
     post:
       operationId: Product_BulkCreateAttribute
@@ -87,6 +113,31 @@ paths:
       tags:
       - Product
       x-codegen-request-body-name: body
+  /product.Product/BulkRemoveAssetsEntries:
+    post:
+      operationId: Product_BulkRemoveAssetsEntries
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/productBulkRemoveAssetsEntriesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/productBulkRemoveAssetsEntriesResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - Product
+      x-codegen-request-body-name: body
   /product.Product/BulkUpdate:
     post:
       deprecated: true
@@ -103,6 +154,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/productBulkUpdateResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - Product
+      x-codegen-request-body-name: body
+  /product.Product/BulkUpdateAssetsEntries:
+    post:
+      operationId: Product_BulkUpdateAssetsEntries
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/productBulkUpdateAssetsEntriesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/productBulkUpdateAssetsEntriesResponse'
           description: A successful response.
         default:
           content:
@@ -405,31 +481,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/entitymanagerGetAttributeOptionResponse'
-          description: A successful response.
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/rpcStatus'
-          description: An unexpected error response.
-      tags:
-      - Product
-      x-codegen-request-body-name: body
-  /product.Product/GetAttributeOptionByCode:
-    post:
-      operationId: Product_GetAttributeOptionByCode
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/entitymanagerGetAttributeOptionByCodeRequest'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/entitymanagerGetAttributeOptionByCodeResponse'
           description: A successful response.
         default:
           content:
@@ -888,6 +939,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: "rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest)\
+        \ returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}"
       tags:
       - Product
       x-codegen-request-body-name: body
@@ -994,6 +1047,17 @@ paths:
       x-codegen-request-body-name: body
 components:
   schemas:
+    BulkUpdateAssetsEntriesRequestUpdateEntity:
+      properties:
+        id:
+          type: string
+        payload:
+          $ref: '#/components/schemas/productUpdateAssetEntryPayload'
+        payloadMask:
+          items:
+            type: string
+          type: array
+      type: object
     ListProductsRequestFilter:
       properties:
         createdAtStart:
@@ -1065,6 +1129,9 @@ components:
     entitymanagerAttributeGroup:
       example:
         code: code
+        visibility:
+        - visibility
+        - visibility
         label:
           value:
             key: value
@@ -1077,6 +1144,10 @@ components:
         sort:
           format: int32
           type: integer
+        visibility:
+          items:
+            type: string
+          type: array
       type: object
     entitymanagerAttributeOption:
       example:
@@ -1226,6 +1297,10 @@ components:
         sort:
           format: int32
           type: integer
+        visibility:
+          items:
+            type: string
+          type: array
       type: object
     entitymanagerCreateAttributeOptionsRequest:
       properties:
@@ -1455,35 +1530,6 @@ components:
         code:
           type: string
       type: object
-    entitymanagerGetAttributeOptionByCodeRequest:
-      properties:
-        tenantId:
-          type: string
-        listCode:
-          type: string
-        code:
-          type: string
-      type: object
-    entitymanagerGetAttributeOptionByCodeResponse:
-      example:
-        option:
-          code: code
-          sort: 0
-          id: id
-          value:
-            value:
-              key: value
-          swatches:
-          - grn: grn
-            hex: hex
-          - grn: grn
-            hex: hex
-          option:
-            key: option
-      properties:
-        option:
-          $ref: '#/components/schemas/entitymanagerAttributeOption'
-      type: object
     entitymanagerGetAttributeOptionRequest:
       properties:
         tenantId:
@@ -1616,11 +1662,17 @@ components:
       example:
         attributeGroups:
         - code: code
+          visibility:
+          - visibility
+          - visibility
           label:
             value:
               key: value
           sort: 0
         - code: code
+          visibility:
+          - visibility
+          - visibility
           label:
             value:
               key: value
@@ -1839,6 +1891,10 @@ components:
         sort:
           format: int32
           type: integer
+        visibility:
+          items:
+            type: string
+          type: array
       type: object
     entitymanagerUpdateAttributeOptionsRequest:
       properties:
@@ -1987,6 +2043,132 @@ components:
         mediaGalleryEntry:
           $ref: '#/components/schemas/productMediaGalleryEntry'
       type: object
+    productAssetData:
+      properties:
+        assetGrn:
+          type: string
+        localizedAssetGrn:
+          $ref: '#/components/schemas/productLocalizedAsset'
+        position:
+          format: int64
+          type: integer
+        metadata:
+          items:
+            $ref: '#/components/schemas/productAssetsEntryMetadata'
+          type: array
+      type: object
+    productAssets:
+      example:
+        entries:
+        - assetGrn: assetGrn
+          locales:
+          - locales
+          - locales
+          metadata:
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          localizedAssetGrn:
+            value:
+              key: value
+          id: id
+          position: 0
+        - assetGrn: assetGrn
+          locales:
+          - locales
+          - locales
+          metadata:
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          localizedAssetGrn:
+            value:
+              key: value
+          id: id
+          position: 0
+      properties:
+        entries:
+          items:
+            $ref: '#/components/schemas/productAssetsEntry'
+          type: array
+      type: object
+    productAssetsEntry:
+      example:
+        assetGrn: assetGrn
+        locales:
+        - locales
+        - locales
+        metadata:
+        - roles:
+          - roles
+          - roles
+          alt:
+            value:
+              key: value
+        - roles:
+          - roles
+          - roles
+          alt:
+            value:
+              key: value
+        localizedAssetGrn:
+          value:
+            key: value
+        id: id
+        position: 0
+      properties:
+        id:
+          type: string
+        assetGrn:
+          type: string
+        localizedAssetGrn:
+          $ref: '#/components/schemas/productLocalizedAsset'
+        locales:
+          items:
+            type: string
+          type: array
+        position:
+          format: int64
+          type: integer
+        metadata:
+          items:
+            $ref: '#/components/schemas/productAssetsEntryMetadata'
+          type: array
+      type: object
+    productAssetsEntryMetadata:
+      example:
+        roles:
+        - roles
+        - roles
+        alt:
+          value:
+            key: value
+      properties:
+        roles:
+          items:
+            type: string
+          type: array
+        alt:
+          $ref: '#/components/schemas/productLocalizedText'
+      type: object
     productAttributeResponseError:
       example:
         attributeCode: attributeCode
@@ -2000,6 +2182,70 @@ components:
         attributeCode:
           type: string
       type: object
+    productBulkAddAssetsEntriesRequest:
+      properties:
+        tenantId:
+          type: string
+        productId:
+          type: string
+        assets:
+          items:
+            $ref: '#/components/schemas/productAssetData'
+          type: array
+      type: object
+    productBulkAddAssetsEntriesResponse:
+      example:
+        assets:
+        - assetGrn: assetGrn
+          locales:
+          - locales
+          - locales
+          metadata:
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          localizedAssetGrn:
+            value:
+              key: value
+          id: id
+          position: 0
+        - assetGrn: assetGrn
+          locales:
+          - locales
+          - locales
+          metadata:
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          localizedAssetGrn:
+            value:
+              key: value
+          id: id
+          position: 0
+      properties:
+        assets:
+          items:
+            $ref: '#/components/schemas/productAssetsEntry'
+          type: array
+      type: object
     productBulkDeleteProductsRequest:
       properties:
         tenantId:
@@ -2010,6 +2256,83 @@ components:
           type: array
       type: object
     productBulkDeleteProductsResponse:
+      type: object
+    productBulkRemoveAssetsEntriesRequest:
+      properties:
+        tenantId:
+          type: string
+        productId:
+          type: string
+        ids:
+          items:
+            type: string
+          type: array
+      type: object
+    productBulkRemoveAssetsEntriesResponse:
+      type: object
+    productBulkUpdateAssetsEntriesRequest:
+      properties:
+        tenantId:
+          type: string
+        productId:
+          type: string
+        assets:
+          items:
+            $ref: '#/components/schemas/BulkUpdateAssetsEntriesRequestUpdateEntity'
+          type: array
+      type: object
+    productBulkUpdateAssetsEntriesResponse:
+      example:
+        assets:
+        - assetGrn: assetGrn
+          locales:
+          - locales
+          - locales
+          metadata:
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          localizedAssetGrn:
+            value:
+              key: value
+          id: id
+          position: 0
+        - assetGrn: assetGrn
+          locales:
+          - locales
+          - locales
+          metadata:
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          - roles:
+            - roles
+            - roles
+            alt:
+              value:
+                key: value
+          localizedAssetGrn:
+            value:
+              key: value
+          id: id
+          position: 0
+      properties:
+        assets:
+          items:
+            $ref: '#/components/schemas/productAssetsEntry'
+          type: array
       type: object
     productBulkUpdateRequest:
       properties:
@@ -2301,6 +2624,52 @@ components:
             value:
               key: value
           createdAt: createdAt
+          assets:
+            entries:
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
           isGiftcard: true
           hasConfigurator: true
           tenantId: tenantId
@@ -2386,6 +2755,52 @@ components:
             value:
               key: value
           createdAt: createdAt
+          assets:
+            entries:
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
           isGiftcard: true
           hasConfigurator: true
           tenantId: tenantId
@@ -2469,6 +2884,52 @@ components:
             value:
               key: value
           createdAt: createdAt
+          assets:
+            entries:
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
           isGiftcard: true
           hasConfigurator: true
           tenantId: tenantId
@@ -2554,6 +3015,52 @@ components:
             value:
               key: value
           createdAt: createdAt
+          assets:
+            entries:
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
           isGiftcard: true
           hasConfigurator: true
           tenantId: tenantId
@@ -2623,6 +3130,52 @@ components:
             value:
               key: value
           createdAt: createdAt
+          assets:
+            entries:
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
           isGiftcard: true
           hasConfigurator: true
           tenantId: tenantId
@@ -2708,6 +3261,52 @@ components:
             value:
               key: value
           createdAt: createdAt
+          assets:
+            entries:
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
           isGiftcard: true
           hasConfigurator: true
           tenantId: tenantId
@@ -2777,6 +3376,52 @@ components:
             value:
               key: value
           createdAt: createdAt
+          assets:
+            entries:
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
           isGiftcard: true
           hasConfigurator: true
           tenantId: tenantId
@@ -2872,6 +3517,52 @@ components:
             value:
               key: value
           createdAt: createdAt
+          assets:
+            entries:
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
           isGiftcard: true
           hasConfigurator: true
           tenantId: tenantId
@@ -2941,6 +3632,52 @@ components:
             value:
               key: value
           createdAt: createdAt
+          assets:
+            entries:
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
+            - assetGrn: assetGrn
+              locales:
+              - locales
+              - locales
+              metadata:
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              - roles:
+                - roles
+                - roles
+                alt:
+                  value:
+                    key: value
+              localizedAssetGrn:
+                value:
+                  key: value
+              id: id
+              position: 0
           isGiftcard: true
           hasConfigurator: true
           tenantId: tenantId
@@ -3025,6 +3762,16 @@ components:
           items:
             $ref: '#/components/schemas/productProductVariant'
           type: array
+      type: object
+    productLocalizedAsset:
+      example:
+        value:
+          key: value
+      properties:
+        value:
+          additionalProperties:
+            type: string
+          type: object
       type: object
     productLocalizedText:
       example:
@@ -3148,6 +3895,52 @@ components:
           value:
             key: value
         createdAt: createdAt
+        assets:
+          entries:
+          - assetGrn: assetGrn
+            locales:
+            - locales
+            - locales
+            metadata:
+            - roles:
+              - roles
+              - roles
+              alt:
+                value:
+                  key: value
+            - roles:
+              - roles
+              - roles
+              alt:
+                value:
+                  key: value
+            localizedAssetGrn:
+              value:
+                key: value
+            id: id
+            position: 0
+          - assetGrn: assetGrn
+            locales:
+            - locales
+            - locales
+            metadata:
+            - roles:
+              - roles
+              - roles
+              alt:
+                value:
+                  key: value
+            - roles:
+              - roles
+              - roles
+              alt:
+                value:
+                  key: value
+            localizedAssetGrn:
+              value:
+                key: value
+            id: id
+            position: 0
         isGiftcard: true
         hasConfigurator: true
         tenantId: tenantId
@@ -3239,6 +4032,8 @@ components:
         maxSaleableQuantity:
           format: int64
           type: integer
+        assets:
+          $ref: '#/components/schemas/productAssets'
         createdAt:
           format: int64
           type: string
@@ -3288,6 +4083,20 @@ components:
           type: string
       type: object
     productRemoveMediaGalleryEntryResponse:
+      type: object
+    productUpdateAssetEntryPayload:
+      properties:
+        assetGrn:
+          type: string
+        localizedAssetGrn:
+          $ref: '#/components/schemas/productLocalizedAsset'
+        position:
+          format: int64
+          type: integer
+        metadata:
+          items:
+            $ref: '#/components/schemas/productAssetsEntryMetadata'
+          type: array
       type: object
     productUpdateMediaGalleryEntryRequest:
       properties:

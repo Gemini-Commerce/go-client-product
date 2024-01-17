@@ -5,6 +5,7 @@ api/openapi.yaml
 api_product.go
 client.go
 configuration.go
+docs/BulkUpdateAssetsEntriesRequestUpdateEntity.md
 docs/EntitymanagerAttribute.md
 docs/EntitymanagerAttributeGroup.md
 docs/EntitymanagerAttributeOption.md
@@ -25,8 +26,6 @@ docs/EntitymanagerEntity.md
 docs/EntitymanagerEntityIdentifier.md
 docs/EntitymanagerEntityRequest.md
 docs/EntitymanagerGetAttributeGroupRequest.md
-docs/EntitymanagerGetAttributeOptionByCodeRequest.md
-docs/EntitymanagerGetAttributeOptionByCodeResponse.md
 docs/EntitymanagerGetAttributeOptionRequest.md
 docs/EntitymanagerGetAttributeOptionResponse.md
 docs/EntitymanagerGetAttributeOptionsRequest.md
@@ -58,8 +57,17 @@ docs/ListProductsRequestFilter.md
 docs/ProductAPI.md
 docs/ProductAddMediaGalleryEntryRequest.md
 docs/ProductAddMediaGalleryEntryResponse.md
+docs/ProductAssetData.md
+docs/ProductAssets.md
+docs/ProductAssetsEntry.md
+docs/ProductAssetsEntryMetadata.md
 docs/ProductAttributeResponseError.md
+docs/ProductBulkAddAssetsEntriesRequest.md
+docs/ProductBulkAddAssetsEntriesResponse.md
 docs/ProductBulkDeleteProductsRequest.md
+docs/ProductBulkRemoveAssetsEntriesRequest.md
+docs/ProductBulkUpdateAssetsEntriesRequest.md
+docs/ProductBulkUpdateAssetsEntriesResponse.md
 docs/ProductBulkUpdateRequest.md
 docs/ProductBulkUpdateRequestPayload.md
 docs/ProductBulkUpdateRequestV2.md
@@ -90,6 +98,7 @@ docs/ProductListProductsRequest.md
 docs/ProductListProductsResponse.md
 docs/ProductListVariantsBySkuRequest.md
 docs/ProductListVariantsBySkuResponse.md
+docs/ProductLocalizedAsset.md
 docs/ProductLocalizedText.md
 docs/ProductMediaGallery.md
 docs/ProductMediaGalleryEntry.md
@@ -98,6 +107,7 @@ docs/ProductProductEntity.md
 docs/ProductProductResponseError.md
 docs/ProductProductVariant.md
 docs/ProductRemoveMediaGalleryEntryRequest.md
+docs/ProductUpdateAssetEntryPayload.md
 docs/ProductUpdateMediaGalleryEntryRequest.md
 docs/ProductUpdateProductRequest.md
 docs/ProductUpdateProductRequestV2.md
@@ -108,6 +118,7 @@ docs/RpcStatus.md
 git_push.sh
 go.mod
 go.sum
+model_bulk_update_assets_entries_request_update_entity.go
 model_entitymanager_attribute.go
 model_entitymanager_attribute_group.go
 model_entitymanager_attribute_option.go
@@ -128,8 +139,6 @@ model_entitymanager_entity.go
 model_entitymanager_entity_identifier.go
 model_entitymanager_entity_request.go
 model_entitymanager_get_attribute_group_request.go
-model_entitymanager_get_attribute_option_by_code_request.go
-model_entitymanager_get_attribute_option_by_code_response.go
 model_entitymanager_get_attribute_option_request.go
 model_entitymanager_get_attribute_option_response.go
 model_entitymanager_get_attribute_options_request.go
@@ -160,8 +169,17 @@ model_entitymanager_update_options_list_response.go
 model_list_products_request_filter.go
 model_product_add_media_gallery_entry_request.go
 model_product_add_media_gallery_entry_response.go
+model_product_asset_data.go
+model_product_assets.go
+model_product_assets_entry.go
+model_product_assets_entry_metadata.go
 model_product_attribute_response_error.go
+model_product_bulk_add_assets_entries_request.go
+model_product_bulk_add_assets_entries_response.go
 model_product_bulk_delete_products_request.go
+model_product_bulk_remove_assets_entries_request.go
+model_product_bulk_update_assets_entries_request.go
+model_product_bulk_update_assets_entries_response.go
 model_product_bulk_update_request.go
 model_product_bulk_update_request_payload.go
 model_product_bulk_update_request_v2.go
@@ -192,6 +210,7 @@ model_product_list_products_request.go
 model_product_list_products_response.go
 model_product_list_variants_by_sku_request.go
 model_product_list_variants_by_sku_response.go
+model_product_localized_asset.go
 model_product_localized_text.go
 model_product_media_gallery.go
 model_product_media_gallery_entry.go
@@ -200,6 +219,7 @@ model_product_product_entity.go
 model_product_product_response_error.go
 model_product_product_variant.go
 model_product_remove_media_gallery_entry_request.go
+model_product_update_asset_entry_payload.go
 model_product_update_media_gallery_entry_request.go
 model_product_update_product_request.go
 model_product_update_product_request_v2.go

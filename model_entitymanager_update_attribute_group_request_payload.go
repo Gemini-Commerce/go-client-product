@@ -22,6 +22,7 @@ var _ MappedNullable = &EntitymanagerUpdateAttributeGroupRequestPayload{}
 type EntitymanagerUpdateAttributeGroupRequestPayload struct {
 	Label *ProductentitymanagerLocalizedText `json:"label,omitempty"`
 	Sort *int32 `json:"sort,omitempty"`
+	Visibility []string `json:"visibility,omitempty"`
 }
 
 // NewEntitymanagerUpdateAttributeGroupRequestPayload instantiates a new EntitymanagerUpdateAttributeGroupRequestPayload object
@@ -105,6 +106,38 @@ func (o *EntitymanagerUpdateAttributeGroupRequestPayload) SetSort(v int32) {
 	o.Sort = &v
 }
 
+// GetVisibility returns the Visibility field value if set, zero value otherwise.
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetVisibility() []string {
+	if o == nil || IsNil(o.Visibility) {
+		var ret []string
+		return ret
+	}
+	return o.Visibility
+}
+
+// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetVisibilityOk() ([]string, bool) {
+	if o == nil || IsNil(o.Visibility) {
+		return nil, false
+	}
+	return o.Visibility, true
+}
+
+// HasVisibility returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) HasVisibility() bool {
+	if o != nil && !IsNil(o.Visibility) {
+		return true
+	}
+
+	return false
+}
+
+// SetVisibility gets a reference to the given []string and assigns it to the Visibility field.
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) SetVisibility(v []string) {
+	o.Visibility = v
+}
+
 func (o EntitymanagerUpdateAttributeGroupRequestPayload) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -120,6 +153,9 @@ func (o EntitymanagerUpdateAttributeGroupRequestPayload) ToMap() (map[string]int
 	}
 	if !IsNil(o.Sort) {
 		toSerialize["sort"] = o.Sort
+	}
+	if !IsNil(o.Visibility) {
+		toSerialize["visibility"] = o.Visibility
 	}
 	return toSerialize, nil
 }

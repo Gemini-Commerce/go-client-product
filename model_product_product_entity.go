@@ -37,6 +37,7 @@ type ProductProductEntity struct {
 	Variants *map[string]ProductProductVariant `json:"variants,omitempty"`
 	MediaGallery *ProductMediaGallery `json:"mediaGallery,omitempty"`
 	MaxSaleableQuantity *int64 `json:"maxSaleableQuantity,omitempty"`
+	Assets *ProductAssets `json:"assets,omitempty"`
 	CreatedAt *string `json:"createdAt,omitempty"`
 	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
@@ -602,6 +603,38 @@ func (o *ProductProductEntity) SetMaxSaleableQuantity(v int64) {
 	o.MaxSaleableQuantity = &v
 }
 
+// GetAssets returns the Assets field value if set, zero value otherwise.
+func (o *ProductProductEntity) GetAssets() ProductAssets {
+	if o == nil || IsNil(o.Assets) {
+		var ret ProductAssets
+		return ret
+	}
+	return *o.Assets
+}
+
+// GetAssetsOk returns a tuple with the Assets field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductProductEntity) GetAssetsOk() (*ProductAssets, bool) {
+	if o == nil || IsNil(o.Assets) {
+		return nil, false
+	}
+	return o.Assets, true
+}
+
+// HasAssets returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasAssets() bool {
+	if o != nil && !IsNil(o.Assets) {
+		return true
+	}
+
+	return false
+}
+
+// SetAssets gets a reference to the given ProductAssets and assigns it to the Assets field.
+func (o *ProductProductEntity) SetAssets(v ProductAssets) {
+	o.Assets = &v
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *ProductProductEntity) GetCreatedAt() string {
 	if o == nil || IsNil(o.CreatedAt) {
@@ -726,6 +759,9 @@ func (o ProductProductEntity) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MaxSaleableQuantity) {
 		toSerialize["maxSaleableQuantity"] = o.MaxSaleableQuantity
+	}
+	if !IsNil(o.Assets) {
+		toSerialize["assets"] = o.Assets
 	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["createdAt"] = o.CreatedAt

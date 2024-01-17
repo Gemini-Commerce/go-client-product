@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **Variants**| [**map[string]ProductProductVariant**](ProductProductVariant.md) |   | [optional]
 **MediaGallery**| [**ProductMediaGallery**](ProductMediaGallery.md) |   | [optional]
 **MaxSaleableQuantity**| **int64** |   | [optional]
+**Assets**| [**ProductAssets**](ProductAssets.md) |   | [optional]
 **CreatedAt**| **string** |   | [optional]
 **UpdatedAt**| **string** |   | [optional]
 
