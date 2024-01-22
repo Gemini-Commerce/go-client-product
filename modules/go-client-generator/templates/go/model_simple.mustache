@@ -518,11 +518,24 @@ func (o *{{{classname}}}) UnmarshalJSON(data []byte) (err error) {
 {{/isArray}}
 {{#isAdditionalPropertiesTrue}}
 // GetValue returns the value of well-known types
-func (o *ProtobufAny) GetValue() interface{} {
+func (o *{{{classname}}}) GetValue() interface{} {
 	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
+}
+{{/isAdditionalPropertiesTrue}}
+{{#isAdditionalPropertiesTrue}}
+// SetValue populate the value of well-known types
+func (o *{{{classname}}}) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
 }
 {{/isAdditionalPropertiesTrue}}
 {{>nullable_model}}
