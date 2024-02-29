@@ -1,7 +1,7 @@
 /*
-product/product.proto
+Product Service
 
-Testing ProductApiService
+Testing ProductAPIService
 
 */
 
@@ -10,484 +10,508 @@ Testing ProductApiService
 package product
 
 import (
-    "context"
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/require"
-    "testing"
-    openapiclient "./openapi"
+	"context"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"testing"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
-func Test_product_ProductApiService(t *testing.T) {
+func Test_product_ProductAPIService(t *testing.T) {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 
-    t.Run("Test ProductApiService ProductAddMediaGalleryEntry", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductAddMediaGalleryEntry", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductAddMediaGalleryEntry(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductAddMediaGalleryEntry(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductBulkCreateAttribute", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductBulkAddAssetsEntries", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductBulkCreateAttribute(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductBulkAddAssetsEntries(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductBulkDeleteProducts", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductBulkCreateAttribute", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductBulkDeleteProducts(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductBulkCreateAttribute(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductBulkUpdate", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductBulkDeleteProducts", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductBulkDeleteProducts(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductBulkUpdateV2", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductBulkRemoveAssetsEntries", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductBulkUpdateV2(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductBulkRemoveAssetsEntries(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductCreateAttributeGroup", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductBulkUpdate", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductCreateAttributeGroup(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductBulkUpdate(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductCreateAttributeOptions", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductBulkUpdateAssetsEntries", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductCreateAttributeOptions(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductBulkUpdateAssetsEntries(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductCreateEntity", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductBulkUpdateV2", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductCreateEntity(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductBulkUpdateV2(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductCreateOptionsList", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductCreateAttributeGroup", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductCreateOptionsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductCreateAttributeGroup(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductCreateProduct", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductCreateAttributeOptions", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductCreateProduct(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductCreateAttributeOptions(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductCreateProductV2", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductCreateEntity", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductCreateProductV2(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductCreateEntity(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductDelete", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductCreateOptionsList", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductDelete(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductCreateOptionsList(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductDeleteAttribute", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductCreateProduct", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductDeleteAttribute(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductCreateProduct(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductDeleteProduct", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductCreateProductV2", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductDeleteProduct(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductCreateProductV2(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductGetAttributeGroup", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductDelete", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductGetAttributeGroup(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductDelete(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductGetAttributeOption", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductDeleteAttribute", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductGetAttributeOption(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductDeleteAttribute(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductGetAttributeOptionByCode", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductDeleteProduct", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductGetAttributeOptionByCode(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductDeleteProduct(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductGetAttributeOptions", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductGetAttributeGroup", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductGetAttributeOptions(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductGetAttributeGroup(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductGetEntity", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductGetAttributeOption", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductGetEntity(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductGetAttributeOption(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductGetOptionsList", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductGetAttributeOptions", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductGetOptionsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductGetAttributeOptions(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductGetProduct", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductGetEntity", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductGetProduct(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductGetEntity(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductGetProductByCode", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductGetOptionsList", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductGetProductByCode(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductGetOptionsList(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductGetProductByUrlKey", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductGetProduct", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductGetProductByUrlKey(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductGetProduct(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductListAttributeGroups", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductGetProductByCode", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductListAttributeGroups(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductGetProductByCode(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductListAttributeOptions", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductGetProductByUrlKey", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductListAttributeOptions(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductGetProductByUrlKey(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductListEntities", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductListAttributeGroups", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductListEntities(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductListAttributeGroups(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductListOptionsLists", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductListAttributeOptions", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductListOptionsLists(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductListAttributeOptions(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductListProducts", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductListEntities", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductListProducts(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductListEntities(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductListProductsByIds", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductListOptionsLists", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductListProductsByIds(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductListOptionsLists(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductListProductsBySku", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductListProducts", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductListProductsBySku(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductListProducts(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductListVariantsBySku", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductListProductsByIds", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductListVariantsBySku(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductListProductsByIds(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductRemoveMediaGalleryEntry", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductListProductsBySku", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductRemoveMediaGalleryEntry(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductListProductsBySku(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductUpdateAttribute", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductListVariantsBySku", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductUpdateAttribute(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductListVariantsBySku(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductUpdateAttributeGroup", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductRemoveMediaGalleryEntry", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductUpdateAttributeGroup(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductRemoveMediaGalleryEntry(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductUpdateAttributeOptions", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductUpdateAttribute", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductUpdateAttributeOptions(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductUpdateAttribute(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductUpdateMediaGalleryEntry", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductUpdateAttributeGroup", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductUpdateMediaGalleryEntry(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductUpdateAttributeGroup(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductUpdateOptionsList", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductUpdateAttributeOptions", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductUpdateOptionsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductUpdateAttributeOptions(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductUpdateProduct", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductUpdateMediaGalleryEntry", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductUpdateProduct(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductUpdateMediaGalleryEntry(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test ProductApiService ProductUpdateProductV2", func(t *testing.T) {
+	t.Run("Test ProductAPIService ProductUpdateOptionsList", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ProductApi.ProductUpdateProductV2(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductAPI.ProductUpdateOptionsList(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
+
+	t.Run("Test ProductAPIService ProductUpdateProduct", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ProductAPI.ProductUpdateProduct(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProductAPIService ProductUpdateProductV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ProductAPI.ProductUpdateProductV2(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
 
 }

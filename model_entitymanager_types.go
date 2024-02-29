@@ -21,13 +21,13 @@ type EntitymanagerTypes string
 
 // List of entitymanagerTypes
 const (
-	ENTITYMANAGERTYPES_TEXT EntitymanagerTypes = "TEXT"
-	ENTITYMANAGERTYPES_NUMBER EntitymanagerTypes = "NUMBER"
-	ENTITYMANAGERTYPES_BOOLEAN EntitymanagerTypes = "BOOLEAN"
-	ENTITYMANAGERTYPES_DATETIME EntitymanagerTypes = "DATETIME"
-	ENTITYMANAGERTYPES_EXTERNAL EntitymanagerTypes = "EXTERNAL"
-	ENTITYMANAGERTYPES_EMBED EntitymanagerTypes = "EMBED"
-	ENTITYMANAGERTYPES_FLOAT32 EntitymanagerTypes = "FLOAT32"
+	TEXT EntitymanagerTypes = "TEXT"
+	NUMBER EntitymanagerTypes = "NUMBER"
+	BOOLEAN EntitymanagerTypes = "BOOLEAN"
+	DATETIME EntitymanagerTypes = "DATETIME"
+	EXTERNAL EntitymanagerTypes = "EXTERNAL"
+	EMBED EntitymanagerTypes = "EMBED"
+	FLOAT32 EntitymanagerTypes = "FLOAT32"
 )
 
 // All allowed values of EntitymanagerTypes enum

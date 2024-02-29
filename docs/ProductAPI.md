@@ -1,4 +1,4 @@
-# \ProductAPI
+# GeminiCommerce\Product\ProductAPI
 
 All URIs are relative to *https://product.api.gogemini.io*
 
@@ -63,7 +63,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -127,7 +127,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -191,7 +191,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -255,7 +255,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -319,7 +319,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -383,7 +383,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -447,7 +447,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -511,7 +511,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -575,7 +575,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -639,7 +639,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -703,7 +703,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -740,7 +740,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -767,7 +767,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -804,7 +804,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -831,7 +831,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -868,7 +868,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -895,7 +895,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -932,7 +932,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -959,7 +959,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -996,7 +996,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1023,7 +1023,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1060,7 +1060,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1087,7 +1087,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1124,7 +1124,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1151,7 +1151,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1188,7 +1188,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1215,7 +1215,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1252,7 +1252,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1279,7 +1279,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1316,7 +1316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1343,7 +1343,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1380,7 +1380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1407,7 +1407,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1444,7 +1444,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1471,7 +1471,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1508,7 +1508,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1535,7 +1535,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1572,7 +1572,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1599,7 +1599,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1636,7 +1636,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1663,7 +1663,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1700,7 +1700,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1727,7 +1727,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1764,7 +1764,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1791,7 +1791,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1828,7 +1828,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1855,7 +1855,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1892,7 +1892,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1919,7 +1919,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -1956,7 +1956,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -1983,7 +1983,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -2020,7 +2020,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -2047,7 +2047,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -2084,7 +2084,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -2111,7 +2111,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -2148,7 +2148,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -2175,7 +2175,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -2212,7 +2212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -2239,7 +2239,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -2276,7 +2276,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -2303,7 +2303,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -2340,7 +2340,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -2367,7 +2367,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -2404,7 +2404,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -2431,7 +2431,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -2468,7 +2468,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -2495,7 +2495,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -2532,7 +2532,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -2559,7 +2559,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -2596,7 +2596,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
@@ -2623,7 +2623,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-product"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func main() {
@@ -2660,7 +2660,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 

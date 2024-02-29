@@ -23,18 +23,18 @@ import (
 // ProductAPIService ProductAPI service
 type ProductAPIService service
 
-type ProductAPIProductAddMediaGalleryEntryRequest struct {
+type ApiProductAddMediaGalleryEntryRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductAddMediaGalleryEntryRequest
 }
 
-func (r ProductAPIProductAddMediaGalleryEntryRequest) Body(body ProductAddMediaGalleryEntryRequest) ProductAPIProductAddMediaGalleryEntryRequest {
+func (r ApiProductAddMediaGalleryEntryRequest) Body(body ProductAddMediaGalleryEntryRequest) ApiProductAddMediaGalleryEntryRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductAddMediaGalleryEntryRequest) Execute() (*ProductAddMediaGalleryEntryResponse, *http.Response, error) {
+func (r ApiProductAddMediaGalleryEntryRequest) Execute() (*ProductAddMediaGalleryEntryResponse, *http.Response, error) {
 	return r.ApiService.ProductAddMediaGalleryEntryExecute(r)
 }
 
@@ -42,10 +42,10 @@ func (r ProductAPIProductAddMediaGalleryEntryRequest) Execute() (*ProductAddMedi
 ProductAddMediaGalleryEntry Method for ProductAddMediaGalleryEntry
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductAddMediaGalleryEntryRequest
+ @return ApiProductAddMediaGalleryEntryRequest
 */
-func (a *ProductAPIService) ProductAddMediaGalleryEntry(ctx context.Context) ProductAPIProductAddMediaGalleryEntryRequest {
-	return ProductAPIProductAddMediaGalleryEntryRequest{
+func (a *ProductAPIService) ProductAddMediaGalleryEntry(ctx context.Context) ApiProductAddMediaGalleryEntryRequest {
+	return ApiProductAddMediaGalleryEntryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -53,7 +53,7 @@ func (a *ProductAPIService) ProductAddMediaGalleryEntry(ctx context.Context) Pro
 
 // Execute executes the request
 //  @return ProductAddMediaGalleryEntryResponse
-func (a *ProductAPIService) ProductAddMediaGalleryEntryExecute(r ProductAPIProductAddMediaGalleryEntryRequest) (*ProductAddMediaGalleryEntryResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductAddMediaGalleryEntryExecute(r ApiProductAddMediaGalleryEntryRequest) (*ProductAddMediaGalleryEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -94,20 +94,6 @@ func (a *ProductAPIService) ProductAddMediaGalleryEntryExecute(r ProductAPIProdu
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -153,18 +139,18 @@ func (a *ProductAPIService) ProductAddMediaGalleryEntryExecute(r ProductAPIProdu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductBulkAddAssetsEntriesRequest struct {
+type ApiProductBulkAddAssetsEntriesRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductBulkAddAssetsEntriesRequest
 }
 
-func (r ProductAPIProductBulkAddAssetsEntriesRequest) Body(body ProductBulkAddAssetsEntriesRequest) ProductAPIProductBulkAddAssetsEntriesRequest {
+func (r ApiProductBulkAddAssetsEntriesRequest) Body(body ProductBulkAddAssetsEntriesRequest) ApiProductBulkAddAssetsEntriesRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductBulkAddAssetsEntriesRequest) Execute() (*ProductBulkAddAssetsEntriesResponse, *http.Response, error) {
+func (r ApiProductBulkAddAssetsEntriesRequest) Execute() (*ProductBulkAddAssetsEntriesResponse, *http.Response, error) {
 	return r.ApiService.ProductBulkAddAssetsEntriesExecute(r)
 }
 
@@ -172,10 +158,10 @@ func (r ProductAPIProductBulkAddAssetsEntriesRequest) Execute() (*ProductBulkAdd
 ProductBulkAddAssetsEntries Assets endpoints
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductBulkAddAssetsEntriesRequest
+ @return ApiProductBulkAddAssetsEntriesRequest
 */
-func (a *ProductAPIService) ProductBulkAddAssetsEntries(ctx context.Context) ProductAPIProductBulkAddAssetsEntriesRequest {
-	return ProductAPIProductBulkAddAssetsEntriesRequest{
+func (a *ProductAPIService) ProductBulkAddAssetsEntries(ctx context.Context) ApiProductBulkAddAssetsEntriesRequest {
+	return ApiProductBulkAddAssetsEntriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -183,7 +169,7 @@ func (a *ProductAPIService) ProductBulkAddAssetsEntries(ctx context.Context) Pro
 
 // Execute executes the request
 //  @return ProductBulkAddAssetsEntriesResponse
-func (a *ProductAPIService) ProductBulkAddAssetsEntriesExecute(r ProductAPIProductBulkAddAssetsEntriesRequest) (*ProductBulkAddAssetsEntriesResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductBulkAddAssetsEntriesExecute(r ApiProductBulkAddAssetsEntriesRequest) (*ProductBulkAddAssetsEntriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -224,20 +210,6 @@ func (a *ProductAPIService) ProductBulkAddAssetsEntriesExecute(r ProductAPIProdu
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -283,18 +255,18 @@ func (a *ProductAPIService) ProductBulkAddAssetsEntriesExecute(r ProductAPIProdu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductBulkCreateAttributeRequest struct {
+type ApiProductBulkCreateAttributeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerBulkCreateAttributeRequest
 }
 
-func (r ProductAPIProductBulkCreateAttributeRequest) Body(body EntitymanagerBulkCreateAttributeRequest) ProductAPIProductBulkCreateAttributeRequest {
+func (r ApiProductBulkCreateAttributeRequest) Body(body EntitymanagerBulkCreateAttributeRequest) ApiProductBulkCreateAttributeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductBulkCreateAttributeRequest) Execute() (*EntitymanagerBulkCreateAttributeResponse, *http.Response, error) {
+func (r ApiProductBulkCreateAttributeRequest) Execute() (*EntitymanagerBulkCreateAttributeResponse, *http.Response, error) {
 	return r.ApiService.ProductBulkCreateAttributeExecute(r)
 }
 
@@ -302,10 +274,10 @@ func (r ProductAPIProductBulkCreateAttributeRequest) Execute() (*EntitymanagerBu
 ProductBulkCreateAttribute Method for ProductBulkCreateAttribute
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductBulkCreateAttributeRequest
+ @return ApiProductBulkCreateAttributeRequest
 */
-func (a *ProductAPIService) ProductBulkCreateAttribute(ctx context.Context) ProductAPIProductBulkCreateAttributeRequest {
-	return ProductAPIProductBulkCreateAttributeRequest{
+func (a *ProductAPIService) ProductBulkCreateAttribute(ctx context.Context) ApiProductBulkCreateAttributeRequest {
+	return ApiProductBulkCreateAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -313,7 +285,7 @@ func (a *ProductAPIService) ProductBulkCreateAttribute(ctx context.Context) Prod
 
 // Execute executes the request
 //  @return EntitymanagerBulkCreateAttributeResponse
-func (a *ProductAPIService) ProductBulkCreateAttributeExecute(r ProductAPIProductBulkCreateAttributeRequest) (*EntitymanagerBulkCreateAttributeResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductBulkCreateAttributeExecute(r ApiProductBulkCreateAttributeRequest) (*EntitymanagerBulkCreateAttributeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -354,20 +326,6 @@ func (a *ProductAPIService) ProductBulkCreateAttributeExecute(r ProductAPIProduc
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -413,18 +371,18 @@ func (a *ProductAPIService) ProductBulkCreateAttributeExecute(r ProductAPIProduc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductBulkDeleteProductsRequest struct {
+type ApiProductBulkDeleteProductsRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductBulkDeleteProductsRequest
 }
 
-func (r ProductAPIProductBulkDeleteProductsRequest) Body(body ProductBulkDeleteProductsRequest) ProductAPIProductBulkDeleteProductsRequest {
+func (r ApiProductBulkDeleteProductsRequest) Body(body ProductBulkDeleteProductsRequest) ApiProductBulkDeleteProductsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductBulkDeleteProductsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiProductBulkDeleteProductsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProductBulkDeleteProductsExecute(r)
 }
 
@@ -432,10 +390,10 @@ func (r ProductAPIProductBulkDeleteProductsRequest) Execute() (map[string]interf
 ProductBulkDeleteProducts Method for ProductBulkDeleteProducts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductBulkDeleteProductsRequest
+ @return ApiProductBulkDeleteProductsRequest
 */
-func (a *ProductAPIService) ProductBulkDeleteProducts(ctx context.Context) ProductAPIProductBulkDeleteProductsRequest {
-	return ProductAPIProductBulkDeleteProductsRequest{
+func (a *ProductAPIService) ProductBulkDeleteProducts(ctx context.Context) ApiProductBulkDeleteProductsRequest {
+	return ApiProductBulkDeleteProductsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -443,7 +401,7 @@ func (a *ProductAPIService) ProductBulkDeleteProducts(ctx context.Context) Produ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) ProductBulkDeleteProductsExecute(r ProductAPIProductBulkDeleteProductsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) ProductBulkDeleteProductsExecute(r ApiProductBulkDeleteProductsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -484,20 +442,6 @@ func (a *ProductAPIService) ProductBulkDeleteProductsExecute(r ProductAPIProduct
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -543,18 +487,18 @@ func (a *ProductAPIService) ProductBulkDeleteProductsExecute(r ProductAPIProduct
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductBulkRemoveAssetsEntriesRequest struct {
+type ApiProductBulkRemoveAssetsEntriesRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductBulkRemoveAssetsEntriesRequest
 }
 
-func (r ProductAPIProductBulkRemoveAssetsEntriesRequest) Body(body ProductBulkRemoveAssetsEntriesRequest) ProductAPIProductBulkRemoveAssetsEntriesRequest {
+func (r ApiProductBulkRemoveAssetsEntriesRequest) Body(body ProductBulkRemoveAssetsEntriesRequest) ApiProductBulkRemoveAssetsEntriesRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductBulkRemoveAssetsEntriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiProductBulkRemoveAssetsEntriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProductBulkRemoveAssetsEntriesExecute(r)
 }
 
@@ -562,10 +506,10 @@ func (r ProductAPIProductBulkRemoveAssetsEntriesRequest) Execute() (map[string]i
 ProductBulkRemoveAssetsEntries Method for ProductBulkRemoveAssetsEntries
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductBulkRemoveAssetsEntriesRequest
+ @return ApiProductBulkRemoveAssetsEntriesRequest
 */
-func (a *ProductAPIService) ProductBulkRemoveAssetsEntries(ctx context.Context) ProductAPIProductBulkRemoveAssetsEntriesRequest {
-	return ProductAPIProductBulkRemoveAssetsEntriesRequest{
+func (a *ProductAPIService) ProductBulkRemoveAssetsEntries(ctx context.Context) ApiProductBulkRemoveAssetsEntriesRequest {
+	return ApiProductBulkRemoveAssetsEntriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -573,7 +517,7 @@ func (a *ProductAPIService) ProductBulkRemoveAssetsEntries(ctx context.Context) 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) ProductBulkRemoveAssetsEntriesExecute(r ProductAPIProductBulkRemoveAssetsEntriesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) ProductBulkRemoveAssetsEntriesExecute(r ApiProductBulkRemoveAssetsEntriesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -614,20 +558,6 @@ func (a *ProductAPIService) ProductBulkRemoveAssetsEntriesExecute(r ProductAPIPr
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -673,18 +603,18 @@ func (a *ProductAPIService) ProductBulkRemoveAssetsEntriesExecute(r ProductAPIPr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductBulkUpdateRequest struct {
+type ApiProductBulkUpdateRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductBulkUpdateRequest
 }
 
-func (r ProductAPIProductBulkUpdateRequest) Body(body ProductBulkUpdateRequest) ProductAPIProductBulkUpdateRequest {
+func (r ApiProductBulkUpdateRequest) Body(body ProductBulkUpdateRequest) ApiProductBulkUpdateRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductBulkUpdateRequest) Execute() (*ProductBulkUpdateResponse, *http.Response, error) {
+func (r ApiProductBulkUpdateRequest) Execute() (*ProductBulkUpdateResponse, *http.Response, error) {
 	return r.ApiService.ProductBulkUpdateExecute(r)
 }
 
@@ -692,12 +622,12 @@ func (r ProductAPIProductBulkUpdateRequest) Execute() (*ProductBulkUpdateRespons
 ProductBulkUpdate Method for ProductBulkUpdate
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductBulkUpdateRequest
+ @return ApiProductBulkUpdateRequest
 
 Deprecated
 */
-func (a *ProductAPIService) ProductBulkUpdate(ctx context.Context) ProductAPIProductBulkUpdateRequest {
-	return ProductAPIProductBulkUpdateRequest{
+func (a *ProductAPIService) ProductBulkUpdate(ctx context.Context) ApiProductBulkUpdateRequest {
+	return ApiProductBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -706,7 +636,7 @@ func (a *ProductAPIService) ProductBulkUpdate(ctx context.Context) ProductAPIPro
 // Execute executes the request
 //  @return ProductBulkUpdateResponse
 // Deprecated
-func (a *ProductAPIService) ProductBulkUpdateExecute(r ProductAPIProductBulkUpdateRequest) (*ProductBulkUpdateResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductBulkUpdateExecute(r ApiProductBulkUpdateRequest) (*ProductBulkUpdateResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -747,20 +677,6 @@ func (a *ProductAPIService) ProductBulkUpdateExecute(r ProductAPIProductBulkUpda
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -806,18 +722,18 @@ func (a *ProductAPIService) ProductBulkUpdateExecute(r ProductAPIProductBulkUpda
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductBulkUpdateAssetsEntriesRequest struct {
+type ApiProductBulkUpdateAssetsEntriesRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductBulkUpdateAssetsEntriesRequest
 }
 
-func (r ProductAPIProductBulkUpdateAssetsEntriesRequest) Body(body ProductBulkUpdateAssetsEntriesRequest) ProductAPIProductBulkUpdateAssetsEntriesRequest {
+func (r ApiProductBulkUpdateAssetsEntriesRequest) Body(body ProductBulkUpdateAssetsEntriesRequest) ApiProductBulkUpdateAssetsEntriesRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductBulkUpdateAssetsEntriesRequest) Execute() (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error) {
+func (r ApiProductBulkUpdateAssetsEntriesRequest) Execute() (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error) {
 	return r.ApiService.ProductBulkUpdateAssetsEntriesExecute(r)
 }
 
@@ -825,10 +741,10 @@ func (r ProductAPIProductBulkUpdateAssetsEntriesRequest) Execute() (*ProductBulk
 ProductBulkUpdateAssetsEntries Method for ProductBulkUpdateAssetsEntries
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductBulkUpdateAssetsEntriesRequest
+ @return ApiProductBulkUpdateAssetsEntriesRequest
 */
-func (a *ProductAPIService) ProductBulkUpdateAssetsEntries(ctx context.Context) ProductAPIProductBulkUpdateAssetsEntriesRequest {
-	return ProductAPIProductBulkUpdateAssetsEntriesRequest{
+func (a *ProductAPIService) ProductBulkUpdateAssetsEntries(ctx context.Context) ApiProductBulkUpdateAssetsEntriesRequest {
+	return ApiProductBulkUpdateAssetsEntriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -836,7 +752,7 @@ func (a *ProductAPIService) ProductBulkUpdateAssetsEntries(ctx context.Context) 
 
 // Execute executes the request
 //  @return ProductBulkUpdateAssetsEntriesResponse
-func (a *ProductAPIService) ProductBulkUpdateAssetsEntriesExecute(r ProductAPIProductBulkUpdateAssetsEntriesRequest) (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductBulkUpdateAssetsEntriesExecute(r ApiProductBulkUpdateAssetsEntriesRequest) (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -877,20 +793,6 @@ func (a *ProductAPIService) ProductBulkUpdateAssetsEntriesExecute(r ProductAPIPr
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -936,18 +838,18 @@ func (a *ProductAPIService) ProductBulkUpdateAssetsEntriesExecute(r ProductAPIPr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductBulkUpdateV2Request struct {
+type ApiProductBulkUpdateV2Request struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductBulkUpdateRequestV2
 }
 
-func (r ProductAPIProductBulkUpdateV2Request) Body(body ProductBulkUpdateRequestV2) ProductAPIProductBulkUpdateV2Request {
+func (r ApiProductBulkUpdateV2Request) Body(body ProductBulkUpdateRequestV2) ApiProductBulkUpdateV2Request {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductBulkUpdateV2Request) Execute() (*ProductBulkUpdateResponseV2, *http.Response, error) {
+func (r ApiProductBulkUpdateV2Request) Execute() (*ProductBulkUpdateResponseV2, *http.Response, error) {
 	return r.ApiService.ProductBulkUpdateV2Execute(r)
 }
 
@@ -955,10 +857,10 @@ func (r ProductAPIProductBulkUpdateV2Request) Execute() (*ProductBulkUpdateRespo
 ProductBulkUpdateV2 Method for ProductBulkUpdateV2
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductBulkUpdateV2Request
+ @return ApiProductBulkUpdateV2Request
 */
-func (a *ProductAPIService) ProductBulkUpdateV2(ctx context.Context) ProductAPIProductBulkUpdateV2Request {
-	return ProductAPIProductBulkUpdateV2Request{
+func (a *ProductAPIService) ProductBulkUpdateV2(ctx context.Context) ApiProductBulkUpdateV2Request {
+	return ApiProductBulkUpdateV2Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -966,7 +868,7 @@ func (a *ProductAPIService) ProductBulkUpdateV2(ctx context.Context) ProductAPIP
 
 // Execute executes the request
 //  @return ProductBulkUpdateResponseV2
-func (a *ProductAPIService) ProductBulkUpdateV2Execute(r ProductAPIProductBulkUpdateV2Request) (*ProductBulkUpdateResponseV2, *http.Response, error) {
+func (a *ProductAPIService) ProductBulkUpdateV2Execute(r ApiProductBulkUpdateV2Request) (*ProductBulkUpdateResponseV2, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1007,20 +909,6 @@ func (a *ProductAPIService) ProductBulkUpdateV2Execute(r ProductAPIProductBulkUp
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1066,18 +954,18 @@ func (a *ProductAPIService) ProductBulkUpdateV2Execute(r ProductAPIProductBulkUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductCreateAttributeGroupRequest struct {
+type ApiProductCreateAttributeGroupRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerCreateAttributeGroupRequest
 }
 
-func (r ProductAPIProductCreateAttributeGroupRequest) Body(body EntitymanagerCreateAttributeGroupRequest) ProductAPIProductCreateAttributeGroupRequest {
+func (r ApiProductCreateAttributeGroupRequest) Body(body EntitymanagerCreateAttributeGroupRequest) ApiProductCreateAttributeGroupRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductCreateAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (r ApiProductCreateAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
 	return r.ApiService.ProductCreateAttributeGroupExecute(r)
 }
 
@@ -1085,10 +973,10 @@ func (r ProductAPIProductCreateAttributeGroupRequest) Execute() (*EntitymanagerA
 ProductCreateAttributeGroup Method for ProductCreateAttributeGroup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductCreateAttributeGroupRequest
+ @return ApiProductCreateAttributeGroupRequest
 */
-func (a *ProductAPIService) ProductCreateAttributeGroup(ctx context.Context) ProductAPIProductCreateAttributeGroupRequest {
-	return ProductAPIProductCreateAttributeGroupRequest{
+func (a *ProductAPIService) ProductCreateAttributeGroup(ctx context.Context) ApiProductCreateAttributeGroupRequest {
+	return ApiProductCreateAttributeGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1096,7 +984,7 @@ func (a *ProductAPIService) ProductCreateAttributeGroup(ctx context.Context) Pro
 
 // Execute executes the request
 //  @return EntitymanagerAttributeGroup
-func (a *ProductAPIService) ProductCreateAttributeGroupExecute(r ProductAPIProductCreateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (a *ProductAPIService) ProductCreateAttributeGroupExecute(r ApiProductCreateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1137,20 +1025,6 @@ func (a *ProductAPIService) ProductCreateAttributeGroupExecute(r ProductAPIProdu
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1196,18 +1070,18 @@ func (a *ProductAPIService) ProductCreateAttributeGroupExecute(r ProductAPIProdu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductCreateAttributeOptionsRequest struct {
+type ApiProductCreateAttributeOptionsRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerCreateAttributeOptionsRequest
 }
 
-func (r ProductAPIProductCreateAttributeOptionsRequest) Body(body EntitymanagerCreateAttributeOptionsRequest) ProductAPIProductCreateAttributeOptionsRequest {
+func (r ApiProductCreateAttributeOptionsRequest) Body(body EntitymanagerCreateAttributeOptionsRequest) ApiProductCreateAttributeOptionsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductCreateAttributeOptionsRequest) Execute() (*EntitymanagerCreateAttributeOptionsResponse, *http.Response, error) {
+func (r ApiProductCreateAttributeOptionsRequest) Execute() (*EntitymanagerCreateAttributeOptionsResponse, *http.Response, error) {
 	return r.ApiService.ProductCreateAttributeOptionsExecute(r)
 }
 
@@ -1215,10 +1089,10 @@ func (r ProductAPIProductCreateAttributeOptionsRequest) Execute() (*Entitymanage
 ProductCreateAttributeOptions Method for ProductCreateAttributeOptions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductCreateAttributeOptionsRequest
+ @return ApiProductCreateAttributeOptionsRequest
 */
-func (a *ProductAPIService) ProductCreateAttributeOptions(ctx context.Context) ProductAPIProductCreateAttributeOptionsRequest {
-	return ProductAPIProductCreateAttributeOptionsRequest{
+func (a *ProductAPIService) ProductCreateAttributeOptions(ctx context.Context) ApiProductCreateAttributeOptionsRequest {
+	return ApiProductCreateAttributeOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1226,7 +1100,7 @@ func (a *ProductAPIService) ProductCreateAttributeOptions(ctx context.Context) P
 
 // Execute executes the request
 //  @return EntitymanagerCreateAttributeOptionsResponse
-func (a *ProductAPIService) ProductCreateAttributeOptionsExecute(r ProductAPIProductCreateAttributeOptionsRequest) (*EntitymanagerCreateAttributeOptionsResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductCreateAttributeOptionsExecute(r ApiProductCreateAttributeOptionsRequest) (*EntitymanagerCreateAttributeOptionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1267,20 +1141,6 @@ func (a *ProductAPIService) ProductCreateAttributeOptionsExecute(r ProductAPIPro
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1326,18 +1186,18 @@ func (a *ProductAPIService) ProductCreateAttributeOptionsExecute(r ProductAPIPro
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductCreateEntityRequest struct {
+type ApiProductCreateEntityRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerEntity
 }
 
-func (r ProductAPIProductCreateEntityRequest) Body(body EntitymanagerEntity) ProductAPIProductCreateEntityRequest {
+func (r ApiProductCreateEntityRequest) Body(body EntitymanagerEntity) ApiProductCreateEntityRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductCreateEntityRequest) Execute() (*EntitymanagerCreateEntityResponse, *http.Response, error) {
+func (r ApiProductCreateEntityRequest) Execute() (*EntitymanagerCreateEntityResponse, *http.Response, error) {
 	return r.ApiService.ProductCreateEntityExecute(r)
 }
 
@@ -1345,10 +1205,10 @@ func (r ProductAPIProductCreateEntityRequest) Execute() (*EntitymanagerCreateEnt
 ProductCreateEntity Method for ProductCreateEntity
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductCreateEntityRequest
+ @return ApiProductCreateEntityRequest
 */
-func (a *ProductAPIService) ProductCreateEntity(ctx context.Context) ProductAPIProductCreateEntityRequest {
-	return ProductAPIProductCreateEntityRequest{
+func (a *ProductAPIService) ProductCreateEntity(ctx context.Context) ApiProductCreateEntityRequest {
+	return ApiProductCreateEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1356,7 +1216,7 @@ func (a *ProductAPIService) ProductCreateEntity(ctx context.Context) ProductAPIP
 
 // Execute executes the request
 //  @return EntitymanagerCreateEntityResponse
-func (a *ProductAPIService) ProductCreateEntityExecute(r ProductAPIProductCreateEntityRequest) (*EntitymanagerCreateEntityResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductCreateEntityExecute(r ApiProductCreateEntityRequest) (*EntitymanagerCreateEntityResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1397,20 +1257,6 @@ func (a *ProductAPIService) ProductCreateEntityExecute(r ProductAPIProductCreate
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1456,18 +1302,18 @@ func (a *ProductAPIService) ProductCreateEntityExecute(r ProductAPIProductCreate
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductCreateOptionsListRequest struct {
+type ApiProductCreateOptionsListRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerCreateOptionsListRequest
 }
 
-func (r ProductAPIProductCreateOptionsListRequest) Body(body EntitymanagerCreateOptionsListRequest) ProductAPIProductCreateOptionsListRequest {
+func (r ApiProductCreateOptionsListRequest) Body(body EntitymanagerCreateOptionsListRequest) ApiProductCreateOptionsListRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductCreateOptionsListRequest) Execute() (*EntitymanagerCreateOptionsListResponse, *http.Response, error) {
+func (r ApiProductCreateOptionsListRequest) Execute() (*EntitymanagerCreateOptionsListResponse, *http.Response, error) {
 	return r.ApiService.ProductCreateOptionsListExecute(r)
 }
 
@@ -1475,10 +1321,10 @@ func (r ProductAPIProductCreateOptionsListRequest) Execute() (*EntitymanagerCrea
 ProductCreateOptionsList Method for ProductCreateOptionsList
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductCreateOptionsListRequest
+ @return ApiProductCreateOptionsListRequest
 */
-func (a *ProductAPIService) ProductCreateOptionsList(ctx context.Context) ProductAPIProductCreateOptionsListRequest {
-	return ProductAPIProductCreateOptionsListRequest{
+func (a *ProductAPIService) ProductCreateOptionsList(ctx context.Context) ApiProductCreateOptionsListRequest {
+	return ApiProductCreateOptionsListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1486,7 +1332,7 @@ func (a *ProductAPIService) ProductCreateOptionsList(ctx context.Context) Produc
 
 // Execute executes the request
 //  @return EntitymanagerCreateOptionsListResponse
-func (a *ProductAPIService) ProductCreateOptionsListExecute(r ProductAPIProductCreateOptionsListRequest) (*EntitymanagerCreateOptionsListResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductCreateOptionsListExecute(r ApiProductCreateOptionsListRequest) (*EntitymanagerCreateOptionsListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1527,20 +1373,6 @@ func (a *ProductAPIService) ProductCreateOptionsListExecute(r ProductAPIProductC
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1586,18 +1418,18 @@ func (a *ProductAPIService) ProductCreateOptionsListExecute(r ProductAPIProductC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductCreateProductRequest struct {
+type ApiProductCreateProductRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductCreateProductRequest
 }
 
-func (r ProductAPIProductCreateProductRequest) Body(body ProductCreateProductRequest) ProductAPIProductCreateProductRequest {
+func (r ApiProductCreateProductRequest) Body(body ProductCreateProductRequest) ApiProductCreateProductRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductCreateProductRequest) Execute() (*ProductCreateProductResponse, *http.Response, error) {
+func (r ApiProductCreateProductRequest) Execute() (*ProductCreateProductResponse, *http.Response, error) {
 	return r.ApiService.ProductCreateProductExecute(r)
 }
 
@@ -1605,12 +1437,12 @@ func (r ProductAPIProductCreateProductRequest) Execute() (*ProductCreateProductR
 ProductCreateProduct Method for ProductCreateProduct
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductCreateProductRequest
+ @return ApiProductCreateProductRequest
 
 Deprecated
 */
-func (a *ProductAPIService) ProductCreateProduct(ctx context.Context) ProductAPIProductCreateProductRequest {
-	return ProductAPIProductCreateProductRequest{
+func (a *ProductAPIService) ProductCreateProduct(ctx context.Context) ApiProductCreateProductRequest {
+	return ApiProductCreateProductRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1619,7 +1451,7 @@ func (a *ProductAPIService) ProductCreateProduct(ctx context.Context) ProductAPI
 // Execute executes the request
 //  @return ProductCreateProductResponse
 // Deprecated
-func (a *ProductAPIService) ProductCreateProductExecute(r ProductAPIProductCreateProductRequest) (*ProductCreateProductResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductCreateProductExecute(r ApiProductCreateProductRequest) (*ProductCreateProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1660,20 +1492,6 @@ func (a *ProductAPIService) ProductCreateProductExecute(r ProductAPIProductCreat
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1719,18 +1537,18 @@ func (a *ProductAPIService) ProductCreateProductExecute(r ProductAPIProductCreat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductCreateProductV2Request struct {
+type ApiProductCreateProductV2Request struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductCreateProductRequestV2
 }
 
-func (r ProductAPIProductCreateProductV2Request) Body(body ProductCreateProductRequestV2) ProductAPIProductCreateProductV2Request {
+func (r ApiProductCreateProductV2Request) Body(body ProductCreateProductRequestV2) ApiProductCreateProductV2Request {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductCreateProductV2Request) Execute() (*ProductCreateProductResponseV2, *http.Response, error) {
+func (r ApiProductCreateProductV2Request) Execute() (*ProductCreateProductResponseV2, *http.Response, error) {
 	return r.ApiService.ProductCreateProductV2Execute(r)
 }
 
@@ -1738,10 +1556,10 @@ func (r ProductAPIProductCreateProductV2Request) Execute() (*ProductCreateProduc
 ProductCreateProductV2 Method for ProductCreateProductV2
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductCreateProductV2Request
+ @return ApiProductCreateProductV2Request
 */
-func (a *ProductAPIService) ProductCreateProductV2(ctx context.Context) ProductAPIProductCreateProductV2Request {
-	return ProductAPIProductCreateProductV2Request{
+func (a *ProductAPIService) ProductCreateProductV2(ctx context.Context) ApiProductCreateProductV2Request {
+	return ApiProductCreateProductV2Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1749,7 +1567,7 @@ func (a *ProductAPIService) ProductCreateProductV2(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return ProductCreateProductResponseV2
-func (a *ProductAPIService) ProductCreateProductV2Execute(r ProductAPIProductCreateProductV2Request) (*ProductCreateProductResponseV2, *http.Response, error) {
+func (a *ProductAPIService) ProductCreateProductV2Execute(r ApiProductCreateProductV2Request) (*ProductCreateProductResponseV2, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1790,20 +1608,6 @@ func (a *ProductAPIService) ProductCreateProductV2Execute(r ProductAPIProductCre
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1849,18 +1653,18 @@ func (a *ProductAPIService) ProductCreateProductV2Execute(r ProductAPIProductCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductDeleteRequest struct {
+type ApiProductDeleteRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductDeleteRequest
 }
 
-func (r ProductAPIProductDeleteRequest) Body(body ProductDeleteRequest) ProductAPIProductDeleteRequest {
+func (r ApiProductDeleteRequest) Body(body ProductDeleteRequest) ApiProductDeleteRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductDeleteRequest) Execute() (*ProductDeleteResponse, *http.Response, error) {
+func (r ApiProductDeleteRequest) Execute() (*ProductDeleteResponse, *http.Response, error) {
 	return r.ApiService.ProductDeleteExecute(r)
 }
 
@@ -1868,12 +1672,12 @@ func (r ProductAPIProductDeleteRequest) Execute() (*ProductDeleteResponse, *http
 ProductDelete Method for ProductDelete
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductDeleteRequest
+ @return ApiProductDeleteRequest
 
 Deprecated
 */
-func (a *ProductAPIService) ProductDelete(ctx context.Context) ProductAPIProductDeleteRequest {
-	return ProductAPIProductDeleteRequest{
+func (a *ProductAPIService) ProductDelete(ctx context.Context) ApiProductDeleteRequest {
+	return ApiProductDeleteRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1882,7 +1686,7 @@ func (a *ProductAPIService) ProductDelete(ctx context.Context) ProductAPIProduct
 // Execute executes the request
 //  @return ProductDeleteResponse
 // Deprecated
-func (a *ProductAPIService) ProductDeleteExecute(r ProductAPIProductDeleteRequest) (*ProductDeleteResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductDeleteExecute(r ApiProductDeleteRequest) (*ProductDeleteResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1923,20 +1727,6 @@ func (a *ProductAPIService) ProductDeleteExecute(r ProductAPIProductDeleteReques
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1982,18 +1772,18 @@ func (a *ProductAPIService) ProductDeleteExecute(r ProductAPIProductDeleteReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductDeleteAttributeRequest struct {
+type ApiProductDeleteAttributeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerDeleteAttributeRequest
 }
 
-func (r ProductAPIProductDeleteAttributeRequest) Body(body EntitymanagerDeleteAttributeRequest) ProductAPIProductDeleteAttributeRequest {
+func (r ApiProductDeleteAttributeRequest) Body(body EntitymanagerDeleteAttributeRequest) ApiProductDeleteAttributeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductDeleteAttributeRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiProductDeleteAttributeRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProductDeleteAttributeExecute(r)
 }
 
@@ -2001,10 +1791,10 @@ func (r ProductAPIProductDeleteAttributeRequest) Execute() (map[string]interface
 ProductDeleteAttribute Method for ProductDeleteAttribute
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductDeleteAttributeRequest
+ @return ApiProductDeleteAttributeRequest
 */
-func (a *ProductAPIService) ProductDeleteAttribute(ctx context.Context) ProductAPIProductDeleteAttributeRequest {
-	return ProductAPIProductDeleteAttributeRequest{
+func (a *ProductAPIService) ProductDeleteAttribute(ctx context.Context) ApiProductDeleteAttributeRequest {
+	return ApiProductDeleteAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2012,7 +1802,7 @@ func (a *ProductAPIService) ProductDeleteAttribute(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) ProductDeleteAttributeExecute(r ProductAPIProductDeleteAttributeRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) ProductDeleteAttributeExecute(r ApiProductDeleteAttributeRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2053,20 +1843,6 @@ func (a *ProductAPIService) ProductDeleteAttributeExecute(r ProductAPIProductDel
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2112,18 +1888,18 @@ func (a *ProductAPIService) ProductDeleteAttributeExecute(r ProductAPIProductDel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductDeleteProductRequest struct {
+type ApiProductDeleteProductRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductDeleteProductRequest
 }
 
-func (r ProductAPIProductDeleteProductRequest) Body(body ProductDeleteProductRequest) ProductAPIProductDeleteProductRequest {
+func (r ApiProductDeleteProductRequest) Body(body ProductDeleteProductRequest) ApiProductDeleteProductRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductDeleteProductRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiProductDeleteProductRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProductDeleteProductExecute(r)
 }
 
@@ -2131,10 +1907,10 @@ func (r ProductAPIProductDeleteProductRequest) Execute() (map[string]interface{}
 ProductDeleteProduct Method for ProductDeleteProduct
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductDeleteProductRequest
+ @return ApiProductDeleteProductRequest
 */
-func (a *ProductAPIService) ProductDeleteProduct(ctx context.Context) ProductAPIProductDeleteProductRequest {
-	return ProductAPIProductDeleteProductRequest{
+func (a *ProductAPIService) ProductDeleteProduct(ctx context.Context) ApiProductDeleteProductRequest {
+	return ApiProductDeleteProductRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2142,7 +1918,7 @@ func (a *ProductAPIService) ProductDeleteProduct(ctx context.Context) ProductAPI
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) ProductDeleteProductExecute(r ProductAPIProductDeleteProductRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) ProductDeleteProductExecute(r ApiProductDeleteProductRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2183,20 +1959,6 @@ func (a *ProductAPIService) ProductDeleteProductExecute(r ProductAPIProductDelet
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2242,18 +2004,18 @@ func (a *ProductAPIService) ProductDeleteProductExecute(r ProductAPIProductDelet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductGetAttributeGroupRequest struct {
+type ApiProductGetAttributeGroupRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerGetAttributeGroupRequest
 }
 
-func (r ProductAPIProductGetAttributeGroupRequest) Body(body EntitymanagerGetAttributeGroupRequest) ProductAPIProductGetAttributeGroupRequest {
+func (r ApiProductGetAttributeGroupRequest) Body(body EntitymanagerGetAttributeGroupRequest) ApiProductGetAttributeGroupRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductGetAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (r ApiProductGetAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
 	return r.ApiService.ProductGetAttributeGroupExecute(r)
 }
 
@@ -2261,10 +2023,10 @@ func (r ProductAPIProductGetAttributeGroupRequest) Execute() (*EntitymanagerAttr
 ProductGetAttributeGroup Method for ProductGetAttributeGroup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductGetAttributeGroupRequest
+ @return ApiProductGetAttributeGroupRequest
 */
-func (a *ProductAPIService) ProductGetAttributeGroup(ctx context.Context) ProductAPIProductGetAttributeGroupRequest {
-	return ProductAPIProductGetAttributeGroupRequest{
+func (a *ProductAPIService) ProductGetAttributeGroup(ctx context.Context) ApiProductGetAttributeGroupRequest {
+	return ApiProductGetAttributeGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2272,7 +2034,7 @@ func (a *ProductAPIService) ProductGetAttributeGroup(ctx context.Context) Produc
 
 // Execute executes the request
 //  @return EntitymanagerAttributeGroup
-func (a *ProductAPIService) ProductGetAttributeGroupExecute(r ProductAPIProductGetAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (a *ProductAPIService) ProductGetAttributeGroupExecute(r ApiProductGetAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2313,20 +2075,6 @@ func (a *ProductAPIService) ProductGetAttributeGroupExecute(r ProductAPIProductG
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2372,18 +2120,18 @@ func (a *ProductAPIService) ProductGetAttributeGroupExecute(r ProductAPIProductG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductGetAttributeOptionRequest struct {
+type ApiProductGetAttributeOptionRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerGetAttributeOptionRequest
 }
 
-func (r ProductAPIProductGetAttributeOptionRequest) Body(body EntitymanagerGetAttributeOptionRequest) ProductAPIProductGetAttributeOptionRequest {
+func (r ApiProductGetAttributeOptionRequest) Body(body EntitymanagerGetAttributeOptionRequest) ApiProductGetAttributeOptionRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductGetAttributeOptionRequest) Execute() (*EntitymanagerGetAttributeOptionResponse, *http.Response, error) {
+func (r ApiProductGetAttributeOptionRequest) Execute() (*EntitymanagerGetAttributeOptionResponse, *http.Response, error) {
 	return r.ApiService.ProductGetAttributeOptionExecute(r)
 }
 
@@ -2391,10 +2139,10 @@ func (r ProductAPIProductGetAttributeOptionRequest) Execute() (*EntitymanagerGet
 ProductGetAttributeOption Method for ProductGetAttributeOption
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductGetAttributeOptionRequest
+ @return ApiProductGetAttributeOptionRequest
 */
-func (a *ProductAPIService) ProductGetAttributeOption(ctx context.Context) ProductAPIProductGetAttributeOptionRequest {
-	return ProductAPIProductGetAttributeOptionRequest{
+func (a *ProductAPIService) ProductGetAttributeOption(ctx context.Context) ApiProductGetAttributeOptionRequest {
+	return ApiProductGetAttributeOptionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2402,7 +2150,7 @@ func (a *ProductAPIService) ProductGetAttributeOption(ctx context.Context) Produ
 
 // Execute executes the request
 //  @return EntitymanagerGetAttributeOptionResponse
-func (a *ProductAPIService) ProductGetAttributeOptionExecute(r ProductAPIProductGetAttributeOptionRequest) (*EntitymanagerGetAttributeOptionResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductGetAttributeOptionExecute(r ApiProductGetAttributeOptionRequest) (*EntitymanagerGetAttributeOptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2443,20 +2191,6 @@ func (a *ProductAPIService) ProductGetAttributeOptionExecute(r ProductAPIProduct
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2502,18 +2236,18 @@ func (a *ProductAPIService) ProductGetAttributeOptionExecute(r ProductAPIProduct
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductGetAttributeOptionsRequest struct {
+type ApiProductGetAttributeOptionsRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerGetAttributeOptionsRequest
 }
 
-func (r ProductAPIProductGetAttributeOptionsRequest) Body(body EntitymanagerGetAttributeOptionsRequest) ProductAPIProductGetAttributeOptionsRequest {
+func (r ApiProductGetAttributeOptionsRequest) Body(body EntitymanagerGetAttributeOptionsRequest) ApiProductGetAttributeOptionsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductGetAttributeOptionsRequest) Execute() (*EntitymanagerGetAttributeOptionsResponse, *http.Response, error) {
+func (r ApiProductGetAttributeOptionsRequest) Execute() (*EntitymanagerGetAttributeOptionsResponse, *http.Response, error) {
 	return r.ApiService.ProductGetAttributeOptionsExecute(r)
 }
 
@@ -2521,10 +2255,10 @@ func (r ProductAPIProductGetAttributeOptionsRequest) Execute() (*EntitymanagerGe
 ProductGetAttributeOptions Method for ProductGetAttributeOptions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductGetAttributeOptionsRequest
+ @return ApiProductGetAttributeOptionsRequest
 */
-func (a *ProductAPIService) ProductGetAttributeOptions(ctx context.Context) ProductAPIProductGetAttributeOptionsRequest {
-	return ProductAPIProductGetAttributeOptionsRequest{
+func (a *ProductAPIService) ProductGetAttributeOptions(ctx context.Context) ApiProductGetAttributeOptionsRequest {
+	return ApiProductGetAttributeOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2532,7 +2266,7 @@ func (a *ProductAPIService) ProductGetAttributeOptions(ctx context.Context) Prod
 
 // Execute executes the request
 //  @return EntitymanagerGetAttributeOptionsResponse
-func (a *ProductAPIService) ProductGetAttributeOptionsExecute(r ProductAPIProductGetAttributeOptionsRequest) (*EntitymanagerGetAttributeOptionsResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductGetAttributeOptionsExecute(r ApiProductGetAttributeOptionsRequest) (*EntitymanagerGetAttributeOptionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2573,20 +2307,6 @@ func (a *ProductAPIService) ProductGetAttributeOptionsExecute(r ProductAPIProduc
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2632,18 +2352,18 @@ func (a *ProductAPIService) ProductGetAttributeOptionsExecute(r ProductAPIProduc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductGetEntityRequest struct {
+type ApiProductGetEntityRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerEntityRequest
 }
 
-func (r ProductAPIProductGetEntityRequest) Body(body EntitymanagerEntityRequest) ProductAPIProductGetEntityRequest {
+func (r ApiProductGetEntityRequest) Body(body EntitymanagerEntityRequest) ApiProductGetEntityRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductGetEntityRequest) Execute() (*EntitymanagerEntity, *http.Response, error) {
+func (r ApiProductGetEntityRequest) Execute() (*EntitymanagerEntity, *http.Response, error) {
 	return r.ApiService.ProductGetEntityExecute(r)
 }
 
@@ -2651,10 +2371,10 @@ func (r ProductAPIProductGetEntityRequest) Execute() (*EntitymanagerEntity, *htt
 ProductGetEntity Method for ProductGetEntity
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductGetEntityRequest
+ @return ApiProductGetEntityRequest
 */
-func (a *ProductAPIService) ProductGetEntity(ctx context.Context) ProductAPIProductGetEntityRequest {
-	return ProductAPIProductGetEntityRequest{
+func (a *ProductAPIService) ProductGetEntity(ctx context.Context) ApiProductGetEntityRequest {
+	return ApiProductGetEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2662,7 +2382,7 @@ func (a *ProductAPIService) ProductGetEntity(ctx context.Context) ProductAPIProd
 
 // Execute executes the request
 //  @return EntitymanagerEntity
-func (a *ProductAPIService) ProductGetEntityExecute(r ProductAPIProductGetEntityRequest) (*EntitymanagerEntity, *http.Response, error) {
+func (a *ProductAPIService) ProductGetEntityExecute(r ApiProductGetEntityRequest) (*EntitymanagerEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2703,20 +2423,6 @@ func (a *ProductAPIService) ProductGetEntityExecute(r ProductAPIProductGetEntity
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2762,18 +2468,18 @@ func (a *ProductAPIService) ProductGetEntityExecute(r ProductAPIProductGetEntity
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductGetOptionsListRequest struct {
+type ApiProductGetOptionsListRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerGetOptionsListRequest
 }
 
-func (r ProductAPIProductGetOptionsListRequest) Body(body EntitymanagerGetOptionsListRequest) ProductAPIProductGetOptionsListRequest {
+func (r ApiProductGetOptionsListRequest) Body(body EntitymanagerGetOptionsListRequest) ApiProductGetOptionsListRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductGetOptionsListRequest) Execute() (*EntitymanagerGetOptionsListResponse, *http.Response, error) {
+func (r ApiProductGetOptionsListRequest) Execute() (*EntitymanagerGetOptionsListResponse, *http.Response, error) {
 	return r.ApiService.ProductGetOptionsListExecute(r)
 }
 
@@ -2781,10 +2487,10 @@ func (r ProductAPIProductGetOptionsListRequest) Execute() (*EntitymanagerGetOpti
 ProductGetOptionsList Method for ProductGetOptionsList
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductGetOptionsListRequest
+ @return ApiProductGetOptionsListRequest
 */
-func (a *ProductAPIService) ProductGetOptionsList(ctx context.Context) ProductAPIProductGetOptionsListRequest {
-	return ProductAPIProductGetOptionsListRequest{
+func (a *ProductAPIService) ProductGetOptionsList(ctx context.Context) ApiProductGetOptionsListRequest {
+	return ApiProductGetOptionsListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2792,7 +2498,7 @@ func (a *ProductAPIService) ProductGetOptionsList(ctx context.Context) ProductAP
 
 // Execute executes the request
 //  @return EntitymanagerGetOptionsListResponse
-func (a *ProductAPIService) ProductGetOptionsListExecute(r ProductAPIProductGetOptionsListRequest) (*EntitymanagerGetOptionsListResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductGetOptionsListExecute(r ApiProductGetOptionsListRequest) (*EntitymanagerGetOptionsListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2833,20 +2539,6 @@ func (a *ProductAPIService) ProductGetOptionsListExecute(r ProductAPIProductGetO
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2892,18 +2584,18 @@ func (a *ProductAPIService) ProductGetOptionsListExecute(r ProductAPIProductGetO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductGetProductRequest struct {
+type ApiProductGetProductRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductGetProductRequest
 }
 
-func (r ProductAPIProductGetProductRequest) Body(body ProductGetProductRequest) ProductAPIProductGetProductRequest {
+func (r ApiProductGetProductRequest) Body(body ProductGetProductRequest) ApiProductGetProductRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductGetProductRequest) Execute() (*ProductGetProductResponse, *http.Response, error) {
+func (r ApiProductGetProductRequest) Execute() (*ProductGetProductResponse, *http.Response, error) {
 	return r.ApiService.ProductGetProductExecute(r)
 }
 
@@ -2911,10 +2603,10 @@ func (r ProductAPIProductGetProductRequest) Execute() (*ProductGetProductRespons
 ProductGetProduct Method for ProductGetProduct
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductGetProductRequest
+ @return ApiProductGetProductRequest
 */
-func (a *ProductAPIService) ProductGetProduct(ctx context.Context) ProductAPIProductGetProductRequest {
-	return ProductAPIProductGetProductRequest{
+func (a *ProductAPIService) ProductGetProduct(ctx context.Context) ApiProductGetProductRequest {
+	return ApiProductGetProductRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2922,7 +2614,7 @@ func (a *ProductAPIService) ProductGetProduct(ctx context.Context) ProductAPIPro
 
 // Execute executes the request
 //  @return ProductGetProductResponse
-func (a *ProductAPIService) ProductGetProductExecute(r ProductAPIProductGetProductRequest) (*ProductGetProductResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductGetProductExecute(r ApiProductGetProductRequest) (*ProductGetProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2963,20 +2655,6 @@ func (a *ProductAPIService) ProductGetProductExecute(r ProductAPIProductGetProdu
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3022,18 +2700,18 @@ func (a *ProductAPIService) ProductGetProductExecute(r ProductAPIProductGetProdu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductGetProductByCodeRequest struct {
+type ApiProductGetProductByCodeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductGetProductByCodeRequest
 }
 
-func (r ProductAPIProductGetProductByCodeRequest) Body(body ProductGetProductByCodeRequest) ProductAPIProductGetProductByCodeRequest {
+func (r ApiProductGetProductByCodeRequest) Body(body ProductGetProductByCodeRequest) ApiProductGetProductByCodeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductGetProductByCodeRequest) Execute() (*ProductGetProductByCodeResponse, *http.Response, error) {
+func (r ApiProductGetProductByCodeRequest) Execute() (*ProductGetProductByCodeResponse, *http.Response, error) {
 	return r.ApiService.ProductGetProductByCodeExecute(r)
 }
 
@@ -3041,10 +2719,10 @@ func (r ProductAPIProductGetProductByCodeRequest) Execute() (*ProductGetProductB
 ProductGetProductByCode Method for ProductGetProductByCode
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductGetProductByCodeRequest
+ @return ApiProductGetProductByCodeRequest
 */
-func (a *ProductAPIService) ProductGetProductByCode(ctx context.Context) ProductAPIProductGetProductByCodeRequest {
-	return ProductAPIProductGetProductByCodeRequest{
+func (a *ProductAPIService) ProductGetProductByCode(ctx context.Context) ApiProductGetProductByCodeRequest {
+	return ApiProductGetProductByCodeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3052,7 +2730,7 @@ func (a *ProductAPIService) ProductGetProductByCode(ctx context.Context) Product
 
 // Execute executes the request
 //  @return ProductGetProductByCodeResponse
-func (a *ProductAPIService) ProductGetProductByCodeExecute(r ProductAPIProductGetProductByCodeRequest) (*ProductGetProductByCodeResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductGetProductByCodeExecute(r ApiProductGetProductByCodeRequest) (*ProductGetProductByCodeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3093,20 +2771,6 @@ func (a *ProductAPIService) ProductGetProductByCodeExecute(r ProductAPIProductGe
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3152,18 +2816,18 @@ func (a *ProductAPIService) ProductGetProductByCodeExecute(r ProductAPIProductGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductGetProductByUrlKeyRequest struct {
+type ApiProductGetProductByUrlKeyRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductGetProductByUrlKeyRequest
 }
 
-func (r ProductAPIProductGetProductByUrlKeyRequest) Body(body ProductGetProductByUrlKeyRequest) ProductAPIProductGetProductByUrlKeyRequest {
+func (r ApiProductGetProductByUrlKeyRequest) Body(body ProductGetProductByUrlKeyRequest) ApiProductGetProductByUrlKeyRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductGetProductByUrlKeyRequest) Execute() (*ProductGetProductByUrlKeyResponse, *http.Response, error) {
+func (r ApiProductGetProductByUrlKeyRequest) Execute() (*ProductGetProductByUrlKeyResponse, *http.Response, error) {
 	return r.ApiService.ProductGetProductByUrlKeyExecute(r)
 }
 
@@ -3171,10 +2835,10 @@ func (r ProductAPIProductGetProductByUrlKeyRequest) Execute() (*ProductGetProduc
 ProductGetProductByUrlKey Method for ProductGetProductByUrlKey
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductGetProductByUrlKeyRequest
+ @return ApiProductGetProductByUrlKeyRequest
 */
-func (a *ProductAPIService) ProductGetProductByUrlKey(ctx context.Context) ProductAPIProductGetProductByUrlKeyRequest {
-	return ProductAPIProductGetProductByUrlKeyRequest{
+func (a *ProductAPIService) ProductGetProductByUrlKey(ctx context.Context) ApiProductGetProductByUrlKeyRequest {
+	return ApiProductGetProductByUrlKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3182,7 +2846,7 @@ func (a *ProductAPIService) ProductGetProductByUrlKey(ctx context.Context) Produ
 
 // Execute executes the request
 //  @return ProductGetProductByUrlKeyResponse
-func (a *ProductAPIService) ProductGetProductByUrlKeyExecute(r ProductAPIProductGetProductByUrlKeyRequest) (*ProductGetProductByUrlKeyResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductGetProductByUrlKeyExecute(r ApiProductGetProductByUrlKeyRequest) (*ProductGetProductByUrlKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3223,20 +2887,6 @@ func (a *ProductAPIService) ProductGetProductByUrlKeyExecute(r ProductAPIProduct
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3282,18 +2932,18 @@ func (a *ProductAPIService) ProductGetProductByUrlKeyExecute(r ProductAPIProduct
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductListAttributeGroupsRequest struct {
+type ApiProductListAttributeGroupsRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerListAttributeGroupsRequest
 }
 
-func (r ProductAPIProductListAttributeGroupsRequest) Body(body EntitymanagerListAttributeGroupsRequest) ProductAPIProductListAttributeGroupsRequest {
+func (r ApiProductListAttributeGroupsRequest) Body(body EntitymanagerListAttributeGroupsRequest) ApiProductListAttributeGroupsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductListAttributeGroupsRequest) Execute() (*EntitymanagerListAttributeGroupsResponse, *http.Response, error) {
+func (r ApiProductListAttributeGroupsRequest) Execute() (*EntitymanagerListAttributeGroupsResponse, *http.Response, error) {
 	return r.ApiService.ProductListAttributeGroupsExecute(r)
 }
 
@@ -3301,10 +2951,10 @@ func (r ProductAPIProductListAttributeGroupsRequest) Execute() (*EntitymanagerLi
 ProductListAttributeGroups Attribute Groups endpoints
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductListAttributeGroupsRequest
+ @return ApiProductListAttributeGroupsRequest
 */
-func (a *ProductAPIService) ProductListAttributeGroups(ctx context.Context) ProductAPIProductListAttributeGroupsRequest {
-	return ProductAPIProductListAttributeGroupsRequest{
+func (a *ProductAPIService) ProductListAttributeGroups(ctx context.Context) ApiProductListAttributeGroupsRequest {
+	return ApiProductListAttributeGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3312,7 +2962,7 @@ func (a *ProductAPIService) ProductListAttributeGroups(ctx context.Context) Prod
 
 // Execute executes the request
 //  @return EntitymanagerListAttributeGroupsResponse
-func (a *ProductAPIService) ProductListAttributeGroupsExecute(r ProductAPIProductListAttributeGroupsRequest) (*EntitymanagerListAttributeGroupsResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductListAttributeGroupsExecute(r ApiProductListAttributeGroupsRequest) (*EntitymanagerListAttributeGroupsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3353,20 +3003,6 @@ func (a *ProductAPIService) ProductListAttributeGroupsExecute(r ProductAPIProduc
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3412,18 +3048,18 @@ func (a *ProductAPIService) ProductListAttributeGroupsExecute(r ProductAPIProduc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductListAttributeOptionsRequest struct {
+type ApiProductListAttributeOptionsRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerListAttributeOptionsRequest
 }
 
-func (r ProductAPIProductListAttributeOptionsRequest) Body(body EntitymanagerListAttributeOptionsRequest) ProductAPIProductListAttributeOptionsRequest {
+func (r ApiProductListAttributeOptionsRequest) Body(body EntitymanagerListAttributeOptionsRequest) ApiProductListAttributeOptionsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductListAttributeOptionsRequest) Execute() (*EntitymanagerListAttributeOptionsResponse, *http.Response, error) {
+func (r ApiProductListAttributeOptionsRequest) Execute() (*EntitymanagerListAttributeOptionsResponse, *http.Response, error) {
 	return r.ApiService.ProductListAttributeOptionsExecute(r)
 }
 
@@ -3431,10 +3067,10 @@ func (r ProductAPIProductListAttributeOptionsRequest) Execute() (*EntitymanagerL
 ProductListAttributeOptions Method for ProductListAttributeOptions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductListAttributeOptionsRequest
+ @return ApiProductListAttributeOptionsRequest
 */
-func (a *ProductAPIService) ProductListAttributeOptions(ctx context.Context) ProductAPIProductListAttributeOptionsRequest {
-	return ProductAPIProductListAttributeOptionsRequest{
+func (a *ProductAPIService) ProductListAttributeOptions(ctx context.Context) ApiProductListAttributeOptionsRequest {
+	return ApiProductListAttributeOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3442,7 +3078,7 @@ func (a *ProductAPIService) ProductListAttributeOptions(ctx context.Context) Pro
 
 // Execute executes the request
 //  @return EntitymanagerListAttributeOptionsResponse
-func (a *ProductAPIService) ProductListAttributeOptionsExecute(r ProductAPIProductListAttributeOptionsRequest) (*EntitymanagerListAttributeOptionsResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductListAttributeOptionsExecute(r ApiProductListAttributeOptionsRequest) (*EntitymanagerListAttributeOptionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3483,20 +3119,6 @@ func (a *ProductAPIService) ProductListAttributeOptionsExecute(r ProductAPIProdu
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3542,18 +3164,18 @@ func (a *ProductAPIService) ProductListAttributeOptionsExecute(r ProductAPIProdu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductListEntitiesRequest struct {
+type ApiProductListEntitiesRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerListEntitiesRequest
 }
 
-func (r ProductAPIProductListEntitiesRequest) Body(body EntitymanagerListEntitiesRequest) ProductAPIProductListEntitiesRequest {
+func (r ApiProductListEntitiesRequest) Body(body EntitymanagerListEntitiesRequest) ApiProductListEntitiesRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductListEntitiesRequest) Execute() (*EntitymanagerListEntitiesResponse, *http.Response, error) {
+func (r ApiProductListEntitiesRequest) Execute() (*EntitymanagerListEntitiesResponse, *http.Response, error) {
 	return r.ApiService.ProductListEntitiesExecute(r)
 }
 
@@ -3561,10 +3183,10 @@ func (r ProductAPIProductListEntitiesRequest) Execute() (*EntitymanagerListEntit
 ProductListEntities Method for ProductListEntities
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductListEntitiesRequest
+ @return ApiProductListEntitiesRequest
 */
-func (a *ProductAPIService) ProductListEntities(ctx context.Context) ProductAPIProductListEntitiesRequest {
-	return ProductAPIProductListEntitiesRequest{
+func (a *ProductAPIService) ProductListEntities(ctx context.Context) ApiProductListEntitiesRequest {
+	return ApiProductListEntitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3572,7 +3194,7 @@ func (a *ProductAPIService) ProductListEntities(ctx context.Context) ProductAPIP
 
 // Execute executes the request
 //  @return EntitymanagerListEntitiesResponse
-func (a *ProductAPIService) ProductListEntitiesExecute(r ProductAPIProductListEntitiesRequest) (*EntitymanagerListEntitiesResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductListEntitiesExecute(r ApiProductListEntitiesRequest) (*EntitymanagerListEntitiesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3613,20 +3235,6 @@ func (a *ProductAPIService) ProductListEntitiesExecute(r ProductAPIProductListEn
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3672,18 +3280,18 @@ func (a *ProductAPIService) ProductListEntitiesExecute(r ProductAPIProductListEn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductListOptionsListsRequest struct {
+type ApiProductListOptionsListsRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerListOptionsListsRequest
 }
 
-func (r ProductAPIProductListOptionsListsRequest) Body(body EntitymanagerListOptionsListsRequest) ProductAPIProductListOptionsListsRequest {
+func (r ApiProductListOptionsListsRequest) Body(body EntitymanagerListOptionsListsRequest) ApiProductListOptionsListsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductListOptionsListsRequest) Execute() (*EntitymanagerListOptionsListsResponse, *http.Response, error) {
+func (r ApiProductListOptionsListsRequest) Execute() (*EntitymanagerListOptionsListsResponse, *http.Response, error) {
 	return r.ApiService.ProductListOptionsListsExecute(r)
 }
 
@@ -3691,10 +3299,10 @@ func (r ProductAPIProductListOptionsListsRequest) Execute() (*EntitymanagerListO
 ProductListOptionsLists Method for ProductListOptionsLists
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductListOptionsListsRequest
+ @return ApiProductListOptionsListsRequest
 */
-func (a *ProductAPIService) ProductListOptionsLists(ctx context.Context) ProductAPIProductListOptionsListsRequest {
-	return ProductAPIProductListOptionsListsRequest{
+func (a *ProductAPIService) ProductListOptionsLists(ctx context.Context) ApiProductListOptionsListsRequest {
+	return ApiProductListOptionsListsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3702,7 +3310,7 @@ func (a *ProductAPIService) ProductListOptionsLists(ctx context.Context) Product
 
 // Execute executes the request
 //  @return EntitymanagerListOptionsListsResponse
-func (a *ProductAPIService) ProductListOptionsListsExecute(r ProductAPIProductListOptionsListsRequest) (*EntitymanagerListOptionsListsResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductListOptionsListsExecute(r ApiProductListOptionsListsRequest) (*EntitymanagerListOptionsListsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3743,20 +3351,6 @@ func (a *ProductAPIService) ProductListOptionsListsExecute(r ProductAPIProductLi
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3802,18 +3396,18 @@ func (a *ProductAPIService) ProductListOptionsListsExecute(r ProductAPIProductLi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductListProductsRequest struct {
+type ApiProductListProductsRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductListProductsRequest
 }
 
-func (r ProductAPIProductListProductsRequest) Body(body ProductListProductsRequest) ProductAPIProductListProductsRequest {
+func (r ApiProductListProductsRequest) Body(body ProductListProductsRequest) ApiProductListProductsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductListProductsRequest) Execute() (*ProductListProductsResponse, *http.Response, error) {
+func (r ApiProductListProductsRequest) Execute() (*ProductListProductsResponse, *http.Response, error) {
 	return r.ApiService.ProductListProductsExecute(r)
 }
 
@@ -3821,10 +3415,10 @@ func (r ProductAPIProductListProductsRequest) Execute() (*ProductListProductsRes
 ProductListProducts Method for ProductListProducts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductListProductsRequest
+ @return ApiProductListProductsRequest
 */
-func (a *ProductAPIService) ProductListProducts(ctx context.Context) ProductAPIProductListProductsRequest {
-	return ProductAPIProductListProductsRequest{
+func (a *ProductAPIService) ProductListProducts(ctx context.Context) ApiProductListProductsRequest {
+	return ApiProductListProductsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3832,7 +3426,7 @@ func (a *ProductAPIService) ProductListProducts(ctx context.Context) ProductAPIP
 
 // Execute executes the request
 //  @return ProductListProductsResponse
-func (a *ProductAPIService) ProductListProductsExecute(r ProductAPIProductListProductsRequest) (*ProductListProductsResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductListProductsExecute(r ApiProductListProductsRequest) (*ProductListProductsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3873,20 +3467,6 @@ func (a *ProductAPIService) ProductListProductsExecute(r ProductAPIProductListPr
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3932,18 +3512,18 @@ func (a *ProductAPIService) ProductListProductsExecute(r ProductAPIProductListPr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductListProductsByIdsRequest struct {
+type ApiProductListProductsByIdsRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductListProductsByIdsRequest
 }
 
-func (r ProductAPIProductListProductsByIdsRequest) Body(body ProductListProductsByIdsRequest) ProductAPIProductListProductsByIdsRequest {
+func (r ApiProductListProductsByIdsRequest) Body(body ProductListProductsByIdsRequest) ApiProductListProductsByIdsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductListProductsByIdsRequest) Execute() (*ProductListProductsByIdsResponse, *http.Response, error) {
+func (r ApiProductListProductsByIdsRequest) Execute() (*ProductListProductsByIdsResponse, *http.Response, error) {
 	return r.ApiService.ProductListProductsByIdsExecute(r)
 }
 
@@ -3951,10 +3531,10 @@ func (r ProductAPIProductListProductsByIdsRequest) Execute() (*ProductListProduc
 ProductListProductsByIds Method for ProductListProductsByIds
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductListProductsByIdsRequest
+ @return ApiProductListProductsByIdsRequest
 */
-func (a *ProductAPIService) ProductListProductsByIds(ctx context.Context) ProductAPIProductListProductsByIdsRequest {
-	return ProductAPIProductListProductsByIdsRequest{
+func (a *ProductAPIService) ProductListProductsByIds(ctx context.Context) ApiProductListProductsByIdsRequest {
+	return ApiProductListProductsByIdsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3962,7 +3542,7 @@ func (a *ProductAPIService) ProductListProductsByIds(ctx context.Context) Produc
 
 // Execute executes the request
 //  @return ProductListProductsByIdsResponse
-func (a *ProductAPIService) ProductListProductsByIdsExecute(r ProductAPIProductListProductsByIdsRequest) (*ProductListProductsByIdsResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductListProductsByIdsExecute(r ApiProductListProductsByIdsRequest) (*ProductListProductsByIdsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4003,20 +3583,6 @@ func (a *ProductAPIService) ProductListProductsByIdsExecute(r ProductAPIProductL
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4062,18 +3628,18 @@ func (a *ProductAPIService) ProductListProductsByIdsExecute(r ProductAPIProductL
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductListProductsBySkuRequest struct {
+type ApiProductListProductsBySkuRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductListProductsBySkuRequest
 }
 
-func (r ProductAPIProductListProductsBySkuRequest) Body(body ProductListProductsBySkuRequest) ProductAPIProductListProductsBySkuRequest {
+func (r ApiProductListProductsBySkuRequest) Body(body ProductListProductsBySkuRequest) ApiProductListProductsBySkuRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductListProductsBySkuRequest) Execute() (*ProductListProductsBySkuResponse, *http.Response, error) {
+func (r ApiProductListProductsBySkuRequest) Execute() (*ProductListProductsBySkuResponse, *http.Response, error) {
 	return r.ApiService.ProductListProductsBySkuExecute(r)
 }
 
@@ -4081,10 +3647,10 @@ func (r ProductAPIProductListProductsBySkuRequest) Execute() (*ProductListProduc
 ProductListProductsBySku Method for ProductListProductsBySku
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductListProductsBySkuRequest
+ @return ApiProductListProductsBySkuRequest
 */
-func (a *ProductAPIService) ProductListProductsBySku(ctx context.Context) ProductAPIProductListProductsBySkuRequest {
-	return ProductAPIProductListProductsBySkuRequest{
+func (a *ProductAPIService) ProductListProductsBySku(ctx context.Context) ApiProductListProductsBySkuRequest {
+	return ApiProductListProductsBySkuRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4092,7 +3658,7 @@ func (a *ProductAPIService) ProductListProductsBySku(ctx context.Context) Produc
 
 // Execute executes the request
 //  @return ProductListProductsBySkuResponse
-func (a *ProductAPIService) ProductListProductsBySkuExecute(r ProductAPIProductListProductsBySkuRequest) (*ProductListProductsBySkuResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductListProductsBySkuExecute(r ApiProductListProductsBySkuRequest) (*ProductListProductsBySkuResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4133,20 +3699,6 @@ func (a *ProductAPIService) ProductListProductsBySkuExecute(r ProductAPIProductL
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4192,18 +3744,18 @@ func (a *ProductAPIService) ProductListProductsBySkuExecute(r ProductAPIProductL
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductListVariantsBySkuRequest struct {
+type ApiProductListVariantsBySkuRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductListVariantsBySkuRequest
 }
 
-func (r ProductAPIProductListVariantsBySkuRequest) Body(body ProductListVariantsBySkuRequest) ProductAPIProductListVariantsBySkuRequest {
+func (r ApiProductListVariantsBySkuRequest) Body(body ProductListVariantsBySkuRequest) ApiProductListVariantsBySkuRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductListVariantsBySkuRequest) Execute() (*ProductListVariantsBySkuResponse, *http.Response, error) {
+func (r ApiProductListVariantsBySkuRequest) Execute() (*ProductListVariantsBySkuResponse, *http.Response, error) {
 	return r.ApiService.ProductListVariantsBySkuExecute(r)
 }
 
@@ -4211,10 +3763,10 @@ func (r ProductAPIProductListVariantsBySkuRequest) Execute() (*ProductListVarian
 ProductListVariantsBySku Method for ProductListVariantsBySku
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductListVariantsBySkuRequest
+ @return ApiProductListVariantsBySkuRequest
 */
-func (a *ProductAPIService) ProductListVariantsBySku(ctx context.Context) ProductAPIProductListVariantsBySkuRequest {
-	return ProductAPIProductListVariantsBySkuRequest{
+func (a *ProductAPIService) ProductListVariantsBySku(ctx context.Context) ApiProductListVariantsBySkuRequest {
+	return ApiProductListVariantsBySkuRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4222,7 +3774,7 @@ func (a *ProductAPIService) ProductListVariantsBySku(ctx context.Context) Produc
 
 // Execute executes the request
 //  @return ProductListVariantsBySkuResponse
-func (a *ProductAPIService) ProductListVariantsBySkuExecute(r ProductAPIProductListVariantsBySkuRequest) (*ProductListVariantsBySkuResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductListVariantsBySkuExecute(r ApiProductListVariantsBySkuRequest) (*ProductListVariantsBySkuResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4263,20 +3815,6 @@ func (a *ProductAPIService) ProductListVariantsBySkuExecute(r ProductAPIProductL
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4322,18 +3860,18 @@ func (a *ProductAPIService) ProductListVariantsBySkuExecute(r ProductAPIProductL
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductRemoveMediaGalleryEntryRequest struct {
+type ApiProductRemoveMediaGalleryEntryRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductRemoveMediaGalleryEntryRequest
 }
 
-func (r ProductAPIProductRemoveMediaGalleryEntryRequest) Body(body ProductRemoveMediaGalleryEntryRequest) ProductAPIProductRemoveMediaGalleryEntryRequest {
+func (r ApiProductRemoveMediaGalleryEntryRequest) Body(body ProductRemoveMediaGalleryEntryRequest) ApiProductRemoveMediaGalleryEntryRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductRemoveMediaGalleryEntryRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiProductRemoveMediaGalleryEntryRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProductRemoveMediaGalleryEntryExecute(r)
 }
 
@@ -4341,10 +3879,10 @@ func (r ProductAPIProductRemoveMediaGalleryEntryRequest) Execute() (map[string]i
 ProductRemoveMediaGalleryEntry Method for ProductRemoveMediaGalleryEntry
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductRemoveMediaGalleryEntryRequest
+ @return ApiProductRemoveMediaGalleryEntryRequest
 */
-func (a *ProductAPIService) ProductRemoveMediaGalleryEntry(ctx context.Context) ProductAPIProductRemoveMediaGalleryEntryRequest {
-	return ProductAPIProductRemoveMediaGalleryEntryRequest{
+func (a *ProductAPIService) ProductRemoveMediaGalleryEntry(ctx context.Context) ApiProductRemoveMediaGalleryEntryRequest {
+	return ApiProductRemoveMediaGalleryEntryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4352,7 +3890,7 @@ func (a *ProductAPIService) ProductRemoveMediaGalleryEntry(ctx context.Context) 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) ProductRemoveMediaGalleryEntryExecute(r ProductAPIProductRemoveMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) ProductRemoveMediaGalleryEntryExecute(r ApiProductRemoveMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4393,20 +3931,6 @@ func (a *ProductAPIService) ProductRemoveMediaGalleryEntryExecute(r ProductAPIPr
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4452,18 +3976,18 @@ func (a *ProductAPIService) ProductRemoveMediaGalleryEntryExecute(r ProductAPIPr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductUpdateAttributeRequest struct {
+type ApiProductUpdateAttributeRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerUpdateAttributeRequest
 }
 
-func (r ProductAPIProductUpdateAttributeRequest) Body(body EntitymanagerUpdateAttributeRequest) ProductAPIProductUpdateAttributeRequest {
+func (r ApiProductUpdateAttributeRequest) Body(body EntitymanagerUpdateAttributeRequest) ApiProductUpdateAttributeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductUpdateAttributeRequest) Execute() (*EntitymanagerAttribute, *http.Response, error) {
+func (r ApiProductUpdateAttributeRequest) Execute() (*EntitymanagerAttribute, *http.Response, error) {
 	return r.ApiService.ProductUpdateAttributeExecute(r)
 }
 
@@ -4471,10 +3995,10 @@ func (r ProductAPIProductUpdateAttributeRequest) Execute() (*EntitymanagerAttrib
 ProductUpdateAttribute Method for ProductUpdateAttribute
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductUpdateAttributeRequest
+ @return ApiProductUpdateAttributeRequest
 */
-func (a *ProductAPIService) ProductUpdateAttribute(ctx context.Context) ProductAPIProductUpdateAttributeRequest {
-	return ProductAPIProductUpdateAttributeRequest{
+func (a *ProductAPIService) ProductUpdateAttribute(ctx context.Context) ApiProductUpdateAttributeRequest {
+	return ApiProductUpdateAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4482,7 +4006,7 @@ func (a *ProductAPIService) ProductUpdateAttribute(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return EntitymanagerAttribute
-func (a *ProductAPIService) ProductUpdateAttributeExecute(r ProductAPIProductUpdateAttributeRequest) (*EntitymanagerAttribute, *http.Response, error) {
+func (a *ProductAPIService) ProductUpdateAttributeExecute(r ApiProductUpdateAttributeRequest) (*EntitymanagerAttribute, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4523,20 +4047,6 @@ func (a *ProductAPIService) ProductUpdateAttributeExecute(r ProductAPIProductUpd
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4582,18 +4092,18 @@ func (a *ProductAPIService) ProductUpdateAttributeExecute(r ProductAPIProductUpd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductUpdateAttributeGroupRequest struct {
+type ApiProductUpdateAttributeGroupRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerUpdateAttributeGroupRequest
 }
 
-func (r ProductAPIProductUpdateAttributeGroupRequest) Body(body EntitymanagerUpdateAttributeGroupRequest) ProductAPIProductUpdateAttributeGroupRequest {
+func (r ApiProductUpdateAttributeGroupRequest) Body(body EntitymanagerUpdateAttributeGroupRequest) ApiProductUpdateAttributeGroupRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductUpdateAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (r ApiProductUpdateAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
 	return r.ApiService.ProductUpdateAttributeGroupExecute(r)
 }
 
@@ -4601,10 +4111,10 @@ func (r ProductAPIProductUpdateAttributeGroupRequest) Execute() (*EntitymanagerA
 ProductUpdateAttributeGroup Method for ProductUpdateAttributeGroup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductUpdateAttributeGroupRequest
+ @return ApiProductUpdateAttributeGroupRequest
 */
-func (a *ProductAPIService) ProductUpdateAttributeGroup(ctx context.Context) ProductAPIProductUpdateAttributeGroupRequest {
-	return ProductAPIProductUpdateAttributeGroupRequest{
+func (a *ProductAPIService) ProductUpdateAttributeGroup(ctx context.Context) ApiProductUpdateAttributeGroupRequest {
+	return ApiProductUpdateAttributeGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4612,7 +4122,7 @@ func (a *ProductAPIService) ProductUpdateAttributeGroup(ctx context.Context) Pro
 
 // Execute executes the request
 //  @return EntitymanagerAttributeGroup
-func (a *ProductAPIService) ProductUpdateAttributeGroupExecute(r ProductAPIProductUpdateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (a *ProductAPIService) ProductUpdateAttributeGroupExecute(r ApiProductUpdateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4653,20 +4163,6 @@ func (a *ProductAPIService) ProductUpdateAttributeGroupExecute(r ProductAPIProdu
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4712,18 +4208,18 @@ func (a *ProductAPIService) ProductUpdateAttributeGroupExecute(r ProductAPIProdu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductUpdateAttributeOptionsRequest struct {
+type ApiProductUpdateAttributeOptionsRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerUpdateAttributeOptionsRequest
 }
 
-func (r ProductAPIProductUpdateAttributeOptionsRequest) Body(body EntitymanagerUpdateAttributeOptionsRequest) ProductAPIProductUpdateAttributeOptionsRequest {
+func (r ApiProductUpdateAttributeOptionsRequest) Body(body EntitymanagerUpdateAttributeOptionsRequest) ApiProductUpdateAttributeOptionsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductUpdateAttributeOptionsRequest) Execute() (*EntitymanagerUpdateAttributeOptionsResponse, *http.Response, error) {
+func (r ApiProductUpdateAttributeOptionsRequest) Execute() (*EntitymanagerUpdateAttributeOptionsResponse, *http.Response, error) {
 	return r.ApiService.ProductUpdateAttributeOptionsExecute(r)
 }
 
@@ -4731,10 +4227,10 @@ func (r ProductAPIProductUpdateAttributeOptionsRequest) Execute() (*Entitymanage
 ProductUpdateAttributeOptions rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductUpdateAttributeOptionsRequest
+ @return ApiProductUpdateAttributeOptionsRequest
 */
-func (a *ProductAPIService) ProductUpdateAttributeOptions(ctx context.Context) ProductAPIProductUpdateAttributeOptionsRequest {
-	return ProductAPIProductUpdateAttributeOptionsRequest{
+func (a *ProductAPIService) ProductUpdateAttributeOptions(ctx context.Context) ApiProductUpdateAttributeOptionsRequest {
+	return ApiProductUpdateAttributeOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4742,7 +4238,7 @@ func (a *ProductAPIService) ProductUpdateAttributeOptions(ctx context.Context) P
 
 // Execute executes the request
 //  @return EntitymanagerUpdateAttributeOptionsResponse
-func (a *ProductAPIService) ProductUpdateAttributeOptionsExecute(r ProductAPIProductUpdateAttributeOptionsRequest) (*EntitymanagerUpdateAttributeOptionsResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductUpdateAttributeOptionsExecute(r ApiProductUpdateAttributeOptionsRequest) (*EntitymanagerUpdateAttributeOptionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4783,20 +4279,6 @@ func (a *ProductAPIService) ProductUpdateAttributeOptionsExecute(r ProductAPIPro
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4842,18 +4324,18 @@ func (a *ProductAPIService) ProductUpdateAttributeOptionsExecute(r ProductAPIPro
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductUpdateMediaGalleryEntryRequest struct {
+type ApiProductUpdateMediaGalleryEntryRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductUpdateMediaGalleryEntryRequest
 }
 
-func (r ProductAPIProductUpdateMediaGalleryEntryRequest) Body(body ProductUpdateMediaGalleryEntryRequest) ProductAPIProductUpdateMediaGalleryEntryRequest {
+func (r ApiProductUpdateMediaGalleryEntryRequest) Body(body ProductUpdateMediaGalleryEntryRequest) ApiProductUpdateMediaGalleryEntryRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductUpdateMediaGalleryEntryRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiProductUpdateMediaGalleryEntryRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProductUpdateMediaGalleryEntryExecute(r)
 }
 
@@ -4861,10 +4343,10 @@ func (r ProductAPIProductUpdateMediaGalleryEntryRequest) Execute() (map[string]i
 ProductUpdateMediaGalleryEntry Method for ProductUpdateMediaGalleryEntry
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductUpdateMediaGalleryEntryRequest
+ @return ApiProductUpdateMediaGalleryEntryRequest
 */
-func (a *ProductAPIService) ProductUpdateMediaGalleryEntry(ctx context.Context) ProductAPIProductUpdateMediaGalleryEntryRequest {
-	return ProductAPIProductUpdateMediaGalleryEntryRequest{
+func (a *ProductAPIService) ProductUpdateMediaGalleryEntry(ctx context.Context) ApiProductUpdateMediaGalleryEntryRequest {
+	return ApiProductUpdateMediaGalleryEntryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4872,7 +4354,7 @@ func (a *ProductAPIService) ProductUpdateMediaGalleryEntry(ctx context.Context) 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) ProductUpdateMediaGalleryEntryExecute(r ProductAPIProductUpdateMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) ProductUpdateMediaGalleryEntryExecute(r ApiProductUpdateMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4913,20 +4395,6 @@ func (a *ProductAPIService) ProductUpdateMediaGalleryEntryExecute(r ProductAPIPr
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4972,18 +4440,18 @@ func (a *ProductAPIService) ProductUpdateMediaGalleryEntryExecute(r ProductAPIPr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductUpdateOptionsListRequest struct {
+type ApiProductUpdateOptionsListRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *EntitymanagerUpdateOptionsListRequest
 }
 
-func (r ProductAPIProductUpdateOptionsListRequest) Body(body EntitymanagerUpdateOptionsListRequest) ProductAPIProductUpdateOptionsListRequest {
+func (r ApiProductUpdateOptionsListRequest) Body(body EntitymanagerUpdateOptionsListRequest) ApiProductUpdateOptionsListRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductUpdateOptionsListRequest) Execute() (*EntitymanagerUpdateOptionsListResponse, *http.Response, error) {
+func (r ApiProductUpdateOptionsListRequest) Execute() (*EntitymanagerUpdateOptionsListResponse, *http.Response, error) {
 	return r.ApiService.ProductUpdateOptionsListExecute(r)
 }
 
@@ -4991,10 +4459,10 @@ func (r ProductAPIProductUpdateOptionsListRequest) Execute() (*EntitymanagerUpda
 ProductUpdateOptionsList Method for ProductUpdateOptionsList
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductUpdateOptionsListRequest
+ @return ApiProductUpdateOptionsListRequest
 */
-func (a *ProductAPIService) ProductUpdateOptionsList(ctx context.Context) ProductAPIProductUpdateOptionsListRequest {
-	return ProductAPIProductUpdateOptionsListRequest{
+func (a *ProductAPIService) ProductUpdateOptionsList(ctx context.Context) ApiProductUpdateOptionsListRequest {
+	return ApiProductUpdateOptionsListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5002,7 +4470,7 @@ func (a *ProductAPIService) ProductUpdateOptionsList(ctx context.Context) Produc
 
 // Execute executes the request
 //  @return EntitymanagerUpdateOptionsListResponse
-func (a *ProductAPIService) ProductUpdateOptionsListExecute(r ProductAPIProductUpdateOptionsListRequest) (*EntitymanagerUpdateOptionsListResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductUpdateOptionsListExecute(r ApiProductUpdateOptionsListRequest) (*EntitymanagerUpdateOptionsListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5043,20 +4511,6 @@ func (a *ProductAPIService) ProductUpdateOptionsListExecute(r ProductAPIProductU
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -5102,18 +4556,18 @@ func (a *ProductAPIService) ProductUpdateOptionsListExecute(r ProductAPIProductU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductUpdateProductRequest struct {
+type ApiProductUpdateProductRequest struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductUpdateProductRequest
 }
 
-func (r ProductAPIProductUpdateProductRequest) Body(body ProductUpdateProductRequest) ProductAPIProductUpdateProductRequest {
+func (r ApiProductUpdateProductRequest) Body(body ProductUpdateProductRequest) ApiProductUpdateProductRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductUpdateProductRequest) Execute() (*ProductUpdateProductResponse, *http.Response, error) {
+func (r ApiProductUpdateProductRequest) Execute() (*ProductUpdateProductResponse, *http.Response, error) {
 	return r.ApiService.ProductUpdateProductExecute(r)
 }
 
@@ -5121,12 +4575,12 @@ func (r ProductAPIProductUpdateProductRequest) Execute() (*ProductUpdateProductR
 ProductUpdateProduct Method for ProductUpdateProduct
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductUpdateProductRequest
+ @return ApiProductUpdateProductRequest
 
 Deprecated
 */
-func (a *ProductAPIService) ProductUpdateProduct(ctx context.Context) ProductAPIProductUpdateProductRequest {
-	return ProductAPIProductUpdateProductRequest{
+func (a *ProductAPIService) ProductUpdateProduct(ctx context.Context) ApiProductUpdateProductRequest {
+	return ApiProductUpdateProductRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5135,7 +4589,7 @@ func (a *ProductAPIService) ProductUpdateProduct(ctx context.Context) ProductAPI
 // Execute executes the request
 //  @return ProductUpdateProductResponse
 // Deprecated
-func (a *ProductAPIService) ProductUpdateProductExecute(r ProductAPIProductUpdateProductRequest) (*ProductUpdateProductResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductUpdateProductExecute(r ApiProductUpdateProductRequest) (*ProductUpdateProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5176,20 +4630,6 @@ func (a *ProductAPIService) ProductUpdateProductExecute(r ProductAPIProductUpdat
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -5235,18 +4675,18 @@ func (a *ProductAPIService) ProductUpdateProductExecute(r ProductAPIProductUpdat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductUpdateProductV2Request struct {
+type ApiProductUpdateProductV2Request struct {
 	ctx context.Context
 	ApiService *ProductAPIService
 	body *ProductUpdateProductRequestV2
 }
 
-func (r ProductAPIProductUpdateProductV2Request) Body(body ProductUpdateProductRequestV2) ProductAPIProductUpdateProductV2Request {
+func (r ApiProductUpdateProductV2Request) Body(body ProductUpdateProductRequestV2) ApiProductUpdateProductV2Request {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductUpdateProductV2Request) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiProductUpdateProductV2Request) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProductUpdateProductV2Execute(r)
 }
 
@@ -5254,10 +4694,10 @@ func (r ProductAPIProductUpdateProductV2Request) Execute() (map[string]interface
 ProductUpdateProductV2 Method for ProductUpdateProductV2
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductUpdateProductV2Request
+ @return ApiProductUpdateProductV2Request
 */
-func (a *ProductAPIService) ProductUpdateProductV2(ctx context.Context) ProductAPIProductUpdateProductV2Request {
-	return ProductAPIProductUpdateProductV2Request{
+func (a *ProductAPIService) ProductUpdateProductV2(ctx context.Context) ApiProductUpdateProductV2Request {
+	return ApiProductUpdateProductV2Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5265,7 +4705,7 @@ func (a *ProductAPIService) ProductUpdateProductV2(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) ProductUpdateProductV2Execute(r ProductAPIProductUpdateProductV2Request) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) ProductUpdateProductV2Execute(r ApiProductUpdateProductV2Request) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5306,20 +4746,6 @@ func (a *ProductAPIService) ProductUpdateProductV2Execute(r ProductAPIProductUpd
 	}
 	// body params
 	localVarPostBody = r.body
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["Authorization"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

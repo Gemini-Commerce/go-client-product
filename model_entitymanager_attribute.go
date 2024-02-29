@@ -42,9 +42,9 @@ type EntitymanagerAttribute struct {
 // will change when the set of required properties is changed
 func NewEntitymanagerAttribute() *EntitymanagerAttribute {
 	this := EntitymanagerAttribute{}
-	var type_ EntitymanagerTypes = ENTITYMANAGERTYPES_TEXT
+	var type_ EntitymanagerTypes = TEXT
 	this.Type = &type_
-	var renderAs EntitymanagerRenderAs = ENTITYMANAGERRENDERAS_DEFAULT
+	var renderAs EntitymanagerRenderAs = DEFAULT
 	this.RenderAs = &renderAs
 	return &this
 }
@@ -54,9 +54,9 @@ func NewEntitymanagerAttribute() *EntitymanagerAttribute {
 // but it doesn't guarantee that properties required by API are set
 func NewEntitymanagerAttributeWithDefaults() *EntitymanagerAttribute {
 	this := EntitymanagerAttribute{}
-	var type_ EntitymanagerTypes = ENTITYMANAGERTYPES_TEXT
+	var type_ EntitymanagerTypes = TEXT
 	this.Type = &type_
-	var renderAs EntitymanagerRenderAs = ENTITYMANAGERRENDERAS_DEFAULT
+	var renderAs EntitymanagerRenderAs = DEFAULT
 	this.RenderAs = &renderAs
 	return &this
 }

@@ -11,8 +11,6 @@ info:
   version: v1
 servers:
 - url: https://product.api.gogemini.io/
-security:
-- Authorization: []
 tags:
 - name: Product
 paths:
@@ -4321,10 +4319,6 @@ components:
           type: array
       type: object
   securitySchemes:
-    Authorization:
-      in: header
-      name: Authorization
-      type: apiKey
     standardAuthorization:
       flows:
         implicit:

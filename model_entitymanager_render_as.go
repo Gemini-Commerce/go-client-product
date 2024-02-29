@@ -21,8 +21,8 @@ type EntitymanagerRenderAs string
 
 // List of entitymanagerRenderAs
 const (
-	ENTITYMANAGERRENDERAS_DEFAULT EntitymanagerRenderAs = "DEFAULT"
-	ENTITYMANAGERRENDERAS_WYSIWYG EntitymanagerRenderAs = "WYSIWYG"
+	DEFAULT EntitymanagerRenderAs = "DEFAULT"
+	WYSIWYG EntitymanagerRenderAs = "WYSIWYG"
 )
 
 // All allowed values of EntitymanagerRenderAs enum
