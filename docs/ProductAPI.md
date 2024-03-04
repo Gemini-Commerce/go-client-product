@@ -4,53 +4,55 @@ All URIs are relative to *https://product.api.gogemini.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ProductAddMediaGalleryEntry**](ProductAPI.md#ProductAddMediaGalleryEntry) | **Post** /product.Product/AddMediaGalleryEntry | 
+[**AddMediaGalleryEntry**](ProductAPI.md#AddMediaGalleryEntry) | **Post** /product.Product/AddMediaGalleryEntry | Add Media Gallery Entry
+[**BulkUpdateV2**](ProductAPI.md#BulkUpdateV2) | **Post** /product.Product/BulkUpdateV2 | Bulk Update Products
+[**CreateAttributeOptions**](ProductAPI.md#CreateAttributeOptions) | **Post** /product.Product/CreateAttributeOptions | Create Attribute Options
+[**CreateEntity**](ProductAPI.md#CreateEntity) | **Post** /product.Product/CreateEntity | Create Entity
+[**CreateOptionsList**](ProductAPI.md#CreateOptionsList) | **Post** /product.Product/CreateOptionsList | Create Options List
+[**GetAttributeOption**](ProductAPI.md#GetAttributeOption) | **Post** /product.Product/GetAttributeOption | Get Attribute Option
+[**GetAttributeOptions**](ProductAPI.md#GetAttributeOptions) | **Post** /product.Product/GetAttributeOptions | Get Attribute Options
+[**GetEntity**](ProductAPI.md#GetEntity) | **Post** /product.Product/GetEntity | Get Entity Details
+[**GetOptionsList**](ProductAPI.md#GetOptionsList) | **Post** /product.Product/GetOptionsList | Get Options List
+[**GetProduct**](ProductAPI.md#GetProduct) | **Post** /product.Product/GetProduct | Get Product
+[**GetProductByCode**](ProductAPI.md#GetProductByCode) | **Post** /product.Product/GetProductByCode | Get Product By Code
+[**GetProductByUrlKey**](ProductAPI.md#GetProductByUrlKey) | **Post** /product.Product/GetProductByUrlKey | Get Product By Url Key
+[**ListAttributeOptions**](ProductAPI.md#ListAttributeOptions) | **Post** /product.Product/ListAttributeOptions | List Attribute Options
+[**ListEntities**](ProductAPI.md#ListEntities) | **Post** /product.Product/ListEntities | List Entities
+[**ListOptionsLists**](ProductAPI.md#ListOptionsLists) | **Post** /product.Product/ListOptionsLists | List Options Lists
+[**ListProducts**](ProductAPI.md#ListProducts) | **Post** /product.Product/ListProducts | List Products
+[**ListProductsByIds**](ProductAPI.md#ListProductsByIds) | **Post** /product.Product/ListProductsByIds | List Products By Ids
+[**ListProductsBySku**](ProductAPI.md#ListProductsBySku) | **Post** /product.Product/ListProductsBySku | List Products By Sku
+[**ListVariantsBySku**](ProductAPI.md#ListVariantsBySku) | **Post** /product.Product/ListVariantsBySku | List Product Variants By Sku
 [**ProductBulkAddAssetsEntries**](ProductAPI.md#ProductBulkAddAssetsEntries) | **Post** /product.Product/BulkAddAssetsEntries | Assets endpoints
 [**ProductBulkCreateAttribute**](ProductAPI.md#ProductBulkCreateAttribute) | **Post** /product.Product/BulkCreateAttribute | 
 [**ProductBulkDeleteProducts**](ProductAPI.md#ProductBulkDeleteProducts) | **Post** /product.Product/BulkDeleteProducts | 
 [**ProductBulkRemoveAssetsEntries**](ProductAPI.md#ProductBulkRemoveAssetsEntries) | **Post** /product.Product/BulkRemoveAssetsEntries | 
 [**ProductBulkUpdate**](ProductAPI.md#ProductBulkUpdate) | **Post** /product.Product/BulkUpdate | 
 [**ProductBulkUpdateAssetsEntries**](ProductAPI.md#ProductBulkUpdateAssetsEntries) | **Post** /product.Product/BulkUpdateAssetsEntries | 
-[**ProductBulkUpdateV2**](ProductAPI.md#ProductBulkUpdateV2) | **Post** /product.Product/BulkUpdateV2 | 
 [**ProductCreateAttributeGroup**](ProductAPI.md#ProductCreateAttributeGroup) | **Post** /product.Product/CreateAttributeGroup | 
-[**ProductCreateAttributeOptions**](ProductAPI.md#ProductCreateAttributeOptions) | **Post** /product.Product/CreateAttributeOptions | 
-[**ProductCreateEntity**](ProductAPI.md#ProductCreateEntity) | **Post** /product.Product/CreateEntity | 
-[**ProductCreateOptionsList**](ProductAPI.md#ProductCreateOptionsList) | **Post** /product.Product/CreateOptionsList | 
 [**ProductCreateProduct**](ProductAPI.md#ProductCreateProduct) | **Post** /product.Product/CreateProduct | 
 [**ProductCreateProductV2**](ProductAPI.md#ProductCreateProductV2) | **Post** /product.Product/CreateProductV2 | 
 [**ProductDelete**](ProductAPI.md#ProductDelete) | **Post** /product.Product/Delete | 
 [**ProductDeleteAttribute**](ProductAPI.md#ProductDeleteAttribute) | **Post** /product.Product/DeleteAttribute | 
 [**ProductDeleteProduct**](ProductAPI.md#ProductDeleteProduct) | **Post** /product.Product/DeleteProduct | 
 [**ProductGetAttributeGroup**](ProductAPI.md#ProductGetAttributeGroup) | **Post** /product.Product/GetAttributeGroup | 
-[**ProductGetAttributeOption**](ProductAPI.md#ProductGetAttributeOption) | **Post** /product.Product/GetAttributeOption | 
-[**ProductGetAttributeOptions**](ProductAPI.md#ProductGetAttributeOptions) | **Post** /product.Product/GetAttributeOptions | 
-[**ProductGetEntity**](ProductAPI.md#ProductGetEntity) | **Post** /product.Product/GetEntity | 
-[**ProductGetOptionsList**](ProductAPI.md#ProductGetOptionsList) | **Post** /product.Product/GetOptionsList | 
-[**ProductGetProduct**](ProductAPI.md#ProductGetProduct) | **Post** /product.Product/GetProduct | 
-[**ProductGetProductByCode**](ProductAPI.md#ProductGetProductByCode) | **Post** /product.Product/GetProductByCode | 
-[**ProductGetProductByUrlKey**](ProductAPI.md#ProductGetProductByUrlKey) | **Post** /product.Product/GetProductByUrlKey | 
 [**ProductListAttributeGroups**](ProductAPI.md#ProductListAttributeGroups) | **Post** /product.Product/ListAttributeGroups | Attribute Groups endpoints
-[**ProductListAttributeOptions**](ProductAPI.md#ProductListAttributeOptions) | **Post** /product.Product/ListAttributeOptions | 
-[**ProductListEntities**](ProductAPI.md#ProductListEntities) | **Post** /product.Product/ListEntities | 
-[**ProductListOptionsLists**](ProductAPI.md#ProductListOptionsLists) | **Post** /product.Product/ListOptionsLists | 
-[**ProductListProducts**](ProductAPI.md#ProductListProducts) | **Post** /product.Product/ListProducts | 
-[**ProductListProductsByIds**](ProductAPI.md#ProductListProductsByIds) | **Post** /product.Product/ListProductsByIds | 
-[**ProductListProductsBySku**](ProductAPI.md#ProductListProductsBySku) | **Post** /product.Product/ListProductsBySku | 
-[**ProductListVariantsBySku**](ProductAPI.md#ProductListVariantsBySku) | **Post** /product.Product/ListVariantsBySku | 
-[**ProductRemoveMediaGalleryEntry**](ProductAPI.md#ProductRemoveMediaGalleryEntry) | **Post** /product.Product/RemoveMediaGalleryEntry | 
 [**ProductUpdateAttribute**](ProductAPI.md#ProductUpdateAttribute) | **Post** /product.Product/UpdateAttribute | 
 [**ProductUpdateAttributeGroup**](ProductAPI.md#ProductUpdateAttributeGroup) | **Post** /product.Product/UpdateAttributeGroup | 
-[**ProductUpdateAttributeOptions**](ProductAPI.md#ProductUpdateAttributeOptions) | **Post** /product.Product/UpdateAttributeOptions | rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
-[**ProductUpdateMediaGalleryEntry**](ProductAPI.md#ProductUpdateMediaGalleryEntry) | **Post** /product.Product/UpdateMediaGalleryEntry | 
-[**ProductUpdateOptionsList**](ProductAPI.md#ProductUpdateOptionsList) | **Post** /product.Product/UpdateOptionsList | 
 [**ProductUpdateProduct**](ProductAPI.md#ProductUpdateProduct) | **Post** /product.Product/UpdateProduct | 
 [**ProductUpdateProductV2**](ProductAPI.md#ProductUpdateProductV2) | **Post** /product.Product/UpdateProductV2 | 
+[**RemoveMediaGalleryEntry**](ProductAPI.md#RemoveMediaGalleryEntry) | **Post** /product.Product/RemoveMediaGalleryEntry | Remove Media Gallery Entry
+[**UpdateAttributeOptions**](ProductAPI.md#UpdateAttributeOptions) | **Post** /product.Product/UpdateAttributeOptions | Update Attribute Options
+[**UpdateMediaGalleryEntry**](ProductAPI.md#UpdateMediaGalleryEntry) | **Post** /product.Product/UpdateMediaGalleryEntry | Update Media Gallery Entry
+[**UpdateOptionsList**](ProductAPI.md#UpdateOptionsList) | **Post** /product.Product/UpdateOptionsList | Update Options List
 
 
 
-## ProductAddMediaGalleryEntry
+## AddMediaGalleryEntry
 
-> ProductAddMediaGalleryEntryResponse ProductAddMediaGalleryEntry(ctx).Body(body).Execute()
+> ProductAddMediaGalleryEntryResponse AddMediaGalleryEntry(ctx).Body(body).Execute()
+
+Add Media Gallery Entry
 
 
 
@@ -71,13 +73,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductAddMediaGalleryEntry(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.ProductAPI.AddMediaGalleryEntry(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductAddMediaGalleryEntry``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.AddMediaGalleryEntry``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ProductAddMediaGalleryEntry`: ProductAddMediaGalleryEntryResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductAddMediaGalleryEntry`: %v\n", resp)
+	// response from `AddMediaGalleryEntry`: ProductAddMediaGalleryEntryResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.AddMediaGalleryEntry`: %v\n", resp)
 }
 ```
 
@@ -87,7 +89,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiProductAddMediaGalleryEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddMediaGalleryEntryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -100,7 +102,1187 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## BulkUpdateV2
+
+> ProductBulkUpdateResponse BulkUpdateV2(ctx).Body(body).Execute()
+
+Bulk Update Products
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewProductBulkUpdateRequestV2() // ProductBulkUpdateRequestV2 | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.BulkUpdateV2(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.BulkUpdateV2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `BulkUpdateV2`: ProductBulkUpdateResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.BulkUpdateV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBulkUpdateV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductBulkUpdateRequestV2**](ProductBulkUpdateRequestV2.md) |  | 
+
+### Return type
+
+[**ProductBulkUpdateResponse**](ProductBulkUpdateResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAttributeOptions
+
+> EntitymanagerCreateAttributeOptionsResponse CreateAttributeOptions(ctx).Body(body).Execute()
+
+Create Attribute Options
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerCreateAttributeOptionsRequest() // EntitymanagerCreateAttributeOptionsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.CreateAttributeOptions(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.CreateAttributeOptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateAttributeOptions`: EntitymanagerCreateAttributeOptionsResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.CreateAttributeOptions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAttributeOptionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerCreateAttributeOptionsRequest**](EntitymanagerCreateAttributeOptionsRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerCreateAttributeOptionsResponse**](EntitymanagerCreateAttributeOptionsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateEntity
+
+> EntitymanagerCreateEntityResponse CreateEntity(ctx).Body(body).Execute()
+
+Create Entity
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerEntity() // EntitymanagerEntity | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.CreateEntity(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.CreateEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateEntity`: EntitymanagerCreateEntityResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.CreateEntity`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateEntityRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerEntity**](EntitymanagerEntity.md) |  | 
+
+### Return type
+
+[**EntitymanagerCreateEntityResponse**](EntitymanagerCreateEntityResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateOptionsList
+
+> EntitymanagerCreateOptionsListResponse CreateOptionsList(ctx).Body(body).Execute()
+
+Create Options List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerCreateOptionsListRequest() // EntitymanagerCreateOptionsListRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.CreateOptionsList(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.CreateOptionsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateOptionsList`: EntitymanagerCreateOptionsListResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.CreateOptionsList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateOptionsListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerCreateOptionsListRequest**](EntitymanagerCreateOptionsListRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerCreateOptionsListResponse**](EntitymanagerCreateOptionsListResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAttributeOption
+
+> EntitymanagerGetAttributeOptionResponse GetAttributeOption(ctx).Body(body).Execute()
+
+Get Attribute Option
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerGetAttributeOptionRequest() // EntitymanagerGetAttributeOptionRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.GetAttributeOption(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.GetAttributeOption``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAttributeOption`: EntitymanagerGetAttributeOptionResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.GetAttributeOption`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAttributeOptionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerGetAttributeOptionRequest**](EntitymanagerGetAttributeOptionRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerGetAttributeOptionResponse**](EntitymanagerGetAttributeOptionResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAttributeOptions
+
+> EntitymanagerGetAttributeOptionsResponse GetAttributeOptions(ctx).Body(body).Execute()
+
+Get Attribute Options
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerGetAttributeOptionsRequest() // EntitymanagerGetAttributeOptionsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.GetAttributeOptions(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.GetAttributeOptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAttributeOptions`: EntitymanagerGetAttributeOptionsResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.GetAttributeOptions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAttributeOptionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerGetAttributeOptionsRequest**](EntitymanagerGetAttributeOptionsRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerGetAttributeOptionsResponse**](EntitymanagerGetAttributeOptionsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetEntity
+
+> EntitymanagerEntity GetEntity(ctx).Body(body).Execute()
+
+Get Entity Details
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerEntityRequest() // EntitymanagerEntityRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.GetEntity(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.GetEntity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetEntity`: EntitymanagerEntity
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.GetEntity`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetEntityRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerEntityRequest**](EntitymanagerEntityRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerEntity**](EntitymanagerEntity.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetOptionsList
+
+> EntitymanagerGetOptionsListResponse GetOptionsList(ctx).Body(body).Execute()
+
+Get Options List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerGetOptionsListRequest() // EntitymanagerGetOptionsListRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.GetOptionsList(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.GetOptionsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOptionsList`: EntitymanagerGetOptionsListResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.GetOptionsList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetOptionsListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerGetOptionsListRequest**](EntitymanagerGetOptionsListRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerGetOptionsListResponse**](EntitymanagerGetOptionsListResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetProduct
+
+> ProductGetProductResponse GetProduct(ctx).Body(body).Execute()
+
+Get Product
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewProductGetProductRequest() // ProductGetProductRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.GetProduct(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.GetProduct``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetProduct`: ProductGetProductResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.GetProduct`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetProductRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductGetProductRequest**](ProductGetProductRequest.md) |  | 
+
+### Return type
+
+[**ProductGetProductResponse**](ProductGetProductResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetProductByCode
+
+> ProductGetProductByCodeResponse GetProductByCode(ctx).Body(body).Execute()
+
+Get Product By Code
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewProductGetProductByCodeRequest() // ProductGetProductByCodeRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.GetProductByCode(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.GetProductByCode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetProductByCode`: ProductGetProductByCodeResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.GetProductByCode`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetProductByCodeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductGetProductByCodeRequest**](ProductGetProductByCodeRequest.md) |  | 
+
+### Return type
+
+[**ProductGetProductByCodeResponse**](ProductGetProductByCodeResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetProductByUrlKey
+
+> ProductGetProductByUrlKeyResponse GetProductByUrlKey(ctx).Body(body).Execute()
+
+Get Product By Url Key
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewProductGetProductByUrlKeyRequest() // ProductGetProductByUrlKeyRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.GetProductByUrlKey(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.GetProductByUrlKey``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetProductByUrlKey`: ProductGetProductByUrlKeyResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.GetProductByUrlKey`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetProductByUrlKeyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductGetProductByUrlKeyRequest**](ProductGetProductByUrlKeyRequest.md) |  | 
+
+### Return type
+
+[**ProductGetProductByUrlKeyResponse**](ProductGetProductByUrlKeyResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListAttributeOptions
+
+> EntitymanagerListAttributeOptionsResponse ListAttributeOptions(ctx).Body(body).Execute()
+
+List Attribute Options
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerListAttributeOptionsRequest() // EntitymanagerListAttributeOptionsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.ListAttributeOptions(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ListAttributeOptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListAttributeOptions`: EntitymanagerListAttributeOptionsResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ListAttributeOptions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListAttributeOptionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerListAttributeOptionsRequest**](EntitymanagerListAttributeOptionsRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerListAttributeOptionsResponse**](EntitymanagerListAttributeOptionsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListEntities
+
+> EntitymanagerListEntitiesResponse ListEntities(ctx).Body(body).Execute()
+
+List Entities
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerListEntitiesRequest() // EntitymanagerListEntitiesRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.ListEntities(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ListEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListEntities`: EntitymanagerListEntitiesResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ListEntities`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListEntitiesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerListEntitiesRequest**](EntitymanagerListEntitiesRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerListEntitiesResponse**](EntitymanagerListEntitiesResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListOptionsLists
+
+> EntitymanagerListOptionsListsResponse ListOptionsLists(ctx).Body(body).Execute()
+
+List Options Lists
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerListOptionsListsRequest() // EntitymanagerListOptionsListsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.ListOptionsLists(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ListOptionsLists``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListOptionsLists`: EntitymanagerListOptionsListsResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ListOptionsLists`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListOptionsListsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerListOptionsListsRequest**](EntitymanagerListOptionsListsRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerListOptionsListsResponse**](EntitymanagerListOptionsListsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListProducts
+
+> ProductListProductsResponse ListProducts(ctx).Body(body).Execute()
+
+List Products
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewProductListProductsRequest() // ProductListProductsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.ListProducts(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ListProducts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListProducts`: ProductListProductsResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ListProducts`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListProductsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductListProductsRequest**](ProductListProductsRequest.md) |  | 
+
+### Return type
+
+[**ProductListProductsResponse**](ProductListProductsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListProductsByIds
+
+> ProductListProductsByIdsResponse ListProductsByIds(ctx).Body(body).Execute()
+
+List Products By Ids
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewProductListProductsByIdsRequest() // ProductListProductsByIdsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.ListProductsByIds(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ListProductsByIds``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListProductsByIds`: ProductListProductsByIdsResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ListProductsByIds`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListProductsByIdsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductListProductsByIdsRequest**](ProductListProductsByIdsRequest.md) |  | 
+
+### Return type
+
+[**ProductListProductsByIdsResponse**](ProductListProductsByIdsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListProductsBySku
+
+> ProductListProductsBySkuResponse ListProductsBySku(ctx).Body(body).Execute()
+
+List Products By Sku
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewProductListProductsBySkuRequest() // ProductListProductsBySkuRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.ListProductsBySku(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ListProductsBySku``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListProductsBySku`: ProductListProductsBySkuResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ListProductsBySku`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListProductsBySkuRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductListProductsBySkuRequest**](ProductListProductsBySkuRequest.md) |  | 
+
+### Return type
+
+[**ProductListProductsBySkuResponse**](ProductListProductsBySkuResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListVariantsBySku
+
+> ProductListVariantsBySkuResponse ListVariantsBySku(ctx).Body(body).Execute()
+
+List Product Variants By Sku
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewProductListVariantsBySkuRequest() // ProductListVariantsBySkuRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.ListVariantsBySku(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ListVariantsBySku``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListVariantsBySku`: ProductListVariantsBySkuResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ListVariantsBySku`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListVariantsBySkuRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductListVariantsBySkuRequest**](ProductListVariantsBySkuRequest.md) |  | 
+
+### Return type
+
+[**ProductListVariantsBySkuResponse**](ProductListVariantsBySkuResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -164,7 +1346,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -179,6 +1361,8 @@ No authorization required
 ## ProductBulkCreateAttribute
 
 > EntitymanagerBulkCreateAttributeResponse ProductBulkCreateAttribute(ctx).Body(body).Execute()
+
+
 
 
 
@@ -228,7 +1412,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -292,7 +1476,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -356,7 +1540,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -420,7 +1604,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -484,71 +1668,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductBulkUpdateV2
-
-> ProductBulkUpdateResponseV2 ProductBulkUpdateV2(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewProductBulkUpdateRequestV2() // ProductBulkUpdateRequestV2 | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductBulkUpdateV2(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductBulkUpdateV2``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductBulkUpdateV2`: ProductBulkUpdateResponseV2
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductBulkUpdateV2`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductBulkUpdateV2Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ProductBulkUpdateRequestV2**](ProductBulkUpdateRequestV2.md) |  | 
-
-### Return type
-
-[**ProductBulkUpdateResponseV2**](ProductBulkUpdateResponseV2.md)
-
-### Authorization
-
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -612,199 +1732,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductCreateAttributeOptions
-
-> EntitymanagerCreateAttributeOptionsResponse ProductCreateAttributeOptions(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerCreateAttributeOptionsRequest() // EntitymanagerCreateAttributeOptionsRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductCreateAttributeOptions(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductCreateAttributeOptions``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductCreateAttributeOptions`: EntitymanagerCreateAttributeOptionsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductCreateAttributeOptions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductCreateAttributeOptionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerCreateAttributeOptionsRequest**](EntitymanagerCreateAttributeOptionsRequest.md) |  | 
-
-### Return type
-
-[**EntitymanagerCreateAttributeOptionsResponse**](EntitymanagerCreateAttributeOptionsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductCreateEntity
-
-> EntitymanagerCreateEntityResponse ProductCreateEntity(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerEntity() // EntitymanagerEntity | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductCreateEntity(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductCreateEntity``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductCreateEntity`: EntitymanagerCreateEntityResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductCreateEntity`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductCreateEntityRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerEntity**](EntitymanagerEntity.md) |  | 
-
-### Return type
-
-[**EntitymanagerCreateEntityResponse**](EntitymanagerCreateEntityResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductCreateOptionsList
-
-> EntitymanagerCreateOptionsListResponse ProductCreateOptionsList(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerCreateOptionsListRequest() // EntitymanagerCreateOptionsListRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductCreateOptionsList(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductCreateOptionsList``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductCreateOptionsList`: EntitymanagerCreateOptionsListResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductCreateOptionsList`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductCreateOptionsListRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerCreateOptionsListRequest**](EntitymanagerCreateOptionsListRequest.md) |  | 
-
-### Return type
-
-[**EntitymanagerCreateOptionsListResponse**](EntitymanagerCreateOptionsListResponse.md)
-
-### Authorization
-
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -835,7 +1763,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewProductCreateProductRequest() // ProductCreateProductRequest | 
+	body := *openapiclient.NewProductCreateProductRequest() // ProductCreateProductRequest | The CreateProductRequest message is used to create a new product within the system. It contains various fields that allow specifying the details and attributes of the product.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -860,7 +1788,7 @@ Other parameters are passed through a pointer to a apiProductCreateProductReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProductCreateProductRequest**](ProductCreateProductRequest.md) |  | 
+ **body** | [**ProductCreateProductRequest**](ProductCreateProductRequest.md) | The CreateProductRequest message is used to create a new product within the system. It contains various fields that allow specifying the details and attributes of the product. | 
 
 ### Return type
 
@@ -868,7 +1796,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -932,7 +1860,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -996,7 +1924,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1060,7 +1988,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1124,7 +2052,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1188,455 +2116,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductGetAttributeOption
-
-> EntitymanagerGetAttributeOptionResponse ProductGetAttributeOption(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerGetAttributeOptionRequest() // EntitymanagerGetAttributeOptionRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductGetAttributeOption(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetAttributeOption``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductGetAttributeOption`: EntitymanagerGetAttributeOptionResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetAttributeOption`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductGetAttributeOptionRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerGetAttributeOptionRequest**](EntitymanagerGetAttributeOptionRequest.md) |  | 
-
-### Return type
-
-[**EntitymanagerGetAttributeOptionResponse**](EntitymanagerGetAttributeOptionResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductGetAttributeOptions
-
-> EntitymanagerGetAttributeOptionsResponse ProductGetAttributeOptions(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerGetAttributeOptionsRequest() // EntitymanagerGetAttributeOptionsRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductGetAttributeOptions(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetAttributeOptions``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductGetAttributeOptions`: EntitymanagerGetAttributeOptionsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetAttributeOptions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductGetAttributeOptionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerGetAttributeOptionsRequest**](EntitymanagerGetAttributeOptionsRequest.md) |  | 
-
-### Return type
-
-[**EntitymanagerGetAttributeOptionsResponse**](EntitymanagerGetAttributeOptionsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductGetEntity
-
-> EntitymanagerEntity ProductGetEntity(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerEntityRequest() // EntitymanagerEntityRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductGetEntity(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetEntity``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductGetEntity`: EntitymanagerEntity
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetEntity`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductGetEntityRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerEntityRequest**](EntitymanagerEntityRequest.md) |  | 
-
-### Return type
-
-[**EntitymanagerEntity**](EntitymanagerEntity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductGetOptionsList
-
-> EntitymanagerGetOptionsListResponse ProductGetOptionsList(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerGetOptionsListRequest() // EntitymanagerGetOptionsListRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductGetOptionsList(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetOptionsList``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductGetOptionsList`: EntitymanagerGetOptionsListResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetOptionsList`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductGetOptionsListRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerGetOptionsListRequest**](EntitymanagerGetOptionsListRequest.md) |  | 
-
-### Return type
-
-[**EntitymanagerGetOptionsListResponse**](EntitymanagerGetOptionsListResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductGetProduct
-
-> ProductGetProductResponse ProductGetProduct(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewProductGetProductRequest() // ProductGetProductRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductGetProduct(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetProduct``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductGetProduct`: ProductGetProductResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetProduct`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductGetProductRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ProductGetProductRequest**](ProductGetProductRequest.md) |  | 
-
-### Return type
-
-[**ProductGetProductResponse**](ProductGetProductResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductGetProductByCode
-
-> ProductGetProductByCodeResponse ProductGetProductByCode(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewProductGetProductByCodeRequest() // ProductGetProductByCodeRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductGetProductByCode(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetProductByCode``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductGetProductByCode`: ProductGetProductByCodeResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetProductByCode`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductGetProductByCodeRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ProductGetProductByCodeRequest**](ProductGetProductByCodeRequest.md) |  | 
-
-### Return type
-
-[**ProductGetProductByCodeResponse**](ProductGetProductByCodeResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductGetProductByUrlKey
-
-> ProductGetProductByUrlKeyResponse ProductGetProductByUrlKey(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewProductGetProductByUrlKeyRequest() // ProductGetProductByUrlKeyRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductGetProductByUrlKey(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductGetProductByUrlKey``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductGetProductByUrlKey`: ProductGetProductByUrlKeyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductGetProductByUrlKey`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductGetProductByUrlKeyRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ProductGetProductByUrlKeyRequest**](ProductGetProductByUrlKeyRequest.md) |  | 
-
-### Return type
-
-[**ProductGetProductByUrlKeyResponse**](ProductGetProductByUrlKeyResponse.md)
-
-### Authorization
-
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1700,519 +2180,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductListAttributeOptions
-
-> EntitymanagerListAttributeOptionsResponse ProductListAttributeOptions(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerListAttributeOptionsRequest() // EntitymanagerListAttributeOptionsRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductListAttributeOptions(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListAttributeOptions``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductListAttributeOptions`: EntitymanagerListAttributeOptionsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListAttributeOptions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductListAttributeOptionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerListAttributeOptionsRequest**](EntitymanagerListAttributeOptionsRequest.md) |  | 
-
-### Return type
-
-[**EntitymanagerListAttributeOptionsResponse**](EntitymanagerListAttributeOptionsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductListEntities
-
-> EntitymanagerListEntitiesResponse ProductListEntities(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerListEntitiesRequest() // EntitymanagerListEntitiesRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductListEntities(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListEntities``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductListEntities`: EntitymanagerListEntitiesResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListEntities`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductListEntitiesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerListEntitiesRequest**](EntitymanagerListEntitiesRequest.md) |  | 
-
-### Return type
-
-[**EntitymanagerListEntitiesResponse**](EntitymanagerListEntitiesResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductListOptionsLists
-
-> EntitymanagerListOptionsListsResponse ProductListOptionsLists(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerListOptionsListsRequest() // EntitymanagerListOptionsListsRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductListOptionsLists(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListOptionsLists``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductListOptionsLists`: EntitymanagerListOptionsListsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListOptionsLists`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductListOptionsListsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerListOptionsListsRequest**](EntitymanagerListOptionsListsRequest.md) |  | 
-
-### Return type
-
-[**EntitymanagerListOptionsListsResponse**](EntitymanagerListOptionsListsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductListProducts
-
-> ProductListProductsResponse ProductListProducts(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewProductListProductsRequest() // ProductListProductsRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductListProducts(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListProducts``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductListProducts`: ProductListProductsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListProducts`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductListProductsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ProductListProductsRequest**](ProductListProductsRequest.md) |  | 
-
-### Return type
-
-[**ProductListProductsResponse**](ProductListProductsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductListProductsByIds
-
-> ProductListProductsByIdsResponse ProductListProductsByIds(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewProductListProductsByIdsRequest() // ProductListProductsByIdsRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductListProductsByIds(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListProductsByIds``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductListProductsByIds`: ProductListProductsByIdsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListProductsByIds`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductListProductsByIdsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ProductListProductsByIdsRequest**](ProductListProductsByIdsRequest.md) |  | 
-
-### Return type
-
-[**ProductListProductsByIdsResponse**](ProductListProductsByIdsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductListProductsBySku
-
-> ProductListProductsBySkuResponse ProductListProductsBySku(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewProductListProductsBySkuRequest() // ProductListProductsBySkuRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductListProductsBySku(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListProductsBySku``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductListProductsBySku`: ProductListProductsBySkuResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListProductsBySku`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductListProductsBySkuRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ProductListProductsBySkuRequest**](ProductListProductsBySkuRequest.md) |  | 
-
-### Return type
-
-[**ProductListProductsBySkuResponse**](ProductListProductsBySkuResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductListVariantsBySku
-
-> ProductListVariantsBySkuResponse ProductListVariantsBySku(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewProductListVariantsBySkuRequest() // ProductListVariantsBySkuRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductListVariantsBySku(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductListVariantsBySku``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductListVariantsBySku`: ProductListVariantsBySkuResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductListVariantsBySku`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductListVariantsBySkuRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ProductListVariantsBySkuRequest**](ProductListVariantsBySkuRequest.md) |  | 
-
-### Return type
-
-[**ProductListVariantsBySkuResponse**](ProductListVariantsBySkuResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductRemoveMediaGalleryEntry
-
-> map[string]interface{} ProductRemoveMediaGalleryEntry(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewProductRemoveMediaGalleryEntryRequest() // ProductRemoveMediaGalleryEntryRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductRemoveMediaGalleryEntry(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductRemoveMediaGalleryEntry``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductRemoveMediaGalleryEntry`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductRemoveMediaGalleryEntry`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductRemoveMediaGalleryEntryRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ProductRemoveMediaGalleryEntryRequest**](ProductRemoveMediaGalleryEntryRequest.md) |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -2276,7 +2244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -2340,199 +2308,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductUpdateAttributeOptions
-
-> EntitymanagerUpdateAttributeOptionsResponse ProductUpdateAttributeOptions(ctx).Body(body).Execute()
-
-rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerUpdateAttributeOptionsRequest() // EntitymanagerUpdateAttributeOptionsRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductUpdateAttributeOptions(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductUpdateAttributeOptions``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductUpdateAttributeOptions`: EntitymanagerUpdateAttributeOptionsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductUpdateAttributeOptions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductUpdateAttributeOptionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerUpdateAttributeOptionsRequest**](EntitymanagerUpdateAttributeOptionsRequest.md) |  | 
-
-### Return type
-
-[**EntitymanagerUpdateAttributeOptionsResponse**](EntitymanagerUpdateAttributeOptionsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductUpdateMediaGalleryEntry
-
-> map[string]interface{} ProductUpdateMediaGalleryEntry(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewProductUpdateMediaGalleryEntryRequest() // ProductUpdateMediaGalleryEntryRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductUpdateMediaGalleryEntry(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductUpdateMediaGalleryEntry``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductUpdateMediaGalleryEntry`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductUpdateMediaGalleryEntry`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductUpdateMediaGalleryEntryRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ProductUpdateMediaGalleryEntryRequest**](ProductUpdateMediaGalleryEntryRequest.md) |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProductUpdateOptionsList
-
-> EntitymanagerUpdateOptionsListResponse ProductUpdateOptionsList(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
-)
-
-func main() {
-	body := *openapiclient.NewEntitymanagerUpdateOptionsListRequest() // EntitymanagerUpdateOptionsListRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductAPI.ProductUpdateOptionsList(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.ProductUpdateOptionsList``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ProductUpdateOptionsList`: EntitymanagerUpdateOptionsListResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.ProductUpdateOptionsList`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProductUpdateOptionsListRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EntitymanagerUpdateOptionsListRequest**](EntitymanagerUpdateOptionsListRequest.md) |  | 
-
-### Return type
-
-[**EntitymanagerUpdateOptionsListResponse**](EntitymanagerUpdateOptionsListResponse.md)
-
-### Authorization
-
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -2596,7 +2372,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -2660,7 +2436,267 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RemoveMediaGalleryEntry
+
+> map[string]interface{} RemoveMediaGalleryEntry(ctx).Body(body).Execute()
+
+Remove Media Gallery Entry
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewProductRemoveMediaGalleryEntryRequest() // ProductRemoveMediaGalleryEntryRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.RemoveMediaGalleryEntry(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.RemoveMediaGalleryEntry``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RemoveMediaGalleryEntry`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.RemoveMediaGalleryEntry`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRemoveMediaGalleryEntryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductRemoveMediaGalleryEntryRequest**](ProductRemoveMediaGalleryEntryRequest.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAttributeOptions
+
+> EntitymanagerUpdateAttributeOptionsResponse UpdateAttributeOptions(ctx).Body(body).Execute()
+
+Update Attribute Options
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerUpdateAttributeOptionsRequest() // EntitymanagerUpdateAttributeOptionsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.UpdateAttributeOptions(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.UpdateAttributeOptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAttributeOptions`: EntitymanagerUpdateAttributeOptionsResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.UpdateAttributeOptions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAttributeOptionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerUpdateAttributeOptionsRequest**](EntitymanagerUpdateAttributeOptionsRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerUpdateAttributeOptionsResponse**](EntitymanagerUpdateAttributeOptionsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateMediaGalleryEntry
+
+> map[string]interface{} UpdateMediaGalleryEntry(ctx).Body(body).Execute()
+
+Update Media Gallery Entry
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewProductUpdateMediaGalleryEntryRequest() // ProductUpdateMediaGalleryEntryRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.UpdateMediaGalleryEntry(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.UpdateMediaGalleryEntry``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateMediaGalleryEntry`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.UpdateMediaGalleryEntry`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateMediaGalleryEntryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductUpdateMediaGalleryEntryRequest**](ProductUpdateMediaGalleryEntryRequest.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateOptionsList
+
+> EntitymanagerUpdateOptionsListResponse UpdateOptionsList(ctx).Body(body).Execute()
+
+Update Options List
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
+)
+
+func main() {
+	body := *openapiclient.NewEntitymanagerUpdateOptionsListRequest() // EntitymanagerUpdateOptionsListRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductAPI.UpdateOptionsList(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductAPI.UpdateOptionsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOptionsList`: EntitymanagerUpdateOptionsListResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductAPI.UpdateOptionsList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateOptionsListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EntitymanagerUpdateOptionsListRequest**](EntitymanagerUpdateOptionsListRequest.md) |  | 
+
+### Return type
+
+[**EntitymanagerUpdateOptionsListResponse**](EntitymanagerUpdateOptionsListResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
