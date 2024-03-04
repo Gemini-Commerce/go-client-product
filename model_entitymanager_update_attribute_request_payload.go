@@ -34,7 +34,7 @@ type EntitymanagerUpdateAttributeRequestPayload struct {
 // will change when the set of required properties is changed
 func NewEntitymanagerUpdateAttributeRequestPayload() *EntitymanagerUpdateAttributeRequestPayload {
 	this := EntitymanagerUpdateAttributeRequestPayload{}
-	var renderAs EntitymanagerRenderAs = DEFAULT
+	var renderAs EntitymanagerRenderAs = ENTITYMANAGERRENDERAS_DEFAULT
 	this.RenderAs = &renderAs
 	return &this
 }
@@ -44,7 +44,7 @@ func NewEntitymanagerUpdateAttributeRequestPayload() *EntitymanagerUpdateAttribu
 // but it doesn't guarantee that properties required by API are set
 func NewEntitymanagerUpdateAttributeRequestPayloadWithDefaults() *EntitymanagerUpdateAttributeRequestPayload {
 	this := EntitymanagerUpdateAttributeRequestPayload{}
-	var renderAs EntitymanagerRenderAs = DEFAULT
+	var renderAs EntitymanagerRenderAs = ENTITYMANAGERRENDERAS_DEFAULT
 	this.RenderAs = &renderAs
 	return &this
 }
