@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **MediaGallery**| [**ProductMediaGallery**](ProductMediaGallery.md) |   | [optional]
 **MaxSaleableQuantity**| **int64** |   | [optional]
 **Assets**| [**ProductAssets**](ProductAssets.md) |   | [optional]
+**InReview**| **bool** |   | [optional]
 **CreatedAt**| **string** |   | [optional]
 **UpdatedAt**| **string** |   | [optional]
 

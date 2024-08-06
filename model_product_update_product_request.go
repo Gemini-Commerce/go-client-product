@@ -29,6 +29,7 @@ type ProductUpdateProductRequest struct {
 	MediaVariantAttributes []string `json:"mediaVariantAttributes,omitempty"`
 	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
 	Variants *map[string]ProductProductVariant `json:"variants,omitempty"`
+	InReview *bool `json:"inReview,omitempty"`
 }
 
 // NewProductUpdateProductRequest instantiates a new ProductUpdateProductRequest object
@@ -336,6 +337,38 @@ func (o *ProductUpdateProductRequest) SetVariants(v map[string]ProductProductVar
 	o.Variants = &v
 }
 
+// GetInReview returns the InReview field value if set, zero value otherwise.
+func (o *ProductUpdateProductRequest) GetInReview() bool {
+	if o == nil || IsNil(o.InReview) {
+		var ret bool
+		return ret
+	}
+	return *o.InReview
+}
+
+// GetInReviewOk returns a tuple with the InReview field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductUpdateProductRequest) GetInReviewOk() (*bool, bool) {
+	if o == nil || IsNil(o.InReview) {
+		return nil, false
+	}
+	return o.InReview, true
+}
+
+// HasInReview returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequest) HasInReview() bool {
+	if o != nil && !IsNil(o.InReview) {
+		return true
+	}
+
+	return false
+}
+
+// SetInReview gets a reference to the given bool and assigns it to the InReview field.
+func (o *ProductUpdateProductRequest) SetInReview(v bool) {
+	o.InReview = &v
+}
+
 func (o ProductUpdateProductRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -372,6 +405,9 @@ func (o ProductUpdateProductRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Variants) {
 		toSerialize["variants"] = o.Variants
+	}
+	if !IsNil(o.InReview) {
+		toSerialize["inReview"] = o.InReview
 	}
 	return toSerialize, nil
 }

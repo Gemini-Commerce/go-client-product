@@ -34,6 +34,7 @@ type EntitymanagerAttribute struct {
 	GroupCode *string `json:"groupCode,omitempty"`
 	Title *map[string]string `json:"title,omitempty"`
 	RenderAs *EntitymanagerRenderAs `json:"renderAs,omitempty"`
+	AiContext *EntitymanagerAiContext `json:"aiContext,omitempty"`
 }
 
 // NewEntitymanagerAttribute instantiates a new EntitymanagerAttribute object
@@ -509,6 +510,38 @@ func (o *EntitymanagerAttribute) SetRenderAs(v EntitymanagerRenderAs) {
 	o.RenderAs = &v
 }
 
+// GetAiContext returns the AiContext field value if set, zero value otherwise.
+func (o *EntitymanagerAttribute) GetAiContext() EntitymanagerAiContext {
+	if o == nil || IsNil(o.AiContext) {
+		var ret EntitymanagerAiContext
+		return ret
+	}
+	return *o.AiContext
+}
+
+// GetAiContextOk returns a tuple with the AiContext field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntitymanagerAttribute) GetAiContextOk() (*EntitymanagerAiContext, bool) {
+	if o == nil || IsNil(o.AiContext) {
+		return nil, false
+	}
+	return o.AiContext, true
+}
+
+// HasAiContext returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasAiContext() bool {
+	if o != nil && !IsNil(o.AiContext) {
+		return true
+	}
+
+	return false
+}
+
+// SetAiContext gets a reference to the given EntitymanagerAiContext and assigns it to the AiContext field.
+func (o *EntitymanagerAttribute) SetAiContext(v EntitymanagerAiContext) {
+	o.AiContext = &v
+}
+
 func (o EntitymanagerAttribute) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -560,6 +593,9 @@ func (o EntitymanagerAttribute) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RenderAs) {
 		toSerialize["renderAs"] = o.RenderAs
+	}
+	if !IsNil(o.AiContext) {
+		toSerialize["aiContext"] = o.AiContext
 	}
 	return toSerialize, nil
 }

@@ -38,6 +38,7 @@ type ProductProductEntity struct {
 	MediaGallery *ProductMediaGallery `json:"mediaGallery,omitempty"`
 	MaxSaleableQuantity *int64 `json:"maxSaleableQuantity,omitempty"`
 	Assets *ProductAssets `json:"assets,omitempty"`
+	InReview *bool `json:"inReview,omitempty"`
 	CreatedAt *string `json:"createdAt,omitempty"`
 	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
@@ -635,6 +636,38 @@ func (o *ProductProductEntity) SetAssets(v ProductAssets) {
 	o.Assets = &v
 }
 
+// GetInReview returns the InReview field value if set, zero value otherwise.
+func (o *ProductProductEntity) GetInReview() bool {
+	if o == nil || IsNil(o.InReview) {
+		var ret bool
+		return ret
+	}
+	return *o.InReview
+}
+
+// GetInReviewOk returns a tuple with the InReview field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductProductEntity) GetInReviewOk() (*bool, bool) {
+	if o == nil || IsNil(o.InReview) {
+		return nil, false
+	}
+	return o.InReview, true
+}
+
+// HasInReview returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasInReview() bool {
+	if o != nil && !IsNil(o.InReview) {
+		return true
+	}
+
+	return false
+}
+
+// SetInReview gets a reference to the given bool and assigns it to the InReview field.
+func (o *ProductProductEntity) SetInReview(v bool) {
+	o.InReview = &v
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *ProductProductEntity) GetCreatedAt() string {
 	if o == nil || IsNil(o.CreatedAt) {
@@ -762,6 +795,9 @@ func (o ProductProductEntity) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Assets) {
 		toSerialize["assets"] = o.Assets
+	}
+	if !IsNil(o.InReview) {
+		toSerialize["inReview"] = o.InReview
 	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["createdAt"] = o.CreatedAt

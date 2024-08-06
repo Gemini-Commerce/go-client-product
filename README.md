@@ -97,10 +97,16 @@ All URIs are relative to *https://product.api.gogemini.io*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ProductAPI* | [**AddMediaGalleryEntry**](docs/ProductAPI.md#addmediagalleryentry) | **Post** /product.Product/AddMediaGalleryEntry | Add Media Gallery Entry
+*ProductAPI* | [**BulkAddAssetsEntries**](docs/ProductAPI.md#bulkaddassetsentries) | **Post** /product.Product/BulkAddAssetsEntries | Bulk Add Assets Entries
+*ProductAPI* | [**BulkDeleteProducts**](docs/ProductAPI.md#bulkdeleteproducts) | **Post** /product.Product/BulkDeleteProducts | Bulk Delete Products
+*ProductAPI* | [**BulkEnhanceProductDataWithAI**](docs/ProductAPI.md#bulkenhanceproductdatawithai) | **Post** /product.Product/BulkEnhanceProductDataWithAI | Bulk Enhance Product Data With AI
+*ProductAPI* | [**BulkRemoveAssetsEntries**](docs/ProductAPI.md#bulkremoveassetsentries) | **Post** /product.Product/BulkRemoveAssetsEntries | Bulk Remove Assets Entries
+*ProductAPI* | [**BulkUpdateAssetsEntries**](docs/ProductAPI.md#bulkupdateassetsentries) | **Post** /product.Product/BulkUpdateAssetsEntries | Bulk Update Assets Entries
 *ProductAPI* | [**BulkUpdateV2**](docs/ProductAPI.md#bulkupdatev2) | **Post** /product.Product/BulkUpdateV2 | Bulk Update Products
 *ProductAPI* | [**CreateAttributeOptions**](docs/ProductAPI.md#createattributeoptions) | **Post** /product.Product/CreateAttributeOptions | Create Attribute Options
 *ProductAPI* | [**CreateEntity**](docs/ProductAPI.md#createentity) | **Post** /product.Product/CreateEntity | Create Entity
 *ProductAPI* | [**CreateOptionsList**](docs/ProductAPI.md#createoptionslist) | **Post** /product.Product/CreateOptionsList | Create Options List
+*ProductAPI* | [**CreateProductWithAI**](docs/ProductAPI.md#createproductwithai) | **Post** /product.Product/CreateProductWithAI | Create Product With AI
 *ProductAPI* | [**GetAttributeOption**](docs/ProductAPI.md#getattributeoption) | **Post** /product.Product/GetAttributeOption | Get Attribute Option
 *ProductAPI* | [**GetAttributeOptions**](docs/ProductAPI.md#getattributeoptions) | **Post** /product.Product/GetAttributeOptions | Get Attribute Options
 *ProductAPI* | [**GetEntity**](docs/ProductAPI.md#getentity) | **Post** /product.Product/GetEntity | Get Entity Details
@@ -108,6 +114,7 @@ Class | Method | HTTP request | Description
 *ProductAPI* | [**GetProduct**](docs/ProductAPI.md#getproduct) | **Post** /product.Product/GetProduct | Get Product
 *ProductAPI* | [**GetProductByCode**](docs/ProductAPI.md#getproductbycode) | **Post** /product.Product/GetProductByCode | Get Product By Code
 *ProductAPI* | [**GetProductByUrlKey**](docs/ProductAPI.md#getproductbyurlkey) | **Post** /product.Product/GetProductByUrlKey | Get Product By Url Key
+*ProductAPI* | [**GetProductDataInReview**](docs/ProductAPI.md#getproductdatainreview) | **Post** /product.Product/GetProductDataInReview | Get Product Data In Review
 *ProductAPI* | [**ListAttributeOptions**](docs/ProductAPI.md#listattributeoptions) | **Post** /product.Product/ListAttributeOptions | List Attribute Options
 *ProductAPI* | [**ListEntities**](docs/ProductAPI.md#listentities) | **Post** /product.Product/ListEntities | List Entities
 *ProductAPI* | [**ListOptionsLists**](docs/ProductAPI.md#listoptionslists) | **Post** /product.Product/ListOptionsLists | List Options Lists
@@ -115,12 +122,8 @@ Class | Method | HTTP request | Description
 *ProductAPI* | [**ListProductsByIds**](docs/ProductAPI.md#listproductsbyids) | **Post** /product.Product/ListProductsByIds | List Products By Ids
 *ProductAPI* | [**ListProductsBySku**](docs/ProductAPI.md#listproductsbysku) | **Post** /product.Product/ListProductsBySku | List Products By Sku
 *ProductAPI* | [**ListVariantsBySku**](docs/ProductAPI.md#listvariantsbysku) | **Post** /product.Product/ListVariantsBySku | List Product Variants By Sku
-*ProductAPI* | [**ProductBulkAddAssetsEntries**](docs/ProductAPI.md#productbulkaddassetsentries) | **Post** /product.Product/BulkAddAssetsEntries | Assets endpoints
 *ProductAPI* | [**ProductBulkCreateAttribute**](docs/ProductAPI.md#productbulkcreateattribute) | **Post** /product.Product/BulkCreateAttribute | 
-*ProductAPI* | [**ProductBulkDeleteProducts**](docs/ProductAPI.md#productbulkdeleteproducts) | **Post** /product.Product/BulkDeleteProducts | 
-*ProductAPI* | [**ProductBulkRemoveAssetsEntries**](docs/ProductAPI.md#productbulkremoveassetsentries) | **Post** /product.Product/BulkRemoveAssetsEntries | 
 *ProductAPI* | [**ProductBulkUpdate**](docs/ProductAPI.md#productbulkupdate) | **Post** /product.Product/BulkUpdate | 
-*ProductAPI* | [**ProductBulkUpdateAssetsEntries**](docs/ProductAPI.md#productbulkupdateassetsentries) | **Post** /product.Product/BulkUpdateAssetsEntries | 
 *ProductAPI* | [**ProductCreateAttributeGroup**](docs/ProductAPI.md#productcreateattributegroup) | **Post** /product.Product/CreateAttributeGroup | 
 *ProductAPI* | [**ProductCreateProduct**](docs/ProductAPI.md#productcreateproduct) | **Post** /product.Product/CreateProduct | 
 *ProductAPI* | [**ProductCreateProductV2**](docs/ProductAPI.md#productcreateproductv2) | **Post** /product.Product/CreateProductV2 | 
@@ -128,20 +131,25 @@ Class | Method | HTTP request | Description
 *ProductAPI* | [**ProductDeleteAttribute**](docs/ProductAPI.md#productdeleteattribute) | **Post** /product.Product/DeleteAttribute | 
 *ProductAPI* | [**ProductDeleteProduct**](docs/ProductAPI.md#productdeleteproduct) | **Post** /product.Product/DeleteProduct | 
 *ProductAPI* | [**ProductGetAttributeGroup**](docs/ProductAPI.md#productgetattributegroup) | **Post** /product.Product/GetAttributeGroup | 
-*ProductAPI* | [**ProductListAttributeGroups**](docs/ProductAPI.md#productlistattributegroups) | **Post** /product.Product/ListAttributeGroups | Attribute Groups endpoints
+*ProductAPI* | [**ProductListAttributeGroups**](docs/ProductAPI.md#productlistattributegroups) | **Post** /product.Product/ListAttributeGroups | 
 *ProductAPI* | [**ProductUpdateAttribute**](docs/ProductAPI.md#productupdateattribute) | **Post** /product.Product/UpdateAttribute | 
 *ProductAPI* | [**ProductUpdateAttributeGroup**](docs/ProductAPI.md#productupdateattributegroup) | **Post** /product.Product/UpdateAttributeGroup | 
 *ProductAPI* | [**ProductUpdateProduct**](docs/ProductAPI.md#productupdateproduct) | **Post** /product.Product/UpdateProduct | 
 *ProductAPI* | [**ProductUpdateProductV2**](docs/ProductAPI.md#productupdateproductv2) | **Post** /product.Product/UpdateProductV2 | 
 *ProductAPI* | [**RemoveMediaGalleryEntry**](docs/ProductAPI.md#removemediagalleryentry) | **Post** /product.Product/RemoveMediaGalleryEntry | Remove Media Gallery Entry
 *ProductAPI* | [**UpdateAttributeOptions**](docs/ProductAPI.md#updateattributeoptions) | **Post** /product.Product/UpdateAttributeOptions | Update Attribute Options
+*ProductAPI* | [**UpdateDataToBeReviewed**](docs/ProductAPI.md#updatedatatobereviewed) | **Post** /product.Product/GetEnhanceProductDataWithAIStatus | Get Enhance Product Data With AI Status
+*ProductAPI* | [**UpdateDataToBeReviewed_0**](docs/ProductAPI.md#updatedatatobereviewed_0) | **Post** /product.Product/UpdateDataToBeReviewed | Update Data To Be Reviewed
 *ProductAPI* | [**UpdateMediaGalleryEntry**](docs/ProductAPI.md#updatemediagalleryentry) | **Post** /product.Product/UpdateMediaGalleryEntry | Update Media Gallery Entry
 *ProductAPI* | [**UpdateOptionsList**](docs/ProductAPI.md#updateoptionslist) | **Post** /product.Product/UpdateOptionsList | Update Options List
+*ProductAPI* | [**UpdateProductWithAI**](docs/ProductAPI.md#updateproductwithai) | **Post** /product.Product/UpdateProductWithAI | Update Product With AI
 
 
 ## Documentation For Models
 
+ - [AttributeInReviewString](docs/AttributeInReviewString.md)
  - [BulkUpdateAssetsEntriesRequestUpdateEntity](docs/BulkUpdateAssetsEntriesRequestUpdateEntity.md)
+ - [EntitymanagerAiContext](docs/EntitymanagerAiContext.md)
  - [EntitymanagerAttribute](docs/EntitymanagerAttribute.md)
  - [EntitymanagerAttributeGroup](docs/EntitymanagerAttributeGroup.md)
  - [EntitymanagerAttributeOption](docs/EntitymanagerAttributeOption.md)
@@ -189,6 +197,7 @@ Class | Method | HTTP request | Description
  - [EntitymanagerUpdateAttributeRequestPayload](docs/EntitymanagerUpdateAttributeRequestPayload.md)
  - [EntitymanagerUpdateOptionsListRequest](docs/EntitymanagerUpdateOptionsListRequest.md)
  - [EntitymanagerUpdateOptionsListResponse](docs/EntitymanagerUpdateOptionsListResponse.md)
+ - [GetEnhanceProductDataWithAIStatusResponseJob](docs/GetEnhanceProductDataWithAIStatusResponseJob.md)
  - [ListProductsRequestFilter](docs/ListProductsRequestFilter.md)
  - [ProductAddMediaGalleryEntryRequest](docs/ProductAddMediaGalleryEntryRequest.md)
  - [ProductAddMediaGalleryEntryResponse](docs/ProductAddMediaGalleryEntryResponse.md)
@@ -196,10 +205,18 @@ Class | Method | HTTP request | Description
  - [ProductAssets](docs/ProductAssets.md)
  - [ProductAssetsEntry](docs/ProductAssetsEntry.md)
  - [ProductAssetsEntryMetadata](docs/ProductAssetsEntryMetadata.md)
+ - [ProductAttributeInReview](docs/ProductAttributeInReview.md)
+ - [ProductAttributeInReviewError](docs/ProductAttributeInReviewError.md)
+ - [ProductAttributeInReviewJobStatus](docs/ProductAttributeInReviewJobStatus.md)
+ - [ProductAttributeInReviewJobType](docs/ProductAttributeInReviewJobType.md)
+ - [ProductAttributeInReviewSource](docs/ProductAttributeInReviewSource.md)
  - [ProductAttributeResponseError](docs/ProductAttributeResponseError.md)
+ - [ProductAttributeToEnrich](docs/ProductAttributeToEnrich.md)
+ - [ProductAttributeToEnrichType](docs/ProductAttributeToEnrichType.md)
  - [ProductBulkAddAssetsEntriesRequest](docs/ProductBulkAddAssetsEntriesRequest.md)
  - [ProductBulkAddAssetsEntriesResponse](docs/ProductBulkAddAssetsEntriesResponse.md)
  - [ProductBulkDeleteProductsRequest](docs/ProductBulkDeleteProductsRequest.md)
+ - [ProductBulkEnhanceProductDataWithAIRequest](docs/ProductBulkEnhanceProductDataWithAIRequest.md)
  - [ProductBulkRemoveAssetsEntriesRequest](docs/ProductBulkRemoveAssetsEntriesRequest.md)
  - [ProductBulkUpdateAssetsEntriesRequest](docs/ProductBulkUpdateAssetsEntriesRequest.md)
  - [ProductBulkUpdateAssetsEntriesResponse](docs/ProductBulkUpdateAssetsEntriesResponse.md)
@@ -215,16 +232,25 @@ Class | Method | HTTP request | Description
  - [ProductCreateProductRequestV2](docs/ProductCreateProductRequestV2.md)
  - [ProductCreateProductResponse](docs/ProductCreateProductResponse.md)
  - [ProductCreateProductResponseV2](docs/ProductCreateProductResponseV2.md)
+ - [ProductCreateProductWithAIRequest](docs/ProductCreateProductWithAIRequest.md)
+ - [ProductCreateProductWithAIResponse](docs/ProductCreateProductWithAIResponse.md)
+ - [ProductDataInReview](docs/ProductDataInReview.md)
  - [ProductDeleteProductRequest](docs/ProductDeleteProductRequest.md)
  - [ProductDeleteRequest](docs/ProductDeleteRequest.md)
  - [ProductDeleteResponse](docs/ProductDeleteResponse.md)
+ - [ProductEnrichAction](docs/ProductEnrichAction.md)
  - [ProductFieldMask](docs/ProductFieldMask.md)
+ - [ProductGetEnhanceProductDataWithAIStatusRequest](docs/ProductGetEnhanceProductDataWithAIStatusRequest.md)
+ - [ProductGetEnhanceProductDataWithAIStatusResponse](docs/ProductGetEnhanceProductDataWithAIStatusResponse.md)
  - [ProductGetProductByCodeRequest](docs/ProductGetProductByCodeRequest.md)
  - [ProductGetProductByCodeResponse](docs/ProductGetProductByCodeResponse.md)
  - [ProductGetProductByUrlKeyRequest](docs/ProductGetProductByUrlKeyRequest.md)
  - [ProductGetProductByUrlKeyResponse](docs/ProductGetProductByUrlKeyResponse.md)
+ - [ProductGetProductDataInReviewRequest](docs/ProductGetProductDataInReviewRequest.md)
+ - [ProductGetProductDataInReviewResponse](docs/ProductGetProductDataInReviewResponse.md)
  - [ProductGetProductRequest](docs/ProductGetProductRequest.md)
  - [ProductGetProductResponse](docs/ProductGetProductResponse.md)
+ - [ProductLanguageCode](docs/ProductLanguageCode.md)
  - [ProductListProductsByIdsRequest](docs/ProductListProductsByIdsRequest.md)
  - [ProductListProductsByIdsResponse](docs/ProductListProductsByIdsResponse.md)
  - [ProductListProductsBySkuRequest](docs/ProductListProductsBySkuRequest.md)
@@ -242,14 +268,19 @@ Class | Method | HTTP request | Description
  - [ProductProductResponseError](docs/ProductProductResponseError.md)
  - [ProductProductVariant](docs/ProductProductVariant.md)
  - [ProductRemoveMediaGalleryEntryRequest](docs/ProductRemoveMediaGalleryEntryRequest.md)
+ - [ProductTranslateAction](docs/ProductTranslateAction.md)
  - [ProductUpdateAssetEntryPayload](docs/ProductUpdateAssetEntryPayload.md)
+ - [ProductUpdateDataToBeReviewedRequest](docs/ProductUpdateDataToBeReviewedRequest.md)
  - [ProductUpdateMediaGalleryEntryRequest](docs/ProductUpdateMediaGalleryEntryRequest.md)
  - [ProductUpdateProductRequest](docs/ProductUpdateProductRequest.md)
  - [ProductUpdateProductRequestV2](docs/ProductUpdateProductRequestV2.md)
  - [ProductUpdateProductResponse](docs/ProductUpdateProductResponse.md)
+ - [ProductUpdateProductWithAIRequest](docs/ProductUpdateProductWithAIRequest.md)
+ - [ProductUpdateProductWithAIResponse](docs/ProductUpdateProductWithAIResponse.md)
  - [ProductentitymanagerLocalizedText](docs/ProductentitymanagerLocalizedText.md)
  - [ProtobufAny](docs/ProtobufAny.md)
  - [RpcStatus](docs/RpcStatus.md)
+ - [TranslateActionAttributeCodesToTranslate](docs/TranslateActionAttributeCodesToTranslate.md)
 
 
 ## Documentation For Authorization

@@ -1,0 +1,21 @@
+# # ProductAttributeToEnrichType
+
+
+## Properties 
+
+
+
+| Value |
+------------ | 
+UNKNOWN|&quot;ATTRIBUTE_TO_ENRICH_TYPE_UNKNOWN&quot;
+TEXT|&quot;ATTRIBUTE_TO_ENRICH_TYPE_TEXT&quot;
+NUMBER|&quot;ATTRIBUTE_TO_ENRICH_TYPE_NUMBER&quot;
+BOOLEAN|&quot;ATTRIBUTE_TO_ENRICH_TYPE_BOOLEAN&quot;
+DATETIME|&quot;ATTRIBUTE_TO_ENRICH_TYPE_DATETIME&quot;
+EXTERNAL|&quot;ATTRIBUTE_TO_ENRICH_TYPE_EXTERNAL&quot;
+EMBED|&quot;ATTRIBUTE_TO_ENRICH_TYPE_EMBED&quot;
+FLOAT32|&quot;ATTRIBUTE_TO_ENRICH_TYPE_FLOAT32&quot;
+LOCALIZED_TEXT|&quot;ATTRIBUTE_TO_ENRICH_TYPE_LOCALIZED_TEXT&quot;
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+
