@@ -24,7 +24,10 @@ type EntitymanagerDeleteAttributeRequest struct {
 	EntityData *EntitymanagerEntityIdentifier `json:"entityData,omitempty"`
 	EntityId *string `json:"entityId,omitempty"`
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerDeleteAttributeRequest EntitymanagerDeleteAttributeRequest
 
 // NewEntitymanagerDeleteAttributeRequest instantiates a new EntitymanagerDeleteAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -61,8 +64,8 @@ func (o *EntitymanagerDeleteAttributeRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *EntitymanagerDeleteAttributeRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *EntitymanagerDeleteAttributeRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -93,8 +96,8 @@ func (o *EntitymanagerDeleteAttributeRequest) GetEntityDataOk() (*EntitymanagerE
 	return o.EntityData, true
 }
 
-// HasEntityData returns a boolean if a field has been set.
-func (o *EntitymanagerDeleteAttributeRequest) HasEntityData() bool {
+// &#39;Has&#39;EntityData returns a boolean if a field has been set.
+func (o *EntitymanagerDeleteAttributeRequest) &#39;Has&#39;EntityData() bool {
 	if o != nil && !IsNil(o.EntityData) {
 		return true
 	}
@@ -125,8 +128,8 @@ func (o *EntitymanagerDeleteAttributeRequest) GetEntityIdOk() (*string, bool) {
 	return o.EntityId, true
 }
 
-// HasEntityId returns a boolean if a field has been set.
-func (o *EntitymanagerDeleteAttributeRequest) HasEntityId() bool {
+// &#39;Has&#39;EntityId returns a boolean if a field has been set.
+func (o *EntitymanagerDeleteAttributeRequest) &#39;Has&#39;EntityId() bool {
 	if o != nil && !IsNil(o.EntityId) {
 		return true
 	}
@@ -157,8 +160,8 @@ func (o *EntitymanagerDeleteAttributeRequest) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *EntitymanagerDeleteAttributeRequest) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *EntitymanagerDeleteAttributeRequest) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -193,9 +196,56 @@ func (o EntitymanagerDeleteAttributeRequest) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerDeleteAttributeRequest) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerDeleteAttributeRequest := _EntitymanagerDeleteAttributeRequest{}
+
+	err = json.Unmarshal(data, &varEntitymanagerDeleteAttributeRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerDeleteAttributeRequest(varEntitymanagerDeleteAttributeRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "entityData")
+		delete(additionalProperties, "entityId")
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerDeleteAttributeRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerDeleteAttributeRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerDeleteAttributeRequest struct {
 	value *EntitymanagerDeleteAttributeRequest
 	isSet bool

@@ -22,7 +22,10 @@ var _ MappedNullable = &ProductEnrichAction{}
 type ProductEnrichAction struct {
 	AttributesToEnrich []ProductAttributeToEnrich `json:"attributesToEnrich,omitempty"`
 	GenerationLanguage *ProductLanguageCode `json:"generationLanguage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductEnrichAction ProductEnrichAction
 
 // NewProductEnrichAction instantiates a new ProductEnrichAction object
 // This constructor will assign default values to properties that have it defined,
@@ -63,8 +66,8 @@ func (o *ProductEnrichAction) GetAttributesToEnrichOk() ([]ProductAttributeToEnr
 	return o.AttributesToEnrich, true
 }
 
-// HasAttributesToEnrich returns a boolean if a field has been set.
-func (o *ProductEnrichAction) HasAttributesToEnrich() bool {
+// &#39;Has&#39;AttributesToEnrich returns a boolean if a field has been set.
+func (o *ProductEnrichAction) &#39;Has&#39;AttributesToEnrich() bool {
 	if o != nil && !IsNil(o.AttributesToEnrich) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *ProductEnrichAction) GetGenerationLanguageOk() (*ProductLanguageCode, b
 	return o.GenerationLanguage, true
 }
 
-// HasGenerationLanguage returns a boolean if a field has been set.
-func (o *ProductEnrichAction) HasGenerationLanguage() bool {
+// &#39;Has&#39;GenerationLanguage returns a boolean if a field has been set.
+func (o *ProductEnrichAction) &#39;Has&#39;GenerationLanguage() bool {
 	if o != nil && !IsNil(o.GenerationLanguage) {
 		return true
 	}
@@ -125,9 +128,54 @@ func (o ProductEnrichAction) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.GenerationLanguage) {
 		toSerialize["generationLanguage"] = o.GenerationLanguage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductEnrichAction) UnmarshalJSON(data []byte) (err error) {
+	varProductEnrichAction := _ProductEnrichAction{}
+
+	err = json.Unmarshal(data, &varProductEnrichAction)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductEnrichAction(varProductEnrichAction)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "attributesToEnrich")
+		delete(additionalProperties, "generationLanguage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductEnrichAction) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductEnrichAction) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductEnrichAction struct {
 	value *ProductEnrichAction
 	isSet bool

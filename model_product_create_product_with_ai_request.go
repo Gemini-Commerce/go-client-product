@@ -28,7 +28,10 @@ type ProductCreateProductWithAIRequest struct {
 	ProductName *string `json:"productName,omitempty"`
 	SkipReview *bool `json:"skipReview,omitempty"`
 	AttributesToEnrich []ProductAttributeToEnrich `json:"attributesToEnrich,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductCreateProductWithAIRequest ProductCreateProductWithAIRequest
 
 // NewProductCreateProductWithAIRequest instantiates a new ProductCreateProductWithAIRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -65,8 +68,8 @@ func (o *ProductCreateProductWithAIRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -97,8 +100,8 @@ func (o *ProductCreateProductWithAIRequest) GetProductOk() (*ProductCreateProduc
 	return o.Product, true
 }
 
-// HasProduct returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) HasProduct() bool {
+// &#39;Has&#39;Product returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;Product() bool {
 	if o != nil && !IsNil(o.Product) {
 		return true
 	}
@@ -129,8 +132,8 @@ func (o *ProductCreateProductWithAIRequest) GetLocaleOk() (*string, bool) {
 	return o.Locale, true
 }
 
-// HasLocale returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) HasLocale() bool {
+// &#39;Has&#39;Locale returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;Locale() bool {
 	if o != nil && !IsNil(o.Locale) {
 		return true
 	}
@@ -161,8 +164,8 @@ func (o *ProductCreateProductWithAIRequest) GetProductBrandOk() (*string, bool) 
 	return o.ProductBrand, true
 }
 
-// HasProductBrand returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) HasProductBrand() bool {
+// &#39;Has&#39;ProductBrand returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;ProductBrand() bool {
 	if o != nil && !IsNil(o.ProductBrand) {
 		return true
 	}
@@ -193,8 +196,8 @@ func (o *ProductCreateProductWithAIRequest) GetProductCodeOk() (*string, bool) {
 	return o.ProductCode, true
 }
 
-// HasProductCode returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) HasProductCode() bool {
+// &#39;Has&#39;ProductCode returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;ProductCode() bool {
 	if o != nil && !IsNil(o.ProductCode) {
 		return true
 	}
@@ -225,8 +228,8 @@ func (o *ProductCreateProductWithAIRequest) GetProductNameOk() (*string, bool) {
 	return o.ProductName, true
 }
 
-// HasProductName returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) HasProductName() bool {
+// &#39;Has&#39;ProductName returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;ProductName() bool {
 	if o != nil && !IsNil(o.ProductName) {
 		return true
 	}
@@ -257,8 +260,8 @@ func (o *ProductCreateProductWithAIRequest) GetSkipReviewOk() (*bool, bool) {
 	return o.SkipReview, true
 }
 
-// HasSkipReview returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) HasSkipReview() bool {
+// &#39;Has&#39;SkipReview returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;SkipReview() bool {
 	if o != nil && !IsNil(o.SkipReview) {
 		return true
 	}
@@ -289,8 +292,8 @@ func (o *ProductCreateProductWithAIRequest) GetAttributesToEnrichOk() ([]Product
 	return o.AttributesToEnrich, true
 }
 
-// HasAttributesToEnrich returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) HasAttributesToEnrich() bool {
+// &#39;Has&#39;AttributesToEnrich returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;AttributesToEnrich() bool {
 	if o != nil && !IsNil(o.AttributesToEnrich) {
 		return true
 	}
@@ -337,9 +340,60 @@ func (o ProductCreateProductWithAIRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.AttributesToEnrich) {
 		toSerialize["attributesToEnrich"] = o.AttributesToEnrich
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductCreateProductWithAIRequest) UnmarshalJSON(data []byte) (err error) {
+	varProductCreateProductWithAIRequest := _ProductCreateProductWithAIRequest{}
+
+	err = json.Unmarshal(data, &varProductCreateProductWithAIRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductCreateProductWithAIRequest(varProductCreateProductWithAIRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "product")
+		delete(additionalProperties, "locale")
+		delete(additionalProperties, "productBrand")
+		delete(additionalProperties, "productCode")
+		delete(additionalProperties, "productName")
+		delete(additionalProperties, "skipReview")
+		delete(additionalProperties, "attributesToEnrich")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductCreateProductWithAIRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductCreateProductWithAIRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductCreateProductWithAIRequest struct {
 	value *ProductCreateProductWithAIRequest
 	isSet bool

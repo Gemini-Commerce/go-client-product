@@ -21,7 +21,10 @@ var _ MappedNullable = &ProductAddMediaGalleryEntryResponse{}
 // ProductAddMediaGalleryEntryResponse struct for ProductAddMediaGalleryEntryResponse
 type ProductAddMediaGalleryEntryResponse struct {
 	MediaGalleryEntry *ProductMediaGalleryEntry `json:"mediaGalleryEntry,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductAddMediaGalleryEntryResponse ProductAddMediaGalleryEntryResponse
 
 // NewProductAddMediaGalleryEntryResponse instantiates a new ProductAddMediaGalleryEntryResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -58,8 +61,8 @@ func (o *ProductAddMediaGalleryEntryResponse) GetMediaGalleryEntryOk() (*Product
 	return o.MediaGalleryEntry, true
 }
 
-// HasMediaGalleryEntry returns a boolean if a field has been set.
-func (o *ProductAddMediaGalleryEntryResponse) HasMediaGalleryEntry() bool {
+// &#39;Has&#39;MediaGalleryEntry returns a boolean if a field has been set.
+func (o *ProductAddMediaGalleryEntryResponse) &#39;Has&#39;MediaGalleryEntry() bool {
 	if o != nil && !IsNil(o.MediaGalleryEntry) {
 		return true
 	}
@@ -85,9 +88,53 @@ func (o ProductAddMediaGalleryEntryResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.MediaGalleryEntry) {
 		toSerialize["mediaGalleryEntry"] = o.MediaGalleryEntry
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductAddMediaGalleryEntryResponse) UnmarshalJSON(data []byte) (err error) {
+	varProductAddMediaGalleryEntryResponse := _ProductAddMediaGalleryEntryResponse{}
+
+	err = json.Unmarshal(data, &varProductAddMediaGalleryEntryResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductAddMediaGalleryEntryResponse(varProductAddMediaGalleryEntryResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "mediaGalleryEntry")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductAddMediaGalleryEntryResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductAddMediaGalleryEntryResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductAddMediaGalleryEntryResponse struct {
 	value *ProductAddMediaGalleryEntryResponse
 	isSet bool

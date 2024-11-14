@@ -25,7 +25,10 @@ type EntitymanagerCreateAttributeGroupRequest struct {
 	Label *ProductentitymanagerLocalizedText `json:"label,omitempty"`
 	Sort *int32 `json:"sort,omitempty"`
 	Visibility []string `json:"visibility,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerCreateAttributeGroupRequest EntitymanagerCreateAttributeGroupRequest
 
 // NewEntitymanagerCreateAttributeGroupRequest instantiates a new EntitymanagerCreateAttributeGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -62,8 +65,8 @@ func (o *EntitymanagerCreateAttributeGroupRequest) GetTenantIdOk() (*string, boo
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *EntitymanagerCreateAttributeGroupRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *EntitymanagerCreateAttributeGroupRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -94,8 +97,8 @@ func (o *EntitymanagerCreateAttributeGroupRequest) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *EntitymanagerCreateAttributeGroupRequest) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *EntitymanagerCreateAttributeGroupRequest) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -126,8 +129,8 @@ func (o *EntitymanagerCreateAttributeGroupRequest) GetLabelOk() (*Productentitym
 	return o.Label, true
 }
 
-// HasLabel returns a boolean if a field has been set.
-func (o *EntitymanagerCreateAttributeGroupRequest) HasLabel() bool {
+// &#39;Has&#39;Label returns a boolean if a field has been set.
+func (o *EntitymanagerCreateAttributeGroupRequest) &#39;Has&#39;Label() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -158,8 +161,8 @@ func (o *EntitymanagerCreateAttributeGroupRequest) GetSortOk() (*int32, bool) {
 	return o.Sort, true
 }
 
-// HasSort returns a boolean if a field has been set.
-func (o *EntitymanagerCreateAttributeGroupRequest) HasSort() bool {
+// &#39;Has&#39;Sort returns a boolean if a field has been set.
+func (o *EntitymanagerCreateAttributeGroupRequest) &#39;Has&#39;Sort() bool {
 	if o != nil && !IsNil(o.Sort) {
 		return true
 	}
@@ -190,8 +193,8 @@ func (o *EntitymanagerCreateAttributeGroupRequest) GetVisibilityOk() ([]string, 
 	return o.Visibility, true
 }
 
-// HasVisibility returns a boolean if a field has been set.
-func (o *EntitymanagerCreateAttributeGroupRequest) HasVisibility() bool {
+// &#39;Has&#39;Visibility returns a boolean if a field has been set.
+func (o *EntitymanagerCreateAttributeGroupRequest) &#39;Has&#39;Visibility() bool {
 	if o != nil && !IsNil(o.Visibility) {
 		return true
 	}
@@ -229,9 +232,57 @@ func (o EntitymanagerCreateAttributeGroupRequest) ToMap() (map[string]interface{
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerCreateAttributeGroupRequest) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerCreateAttributeGroupRequest := _EntitymanagerCreateAttributeGroupRequest{}
+
+	err = json.Unmarshal(data, &varEntitymanagerCreateAttributeGroupRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerCreateAttributeGroupRequest(varEntitymanagerCreateAttributeGroupRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "label")
+		delete(additionalProperties, "sort")
+		delete(additionalProperties, "visibility")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerCreateAttributeGroupRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerCreateAttributeGroupRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerCreateAttributeGroupRequest struct {
 	value *EntitymanagerCreateAttributeGroupRequest
 	isSet bool

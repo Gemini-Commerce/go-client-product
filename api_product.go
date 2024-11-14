@@ -20,658 +20,21 @@ import (
 )
 
 
-type ProductAPI interface {
-
-	/*
-	AddMediaGalleryEntry Add Media Gallery Entry
-
-	The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry. This operation is asynchronous and may complete after the response.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIAddMediaGalleryEntryRequest
-	*/
-	AddMediaGalleryEntry(ctx context.Context) ProductAPIAddMediaGalleryEntryRequest
-
-	// AddMediaGalleryEntryExecute executes the request
-	//  @return ProductAddMediaGalleryEntryResponse
-	AddMediaGalleryEntryExecute(r ProductAPIAddMediaGalleryEntryRequest) (*ProductAddMediaGalleryEntryResponse, *http.Response, error)
-
-	/*
-	BulkAddAssetsEntries Bulk Add Assets Entries
-
-	The BulkAddAssetsEntries endpoint allows users to add assets. This operation is asynchronous and may complete after the response.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIBulkAddAssetsEntriesRequest
-	*/
-	BulkAddAssetsEntries(ctx context.Context) ProductAPIBulkAddAssetsEntriesRequest
-
-	// BulkAddAssetsEntriesExecute executes the request
-	//  @return ProductBulkAddAssetsEntriesResponse
-	BulkAddAssetsEntriesExecute(r ProductAPIBulkAddAssetsEntriesRequest) (*ProductBulkAddAssetsEntriesResponse, *http.Response, error)
-
-	/*
-	BulkDeleteProducts Bulk Delete Products
-
-	This operation is asynchronous and may complete after the response.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIBulkDeleteProductsRequest
-	*/
-	BulkDeleteProducts(ctx context.Context) ProductAPIBulkDeleteProductsRequest
-
-	// BulkDeleteProductsExecute executes the request
-	//  @return map[string]interface{}
-	BulkDeleteProductsExecute(r ProductAPIBulkDeleteProductsRequest) (map[string]interface{}, *http.Response, error)
-
-	/*
-	BulkEnhanceProductDataWithAI Bulk Enhance Product Data With AI
-
-	The BulkEnhanceProductDataWithAI endpoint allows users to enhance product data using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enrich and optimize product information. This operation is asynchronous and may complete after the response.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIBulkEnhanceProductDataWithAIRequest
-	*/
-	BulkEnhanceProductDataWithAI(ctx context.Context) ProductAPIBulkEnhanceProductDataWithAIRequest
-
-	// BulkEnhanceProductDataWithAIExecute executes the request
-	//  @return map[string]interface{}
-	BulkEnhanceProductDataWithAIExecute(r ProductAPIBulkEnhanceProductDataWithAIRequest) (map[string]interface{}, *http.Response, error)
-
-	/*
-	BulkRemoveAssetsEntries Bulk Remove Assets Entries
-
-	The BulkRemoveAssetsEntries endpoint allows users to remove assets. This operation is asynchronous and may complete after the response.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIBulkRemoveAssetsEntriesRequest
-	*/
-	BulkRemoveAssetsEntries(ctx context.Context) ProductAPIBulkRemoveAssetsEntriesRequest
-
-	// BulkRemoveAssetsEntriesExecute executes the request
-	//  @return map[string]interface{}
-	BulkRemoveAssetsEntriesExecute(r ProductAPIBulkRemoveAssetsEntriesRequest) (map[string]interface{}, *http.Response, error)
-
-	/*
-	BulkUpdateAssetsEntries Bulk Update Assets Entries
-
-	The BulkUpdateAssetsEntries endpoint allows users to update assets. This operation is asynchronous and may complete after the response.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIBulkUpdateAssetsEntriesRequest
-	*/
-	BulkUpdateAssetsEntries(ctx context.Context) ProductAPIBulkUpdateAssetsEntriesRequest
-
-	// BulkUpdateAssetsEntriesExecute executes the request
-	//  @return ProductBulkUpdateAssetsEntriesResponse
-	BulkUpdateAssetsEntriesExecute(r ProductAPIBulkUpdateAssetsEntriesRequest) (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error)
-
-	/*
-	BulkUpdateV2 Bulk Update Products
-
-	Version 2 of bulk updates for product attributes with enhanced payload structure and response format. This operation is asynchronous and may complete after the response.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIBulkUpdateV2Request
-	*/
-	BulkUpdateV2(ctx context.Context) ProductAPIBulkUpdateV2Request
-
-	// BulkUpdateV2Execute executes the request
-	//  @return ProductBulkUpdateResponse
-	BulkUpdateV2Execute(r ProductAPIBulkUpdateV2Request) (*ProductBulkUpdateResponse, *http.Response, error)
-
-	/*
-	CreateAttributeOptions Create Attribute Options
-
-	Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPICreateAttributeOptionsRequest
-	*/
-	CreateAttributeOptions(ctx context.Context) ProductAPICreateAttributeOptionsRequest
-
-	// CreateAttributeOptionsExecute executes the request
-	//  @return EntitymanagerCreateAttributeOptionsResponse
-	CreateAttributeOptionsExecute(r ProductAPICreateAttributeOptionsRequest) (*EntitymanagerCreateAttributeOptionsResponse, *http.Response, error)
-
-	/*
-	CreateEntity Create Entity
-
-	The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system's data model to accommodate diverse business requirements and efficiently manage various types of entities.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPICreateEntityRequest
-	*/
-	CreateEntity(ctx context.Context) ProductAPICreateEntityRequest
-
-	// CreateEntityExecute executes the request
-	//  @return EntitymanagerCreateEntityResponse
-	CreateEntityExecute(r ProductAPICreateEntityRequest) (*EntitymanagerCreateEntityResponse, *http.Response, error)
-
-	/*
-	CreateOptionsList Create Options List
-
-	The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPICreateOptionsListRequest
-	*/
-	CreateOptionsList(ctx context.Context) ProductAPICreateOptionsListRequest
-
-	// CreateOptionsListExecute executes the request
-	//  @return EntitymanagerCreateOptionsListResponse
-	CreateOptionsListExecute(r ProductAPICreateOptionsListRequest) (*EntitymanagerCreateOptionsListResponse, *http.Response, error)
-
-	/*
-	CreateProductWithAI Create Product With AI
-
-	The CreateProductWithAI endpoint allows users to create a new product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product creation process.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPICreateProductWithAIRequest
-	*/
-	CreateProductWithAI(ctx context.Context) ProductAPICreateProductWithAIRequest
-
-	// CreateProductWithAIExecute executes the request
-	//  @return ProductCreateProductWithAIResponse
-	CreateProductWithAIExecute(r ProductAPICreateProductWithAIRequest) (*ProductCreateProductWithAIResponse, *http.Response, error)
-
-	/*
-	GetAttributeOption Get Attribute Option
-
-	Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIGetAttributeOptionRequest
-	*/
-	GetAttributeOption(ctx context.Context) ProductAPIGetAttributeOptionRequest
-
-	// GetAttributeOptionExecute executes the request
-	//  @return EntitymanagerGetAttributeOptionResponse
-	GetAttributeOptionExecute(r ProductAPIGetAttributeOptionRequest) (*EntitymanagerGetAttributeOptionResponse, *http.Response, error)
-
-	/*
-	GetAttributeOptions Get Attribute Options
-
-	Retrieve a list of attribute options based on the provided tenant ID and list code.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIGetAttributeOptionsRequest
-	*/
-	GetAttributeOptions(ctx context.Context) ProductAPIGetAttributeOptionsRequest
-
-	// GetAttributeOptionsExecute executes the request
-	//  @return EntitymanagerGetAttributeOptionsResponse
-	GetAttributeOptionsExecute(r ProductAPIGetAttributeOptionsRequest) (*EntitymanagerGetAttributeOptionsResponse, *http.Response, error)
-
-	/*
-	GetEntity Get Entity Details
-
-	Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIGetEntityRequest
-	*/
-	GetEntity(ctx context.Context) ProductAPIGetEntityRequest
-
-	// GetEntityExecute executes the request
-	//  @return EntitymanagerEntity
-	GetEntityExecute(r ProductAPIGetEntityRequest) (*EntitymanagerEntity, *http.Response, error)
-
-	/*
-	GetOptionsList Get Options List
-
-	Retrieve option lists.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIGetOptionsListRequest
-	*/
-	GetOptionsList(ctx context.Context) ProductAPIGetOptionsListRequest
-
-	// GetOptionsListExecute executes the request
-	//  @return EntitymanagerGetOptionsListResponse
-	GetOptionsListExecute(r ProductAPIGetOptionsListRequest) (*EntitymanagerGetOptionsListResponse, *http.Response, error)
-
-	/*
-	GetProduct Get Product
-
-	The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIGetProductRequest
-	*/
-	GetProduct(ctx context.Context) ProductAPIGetProductRequest
-
-	// GetProductExecute executes the request
-	//  @return ProductGetProductResponse
-	GetProductExecute(r ProductAPIGetProductRequest) (*ProductGetProductResponse, *http.Response, error)
-
-	/*
-	GetProductByCode Get Product By Code
-
-	The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIGetProductByCodeRequest
-	*/
-	GetProductByCode(ctx context.Context) ProductAPIGetProductByCodeRequest
-
-	// GetProductByCodeExecute executes the request
-	//  @return ProductGetProductByCodeResponse
-	GetProductByCodeExecute(r ProductAPIGetProductByCodeRequest) (*ProductGetProductByCodeResponse, *http.Response, error)
-
-	/*
-	GetProductByUrlKey Get Product By Url Key
-
-	The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIGetProductByUrlKeyRequest
-	*/
-	GetProductByUrlKey(ctx context.Context) ProductAPIGetProductByUrlKeyRequest
-
-	// GetProductByUrlKeyExecute executes the request
-	//  @return ProductGetProductByUrlKeyResponse
-	GetProductByUrlKeyExecute(r ProductAPIGetProductByUrlKeyRequest) (*ProductGetProductByUrlKeyResponse, *http.Response, error)
-
-	/*
-	GetProductDataInReview Get Product Data In Review
-
-	The GetProductDataInReview endpoint allows users to retrieve product data that is currently under review. By making a request to this endpoint, users can access detailed information about the product data that is pending approval or review by authorized personnel. This functionality provides transparency and visibility into the product data review process, enabling users to track the status and progress of product data submissions.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIGetProductDataInReviewRequest
-	*/
-	GetProductDataInReview(ctx context.Context) ProductAPIGetProductDataInReviewRequest
-
-	// GetProductDataInReviewExecute executes the request
-	//  @return ProductGetProductDataInReviewResponse
-	GetProductDataInReviewExecute(r ProductAPIGetProductDataInReviewRequest) (*ProductGetProductDataInReviewResponse, *http.Response, error)
-
-	/*
-	ListAttributeOptions List Attribute Options
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIListAttributeOptionsRequest
-	*/
-	ListAttributeOptions(ctx context.Context) ProductAPIListAttributeOptionsRequest
-
-	// ListAttributeOptionsExecute executes the request
-	//  @return EntitymanagerListAttributeOptionsResponse
-	ListAttributeOptionsExecute(r ProductAPIListAttributeOptionsRequest) (*EntitymanagerListAttributeOptionsResponse, *http.Response, error)
-
-	/*
-	ListEntities List Entities
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIListEntitiesRequest
-	*/
-	ListEntities(ctx context.Context) ProductAPIListEntitiesRequest
-
-	// ListEntitiesExecute executes the request
-	//  @return EntitymanagerListEntitiesResponse
-	ListEntitiesExecute(r ProductAPIListEntitiesRequest) (*EntitymanagerListEntitiesResponse, *http.Response, error)
-
-	/*
-	ListOptionsLists List Options Lists
-
-	The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIListOptionsListsRequest
-	*/
-	ListOptionsLists(ctx context.Context) ProductAPIListOptionsListsRequest
-
-	// ListOptionsListsExecute executes the request
-	//  @return EntitymanagerListOptionsListsResponse
-	ListOptionsListsExecute(r ProductAPIListOptionsListsRequest) (*EntitymanagerListOptionsListsResponse, *http.Response, error)
-
-	/*
-	ListProducts List Products
-
-	The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIListProductsRequest
-	*/
-	ListProducts(ctx context.Context) ProductAPIListProductsRequest
-
-	// ListProductsExecute executes the request
-	//  @return ProductListProductsResponse
-	ListProductsExecute(r ProductAPIListProductsRequest) (*ProductListProductsResponse, *http.Response, error)
-
-	/*
-	ListProductsByIds List Products By Ids
-
-	The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIListProductsByIdsRequest
-	*/
-	ListProductsByIds(ctx context.Context) ProductAPIListProductsByIdsRequest
-
-	// ListProductsByIdsExecute executes the request
-	//  @return ProductListProductsByIdsResponse
-	ListProductsByIdsExecute(r ProductAPIListProductsByIdsRequest) (*ProductListProductsByIdsResponse, *http.Response, error)
-
-	/*
-	ListProductsBySku List Products By Sku
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIListProductsBySkuRequest
-	*/
-	ListProductsBySku(ctx context.Context) ProductAPIListProductsBySkuRequest
-
-	// ListProductsBySkuExecute executes the request
-	//  @return ProductListProductsBySkuResponse
-	ListProductsBySkuExecute(r ProductAPIListProductsBySkuRequest) (*ProductListProductsBySkuResponse, *http.Response, error)
-
-	/*
-	ListVariantsBySku List Product Variants By Sku
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIListVariantsBySkuRequest
-	*/
-	ListVariantsBySku(ctx context.Context) ProductAPIListVariantsBySkuRequest
-
-	// ListVariantsBySkuExecute executes the request
-	//  @return ProductListVariantsBySkuResponse
-	ListVariantsBySkuExecute(r ProductAPIListVariantsBySkuRequest) (*ProductListVariantsBySkuResponse, *http.Response, error)
-
-	/*
-	ProductBulkCreateAttribute Method for ProductBulkCreateAttribute
-
-	Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductBulkCreateAttributeRequest
-	*/
-	ProductBulkCreateAttribute(ctx context.Context) ProductAPIProductBulkCreateAttributeRequest
-
-	// ProductBulkCreateAttributeExecute executes the request
-	//  @return EntitymanagerBulkCreateAttributeResponse
-	ProductBulkCreateAttributeExecute(r ProductAPIProductBulkCreateAttributeRequest) (*EntitymanagerBulkCreateAttributeResponse, *http.Response, error)
-
-	/*
-	ProductBulkUpdate Method for ProductBulkUpdate
-
-	This operation is asynchronous and may complete after the response.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductBulkUpdateRequest
-
-	Deprecated
-	*/
-	ProductBulkUpdate(ctx context.Context) ProductAPIProductBulkUpdateRequest
-
-	// ProductBulkUpdateExecute executes the request
-	//  @return ProductBulkUpdateResponse
-	// Deprecated
-	ProductBulkUpdateExecute(r ProductAPIProductBulkUpdateRequest) (*ProductBulkUpdateResponse, *http.Response, error)
-
-	/*
-	ProductCreateAttributeGroup Method for ProductCreateAttributeGroup
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductCreateAttributeGroupRequest
-	*/
-	ProductCreateAttributeGroup(ctx context.Context) ProductAPIProductCreateAttributeGroupRequest
-
-	// ProductCreateAttributeGroupExecute executes the request
-	//  @return EntitymanagerAttributeGroup
-	ProductCreateAttributeGroupExecute(r ProductAPIProductCreateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error)
-
-	/*
-	ProductCreateProduct Method for ProductCreateProduct
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductCreateProductRequest
-
-	Deprecated
-	*/
-	ProductCreateProduct(ctx context.Context) ProductAPIProductCreateProductRequest
-
-	// ProductCreateProductExecute executes the request
-	//  @return ProductCreateProductResponse
-	// Deprecated
-	ProductCreateProductExecute(r ProductAPIProductCreateProductRequest) (*ProductCreateProductResponse, *http.Response, error)
-
-	/*
-	ProductCreateProductV2 Method for ProductCreateProductV2
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductCreateProductV2Request
-	*/
-	ProductCreateProductV2(ctx context.Context) ProductAPIProductCreateProductV2Request
-
-	// ProductCreateProductV2Execute executes the request
-	//  @return ProductCreateProductResponseV2
-	ProductCreateProductV2Execute(r ProductAPIProductCreateProductV2Request) (*ProductCreateProductResponseV2, *http.Response, error)
-
-	/*
-	ProductDelete Method for ProductDelete
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductDeleteRequest
-
-	Deprecated
-	*/
-	ProductDelete(ctx context.Context) ProductAPIProductDeleteRequest
-
-	// ProductDeleteExecute executes the request
-	//  @return ProductDeleteResponse
-	// Deprecated
-	ProductDeleteExecute(r ProductAPIProductDeleteRequest) (*ProductDeleteResponse, *http.Response, error)
-
-	/*
-	ProductDeleteAttribute Method for ProductDeleteAttribute
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductDeleteAttributeRequest
-	*/
-	ProductDeleteAttribute(ctx context.Context) ProductAPIProductDeleteAttributeRequest
-
-	// ProductDeleteAttributeExecute executes the request
-	//  @return map[string]interface{}
-	ProductDeleteAttributeExecute(r ProductAPIProductDeleteAttributeRequest) (map[string]interface{}, *http.Response, error)
-
-	/*
-	ProductDeleteProduct Method for ProductDeleteProduct
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductDeleteProductRequest
-	*/
-	ProductDeleteProduct(ctx context.Context) ProductAPIProductDeleteProductRequest
-
-	// ProductDeleteProductExecute executes the request
-	//  @return map[string]interface{}
-	ProductDeleteProductExecute(r ProductAPIProductDeleteProductRequest) (map[string]interface{}, *http.Response, error)
-
-	/*
-	ProductGetAttributeGroup Method for ProductGetAttributeGroup
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductGetAttributeGroupRequest
-	*/
-	ProductGetAttributeGroup(ctx context.Context) ProductAPIProductGetAttributeGroupRequest
-
-	// ProductGetAttributeGroupExecute executes the request
-	//  @return EntitymanagerAttributeGroup
-	ProductGetAttributeGroupExecute(r ProductAPIProductGetAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error)
-
-	/*
-	ProductListAttributeGroups Method for ProductListAttributeGroups
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductListAttributeGroupsRequest
-	*/
-	ProductListAttributeGroups(ctx context.Context) ProductAPIProductListAttributeGroupsRequest
-
-	// ProductListAttributeGroupsExecute executes the request
-	//  @return EntitymanagerListAttributeGroupsResponse
-	ProductListAttributeGroupsExecute(r ProductAPIProductListAttributeGroupsRequest) (*EntitymanagerListAttributeGroupsResponse, *http.Response, error)
-
-	/*
-	ProductUpdateAttribute Method for ProductUpdateAttribute
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductUpdateAttributeRequest
-	*/
-	ProductUpdateAttribute(ctx context.Context) ProductAPIProductUpdateAttributeRequest
-
-	// ProductUpdateAttributeExecute executes the request
-	//  @return EntitymanagerAttribute
-	ProductUpdateAttributeExecute(r ProductAPIProductUpdateAttributeRequest) (*EntitymanagerAttribute, *http.Response, error)
-
-	/*
-	ProductUpdateAttributeGroup Method for ProductUpdateAttributeGroup
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductUpdateAttributeGroupRequest
-	*/
-	ProductUpdateAttributeGroup(ctx context.Context) ProductAPIProductUpdateAttributeGroupRequest
-
-	// ProductUpdateAttributeGroupExecute executes the request
-	//  @return EntitymanagerAttributeGroup
-	ProductUpdateAttributeGroupExecute(r ProductAPIProductUpdateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error)
-
-	/*
-	ProductUpdateProduct Method for ProductUpdateProduct
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductUpdateProductRequest
-
-	Deprecated
-	*/
-	ProductUpdateProduct(ctx context.Context) ProductAPIProductUpdateProductRequest
-
-	// ProductUpdateProductExecute executes the request
-	//  @return ProductUpdateProductResponse
-	// Deprecated
-	ProductUpdateProductExecute(r ProductAPIProductUpdateProductRequest) (*ProductUpdateProductResponse, *http.Response, error)
-
-	/*
-	ProductUpdateProductV2 Method for ProductUpdateProductV2
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIProductUpdateProductV2Request
-	*/
-	ProductUpdateProductV2(ctx context.Context) ProductAPIProductUpdateProductV2Request
-
-	// ProductUpdateProductV2Execute executes the request
-	//  @return map[string]interface{}
-	ProductUpdateProductV2Execute(r ProductAPIProductUpdateProductV2Request) (map[string]interface{}, *http.Response, error)
-
-	/*
-	RemoveMediaGalleryEntry Remove Media Gallery Entry
-
-	The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product's gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product's gallery. This operation is asynchronous and may complete after the response.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIRemoveMediaGalleryEntryRequest
-	*/
-	RemoveMediaGalleryEntry(ctx context.Context) ProductAPIRemoveMediaGalleryEntryRequest
-
-	// RemoveMediaGalleryEntryExecute executes the request
-	//  @return map[string]interface{}
-	RemoveMediaGalleryEntryExecute(r ProductAPIRemoveMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error)
-
-	/*
-	UpdateAttributeOptions Update Attribute Options
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIUpdateAttributeOptionsRequest
-	*/
-	UpdateAttributeOptions(ctx context.Context) ProductAPIUpdateAttributeOptionsRequest
-
-	// UpdateAttributeOptionsExecute executes the request
-	//  @return EntitymanagerUpdateAttributeOptionsResponse
-	UpdateAttributeOptionsExecute(r ProductAPIUpdateAttributeOptionsRequest) (*EntitymanagerUpdateAttributeOptionsResponse, *http.Response, error)
-
-	/*
-	UpdateDataToBeReviewed Get Enhance Product Data With AI Status
-
-	The GetEnhanceProductDataWithAIStatus endpoint allows users to retrieve the status of a product data enhancement process using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can check the progress and completion status of the AI-driven product data enhancement operation. This functionality provides visibility and transparency into the AI processing of product data, enabling users to monitor and track the status of the enhancement process.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIUpdateDataToBeReviewedRequest
-	*/
-	UpdateDataToBeReviewed(ctx context.Context) ProductAPIUpdateDataToBeReviewedRequest
-
-	// UpdateDataToBeReviewedExecute executes the request
-	//  @return ProductGetEnhanceProductDataWithAIStatusResponse
-	UpdateDataToBeReviewedExecute(r ProductAPIUpdateDataToBeReviewedRequest) (*ProductGetEnhanceProductDataWithAIStatusResponse, *http.Response, error)
-
-	/*
-	UpdateDataToBeReviewed_0 Update Data To Be Reviewed
-
-	The UpdateDataToBeReviewed endpoint allows users to update product data that is pending review. By sending a request to this endpoint and providing the necessary input data, users can modify and enhance the product information that is currently under review. This functionality enables users to make changes to product data submissions and ensure that the information is accurate and up-to-date before final approval.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIUpdateDataToBeReviewed_0Request
-	*/
-	UpdateDataToBeReviewed_1(ctx context.Context) ProductAPIUpdateDataToBeReviewed_0Request
-
-	// UpdateDataToBeReviewed_1Execute executes the request
-	//  @return map[string]interface{}
-	UpdateDataToBeReviewed_1Execute(r ProductAPIUpdateDataToBeReviewed_0Request) (map[string]interface{}, *http.Response, error)
-
-	/*
-	UpdateMediaGalleryEntry Update Media Gallery Entry
-
-	The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product's gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry. This operation is asynchronous and may complete after the response.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIUpdateMediaGalleryEntryRequest
-	*/
-	UpdateMediaGalleryEntry(ctx context.Context) ProductAPIUpdateMediaGalleryEntryRequest
-
-	// UpdateMediaGalleryEntryExecute executes the request
-	//  @return map[string]interface{}
-	UpdateMediaGalleryEntryExecute(r ProductAPIUpdateMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error)
-
-	/*
-	UpdateOptionsList Update Options List
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIUpdateOptionsListRequest
-	*/
-	UpdateOptionsList(ctx context.Context) ProductAPIUpdateOptionsListRequest
-
-	// UpdateOptionsListExecute executes the request
-	//  @return EntitymanagerUpdateOptionsListResponse
-	UpdateOptionsListExecute(r ProductAPIUpdateOptionsListRequest) (*EntitymanagerUpdateOptionsListResponse, *http.Response, error)
-
-	/*
-	UpdateProductWithAI Update Product With AI
-
-	The UpdateProductWithAI endpoint allows users to update an existing product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product update process.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ProductAPIUpdateProductWithAIRequest
-	*/
-	UpdateProductWithAI(ctx context.Context) ProductAPIUpdateProductWithAIRequest
-
-	// UpdateProductWithAIExecute executes the request
-	//  @return ProductUpdateProductWithAIResponse
-	UpdateProductWithAIExecute(r ProductAPIUpdateProductWithAIRequest) (*ProductUpdateProductWithAIResponse, *http.Response, error)
-}
-
 // ProductAPIService ProductAPI service
 type ProductAPIService service
 
-type ProductAPIAddMediaGalleryEntryRequest struct {
+type ApiAddMediaGalleryEntryRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductAddMediaGalleryEntryRequest
 }
 
-func (r ProductAPIAddMediaGalleryEntryRequest) Body(body ProductAddMediaGalleryEntryRequest) ProductAPIAddMediaGalleryEntryRequest {
+func (r ApiAddMediaGalleryEntryRequest) Body(body ProductAddMediaGalleryEntryRequest) ApiAddMediaGalleryEntryRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIAddMediaGalleryEntryRequest) Execute() (*ProductAddMediaGalleryEntryResponse, *http.Response, error) {
+func (r ApiAddMediaGalleryEntryRequest) Execute() (*ProductAddMediaGalleryEntryResponse, *http.Response, error) {
 	return r.ApiService.AddMediaGalleryEntryExecute(r)
 }
 
@@ -681,10 +44,10 @@ AddMediaGalleryEntry Add Media Gallery Entry
 The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry. This operation is asynchronous and may complete after the response.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIAddMediaGalleryEntryRequest
+ @return ApiAddMediaGalleryEntryRequest
 */
-func (a *ProductAPIService) AddMediaGalleryEntry(ctx context.Context) ProductAPIAddMediaGalleryEntryRequest {
-	return ProductAPIAddMediaGalleryEntryRequest{
+func (a *ProductAPIService) AddMediaGalleryEntry(ctx context.Context) ApiAddMediaGalleryEntryRequest {
+	return ApiAddMediaGalleryEntryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -692,7 +55,7 @@ func (a *ProductAPIService) AddMediaGalleryEntry(ctx context.Context) ProductAPI
 
 // Execute executes the request
 //  @return ProductAddMediaGalleryEntryResponse
-func (a *ProductAPIService) AddMediaGalleryEntryExecute(r ProductAPIAddMediaGalleryEntryRequest) (*ProductAddMediaGalleryEntryResponse, *http.Response, error) {
+func (a *ProductAPIService) AddMediaGalleryEntryExecute(r ApiAddMediaGalleryEntryRequest) (*ProductAddMediaGalleryEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -814,18 +177,18 @@ func (a *ProductAPIService) AddMediaGalleryEntryExecute(r ProductAPIAddMediaGall
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIBulkAddAssetsEntriesRequest struct {
+type ApiBulkAddAssetsEntriesRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductBulkAddAssetsEntriesRequest
 }
 
-func (r ProductAPIBulkAddAssetsEntriesRequest) Body(body ProductBulkAddAssetsEntriesRequest) ProductAPIBulkAddAssetsEntriesRequest {
+func (r ApiBulkAddAssetsEntriesRequest) Body(body ProductBulkAddAssetsEntriesRequest) ApiBulkAddAssetsEntriesRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIBulkAddAssetsEntriesRequest) Execute() (*ProductBulkAddAssetsEntriesResponse, *http.Response, error) {
+func (r ApiBulkAddAssetsEntriesRequest) Execute() (*ProductBulkAddAssetsEntriesResponse, *http.Response, error) {
 	return r.ApiService.BulkAddAssetsEntriesExecute(r)
 }
 
@@ -835,10 +198,10 @@ BulkAddAssetsEntries Bulk Add Assets Entries
 The BulkAddAssetsEntries endpoint allows users to add assets. This operation is asynchronous and may complete after the response.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIBulkAddAssetsEntriesRequest
+ @return ApiBulkAddAssetsEntriesRequest
 */
-func (a *ProductAPIService) BulkAddAssetsEntries(ctx context.Context) ProductAPIBulkAddAssetsEntriesRequest {
-	return ProductAPIBulkAddAssetsEntriesRequest{
+func (a *ProductAPIService) BulkAddAssetsEntries(ctx context.Context) ApiBulkAddAssetsEntriesRequest {
+	return ApiBulkAddAssetsEntriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -846,7 +209,7 @@ func (a *ProductAPIService) BulkAddAssetsEntries(ctx context.Context) ProductAPI
 
 // Execute executes the request
 //  @return ProductBulkAddAssetsEntriesResponse
-func (a *ProductAPIService) BulkAddAssetsEntriesExecute(r ProductAPIBulkAddAssetsEntriesRequest) (*ProductBulkAddAssetsEntriesResponse, *http.Response, error) {
+func (a *ProductAPIService) BulkAddAssetsEntriesExecute(r ApiBulkAddAssetsEntriesRequest) (*ProductBulkAddAssetsEntriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -968,18 +331,18 @@ func (a *ProductAPIService) BulkAddAssetsEntriesExecute(r ProductAPIBulkAddAsset
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIBulkDeleteProductsRequest struct {
+type ApiBulkDeleteProductsRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductBulkDeleteProductsRequest
 }
 
-func (r ProductAPIBulkDeleteProductsRequest) Body(body ProductBulkDeleteProductsRequest) ProductAPIBulkDeleteProductsRequest {
+func (r ApiBulkDeleteProductsRequest) Body(body ProductBulkDeleteProductsRequest) ApiBulkDeleteProductsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIBulkDeleteProductsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiBulkDeleteProductsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.BulkDeleteProductsExecute(r)
 }
 
@@ -989,10 +352,10 @@ BulkDeleteProducts Bulk Delete Products
 This operation is asynchronous and may complete after the response.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIBulkDeleteProductsRequest
+ @return ApiBulkDeleteProductsRequest
 */
-func (a *ProductAPIService) BulkDeleteProducts(ctx context.Context) ProductAPIBulkDeleteProductsRequest {
-	return ProductAPIBulkDeleteProductsRequest{
+func (a *ProductAPIService) BulkDeleteProducts(ctx context.Context) ApiBulkDeleteProductsRequest {
+	return ApiBulkDeleteProductsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1000,7 +363,7 @@ func (a *ProductAPIService) BulkDeleteProducts(ctx context.Context) ProductAPIBu
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) BulkDeleteProductsExecute(r ProductAPIBulkDeleteProductsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) BulkDeleteProductsExecute(r ApiBulkDeleteProductsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1122,18 +485,18 @@ func (a *ProductAPIService) BulkDeleteProductsExecute(r ProductAPIBulkDeleteProd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIBulkEnhanceProductDataWithAIRequest struct {
+type ApiBulkEnhanceProductDataWithAIRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductBulkEnhanceProductDataWithAIRequest
 }
 
-func (r ProductAPIBulkEnhanceProductDataWithAIRequest) Body(body ProductBulkEnhanceProductDataWithAIRequest) ProductAPIBulkEnhanceProductDataWithAIRequest {
+func (r ApiBulkEnhanceProductDataWithAIRequest) Body(body ProductBulkEnhanceProductDataWithAIRequest) ApiBulkEnhanceProductDataWithAIRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIBulkEnhanceProductDataWithAIRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiBulkEnhanceProductDataWithAIRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.BulkEnhanceProductDataWithAIExecute(r)
 }
 
@@ -1143,10 +506,10 @@ BulkEnhanceProductDataWithAI Bulk Enhance Product Data With AI
 The BulkEnhanceProductDataWithAI endpoint allows users to enhance product data using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enrich and optimize product information. This operation is asynchronous and may complete after the response.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIBulkEnhanceProductDataWithAIRequest
+ @return ApiBulkEnhanceProductDataWithAIRequest
 */
-func (a *ProductAPIService) BulkEnhanceProductDataWithAI(ctx context.Context) ProductAPIBulkEnhanceProductDataWithAIRequest {
-	return ProductAPIBulkEnhanceProductDataWithAIRequest{
+func (a *ProductAPIService) BulkEnhanceProductDataWithAI(ctx context.Context) ApiBulkEnhanceProductDataWithAIRequest {
+	return ApiBulkEnhanceProductDataWithAIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1154,7 +517,7 @@ func (a *ProductAPIService) BulkEnhanceProductDataWithAI(ctx context.Context) Pr
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) BulkEnhanceProductDataWithAIExecute(r ProductAPIBulkEnhanceProductDataWithAIRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) BulkEnhanceProductDataWithAIExecute(r ApiBulkEnhanceProductDataWithAIRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1276,18 +639,18 @@ func (a *ProductAPIService) BulkEnhanceProductDataWithAIExecute(r ProductAPIBulk
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIBulkRemoveAssetsEntriesRequest struct {
+type ApiBulkRemoveAssetsEntriesRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductBulkRemoveAssetsEntriesRequest
 }
 
-func (r ProductAPIBulkRemoveAssetsEntriesRequest) Body(body ProductBulkRemoveAssetsEntriesRequest) ProductAPIBulkRemoveAssetsEntriesRequest {
+func (r ApiBulkRemoveAssetsEntriesRequest) Body(body ProductBulkRemoveAssetsEntriesRequest) ApiBulkRemoveAssetsEntriesRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIBulkRemoveAssetsEntriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiBulkRemoveAssetsEntriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.BulkRemoveAssetsEntriesExecute(r)
 }
 
@@ -1297,10 +660,10 @@ BulkRemoveAssetsEntries Bulk Remove Assets Entries
 The BulkRemoveAssetsEntries endpoint allows users to remove assets. This operation is asynchronous and may complete after the response.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIBulkRemoveAssetsEntriesRequest
+ @return ApiBulkRemoveAssetsEntriesRequest
 */
-func (a *ProductAPIService) BulkRemoveAssetsEntries(ctx context.Context) ProductAPIBulkRemoveAssetsEntriesRequest {
-	return ProductAPIBulkRemoveAssetsEntriesRequest{
+func (a *ProductAPIService) BulkRemoveAssetsEntries(ctx context.Context) ApiBulkRemoveAssetsEntriesRequest {
+	return ApiBulkRemoveAssetsEntriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1308,7 +671,7 @@ func (a *ProductAPIService) BulkRemoveAssetsEntries(ctx context.Context) Product
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) BulkRemoveAssetsEntriesExecute(r ProductAPIBulkRemoveAssetsEntriesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) BulkRemoveAssetsEntriesExecute(r ApiBulkRemoveAssetsEntriesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1430,18 +793,18 @@ func (a *ProductAPIService) BulkRemoveAssetsEntriesExecute(r ProductAPIBulkRemov
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIBulkUpdateAssetsEntriesRequest struct {
+type ApiBulkUpdateAssetsEntriesRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductBulkUpdateAssetsEntriesRequest
 }
 
-func (r ProductAPIBulkUpdateAssetsEntriesRequest) Body(body ProductBulkUpdateAssetsEntriesRequest) ProductAPIBulkUpdateAssetsEntriesRequest {
+func (r ApiBulkUpdateAssetsEntriesRequest) Body(body ProductBulkUpdateAssetsEntriesRequest) ApiBulkUpdateAssetsEntriesRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIBulkUpdateAssetsEntriesRequest) Execute() (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error) {
+func (r ApiBulkUpdateAssetsEntriesRequest) Execute() (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error) {
 	return r.ApiService.BulkUpdateAssetsEntriesExecute(r)
 }
 
@@ -1451,10 +814,10 @@ BulkUpdateAssetsEntries Bulk Update Assets Entries
 The BulkUpdateAssetsEntries endpoint allows users to update assets. This operation is asynchronous and may complete after the response.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIBulkUpdateAssetsEntriesRequest
+ @return ApiBulkUpdateAssetsEntriesRequest
 */
-func (a *ProductAPIService) BulkUpdateAssetsEntries(ctx context.Context) ProductAPIBulkUpdateAssetsEntriesRequest {
-	return ProductAPIBulkUpdateAssetsEntriesRequest{
+func (a *ProductAPIService) BulkUpdateAssetsEntries(ctx context.Context) ApiBulkUpdateAssetsEntriesRequest {
+	return ApiBulkUpdateAssetsEntriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1462,7 +825,7 @@ func (a *ProductAPIService) BulkUpdateAssetsEntries(ctx context.Context) Product
 
 // Execute executes the request
 //  @return ProductBulkUpdateAssetsEntriesResponse
-func (a *ProductAPIService) BulkUpdateAssetsEntriesExecute(r ProductAPIBulkUpdateAssetsEntriesRequest) (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error) {
+func (a *ProductAPIService) BulkUpdateAssetsEntriesExecute(r ApiBulkUpdateAssetsEntriesRequest) (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1584,18 +947,18 @@ func (a *ProductAPIService) BulkUpdateAssetsEntriesExecute(r ProductAPIBulkUpdat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIBulkUpdateV2Request struct {
+type ApiBulkUpdateV2Request struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductBulkUpdateRequestV2
 }
 
-func (r ProductAPIBulkUpdateV2Request) Body(body ProductBulkUpdateRequestV2) ProductAPIBulkUpdateV2Request {
+func (r ApiBulkUpdateV2Request) Body(body ProductBulkUpdateRequestV2) ApiBulkUpdateV2Request {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIBulkUpdateV2Request) Execute() (*ProductBulkUpdateResponse, *http.Response, error) {
+func (r ApiBulkUpdateV2Request) Execute() (*ProductBulkUpdateResponse, *http.Response, error) {
 	return r.ApiService.BulkUpdateV2Execute(r)
 }
 
@@ -1605,10 +968,10 @@ BulkUpdateV2 Bulk Update Products
 Version 2 of bulk updates for product attributes with enhanced payload structure and response format. This operation is asynchronous and may complete after the response.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIBulkUpdateV2Request
+ @return ApiBulkUpdateV2Request
 */
-func (a *ProductAPIService) BulkUpdateV2(ctx context.Context) ProductAPIBulkUpdateV2Request {
-	return ProductAPIBulkUpdateV2Request{
+func (a *ProductAPIService) BulkUpdateV2(ctx context.Context) ApiBulkUpdateV2Request {
+	return ApiBulkUpdateV2Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1616,7 +979,7 @@ func (a *ProductAPIService) BulkUpdateV2(ctx context.Context) ProductAPIBulkUpda
 
 // Execute executes the request
 //  @return ProductBulkUpdateResponse
-func (a *ProductAPIService) BulkUpdateV2Execute(r ProductAPIBulkUpdateV2Request) (*ProductBulkUpdateResponse, *http.Response, error) {
+func (a *ProductAPIService) BulkUpdateV2Execute(r ApiBulkUpdateV2Request) (*ProductBulkUpdateResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1738,18 +1101,18 @@ func (a *ProductAPIService) BulkUpdateV2Execute(r ProductAPIBulkUpdateV2Request)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPICreateAttributeOptionsRequest struct {
+type ApiCreateAttributeOptionsRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerCreateAttributeOptionsRequest
 }
 
-func (r ProductAPICreateAttributeOptionsRequest) Body(body EntitymanagerCreateAttributeOptionsRequest) ProductAPICreateAttributeOptionsRequest {
+func (r ApiCreateAttributeOptionsRequest) Body(body EntitymanagerCreateAttributeOptionsRequest) ApiCreateAttributeOptionsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPICreateAttributeOptionsRequest) Execute() (*EntitymanagerCreateAttributeOptionsResponse, *http.Response, error) {
+func (r ApiCreateAttributeOptionsRequest) Execute() (*EntitymanagerCreateAttributeOptionsResponse, *http.Response, error) {
 	return r.ApiService.CreateAttributeOptionsExecute(r)
 }
 
@@ -1759,10 +1122,10 @@ CreateAttributeOptions Create Attribute Options
 Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPICreateAttributeOptionsRequest
+ @return ApiCreateAttributeOptionsRequest
 */
-func (a *ProductAPIService) CreateAttributeOptions(ctx context.Context) ProductAPICreateAttributeOptionsRequest {
-	return ProductAPICreateAttributeOptionsRequest{
+func (a *ProductAPIService) CreateAttributeOptions(ctx context.Context) ApiCreateAttributeOptionsRequest {
+	return ApiCreateAttributeOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1770,7 +1133,7 @@ func (a *ProductAPIService) CreateAttributeOptions(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return EntitymanagerCreateAttributeOptionsResponse
-func (a *ProductAPIService) CreateAttributeOptionsExecute(r ProductAPICreateAttributeOptionsRequest) (*EntitymanagerCreateAttributeOptionsResponse, *http.Response, error) {
+func (a *ProductAPIService) CreateAttributeOptionsExecute(r ApiCreateAttributeOptionsRequest) (*EntitymanagerCreateAttributeOptionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1892,18 +1255,18 @@ func (a *ProductAPIService) CreateAttributeOptionsExecute(r ProductAPICreateAttr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPICreateEntityRequest struct {
+type ApiCreateEntityRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerEntity
 }
 
-func (r ProductAPICreateEntityRequest) Body(body EntitymanagerEntity) ProductAPICreateEntityRequest {
+func (r ApiCreateEntityRequest) Body(body EntitymanagerEntity) ApiCreateEntityRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPICreateEntityRequest) Execute() (*EntitymanagerCreateEntityResponse, *http.Response, error) {
+func (r ApiCreateEntityRequest) Execute() (*EntitymanagerCreateEntityResponse, *http.Response, error) {
 	return r.ApiService.CreateEntityExecute(r)
 }
 
@@ -1913,10 +1276,10 @@ CreateEntity Create Entity
 The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system's data model to accommodate diverse business requirements and efficiently manage various types of entities.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPICreateEntityRequest
+ @return ApiCreateEntityRequest
 */
-func (a *ProductAPIService) CreateEntity(ctx context.Context) ProductAPICreateEntityRequest {
-	return ProductAPICreateEntityRequest{
+func (a *ProductAPIService) CreateEntity(ctx context.Context) ApiCreateEntityRequest {
+	return ApiCreateEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1924,7 +1287,7 @@ func (a *ProductAPIService) CreateEntity(ctx context.Context) ProductAPICreateEn
 
 // Execute executes the request
 //  @return EntitymanagerCreateEntityResponse
-func (a *ProductAPIService) CreateEntityExecute(r ProductAPICreateEntityRequest) (*EntitymanagerCreateEntityResponse, *http.Response, error) {
+func (a *ProductAPIService) CreateEntityExecute(r ApiCreateEntityRequest) (*EntitymanagerCreateEntityResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2035,18 +1398,18 @@ func (a *ProductAPIService) CreateEntityExecute(r ProductAPICreateEntityRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPICreateOptionsListRequest struct {
+type ApiCreateOptionsListRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerCreateOptionsListRequest
 }
 
-func (r ProductAPICreateOptionsListRequest) Body(body EntitymanagerCreateOptionsListRequest) ProductAPICreateOptionsListRequest {
+func (r ApiCreateOptionsListRequest) Body(body EntitymanagerCreateOptionsListRequest) ApiCreateOptionsListRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPICreateOptionsListRequest) Execute() (*EntitymanagerCreateOptionsListResponse, *http.Response, error) {
+func (r ApiCreateOptionsListRequest) Execute() (*EntitymanagerCreateOptionsListResponse, *http.Response, error) {
 	return r.ApiService.CreateOptionsListExecute(r)
 }
 
@@ -2056,10 +1419,10 @@ CreateOptionsList Create Options List
 The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPICreateOptionsListRequest
+ @return ApiCreateOptionsListRequest
 */
-func (a *ProductAPIService) CreateOptionsList(ctx context.Context) ProductAPICreateOptionsListRequest {
-	return ProductAPICreateOptionsListRequest{
+func (a *ProductAPIService) CreateOptionsList(ctx context.Context) ApiCreateOptionsListRequest {
+	return ApiCreateOptionsListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2067,7 +1430,7 @@ func (a *ProductAPIService) CreateOptionsList(ctx context.Context) ProductAPICre
 
 // Execute executes the request
 //  @return EntitymanagerCreateOptionsListResponse
-func (a *ProductAPIService) CreateOptionsListExecute(r ProductAPICreateOptionsListRequest) (*EntitymanagerCreateOptionsListResponse, *http.Response, error) {
+func (a *ProductAPIService) CreateOptionsListExecute(r ApiCreateOptionsListRequest) (*EntitymanagerCreateOptionsListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2189,18 +1552,18 @@ func (a *ProductAPIService) CreateOptionsListExecute(r ProductAPICreateOptionsLi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPICreateProductWithAIRequest struct {
+type ApiCreateProductWithAIRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductCreateProductWithAIRequest
 }
 
-func (r ProductAPICreateProductWithAIRequest) Body(body ProductCreateProductWithAIRequest) ProductAPICreateProductWithAIRequest {
+func (r ApiCreateProductWithAIRequest) Body(body ProductCreateProductWithAIRequest) ApiCreateProductWithAIRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPICreateProductWithAIRequest) Execute() (*ProductCreateProductWithAIResponse, *http.Response, error) {
+func (r ApiCreateProductWithAIRequest) Execute() (*ProductCreateProductWithAIResponse, *http.Response, error) {
 	return r.ApiService.CreateProductWithAIExecute(r)
 }
 
@@ -2210,10 +1573,10 @@ CreateProductWithAI Create Product With AI
 The CreateProductWithAI endpoint allows users to create a new product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product creation process.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPICreateProductWithAIRequest
+ @return ApiCreateProductWithAIRequest
 */
-func (a *ProductAPIService) CreateProductWithAI(ctx context.Context) ProductAPICreateProductWithAIRequest {
-	return ProductAPICreateProductWithAIRequest{
+func (a *ProductAPIService) CreateProductWithAI(ctx context.Context) ApiCreateProductWithAIRequest {
+	return ApiCreateProductWithAIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2221,7 +1584,7 @@ func (a *ProductAPIService) CreateProductWithAI(ctx context.Context) ProductAPIC
 
 // Execute executes the request
 //  @return ProductCreateProductWithAIResponse
-func (a *ProductAPIService) CreateProductWithAIExecute(r ProductAPICreateProductWithAIRequest) (*ProductCreateProductWithAIResponse, *http.Response, error) {
+func (a *ProductAPIService) CreateProductWithAIExecute(r ApiCreateProductWithAIRequest) (*ProductCreateProductWithAIResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2343,18 +1706,18 @@ func (a *ProductAPIService) CreateProductWithAIExecute(r ProductAPICreateProduct
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIGetAttributeOptionRequest struct {
+type ApiGetAttributeOptionRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerGetAttributeOptionRequest
 }
 
-func (r ProductAPIGetAttributeOptionRequest) Body(body EntitymanagerGetAttributeOptionRequest) ProductAPIGetAttributeOptionRequest {
+func (r ApiGetAttributeOptionRequest) Body(body EntitymanagerGetAttributeOptionRequest) ApiGetAttributeOptionRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIGetAttributeOptionRequest) Execute() (*EntitymanagerGetAttributeOptionResponse, *http.Response, error) {
+func (r ApiGetAttributeOptionRequest) Execute() (*EntitymanagerGetAttributeOptionResponse, *http.Response, error) {
 	return r.ApiService.GetAttributeOptionExecute(r)
 }
 
@@ -2364,10 +1727,10 @@ GetAttributeOption Get Attribute Option
 Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIGetAttributeOptionRequest
+ @return ApiGetAttributeOptionRequest
 */
-func (a *ProductAPIService) GetAttributeOption(ctx context.Context) ProductAPIGetAttributeOptionRequest {
-	return ProductAPIGetAttributeOptionRequest{
+func (a *ProductAPIService) GetAttributeOption(ctx context.Context) ApiGetAttributeOptionRequest {
+	return ApiGetAttributeOptionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2375,7 +1738,7 @@ func (a *ProductAPIService) GetAttributeOption(ctx context.Context) ProductAPIGe
 
 // Execute executes the request
 //  @return EntitymanagerGetAttributeOptionResponse
-func (a *ProductAPIService) GetAttributeOptionExecute(r ProductAPIGetAttributeOptionRequest) (*EntitymanagerGetAttributeOptionResponse, *http.Response, error) {
+func (a *ProductAPIService) GetAttributeOptionExecute(r ApiGetAttributeOptionRequest) (*EntitymanagerGetAttributeOptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2497,18 +1860,18 @@ func (a *ProductAPIService) GetAttributeOptionExecute(r ProductAPIGetAttributeOp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIGetAttributeOptionsRequest struct {
+type ApiGetAttributeOptionsRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerGetAttributeOptionsRequest
 }
 
-func (r ProductAPIGetAttributeOptionsRequest) Body(body EntitymanagerGetAttributeOptionsRequest) ProductAPIGetAttributeOptionsRequest {
+func (r ApiGetAttributeOptionsRequest) Body(body EntitymanagerGetAttributeOptionsRequest) ApiGetAttributeOptionsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIGetAttributeOptionsRequest) Execute() (*EntitymanagerGetAttributeOptionsResponse, *http.Response, error) {
+func (r ApiGetAttributeOptionsRequest) Execute() (*EntitymanagerGetAttributeOptionsResponse, *http.Response, error) {
 	return r.ApiService.GetAttributeOptionsExecute(r)
 }
 
@@ -2518,10 +1881,10 @@ GetAttributeOptions Get Attribute Options
 Retrieve a list of attribute options based on the provided tenant ID and list code.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIGetAttributeOptionsRequest
+ @return ApiGetAttributeOptionsRequest
 */
-func (a *ProductAPIService) GetAttributeOptions(ctx context.Context) ProductAPIGetAttributeOptionsRequest {
-	return ProductAPIGetAttributeOptionsRequest{
+func (a *ProductAPIService) GetAttributeOptions(ctx context.Context) ApiGetAttributeOptionsRequest {
+	return ApiGetAttributeOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2529,7 +1892,7 @@ func (a *ProductAPIService) GetAttributeOptions(ctx context.Context) ProductAPIG
 
 // Execute executes the request
 //  @return EntitymanagerGetAttributeOptionsResponse
-func (a *ProductAPIService) GetAttributeOptionsExecute(r ProductAPIGetAttributeOptionsRequest) (*EntitymanagerGetAttributeOptionsResponse, *http.Response, error) {
+func (a *ProductAPIService) GetAttributeOptionsExecute(r ApiGetAttributeOptionsRequest) (*EntitymanagerGetAttributeOptionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2651,18 +2014,18 @@ func (a *ProductAPIService) GetAttributeOptionsExecute(r ProductAPIGetAttributeO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIGetEntityRequest struct {
+type ApiGetEntityRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerEntityRequest
 }
 
-func (r ProductAPIGetEntityRequest) Body(body EntitymanagerEntityRequest) ProductAPIGetEntityRequest {
+func (r ApiGetEntityRequest) Body(body EntitymanagerEntityRequest) ApiGetEntityRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIGetEntityRequest) Execute() (*EntitymanagerEntity, *http.Response, error) {
+func (r ApiGetEntityRequest) Execute() (*EntitymanagerEntity, *http.Response, error) {
 	return r.ApiService.GetEntityExecute(r)
 }
 
@@ -2672,10 +2035,10 @@ GetEntity Get Entity Details
 Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIGetEntityRequest
+ @return ApiGetEntityRequest
 */
-func (a *ProductAPIService) GetEntity(ctx context.Context) ProductAPIGetEntityRequest {
-	return ProductAPIGetEntityRequest{
+func (a *ProductAPIService) GetEntity(ctx context.Context) ApiGetEntityRequest {
+	return ApiGetEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2683,7 +2046,7 @@ func (a *ProductAPIService) GetEntity(ctx context.Context) ProductAPIGetEntityRe
 
 // Execute executes the request
 //  @return EntitymanagerEntity
-func (a *ProductAPIService) GetEntityExecute(r ProductAPIGetEntityRequest) (*EntitymanagerEntity, *http.Response, error) {
+func (a *ProductAPIService) GetEntityExecute(r ApiGetEntityRequest) (*EntitymanagerEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2805,18 +2168,18 @@ func (a *ProductAPIService) GetEntityExecute(r ProductAPIGetEntityRequest) (*Ent
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIGetOptionsListRequest struct {
+type ApiGetOptionsListRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerGetOptionsListRequest
 }
 
-func (r ProductAPIGetOptionsListRequest) Body(body EntitymanagerGetOptionsListRequest) ProductAPIGetOptionsListRequest {
+func (r ApiGetOptionsListRequest) Body(body EntitymanagerGetOptionsListRequest) ApiGetOptionsListRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIGetOptionsListRequest) Execute() (*EntitymanagerGetOptionsListResponse, *http.Response, error) {
+func (r ApiGetOptionsListRequest) Execute() (*EntitymanagerGetOptionsListResponse, *http.Response, error) {
 	return r.ApiService.GetOptionsListExecute(r)
 }
 
@@ -2826,10 +2189,10 @@ GetOptionsList Get Options List
 Retrieve option lists.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIGetOptionsListRequest
+ @return ApiGetOptionsListRequest
 */
-func (a *ProductAPIService) GetOptionsList(ctx context.Context) ProductAPIGetOptionsListRequest {
-	return ProductAPIGetOptionsListRequest{
+func (a *ProductAPIService) GetOptionsList(ctx context.Context) ApiGetOptionsListRequest {
+	return ApiGetOptionsListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2837,7 +2200,7 @@ func (a *ProductAPIService) GetOptionsList(ctx context.Context) ProductAPIGetOpt
 
 // Execute executes the request
 //  @return EntitymanagerGetOptionsListResponse
-func (a *ProductAPIService) GetOptionsListExecute(r ProductAPIGetOptionsListRequest) (*EntitymanagerGetOptionsListResponse, *http.Response, error) {
+func (a *ProductAPIService) GetOptionsListExecute(r ApiGetOptionsListRequest) (*EntitymanagerGetOptionsListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2959,18 +2322,18 @@ func (a *ProductAPIService) GetOptionsListExecute(r ProductAPIGetOptionsListRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIGetProductRequest struct {
+type ApiGetProductRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductGetProductRequest
 }
 
-func (r ProductAPIGetProductRequest) Body(body ProductGetProductRequest) ProductAPIGetProductRequest {
+func (r ApiGetProductRequest) Body(body ProductGetProductRequest) ApiGetProductRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIGetProductRequest) Execute() (*ProductGetProductResponse, *http.Response, error) {
+func (r ApiGetProductRequest) Execute() (*ProductGetProductResponse, *http.Response, error) {
 	return r.ApiService.GetProductExecute(r)
 }
 
@@ -2980,10 +2343,10 @@ GetProduct Get Product
 The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIGetProductRequest
+ @return ApiGetProductRequest
 */
-func (a *ProductAPIService) GetProduct(ctx context.Context) ProductAPIGetProductRequest {
-	return ProductAPIGetProductRequest{
+func (a *ProductAPIService) GetProduct(ctx context.Context) ApiGetProductRequest {
+	return ApiGetProductRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2991,7 +2354,7 @@ func (a *ProductAPIService) GetProduct(ctx context.Context) ProductAPIGetProduct
 
 // Execute executes the request
 //  @return ProductGetProductResponse
-func (a *ProductAPIService) GetProductExecute(r ProductAPIGetProductRequest) (*ProductGetProductResponse, *http.Response, error) {
+func (a *ProductAPIService) GetProductExecute(r ApiGetProductRequest) (*ProductGetProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3113,18 +2476,18 @@ func (a *ProductAPIService) GetProductExecute(r ProductAPIGetProductRequest) (*P
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIGetProductByCodeRequest struct {
+type ApiGetProductByCodeRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductGetProductByCodeRequest
 }
 
-func (r ProductAPIGetProductByCodeRequest) Body(body ProductGetProductByCodeRequest) ProductAPIGetProductByCodeRequest {
+func (r ApiGetProductByCodeRequest) Body(body ProductGetProductByCodeRequest) ApiGetProductByCodeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIGetProductByCodeRequest) Execute() (*ProductGetProductByCodeResponse, *http.Response, error) {
+func (r ApiGetProductByCodeRequest) Execute() (*ProductGetProductByCodeResponse, *http.Response, error) {
 	return r.ApiService.GetProductByCodeExecute(r)
 }
 
@@ -3134,10 +2497,10 @@ GetProductByCode Get Product By Code
 The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIGetProductByCodeRequest
+ @return ApiGetProductByCodeRequest
 */
-func (a *ProductAPIService) GetProductByCode(ctx context.Context) ProductAPIGetProductByCodeRequest {
-	return ProductAPIGetProductByCodeRequest{
+func (a *ProductAPIService) GetProductByCode(ctx context.Context) ApiGetProductByCodeRequest {
+	return ApiGetProductByCodeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3145,7 +2508,7 @@ func (a *ProductAPIService) GetProductByCode(ctx context.Context) ProductAPIGetP
 
 // Execute executes the request
 //  @return ProductGetProductByCodeResponse
-func (a *ProductAPIService) GetProductByCodeExecute(r ProductAPIGetProductByCodeRequest) (*ProductGetProductByCodeResponse, *http.Response, error) {
+func (a *ProductAPIService) GetProductByCodeExecute(r ApiGetProductByCodeRequest) (*ProductGetProductByCodeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3267,18 +2630,18 @@ func (a *ProductAPIService) GetProductByCodeExecute(r ProductAPIGetProductByCode
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIGetProductByUrlKeyRequest struct {
+type ApiGetProductByUrlKeyRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductGetProductByUrlKeyRequest
 }
 
-func (r ProductAPIGetProductByUrlKeyRequest) Body(body ProductGetProductByUrlKeyRequest) ProductAPIGetProductByUrlKeyRequest {
+func (r ApiGetProductByUrlKeyRequest) Body(body ProductGetProductByUrlKeyRequest) ApiGetProductByUrlKeyRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIGetProductByUrlKeyRequest) Execute() (*ProductGetProductByUrlKeyResponse, *http.Response, error) {
+func (r ApiGetProductByUrlKeyRequest) Execute() (*ProductGetProductByUrlKeyResponse, *http.Response, error) {
 	return r.ApiService.GetProductByUrlKeyExecute(r)
 }
 
@@ -3288,10 +2651,10 @@ GetProductByUrlKey Get Product By Url Key
 The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIGetProductByUrlKeyRequest
+ @return ApiGetProductByUrlKeyRequest
 */
-func (a *ProductAPIService) GetProductByUrlKey(ctx context.Context) ProductAPIGetProductByUrlKeyRequest {
-	return ProductAPIGetProductByUrlKeyRequest{
+func (a *ProductAPIService) GetProductByUrlKey(ctx context.Context) ApiGetProductByUrlKeyRequest {
+	return ApiGetProductByUrlKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3299,7 +2662,7 @@ func (a *ProductAPIService) GetProductByUrlKey(ctx context.Context) ProductAPIGe
 
 // Execute executes the request
 //  @return ProductGetProductByUrlKeyResponse
-func (a *ProductAPIService) GetProductByUrlKeyExecute(r ProductAPIGetProductByUrlKeyRequest) (*ProductGetProductByUrlKeyResponse, *http.Response, error) {
+func (a *ProductAPIService) GetProductByUrlKeyExecute(r ApiGetProductByUrlKeyRequest) (*ProductGetProductByUrlKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3421,18 +2784,18 @@ func (a *ProductAPIService) GetProductByUrlKeyExecute(r ProductAPIGetProductByUr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIGetProductDataInReviewRequest struct {
+type ApiGetProductDataInReviewRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductGetProductDataInReviewRequest
 }
 
-func (r ProductAPIGetProductDataInReviewRequest) Body(body ProductGetProductDataInReviewRequest) ProductAPIGetProductDataInReviewRequest {
+func (r ApiGetProductDataInReviewRequest) Body(body ProductGetProductDataInReviewRequest) ApiGetProductDataInReviewRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIGetProductDataInReviewRequest) Execute() (*ProductGetProductDataInReviewResponse, *http.Response, error) {
+func (r ApiGetProductDataInReviewRequest) Execute() (*ProductGetProductDataInReviewResponse, *http.Response, error) {
 	return r.ApiService.GetProductDataInReviewExecute(r)
 }
 
@@ -3442,10 +2805,10 @@ GetProductDataInReview Get Product Data In Review
 The GetProductDataInReview endpoint allows users to retrieve product data that is currently under review. By making a request to this endpoint, users can access detailed information about the product data that is pending approval or review by authorized personnel. This functionality provides transparency and visibility into the product data review process, enabling users to track the status and progress of product data submissions.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIGetProductDataInReviewRequest
+ @return ApiGetProductDataInReviewRequest
 */
-func (a *ProductAPIService) GetProductDataInReview(ctx context.Context) ProductAPIGetProductDataInReviewRequest {
-	return ProductAPIGetProductDataInReviewRequest{
+func (a *ProductAPIService) GetProductDataInReview(ctx context.Context) ApiGetProductDataInReviewRequest {
+	return ApiGetProductDataInReviewRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3453,7 +2816,7 @@ func (a *ProductAPIService) GetProductDataInReview(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return ProductGetProductDataInReviewResponse
-func (a *ProductAPIService) GetProductDataInReviewExecute(r ProductAPIGetProductDataInReviewRequest) (*ProductGetProductDataInReviewResponse, *http.Response, error) {
+func (a *ProductAPIService) GetProductDataInReviewExecute(r ApiGetProductDataInReviewRequest) (*ProductGetProductDataInReviewResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3575,18 +2938,18 @@ func (a *ProductAPIService) GetProductDataInReviewExecute(r ProductAPIGetProduct
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIListAttributeOptionsRequest struct {
+type ApiListAttributeOptionsRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerListAttributeOptionsRequest
 }
 
-func (r ProductAPIListAttributeOptionsRequest) Body(body EntitymanagerListAttributeOptionsRequest) ProductAPIListAttributeOptionsRequest {
+func (r ApiListAttributeOptionsRequest) Body(body EntitymanagerListAttributeOptionsRequest) ApiListAttributeOptionsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIListAttributeOptionsRequest) Execute() (*EntitymanagerListAttributeOptionsResponse, *http.Response, error) {
+func (r ApiListAttributeOptionsRequest) Execute() (*EntitymanagerListAttributeOptionsResponse, *http.Response, error) {
 	return r.ApiService.ListAttributeOptionsExecute(r)
 }
 
@@ -3594,10 +2957,10 @@ func (r ProductAPIListAttributeOptionsRequest) Execute() (*EntitymanagerListAttr
 ListAttributeOptions List Attribute Options
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIListAttributeOptionsRequest
+ @return ApiListAttributeOptionsRequest
 */
-func (a *ProductAPIService) ListAttributeOptions(ctx context.Context) ProductAPIListAttributeOptionsRequest {
-	return ProductAPIListAttributeOptionsRequest{
+func (a *ProductAPIService) ListAttributeOptions(ctx context.Context) ApiListAttributeOptionsRequest {
+	return ApiListAttributeOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3605,7 +2968,7 @@ func (a *ProductAPIService) ListAttributeOptions(ctx context.Context) ProductAPI
 
 // Execute executes the request
 //  @return EntitymanagerListAttributeOptionsResponse
-func (a *ProductAPIService) ListAttributeOptionsExecute(r ProductAPIListAttributeOptionsRequest) (*EntitymanagerListAttributeOptionsResponse, *http.Response, error) {
+func (a *ProductAPIService) ListAttributeOptionsExecute(r ApiListAttributeOptionsRequest) (*EntitymanagerListAttributeOptionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3727,18 +3090,18 @@ func (a *ProductAPIService) ListAttributeOptionsExecute(r ProductAPIListAttribut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIListEntitiesRequest struct {
+type ApiListEntitiesRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerListEntitiesRequest
 }
 
-func (r ProductAPIListEntitiesRequest) Body(body EntitymanagerListEntitiesRequest) ProductAPIListEntitiesRequest {
+func (r ApiListEntitiesRequest) Body(body EntitymanagerListEntitiesRequest) ApiListEntitiesRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIListEntitiesRequest) Execute() (*EntitymanagerListEntitiesResponse, *http.Response, error) {
+func (r ApiListEntitiesRequest) Execute() (*EntitymanagerListEntitiesResponse, *http.Response, error) {
 	return r.ApiService.ListEntitiesExecute(r)
 }
 
@@ -3746,10 +3109,10 @@ func (r ProductAPIListEntitiesRequest) Execute() (*EntitymanagerListEntitiesResp
 ListEntities List Entities
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIListEntitiesRequest
+ @return ApiListEntitiesRequest
 */
-func (a *ProductAPIService) ListEntities(ctx context.Context) ProductAPIListEntitiesRequest {
-	return ProductAPIListEntitiesRequest{
+func (a *ProductAPIService) ListEntities(ctx context.Context) ApiListEntitiesRequest {
+	return ApiListEntitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3757,7 +3120,7 @@ func (a *ProductAPIService) ListEntities(ctx context.Context) ProductAPIListEnti
 
 // Execute executes the request
 //  @return EntitymanagerListEntitiesResponse
-func (a *ProductAPIService) ListEntitiesExecute(r ProductAPIListEntitiesRequest) (*EntitymanagerListEntitiesResponse, *http.Response, error) {
+func (a *ProductAPIService) ListEntitiesExecute(r ApiListEntitiesRequest) (*EntitymanagerListEntitiesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3879,18 +3242,18 @@ func (a *ProductAPIService) ListEntitiesExecute(r ProductAPIListEntitiesRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIListOptionsListsRequest struct {
+type ApiListOptionsListsRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerListOptionsListsRequest
 }
 
-func (r ProductAPIListOptionsListsRequest) Body(body EntitymanagerListOptionsListsRequest) ProductAPIListOptionsListsRequest {
+func (r ApiListOptionsListsRequest) Body(body EntitymanagerListOptionsListsRequest) ApiListOptionsListsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIListOptionsListsRequest) Execute() (*EntitymanagerListOptionsListsResponse, *http.Response, error) {
+func (r ApiListOptionsListsRequest) Execute() (*EntitymanagerListOptionsListsResponse, *http.Response, error) {
 	return r.ApiService.ListOptionsListsExecute(r)
 }
 
@@ -3900,10 +3263,10 @@ ListOptionsLists List Options Lists
 The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIListOptionsListsRequest
+ @return ApiListOptionsListsRequest
 */
-func (a *ProductAPIService) ListOptionsLists(ctx context.Context) ProductAPIListOptionsListsRequest {
-	return ProductAPIListOptionsListsRequest{
+func (a *ProductAPIService) ListOptionsLists(ctx context.Context) ApiListOptionsListsRequest {
+	return ApiListOptionsListsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3911,7 +3274,7 @@ func (a *ProductAPIService) ListOptionsLists(ctx context.Context) ProductAPIList
 
 // Execute executes the request
 //  @return EntitymanagerListOptionsListsResponse
-func (a *ProductAPIService) ListOptionsListsExecute(r ProductAPIListOptionsListsRequest) (*EntitymanagerListOptionsListsResponse, *http.Response, error) {
+func (a *ProductAPIService) ListOptionsListsExecute(r ApiListOptionsListsRequest) (*EntitymanagerListOptionsListsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4033,18 +3396,18 @@ func (a *ProductAPIService) ListOptionsListsExecute(r ProductAPIListOptionsLists
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIListProductsRequest struct {
+type ApiListProductsRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductListProductsRequest
 }
 
-func (r ProductAPIListProductsRequest) Body(body ProductListProductsRequest) ProductAPIListProductsRequest {
+func (r ApiListProductsRequest) Body(body ProductListProductsRequest) ApiListProductsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIListProductsRequest) Execute() (*ProductListProductsResponse, *http.Response, error) {
+func (r ApiListProductsRequest) Execute() (*ProductListProductsResponse, *http.Response, error) {
 	return r.ApiService.ListProductsExecute(r)
 }
 
@@ -4054,10 +3417,10 @@ ListProducts List Products
 The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIListProductsRequest
+ @return ApiListProductsRequest
 */
-func (a *ProductAPIService) ListProducts(ctx context.Context) ProductAPIListProductsRequest {
-	return ProductAPIListProductsRequest{
+func (a *ProductAPIService) ListProducts(ctx context.Context) ApiListProductsRequest {
+	return ApiListProductsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4065,7 +3428,7 @@ func (a *ProductAPIService) ListProducts(ctx context.Context) ProductAPIListProd
 
 // Execute executes the request
 //  @return ProductListProductsResponse
-func (a *ProductAPIService) ListProductsExecute(r ProductAPIListProductsRequest) (*ProductListProductsResponse, *http.Response, error) {
+func (a *ProductAPIService) ListProductsExecute(r ApiListProductsRequest) (*ProductListProductsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4187,18 +3550,18 @@ func (a *ProductAPIService) ListProductsExecute(r ProductAPIListProductsRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIListProductsByIdsRequest struct {
+type ApiListProductsByIdsRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductListProductsByIdsRequest
 }
 
-func (r ProductAPIListProductsByIdsRequest) Body(body ProductListProductsByIdsRequest) ProductAPIListProductsByIdsRequest {
+func (r ApiListProductsByIdsRequest) Body(body ProductListProductsByIdsRequest) ApiListProductsByIdsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIListProductsByIdsRequest) Execute() (*ProductListProductsByIdsResponse, *http.Response, error) {
+func (r ApiListProductsByIdsRequest) Execute() (*ProductListProductsByIdsResponse, *http.Response, error) {
 	return r.ApiService.ListProductsByIdsExecute(r)
 }
 
@@ -4208,10 +3571,10 @@ ListProductsByIds List Products By Ids
 The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIListProductsByIdsRequest
+ @return ApiListProductsByIdsRequest
 */
-func (a *ProductAPIService) ListProductsByIds(ctx context.Context) ProductAPIListProductsByIdsRequest {
-	return ProductAPIListProductsByIdsRequest{
+func (a *ProductAPIService) ListProductsByIds(ctx context.Context) ApiListProductsByIdsRequest {
+	return ApiListProductsByIdsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4219,7 +3582,7 @@ func (a *ProductAPIService) ListProductsByIds(ctx context.Context) ProductAPILis
 
 // Execute executes the request
 //  @return ProductListProductsByIdsResponse
-func (a *ProductAPIService) ListProductsByIdsExecute(r ProductAPIListProductsByIdsRequest) (*ProductListProductsByIdsResponse, *http.Response, error) {
+func (a *ProductAPIService) ListProductsByIdsExecute(r ApiListProductsByIdsRequest) (*ProductListProductsByIdsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4341,18 +3704,18 @@ func (a *ProductAPIService) ListProductsByIdsExecute(r ProductAPIListProductsByI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIListProductsBySkuRequest struct {
+type ApiListProductsBySkuRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductListProductsBySkuRequest
 }
 
-func (r ProductAPIListProductsBySkuRequest) Body(body ProductListProductsBySkuRequest) ProductAPIListProductsBySkuRequest {
+func (r ApiListProductsBySkuRequest) Body(body ProductListProductsBySkuRequest) ApiListProductsBySkuRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIListProductsBySkuRequest) Execute() (*ProductListProductsBySkuResponse, *http.Response, error) {
+func (r ApiListProductsBySkuRequest) Execute() (*ProductListProductsBySkuResponse, *http.Response, error) {
 	return r.ApiService.ListProductsBySkuExecute(r)
 }
 
@@ -4360,10 +3723,10 @@ func (r ProductAPIListProductsBySkuRequest) Execute() (*ProductListProductsBySku
 ListProductsBySku List Products By Sku
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIListProductsBySkuRequest
+ @return ApiListProductsBySkuRequest
 */
-func (a *ProductAPIService) ListProductsBySku(ctx context.Context) ProductAPIListProductsBySkuRequest {
-	return ProductAPIListProductsBySkuRequest{
+func (a *ProductAPIService) ListProductsBySku(ctx context.Context) ApiListProductsBySkuRequest {
+	return ApiListProductsBySkuRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4371,7 +3734,7 @@ func (a *ProductAPIService) ListProductsBySku(ctx context.Context) ProductAPILis
 
 // Execute executes the request
 //  @return ProductListProductsBySkuResponse
-func (a *ProductAPIService) ListProductsBySkuExecute(r ProductAPIListProductsBySkuRequest) (*ProductListProductsBySkuResponse, *http.Response, error) {
+func (a *ProductAPIService) ListProductsBySkuExecute(r ApiListProductsBySkuRequest) (*ProductListProductsBySkuResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4493,18 +3856,18 @@ func (a *ProductAPIService) ListProductsBySkuExecute(r ProductAPIListProductsByS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIListVariantsBySkuRequest struct {
+type ApiListVariantsBySkuRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductListVariantsBySkuRequest
 }
 
-func (r ProductAPIListVariantsBySkuRequest) Body(body ProductListVariantsBySkuRequest) ProductAPIListVariantsBySkuRequest {
+func (r ApiListVariantsBySkuRequest) Body(body ProductListVariantsBySkuRequest) ApiListVariantsBySkuRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIListVariantsBySkuRequest) Execute() (*ProductListVariantsBySkuResponse, *http.Response, error) {
+func (r ApiListVariantsBySkuRequest) Execute() (*ProductListVariantsBySkuResponse, *http.Response, error) {
 	return r.ApiService.ListVariantsBySkuExecute(r)
 }
 
@@ -4512,10 +3875,10 @@ func (r ProductAPIListVariantsBySkuRequest) Execute() (*ProductListVariantsBySku
 ListVariantsBySku List Product Variants By Sku
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIListVariantsBySkuRequest
+ @return ApiListVariantsBySkuRequest
 */
-func (a *ProductAPIService) ListVariantsBySku(ctx context.Context) ProductAPIListVariantsBySkuRequest {
-	return ProductAPIListVariantsBySkuRequest{
+func (a *ProductAPIService) ListVariantsBySku(ctx context.Context) ApiListVariantsBySkuRequest {
+	return ApiListVariantsBySkuRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4523,7 +3886,7 @@ func (a *ProductAPIService) ListVariantsBySku(ctx context.Context) ProductAPILis
 
 // Execute executes the request
 //  @return ProductListVariantsBySkuResponse
-func (a *ProductAPIService) ListVariantsBySkuExecute(r ProductAPIListVariantsBySkuRequest) (*ProductListVariantsBySkuResponse, *http.Response, error) {
+func (a *ProductAPIService) ListVariantsBySkuExecute(r ApiListVariantsBySkuRequest) (*ProductListVariantsBySkuResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4645,18 +4008,18 @@ func (a *ProductAPIService) ListVariantsBySkuExecute(r ProductAPIListVariantsByS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductBulkCreateAttributeRequest struct {
+type ApiProductBulkCreateAttributeRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerBulkCreateAttributeRequest
 }
 
-func (r ProductAPIProductBulkCreateAttributeRequest) Body(body EntitymanagerBulkCreateAttributeRequest) ProductAPIProductBulkCreateAttributeRequest {
+func (r ApiProductBulkCreateAttributeRequest) Body(body EntitymanagerBulkCreateAttributeRequest) ApiProductBulkCreateAttributeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductBulkCreateAttributeRequest) Execute() (*EntitymanagerBulkCreateAttributeResponse, *http.Response, error) {
+func (r ApiProductBulkCreateAttributeRequest) Execute() (*EntitymanagerBulkCreateAttributeResponse, *http.Response, error) {
 	return r.ApiService.ProductBulkCreateAttributeExecute(r)
 }
 
@@ -4666,10 +4029,10 @@ ProductBulkCreateAttribute Method for ProductBulkCreateAttribute
 Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductBulkCreateAttributeRequest
+ @return ApiProductBulkCreateAttributeRequest
 */
-func (a *ProductAPIService) ProductBulkCreateAttribute(ctx context.Context) ProductAPIProductBulkCreateAttributeRequest {
-	return ProductAPIProductBulkCreateAttributeRequest{
+func (a *ProductAPIService) ProductBulkCreateAttribute(ctx context.Context) ApiProductBulkCreateAttributeRequest {
+	return ApiProductBulkCreateAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4677,7 +4040,7 @@ func (a *ProductAPIService) ProductBulkCreateAttribute(ctx context.Context) Prod
 
 // Execute executes the request
 //  @return EntitymanagerBulkCreateAttributeResponse
-func (a *ProductAPIService) ProductBulkCreateAttributeExecute(r ProductAPIProductBulkCreateAttributeRequest) (*EntitymanagerBulkCreateAttributeResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductBulkCreateAttributeExecute(r ApiProductBulkCreateAttributeRequest) (*EntitymanagerBulkCreateAttributeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4777,18 +4140,18 @@ func (a *ProductAPIService) ProductBulkCreateAttributeExecute(r ProductAPIProduc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductBulkUpdateRequest struct {
+type ApiProductBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductBulkUpdateRequest
 }
 
-func (r ProductAPIProductBulkUpdateRequest) Body(body ProductBulkUpdateRequest) ProductAPIProductBulkUpdateRequest {
+func (r ApiProductBulkUpdateRequest) Body(body ProductBulkUpdateRequest) ApiProductBulkUpdateRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductBulkUpdateRequest) Execute() (*ProductBulkUpdateResponse, *http.Response, error) {
+func (r ApiProductBulkUpdateRequest) Execute() (*ProductBulkUpdateResponse, *http.Response, error) {
 	return r.ApiService.ProductBulkUpdateExecute(r)
 }
 
@@ -4798,12 +4161,12 @@ ProductBulkUpdate Method for ProductBulkUpdate
 This operation is asynchronous and may complete after the response.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductBulkUpdateRequest
+ @return ApiProductBulkUpdateRequest
 
 Deprecated
 */
-func (a *ProductAPIService) ProductBulkUpdate(ctx context.Context) ProductAPIProductBulkUpdateRequest {
-	return ProductAPIProductBulkUpdateRequest{
+func (a *ProductAPIService) ProductBulkUpdate(ctx context.Context) ApiProductBulkUpdateRequest {
+	return ApiProductBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4812,7 +4175,7 @@ func (a *ProductAPIService) ProductBulkUpdate(ctx context.Context) ProductAPIPro
 // Execute executes the request
 //  @return ProductBulkUpdateResponse
 // Deprecated
-func (a *ProductAPIService) ProductBulkUpdateExecute(r ProductAPIProductBulkUpdateRequest) (*ProductBulkUpdateResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductBulkUpdateExecute(r ApiProductBulkUpdateRequest) (*ProductBulkUpdateResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4912,18 +4275,18 @@ func (a *ProductAPIService) ProductBulkUpdateExecute(r ProductAPIProductBulkUpda
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductCreateAttributeGroupRequest struct {
+type ApiProductCreateAttributeGroupRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerCreateAttributeGroupRequest
 }
 
-func (r ProductAPIProductCreateAttributeGroupRequest) Body(body EntitymanagerCreateAttributeGroupRequest) ProductAPIProductCreateAttributeGroupRequest {
+func (r ApiProductCreateAttributeGroupRequest) Body(body EntitymanagerCreateAttributeGroupRequest) ApiProductCreateAttributeGroupRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductCreateAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (r ApiProductCreateAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
 	return r.ApiService.ProductCreateAttributeGroupExecute(r)
 }
 
@@ -4931,10 +4294,10 @@ func (r ProductAPIProductCreateAttributeGroupRequest) Execute() (*EntitymanagerA
 ProductCreateAttributeGroup Method for ProductCreateAttributeGroup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductCreateAttributeGroupRequest
+ @return ApiProductCreateAttributeGroupRequest
 */
-func (a *ProductAPIService) ProductCreateAttributeGroup(ctx context.Context) ProductAPIProductCreateAttributeGroupRequest {
-	return ProductAPIProductCreateAttributeGroupRequest{
+func (a *ProductAPIService) ProductCreateAttributeGroup(ctx context.Context) ApiProductCreateAttributeGroupRequest {
+	return ApiProductCreateAttributeGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4942,7 +4305,7 @@ func (a *ProductAPIService) ProductCreateAttributeGroup(ctx context.Context) Pro
 
 // Execute executes the request
 //  @return EntitymanagerAttributeGroup
-func (a *ProductAPIService) ProductCreateAttributeGroupExecute(r ProductAPIProductCreateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (a *ProductAPIService) ProductCreateAttributeGroupExecute(r ApiProductCreateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5042,19 +4405,19 @@ func (a *ProductAPIService) ProductCreateAttributeGroupExecute(r ProductAPIProdu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductCreateProductRequest struct {
+type ApiProductCreateProductRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductCreateProductRequest
 }
 
 // The CreateProductRequest message is used to create a new product within the system. It contains various fields that allow specifying the details and attributes of the product.
-func (r ProductAPIProductCreateProductRequest) Body(body ProductCreateProductRequest) ProductAPIProductCreateProductRequest {
+func (r ApiProductCreateProductRequest) Body(body ProductCreateProductRequest) ApiProductCreateProductRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductCreateProductRequest) Execute() (*ProductCreateProductResponse, *http.Response, error) {
+func (r ApiProductCreateProductRequest) Execute() (*ProductCreateProductResponse, *http.Response, error) {
 	return r.ApiService.ProductCreateProductExecute(r)
 }
 
@@ -5062,12 +4425,12 @@ func (r ProductAPIProductCreateProductRequest) Execute() (*ProductCreateProductR
 ProductCreateProduct Method for ProductCreateProduct
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductCreateProductRequest
+ @return ApiProductCreateProductRequest
 
 Deprecated
 */
-func (a *ProductAPIService) ProductCreateProduct(ctx context.Context) ProductAPIProductCreateProductRequest {
-	return ProductAPIProductCreateProductRequest{
+func (a *ProductAPIService) ProductCreateProduct(ctx context.Context) ApiProductCreateProductRequest {
+	return ApiProductCreateProductRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5076,7 +4439,7 @@ func (a *ProductAPIService) ProductCreateProduct(ctx context.Context) ProductAPI
 // Execute executes the request
 //  @return ProductCreateProductResponse
 // Deprecated
-func (a *ProductAPIService) ProductCreateProductExecute(r ProductAPIProductCreateProductRequest) (*ProductCreateProductResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductCreateProductExecute(r ApiProductCreateProductRequest) (*ProductCreateProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5176,18 +4539,18 @@ func (a *ProductAPIService) ProductCreateProductExecute(r ProductAPIProductCreat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductCreateProductV2Request struct {
+type ApiProductCreateProductV2Request struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductCreateProductRequestV2
 }
 
-func (r ProductAPIProductCreateProductV2Request) Body(body ProductCreateProductRequestV2) ProductAPIProductCreateProductV2Request {
+func (r ApiProductCreateProductV2Request) Body(body ProductCreateProductRequestV2) ApiProductCreateProductV2Request {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductCreateProductV2Request) Execute() (*ProductCreateProductResponseV2, *http.Response, error) {
+func (r ApiProductCreateProductV2Request) Execute() (*ProductCreateProductResponseV2, *http.Response, error) {
 	return r.ApiService.ProductCreateProductV2Execute(r)
 }
 
@@ -5195,10 +4558,10 @@ func (r ProductAPIProductCreateProductV2Request) Execute() (*ProductCreateProduc
 ProductCreateProductV2 Method for ProductCreateProductV2
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductCreateProductV2Request
+ @return ApiProductCreateProductV2Request
 */
-func (a *ProductAPIService) ProductCreateProductV2(ctx context.Context) ProductAPIProductCreateProductV2Request {
-	return ProductAPIProductCreateProductV2Request{
+func (a *ProductAPIService) ProductCreateProductV2(ctx context.Context) ApiProductCreateProductV2Request {
+	return ApiProductCreateProductV2Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5206,7 +4569,7 @@ func (a *ProductAPIService) ProductCreateProductV2(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return ProductCreateProductResponseV2
-func (a *ProductAPIService) ProductCreateProductV2Execute(r ProductAPIProductCreateProductV2Request) (*ProductCreateProductResponseV2, *http.Response, error) {
+func (a *ProductAPIService) ProductCreateProductV2Execute(r ApiProductCreateProductV2Request) (*ProductCreateProductResponseV2, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5306,18 +4669,18 @@ func (a *ProductAPIService) ProductCreateProductV2Execute(r ProductAPIProductCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductDeleteRequest struct {
+type ApiProductDeleteRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductDeleteRequest
 }
 
-func (r ProductAPIProductDeleteRequest) Body(body ProductDeleteRequest) ProductAPIProductDeleteRequest {
+func (r ApiProductDeleteRequest) Body(body ProductDeleteRequest) ApiProductDeleteRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductDeleteRequest) Execute() (*ProductDeleteResponse, *http.Response, error) {
+func (r ApiProductDeleteRequest) Execute() (*ProductDeleteResponse, *http.Response, error) {
 	return r.ApiService.ProductDeleteExecute(r)
 }
 
@@ -5325,12 +4688,12 @@ func (r ProductAPIProductDeleteRequest) Execute() (*ProductDeleteResponse, *http
 ProductDelete Method for ProductDelete
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductDeleteRequest
+ @return ApiProductDeleteRequest
 
 Deprecated
 */
-func (a *ProductAPIService) ProductDelete(ctx context.Context) ProductAPIProductDeleteRequest {
-	return ProductAPIProductDeleteRequest{
+func (a *ProductAPIService) ProductDelete(ctx context.Context) ApiProductDeleteRequest {
+	return ApiProductDeleteRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5339,7 +4702,7 @@ func (a *ProductAPIService) ProductDelete(ctx context.Context) ProductAPIProduct
 // Execute executes the request
 //  @return ProductDeleteResponse
 // Deprecated
-func (a *ProductAPIService) ProductDeleteExecute(r ProductAPIProductDeleteRequest) (*ProductDeleteResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductDeleteExecute(r ApiProductDeleteRequest) (*ProductDeleteResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5439,18 +4802,18 @@ func (a *ProductAPIService) ProductDeleteExecute(r ProductAPIProductDeleteReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductDeleteAttributeRequest struct {
+type ApiProductDeleteAttributeRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerDeleteAttributeRequest
 }
 
-func (r ProductAPIProductDeleteAttributeRequest) Body(body EntitymanagerDeleteAttributeRequest) ProductAPIProductDeleteAttributeRequest {
+func (r ApiProductDeleteAttributeRequest) Body(body EntitymanagerDeleteAttributeRequest) ApiProductDeleteAttributeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductDeleteAttributeRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiProductDeleteAttributeRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProductDeleteAttributeExecute(r)
 }
 
@@ -5458,10 +4821,10 @@ func (r ProductAPIProductDeleteAttributeRequest) Execute() (map[string]interface
 ProductDeleteAttribute Method for ProductDeleteAttribute
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductDeleteAttributeRequest
+ @return ApiProductDeleteAttributeRequest
 */
-func (a *ProductAPIService) ProductDeleteAttribute(ctx context.Context) ProductAPIProductDeleteAttributeRequest {
-	return ProductAPIProductDeleteAttributeRequest{
+func (a *ProductAPIService) ProductDeleteAttribute(ctx context.Context) ApiProductDeleteAttributeRequest {
+	return ApiProductDeleteAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5469,7 +4832,7 @@ func (a *ProductAPIService) ProductDeleteAttribute(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) ProductDeleteAttributeExecute(r ProductAPIProductDeleteAttributeRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) ProductDeleteAttributeExecute(r ApiProductDeleteAttributeRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5569,18 +4932,18 @@ func (a *ProductAPIService) ProductDeleteAttributeExecute(r ProductAPIProductDel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductDeleteProductRequest struct {
+type ApiProductDeleteProductRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductDeleteProductRequest
 }
 
-func (r ProductAPIProductDeleteProductRequest) Body(body ProductDeleteProductRequest) ProductAPIProductDeleteProductRequest {
+func (r ApiProductDeleteProductRequest) Body(body ProductDeleteProductRequest) ApiProductDeleteProductRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductDeleteProductRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiProductDeleteProductRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProductDeleteProductExecute(r)
 }
 
@@ -5588,10 +4951,10 @@ func (r ProductAPIProductDeleteProductRequest) Execute() (map[string]interface{}
 ProductDeleteProduct Method for ProductDeleteProduct
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductDeleteProductRequest
+ @return ApiProductDeleteProductRequest
 */
-func (a *ProductAPIService) ProductDeleteProduct(ctx context.Context) ProductAPIProductDeleteProductRequest {
-	return ProductAPIProductDeleteProductRequest{
+func (a *ProductAPIService) ProductDeleteProduct(ctx context.Context) ApiProductDeleteProductRequest {
+	return ApiProductDeleteProductRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5599,7 +4962,7 @@ func (a *ProductAPIService) ProductDeleteProduct(ctx context.Context) ProductAPI
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) ProductDeleteProductExecute(r ProductAPIProductDeleteProductRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) ProductDeleteProductExecute(r ApiProductDeleteProductRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5699,18 +5062,18 @@ func (a *ProductAPIService) ProductDeleteProductExecute(r ProductAPIProductDelet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductGetAttributeGroupRequest struct {
+type ApiProductGetAttributeGroupRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerGetAttributeGroupRequest
 }
 
-func (r ProductAPIProductGetAttributeGroupRequest) Body(body EntitymanagerGetAttributeGroupRequest) ProductAPIProductGetAttributeGroupRequest {
+func (r ApiProductGetAttributeGroupRequest) Body(body EntitymanagerGetAttributeGroupRequest) ApiProductGetAttributeGroupRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductGetAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (r ApiProductGetAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
 	return r.ApiService.ProductGetAttributeGroupExecute(r)
 }
 
@@ -5718,10 +5081,10 @@ func (r ProductAPIProductGetAttributeGroupRequest) Execute() (*EntitymanagerAttr
 ProductGetAttributeGroup Method for ProductGetAttributeGroup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductGetAttributeGroupRequest
+ @return ApiProductGetAttributeGroupRequest
 */
-func (a *ProductAPIService) ProductGetAttributeGroup(ctx context.Context) ProductAPIProductGetAttributeGroupRequest {
-	return ProductAPIProductGetAttributeGroupRequest{
+func (a *ProductAPIService) ProductGetAttributeGroup(ctx context.Context) ApiProductGetAttributeGroupRequest {
+	return ApiProductGetAttributeGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5729,7 +5092,7 @@ func (a *ProductAPIService) ProductGetAttributeGroup(ctx context.Context) Produc
 
 // Execute executes the request
 //  @return EntitymanagerAttributeGroup
-func (a *ProductAPIService) ProductGetAttributeGroupExecute(r ProductAPIProductGetAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (a *ProductAPIService) ProductGetAttributeGroupExecute(r ApiProductGetAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5829,18 +5192,18 @@ func (a *ProductAPIService) ProductGetAttributeGroupExecute(r ProductAPIProductG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductListAttributeGroupsRequest struct {
+type ApiProductListAttributeGroupsRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerListAttributeGroupsRequest
 }
 
-func (r ProductAPIProductListAttributeGroupsRequest) Body(body EntitymanagerListAttributeGroupsRequest) ProductAPIProductListAttributeGroupsRequest {
+func (r ApiProductListAttributeGroupsRequest) Body(body EntitymanagerListAttributeGroupsRequest) ApiProductListAttributeGroupsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductListAttributeGroupsRequest) Execute() (*EntitymanagerListAttributeGroupsResponse, *http.Response, error) {
+func (r ApiProductListAttributeGroupsRequest) Execute() (*EntitymanagerListAttributeGroupsResponse, *http.Response, error) {
 	return r.ApiService.ProductListAttributeGroupsExecute(r)
 }
 
@@ -5848,10 +5211,10 @@ func (r ProductAPIProductListAttributeGroupsRequest) Execute() (*EntitymanagerLi
 ProductListAttributeGroups Method for ProductListAttributeGroups
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductListAttributeGroupsRequest
+ @return ApiProductListAttributeGroupsRequest
 */
-func (a *ProductAPIService) ProductListAttributeGroups(ctx context.Context) ProductAPIProductListAttributeGroupsRequest {
-	return ProductAPIProductListAttributeGroupsRequest{
+func (a *ProductAPIService) ProductListAttributeGroups(ctx context.Context) ApiProductListAttributeGroupsRequest {
+	return ApiProductListAttributeGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5859,7 +5222,7 @@ func (a *ProductAPIService) ProductListAttributeGroups(ctx context.Context) Prod
 
 // Execute executes the request
 //  @return EntitymanagerListAttributeGroupsResponse
-func (a *ProductAPIService) ProductListAttributeGroupsExecute(r ProductAPIProductListAttributeGroupsRequest) (*EntitymanagerListAttributeGroupsResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductListAttributeGroupsExecute(r ApiProductListAttributeGroupsRequest) (*EntitymanagerListAttributeGroupsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5959,18 +5322,18 @@ func (a *ProductAPIService) ProductListAttributeGroupsExecute(r ProductAPIProduc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductUpdateAttributeRequest struct {
+type ApiProductUpdateAttributeRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerUpdateAttributeRequest
 }
 
-func (r ProductAPIProductUpdateAttributeRequest) Body(body EntitymanagerUpdateAttributeRequest) ProductAPIProductUpdateAttributeRequest {
+func (r ApiProductUpdateAttributeRequest) Body(body EntitymanagerUpdateAttributeRequest) ApiProductUpdateAttributeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductUpdateAttributeRequest) Execute() (*EntitymanagerAttribute, *http.Response, error) {
+func (r ApiProductUpdateAttributeRequest) Execute() (*EntitymanagerAttribute, *http.Response, error) {
 	return r.ApiService.ProductUpdateAttributeExecute(r)
 }
 
@@ -5978,10 +5341,10 @@ func (r ProductAPIProductUpdateAttributeRequest) Execute() (*EntitymanagerAttrib
 ProductUpdateAttribute Method for ProductUpdateAttribute
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductUpdateAttributeRequest
+ @return ApiProductUpdateAttributeRequest
 */
-func (a *ProductAPIService) ProductUpdateAttribute(ctx context.Context) ProductAPIProductUpdateAttributeRequest {
-	return ProductAPIProductUpdateAttributeRequest{
+func (a *ProductAPIService) ProductUpdateAttribute(ctx context.Context) ApiProductUpdateAttributeRequest {
+	return ApiProductUpdateAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5989,7 +5352,7 @@ func (a *ProductAPIService) ProductUpdateAttribute(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return EntitymanagerAttribute
-func (a *ProductAPIService) ProductUpdateAttributeExecute(r ProductAPIProductUpdateAttributeRequest) (*EntitymanagerAttribute, *http.Response, error) {
+func (a *ProductAPIService) ProductUpdateAttributeExecute(r ApiProductUpdateAttributeRequest) (*EntitymanagerAttribute, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -6089,18 +5452,18 @@ func (a *ProductAPIService) ProductUpdateAttributeExecute(r ProductAPIProductUpd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductUpdateAttributeGroupRequest struct {
+type ApiProductUpdateAttributeGroupRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerUpdateAttributeGroupRequest
 }
 
-func (r ProductAPIProductUpdateAttributeGroupRequest) Body(body EntitymanagerUpdateAttributeGroupRequest) ProductAPIProductUpdateAttributeGroupRequest {
+func (r ApiProductUpdateAttributeGroupRequest) Body(body EntitymanagerUpdateAttributeGroupRequest) ApiProductUpdateAttributeGroupRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductUpdateAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (r ApiProductUpdateAttributeGroupRequest) Execute() (*EntitymanagerAttributeGroup, *http.Response, error) {
 	return r.ApiService.ProductUpdateAttributeGroupExecute(r)
 }
 
@@ -6108,10 +5471,10 @@ func (r ProductAPIProductUpdateAttributeGroupRequest) Execute() (*EntitymanagerA
 ProductUpdateAttributeGroup Method for ProductUpdateAttributeGroup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductUpdateAttributeGroupRequest
+ @return ApiProductUpdateAttributeGroupRequest
 */
-func (a *ProductAPIService) ProductUpdateAttributeGroup(ctx context.Context) ProductAPIProductUpdateAttributeGroupRequest {
-	return ProductAPIProductUpdateAttributeGroupRequest{
+func (a *ProductAPIService) ProductUpdateAttributeGroup(ctx context.Context) ApiProductUpdateAttributeGroupRequest {
+	return ApiProductUpdateAttributeGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -6119,7 +5482,7 @@ func (a *ProductAPIService) ProductUpdateAttributeGroup(ctx context.Context) Pro
 
 // Execute executes the request
 //  @return EntitymanagerAttributeGroup
-func (a *ProductAPIService) ProductUpdateAttributeGroupExecute(r ProductAPIProductUpdateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
+func (a *ProductAPIService) ProductUpdateAttributeGroupExecute(r ApiProductUpdateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -6219,18 +5582,18 @@ func (a *ProductAPIService) ProductUpdateAttributeGroupExecute(r ProductAPIProdu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductUpdateProductRequest struct {
+type ApiProductUpdateProductRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductUpdateProductRequest
 }
 
-func (r ProductAPIProductUpdateProductRequest) Body(body ProductUpdateProductRequest) ProductAPIProductUpdateProductRequest {
+func (r ApiProductUpdateProductRequest) Body(body ProductUpdateProductRequest) ApiProductUpdateProductRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductUpdateProductRequest) Execute() (*ProductUpdateProductResponse, *http.Response, error) {
+func (r ApiProductUpdateProductRequest) Execute() (*ProductUpdateProductResponse, *http.Response, error) {
 	return r.ApiService.ProductUpdateProductExecute(r)
 }
 
@@ -6238,12 +5601,12 @@ func (r ProductAPIProductUpdateProductRequest) Execute() (*ProductUpdateProductR
 ProductUpdateProduct Method for ProductUpdateProduct
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductUpdateProductRequest
+ @return ApiProductUpdateProductRequest
 
 Deprecated
 */
-func (a *ProductAPIService) ProductUpdateProduct(ctx context.Context) ProductAPIProductUpdateProductRequest {
-	return ProductAPIProductUpdateProductRequest{
+func (a *ProductAPIService) ProductUpdateProduct(ctx context.Context) ApiProductUpdateProductRequest {
+	return ApiProductUpdateProductRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -6252,7 +5615,7 @@ func (a *ProductAPIService) ProductUpdateProduct(ctx context.Context) ProductAPI
 // Execute executes the request
 //  @return ProductUpdateProductResponse
 // Deprecated
-func (a *ProductAPIService) ProductUpdateProductExecute(r ProductAPIProductUpdateProductRequest) (*ProductUpdateProductResponse, *http.Response, error) {
+func (a *ProductAPIService) ProductUpdateProductExecute(r ApiProductUpdateProductRequest) (*ProductUpdateProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -6352,18 +5715,18 @@ func (a *ProductAPIService) ProductUpdateProductExecute(r ProductAPIProductUpdat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIProductUpdateProductV2Request struct {
+type ApiProductUpdateProductV2Request struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductUpdateProductRequestV2
 }
 
-func (r ProductAPIProductUpdateProductV2Request) Body(body ProductUpdateProductRequestV2) ProductAPIProductUpdateProductV2Request {
+func (r ApiProductUpdateProductV2Request) Body(body ProductUpdateProductRequestV2) ApiProductUpdateProductV2Request {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIProductUpdateProductV2Request) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiProductUpdateProductV2Request) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProductUpdateProductV2Execute(r)
 }
 
@@ -6371,10 +5734,10 @@ func (r ProductAPIProductUpdateProductV2Request) Execute() (map[string]interface
 ProductUpdateProductV2 Method for ProductUpdateProductV2
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIProductUpdateProductV2Request
+ @return ApiProductUpdateProductV2Request
 */
-func (a *ProductAPIService) ProductUpdateProductV2(ctx context.Context) ProductAPIProductUpdateProductV2Request {
-	return ProductAPIProductUpdateProductV2Request{
+func (a *ProductAPIService) ProductUpdateProductV2(ctx context.Context) ApiProductUpdateProductV2Request {
+	return ApiProductUpdateProductV2Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -6382,7 +5745,7 @@ func (a *ProductAPIService) ProductUpdateProductV2(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) ProductUpdateProductV2Execute(r ProductAPIProductUpdateProductV2Request) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) ProductUpdateProductV2Execute(r ApiProductUpdateProductV2Request) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -6482,18 +5845,18 @@ func (a *ProductAPIService) ProductUpdateProductV2Execute(r ProductAPIProductUpd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIRemoveMediaGalleryEntryRequest struct {
+type ApiRemoveMediaGalleryEntryRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductRemoveMediaGalleryEntryRequest
 }
 
-func (r ProductAPIRemoveMediaGalleryEntryRequest) Body(body ProductRemoveMediaGalleryEntryRequest) ProductAPIRemoveMediaGalleryEntryRequest {
+func (r ApiRemoveMediaGalleryEntryRequest) Body(body ProductRemoveMediaGalleryEntryRequest) ApiRemoveMediaGalleryEntryRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIRemoveMediaGalleryEntryRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiRemoveMediaGalleryEntryRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.RemoveMediaGalleryEntryExecute(r)
 }
 
@@ -6503,10 +5866,10 @@ RemoveMediaGalleryEntry Remove Media Gallery Entry
 The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product's gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product's gallery. This operation is asynchronous and may complete after the response.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIRemoveMediaGalleryEntryRequest
+ @return ApiRemoveMediaGalleryEntryRequest
 */
-func (a *ProductAPIService) RemoveMediaGalleryEntry(ctx context.Context) ProductAPIRemoveMediaGalleryEntryRequest {
-	return ProductAPIRemoveMediaGalleryEntryRequest{
+func (a *ProductAPIService) RemoveMediaGalleryEntry(ctx context.Context) ApiRemoveMediaGalleryEntryRequest {
+	return ApiRemoveMediaGalleryEntryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -6514,7 +5877,7 @@ func (a *ProductAPIService) RemoveMediaGalleryEntry(ctx context.Context) Product
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) RemoveMediaGalleryEntryExecute(r ProductAPIRemoveMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) RemoveMediaGalleryEntryExecute(r ApiRemoveMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -6636,18 +5999,18 @@ func (a *ProductAPIService) RemoveMediaGalleryEntryExecute(r ProductAPIRemoveMed
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIUpdateAttributeOptionsRequest struct {
+type ApiUpdateAttributeOptionsRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerUpdateAttributeOptionsRequest
 }
 
-func (r ProductAPIUpdateAttributeOptionsRequest) Body(body EntitymanagerUpdateAttributeOptionsRequest) ProductAPIUpdateAttributeOptionsRequest {
+func (r ApiUpdateAttributeOptionsRequest) Body(body EntitymanagerUpdateAttributeOptionsRequest) ApiUpdateAttributeOptionsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIUpdateAttributeOptionsRequest) Execute() (*EntitymanagerUpdateAttributeOptionsResponse, *http.Response, error) {
+func (r ApiUpdateAttributeOptionsRequest) Execute() (*EntitymanagerUpdateAttributeOptionsResponse, *http.Response, error) {
 	return r.ApiService.UpdateAttributeOptionsExecute(r)
 }
 
@@ -6655,10 +6018,10 @@ func (r ProductAPIUpdateAttributeOptionsRequest) Execute() (*EntitymanagerUpdate
 UpdateAttributeOptions Update Attribute Options
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIUpdateAttributeOptionsRequest
+ @return ApiUpdateAttributeOptionsRequest
 */
-func (a *ProductAPIService) UpdateAttributeOptions(ctx context.Context) ProductAPIUpdateAttributeOptionsRequest {
-	return ProductAPIUpdateAttributeOptionsRequest{
+func (a *ProductAPIService) UpdateAttributeOptions(ctx context.Context) ApiUpdateAttributeOptionsRequest {
+	return ApiUpdateAttributeOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -6666,7 +6029,7 @@ func (a *ProductAPIService) UpdateAttributeOptions(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return EntitymanagerUpdateAttributeOptionsResponse
-func (a *ProductAPIService) UpdateAttributeOptionsExecute(r ProductAPIUpdateAttributeOptionsRequest) (*EntitymanagerUpdateAttributeOptionsResponse, *http.Response, error) {
+func (a *ProductAPIService) UpdateAttributeOptionsExecute(r ApiUpdateAttributeOptionsRequest) (*EntitymanagerUpdateAttributeOptionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -6788,18 +6151,18 @@ func (a *ProductAPIService) UpdateAttributeOptionsExecute(r ProductAPIUpdateAttr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIUpdateDataToBeReviewedRequest struct {
+type ApiUpdateDataToBeReviewedRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductGetEnhanceProductDataWithAIStatusRequest
 }
 
-func (r ProductAPIUpdateDataToBeReviewedRequest) Body(body ProductGetEnhanceProductDataWithAIStatusRequest) ProductAPIUpdateDataToBeReviewedRequest {
+func (r ApiUpdateDataToBeReviewedRequest) Body(body ProductGetEnhanceProductDataWithAIStatusRequest) ApiUpdateDataToBeReviewedRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIUpdateDataToBeReviewedRequest) Execute() (*ProductGetEnhanceProductDataWithAIStatusResponse, *http.Response, error) {
+func (r ApiUpdateDataToBeReviewedRequest) Execute() (*ProductGetEnhanceProductDataWithAIStatusResponse, *http.Response, error) {
 	return r.ApiService.UpdateDataToBeReviewedExecute(r)
 }
 
@@ -6809,10 +6172,10 @@ UpdateDataToBeReviewed Get Enhance Product Data With AI Status
 The GetEnhanceProductDataWithAIStatus endpoint allows users to retrieve the status of a product data enhancement process using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can check the progress and completion status of the AI-driven product data enhancement operation. This functionality provides visibility and transparency into the AI processing of product data, enabling users to monitor and track the status of the enhancement process.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIUpdateDataToBeReviewedRequest
+ @return ApiUpdateDataToBeReviewedRequest
 */
-func (a *ProductAPIService) UpdateDataToBeReviewed(ctx context.Context) ProductAPIUpdateDataToBeReviewedRequest {
-	return ProductAPIUpdateDataToBeReviewedRequest{
+func (a *ProductAPIService) UpdateDataToBeReviewed(ctx context.Context) ApiUpdateDataToBeReviewedRequest {
+	return ApiUpdateDataToBeReviewedRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -6820,7 +6183,7 @@ func (a *ProductAPIService) UpdateDataToBeReviewed(ctx context.Context) ProductA
 
 // Execute executes the request
 //  @return ProductGetEnhanceProductDataWithAIStatusResponse
-func (a *ProductAPIService) UpdateDataToBeReviewedExecute(r ProductAPIUpdateDataToBeReviewedRequest) (*ProductGetEnhanceProductDataWithAIStatusResponse, *http.Response, error) {
+func (a *ProductAPIService) UpdateDataToBeReviewedExecute(r ApiUpdateDataToBeReviewedRequest) (*ProductGetEnhanceProductDataWithAIStatusResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -6942,18 +6305,18 @@ func (a *ProductAPIService) UpdateDataToBeReviewedExecute(r ProductAPIUpdateData
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIUpdateDataToBeReviewed_0Request struct {
+type ApiUpdateDataToBeReviewed_0Request struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductUpdateDataToBeReviewedRequest
 }
 
-func (r ProductAPIUpdateDataToBeReviewed_0Request) Body(body ProductUpdateDataToBeReviewedRequest) ProductAPIUpdateDataToBeReviewed_0Request {
+func (r ApiUpdateDataToBeReviewed_0Request) Body(body ProductUpdateDataToBeReviewedRequest) ApiUpdateDataToBeReviewed_0Request {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIUpdateDataToBeReviewed_0Request) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiUpdateDataToBeReviewed_0Request) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDataToBeReviewed_1Execute(r)
 }
 
@@ -6963,10 +6326,10 @@ UpdateDataToBeReviewed_0 Update Data To Be Reviewed
 The UpdateDataToBeReviewed endpoint allows users to update product data that is pending review. By sending a request to this endpoint and providing the necessary input data, users can modify and enhance the product information that is currently under review. This functionality enables users to make changes to product data submissions and ensure that the information is accurate and up-to-date before final approval.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIUpdateDataToBeReviewed_0Request
+ @return ApiUpdateDataToBeReviewed_0Request
 */
-func (a *ProductAPIService) UpdateDataToBeReviewed_1(ctx context.Context) ProductAPIUpdateDataToBeReviewed_0Request {
-	return ProductAPIUpdateDataToBeReviewed_0Request{
+func (a *ProductAPIService) UpdateDataToBeReviewed_1(ctx context.Context) ApiUpdateDataToBeReviewed_0Request {
+	return ApiUpdateDataToBeReviewed_0Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -6974,7 +6337,7 @@ func (a *ProductAPIService) UpdateDataToBeReviewed_1(ctx context.Context) Produc
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) UpdateDataToBeReviewed_1Execute(r ProductAPIUpdateDataToBeReviewed_0Request) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) UpdateDataToBeReviewed_1Execute(r ApiUpdateDataToBeReviewed_0Request) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -7096,18 +6459,18 @@ func (a *ProductAPIService) UpdateDataToBeReviewed_1Execute(r ProductAPIUpdateDa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIUpdateMediaGalleryEntryRequest struct {
+type ApiUpdateMediaGalleryEntryRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductUpdateMediaGalleryEntryRequest
 }
 
-func (r ProductAPIUpdateMediaGalleryEntryRequest) Body(body ProductUpdateMediaGalleryEntryRequest) ProductAPIUpdateMediaGalleryEntryRequest {
+func (r ApiUpdateMediaGalleryEntryRequest) Body(body ProductUpdateMediaGalleryEntryRequest) ApiUpdateMediaGalleryEntryRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIUpdateMediaGalleryEntryRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiUpdateMediaGalleryEntryRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateMediaGalleryEntryExecute(r)
 }
 
@@ -7117,10 +6480,10 @@ UpdateMediaGalleryEntry Update Media Gallery Entry
 The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product's gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry. This operation is asynchronous and may complete after the response.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIUpdateMediaGalleryEntryRequest
+ @return ApiUpdateMediaGalleryEntryRequest
 */
-func (a *ProductAPIService) UpdateMediaGalleryEntry(ctx context.Context) ProductAPIUpdateMediaGalleryEntryRequest {
-	return ProductAPIUpdateMediaGalleryEntryRequest{
+func (a *ProductAPIService) UpdateMediaGalleryEntry(ctx context.Context) ApiUpdateMediaGalleryEntryRequest {
+	return ApiUpdateMediaGalleryEntryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -7128,7 +6491,7 @@ func (a *ProductAPIService) UpdateMediaGalleryEntry(ctx context.Context) Product
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProductAPIService) UpdateMediaGalleryEntryExecute(r ProductAPIUpdateMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProductAPIService) UpdateMediaGalleryEntryExecute(r ApiUpdateMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -7250,18 +6613,18 @@ func (a *ProductAPIService) UpdateMediaGalleryEntryExecute(r ProductAPIUpdateMed
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIUpdateOptionsListRequest struct {
+type ApiUpdateOptionsListRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *EntitymanagerUpdateOptionsListRequest
 }
 
-func (r ProductAPIUpdateOptionsListRequest) Body(body EntitymanagerUpdateOptionsListRequest) ProductAPIUpdateOptionsListRequest {
+func (r ApiUpdateOptionsListRequest) Body(body EntitymanagerUpdateOptionsListRequest) ApiUpdateOptionsListRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIUpdateOptionsListRequest) Execute() (*EntitymanagerUpdateOptionsListResponse, *http.Response, error) {
+func (r ApiUpdateOptionsListRequest) Execute() (*EntitymanagerUpdateOptionsListResponse, *http.Response, error) {
 	return r.ApiService.UpdateOptionsListExecute(r)
 }
 
@@ -7269,10 +6632,10 @@ func (r ProductAPIUpdateOptionsListRequest) Execute() (*EntitymanagerUpdateOptio
 UpdateOptionsList Update Options List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIUpdateOptionsListRequest
+ @return ApiUpdateOptionsListRequest
 */
-func (a *ProductAPIService) UpdateOptionsList(ctx context.Context) ProductAPIUpdateOptionsListRequest {
-	return ProductAPIUpdateOptionsListRequest{
+func (a *ProductAPIService) UpdateOptionsList(ctx context.Context) ApiUpdateOptionsListRequest {
+	return ApiUpdateOptionsListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -7280,7 +6643,7 @@ func (a *ProductAPIService) UpdateOptionsList(ctx context.Context) ProductAPIUpd
 
 // Execute executes the request
 //  @return EntitymanagerUpdateOptionsListResponse
-func (a *ProductAPIService) UpdateOptionsListExecute(r ProductAPIUpdateOptionsListRequest) (*EntitymanagerUpdateOptionsListResponse, *http.Response, error) {
+func (a *ProductAPIService) UpdateOptionsListExecute(r ApiUpdateOptionsListRequest) (*EntitymanagerUpdateOptionsListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -7402,18 +6765,18 @@ func (a *ProductAPIService) UpdateOptionsListExecute(r ProductAPIUpdateOptionsLi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProductAPIUpdateProductWithAIRequest struct {
+type ApiUpdateProductWithAIRequest struct {
 	ctx context.Context
-	ApiService ProductAPI
+	ApiService *ProductAPIService
 	body *ProductUpdateProductWithAIRequest
 }
 
-func (r ProductAPIUpdateProductWithAIRequest) Body(body ProductUpdateProductWithAIRequest) ProductAPIUpdateProductWithAIRequest {
+func (r ApiUpdateProductWithAIRequest) Body(body ProductUpdateProductWithAIRequest) ApiUpdateProductWithAIRequest {
 	r.body = &body
 	return r
 }
 
-func (r ProductAPIUpdateProductWithAIRequest) Execute() (*ProductUpdateProductWithAIResponse, *http.Response, error) {
+func (r ApiUpdateProductWithAIRequest) Execute() (*ProductUpdateProductWithAIResponse, *http.Response, error) {
 	return r.ApiService.UpdateProductWithAIExecute(r)
 }
 
@@ -7423,10 +6786,10 @@ UpdateProductWithAI Update Product With AI
 The UpdateProductWithAI endpoint allows users to update an existing product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product update process.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ProductAPIUpdateProductWithAIRequest
+ @return ApiUpdateProductWithAIRequest
 */
-func (a *ProductAPIService) UpdateProductWithAI(ctx context.Context) ProductAPIUpdateProductWithAIRequest {
-	return ProductAPIUpdateProductWithAIRequest{
+func (a *ProductAPIService) UpdateProductWithAI(ctx context.Context) ApiUpdateProductWithAIRequest {
+	return ApiUpdateProductWithAIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -7434,7 +6797,7 @@ func (a *ProductAPIService) UpdateProductWithAI(ctx context.Context) ProductAPIU
 
 // Execute executes the request
 //  @return ProductUpdateProductWithAIResponse
-func (a *ProductAPIService) UpdateProductWithAIExecute(r ProductAPIUpdateProductWithAIRequest) (*ProductUpdateProductWithAIResponse, *http.Response, error) {
+func (a *ProductAPIService) UpdateProductWithAIExecute(r ApiUpdateProductWithAIRequest) (*ProductUpdateProductWithAIResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

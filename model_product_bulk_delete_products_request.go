@@ -22,7 +22,10 @@ var _ MappedNullable = &ProductBulkDeleteProductsRequest{}
 type ProductBulkDeleteProductsRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
 	Ids []string `json:"ids,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductBulkDeleteProductsRequest ProductBulkDeleteProductsRequest
 
 // NewProductBulkDeleteProductsRequest instantiates a new ProductBulkDeleteProductsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *ProductBulkDeleteProductsRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *ProductBulkDeleteProductsRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *ProductBulkDeleteProductsRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *ProductBulkDeleteProductsRequest) GetIdsOk() ([]string, bool) {
 	return o.Ids, true
 }
 
-// HasIds returns a boolean if a field has been set.
-func (o *ProductBulkDeleteProductsRequest) HasIds() bool {
+// &#39;Has&#39;Ids returns a boolean if a field has been set.
+func (o *ProductBulkDeleteProductsRequest) &#39;Has&#39;Ids() bool {
 	if o != nil && !IsNil(o.Ids) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o ProductBulkDeleteProductsRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Ids) {
 		toSerialize["ids"] = o.Ids
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductBulkDeleteProductsRequest) UnmarshalJSON(data []byte) (err error) {
+	varProductBulkDeleteProductsRequest := _ProductBulkDeleteProductsRequest{}
+
+	err = json.Unmarshal(data, &varProductBulkDeleteProductsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductBulkDeleteProductsRequest(varProductBulkDeleteProductsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "ids")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductBulkDeleteProductsRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductBulkDeleteProductsRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductBulkDeleteProductsRequest struct {
 	value *ProductBulkDeleteProductsRequest
 	isSet bool

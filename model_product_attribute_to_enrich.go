@@ -23,7 +23,10 @@ type ProductAttributeToEnrich struct {
 	Code *string `json:"code,omitempty"`
 	Type *ProductAttributeToEnrichType `json:"type,omitempty"`
 	CanCreateValue *bool `json:"canCreateValue,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductAttributeToEnrich ProductAttributeToEnrich
 
 // NewProductAttributeToEnrich instantiates a new ProductAttributeToEnrich object
 // This constructor will assign default values to properties that have it defined,
@@ -64,8 +67,8 @@ func (o *ProductAttributeToEnrich) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *ProductAttributeToEnrich) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *ProductAttributeToEnrich) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -96,8 +99,8 @@ func (o *ProductAttributeToEnrich) GetTypeOk() (*ProductAttributeToEnrichType, b
 	return o.Type, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *ProductAttributeToEnrich) HasType() bool {
+// &#39;Has&#39;Type returns a boolean if a field has been set.
+func (o *ProductAttributeToEnrich) &#39;Has&#39;Type() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -128,8 +131,8 @@ func (o *ProductAttributeToEnrich) GetCanCreateValueOk() (*bool, bool) {
 	return o.CanCreateValue, true
 }
 
-// HasCanCreateValue returns a boolean if a field has been set.
-func (o *ProductAttributeToEnrich) HasCanCreateValue() bool {
+// &#39;Has&#39;CanCreateValue returns a boolean if a field has been set.
+func (o *ProductAttributeToEnrich) &#39;Has&#39;CanCreateValue() bool {
 	if o != nil && !IsNil(o.CanCreateValue) {
 		return true
 	}
@@ -161,9 +164,55 @@ func (o ProductAttributeToEnrich) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CanCreateValue) {
 		toSerialize["canCreateValue"] = o.CanCreateValue
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductAttributeToEnrich) UnmarshalJSON(data []byte) (err error) {
+	varProductAttributeToEnrich := _ProductAttributeToEnrich{}
+
+	err = json.Unmarshal(data, &varProductAttributeToEnrich)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductAttributeToEnrich(varProductAttributeToEnrich)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "canCreateValue")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductAttributeToEnrich) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductAttributeToEnrich) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductAttributeToEnrich struct {
 	value *ProductAttributeToEnrich
 	isSet bool

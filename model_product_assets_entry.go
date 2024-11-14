@@ -26,7 +26,10 @@ type ProductAssetsEntry struct {
 	Locales []string `json:"locales,omitempty"`
 	Position *int64 `json:"position,omitempty"`
 	Metadata []ProductAssetsEntryMetadata `json:"metadata,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductAssetsEntry ProductAssetsEntry
 
 // NewProductAssetsEntry instantiates a new ProductAssetsEntry object
 // This constructor will assign default values to properties that have it defined,
@@ -63,8 +66,8 @@ func (o *ProductAssetsEntry) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *ProductAssetsEntry) GetAssetGrnOk() (*string, bool) {
 	return o.AssetGrn, true
 }
 
-// HasAssetGrn returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) HasAssetGrn() bool {
+// &#39;Has&#39;AssetGrn returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) &#39;Has&#39;AssetGrn() bool {
 	if o != nil && !IsNil(o.AssetGrn) {
 		return true
 	}
@@ -127,8 +130,8 @@ func (o *ProductAssetsEntry) GetLocalizedAssetGrnOk() (*ProductLocalizedAsset, b
 	return o.LocalizedAssetGrn, true
 }
 
-// HasLocalizedAssetGrn returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) HasLocalizedAssetGrn() bool {
+// &#39;Has&#39;LocalizedAssetGrn returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) &#39;Has&#39;LocalizedAssetGrn() bool {
 	if o != nil && !IsNil(o.LocalizedAssetGrn) {
 		return true
 	}
@@ -159,8 +162,8 @@ func (o *ProductAssetsEntry) GetLocalesOk() ([]string, bool) {
 	return o.Locales, true
 }
 
-// HasLocales returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) HasLocales() bool {
+// &#39;Has&#39;Locales returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) &#39;Has&#39;Locales() bool {
 	if o != nil && !IsNil(o.Locales) {
 		return true
 	}
@@ -191,8 +194,8 @@ func (o *ProductAssetsEntry) GetPositionOk() (*int64, bool) {
 	return o.Position, true
 }
 
-// HasPosition returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) HasPosition() bool {
+// &#39;Has&#39;Position returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) &#39;Has&#39;Position() bool {
 	if o != nil && !IsNil(o.Position) {
 		return true
 	}
@@ -223,8 +226,8 @@ func (o *ProductAssetsEntry) GetMetadataOk() ([]ProductAssetsEntryMetadata, bool
 	return o.Metadata, true
 }
 
-// HasMetadata returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) HasMetadata() bool {
+// &#39;Has&#39;Metadata returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) &#39;Has&#39;Metadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
@@ -265,9 +268,58 @@ func (o ProductAssetsEntry) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductAssetsEntry) UnmarshalJSON(data []byte) (err error) {
+	varProductAssetsEntry := _ProductAssetsEntry{}
+
+	err = json.Unmarshal(data, &varProductAssetsEntry)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductAssetsEntry(varProductAssetsEntry)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "assetGrn")
+		delete(additionalProperties, "localizedAssetGrn")
+		delete(additionalProperties, "locales")
+		delete(additionalProperties, "position")
+		delete(additionalProperties, "metadata")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductAssetsEntry) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductAssetsEntry) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductAssetsEntry struct {
 	value *ProductAssetsEntry
 	isSet bool

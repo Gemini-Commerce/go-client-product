@@ -24,7 +24,10 @@ type ProductUpdateAssetEntryPayload struct {
 	LocalizedAssetGrn *ProductLocalizedAsset `json:"localizedAssetGrn,omitempty"`
 	Position *int64 `json:"position,omitempty"`
 	Metadata []ProductAssetsEntryMetadata `json:"metadata,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductUpdateAssetEntryPayload ProductUpdateAssetEntryPayload
 
 // NewProductUpdateAssetEntryPayload instantiates a new ProductUpdateAssetEntryPayload object
 // This constructor will assign default values to properties that have it defined,
@@ -61,8 +64,8 @@ func (o *ProductUpdateAssetEntryPayload) GetAssetGrnOk() (*string, bool) {
 	return o.AssetGrn, true
 }
 
-// HasAssetGrn returns a boolean if a field has been set.
-func (o *ProductUpdateAssetEntryPayload) HasAssetGrn() bool {
+// &#39;Has&#39;AssetGrn returns a boolean if a field has been set.
+func (o *ProductUpdateAssetEntryPayload) &#39;Has&#39;AssetGrn() bool {
 	if o != nil && !IsNil(o.AssetGrn) {
 		return true
 	}
@@ -93,8 +96,8 @@ func (o *ProductUpdateAssetEntryPayload) GetLocalizedAssetGrnOk() (*ProductLocal
 	return o.LocalizedAssetGrn, true
 }
 
-// HasLocalizedAssetGrn returns a boolean if a field has been set.
-func (o *ProductUpdateAssetEntryPayload) HasLocalizedAssetGrn() bool {
+// &#39;Has&#39;LocalizedAssetGrn returns a boolean if a field has been set.
+func (o *ProductUpdateAssetEntryPayload) &#39;Has&#39;LocalizedAssetGrn() bool {
 	if o != nil && !IsNil(o.LocalizedAssetGrn) {
 		return true
 	}
@@ -125,8 +128,8 @@ func (o *ProductUpdateAssetEntryPayload) GetPositionOk() (*int64, bool) {
 	return o.Position, true
 }
 
-// HasPosition returns a boolean if a field has been set.
-func (o *ProductUpdateAssetEntryPayload) HasPosition() bool {
+// &#39;Has&#39;Position returns a boolean if a field has been set.
+func (o *ProductUpdateAssetEntryPayload) &#39;Has&#39;Position() bool {
 	if o != nil && !IsNil(o.Position) {
 		return true
 	}
@@ -157,8 +160,8 @@ func (o *ProductUpdateAssetEntryPayload) GetMetadataOk() ([]ProductAssetsEntryMe
 	return o.Metadata, true
 }
 
-// HasMetadata returns a boolean if a field has been set.
-func (o *ProductUpdateAssetEntryPayload) HasMetadata() bool {
+// &#39;Has&#39;Metadata returns a boolean if a field has been set.
+func (o *ProductUpdateAssetEntryPayload) &#39;Has&#39;Metadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
@@ -193,9 +196,56 @@ func (o ProductUpdateAssetEntryPayload) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductUpdateAssetEntryPayload) UnmarshalJSON(data []byte) (err error) {
+	varProductUpdateAssetEntryPayload := _ProductUpdateAssetEntryPayload{}
+
+	err = json.Unmarshal(data, &varProductUpdateAssetEntryPayload)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductUpdateAssetEntryPayload(varProductUpdateAssetEntryPayload)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "assetGrn")
+		delete(additionalProperties, "localizedAssetGrn")
+		delete(additionalProperties, "position")
+		delete(additionalProperties, "metadata")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductUpdateAssetEntryPayload) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductUpdateAssetEntryPayload) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductUpdateAssetEntryPayload struct {
 	value *ProductUpdateAssetEntryPayload
 	isSet bool

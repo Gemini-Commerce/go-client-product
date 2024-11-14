@@ -21,7 +21,10 @@ var _ MappedNullable = &ProductMediaGallery{}
 // ProductMediaGallery struct for ProductMediaGallery
 type ProductMediaGallery struct {
 	Entries []ProductMediaGalleryEntry `json:"entries,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductMediaGallery ProductMediaGallery
 
 // NewProductMediaGallery instantiates a new ProductMediaGallery object
 // This constructor will assign default values to properties that have it defined,
@@ -58,8 +61,8 @@ func (o *ProductMediaGallery) GetEntriesOk() ([]ProductMediaGalleryEntry, bool) 
 	return o.Entries, true
 }
 
-// HasEntries returns a boolean if a field has been set.
-func (o *ProductMediaGallery) HasEntries() bool {
+// &#39;Has&#39;Entries returns a boolean if a field has been set.
+func (o *ProductMediaGallery) &#39;Has&#39;Entries() bool {
 	if o != nil && !IsNil(o.Entries) {
 		return true
 	}
@@ -85,9 +88,53 @@ func (o ProductMediaGallery) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Entries) {
 		toSerialize["entries"] = o.Entries
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductMediaGallery) UnmarshalJSON(data []byte) (err error) {
+	varProductMediaGallery := _ProductMediaGallery{}
+
+	err = json.Unmarshal(data, &varProductMediaGallery)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductMediaGallery(varProductMediaGallery)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "entries")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductMediaGallery) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductMediaGallery) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductMediaGallery struct {
 	value *ProductMediaGallery
 	isSet bool

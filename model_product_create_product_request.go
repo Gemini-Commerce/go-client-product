@@ -21,7 +21,7 @@ var _ MappedNullable = &ProductCreateProductRequest{}
 // ProductCreateProductRequest The CreateProductRequest message is used to create a new product within the system. It contains various fields that allow specifying the details and attributes of the product.
 type ProductCreateProductRequest struct {
 	// Represents the ID of the tenant associated with the product.
-	TenantId *string `json:"tenantId,omitempty"`
+	TenantId *string `json:"tenantId,omitempty" validate:"regexp=^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"`
 	// Specifies the type of entity for the product.
 	EntityType *string `json:"entityType,omitempty"`
 	// Indicates the code of the entity associated with the product.
@@ -45,7 +45,10 @@ type ProductCreateProductRequest struct {
 	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
 	// Represents a map of product variants associated with the product, where the key is the variant ID or code, and the value is a ProductVariant message.
 	Variants *map[string]ProductProductVariant `json:"variants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductCreateProductRequest ProductCreateProductRequest
 
 // NewProductCreateProductRequest instantiates a new ProductCreateProductRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -82,8 +85,8 @@ func (o *ProductCreateProductRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -114,8 +117,8 @@ func (o *ProductCreateProductRequest) GetEntityTypeOk() (*string, bool) {
 	return o.EntityType, true
 }
 
-// HasEntityType returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasEntityType() bool {
+// &#39;Has&#39;EntityType returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;EntityType() bool {
 	if o != nil && !IsNil(o.EntityType) {
 		return true
 	}
@@ -146,8 +149,8 @@ func (o *ProductCreateProductRequest) GetEntityCodeOk() (*string, bool) {
 	return o.EntityCode, true
 }
 
-// HasEntityCode returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasEntityCode() bool {
+// &#39;Has&#39;EntityCode returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;EntityCode() bool {
 	if o != nil && !IsNil(o.EntityCode) {
 		return true
 	}
@@ -178,8 +181,8 @@ func (o *ProductCreateProductRequest) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -210,8 +213,8 @@ func (o *ProductCreateProductRequest) GetIsConfigurableOk() (*bool, bool) {
 	return o.IsConfigurable, true
 }
 
-// HasIsConfigurable returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasIsConfigurable() bool {
+// &#39;Has&#39;IsConfigurable returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;IsConfigurable() bool {
 	if o != nil && !IsNil(o.IsConfigurable) {
 		return true
 	}
@@ -242,8 +245,8 @@ func (o *ProductCreateProductRequest) GetVariantAttributesOk() ([]string, bool) 
 	return o.VariantAttributes, true
 }
 
-// HasVariantAttributes returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasVariantAttributes() bool {
+// &#39;Has&#39;VariantAttributes returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;VariantAttributes() bool {
 	if o != nil && !IsNil(o.VariantAttributes) {
 		return true
 	}
@@ -274,8 +277,8 @@ func (o *ProductCreateProductRequest) GetIsVirtualOk() (*bool, bool) {
 	return o.IsVirtual, true
 }
 
-// HasIsVirtual returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasIsVirtual() bool {
+// &#39;Has&#39;IsVirtual returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;IsVirtual() bool {
 	if o != nil && !IsNil(o.IsVirtual) {
 		return true
 	}
@@ -306,8 +309,8 @@ func (o *ProductCreateProductRequest) GetIsGiftcardOk() (*bool, bool) {
 	return o.IsGiftcard, true
 }
 
-// HasIsGiftcard returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasIsGiftcard() bool {
+// &#39;Has&#39;IsGiftcard returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;IsGiftcard() bool {
 	if o != nil && !IsNil(o.IsGiftcard) {
 		return true
 	}
@@ -338,8 +341,8 @@ func (o *ProductCreateProductRequest) GetHasConfiguratorOk() (*bool, bool) {
 	return o.HasConfigurator, true
 }
 
-// HasHasConfigurator returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasHasConfigurator() bool {
+// &#39;Has&#39;HasConfigurator returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;HasConfigurator() bool {
 	if o != nil && !IsNil(o.HasConfigurator) {
 		return true
 	}
@@ -370,8 +373,8 @@ func (o *ProductCreateProductRequest) GetUrlKeyOk() (*ProductLocalizedText, bool
 	return o.UrlKey, true
 }
 
-// HasUrlKey returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasUrlKey() bool {
+// &#39;Has&#39;UrlKey returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;UrlKey() bool {
 	if o != nil && !IsNil(o.UrlKey) {
 		return true
 	}
@@ -402,8 +405,8 @@ func (o *ProductCreateProductRequest) GetMaxSaleableQuantityOk() (*int64, bool) 
 	return o.MaxSaleableQuantity, true
 }
 
-// HasMaxSaleableQuantity returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasMaxSaleableQuantity() bool {
+// &#39;Has&#39;MaxSaleableQuantity returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;MaxSaleableQuantity() bool {
 	if o != nil && !IsNil(o.MaxSaleableQuantity) {
 		return true
 	}
@@ -434,8 +437,8 @@ func (o *ProductCreateProductRequest) GetMediaVariantAttributesOk() ([]string, b
 	return o.MediaVariantAttributes, true
 }
 
-// HasMediaVariantAttributes returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasMediaVariantAttributes() bool {
+// &#39;Has&#39;MediaVariantAttributes returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;MediaVariantAttributes() bool {
 	if o != nil && !IsNil(o.MediaVariantAttributes) {
 		return true
 	}
@@ -466,8 +469,8 @@ func (o *ProductCreateProductRequest) GetAttributesOk() (*map[string]ProtobufAny
 	return o.Attributes, true
 }
 
-// HasAttributes returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasAttributes() bool {
+// &#39;Has&#39;Attributes returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;Attributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
@@ -498,8 +501,8 @@ func (o *ProductCreateProductRequest) GetVariantsOk() (*map[string]ProductProduc
 	return o.Variants, true
 }
 
-// HasVariants returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) HasVariants() bool {
+// &#39;Has&#39;Variants returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) &#39;Has&#39;Variants() bool {
 	if o != nil && !IsNil(o.Variants) {
 		return true
 	}
@@ -564,9 +567,66 @@ func (o ProductCreateProductRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Variants) {
 		toSerialize["variants"] = o.Variants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductCreateProductRequest) UnmarshalJSON(data []byte) (err error) {
+	varProductCreateProductRequest := _ProductCreateProductRequest{}
+
+	err = json.Unmarshal(data, &varProductCreateProductRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductCreateProductRequest(varProductCreateProductRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "entityType")
+		delete(additionalProperties, "entityCode")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "isConfigurable")
+		delete(additionalProperties, "variantAttributes")
+		delete(additionalProperties, "isVirtual")
+		delete(additionalProperties, "isGiftcard")
+		delete(additionalProperties, "hasConfigurator")
+		delete(additionalProperties, "urlKey")
+		delete(additionalProperties, "maxSaleableQuantity")
+		delete(additionalProperties, "mediaVariantAttributes")
+		delete(additionalProperties, "attributes")
+		delete(additionalProperties, "variants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductCreateProductRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductCreateProductRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductCreateProductRequest struct {
 	value *ProductCreateProductRequest
 	isSet bool

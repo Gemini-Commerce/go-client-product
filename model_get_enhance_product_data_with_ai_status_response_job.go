@@ -29,7 +29,10 @@ type GetEnhanceProductDataWithAIStatusResponseJob struct {
 	ExecutedAt *time.Time `json:"executedAt,omitempty"`
 	FinishedAt *time.Time `json:"finishedAt,omitempty"`
 	ProductId *string `json:"productId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetEnhanceProductDataWithAIStatusResponseJob GetEnhanceProductDataWithAIStatusResponseJob
 
 // NewGetEnhanceProductDataWithAIStatusResponseJob instantiates a new GetEnhanceProductDataWithAIStatusResponseJob object
 // This constructor will assign default values to properties that have it defined,
@@ -74,8 +77,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetParentIdOk() (*string,
 	return o.ParentId, true
 }
 
-// HasParentId returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasParentId() bool {
+// &#39;Has&#39;ParentId returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;ParentId() bool {
 	if o != nil && !IsNil(o.ParentId) {
 		return true
 	}
@@ -106,8 +109,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetJobTypeOk() (*ProductA
 	return o.JobType, true
 }
 
-// HasJobType returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasJobType() bool {
+// &#39;Has&#39;JobType returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;JobType() bool {
 	if o != nil && !IsNil(o.JobType) {
 		return true
 	}
@@ -138,8 +141,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetJobStatusOk() (*Produc
 	return o.JobStatus, true
 }
 
-// HasJobStatus returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasJobStatus() bool {
+// &#39;Has&#39;JobStatus returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;JobStatus() bool {
 	if o != nil && !IsNil(o.JobStatus) {
 		return true
 	}
@@ -170,8 +173,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetIdOk() (*string, bool)
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -202,8 +205,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetStartedAtOk() (*time.T
 	return o.StartedAt, true
 }
 
-// HasStartedAt returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasStartedAt() bool {
+// &#39;Has&#39;StartedAt returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;StartedAt() bool {
 	if o != nil && !IsNil(o.StartedAt) {
 		return true
 	}
@@ -234,8 +237,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetExecutedAtOk() (*time.
 	return o.ExecutedAt, true
 }
 
-// HasExecutedAt returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasExecutedAt() bool {
+// &#39;Has&#39;ExecutedAt returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;ExecutedAt() bool {
 	if o != nil && !IsNil(o.ExecutedAt) {
 		return true
 	}
@@ -266,8 +269,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetFinishedAtOk() (*time.
 	return o.FinishedAt, true
 }
 
-// HasFinishedAt returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasFinishedAt() bool {
+// &#39;Has&#39;FinishedAt returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;FinishedAt() bool {
 	if o != nil && !IsNil(o.FinishedAt) {
 		return true
 	}
@@ -298,8 +301,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetProductIdOk() (*string
 	return o.ProductId, true
 }
 
-// HasProductId returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasProductId() bool {
+// &#39;Has&#39;ProductId returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;ProductId() bool {
 	if o != nil && !IsNil(o.ProductId) {
 		return true
 	}
@@ -346,9 +349,60 @@ func (o GetEnhanceProductDataWithAIStatusResponseJob) ToMap() (map[string]interf
 	if !IsNil(o.ProductId) {
 		toSerialize["productId"] = o.ProductId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) UnmarshalJSON(data []byte) (err error) {
+	varGetEnhanceProductDataWithAIStatusResponseJob := _GetEnhanceProductDataWithAIStatusResponseJob{}
+
+	err = json.Unmarshal(data, &varGetEnhanceProductDataWithAIStatusResponseJob)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetEnhanceProductDataWithAIStatusResponseJob(varGetEnhanceProductDataWithAIStatusResponseJob)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "parentId")
+		delete(additionalProperties, "jobType")
+		delete(additionalProperties, "jobStatus")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "startedAt")
+		delete(additionalProperties, "executedAt")
+		delete(additionalProperties, "finishedAt")
+		delete(additionalProperties, "productId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableGetEnhanceProductDataWithAIStatusResponseJob struct {
 	value *GetEnhanceProductDataWithAIStatusResponseJob
 	isSet bool

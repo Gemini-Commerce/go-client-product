@@ -23,7 +23,10 @@ type ProductBulkAddAssetsEntriesRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
 	ProductId *string `json:"productId,omitempty"`
 	Assets []ProductAssetData `json:"assets,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductBulkAddAssetsEntriesRequest ProductBulkAddAssetsEntriesRequest
 
 // NewProductBulkAddAssetsEntriesRequest instantiates a new ProductBulkAddAssetsEntriesRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -60,8 +63,8 @@ func (o *ProductBulkAddAssetsEntriesRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *ProductBulkAddAssetsEntriesRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *ProductBulkAddAssetsEntriesRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -92,8 +95,8 @@ func (o *ProductBulkAddAssetsEntriesRequest) GetProductIdOk() (*string, bool) {
 	return o.ProductId, true
 }
 
-// HasProductId returns a boolean if a field has been set.
-func (o *ProductBulkAddAssetsEntriesRequest) HasProductId() bool {
+// &#39;Has&#39;ProductId returns a boolean if a field has been set.
+func (o *ProductBulkAddAssetsEntriesRequest) &#39;Has&#39;ProductId() bool {
 	if o != nil && !IsNil(o.ProductId) {
 		return true
 	}
@@ -124,8 +127,8 @@ func (o *ProductBulkAddAssetsEntriesRequest) GetAssetsOk() ([]ProductAssetData, 
 	return o.Assets, true
 }
 
-// HasAssets returns a boolean if a field has been set.
-func (o *ProductBulkAddAssetsEntriesRequest) HasAssets() bool {
+// &#39;Has&#39;Assets returns a boolean if a field has been set.
+func (o *ProductBulkAddAssetsEntriesRequest) &#39;Has&#39;Assets() bool {
 	if o != nil && !IsNil(o.Assets) {
 		return true
 	}
@@ -157,9 +160,55 @@ func (o ProductBulkAddAssetsEntriesRequest) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Assets) {
 		toSerialize["assets"] = o.Assets
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductBulkAddAssetsEntriesRequest) UnmarshalJSON(data []byte) (err error) {
+	varProductBulkAddAssetsEntriesRequest := _ProductBulkAddAssetsEntriesRequest{}
+
+	err = json.Unmarshal(data, &varProductBulkAddAssetsEntriesRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductBulkAddAssetsEntriesRequest(varProductBulkAddAssetsEntriesRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "productId")
+		delete(additionalProperties, "assets")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductBulkAddAssetsEntriesRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductBulkAddAssetsEntriesRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductBulkAddAssetsEntriesRequest struct {
 	value *ProductBulkAddAssetsEntriesRequest
 	isSet bool

@@ -22,7 +22,10 @@ var _ MappedNullable = &EntitymanagerAttributeOptionErrors{}
 type EntitymanagerAttributeOptionErrors struct {
 	Error *string `json:"error,omitempty"`
 	Option *map[string]string `json:"option,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerAttributeOptionErrors EntitymanagerAttributeOptionErrors
 
 // NewEntitymanagerAttributeOptionErrors instantiates a new EntitymanagerAttributeOptionErrors object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *EntitymanagerAttributeOptionErrors) GetErrorOk() (*string, bool) {
 	return o.Error, true
 }
 
-// HasError returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOptionErrors) HasError() bool {
+// &#39;Has&#39;Error returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOptionErrors) &#39;Has&#39;Error() bool {
 	if o != nil && !IsNil(o.Error) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *EntitymanagerAttributeOptionErrors) GetOptionOk() (*map[string]string, 
 	return o.Option, true
 }
 
-// HasOption returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOptionErrors) HasOption() bool {
+// &#39;Has&#39;Option returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOptionErrors) &#39;Has&#39;Option() bool {
 	if o != nil && !IsNil(o.Option) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o EntitymanagerAttributeOptionErrors) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Option) {
 		toSerialize["option"] = o.Option
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerAttributeOptionErrors) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerAttributeOptionErrors := _EntitymanagerAttributeOptionErrors{}
+
+	err = json.Unmarshal(data, &varEntitymanagerAttributeOptionErrors)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerAttributeOptionErrors(varEntitymanagerAttributeOptionErrors)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "error")
+		delete(additionalProperties, "option")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerAttributeOptionErrors) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerAttributeOptionErrors) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerAttributeOptionErrors struct {
 	value *EntitymanagerAttributeOptionErrors
 	isSet bool

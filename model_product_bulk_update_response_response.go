@@ -23,7 +23,10 @@ type ProductBulkUpdateResponseResponse struct {
 	ProductId *string `json:"productId,omitempty"`
 	Success *bool `json:"success,omitempty"`
 	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductBulkUpdateResponseResponse ProductBulkUpdateResponseResponse
 
 // NewProductBulkUpdateResponseResponse instantiates a new ProductBulkUpdateResponseResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -60,8 +63,8 @@ func (o *ProductBulkUpdateResponseResponse) GetProductIdOk() (*string, bool) {
 	return o.ProductId, true
 }
 
-// HasProductId returns a boolean if a field has been set.
-func (o *ProductBulkUpdateResponseResponse) HasProductId() bool {
+// &#39;Has&#39;ProductId returns a boolean if a field has been set.
+func (o *ProductBulkUpdateResponseResponse) &#39;Has&#39;ProductId() bool {
 	if o != nil && !IsNil(o.ProductId) {
 		return true
 	}
@@ -92,8 +95,8 @@ func (o *ProductBulkUpdateResponseResponse) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// HasSuccess returns a boolean if a field has been set.
-func (o *ProductBulkUpdateResponseResponse) HasSuccess() bool {
+// &#39;Has&#39;Success returns a boolean if a field has been set.
+func (o *ProductBulkUpdateResponseResponse) &#39;Has&#39;Success() bool {
 	if o != nil && !IsNil(o.Success) {
 		return true
 	}
@@ -124,8 +127,8 @@ func (o *ProductBulkUpdateResponseResponse) GetAttributesOk() (*map[string]Proto
 	return o.Attributes, true
 }
 
-// HasAttributes returns a boolean if a field has been set.
-func (o *ProductBulkUpdateResponseResponse) HasAttributes() bool {
+// &#39;Has&#39;Attributes returns a boolean if a field has been set.
+func (o *ProductBulkUpdateResponseResponse) &#39;Has&#39;Attributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
@@ -157,9 +160,55 @@ func (o ProductBulkUpdateResponseResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductBulkUpdateResponseResponse) UnmarshalJSON(data []byte) (err error) {
+	varProductBulkUpdateResponseResponse := _ProductBulkUpdateResponseResponse{}
+
+	err = json.Unmarshal(data, &varProductBulkUpdateResponseResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductBulkUpdateResponseResponse(varProductBulkUpdateResponseResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "productId")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "attributes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductBulkUpdateResponseResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductBulkUpdateResponseResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductBulkUpdateResponseResponse struct {
 	value *ProductBulkUpdateResponseResponse
 	isSet bool

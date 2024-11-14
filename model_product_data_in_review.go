@@ -21,7 +21,10 @@ var _ MappedNullable = &ProductDataInReview{}
 // ProductDataInReview struct for ProductDataInReview
 type ProductDataInReview struct {
 	Attributes []ProductAttributeInReview `json:"attributes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductDataInReview ProductDataInReview
 
 // NewProductDataInReview instantiates a new ProductDataInReview object
 // This constructor will assign default values to properties that have it defined,
@@ -58,8 +61,8 @@ func (o *ProductDataInReview) GetAttributesOk() ([]ProductAttributeInReview, boo
 	return o.Attributes, true
 }
 
-// HasAttributes returns a boolean if a field has been set.
-func (o *ProductDataInReview) HasAttributes() bool {
+// &#39;Has&#39;Attributes returns a boolean if a field has been set.
+func (o *ProductDataInReview) &#39;Has&#39;Attributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
@@ -85,9 +88,53 @@ func (o ProductDataInReview) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductDataInReview) UnmarshalJSON(data []byte) (err error) {
+	varProductDataInReview := _ProductDataInReview{}
+
+	err = json.Unmarshal(data, &varProductDataInReview)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductDataInReview(varProductDataInReview)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "attributes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductDataInReview) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductDataInReview) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductDataInReview struct {
 	value *ProductDataInReview
 	isSet bool

@@ -27,7 +27,10 @@ type EntitymanagerUpdateAttributeRequestPayload struct {
 	Title *map[string]string `json:"title,omitempty"`
 	RenderAs *EntitymanagerRenderAs `json:"renderAs,omitempty"`
 	AiContext *EntitymanagerAiContext `json:"aiContext,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerUpdateAttributeRequestPayload EntitymanagerUpdateAttributeRequestPayload
 
 // NewEntitymanagerUpdateAttributeRequestPayload instantiates a new EntitymanagerUpdateAttributeRequestPayload object
 // This constructor will assign default values to properties that have it defined,
@@ -68,8 +71,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetLabelOk() (*string, bool
 	return o.Label, true
 }
 
-// HasLabel returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) HasLabel() bool {
+// &#39;Has&#39;Label returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;Label() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -100,8 +103,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetDefaultOk() (*string, bo
 	return o.Default, true
 }
 
-// HasDefault returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) HasDefault() bool {
+// &#39;Has&#39;Default returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;Default() bool {
 	if o != nil && !IsNil(o.Default) {
 		return true
 	}
@@ -132,8 +135,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetSortOk() (*int32, bool) 
 	return o.Sort, true
 }
 
-// HasSort returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) HasSort() bool {
+// &#39;Has&#39;Sort returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;Sort() bool {
 	if o != nil && !IsNil(o.Sort) {
 		return true
 	}
@@ -164,8 +167,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetGroupCodeOk() (*string, 
 	return o.GroupCode, true
 }
 
-// HasGroupCode returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) HasGroupCode() bool {
+// &#39;Has&#39;GroupCode returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;GroupCode() bool {
 	if o != nil && !IsNil(o.GroupCode) {
 		return true
 	}
@@ -196,8 +199,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetTitleOk() (*map[string]s
 	return o.Title, true
 }
 
-// HasTitle returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) HasTitle() bool {
+// &#39;Has&#39;Title returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;Title() bool {
 	if o != nil && !IsNil(o.Title) {
 		return true
 	}
@@ -228,8 +231,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetRenderAsOk() (*Entityman
 	return o.RenderAs, true
 }
 
-// HasRenderAs returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) HasRenderAs() bool {
+// &#39;Has&#39;RenderAs returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;RenderAs() bool {
 	if o != nil && !IsNil(o.RenderAs) {
 		return true
 	}
@@ -260,8 +263,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetAiContextOk() (*Entityma
 	return o.AiContext, true
 }
 
-// HasAiContext returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) HasAiContext() bool {
+// &#39;Has&#39;AiContext returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;AiContext() bool {
 	if o != nil && !IsNil(o.AiContext) {
 		return true
 	}
@@ -305,9 +308,59 @@ func (o EntitymanagerUpdateAttributeRequestPayload) ToMap() (map[string]interfac
 	if !IsNil(o.AiContext) {
 		toSerialize["aiContext"] = o.AiContext
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerUpdateAttributeRequestPayload) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerUpdateAttributeRequestPayload := _EntitymanagerUpdateAttributeRequestPayload{}
+
+	err = json.Unmarshal(data, &varEntitymanagerUpdateAttributeRequestPayload)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerUpdateAttributeRequestPayload(varEntitymanagerUpdateAttributeRequestPayload)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "label")
+		delete(additionalProperties, "default")
+		delete(additionalProperties, "sort")
+		delete(additionalProperties, "groupCode")
+		delete(additionalProperties, "title")
+		delete(additionalProperties, "renderAs")
+		delete(additionalProperties, "aiContext")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerUpdateAttributeRequestPayload) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerUpdateAttributeRequestPayload) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerUpdateAttributeRequestPayload struct {
 	value *EntitymanagerUpdateAttributeRequestPayload
 	isSet bool

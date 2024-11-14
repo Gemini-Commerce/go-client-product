@@ -26,7 +26,10 @@ type EntitymanagerAttributeOption struct {
 	Code *string `json:"code,omitempty"`
 	Value *ProductentitymanagerLocalizedText `json:"value,omitempty"`
 	Swatches []EntitymanagerAttributeOptionSwatch `json:"swatches,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerAttributeOption EntitymanagerAttributeOption
 
 // NewEntitymanagerAttributeOption instantiates a new EntitymanagerAttributeOption object
 // This constructor will assign default values to properties that have it defined,
@@ -63,8 +66,8 @@ func (o *EntitymanagerAttributeOption) GetOptionOk() (*map[string]string, bool) 
 	return o.Option, true
 }
 
-// HasOption returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) HasOption() bool {
+// &#39;Has&#39;Option returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) &#39;Has&#39;Option() bool {
 	if o != nil && !IsNil(o.Option) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *EntitymanagerAttributeOption) GetSortOk() (*int64, bool) {
 	return o.Sort, true
 }
 
-// HasSort returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) HasSort() bool {
+// &#39;Has&#39;Sort returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) &#39;Has&#39;Sort() bool {
 	if o != nil && !IsNil(o.Sort) {
 		return true
 	}
@@ -127,8 +130,8 @@ func (o *EntitymanagerAttributeOption) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -159,8 +162,8 @@ func (o *EntitymanagerAttributeOption) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -191,8 +194,8 @@ func (o *EntitymanagerAttributeOption) GetValueOk() (*ProductentitymanagerLocali
 	return o.Value, true
 }
 
-// HasValue returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) HasValue() bool {
+// &#39;Has&#39;Value returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) &#39;Has&#39;Value() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}
@@ -223,8 +226,8 @@ func (o *EntitymanagerAttributeOption) GetSwatchesOk() ([]EntitymanagerAttribute
 	return o.Swatches, true
 }
 
-// HasSwatches returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) HasSwatches() bool {
+// &#39;Has&#39;Swatches returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) &#39;Has&#39;Swatches() bool {
 	if o != nil && !IsNil(o.Swatches) {
 		return true
 	}
@@ -265,9 +268,58 @@ func (o EntitymanagerAttributeOption) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Swatches) {
 		toSerialize["swatches"] = o.Swatches
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerAttributeOption) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerAttributeOption := _EntitymanagerAttributeOption{}
+
+	err = json.Unmarshal(data, &varEntitymanagerAttributeOption)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerAttributeOption(varEntitymanagerAttributeOption)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "option")
+		delete(additionalProperties, "sort")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "swatches")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerAttributeOption) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerAttributeOption) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerAttributeOption struct {
 	value *EntitymanagerAttributeOption
 	isSet bool

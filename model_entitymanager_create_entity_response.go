@@ -22,7 +22,10 @@ var _ MappedNullable = &EntitymanagerCreateEntityResponse{}
 type EntitymanagerCreateEntityResponse struct {
 	AttributeWriteErrors *EntitymanagerAttributeWriteErrors `json:"attributeWriteErrors,omitempty"`
 	Entity *EntitymanagerEntity `json:"entity,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerCreateEntityResponse EntitymanagerCreateEntityResponse
 
 // NewEntitymanagerCreateEntityResponse instantiates a new EntitymanagerCreateEntityResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *EntitymanagerCreateEntityResponse) GetAttributeWriteErrorsOk() (*Entity
 	return o.AttributeWriteErrors, true
 }
 
-// HasAttributeWriteErrors returns a boolean if a field has been set.
-func (o *EntitymanagerCreateEntityResponse) HasAttributeWriteErrors() bool {
+// &#39;Has&#39;AttributeWriteErrors returns a boolean if a field has been set.
+func (o *EntitymanagerCreateEntityResponse) &#39;Has&#39;AttributeWriteErrors() bool {
 	if o != nil && !IsNil(o.AttributeWriteErrors) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *EntitymanagerCreateEntityResponse) GetEntityOk() (*EntitymanagerEntity,
 	return o.Entity, true
 }
 
-// HasEntity returns a boolean if a field has been set.
-func (o *EntitymanagerCreateEntityResponse) HasEntity() bool {
+// &#39;Has&#39;Entity returns a boolean if a field has been set.
+func (o *EntitymanagerCreateEntityResponse) &#39;Has&#39;Entity() bool {
 	if o != nil && !IsNil(o.Entity) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o EntitymanagerCreateEntityResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Entity) {
 		toSerialize["entity"] = o.Entity
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerCreateEntityResponse) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerCreateEntityResponse := _EntitymanagerCreateEntityResponse{}
+
+	err = json.Unmarshal(data, &varEntitymanagerCreateEntityResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerCreateEntityResponse(varEntitymanagerCreateEntityResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "attributeWriteErrors")
+		delete(additionalProperties, "entity")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerCreateEntityResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerCreateEntityResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerCreateEntityResponse struct {
 	value *EntitymanagerCreateEntityResponse
 	isSet bool

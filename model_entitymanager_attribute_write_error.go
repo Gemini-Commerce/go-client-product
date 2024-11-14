@@ -23,7 +23,10 @@ type EntitymanagerAttributeWriteError struct {
 	ErrorCode *string `json:"errorCode,omitempty"`
 	AttributeCode *string `json:"attributeCode,omitempty"`
 	Message *string `json:"message,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerAttributeWriteError EntitymanagerAttributeWriteError
 
 // NewEntitymanagerAttributeWriteError instantiates a new EntitymanagerAttributeWriteError object
 // This constructor will assign default values to properties that have it defined,
@@ -60,8 +63,8 @@ func (o *EntitymanagerAttributeWriteError) GetErrorCodeOk() (*string, bool) {
 	return o.ErrorCode, true
 }
 
-// HasErrorCode returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeWriteError) HasErrorCode() bool {
+// &#39;Has&#39;ErrorCode returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeWriteError) &#39;Has&#39;ErrorCode() bool {
 	if o != nil && !IsNil(o.ErrorCode) {
 		return true
 	}
@@ -92,8 +95,8 @@ func (o *EntitymanagerAttributeWriteError) GetAttributeCodeOk() (*string, bool) 
 	return o.AttributeCode, true
 }
 
-// HasAttributeCode returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeWriteError) HasAttributeCode() bool {
+// &#39;Has&#39;AttributeCode returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeWriteError) &#39;Has&#39;AttributeCode() bool {
 	if o != nil && !IsNil(o.AttributeCode) {
 		return true
 	}
@@ -124,8 +127,8 @@ func (o *EntitymanagerAttributeWriteError) GetMessageOk() (*string, bool) {
 	return o.Message, true
 }
 
-// HasMessage returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeWriteError) HasMessage() bool {
+// &#39;Has&#39;Message returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeWriteError) &#39;Has&#39;Message() bool {
 	if o != nil && !IsNil(o.Message) {
 		return true
 	}
@@ -157,9 +160,55 @@ func (o EntitymanagerAttributeWriteError) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerAttributeWriteError) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerAttributeWriteError := _EntitymanagerAttributeWriteError{}
+
+	err = json.Unmarshal(data, &varEntitymanagerAttributeWriteError)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerAttributeWriteError(varEntitymanagerAttributeWriteError)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "errorCode")
+		delete(additionalProperties, "attributeCode")
+		delete(additionalProperties, "message")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerAttributeWriteError) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerAttributeWriteError) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerAttributeWriteError struct {
 	value *EntitymanagerAttributeWriteError
 	isSet bool

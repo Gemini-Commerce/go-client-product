@@ -22,7 +22,10 @@ var _ MappedNullable = &EntitymanagerOptionsList{}
 type EntitymanagerOptionsList struct {
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerOptionsList EntitymanagerOptionsList
 
 // NewEntitymanagerOptionsList instantiates a new EntitymanagerOptionsList object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *EntitymanagerOptionsList) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *EntitymanagerOptionsList) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *EntitymanagerOptionsList) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *EntitymanagerOptionsList) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *EntitymanagerOptionsList) HasName() bool {
+// &#39;Has&#39;Name returns a boolean if a field has been set.
+func (o *EntitymanagerOptionsList) &#39;Has&#39;Name() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o EntitymanagerOptionsList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerOptionsList) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerOptionsList := _EntitymanagerOptionsList{}
+
+	err = json.Unmarshal(data, &varEntitymanagerOptionsList)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerOptionsList(varEntitymanagerOptionsList)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerOptionsList) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerOptionsList) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerOptionsList struct {
 	value *EntitymanagerOptionsList
 	isSet bool

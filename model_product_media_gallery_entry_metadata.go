@@ -22,7 +22,10 @@ var _ MappedNullable = &ProductMediaGalleryEntryMetadata{}
 type ProductMediaGalleryEntryMetadata struct {
 	Roles []string `json:"roles,omitempty"`
 	Alt *ProductLocalizedText `json:"alt,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductMediaGalleryEntryMetadata ProductMediaGalleryEntryMetadata
 
 // NewProductMediaGalleryEntryMetadata instantiates a new ProductMediaGalleryEntryMetadata object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *ProductMediaGalleryEntryMetadata) GetRolesOk() ([]string, bool) {
 	return o.Roles, true
 }
 
-// HasRoles returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntryMetadata) HasRoles() bool {
+// &#39;Has&#39;Roles returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntryMetadata) &#39;Has&#39;Roles() bool {
 	if o != nil && !IsNil(o.Roles) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *ProductMediaGalleryEntryMetadata) GetAltOk() (*ProductLocalizedText, bo
 	return o.Alt, true
 }
 
-// HasAlt returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntryMetadata) HasAlt() bool {
+// &#39;Has&#39;Alt returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntryMetadata) &#39;Has&#39;Alt() bool {
 	if o != nil && !IsNil(o.Alt) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o ProductMediaGalleryEntryMetadata) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Alt) {
 		toSerialize["alt"] = o.Alt
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductMediaGalleryEntryMetadata) UnmarshalJSON(data []byte) (err error) {
+	varProductMediaGalleryEntryMetadata := _ProductMediaGalleryEntryMetadata{}
+
+	err = json.Unmarshal(data, &varProductMediaGalleryEntryMetadata)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductMediaGalleryEntryMetadata(varProductMediaGalleryEntryMetadata)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "roles")
+		delete(additionalProperties, "alt")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductMediaGalleryEntryMetadata) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductMediaGalleryEntryMetadata) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductMediaGalleryEntryMetadata struct {
 	value *ProductMediaGalleryEntryMetadata
 	isSet bool

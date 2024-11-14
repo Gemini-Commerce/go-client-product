@@ -30,7 +30,10 @@ type ProductUpdateProductRequestV2 struct {
 	Variants *map[string]ProductProductVariant `json:"variants,omitempty"`
 	MediaVariantAttributes []string `json:"mediaVariantAttributes,omitempty"`
 	InReview *bool `json:"inReview,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductUpdateProductRequestV2 ProductUpdateProductRequestV2
 
 // NewProductUpdateProductRequestV2 instantiates a new ProductUpdateProductRequestV2 object
 // This constructor will assign default values to properties that have it defined,
@@ -67,8 +70,8 @@ func (o *ProductUpdateProductRequestV2) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -99,8 +102,8 @@ func (o *ProductUpdateProductRequestV2) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -131,8 +134,8 @@ func (o *ProductUpdateProductRequestV2) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -163,8 +166,8 @@ func (o *ProductUpdateProductRequestV2) GetAttributesMaskOk() (*ProductFieldMask
 	return o.AttributesMask, true
 }
 
-// HasAttributesMask returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) HasAttributesMask() bool {
+// &#39;Has&#39;AttributesMask returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) &#39;Has&#39;AttributesMask() bool {
 	if o != nil && !IsNil(o.AttributesMask) {
 		return true
 	}
@@ -195,8 +198,8 @@ func (o *ProductUpdateProductRequestV2) GetUrlKeyOk() (*ProductLocalizedText, bo
 	return o.UrlKey, true
 }
 
-// HasUrlKey returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) HasUrlKey() bool {
+// &#39;Has&#39;UrlKey returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) &#39;Has&#39;UrlKey() bool {
 	if o != nil && !IsNil(o.UrlKey) {
 		return true
 	}
@@ -227,8 +230,8 @@ func (o *ProductUpdateProductRequestV2) GetMaxSaleableQuantityOk() (*int64, bool
 	return o.MaxSaleableQuantity, true
 }
 
-// HasMaxSaleableQuantity returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) HasMaxSaleableQuantity() bool {
+// &#39;Has&#39;MaxSaleableQuantity returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) &#39;Has&#39;MaxSaleableQuantity() bool {
 	if o != nil && !IsNil(o.MaxSaleableQuantity) {
 		return true
 	}
@@ -259,8 +262,8 @@ func (o *ProductUpdateProductRequestV2) GetAttributesOk() (*map[string]ProtobufA
 	return o.Attributes, true
 }
 
-// HasAttributes returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) HasAttributes() bool {
+// &#39;Has&#39;Attributes returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) &#39;Has&#39;Attributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
@@ -291,8 +294,8 @@ func (o *ProductUpdateProductRequestV2) GetVariantsOk() (*map[string]ProductProd
 	return o.Variants, true
 }
 
-// HasVariants returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) HasVariants() bool {
+// &#39;Has&#39;Variants returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) &#39;Has&#39;Variants() bool {
 	if o != nil && !IsNil(o.Variants) {
 		return true
 	}
@@ -323,8 +326,8 @@ func (o *ProductUpdateProductRequestV2) GetMediaVariantAttributesOk() ([]string,
 	return o.MediaVariantAttributes, true
 }
 
-// HasMediaVariantAttributes returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) HasMediaVariantAttributes() bool {
+// &#39;Has&#39;MediaVariantAttributes returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) &#39;Has&#39;MediaVariantAttributes() bool {
 	if o != nil && !IsNil(o.MediaVariantAttributes) {
 		return true
 	}
@@ -355,8 +358,8 @@ func (o *ProductUpdateProductRequestV2) GetInReviewOk() (*bool, bool) {
 	return o.InReview, true
 }
 
-// HasInReview returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) HasInReview() bool {
+// &#39;Has&#39;InReview returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) &#39;Has&#39;InReview() bool {
 	if o != nil && !IsNil(o.InReview) {
 		return true
 	}
@@ -409,9 +412,62 @@ func (o ProductUpdateProductRequestV2) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InReview) {
 		toSerialize["inReview"] = o.InReview
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductUpdateProductRequestV2) UnmarshalJSON(data []byte) (err error) {
+	varProductUpdateProductRequestV2 := _ProductUpdateProductRequestV2{}
+
+	err = json.Unmarshal(data, &varProductUpdateProductRequestV2)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductUpdateProductRequestV2(varProductUpdateProductRequestV2)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "attributesMask")
+		delete(additionalProperties, "urlKey")
+		delete(additionalProperties, "maxSaleableQuantity")
+		delete(additionalProperties, "attributes")
+		delete(additionalProperties, "variants")
+		delete(additionalProperties, "mediaVariantAttributes")
+		delete(additionalProperties, "inReview")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductUpdateProductRequestV2) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductUpdateProductRequestV2) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductUpdateProductRequestV2 struct {
 	value *ProductUpdateProductRequestV2
 	isSet bool

@@ -24,7 +24,10 @@ type ProductProductVariant struct {
 	Grn *string `json:"grn,omitempty"`
 	MaxSaleableQuantity *int64 `json:"maxSaleableQuantity,omitempty"`
 	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductProductVariant ProductProductVariant
 
 // NewProductProductVariant instantiates a new ProductProductVariant object
 // This constructor will assign default values to properties that have it defined,
@@ -61,8 +64,8 @@ func (o *ProductProductVariant) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ProductProductVariant) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *ProductProductVariant) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -93,8 +96,8 @@ func (o *ProductProductVariant) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// HasGrn returns a boolean if a field has been set.
-func (o *ProductProductVariant) HasGrn() bool {
+// &#39;Has&#39;Grn returns a boolean if a field has been set.
+func (o *ProductProductVariant) &#39;Has&#39;Grn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -125,8 +128,8 @@ func (o *ProductProductVariant) GetMaxSaleableQuantityOk() (*int64, bool) {
 	return o.MaxSaleableQuantity, true
 }
 
-// HasMaxSaleableQuantity returns a boolean if a field has been set.
-func (o *ProductProductVariant) HasMaxSaleableQuantity() bool {
+// &#39;Has&#39;MaxSaleableQuantity returns a boolean if a field has been set.
+func (o *ProductProductVariant) &#39;Has&#39;MaxSaleableQuantity() bool {
 	if o != nil && !IsNil(o.MaxSaleableQuantity) {
 		return true
 	}
@@ -157,8 +160,8 @@ func (o *ProductProductVariant) GetAttributesOk() (*map[string]ProtobufAny, bool
 	return o.Attributes, true
 }
 
-// HasAttributes returns a boolean if a field has been set.
-func (o *ProductProductVariant) HasAttributes() bool {
+// &#39;Has&#39;Attributes returns a boolean if a field has been set.
+func (o *ProductProductVariant) &#39;Has&#39;Attributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
@@ -193,9 +196,56 @@ func (o ProductProductVariant) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductProductVariant) UnmarshalJSON(data []byte) (err error) {
+	varProductProductVariant := _ProductProductVariant{}
+
+	err = json.Unmarshal(data, &varProductProductVariant)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductProductVariant(varProductProductVariant)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "maxSaleableQuantity")
+		delete(additionalProperties, "attributes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductProductVariant) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductProductVariant) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductProductVariant struct {
 	value *ProductProductVariant
 	isSet bool

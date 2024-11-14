@@ -23,7 +23,10 @@ type EntitymanagerUpdateAttributeGroupRequestPayload struct {
 	Label *ProductentitymanagerLocalizedText `json:"label,omitempty"`
 	Sort *int32 `json:"sort,omitempty"`
 	Visibility []string `json:"visibility,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerUpdateAttributeGroupRequestPayload EntitymanagerUpdateAttributeGroupRequestPayload
 
 // NewEntitymanagerUpdateAttributeGroupRequestPayload instantiates a new EntitymanagerUpdateAttributeGroupRequestPayload object
 // This constructor will assign default values to properties that have it defined,
@@ -60,8 +63,8 @@ func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetLabelOk() (*Product
 	return o.Label, true
 }
 
-// HasLabel returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeGroupRequestPayload) HasLabel() bool {
+// &#39;Has&#39;Label returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) &#39;Has&#39;Label() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -92,8 +95,8 @@ func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetSortOk() (*int32, b
 	return o.Sort, true
 }
 
-// HasSort returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeGroupRequestPayload) HasSort() bool {
+// &#39;Has&#39;Sort returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) &#39;Has&#39;Sort() bool {
 	if o != nil && !IsNil(o.Sort) {
 		return true
 	}
@@ -124,8 +127,8 @@ func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetVisibilityOk() ([]s
 	return o.Visibility, true
 }
 
-// HasVisibility returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeGroupRequestPayload) HasVisibility() bool {
+// &#39;Has&#39;Visibility returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) &#39;Has&#39;Visibility() bool {
 	if o != nil && !IsNil(o.Visibility) {
 		return true
 	}
@@ -157,9 +160,55 @@ func (o EntitymanagerUpdateAttributeGroupRequestPayload) ToMap() (map[string]int
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerUpdateAttributeGroupRequestPayload := _EntitymanagerUpdateAttributeGroupRequestPayload{}
+
+	err = json.Unmarshal(data, &varEntitymanagerUpdateAttributeGroupRequestPayload)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerUpdateAttributeGroupRequestPayload(varEntitymanagerUpdateAttributeGroupRequestPayload)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "label")
+		delete(additionalProperties, "sort")
+		delete(additionalProperties, "visibility")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerUpdateAttributeGroupRequestPayload struct {
 	value *EntitymanagerUpdateAttributeGroupRequestPayload
 	isSet bool

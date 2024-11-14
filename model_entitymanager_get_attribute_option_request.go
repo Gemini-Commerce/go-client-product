@@ -23,7 +23,10 @@ type EntitymanagerGetAttributeOptionRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
 	ListCode *string `json:"listCode,omitempty"`
 	OptionId *string `json:"optionId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerGetAttributeOptionRequest EntitymanagerGetAttributeOptionRequest
 
 // NewEntitymanagerGetAttributeOptionRequest instantiates a new EntitymanagerGetAttributeOptionRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -60,8 +63,8 @@ func (o *EntitymanagerGetAttributeOptionRequest) GetTenantIdOk() (*string, bool)
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *EntitymanagerGetAttributeOptionRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *EntitymanagerGetAttributeOptionRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -92,8 +95,8 @@ func (o *EntitymanagerGetAttributeOptionRequest) GetListCodeOk() (*string, bool)
 	return o.ListCode, true
 }
 
-// HasListCode returns a boolean if a field has been set.
-func (o *EntitymanagerGetAttributeOptionRequest) HasListCode() bool {
+// &#39;Has&#39;ListCode returns a boolean if a field has been set.
+func (o *EntitymanagerGetAttributeOptionRequest) &#39;Has&#39;ListCode() bool {
 	if o != nil && !IsNil(o.ListCode) {
 		return true
 	}
@@ -124,8 +127,8 @@ func (o *EntitymanagerGetAttributeOptionRequest) GetOptionIdOk() (*string, bool)
 	return o.OptionId, true
 }
 
-// HasOptionId returns a boolean if a field has been set.
-func (o *EntitymanagerGetAttributeOptionRequest) HasOptionId() bool {
+// &#39;Has&#39;OptionId returns a boolean if a field has been set.
+func (o *EntitymanagerGetAttributeOptionRequest) &#39;Has&#39;OptionId() bool {
 	if o != nil && !IsNil(o.OptionId) {
 		return true
 	}
@@ -157,9 +160,55 @@ func (o EntitymanagerGetAttributeOptionRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.OptionId) {
 		toSerialize["optionId"] = o.OptionId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerGetAttributeOptionRequest) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerGetAttributeOptionRequest := _EntitymanagerGetAttributeOptionRequest{}
+
+	err = json.Unmarshal(data, &varEntitymanagerGetAttributeOptionRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerGetAttributeOptionRequest(varEntitymanagerGetAttributeOptionRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "listCode")
+		delete(additionalProperties, "optionId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerGetAttributeOptionRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerGetAttributeOptionRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerGetAttributeOptionRequest struct {
 	value *EntitymanagerGetAttributeOptionRequest
 	isSet bool

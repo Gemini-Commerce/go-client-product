@@ -22,7 +22,10 @@ var _ MappedNullable = &EntitymanagerListEntitiesRequest{}
 type EntitymanagerListEntitiesRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
 	PageSize *int32 `json:"pageSize,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerListEntitiesRequest EntitymanagerListEntitiesRequest
 
 // NewEntitymanagerListEntitiesRequest instantiates a new EntitymanagerListEntitiesRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *EntitymanagerListEntitiesRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *EntitymanagerListEntitiesRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *EntitymanagerListEntitiesRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *EntitymanagerListEntitiesRequest) GetPageSizeOk() (*int32, bool) {
 	return o.PageSize, true
 }
 
-// HasPageSize returns a boolean if a field has been set.
-func (o *EntitymanagerListEntitiesRequest) HasPageSize() bool {
+// &#39;Has&#39;PageSize returns a boolean if a field has been set.
+func (o *EntitymanagerListEntitiesRequest) &#39;Has&#39;PageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o EntitymanagerListEntitiesRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.PageSize) {
 		toSerialize["pageSize"] = o.PageSize
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerListEntitiesRequest) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerListEntitiesRequest := _EntitymanagerListEntitiesRequest{}
+
+	err = json.Unmarshal(data, &varEntitymanagerListEntitiesRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerListEntitiesRequest(varEntitymanagerListEntitiesRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "pageSize")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerListEntitiesRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerListEntitiesRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerListEntitiesRequest struct {
 	value *EntitymanagerListEntitiesRequest
 	isSet bool

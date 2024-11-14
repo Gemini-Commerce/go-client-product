@@ -23,7 +23,10 @@ type ProductAttributeResponseError struct {
 	Code *string `json:"code,omitempty"`
 	Message *string `json:"message,omitempty"`
 	AttributeCode *string `json:"attributeCode,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductAttributeResponseError ProductAttributeResponseError
 
 // NewProductAttributeResponseError instantiates a new ProductAttributeResponseError object
 // This constructor will assign default values to properties that have it defined,
@@ -60,8 +63,8 @@ func (o *ProductAttributeResponseError) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *ProductAttributeResponseError) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *ProductAttributeResponseError) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -92,8 +95,8 @@ func (o *ProductAttributeResponseError) GetMessageOk() (*string, bool) {
 	return o.Message, true
 }
 
-// HasMessage returns a boolean if a field has been set.
-func (o *ProductAttributeResponseError) HasMessage() bool {
+// &#39;Has&#39;Message returns a boolean if a field has been set.
+func (o *ProductAttributeResponseError) &#39;Has&#39;Message() bool {
 	if o != nil && !IsNil(o.Message) {
 		return true
 	}
@@ -124,8 +127,8 @@ func (o *ProductAttributeResponseError) GetAttributeCodeOk() (*string, bool) {
 	return o.AttributeCode, true
 }
 
-// HasAttributeCode returns a boolean if a field has been set.
-func (o *ProductAttributeResponseError) HasAttributeCode() bool {
+// &#39;Has&#39;AttributeCode returns a boolean if a field has been set.
+func (o *ProductAttributeResponseError) &#39;Has&#39;AttributeCode() bool {
 	if o != nil && !IsNil(o.AttributeCode) {
 		return true
 	}
@@ -157,9 +160,55 @@ func (o ProductAttributeResponseError) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AttributeCode) {
 		toSerialize["attributeCode"] = o.AttributeCode
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductAttributeResponseError) UnmarshalJSON(data []byte) (err error) {
+	varProductAttributeResponseError := _ProductAttributeResponseError{}
+
+	err = json.Unmarshal(data, &varProductAttributeResponseError)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductAttributeResponseError(varProductAttributeResponseError)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "message")
+		delete(additionalProperties, "attributeCode")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductAttributeResponseError) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductAttributeResponseError) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductAttributeResponseError struct {
 	value *ProductAttributeResponseError
 	isSet bool

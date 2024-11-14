@@ -1826,12 +1826,12 @@ components:
       type: object
     GetEnhanceProductDataWithAIStatusResponseJob:
       example:
-        jobStatus: null
+        jobStatus: ATTRIBUTE_IN_REVIEW_STATUS_UNKNOWN
         executedAt: 2000-01-23T04:56:07.000+00:00
         productId: productId
         startedAt: 2000-01-23T04:56:07.000+00:00
         id: id
-        jobType: null
+        jobType: ATTRIBUTE_IN_REVIEW_JOB_TYPE_UNKNOWN
         parentId: parentId
         finishedAt: 2000-01-23T04:56:07.000+00:00
       properties:
@@ -1900,12 +1900,12 @@ components:
         isRequired: true
         code: code
         optionList: optionList
-        renderAs: null
+        renderAs: DEFAULT
         entityId: entityId
         isRepeated: true
         label: label
         sort: 0
-        type: null
+        type: TEXT
         title:
           key: title
         isSystem: true
@@ -2080,12 +2080,12 @@ components:
         - isRequired: true
           code: code
           optionList: optionList
-          renderAs: null
+          renderAs: DEFAULT
           entityId: entityId
           isRepeated: true
           label: label
           sort: 0
-          type: null
+          type: TEXT
           title:
             key: title
           isSystem: true
@@ -2099,12 +2099,12 @@ components:
         - isRequired: true
           code: code
           optionList: optionList
-          renderAs: null
+          renderAs: DEFAULT
           entityId: entityId
           isRepeated: true
           label: label
           sort: 0
-          type: null
+          type: TEXT
           title:
             key: title
           isSystem: true
@@ -2209,12 +2209,12 @@ components:
           - isRequired: true
             code: code
             optionList: optionList
-            renderAs: null
+            renderAs: DEFAULT
             entityId: entityId
             isRepeated: true
             label: label
             sort: 0
-            type: null
+            type: TEXT
             title:
               key: title
             isSystem: true
@@ -2228,12 +2228,12 @@ components:
           - isRequired: true
             code: code
             optionList: optionList
-            renderAs: null
+            renderAs: DEFAULT
             entityId: entityId
             isRepeated: true
             label: label
             sort: 0
-            type: null
+            type: TEXT
             title:
               key: title
             isSystem: true
@@ -2300,12 +2300,12 @@ components:
         - isRequired: true
           code: code
           optionList: optionList
-          renderAs: null
+          renderAs: DEFAULT
           entityId: entityId
           isRepeated: true
           label: label
           sort: 0
-          type: null
+          type: TEXT
           title:
             key: title
           isSystem: true
@@ -2319,12 +2319,12 @@ components:
         - isRequired: true
           code: code
           optionList: optionList
-          renderAs: null
+          renderAs: DEFAULT
           entityId: entityId
           isRepeated: true
           label: label
           sort: 0
-          type: null
+          type: TEXT
           title:
             key: title
           isSystem: true
@@ -2599,12 +2599,12 @@ components:
           - isRequired: true
             code: code
             optionList: optionList
-            renderAs: null
+            renderAs: DEFAULT
             entityId: entityId
             isRepeated: true
             label: label
             sort: 0
-            type: null
+            type: TEXT
             title:
               key: title
             isSystem: true
@@ -2618,12 +2618,12 @@ components:
           - isRequired: true
             code: code
             optionList: optionList
-            renderAs: null
+            renderAs: DEFAULT
             entityId: entityId
             isRepeated: true
             label: label
             sort: 0
-            type: null
+            type: TEXT
             title:
               key: title
             isSystem: true
@@ -2647,12 +2647,12 @@ components:
           - isRequired: true
             code: code
             optionList: optionList
-            renderAs: null
+            renderAs: DEFAULT
             entityId: entityId
             isRepeated: true
             label: label
             sort: 0
-            type: null
+            type: TEXT
             title:
               key: title
             isSystem: true
@@ -2666,12 +2666,12 @@ components:
           - isRequired: true
             code: code
             optionList: optionList
-            renderAs: null
+            renderAs: DEFAULT
             entityId: entityId
             isRepeated: true
             label: label
             sort: 0
-            type: null
+            type: TEXT
             title:
               key: title
             isSystem: true
@@ -3051,8 +3051,8 @@ components:
         int64: int64
         float32: 6.0274563
         float64: 1.4658129805029452
-        source: null
-        jobType: null
+        source: ATTRIBUTE_IN_REVIEW_SOURCE_UNKNOWN
+        jobType: ATTRIBUTE_IN_REVIEW_JOB_TYPE_UNKNOWN
         error:
           reason: reason
           code: code
@@ -3635,8 +3635,8 @@ components:
           int64: int64
           float32: 6.0274563
           float64: 1.4658129805029452
-          source: null
-          jobType: null
+          source: ATTRIBUTE_IN_REVIEW_SOURCE_UNKNOWN
+          jobType: ATTRIBUTE_IN_REVIEW_JOB_TYPE_UNKNOWN
           error:
             reason: reason
             code: code
@@ -3651,8 +3651,8 @@ components:
           int64: int64
           float32: 6.0274563
           float64: 1.4658129805029452
-          source: null
-          jobType: null
+          source: ATTRIBUTE_IN_REVIEW_SOURCE_UNKNOWN
+          jobType: ATTRIBUTE_IN_REVIEW_JOB_TYPE_UNKNOWN
           error:
             reason: reason
             code: code
@@ -3707,20 +3707,20 @@ components:
     productGetEnhanceProductDataWithAIStatusResponse:
       example:
         jobs:
-        - jobStatus: null
+        - jobStatus: ATTRIBUTE_IN_REVIEW_STATUS_UNKNOWN
           executedAt: 2000-01-23T04:56:07.000+00:00
           productId: productId
           startedAt: 2000-01-23T04:56:07.000+00:00
           id: id
-          jobType: null
+          jobType: ATTRIBUTE_IN_REVIEW_JOB_TYPE_UNKNOWN
           parentId: parentId
           finishedAt: 2000-01-23T04:56:07.000+00:00
-        - jobStatus: null
+        - jobStatus: ATTRIBUTE_IN_REVIEW_STATUS_UNKNOWN
           executedAt: 2000-01-23T04:56:07.000+00:00
           productId: productId
           startedAt: 2000-01-23T04:56:07.000+00:00
           id: id
-          jobType: null
+          jobType: ATTRIBUTE_IN_REVIEW_JOB_TYPE_UNKNOWN
           parentId: parentId
           finishedAt: 2000-01-23T04:56:07.000+00:00
       properties:
@@ -4009,8 +4009,8 @@ components:
             int64: int64
             float32: 6.0274563
             float64: 1.4658129805029452
-            source: null
-            jobType: null
+            source: ATTRIBUTE_IN_REVIEW_SOURCE_UNKNOWN
+            jobType: ATTRIBUTE_IN_REVIEW_JOB_TYPE_UNKNOWN
             error:
               reason: reason
               code: code
@@ -4025,8 +4025,8 @@ components:
             int64: int64
             float32: 6.0274563
             float64: 1.4658129805029452
-            source: null
-            jobType: null
+            source: ATTRIBUTE_IN_REVIEW_SOURCE_UNKNOWN
+            jobType: ATTRIBUTE_IN_REVIEW_JOB_TYPE_UNKNOWN
             error:
               reason: reason
               code: code
@@ -5931,6 +5931,12 @@ components:
           type: string
       type: object
     rpcStatus:
+      example:
+        code: 6
+        details:
+        - '@type': '@type'
+        - '@type': '@type'
+        message: message
       properties:
         code:
           format: int32

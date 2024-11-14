@@ -1,4 +1,4 @@
-# GeminiCommerce\Product\ProductAPI
+# \ProductAPI
 
 All URIs are relative to *https://product.api.gogemini.io*
 

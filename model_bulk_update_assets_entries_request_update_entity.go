@@ -23,7 +23,10 @@ type BulkUpdateAssetsEntriesRequestUpdateEntity struct {
 	Id *string `json:"id,omitempty"`
 	Payload *ProductUpdateAssetEntryPayload `json:"payload,omitempty"`
 	PayloadMask *string `json:"payloadMask,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BulkUpdateAssetsEntriesRequestUpdateEntity BulkUpdateAssetsEntriesRequestUpdateEntity
 
 // NewBulkUpdateAssetsEntriesRequestUpdateEntity instantiates a new BulkUpdateAssetsEntriesRequestUpdateEntity object
 // This constructor will assign default values to properties that have it defined,
@@ -60,8 +63,8 @@ func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -92,8 +95,8 @@ func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetPayloadOk() (*ProductUpd
 	return o.Payload, true
 }
 
-// HasPayload returns a boolean if a field has been set.
-func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) HasPayload() bool {
+// &#39;Has&#39;Payload returns a boolean if a field has been set.
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) &#39;Has&#39;Payload() bool {
 	if o != nil && !IsNil(o.Payload) {
 		return true
 	}
@@ -124,8 +127,8 @@ func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetPayloadMaskOk() (*string
 	return o.PayloadMask, true
 }
 
-// HasPayloadMask returns a boolean if a field has been set.
-func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) HasPayloadMask() bool {
+// &#39;Has&#39;PayloadMask returns a boolean if a field has been set.
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) &#39;Has&#39;PayloadMask() bool {
 	if o != nil && !IsNil(o.PayloadMask) {
 		return true
 	}
@@ -157,9 +160,55 @@ func (o BulkUpdateAssetsEntriesRequestUpdateEntity) ToMap() (map[string]interfac
 	if !IsNil(o.PayloadMask) {
 		toSerialize["payloadMask"] = o.PayloadMask
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) UnmarshalJSON(data []byte) (err error) {
+	varBulkUpdateAssetsEntriesRequestUpdateEntity := _BulkUpdateAssetsEntriesRequestUpdateEntity{}
+
+	err = json.Unmarshal(data, &varBulkUpdateAssetsEntriesRequestUpdateEntity)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BulkUpdateAssetsEntriesRequestUpdateEntity(varBulkUpdateAssetsEntriesRequestUpdateEntity)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "payload")
+		delete(additionalProperties, "payloadMask")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableBulkUpdateAssetsEntriesRequestUpdateEntity struct {
 	value *BulkUpdateAssetsEntriesRequestUpdateEntity
 	isSet bool

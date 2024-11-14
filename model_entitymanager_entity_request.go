@@ -23,7 +23,10 @@ type EntitymanagerEntityRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
 	EntityData *EntitymanagerEntityIdentifier `json:"entityData,omitempty"`
 	EntityId *string `json:"entityId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerEntityRequest EntitymanagerEntityRequest
 
 // NewEntitymanagerEntityRequest instantiates a new EntitymanagerEntityRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -60,8 +63,8 @@ func (o *EntitymanagerEntityRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *EntitymanagerEntityRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *EntitymanagerEntityRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -92,8 +95,8 @@ func (o *EntitymanagerEntityRequest) GetEntityDataOk() (*EntitymanagerEntityIden
 	return o.EntityData, true
 }
 
-// HasEntityData returns a boolean if a field has been set.
-func (o *EntitymanagerEntityRequest) HasEntityData() bool {
+// &#39;Has&#39;EntityData returns a boolean if a field has been set.
+func (o *EntitymanagerEntityRequest) &#39;Has&#39;EntityData() bool {
 	if o != nil && !IsNil(o.EntityData) {
 		return true
 	}
@@ -124,8 +127,8 @@ func (o *EntitymanagerEntityRequest) GetEntityIdOk() (*string, bool) {
 	return o.EntityId, true
 }
 
-// HasEntityId returns a boolean if a field has been set.
-func (o *EntitymanagerEntityRequest) HasEntityId() bool {
+// &#39;Has&#39;EntityId returns a boolean if a field has been set.
+func (o *EntitymanagerEntityRequest) &#39;Has&#39;EntityId() bool {
 	if o != nil && !IsNil(o.EntityId) {
 		return true
 	}
@@ -157,9 +160,55 @@ func (o EntitymanagerEntityRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EntityId) {
 		toSerialize["entityId"] = o.EntityId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerEntityRequest) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerEntityRequest := _EntitymanagerEntityRequest{}
+
+	err = json.Unmarshal(data, &varEntitymanagerEntityRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerEntityRequest(varEntitymanagerEntityRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "entityData")
+		delete(additionalProperties, "entityId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerEntityRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerEntityRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerEntityRequest struct {
 	value *EntitymanagerEntityRequest
 	isSet bool

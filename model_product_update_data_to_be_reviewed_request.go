@@ -24,7 +24,10 @@ type ProductUpdateDataToBeReviewedRequest struct {
 	ProductId *string `json:"productId,omitempty"`
 	Payload *ProductDataInReview `json:"payload,omitempty"`
 	PayloadMask *string `json:"payloadMask,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductUpdateDataToBeReviewedRequest ProductUpdateDataToBeReviewedRequest
 
 // NewProductUpdateDataToBeReviewedRequest instantiates a new ProductUpdateDataToBeReviewedRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -61,8 +64,8 @@ func (o *ProductUpdateDataToBeReviewedRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *ProductUpdateDataToBeReviewedRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *ProductUpdateDataToBeReviewedRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -93,8 +96,8 @@ func (o *ProductUpdateDataToBeReviewedRequest) GetProductIdOk() (*string, bool) 
 	return o.ProductId, true
 }
 
-// HasProductId returns a boolean if a field has been set.
-func (o *ProductUpdateDataToBeReviewedRequest) HasProductId() bool {
+// &#39;Has&#39;ProductId returns a boolean if a field has been set.
+func (o *ProductUpdateDataToBeReviewedRequest) &#39;Has&#39;ProductId() bool {
 	if o != nil && !IsNil(o.ProductId) {
 		return true
 	}
@@ -125,8 +128,8 @@ func (o *ProductUpdateDataToBeReviewedRequest) GetPayloadOk() (*ProductDataInRev
 	return o.Payload, true
 }
 
-// HasPayload returns a boolean if a field has been set.
-func (o *ProductUpdateDataToBeReviewedRequest) HasPayload() bool {
+// &#39;Has&#39;Payload returns a boolean if a field has been set.
+func (o *ProductUpdateDataToBeReviewedRequest) &#39;Has&#39;Payload() bool {
 	if o != nil && !IsNil(o.Payload) {
 		return true
 	}
@@ -157,8 +160,8 @@ func (o *ProductUpdateDataToBeReviewedRequest) GetPayloadMaskOk() (*string, bool
 	return o.PayloadMask, true
 }
 
-// HasPayloadMask returns a boolean if a field has been set.
-func (o *ProductUpdateDataToBeReviewedRequest) HasPayloadMask() bool {
+// &#39;Has&#39;PayloadMask returns a boolean if a field has been set.
+func (o *ProductUpdateDataToBeReviewedRequest) &#39;Has&#39;PayloadMask() bool {
 	if o != nil && !IsNil(o.PayloadMask) {
 		return true
 	}
@@ -193,9 +196,56 @@ func (o ProductUpdateDataToBeReviewedRequest) ToMap() (map[string]interface{}, e
 	if !IsNil(o.PayloadMask) {
 		toSerialize["payloadMask"] = o.PayloadMask
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductUpdateDataToBeReviewedRequest) UnmarshalJSON(data []byte) (err error) {
+	varProductUpdateDataToBeReviewedRequest := _ProductUpdateDataToBeReviewedRequest{}
+
+	err = json.Unmarshal(data, &varProductUpdateDataToBeReviewedRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductUpdateDataToBeReviewedRequest(varProductUpdateDataToBeReviewedRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "productId")
+		delete(additionalProperties, "payload")
+		delete(additionalProperties, "payloadMask")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductUpdateDataToBeReviewedRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductUpdateDataToBeReviewedRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductUpdateDataToBeReviewedRequest struct {
 	value *ProductUpdateDataToBeReviewedRequest
 	isSet bool

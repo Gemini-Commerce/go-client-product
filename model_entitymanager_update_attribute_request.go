@@ -26,7 +26,10 @@ type EntitymanagerUpdateAttributeRequest struct {
 	EntityId *string `json:"entityId,omitempty"`
 	Payload *EntitymanagerUpdateAttributeRequestPayload `json:"payload,omitempty"`
 	FieldMask *string `json:"fieldMask,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerUpdateAttributeRequest EntitymanagerUpdateAttributeRequest
 
 // NewEntitymanagerUpdateAttributeRequest instantiates a new EntitymanagerUpdateAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -63,8 +66,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -127,8 +130,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetEntityDataOk() (*EntitymanagerE
 	return o.EntityData, true
 }
 
-// HasEntityData returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) HasEntityData() bool {
+// &#39;Has&#39;EntityData returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;EntityData() bool {
 	if o != nil && !IsNil(o.EntityData) {
 		return true
 	}
@@ -159,8 +162,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetEntityIdOk() (*string, bool) {
 	return o.EntityId, true
 }
 
-// HasEntityId returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) HasEntityId() bool {
+// &#39;Has&#39;EntityId returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;EntityId() bool {
 	if o != nil && !IsNil(o.EntityId) {
 		return true
 	}
@@ -191,8 +194,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetPayloadOk() (*EntitymanagerUpda
 	return o.Payload, true
 }
 
-// HasPayload returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) HasPayload() bool {
+// &#39;Has&#39;Payload returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;Payload() bool {
 	if o != nil && !IsNil(o.Payload) {
 		return true
 	}
@@ -223,8 +226,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetFieldMaskOk() (*string, bool) {
 	return o.FieldMask, true
 }
 
-// HasFieldMask returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) HasFieldMask() bool {
+// &#39;Has&#39;FieldMask returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;FieldMask() bool {
 	if o != nil && !IsNil(o.FieldMask) {
 		return true
 	}
@@ -265,9 +268,58 @@ func (o EntitymanagerUpdateAttributeRequest) ToMap() (map[string]interface{}, er
 	if !IsNil(o.FieldMask) {
 		toSerialize["fieldMask"] = o.FieldMask
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerUpdateAttributeRequest) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerUpdateAttributeRequest := _EntitymanagerUpdateAttributeRequest{}
+
+	err = json.Unmarshal(data, &varEntitymanagerUpdateAttributeRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerUpdateAttributeRequest(varEntitymanagerUpdateAttributeRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "entityData")
+		delete(additionalProperties, "entityId")
+		delete(additionalProperties, "payload")
+		delete(additionalProperties, "fieldMask")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerUpdateAttributeRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerUpdateAttributeRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerUpdateAttributeRequest struct {
 	value *EntitymanagerUpdateAttributeRequest
 	isSet bool

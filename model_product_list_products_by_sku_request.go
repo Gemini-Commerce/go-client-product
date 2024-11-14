@@ -22,7 +22,10 @@ var _ MappedNullable = &ProductListProductsBySkuRequest{}
 type ProductListProductsBySkuRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
 	Sku *string `json:"sku,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductListProductsBySkuRequest ProductListProductsBySkuRequest
 
 // NewProductListProductsBySkuRequest instantiates a new ProductListProductsBySkuRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *ProductListProductsBySkuRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *ProductListProductsBySkuRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *ProductListProductsBySkuRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *ProductListProductsBySkuRequest) GetSkuOk() (*string, bool) {
 	return o.Sku, true
 }
 
-// HasSku returns a boolean if a field has been set.
-func (o *ProductListProductsBySkuRequest) HasSku() bool {
+// &#39;Has&#39;Sku returns a boolean if a field has been set.
+func (o *ProductListProductsBySkuRequest) &#39;Has&#39;Sku() bool {
 	if o != nil && !IsNil(o.Sku) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o ProductListProductsBySkuRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Sku) {
 		toSerialize["sku"] = o.Sku
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductListProductsBySkuRequest) UnmarshalJSON(data []byte) (err error) {
+	varProductListProductsBySkuRequest := _ProductListProductsBySkuRequest{}
+
+	err = json.Unmarshal(data, &varProductListProductsBySkuRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductListProductsBySkuRequest(varProductListProductsBySkuRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "sku")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductListProductsBySkuRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductListProductsBySkuRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductListProductsBySkuRequest struct {
 	value *ProductListProductsBySkuRequest
 	isSet bool

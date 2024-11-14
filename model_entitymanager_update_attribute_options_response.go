@@ -22,7 +22,10 @@ var _ MappedNullable = &EntitymanagerUpdateAttributeOptionsResponse{}
 type EntitymanagerUpdateAttributeOptionsResponse struct {
 	Options []EntitymanagerAttributeOption `json:"options,omitempty"`
 	Errors []EntitymanagerAttributeOptionErrors `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerUpdateAttributeOptionsResponse EntitymanagerUpdateAttributeOptionsResponse
 
 // NewEntitymanagerUpdateAttributeOptionsResponse instantiates a new EntitymanagerUpdateAttributeOptionsResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *EntitymanagerUpdateAttributeOptionsResponse) GetOptionsOk() ([]Entityma
 	return o.Options, true
 }
 
-// HasOptions returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeOptionsResponse) HasOptions() bool {
+// &#39;Has&#39;Options returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeOptionsResponse) &#39;Has&#39;Options() bool {
 	if o != nil && !IsNil(o.Options) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *EntitymanagerUpdateAttributeOptionsResponse) GetErrorsOk() ([]Entityman
 	return o.Errors, true
 }
 
-// HasErrors returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeOptionsResponse) HasErrors() bool {
+// &#39;Has&#39;Errors returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeOptionsResponse) &#39;Has&#39;Errors() bool {
 	if o != nil && !IsNil(o.Errors) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o EntitymanagerUpdateAttributeOptionsResponse) ToMap() (map[string]interfa
 	if !IsNil(o.Errors) {
 		toSerialize["errors"] = o.Errors
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerUpdateAttributeOptionsResponse) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerUpdateAttributeOptionsResponse := _EntitymanagerUpdateAttributeOptionsResponse{}
+
+	err = json.Unmarshal(data, &varEntitymanagerUpdateAttributeOptionsResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerUpdateAttributeOptionsResponse(varEntitymanagerUpdateAttributeOptionsResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "options")
+		delete(additionalProperties, "errors")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerUpdateAttributeOptionsResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerUpdateAttributeOptionsResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerUpdateAttributeOptionsResponse struct {
 	value *EntitymanagerUpdateAttributeOptionsResponse
 	isSet bool

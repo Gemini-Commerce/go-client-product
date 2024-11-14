@@ -22,7 +22,10 @@ var _ MappedNullable = &EntitymanagerEntityIdentifier{}
 type EntitymanagerEntityIdentifier struct {
 	Type *string `json:"type,omitempty"`
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerEntityIdentifier EntitymanagerEntityIdentifier
 
 // NewEntitymanagerEntityIdentifier instantiates a new EntitymanagerEntityIdentifier object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *EntitymanagerEntityIdentifier) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *EntitymanagerEntityIdentifier) HasType() bool {
+// &#39;Has&#39;Type returns a boolean if a field has been set.
+func (o *EntitymanagerEntityIdentifier) &#39;Has&#39;Type() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *EntitymanagerEntityIdentifier) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *EntitymanagerEntityIdentifier) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *EntitymanagerEntityIdentifier) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o EntitymanagerEntityIdentifier) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerEntityIdentifier) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerEntityIdentifier := _EntitymanagerEntityIdentifier{}
+
+	err = json.Unmarshal(data, &varEntitymanagerEntityIdentifier)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerEntityIdentifier(varEntitymanagerEntityIdentifier)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerEntityIdentifier) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerEntityIdentifier) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerEntityIdentifier struct {
 	value *EntitymanagerEntityIdentifier
 	isSet bool

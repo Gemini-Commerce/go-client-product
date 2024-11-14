@@ -35,7 +35,10 @@ type EntitymanagerAttribute struct {
 	Title *map[string]string `json:"title,omitempty"`
 	RenderAs *EntitymanagerRenderAs `json:"renderAs,omitempty"`
 	AiContext *EntitymanagerAiContext `json:"aiContext,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerAttribute EntitymanagerAttribute
 
 // NewEntitymanagerAttribute instantiates a new EntitymanagerAttribute object
 // This constructor will assign default values to properties that have it defined,
@@ -80,8 +83,8 @@ func (o *EntitymanagerAttribute) GetEntityIdOk() (*string, bool) {
 	return o.EntityId, true
 }
 
-// HasEntityId returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasEntityId() bool {
+// &#39;Has&#39;EntityId returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;EntityId() bool {
 	if o != nil && !IsNil(o.EntityId) {
 		return true
 	}
@@ -112,8 +115,8 @@ func (o *EntitymanagerAttribute) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -144,8 +147,8 @@ func (o *EntitymanagerAttribute) GetLabelOk() (*string, bool) {
 	return o.Label, true
 }
 
-// HasLabel returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasLabel() bool {
+// &#39;Has&#39;Label returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;Label() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -176,8 +179,8 @@ func (o *EntitymanagerAttribute) GetTypeOk() (*EntitymanagerTypes, bool) {
 	return o.Type, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasType() bool {
+// &#39;Has&#39;Type returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;Type() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -208,8 +211,8 @@ func (o *EntitymanagerAttribute) GetOptionListOk() (*string, bool) {
 	return o.OptionList, true
 }
 
-// HasOptionList returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasOptionList() bool {
+// &#39;Has&#39;OptionList returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;OptionList() bool {
 	if o != nil && !IsNil(o.OptionList) {
 		return true
 	}
@@ -240,8 +243,8 @@ func (o *EntitymanagerAttribute) GetEntityOk() (*string, bool) {
 	return o.Entity, true
 }
 
-// HasEntity returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasEntity() bool {
+// &#39;Has&#39;Entity returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;Entity() bool {
 	if o != nil && !IsNil(o.Entity) {
 		return true
 	}
@@ -272,8 +275,8 @@ func (o *EntitymanagerAttribute) GetDefaultOk() (*string, bool) {
 	return o.Default, true
 }
 
-// HasDefault returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasDefault() bool {
+// &#39;Has&#39;Default returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;Default() bool {
 	if o != nil && !IsNil(o.Default) {
 		return true
 	}
@@ -304,8 +307,8 @@ func (o *EntitymanagerAttribute) GetIsRequiredOk() (*bool, bool) {
 	return o.IsRequired, true
 }
 
-// HasIsRequired returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasIsRequired() bool {
+// &#39;Has&#39;IsRequired returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;IsRequired() bool {
 	if o != nil && !IsNil(o.IsRequired) {
 		return true
 	}
@@ -336,8 +339,8 @@ func (o *EntitymanagerAttribute) GetIsSystemOk() (*bool, bool) {
 	return o.IsSystem, true
 }
 
-// HasIsSystem returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasIsSystem() bool {
+// &#39;Has&#39;IsSystem returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;IsSystem() bool {
 	if o != nil && !IsNil(o.IsSystem) {
 		return true
 	}
@@ -368,8 +371,8 @@ func (o *EntitymanagerAttribute) GetIsRepeatedOk() (*bool, bool) {
 	return o.IsRepeated, true
 }
 
-// HasIsRepeated returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasIsRepeated() bool {
+// &#39;Has&#39;IsRepeated returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;IsRepeated() bool {
 	if o != nil && !IsNil(o.IsRepeated) {
 		return true
 	}
@@ -400,8 +403,8 @@ func (o *EntitymanagerAttribute) GetSortOk() (*int32, bool) {
 	return o.Sort, true
 }
 
-// HasSort returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasSort() bool {
+// &#39;Has&#39;Sort returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;Sort() bool {
 	if o != nil && !IsNil(o.Sort) {
 		return true
 	}
@@ -432,8 +435,8 @@ func (o *EntitymanagerAttribute) GetGroupCodeOk() (*string, bool) {
 	return o.GroupCode, true
 }
 
-// HasGroupCode returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasGroupCode() bool {
+// &#39;Has&#39;GroupCode returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;GroupCode() bool {
 	if o != nil && !IsNil(o.GroupCode) {
 		return true
 	}
@@ -464,8 +467,8 @@ func (o *EntitymanagerAttribute) GetTitleOk() (*map[string]string, bool) {
 	return o.Title, true
 }
 
-// HasTitle returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasTitle() bool {
+// &#39;Has&#39;Title returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;Title() bool {
 	if o != nil && !IsNil(o.Title) {
 		return true
 	}
@@ -496,8 +499,8 @@ func (o *EntitymanagerAttribute) GetRenderAsOk() (*EntitymanagerRenderAs, bool) 
 	return o.RenderAs, true
 }
 
-// HasRenderAs returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasRenderAs() bool {
+// &#39;Has&#39;RenderAs returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;RenderAs() bool {
 	if o != nil && !IsNil(o.RenderAs) {
 		return true
 	}
@@ -528,8 +531,8 @@ func (o *EntitymanagerAttribute) GetAiContextOk() (*EntitymanagerAiContext, bool
 	return o.AiContext, true
 }
 
-// HasAiContext returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) HasAiContext() bool {
+// &#39;Has&#39;AiContext returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) &#39;Has&#39;AiContext() bool {
 	if o != nil && !IsNil(o.AiContext) {
 		return true
 	}
@@ -597,9 +600,67 @@ func (o EntitymanagerAttribute) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AiContext) {
 		toSerialize["aiContext"] = o.AiContext
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerAttribute) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerAttribute := _EntitymanagerAttribute{}
+
+	err = json.Unmarshal(data, &varEntitymanagerAttribute)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerAttribute(varEntitymanagerAttribute)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "entityId")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "label")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "optionList")
+		delete(additionalProperties, "entity")
+		delete(additionalProperties, "default")
+		delete(additionalProperties, "isRequired")
+		delete(additionalProperties, "isSystem")
+		delete(additionalProperties, "isRepeated")
+		delete(additionalProperties, "sort")
+		delete(additionalProperties, "groupCode")
+		delete(additionalProperties, "title")
+		delete(additionalProperties, "renderAs")
+		delete(additionalProperties, "aiContext")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerAttribute) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerAttribute) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerAttribute struct {
 	value *EntitymanagerAttribute
 	isSet bool

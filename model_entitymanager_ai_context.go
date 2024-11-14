@@ -23,7 +23,10 @@ type EntitymanagerAiContext struct {
 	MinLength *string `json:"minLength,omitempty"`
 	MaxLength *string `json:"maxLength,omitempty"`
 	Description *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerAiContext EntitymanagerAiContext
 
 // NewEntitymanagerAiContext instantiates a new EntitymanagerAiContext object
 // This constructor will assign default values to properties that have it defined,
@@ -60,8 +63,8 @@ func (o *EntitymanagerAiContext) GetMinLengthOk() (*string, bool) {
 	return o.MinLength, true
 }
 
-// HasMinLength returns a boolean if a field has been set.
-func (o *EntitymanagerAiContext) HasMinLength() bool {
+// &#39;Has&#39;MinLength returns a boolean if a field has been set.
+func (o *EntitymanagerAiContext) &#39;Has&#39;MinLength() bool {
 	if o != nil && !IsNil(o.MinLength) {
 		return true
 	}
@@ -92,8 +95,8 @@ func (o *EntitymanagerAiContext) GetMaxLengthOk() (*string, bool) {
 	return o.MaxLength, true
 }
 
-// HasMaxLength returns a boolean if a field has been set.
-func (o *EntitymanagerAiContext) HasMaxLength() bool {
+// &#39;Has&#39;MaxLength returns a boolean if a field has been set.
+func (o *EntitymanagerAiContext) &#39;Has&#39;MaxLength() bool {
 	if o != nil && !IsNil(o.MaxLength) {
 		return true
 	}
@@ -124,8 +127,8 @@ func (o *EntitymanagerAiContext) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// HasDescription returns a boolean if a field has been set.
-func (o *EntitymanagerAiContext) HasDescription() bool {
+// &#39;Has&#39;Description returns a boolean if a field has been set.
+func (o *EntitymanagerAiContext) &#39;Has&#39;Description() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -157,9 +160,55 @@ func (o EntitymanagerAiContext) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerAiContext) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerAiContext := _EntitymanagerAiContext{}
+
+	err = json.Unmarshal(data, &varEntitymanagerAiContext)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerAiContext(varEntitymanagerAiContext)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "minLength")
+		delete(additionalProperties, "maxLength")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerAiContext) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerAiContext) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerAiContext struct {
 	value *EntitymanagerAiContext
 	isSet bool

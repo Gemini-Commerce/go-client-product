@@ -28,7 +28,10 @@ type EntitymanagerEntity struct {
 	Label *string `json:"label,omitempty"`
 	Relationships []string `json:"relationships,omitempty"`
 	Attributes []EntitymanagerAttribute `json:"attributes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerEntity EntitymanagerEntity
 
 // NewEntitymanagerEntity instantiates a new EntitymanagerEntity object
 // This constructor will assign default values to properties that have it defined,
@@ -65,8 +68,8 @@ func (o *EntitymanagerEntity) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -97,8 +100,8 @@ func (o *EntitymanagerEntity) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -129,8 +132,8 @@ func (o *EntitymanagerEntity) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) HasType() bool {
+// &#39;Has&#39;Type returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) &#39;Has&#39;Type() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -161,8 +164,8 @@ func (o *EntitymanagerEntity) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -193,8 +196,8 @@ func (o *EntitymanagerEntity) GetParentCodeOk() (*string, bool) {
 	return o.ParentCode, true
 }
 
-// HasParentCode returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) HasParentCode() bool {
+// &#39;Has&#39;ParentCode returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) &#39;Has&#39;ParentCode() bool {
 	if o != nil && !IsNil(o.ParentCode) {
 		return true
 	}
@@ -225,8 +228,8 @@ func (o *EntitymanagerEntity) GetLabelOk() (*string, bool) {
 	return o.Label, true
 }
 
-// HasLabel returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) HasLabel() bool {
+// &#39;Has&#39;Label returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) &#39;Has&#39;Label() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -257,8 +260,8 @@ func (o *EntitymanagerEntity) GetRelationshipsOk() ([]string, bool) {
 	return o.Relationships, true
 }
 
-// HasRelationships returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) HasRelationships() bool {
+// &#39;Has&#39;Relationships returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) &#39;Has&#39;Relationships() bool {
 	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
@@ -289,8 +292,8 @@ func (o *EntitymanagerEntity) GetAttributesOk() ([]EntitymanagerAttribute, bool)
 	return o.Attributes, true
 }
 
-// HasAttributes returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) HasAttributes() bool {
+// &#39;Has&#39;Attributes returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) &#39;Has&#39;Attributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
@@ -337,9 +340,60 @@ func (o EntitymanagerEntity) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EntitymanagerEntity) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerEntity := _EntitymanagerEntity{}
+
+	err = json.Unmarshal(data, &varEntitymanagerEntity)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerEntity(varEntitymanagerEntity)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "parentCode")
+		delete(additionalProperties, "label")
+		delete(additionalProperties, "relationships")
+		delete(additionalProperties, "attributes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerEntity) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EntitymanagerEntity) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEntitymanagerEntity struct {
 	value *EntitymanagerEntity
 	isSet bool

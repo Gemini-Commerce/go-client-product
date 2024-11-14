@@ -24,7 +24,10 @@ type ProductMediaGalleryEntry struct {
 	AssetGrn *string `json:"assetGrn,omitempty"`
 	Position *int64 `json:"position,omitempty"`
 	Metadata []ProductMediaGalleryEntryMetadata `json:"metadata,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductMediaGalleryEntry ProductMediaGalleryEntry
 
 // NewProductMediaGalleryEntry instantiates a new ProductMediaGalleryEntry object
 // This constructor will assign default values to properties that have it defined,
@@ -61,8 +64,8 @@ func (o *ProductMediaGalleryEntry) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntry) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntry) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -93,8 +96,8 @@ func (o *ProductMediaGalleryEntry) GetAssetGrnOk() (*string, bool) {
 	return o.AssetGrn, true
 }
 
-// HasAssetGrn returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntry) HasAssetGrn() bool {
+// &#39;Has&#39;AssetGrn returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntry) &#39;Has&#39;AssetGrn() bool {
 	if o != nil && !IsNil(o.AssetGrn) {
 		return true
 	}
@@ -125,8 +128,8 @@ func (o *ProductMediaGalleryEntry) GetPositionOk() (*int64, bool) {
 	return o.Position, true
 }
 
-// HasPosition returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntry) HasPosition() bool {
+// &#39;Has&#39;Position returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntry) &#39;Has&#39;Position() bool {
 	if o != nil && !IsNil(o.Position) {
 		return true
 	}
@@ -157,8 +160,8 @@ func (o *ProductMediaGalleryEntry) GetMetadataOk() ([]ProductMediaGalleryEntryMe
 	return o.Metadata, true
 }
 
-// HasMetadata returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntry) HasMetadata() bool {
+// &#39;Has&#39;Metadata returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntry) &#39;Has&#39;Metadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
@@ -193,9 +196,56 @@ func (o ProductMediaGalleryEntry) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductMediaGalleryEntry) UnmarshalJSON(data []byte) (err error) {
+	varProductMediaGalleryEntry := _ProductMediaGalleryEntry{}
+
+	err = json.Unmarshal(data, &varProductMediaGalleryEntry)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductMediaGalleryEntry(varProductMediaGalleryEntry)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "assetGrn")
+		delete(additionalProperties, "position")
+		delete(additionalProperties, "metadata")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductMediaGalleryEntry) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductMediaGalleryEntry) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductMediaGalleryEntry struct {
 	value *ProductMediaGalleryEntry
 	isSet bool

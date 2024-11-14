@@ -21,7 +21,10 @@ var _ MappedNullable = &ProductentitymanagerLocalizedText{}
 // ProductentitymanagerLocalizedText struct for ProductentitymanagerLocalizedText
 type ProductentitymanagerLocalizedText struct {
 	Value *map[string]string `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductentitymanagerLocalizedText ProductentitymanagerLocalizedText
 
 // NewProductentitymanagerLocalizedText instantiates a new ProductentitymanagerLocalizedText object
 // This constructor will assign default values to properties that have it defined,
@@ -58,8 +61,8 @@ func (o *ProductentitymanagerLocalizedText) GetValueOk() (*map[string]string, bo
 	return o.Value, true
 }
 
-// HasValue returns a boolean if a field has been set.
-func (o *ProductentitymanagerLocalizedText) HasValue() bool {
+// &#39;Has&#39;Value returns a boolean if a field has been set.
+func (o *ProductentitymanagerLocalizedText) &#39;Has&#39;Value() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}
@@ -85,9 +88,53 @@ func (o ProductentitymanagerLocalizedText) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductentitymanagerLocalizedText) UnmarshalJSON(data []byte) (err error) {
+	varProductentitymanagerLocalizedText := _ProductentitymanagerLocalizedText{}
+
+	err = json.Unmarshal(data, &varProductentitymanagerLocalizedText)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductentitymanagerLocalizedText(varProductentitymanagerLocalizedText)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductentitymanagerLocalizedText) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductentitymanagerLocalizedText) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductentitymanagerLocalizedText struct {
 	value *ProductentitymanagerLocalizedText
 	isSet bool

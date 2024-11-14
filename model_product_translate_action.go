@@ -24,7 +24,10 @@ type ProductTranslateAction struct {
 	AttributeCodes *TranslateActionAttributeCodesToTranslate `json:"attributeCodes,omitempty"`
 	SourceLanguage *ProductLanguageCode `json:"sourceLanguage,omitempty"`
 	TargetLanguage *ProductLanguageCode `json:"targetLanguage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductTranslateAction ProductTranslateAction
 
 // NewProductTranslateAction instantiates a new ProductTranslateAction object
 // This constructor will assign default values to properties that have it defined,
@@ -69,8 +72,8 @@ func (o *ProductTranslateAction) GetAllOk() (map[string]interface{}, bool) {
 	return o.All, true
 }
 
-// HasAll returns a boolean if a field has been set.
-func (o *ProductTranslateAction) HasAll() bool {
+// &#39;Has&#39;All returns a boolean if a field has been set.
+func (o *ProductTranslateAction) &#39;Has&#39;All() bool {
 	if o != nil && !IsNil(o.All) {
 		return true
 	}
@@ -101,8 +104,8 @@ func (o *ProductTranslateAction) GetAttributeCodesOk() (*TranslateActionAttribut
 	return o.AttributeCodes, true
 }
 
-// HasAttributeCodes returns a boolean if a field has been set.
-func (o *ProductTranslateAction) HasAttributeCodes() bool {
+// &#39;Has&#39;AttributeCodes returns a boolean if a field has been set.
+func (o *ProductTranslateAction) &#39;Has&#39;AttributeCodes() bool {
 	if o != nil && !IsNil(o.AttributeCodes) {
 		return true
 	}
@@ -133,8 +136,8 @@ func (o *ProductTranslateAction) GetSourceLanguageOk() (*ProductLanguageCode, bo
 	return o.SourceLanguage, true
 }
 
-// HasSourceLanguage returns a boolean if a field has been set.
-func (o *ProductTranslateAction) HasSourceLanguage() bool {
+// &#39;Has&#39;SourceLanguage returns a boolean if a field has been set.
+func (o *ProductTranslateAction) &#39;Has&#39;SourceLanguage() bool {
 	if o != nil && !IsNil(o.SourceLanguage) {
 		return true
 	}
@@ -165,8 +168,8 @@ func (o *ProductTranslateAction) GetTargetLanguageOk() (*ProductLanguageCode, bo
 	return o.TargetLanguage, true
 }
 
-// HasTargetLanguage returns a boolean if a field has been set.
-func (o *ProductTranslateAction) HasTargetLanguage() bool {
+// &#39;Has&#39;TargetLanguage returns a boolean if a field has been set.
+func (o *ProductTranslateAction) &#39;Has&#39;TargetLanguage() bool {
 	if o != nil && !IsNil(o.TargetLanguage) {
 		return true
 	}
@@ -201,9 +204,56 @@ func (o ProductTranslateAction) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TargetLanguage) {
 		toSerialize["targetLanguage"] = o.TargetLanguage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductTranslateAction) UnmarshalJSON(data []byte) (err error) {
+	varProductTranslateAction := _ProductTranslateAction{}
+
+	err = json.Unmarshal(data, &varProductTranslateAction)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductTranslateAction(varProductTranslateAction)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "attributeCodes")
+		delete(additionalProperties, "sourceLanguage")
+		delete(additionalProperties, "targetLanguage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductTranslateAction) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductTranslateAction) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductTranslateAction struct {
 	value *ProductTranslateAction
 	isSet bool

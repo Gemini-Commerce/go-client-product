@@ -28,7 +28,10 @@ type ProductCreateProductResponse struct {
 	ProductErrors []ProductProductResponseError `json:"productErrors,omitempty"`
 	// Contains a list of AttributeResponseError messages, indicating any errors related to the attributes of the product.
 	AttributeErrors []ProductAttributeResponseError `json:"attributeErrors,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductCreateProductResponse ProductCreateProductResponse
 
 // NewProductCreateProductResponse instantiates a new ProductCreateProductResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -65,8 +68,8 @@ func (o *ProductCreateProductResponse) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// HasSuccess returns a boolean if a field has been set.
-func (o *ProductCreateProductResponse) HasSuccess() bool {
+// &#39;Has&#39;Success returns a boolean if a field has been set.
+func (o *ProductCreateProductResponse) &#39;Has&#39;Success() bool {
 	if o != nil && !IsNil(o.Success) {
 		return true
 	}
@@ -97,8 +100,8 @@ func (o *ProductCreateProductResponse) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ProductCreateProductResponse) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *ProductCreateProductResponse) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -129,8 +132,8 @@ func (o *ProductCreateProductResponse) GetProductErrorsOk() ([]ProductProductRes
 	return o.ProductErrors, true
 }
 
-// HasProductErrors returns a boolean if a field has been set.
-func (o *ProductCreateProductResponse) HasProductErrors() bool {
+// &#39;Has&#39;ProductErrors returns a boolean if a field has been set.
+func (o *ProductCreateProductResponse) &#39;Has&#39;ProductErrors() bool {
 	if o != nil && !IsNil(o.ProductErrors) {
 		return true
 	}
@@ -161,8 +164,8 @@ func (o *ProductCreateProductResponse) GetAttributeErrorsOk() ([]ProductAttribut
 	return o.AttributeErrors, true
 }
 
-// HasAttributeErrors returns a boolean if a field has been set.
-func (o *ProductCreateProductResponse) HasAttributeErrors() bool {
+// &#39;Has&#39;AttributeErrors returns a boolean if a field has been set.
+func (o *ProductCreateProductResponse) &#39;Has&#39;AttributeErrors() bool {
 	if o != nil && !IsNil(o.AttributeErrors) {
 		return true
 	}
@@ -197,9 +200,56 @@ func (o ProductCreateProductResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AttributeErrors) {
 		toSerialize["attributeErrors"] = o.AttributeErrors
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductCreateProductResponse) UnmarshalJSON(data []byte) (err error) {
+	varProductCreateProductResponse := _ProductCreateProductResponse{}
+
+	err = json.Unmarshal(data, &varProductCreateProductResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductCreateProductResponse(varProductCreateProductResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "productErrors")
+		delete(additionalProperties, "attributeErrors")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductCreateProductResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductCreateProductResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductCreateProductResponse struct {
 	value *ProductCreateProductResponse
 	isSet bool

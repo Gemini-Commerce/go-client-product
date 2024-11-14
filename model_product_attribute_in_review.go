@@ -33,7 +33,10 @@ type ProductAttributeInReview struct {
 	JobId *string `json:"jobId,omitempty"`
 	JobType *ProductAttributeInReviewJobType `json:"jobType,omitempty"`
 	Error *ProductAttributeInReviewError `json:"error,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductAttributeInReview ProductAttributeInReview
 
 // NewProductAttributeInReview instantiates a new ProductAttributeInReview object
 // This constructor will assign default values to properties that have it defined,
@@ -78,8 +81,8 @@ func (o *ProductAttributeInReview) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -110,8 +113,8 @@ func (o *ProductAttributeInReview) GetStringOk() (*AttributeInReviewString, bool
 	return o.String, true
 }
 
-// HasString returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasString() bool {
+// &#39;Has&#39;String returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;String() bool {
 	if o != nil && !IsNil(o.String) {
 		return true
 	}
@@ -142,8 +145,8 @@ func (o *ProductAttributeInReview) GetInt32Ok() (*int32, bool) {
 	return o.Int32, true
 }
 
-// HasInt32 returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasInt32() bool {
+// &#39;Has&#39;Int32 returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;Int32() bool {
 	if o != nil && !IsNil(o.Int32) {
 		return true
 	}
@@ -174,8 +177,8 @@ func (o *ProductAttributeInReview) GetInt64Ok() (*string, bool) {
 	return o.Int64, true
 }
 
-// HasInt64 returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasInt64() bool {
+// &#39;Has&#39;Int64 returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;Int64() bool {
 	if o != nil && !IsNil(o.Int64) {
 		return true
 	}
@@ -206,8 +209,8 @@ func (o *ProductAttributeInReview) GetFloat32Ok() (*float32, bool) {
 	return o.Float32, true
 }
 
-// HasFloat32 returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasFloat32() bool {
+// &#39;Has&#39;Float32 returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;Float32() bool {
 	if o != nil && !IsNil(o.Float32) {
 		return true
 	}
@@ -238,8 +241,8 @@ func (o *ProductAttributeInReview) GetFloat64Ok() (*float64, bool) {
 	return o.Float64, true
 }
 
-// HasFloat64 returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasFloat64() bool {
+// &#39;Has&#39;Float64 returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;Float64() bool {
 	if o != nil && !IsNil(o.Float64) {
 		return true
 	}
@@ -270,8 +273,8 @@ func (o *ProductAttributeInReview) GetBooleanOk() (*bool, bool) {
 	return o.Boolean, true
 }
 
-// HasBoolean returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasBoolean() bool {
+// &#39;Has&#39;Boolean returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;Boolean() bool {
 	if o != nil && !IsNil(o.Boolean) {
 		return true
 	}
@@ -302,8 +305,8 @@ func (o *ProductAttributeInReview) GetSourceOk() (*ProductAttributeInReviewSourc
 	return o.Source, true
 }
 
-// HasSource returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasSource() bool {
+// &#39;Has&#39;Source returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;Source() bool {
 	if o != nil && !IsNil(o.Source) {
 		return true
 	}
@@ -334,8 +337,8 @@ func (o *ProductAttributeInReview) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasCreatedAt() bool {
+// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;CreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -366,8 +369,8 @@ func (o *ProductAttributeInReview) GetJobIdOk() (*string, bool) {
 	return o.JobId, true
 }
 
-// HasJobId returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasJobId() bool {
+// &#39;Has&#39;JobId returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;JobId() bool {
 	if o != nil && !IsNil(o.JobId) {
 		return true
 	}
@@ -398,8 +401,8 @@ func (o *ProductAttributeInReview) GetJobTypeOk() (*ProductAttributeInReviewJobT
 	return o.JobType, true
 }
 
-// HasJobType returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasJobType() bool {
+// &#39;Has&#39;JobType returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;JobType() bool {
 	if o != nil && !IsNil(o.JobType) {
 		return true
 	}
@@ -430,8 +433,8 @@ func (o *ProductAttributeInReview) GetErrorOk() (*ProductAttributeInReviewError,
 	return o.Error, true
 }
 
-// HasError returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) HasError() bool {
+// &#39;Has&#39;Error returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) &#39;Has&#39;Error() bool {
 	if o != nil && !IsNil(o.Error) {
 		return true
 	}
@@ -490,9 +493,64 @@ func (o ProductAttributeInReview) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Error) {
 		toSerialize["error"] = o.Error
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductAttributeInReview) UnmarshalJSON(data []byte) (err error) {
+	varProductAttributeInReview := _ProductAttributeInReview{}
+
+	err = json.Unmarshal(data, &varProductAttributeInReview)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductAttributeInReview(varProductAttributeInReview)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "string")
+		delete(additionalProperties, "int32")
+		delete(additionalProperties, "int64")
+		delete(additionalProperties, "float32")
+		delete(additionalProperties, "float64")
+		delete(additionalProperties, "boolean")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "createdAt")
+		delete(additionalProperties, "jobId")
+		delete(additionalProperties, "jobType")
+		delete(additionalProperties, "error")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductAttributeInReview) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductAttributeInReview) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductAttributeInReview struct {
 	value *ProductAttributeInReview
 	isSet bool

@@ -25,7 +25,10 @@ type ProductUpdateProductWithAIRequest struct {
 	Locale *string `json:"locale,omitempty"`
 	SkipReview *bool `json:"skipReview,omitempty"`
 	AttributesToEnrich []ProductAttributeToEnrich `json:"attributesToEnrich,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductUpdateProductWithAIRequest ProductUpdateProductWithAIRequest
 
 // NewProductUpdateProductWithAIRequest instantiates a new ProductUpdateProductWithAIRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -62,8 +65,8 @@ func (o *ProductUpdateProductWithAIRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *ProductUpdateProductWithAIRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *ProductUpdateProductWithAIRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -94,8 +97,8 @@ func (o *ProductUpdateProductWithAIRequest) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ProductUpdateProductWithAIRequest) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *ProductUpdateProductWithAIRequest) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -126,8 +129,8 @@ func (o *ProductUpdateProductWithAIRequest) GetLocaleOk() (*string, bool) {
 	return o.Locale, true
 }
 
-// HasLocale returns a boolean if a field has been set.
-func (o *ProductUpdateProductWithAIRequest) HasLocale() bool {
+// &#39;Has&#39;Locale returns a boolean if a field has been set.
+func (o *ProductUpdateProductWithAIRequest) &#39;Has&#39;Locale() bool {
 	if o != nil && !IsNil(o.Locale) {
 		return true
 	}
@@ -158,8 +161,8 @@ func (o *ProductUpdateProductWithAIRequest) GetSkipReviewOk() (*bool, bool) {
 	return o.SkipReview, true
 }
 
-// HasSkipReview returns a boolean if a field has been set.
-func (o *ProductUpdateProductWithAIRequest) HasSkipReview() bool {
+// &#39;Has&#39;SkipReview returns a boolean if a field has been set.
+func (o *ProductUpdateProductWithAIRequest) &#39;Has&#39;SkipReview() bool {
 	if o != nil && !IsNil(o.SkipReview) {
 		return true
 	}
@@ -190,8 +193,8 @@ func (o *ProductUpdateProductWithAIRequest) GetAttributesToEnrichOk() ([]Product
 	return o.AttributesToEnrich, true
 }
 
-// HasAttributesToEnrich returns a boolean if a field has been set.
-func (o *ProductUpdateProductWithAIRequest) HasAttributesToEnrich() bool {
+// &#39;Has&#39;AttributesToEnrich returns a boolean if a field has been set.
+func (o *ProductUpdateProductWithAIRequest) &#39;Has&#39;AttributesToEnrich() bool {
 	if o != nil && !IsNil(o.AttributesToEnrich) {
 		return true
 	}
@@ -229,9 +232,57 @@ func (o ProductUpdateProductWithAIRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.AttributesToEnrich) {
 		toSerialize["attributesToEnrich"] = o.AttributesToEnrich
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductUpdateProductWithAIRequest) UnmarshalJSON(data []byte) (err error) {
+	varProductUpdateProductWithAIRequest := _ProductUpdateProductWithAIRequest{}
+
+	err = json.Unmarshal(data, &varProductUpdateProductWithAIRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductUpdateProductWithAIRequest(varProductUpdateProductWithAIRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "locale")
+		delete(additionalProperties, "skipReview")
+		delete(additionalProperties, "attributesToEnrich")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductUpdateProductWithAIRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductUpdateProductWithAIRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductUpdateProductWithAIRequest struct {
 	value *ProductUpdateProductWithAIRequest
 	isSet bool

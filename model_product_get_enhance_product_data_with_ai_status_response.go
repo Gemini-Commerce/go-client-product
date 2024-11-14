@@ -21,7 +21,10 @@ var _ MappedNullable = &ProductGetEnhanceProductDataWithAIStatusResponse{}
 // ProductGetEnhanceProductDataWithAIStatusResponse struct for ProductGetEnhanceProductDataWithAIStatusResponse
 type ProductGetEnhanceProductDataWithAIStatusResponse struct {
 	Jobs []GetEnhanceProductDataWithAIStatusResponseJob `json:"jobs,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductGetEnhanceProductDataWithAIStatusResponse ProductGetEnhanceProductDataWithAIStatusResponse
 
 // NewProductGetEnhanceProductDataWithAIStatusResponse instantiates a new ProductGetEnhanceProductDataWithAIStatusResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -58,8 +61,8 @@ func (o *ProductGetEnhanceProductDataWithAIStatusResponse) GetJobsOk() ([]GetEnh
 	return o.Jobs, true
 }
 
-// HasJobs returns a boolean if a field has been set.
-func (o *ProductGetEnhanceProductDataWithAIStatusResponse) HasJobs() bool {
+// &#39;Has&#39;Jobs returns a boolean if a field has been set.
+func (o *ProductGetEnhanceProductDataWithAIStatusResponse) &#39;Has&#39;Jobs() bool {
 	if o != nil && !IsNil(o.Jobs) {
 		return true
 	}
@@ -85,9 +88,53 @@ func (o ProductGetEnhanceProductDataWithAIStatusResponse) ToMap() (map[string]in
 	if !IsNil(o.Jobs) {
 		toSerialize["jobs"] = o.Jobs
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ProductGetEnhanceProductDataWithAIStatusResponse) UnmarshalJSON(data []byte) (err error) {
+	varProductGetEnhanceProductDataWithAIStatusResponse := _ProductGetEnhanceProductDataWithAIStatusResponse{}
+
+	err = json.Unmarshal(data, &varProductGetEnhanceProductDataWithAIStatusResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductGetEnhanceProductDataWithAIStatusResponse(varProductGetEnhanceProductDataWithAIStatusResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "jobs")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductGetEnhanceProductDataWithAIStatusResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ProductGetEnhanceProductDataWithAIStatusResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableProductGetEnhanceProductDataWithAIStatusResponse struct {
 	value *ProductGetEnhanceProductDataWithAIStatusResponse
 	isSet bool

@@ -26,7 +26,10 @@ type ListProductsRequestFilter struct {
 	UpdatedAtStart *time.Time `json:"updatedAtStart,omitempty"`
 	UpdatedAtEnd *time.Time `json:"updatedAtEnd,omitempty"`
 	Status *bool `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListProductsRequestFilter ListProductsRequestFilter
 
 // NewListProductsRequestFilter instantiates a new ListProductsRequestFilter object
 // This constructor will assign default values to properties that have it defined,
@@ -63,8 +66,8 @@ func (o *ListProductsRequestFilter) GetCreatedAtStartOk() (*time.Time, bool) {
 	return o.CreatedAtStart, true
 }
 
-// HasCreatedAtStart returns a boolean if a field has been set.
-func (o *ListProductsRequestFilter) HasCreatedAtStart() bool {
+// &#39;Has&#39;CreatedAtStart returns a boolean if a field has been set.
+func (o *ListProductsRequestFilter) &#39;Has&#39;CreatedAtStart() bool {
 	if o != nil && !IsNil(o.CreatedAtStart) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *ListProductsRequestFilter) GetCreatedAtEndOk() (*time.Time, bool) {
 	return o.CreatedAtEnd, true
 }
 
-// HasCreatedAtEnd returns a boolean if a field has been set.
-func (o *ListProductsRequestFilter) HasCreatedAtEnd() bool {
+// &#39;Has&#39;CreatedAtEnd returns a boolean if a field has been set.
+func (o *ListProductsRequestFilter) &#39;Has&#39;CreatedAtEnd() bool {
 	if o != nil && !IsNil(o.CreatedAtEnd) {
 		return true
 	}
@@ -127,8 +130,8 @@ func (o *ListProductsRequestFilter) GetUpdatedAtStartOk() (*time.Time, bool) {
 	return o.UpdatedAtStart, true
 }
 
-// HasUpdatedAtStart returns a boolean if a field has been set.
-func (o *ListProductsRequestFilter) HasUpdatedAtStart() bool {
+// &#39;Has&#39;UpdatedAtStart returns a boolean if a field has been set.
+func (o *ListProductsRequestFilter) &#39;Has&#39;UpdatedAtStart() bool {
 	if o != nil && !IsNil(o.UpdatedAtStart) {
 		return true
 	}
@@ -159,8 +162,8 @@ func (o *ListProductsRequestFilter) GetUpdatedAtEndOk() (*time.Time, bool) {
 	return o.UpdatedAtEnd, true
 }
 
-// HasUpdatedAtEnd returns a boolean if a field has been set.
-func (o *ListProductsRequestFilter) HasUpdatedAtEnd() bool {
+// &#39;Has&#39;UpdatedAtEnd returns a boolean if a field has been set.
+func (o *ListProductsRequestFilter) &#39;Has&#39;UpdatedAtEnd() bool {
 	if o != nil && !IsNil(o.UpdatedAtEnd) {
 		return true
 	}
@@ -191,8 +194,8 @@ func (o *ListProductsRequestFilter) GetStatusOk() (*bool, bool) {
 	return o.Status, true
 }
 
-// HasStatus returns a boolean if a field has been set.
-func (o *ListProductsRequestFilter) HasStatus() bool {
+// &#39;Has&#39;Status returns a boolean if a field has been set.
+func (o *ListProductsRequestFilter) &#39;Has&#39;Status() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}
@@ -230,9 +233,57 @@ func (o ListProductsRequestFilter) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ListProductsRequestFilter) UnmarshalJSON(data []byte) (err error) {
+	varListProductsRequestFilter := _ListProductsRequestFilter{}
+
+	err = json.Unmarshal(data, &varListProductsRequestFilter)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListProductsRequestFilter(varListProductsRequestFilter)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "createdAtStart")
+		delete(additionalProperties, "createdAtEnd")
+		delete(additionalProperties, "updatedAtStart")
+		delete(additionalProperties, "updatedAtEnd")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ListProductsRequestFilter) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ListProductsRequestFilter) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableListProductsRequestFilter struct {
 	value *ListProductsRequestFilter
 	isSet bool
