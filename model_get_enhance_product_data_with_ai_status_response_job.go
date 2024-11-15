@@ -77,8 +77,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetParentIdOk() (*string,
 	return o.ParentId, true
 }
 
-// &#39;Has&#39;ParentId returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;ParentId() bool {
+// HasParentId returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasParentId() bool {
 	if o != nil && !IsNil(o.ParentId) {
 		return true
 	}
@@ -109,8 +109,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetJobTypeOk() (*ProductA
 	return o.JobType, true
 }
 
-// &#39;Has&#39;JobType returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;JobType() bool {
+// HasJobType returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasJobType() bool {
 	if o != nil && !IsNil(o.JobType) {
 		return true
 	}
@@ -141,8 +141,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetJobStatusOk() (*Produc
 	return o.JobStatus, true
 }
 
-// &#39;Has&#39;JobStatus returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;JobStatus() bool {
+// HasJobStatus returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasJobStatus() bool {
 	if o != nil && !IsNil(o.JobStatus) {
 		return true
 	}
@@ -173,8 +173,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetIdOk() (*string, bool)
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -205,8 +205,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetStartedAtOk() (*time.T
 	return o.StartedAt, true
 }
 
-// &#39;Has&#39;StartedAt returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;StartedAt() bool {
+// HasStartedAt returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasStartedAt() bool {
 	if o != nil && !IsNil(o.StartedAt) {
 		return true
 	}
@@ -237,8 +237,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetExecutedAtOk() (*time.
 	return o.ExecutedAt, true
 }
 
-// &#39;Has&#39;ExecutedAt returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;ExecutedAt() bool {
+// HasExecutedAt returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasExecutedAt() bool {
 	if o != nil && !IsNil(o.ExecutedAt) {
 		return true
 	}
@@ -269,8 +269,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetFinishedAtOk() (*time.
 	return o.FinishedAt, true
 }
 
-// &#39;Has&#39;FinishedAt returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;FinishedAt() bool {
+// HasFinishedAt returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasFinishedAt() bool {
 	if o != nil && !IsNil(o.FinishedAt) {
 		return true
 	}
@@ -301,8 +301,8 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetProductIdOk() (*string
 	return o.ProductId, true
 }
 
-// &#39;Has&#39;ProductId returns a boolean if a field has been set.
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) &#39;Has&#39;ProductId() bool {
+// HasProductId returns a boolean if a field has been set.
+func (o *GetEnhanceProductDataWithAIStatusResponseJob) HasProductId() bool {
 	if o != nil && !IsNil(o.ProductId) {
 		return true
 	}

@@ -61,8 +61,8 @@ func (o *EntitymanagerGetOptionsListResponse) GetOptionListOk() (*EntitymanagerO
 	return o.OptionList, true
 }
 
-// &#39;Has&#39;OptionList returns a boolean if a field has been set.
-func (o *EntitymanagerGetOptionsListResponse) &#39;Has&#39;OptionList() bool {
+// HasOptionList returns a boolean if a field has been set.
+func (o *EntitymanagerGetOptionsListResponse) HasOptionList() bool {
 	if o != nil && !IsNil(o.OptionList) {
 		return true
 	}

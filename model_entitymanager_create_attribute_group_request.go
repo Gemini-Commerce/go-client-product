@@ -65,8 +65,8 @@ func (o *EntitymanagerCreateAttributeGroupRequest) GetTenantIdOk() (*string, boo
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *EntitymanagerCreateAttributeGroupRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *EntitymanagerCreateAttributeGroupRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -97,8 +97,8 @@ func (o *EntitymanagerCreateAttributeGroupRequest) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *EntitymanagerCreateAttributeGroupRequest) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *EntitymanagerCreateAttributeGroupRequest) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -129,8 +129,8 @@ func (o *EntitymanagerCreateAttributeGroupRequest) GetLabelOk() (*Productentitym
 	return o.Label, true
 }
 
-// &#39;Has&#39;Label returns a boolean if a field has been set.
-func (o *EntitymanagerCreateAttributeGroupRequest) &#39;Has&#39;Label() bool {
+// HasLabel returns a boolean if a field has been set.
+func (o *EntitymanagerCreateAttributeGroupRequest) HasLabel() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -161,8 +161,8 @@ func (o *EntitymanagerCreateAttributeGroupRequest) GetSortOk() (*int32, bool) {
 	return o.Sort, true
 }
 
-// &#39;Has&#39;Sort returns a boolean if a field has been set.
-func (o *EntitymanagerCreateAttributeGroupRequest) &#39;Has&#39;Sort() bool {
+// HasSort returns a boolean if a field has been set.
+func (o *EntitymanagerCreateAttributeGroupRequest) HasSort() bool {
 	if o != nil && !IsNil(o.Sort) {
 		return true
 	}
@@ -193,8 +193,8 @@ func (o *EntitymanagerCreateAttributeGroupRequest) GetVisibilityOk() ([]string, 
 	return o.Visibility, true
 }
 
-// &#39;Has&#39;Visibility returns a boolean if a field has been set.
-func (o *EntitymanagerCreateAttributeGroupRequest) &#39;Has&#39;Visibility() bool {
+// HasVisibility returns a boolean if a field has been set.
+func (o *EntitymanagerCreateAttributeGroupRequest) HasVisibility() bool {
 	if o != nil && !IsNil(o.Visibility) {
 		return true
 	}

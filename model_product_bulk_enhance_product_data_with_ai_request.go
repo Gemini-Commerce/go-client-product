@@ -65,8 +65,8 @@ func (o *ProductBulkEnhanceProductDataWithAIRequest) GetTenantIdOk() (*string, b
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductBulkEnhanceProductDataWithAIRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductBulkEnhanceProductDataWithAIRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -97,8 +97,8 @@ func (o *ProductBulkEnhanceProductDataWithAIRequest) GetEnrichOk() (*ProductEnri
 	return o.Enrich, true
 }
 
-// &#39;Has&#39;Enrich returns a boolean if a field has been set.
-func (o *ProductBulkEnhanceProductDataWithAIRequest) &#39;Has&#39;Enrich() bool {
+// HasEnrich returns a boolean if a field has been set.
+func (o *ProductBulkEnhanceProductDataWithAIRequest) HasEnrich() bool {
 	if o != nil && !IsNil(o.Enrich) {
 		return true
 	}
@@ -129,8 +129,8 @@ func (o *ProductBulkEnhanceProductDataWithAIRequest) GetTranslateOk() (*ProductT
 	return o.Translate, true
 }
 
-// &#39;Has&#39;Translate returns a boolean if a field has been set.
-func (o *ProductBulkEnhanceProductDataWithAIRequest) &#39;Has&#39;Translate() bool {
+// HasTranslate returns a boolean if a field has been set.
+func (o *ProductBulkEnhanceProductDataWithAIRequest) HasTranslate() bool {
 	if o != nil && !IsNil(o.Translate) {
 		return true
 	}
@@ -161,8 +161,8 @@ func (o *ProductBulkEnhanceProductDataWithAIRequest) GetProductIdsOk() ([]string
 	return o.ProductIds, true
 }
 
-// &#39;Has&#39;ProductIds returns a boolean if a field has been set.
-func (o *ProductBulkEnhanceProductDataWithAIRequest) &#39;Has&#39;ProductIds() bool {
+// HasProductIds returns a boolean if a field has been set.
+func (o *ProductBulkEnhanceProductDataWithAIRequest) HasProductIds() bool {
 	if o != nil && !IsNil(o.ProductIds) {
 		return true
 	}
@@ -193,8 +193,8 @@ func (o *ProductBulkEnhanceProductDataWithAIRequest) GetSkipReviewOk() (*bool, b
 	return o.SkipReview, true
 }
 
-// &#39;Has&#39;SkipReview returns a boolean if a field has been set.
-func (o *ProductBulkEnhanceProductDataWithAIRequest) &#39;Has&#39;SkipReview() bool {
+// HasSkipReview returns a boolean if a field has been set.
+func (o *ProductBulkEnhanceProductDataWithAIRequest) HasSkipReview() bool {
 	if o != nil && !IsNil(o.SkipReview) {
 		return true
 	}

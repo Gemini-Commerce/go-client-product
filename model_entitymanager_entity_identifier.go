@@ -62,8 +62,8 @@ func (o *EntitymanagerEntityIdentifier) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// &#39;Has&#39;Type returns a boolean if a field has been set.
-func (o *EntitymanagerEntityIdentifier) &#39;Has&#39;Type() bool {
+// HasType returns a boolean if a field has been set.
+func (o *EntitymanagerEntityIdentifier) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *EntitymanagerEntityIdentifier) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *EntitymanagerEntityIdentifier) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *EntitymanagerEntityIdentifier) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}

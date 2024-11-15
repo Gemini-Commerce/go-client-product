@@ -62,8 +62,8 @@ func (o *EntitymanagerAttributeOptionSwatch) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOptionSwatch) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOptionSwatch) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *EntitymanagerAttributeOptionSwatch) GetHexOk() (*string, bool) {
 	return o.Hex, true
 }
 
-// &#39;Has&#39;Hex returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOptionSwatch) &#39;Has&#39;Hex() bool {
+// HasHex returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOptionSwatch) HasHex() bool {
 	if o != nil && !IsNil(o.Hex) {
 		return true
 	}

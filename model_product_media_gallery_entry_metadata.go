@@ -62,8 +62,8 @@ func (o *ProductMediaGalleryEntryMetadata) GetRolesOk() ([]string, bool) {
 	return o.Roles, true
 }
 
-// &#39;Has&#39;Roles returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntryMetadata) &#39;Has&#39;Roles() bool {
+// HasRoles returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntryMetadata) HasRoles() bool {
 	if o != nil && !IsNil(o.Roles) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *ProductMediaGalleryEntryMetadata) GetAltOk() (*ProductLocalizedText, bo
 	return o.Alt, true
 }
 
-// &#39;Has&#39;Alt returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntryMetadata) &#39;Has&#39;Alt() bool {
+// HasAlt returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntryMetadata) HasAlt() bool {
 	if o != nil && !IsNil(o.Alt) {
 		return true
 	}

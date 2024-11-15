@@ -70,8 +70,8 @@ func (o *ProductUpdateProductRequestV2) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -102,8 +102,8 @@ func (o *ProductUpdateProductRequestV2) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -134,8 +134,8 @@ func (o *ProductUpdateProductRequestV2) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -166,8 +166,8 @@ func (o *ProductUpdateProductRequestV2) GetAttributesMaskOk() (*ProductFieldMask
 	return o.AttributesMask, true
 }
 
-// &#39;Has&#39;AttributesMask returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) &#39;Has&#39;AttributesMask() bool {
+// HasAttributesMask returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) HasAttributesMask() bool {
 	if o != nil && !IsNil(o.AttributesMask) {
 		return true
 	}
@@ -198,8 +198,8 @@ func (o *ProductUpdateProductRequestV2) GetUrlKeyOk() (*ProductLocalizedText, bo
 	return o.UrlKey, true
 }
 
-// &#39;Has&#39;UrlKey returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) &#39;Has&#39;UrlKey() bool {
+// HasUrlKey returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) HasUrlKey() bool {
 	if o != nil && !IsNil(o.UrlKey) {
 		return true
 	}
@@ -230,8 +230,8 @@ func (o *ProductUpdateProductRequestV2) GetMaxSaleableQuantityOk() (*int64, bool
 	return o.MaxSaleableQuantity, true
 }
 
-// &#39;Has&#39;MaxSaleableQuantity returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) &#39;Has&#39;MaxSaleableQuantity() bool {
+// HasMaxSaleableQuantity returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) HasMaxSaleableQuantity() bool {
 	if o != nil && !IsNil(o.MaxSaleableQuantity) {
 		return true
 	}
@@ -262,8 +262,8 @@ func (o *ProductUpdateProductRequestV2) GetAttributesOk() (*map[string]ProtobufA
 	return o.Attributes, true
 }
 
-// &#39;Has&#39;Attributes returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) &#39;Has&#39;Attributes() bool {
+// HasAttributes returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) HasAttributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
@@ -294,8 +294,8 @@ func (o *ProductUpdateProductRequestV2) GetVariantsOk() (*map[string]ProductProd
 	return o.Variants, true
 }
 
-// &#39;Has&#39;Variants returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) &#39;Has&#39;Variants() bool {
+// HasVariants returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) HasVariants() bool {
 	if o != nil && !IsNil(o.Variants) {
 		return true
 	}
@@ -326,8 +326,8 @@ func (o *ProductUpdateProductRequestV2) GetMediaVariantAttributesOk() ([]string,
 	return o.MediaVariantAttributes, true
 }
 
-// &#39;Has&#39;MediaVariantAttributes returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) &#39;Has&#39;MediaVariantAttributes() bool {
+// HasMediaVariantAttributes returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) HasMediaVariantAttributes() bool {
 	if o != nil && !IsNil(o.MediaVariantAttributes) {
 		return true
 	}
@@ -358,8 +358,8 @@ func (o *ProductUpdateProductRequestV2) GetInReviewOk() (*bool, bool) {
 	return o.InReview, true
 }
 
-// &#39;Has&#39;InReview returns a boolean if a field has been set.
-func (o *ProductUpdateProductRequestV2) &#39;Has&#39;InReview() bool {
+// HasInReview returns a boolean if a field has been set.
+func (o *ProductUpdateProductRequestV2) HasInReview() bool {
 	if o != nil && !IsNil(o.InReview) {
 		return true
 	}

@@ -63,8 +63,8 @@ func (o *ProductBulkUpdateAssetsEntriesRequest) GetTenantIdOk() (*string, bool) 
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductBulkUpdateAssetsEntriesRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductBulkUpdateAssetsEntriesRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *ProductBulkUpdateAssetsEntriesRequest) GetProductIdOk() (*string, bool)
 	return o.ProductId, true
 }
 
-// &#39;Has&#39;ProductId returns a boolean if a field has been set.
-func (o *ProductBulkUpdateAssetsEntriesRequest) &#39;Has&#39;ProductId() bool {
+// HasProductId returns a boolean if a field has been set.
+func (o *ProductBulkUpdateAssetsEntriesRequest) HasProductId() bool {
 	if o != nil && !IsNil(o.ProductId) {
 		return true
 	}
@@ -127,8 +127,8 @@ func (o *ProductBulkUpdateAssetsEntriesRequest) GetAssetsOk() ([]BulkUpdateAsset
 	return o.Assets, true
 }
 
-// &#39;Has&#39;Assets returns a boolean if a field has been set.
-func (o *ProductBulkUpdateAssetsEntriesRequest) &#39;Has&#39;Assets() bool {
+// HasAssets returns a boolean if a field has been set.
+func (o *ProductBulkUpdateAssetsEntriesRequest) HasAssets() bool {
 	if o != nil && !IsNil(o.Assets) {
 		return true
 	}

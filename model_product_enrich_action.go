@@ -66,8 +66,8 @@ func (o *ProductEnrichAction) GetAttributesToEnrichOk() ([]ProductAttributeToEnr
 	return o.AttributesToEnrich, true
 }
 
-// &#39;Has&#39;AttributesToEnrich returns a boolean if a field has been set.
-func (o *ProductEnrichAction) &#39;Has&#39;AttributesToEnrich() bool {
+// HasAttributesToEnrich returns a boolean if a field has been set.
+func (o *ProductEnrichAction) HasAttributesToEnrich() bool {
 	if o != nil && !IsNil(o.AttributesToEnrich) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *ProductEnrichAction) GetGenerationLanguageOk() (*ProductLanguageCode, b
 	return o.GenerationLanguage, true
 }
 
-// &#39;Has&#39;GenerationLanguage returns a boolean if a field has been set.
-func (o *ProductEnrichAction) &#39;Has&#39;GenerationLanguage() bool {
+// HasGenerationLanguage returns a boolean if a field has been set.
+func (o *ProductEnrichAction) HasGenerationLanguage() bool {
 	if o != nil && !IsNil(o.GenerationLanguage) {
 		return true
 	}

@@ -81,8 +81,8 @@ func (o *ProductAttributeInReview) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -113,8 +113,8 @@ func (o *ProductAttributeInReview) GetStringOk() (*AttributeInReviewString, bool
 	return o.String, true
 }
 
-// &#39;Has&#39;String returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;String() bool {
+// HasString returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasString() bool {
 	if o != nil && !IsNil(o.String) {
 		return true
 	}
@@ -145,8 +145,8 @@ func (o *ProductAttributeInReview) GetInt32Ok() (*int32, bool) {
 	return o.Int32, true
 }
 
-// &#39;Has&#39;Int32 returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;Int32() bool {
+// HasInt32 returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasInt32() bool {
 	if o != nil && !IsNil(o.Int32) {
 		return true
 	}
@@ -177,8 +177,8 @@ func (o *ProductAttributeInReview) GetInt64Ok() (*string, bool) {
 	return o.Int64, true
 }
 
-// &#39;Has&#39;Int64 returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;Int64() bool {
+// HasInt64 returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasInt64() bool {
 	if o != nil && !IsNil(o.Int64) {
 		return true
 	}
@@ -209,8 +209,8 @@ func (o *ProductAttributeInReview) GetFloat32Ok() (*float32, bool) {
 	return o.Float32, true
 }
 
-// &#39;Has&#39;Float32 returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;Float32() bool {
+// HasFloat32 returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasFloat32() bool {
 	if o != nil && !IsNil(o.Float32) {
 		return true
 	}
@@ -241,8 +241,8 @@ func (o *ProductAttributeInReview) GetFloat64Ok() (*float64, bool) {
 	return o.Float64, true
 }
 
-// &#39;Has&#39;Float64 returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;Float64() bool {
+// HasFloat64 returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasFloat64() bool {
 	if o != nil && !IsNil(o.Float64) {
 		return true
 	}
@@ -273,8 +273,8 @@ func (o *ProductAttributeInReview) GetBooleanOk() (*bool, bool) {
 	return o.Boolean, true
 }
 
-// &#39;Has&#39;Boolean returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;Boolean() bool {
+// HasBoolean returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasBoolean() bool {
 	if o != nil && !IsNil(o.Boolean) {
 		return true
 	}
@@ -305,8 +305,8 @@ func (o *ProductAttributeInReview) GetSourceOk() (*ProductAttributeInReviewSourc
 	return o.Source, true
 }
 
-// &#39;Has&#39;Source returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;Source() bool {
+// HasSource returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasSource() bool {
 	if o != nil && !IsNil(o.Source) {
 		return true
 	}
@@ -337,8 +337,8 @@ func (o *ProductAttributeInReview) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;CreatedAt() bool {
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -369,8 +369,8 @@ func (o *ProductAttributeInReview) GetJobIdOk() (*string, bool) {
 	return o.JobId, true
 }
 
-// &#39;Has&#39;JobId returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;JobId() bool {
+// HasJobId returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasJobId() bool {
 	if o != nil && !IsNil(o.JobId) {
 		return true
 	}
@@ -401,8 +401,8 @@ func (o *ProductAttributeInReview) GetJobTypeOk() (*ProductAttributeInReviewJobT
 	return o.JobType, true
 }
 
-// &#39;Has&#39;JobType returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;JobType() bool {
+// HasJobType returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasJobType() bool {
 	if o != nil && !IsNil(o.JobType) {
 		return true
 	}
@@ -433,8 +433,8 @@ func (o *ProductAttributeInReview) GetErrorOk() (*ProductAttributeInReviewError,
 	return o.Error, true
 }
 
-// &#39;Has&#39;Error returns a boolean if a field has been set.
-func (o *ProductAttributeInReview) &#39;Has&#39;Error() bool {
+// HasError returns a boolean if a field has been set.
+func (o *ProductAttributeInReview) HasError() bool {
 	if o != nil && !IsNil(o.Error) {
 		return true
 	}

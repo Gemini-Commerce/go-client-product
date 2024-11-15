@@ -66,8 +66,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -130,8 +130,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetEntityDataOk() (*EntitymanagerE
 	return o.EntityData, true
 }
 
-// &#39;Has&#39;EntityData returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;EntityData() bool {
+// HasEntityData returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) HasEntityData() bool {
 	if o != nil && !IsNil(o.EntityData) {
 		return true
 	}
@@ -162,8 +162,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetEntityIdOk() (*string, bool) {
 	return o.EntityId, true
 }
 
-// &#39;Has&#39;EntityId returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;EntityId() bool {
+// HasEntityId returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) HasEntityId() bool {
 	if o != nil && !IsNil(o.EntityId) {
 		return true
 	}
@@ -194,8 +194,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetPayloadOk() (*EntitymanagerUpda
 	return o.Payload, true
 }
 
-// &#39;Has&#39;Payload returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;Payload() bool {
+// HasPayload returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) HasPayload() bool {
 	if o != nil && !IsNil(o.Payload) {
 		return true
 	}
@@ -226,8 +226,8 @@ func (o *EntitymanagerUpdateAttributeRequest) GetFieldMaskOk() (*string, bool) {
 	return o.FieldMask, true
 }
 
-// &#39;Has&#39;FieldMask returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequest) &#39;Has&#39;FieldMask() bool {
+// HasFieldMask returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequest) HasFieldMask() bool {
 	if o != nil && !IsNil(o.FieldMask) {
 		return true
 	}

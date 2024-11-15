@@ -61,8 +61,8 @@ func (o *ProductDataInReview) GetAttributesOk() ([]ProductAttributeInReview, boo
 	return o.Attributes, true
 }
 
-// &#39;Has&#39;Attributes returns a boolean if a field has been set.
-func (o *ProductDataInReview) &#39;Has&#39;Attributes() bool {
+// HasAttributes returns a boolean if a field has been set.
+func (o *ProductDataInReview) HasAttributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}

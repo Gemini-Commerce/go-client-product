@@ -64,8 +64,8 @@ func (o *EntitymanagerBulkCreateAttributeRequest) GetTenantIdOk() (*string, bool
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *EntitymanagerBulkCreateAttributeRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *EntitymanagerBulkCreateAttributeRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -96,8 +96,8 @@ func (o *EntitymanagerBulkCreateAttributeRequest) GetEntityDataOk() (*Entitymana
 	return o.EntityData, true
 }
 
-// &#39;Has&#39;EntityData returns a boolean if a field has been set.
-func (o *EntitymanagerBulkCreateAttributeRequest) &#39;Has&#39;EntityData() bool {
+// HasEntityData returns a boolean if a field has been set.
+func (o *EntitymanagerBulkCreateAttributeRequest) HasEntityData() bool {
 	if o != nil && !IsNil(o.EntityData) {
 		return true
 	}
@@ -128,8 +128,8 @@ func (o *EntitymanagerBulkCreateAttributeRequest) GetEntityIdOk() (*string, bool
 	return o.EntityId, true
 }
 
-// &#39;Has&#39;EntityId returns a boolean if a field has been set.
-func (o *EntitymanagerBulkCreateAttributeRequest) &#39;Has&#39;EntityId() bool {
+// HasEntityId returns a boolean if a field has been set.
+func (o *EntitymanagerBulkCreateAttributeRequest) HasEntityId() bool {
 	if o != nil && !IsNil(o.EntityId) {
 		return true
 	}
@@ -160,8 +160,8 @@ func (o *EntitymanagerBulkCreateAttributeRequest) GetAttributesOk() ([]Entityman
 	return o.Attributes, true
 }
 
-// &#39;Has&#39;Attributes returns a boolean if a field has been set.
-func (o *EntitymanagerBulkCreateAttributeRequest) &#39;Has&#39;Attributes() bool {
+// HasAttributes returns a boolean if a field has been set.
+func (o *EntitymanagerBulkCreateAttributeRequest) HasAttributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}

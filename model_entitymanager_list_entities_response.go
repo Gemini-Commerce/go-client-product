@@ -62,8 +62,8 @@ func (o *EntitymanagerListEntitiesResponse) GetEntitiesOk() ([]EntitymanagerEnti
 	return o.Entities, true
 }
 
-// &#39;Has&#39;Entities returns a boolean if a field has been set.
-func (o *EntitymanagerListEntitiesResponse) &#39;Has&#39;Entities() bool {
+// HasEntities returns a boolean if a field has been set.
+func (o *EntitymanagerListEntitiesResponse) HasEntities() bool {
 	if o != nil && !IsNil(o.Entities) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *EntitymanagerListEntitiesResponse) GetNextPageOk() (*int32, bool) {
 	return o.NextPage, true
 }
 
-// &#39;Has&#39;NextPage returns a boolean if a field has been set.
-func (o *EntitymanagerListEntitiesResponse) &#39;Has&#39;NextPage() bool {
+// HasNextPage returns a boolean if a field has been set.
+func (o *EntitymanagerListEntitiesResponse) HasNextPage() bool {
 	if o != nil && !IsNil(o.NextPage) {
 		return true
 	}

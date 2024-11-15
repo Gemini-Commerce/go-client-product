@@ -71,8 +71,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetLabelOk() (*string, bool
 	return o.Label, true
 }
 
-// &#39;Has&#39;Label returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;Label() bool {
+// HasLabel returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) HasLabel() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -103,8 +103,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetDefaultOk() (*string, bo
 	return o.Default, true
 }
 
-// &#39;Has&#39;Default returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;Default() bool {
+// HasDefault returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) HasDefault() bool {
 	if o != nil && !IsNil(o.Default) {
 		return true
 	}
@@ -135,8 +135,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetSortOk() (*int32, bool) 
 	return o.Sort, true
 }
 
-// &#39;Has&#39;Sort returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;Sort() bool {
+// HasSort returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) HasSort() bool {
 	if o != nil && !IsNil(o.Sort) {
 		return true
 	}
@@ -167,8 +167,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetGroupCodeOk() (*string, 
 	return o.GroupCode, true
 }
 
-// &#39;Has&#39;GroupCode returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;GroupCode() bool {
+// HasGroupCode returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) HasGroupCode() bool {
 	if o != nil && !IsNil(o.GroupCode) {
 		return true
 	}
@@ -199,8 +199,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetTitleOk() (*map[string]s
 	return o.Title, true
 }
 
-// &#39;Has&#39;Title returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;Title() bool {
+// HasTitle returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) HasTitle() bool {
 	if o != nil && !IsNil(o.Title) {
 		return true
 	}
@@ -231,8 +231,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetRenderAsOk() (*Entityman
 	return o.RenderAs, true
 }
 
-// &#39;Has&#39;RenderAs returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;RenderAs() bool {
+// HasRenderAs returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) HasRenderAs() bool {
 	if o != nil && !IsNil(o.RenderAs) {
 		return true
 	}
@@ -263,8 +263,8 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) GetAiContextOk() (*Entityma
 	return o.AiContext, true
 }
 
-// &#39;Has&#39;AiContext returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeRequestPayload) &#39;Has&#39;AiContext() bool {
+// HasAiContext returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeRequestPayload) HasAiContext() bool {
 	if o != nil && !IsNil(o.AiContext) {
 		return true
 	}

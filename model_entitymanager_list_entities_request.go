@@ -62,8 +62,8 @@ func (o *EntitymanagerListEntitiesRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *EntitymanagerListEntitiesRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *EntitymanagerListEntitiesRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *EntitymanagerListEntitiesRequest) GetPageSizeOk() (*int32, bool) {
 	return o.PageSize, true
 }
 
-// &#39;Has&#39;PageSize returns a boolean if a field has been set.
-func (o *EntitymanagerListEntitiesRequest) &#39;Has&#39;PageSize() bool {
+// HasPageSize returns a boolean if a field has been set.
+func (o *EntitymanagerListEntitiesRequest) HasPageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}

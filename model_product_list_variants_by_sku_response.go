@@ -61,8 +61,8 @@ func (o *ProductListVariantsBySkuResponse) GetVariantsOk() ([]ProductProductVari
 	return o.Variants, true
 }
 
-// &#39;Has&#39;Variants returns a boolean if a field has been set.
-func (o *ProductListVariantsBySkuResponse) &#39;Has&#39;Variants() bool {
+// HasVariants returns a boolean if a field has been set.
+func (o *ProductListVariantsBySkuResponse) HasVariants() bool {
 	if o != nil && !IsNil(o.Variants) {
 		return true
 	}

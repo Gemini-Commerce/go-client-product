@@ -64,8 +64,8 @@ func (o *ProductMediaGalleryEntry) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntry) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntry) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -96,8 +96,8 @@ func (o *ProductMediaGalleryEntry) GetAssetGrnOk() (*string, bool) {
 	return o.AssetGrn, true
 }
 
-// &#39;Has&#39;AssetGrn returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntry) &#39;Has&#39;AssetGrn() bool {
+// HasAssetGrn returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntry) HasAssetGrn() bool {
 	if o != nil && !IsNil(o.AssetGrn) {
 		return true
 	}
@@ -128,8 +128,8 @@ func (o *ProductMediaGalleryEntry) GetPositionOk() (*int64, bool) {
 	return o.Position, true
 }
 
-// &#39;Has&#39;Position returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntry) &#39;Has&#39;Position() bool {
+// HasPosition returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntry) HasPosition() bool {
 	if o != nil && !IsNil(o.Position) {
 		return true
 	}
@@ -160,8 +160,8 @@ func (o *ProductMediaGalleryEntry) GetMetadataOk() ([]ProductMediaGalleryEntryMe
 	return o.Metadata, true
 }
 
-// &#39;Has&#39;Metadata returns a boolean if a field has been set.
-func (o *ProductMediaGalleryEntry) &#39;Has&#39;Metadata() bool {
+// HasMetadata returns a boolean if a field has been set.
+func (o *ProductMediaGalleryEntry) HasMetadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}

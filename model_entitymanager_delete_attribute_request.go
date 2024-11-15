@@ -64,8 +64,8 @@ func (o *EntitymanagerDeleteAttributeRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *EntitymanagerDeleteAttributeRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *EntitymanagerDeleteAttributeRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -96,8 +96,8 @@ func (o *EntitymanagerDeleteAttributeRequest) GetEntityDataOk() (*EntitymanagerE
 	return o.EntityData, true
 }
 
-// &#39;Has&#39;EntityData returns a boolean if a field has been set.
-func (o *EntitymanagerDeleteAttributeRequest) &#39;Has&#39;EntityData() bool {
+// HasEntityData returns a boolean if a field has been set.
+func (o *EntitymanagerDeleteAttributeRequest) HasEntityData() bool {
 	if o != nil && !IsNil(o.EntityData) {
 		return true
 	}
@@ -128,8 +128,8 @@ func (o *EntitymanagerDeleteAttributeRequest) GetEntityIdOk() (*string, bool) {
 	return o.EntityId, true
 }
 
-// &#39;Has&#39;EntityId returns a boolean if a field has been set.
-func (o *EntitymanagerDeleteAttributeRequest) &#39;Has&#39;EntityId() bool {
+// HasEntityId returns a boolean if a field has been set.
+func (o *EntitymanagerDeleteAttributeRequest) HasEntityId() bool {
 	if o != nil && !IsNil(o.EntityId) {
 		return true
 	}
@@ -160,8 +160,8 @@ func (o *EntitymanagerDeleteAttributeRequest) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *EntitymanagerDeleteAttributeRequest) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *EntitymanagerDeleteAttributeRequest) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}

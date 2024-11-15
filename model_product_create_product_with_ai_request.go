@@ -68,8 +68,8 @@ func (o *ProductCreateProductWithAIRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -100,8 +100,8 @@ func (o *ProductCreateProductWithAIRequest) GetProductOk() (*ProductCreateProduc
 	return o.Product, true
 }
 
-// &#39;Has&#39;Product returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;Product() bool {
+// HasProduct returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) HasProduct() bool {
 	if o != nil && !IsNil(o.Product) {
 		return true
 	}
@@ -132,8 +132,8 @@ func (o *ProductCreateProductWithAIRequest) GetLocaleOk() (*string, bool) {
 	return o.Locale, true
 }
 
-// &#39;Has&#39;Locale returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;Locale() bool {
+// HasLocale returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) HasLocale() bool {
 	if o != nil && !IsNil(o.Locale) {
 		return true
 	}
@@ -164,8 +164,8 @@ func (o *ProductCreateProductWithAIRequest) GetProductBrandOk() (*string, bool) 
 	return o.ProductBrand, true
 }
 
-// &#39;Has&#39;ProductBrand returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;ProductBrand() bool {
+// HasProductBrand returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) HasProductBrand() bool {
 	if o != nil && !IsNil(o.ProductBrand) {
 		return true
 	}
@@ -196,8 +196,8 @@ func (o *ProductCreateProductWithAIRequest) GetProductCodeOk() (*string, bool) {
 	return o.ProductCode, true
 }
 
-// &#39;Has&#39;ProductCode returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;ProductCode() bool {
+// HasProductCode returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) HasProductCode() bool {
 	if o != nil && !IsNil(o.ProductCode) {
 		return true
 	}
@@ -228,8 +228,8 @@ func (o *ProductCreateProductWithAIRequest) GetProductNameOk() (*string, bool) {
 	return o.ProductName, true
 }
 
-// &#39;Has&#39;ProductName returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;ProductName() bool {
+// HasProductName returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) HasProductName() bool {
 	if o != nil && !IsNil(o.ProductName) {
 		return true
 	}
@@ -260,8 +260,8 @@ func (o *ProductCreateProductWithAIRequest) GetSkipReviewOk() (*bool, bool) {
 	return o.SkipReview, true
 }
 
-// &#39;Has&#39;SkipReview returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;SkipReview() bool {
+// HasSkipReview returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) HasSkipReview() bool {
 	if o != nil && !IsNil(o.SkipReview) {
 		return true
 	}
@@ -292,8 +292,8 @@ func (o *ProductCreateProductWithAIRequest) GetAttributesToEnrichOk() ([]Product
 	return o.AttributesToEnrich, true
 }
 
-// &#39;Has&#39;AttributesToEnrich returns a boolean if a field has been set.
-func (o *ProductCreateProductWithAIRequest) &#39;Has&#39;AttributesToEnrich() bool {
+// HasAttributesToEnrich returns a boolean if a field has been set.
+func (o *ProductCreateProductWithAIRequest) HasAttributesToEnrich() bool {
 	if o != nil && !IsNil(o.AttributesToEnrich) {
 		return true
 	}

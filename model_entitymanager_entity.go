@@ -68,8 +68,8 @@ func (o *EntitymanagerEntity) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -100,8 +100,8 @@ func (o *EntitymanagerEntity) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -132,8 +132,8 @@ func (o *EntitymanagerEntity) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// &#39;Has&#39;Type returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) &#39;Has&#39;Type() bool {
+// HasType returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -164,8 +164,8 @@ func (o *EntitymanagerEntity) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -196,8 +196,8 @@ func (o *EntitymanagerEntity) GetParentCodeOk() (*string, bool) {
 	return o.ParentCode, true
 }
 
-// &#39;Has&#39;ParentCode returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) &#39;Has&#39;ParentCode() bool {
+// HasParentCode returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) HasParentCode() bool {
 	if o != nil && !IsNil(o.ParentCode) {
 		return true
 	}
@@ -228,8 +228,8 @@ func (o *EntitymanagerEntity) GetLabelOk() (*string, bool) {
 	return o.Label, true
 }
 
-// &#39;Has&#39;Label returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) &#39;Has&#39;Label() bool {
+// HasLabel returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) HasLabel() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -260,8 +260,8 @@ func (o *EntitymanagerEntity) GetRelationshipsOk() ([]string, bool) {
 	return o.Relationships, true
 }
 
-// &#39;Has&#39;Relationships returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) &#39;Has&#39;Relationships() bool {
+// HasRelationships returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) HasRelationships() bool {
 	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
@@ -292,8 +292,8 @@ func (o *EntitymanagerEntity) GetAttributesOk() ([]EntitymanagerAttribute, bool)
 	return o.Attributes, true
 }
 
-// &#39;Has&#39;Attributes returns a boolean if a field has been set.
-func (o *EntitymanagerEntity) &#39;Has&#39;Attributes() bool {
+// HasAttributes returns a boolean if a field has been set.
+func (o *EntitymanagerEntity) HasAttributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}

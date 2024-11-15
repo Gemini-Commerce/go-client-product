@@ -61,8 +61,8 @@ func (o *EntitymanagerBulkCreateAttributeResponse) GetAttributesOk() ([]Entityma
 	return o.Attributes, true
 }
 
-// &#39;Has&#39;Attributes returns a boolean if a field has been set.
-func (o *EntitymanagerBulkCreateAttributeResponse) &#39;Has&#39;Attributes() bool {
+// HasAttributes returns a boolean if a field has been set.
+func (o *EntitymanagerBulkCreateAttributeResponse) HasAttributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}

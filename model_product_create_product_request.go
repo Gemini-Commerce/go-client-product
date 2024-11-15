@@ -85,8 +85,8 @@ func (o *ProductCreateProductRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -117,8 +117,8 @@ func (o *ProductCreateProductRequest) GetEntityTypeOk() (*string, bool) {
 	return o.EntityType, true
 }
 
-// &#39;Has&#39;EntityType returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;EntityType() bool {
+// HasEntityType returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasEntityType() bool {
 	if o != nil && !IsNil(o.EntityType) {
 		return true
 	}
@@ -149,8 +149,8 @@ func (o *ProductCreateProductRequest) GetEntityCodeOk() (*string, bool) {
 	return o.EntityCode, true
 }
 
-// &#39;Has&#39;EntityCode returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;EntityCode() bool {
+// HasEntityCode returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasEntityCode() bool {
 	if o != nil && !IsNil(o.EntityCode) {
 		return true
 	}
@@ -181,8 +181,8 @@ func (o *ProductCreateProductRequest) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -213,8 +213,8 @@ func (o *ProductCreateProductRequest) GetIsConfigurableOk() (*bool, bool) {
 	return o.IsConfigurable, true
 }
 
-// &#39;Has&#39;IsConfigurable returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;IsConfigurable() bool {
+// HasIsConfigurable returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasIsConfigurable() bool {
 	if o != nil && !IsNil(o.IsConfigurable) {
 		return true
 	}
@@ -245,8 +245,8 @@ func (o *ProductCreateProductRequest) GetVariantAttributesOk() ([]string, bool) 
 	return o.VariantAttributes, true
 }
 
-// &#39;Has&#39;VariantAttributes returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;VariantAttributes() bool {
+// HasVariantAttributes returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasVariantAttributes() bool {
 	if o != nil && !IsNil(o.VariantAttributes) {
 		return true
 	}
@@ -277,8 +277,8 @@ func (o *ProductCreateProductRequest) GetIsVirtualOk() (*bool, bool) {
 	return o.IsVirtual, true
 }
 
-// &#39;Has&#39;IsVirtual returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;IsVirtual() bool {
+// HasIsVirtual returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasIsVirtual() bool {
 	if o != nil && !IsNil(o.IsVirtual) {
 		return true
 	}
@@ -309,8 +309,8 @@ func (o *ProductCreateProductRequest) GetIsGiftcardOk() (*bool, bool) {
 	return o.IsGiftcard, true
 }
 
-// &#39;Has&#39;IsGiftcard returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;IsGiftcard() bool {
+// HasIsGiftcard returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasIsGiftcard() bool {
 	if o != nil && !IsNil(o.IsGiftcard) {
 		return true
 	}
@@ -341,8 +341,8 @@ func (o *ProductCreateProductRequest) GetHasConfiguratorOk() (*bool, bool) {
 	return o.HasConfigurator, true
 }
 
-// &#39;Has&#39;HasConfigurator returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;HasConfigurator() bool {
+// HasHasConfigurator returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasHasConfigurator() bool {
 	if o != nil && !IsNil(o.HasConfigurator) {
 		return true
 	}
@@ -373,8 +373,8 @@ func (o *ProductCreateProductRequest) GetUrlKeyOk() (*ProductLocalizedText, bool
 	return o.UrlKey, true
 }
 
-// &#39;Has&#39;UrlKey returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;UrlKey() bool {
+// HasUrlKey returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasUrlKey() bool {
 	if o != nil && !IsNil(o.UrlKey) {
 		return true
 	}
@@ -405,8 +405,8 @@ func (o *ProductCreateProductRequest) GetMaxSaleableQuantityOk() (*int64, bool) 
 	return o.MaxSaleableQuantity, true
 }
 
-// &#39;Has&#39;MaxSaleableQuantity returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;MaxSaleableQuantity() bool {
+// HasMaxSaleableQuantity returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasMaxSaleableQuantity() bool {
 	if o != nil && !IsNil(o.MaxSaleableQuantity) {
 		return true
 	}
@@ -437,8 +437,8 @@ func (o *ProductCreateProductRequest) GetMediaVariantAttributesOk() ([]string, b
 	return o.MediaVariantAttributes, true
 }
 
-// &#39;Has&#39;MediaVariantAttributes returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;MediaVariantAttributes() bool {
+// HasMediaVariantAttributes returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasMediaVariantAttributes() bool {
 	if o != nil && !IsNil(o.MediaVariantAttributes) {
 		return true
 	}
@@ -469,8 +469,8 @@ func (o *ProductCreateProductRequest) GetAttributesOk() (*map[string]ProtobufAny
 	return o.Attributes, true
 }
 
-// &#39;Has&#39;Attributes returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;Attributes() bool {
+// HasAttributes returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasAttributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
@@ -501,8 +501,8 @@ func (o *ProductCreateProductRequest) GetVariantsOk() (*map[string]ProductProduc
 	return o.Variants, true
 }
 
-// &#39;Has&#39;Variants returns a boolean if a field has been set.
-func (o *ProductCreateProductRequest) &#39;Has&#39;Variants() bool {
+// HasVariants returns a boolean if a field has been set.
+func (o *ProductCreateProductRequest) HasVariants() bool {
 	if o != nil && !IsNil(o.Variants) {
 		return true
 	}

@@ -62,8 +62,8 @@ func (o *EntitymanagerCreateOptionsListRequest) GetTenantIdOk() (*string, bool) 
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *EntitymanagerCreateOptionsListRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *EntitymanagerCreateOptionsListRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *EntitymanagerCreateOptionsListRequest) GetOptionListOk() (*Entitymanage
 	return o.OptionList, true
 }
 
-// &#39;Has&#39;OptionList returns a boolean if a field has been set.
-func (o *EntitymanagerCreateOptionsListRequest) &#39;Has&#39;OptionList() bool {
+// HasOptionList returns a boolean if a field has been set.
+func (o *EntitymanagerCreateOptionsListRequest) HasOptionList() bool {
 	if o != nil && !IsNil(o.OptionList) {
 		return true
 	}

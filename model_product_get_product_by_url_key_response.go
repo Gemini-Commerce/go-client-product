@@ -61,8 +61,8 @@ func (o *ProductGetProductByUrlKeyResponse) GetProductOk() (*ProductProductEntit
 	return o.Product, true
 }
 
-// &#39;Has&#39;Product returns a boolean if a field has been set.
-func (o *ProductGetProductByUrlKeyResponse) &#39;Has&#39;Product() bool {
+// HasProduct returns a boolean if a field has been set.
+func (o *ProductGetProductByUrlKeyResponse) HasProduct() bool {
 	if o != nil && !IsNil(o.Product) {
 		return true
 	}

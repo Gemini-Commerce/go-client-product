@@ -66,8 +66,8 @@ func (o *ListProductsRequestFilter) GetCreatedAtStartOk() (*time.Time, bool) {
 	return o.CreatedAtStart, true
 }
 
-// &#39;Has&#39;CreatedAtStart returns a boolean if a field has been set.
-func (o *ListProductsRequestFilter) &#39;Has&#39;CreatedAtStart() bool {
+// HasCreatedAtStart returns a boolean if a field has been set.
+func (o *ListProductsRequestFilter) HasCreatedAtStart() bool {
 	if o != nil && !IsNil(o.CreatedAtStart) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *ListProductsRequestFilter) GetCreatedAtEndOk() (*time.Time, bool) {
 	return o.CreatedAtEnd, true
 }
 
-// &#39;Has&#39;CreatedAtEnd returns a boolean if a field has been set.
-func (o *ListProductsRequestFilter) &#39;Has&#39;CreatedAtEnd() bool {
+// HasCreatedAtEnd returns a boolean if a field has been set.
+func (o *ListProductsRequestFilter) HasCreatedAtEnd() bool {
 	if o != nil && !IsNil(o.CreatedAtEnd) {
 		return true
 	}
@@ -130,8 +130,8 @@ func (o *ListProductsRequestFilter) GetUpdatedAtStartOk() (*time.Time, bool) {
 	return o.UpdatedAtStart, true
 }
 
-// &#39;Has&#39;UpdatedAtStart returns a boolean if a field has been set.
-func (o *ListProductsRequestFilter) &#39;Has&#39;UpdatedAtStart() bool {
+// HasUpdatedAtStart returns a boolean if a field has been set.
+func (o *ListProductsRequestFilter) HasUpdatedAtStart() bool {
 	if o != nil && !IsNil(o.UpdatedAtStart) {
 		return true
 	}
@@ -162,8 +162,8 @@ func (o *ListProductsRequestFilter) GetUpdatedAtEndOk() (*time.Time, bool) {
 	return o.UpdatedAtEnd, true
 }
 
-// &#39;Has&#39;UpdatedAtEnd returns a boolean if a field has been set.
-func (o *ListProductsRequestFilter) &#39;Has&#39;UpdatedAtEnd() bool {
+// HasUpdatedAtEnd returns a boolean if a field has been set.
+func (o *ListProductsRequestFilter) HasUpdatedAtEnd() bool {
 	if o != nil && !IsNil(o.UpdatedAtEnd) {
 		return true
 	}
@@ -194,8 +194,8 @@ func (o *ListProductsRequestFilter) GetStatusOk() (*bool, bool) {
 	return o.Status, true
 }
 
-// &#39;Has&#39;Status returns a boolean if a field has been set.
-func (o *ListProductsRequestFilter) &#39;Has&#39;Status() bool {
+// HasStatus returns a boolean if a field has been set.
+func (o *ListProductsRequestFilter) HasStatus() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}

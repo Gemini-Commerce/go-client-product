@@ -63,8 +63,8 @@ func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetLabelOk() (*Product
 	return o.Label, true
 }
 
-// &#39;Has&#39;Label returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeGroupRequestPayload) &#39;Has&#39;Label() bool {
+// HasLabel returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) HasLabel() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetSortOk() (*int32, b
 	return o.Sort, true
 }
 
-// &#39;Has&#39;Sort returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeGroupRequestPayload) &#39;Has&#39;Sort() bool {
+// HasSort returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) HasSort() bool {
 	if o != nil && !IsNil(o.Sort) {
 		return true
 	}
@@ -127,8 +127,8 @@ func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetVisibilityOk() ([]s
 	return o.Visibility, true
 }
 
-// &#39;Has&#39;Visibility returns a boolean if a field has been set.
-func (o *EntitymanagerUpdateAttributeGroupRequestPayload) &#39;Has&#39;Visibility() bool {
+// HasVisibility returns a boolean if a field has been set.
+func (o *EntitymanagerUpdateAttributeGroupRequestPayload) HasVisibility() bool {
 	if o != nil && !IsNil(o.Visibility) {
 		return true
 	}

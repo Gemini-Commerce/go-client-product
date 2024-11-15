@@ -63,8 +63,8 @@ func (o *ProductUpdateProductResponse) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// &#39;Has&#39;Success returns a boolean if a field has been set.
-func (o *ProductUpdateProductResponse) &#39;Has&#39;Success() bool {
+// HasSuccess returns a boolean if a field has been set.
+func (o *ProductUpdateProductResponse) HasSuccess() bool {
 	if o != nil && !IsNil(o.Success) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *ProductUpdateProductResponse) GetProductErrorsOk() ([]ProductProductRes
 	return o.ProductErrors, true
 }
 
-// &#39;Has&#39;ProductErrors returns a boolean if a field has been set.
-func (o *ProductUpdateProductResponse) &#39;Has&#39;ProductErrors() bool {
+// HasProductErrors returns a boolean if a field has been set.
+func (o *ProductUpdateProductResponse) HasProductErrors() bool {
 	if o != nil && !IsNil(o.ProductErrors) {
 		return true
 	}
@@ -127,8 +127,8 @@ func (o *ProductUpdateProductResponse) GetAttributeErrorsOk() ([]ProductAttribut
 	return o.AttributeErrors, true
 }
 
-// &#39;Has&#39;AttributeErrors returns a boolean if a field has been set.
-func (o *ProductUpdateProductResponse) &#39;Has&#39;AttributeErrors() bool {
+// HasAttributeErrors returns a boolean if a field has been set.
+func (o *ProductUpdateProductResponse) HasAttributeErrors() bool {
 	if o != nil && !IsNil(o.AttributeErrors) {
 		return true
 	}

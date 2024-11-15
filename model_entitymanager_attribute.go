@@ -83,8 +83,8 @@ func (o *EntitymanagerAttribute) GetEntityIdOk() (*string, bool) {
 	return o.EntityId, true
 }
 
-// &#39;Has&#39;EntityId returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;EntityId() bool {
+// HasEntityId returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasEntityId() bool {
 	if o != nil && !IsNil(o.EntityId) {
 		return true
 	}
@@ -115,8 +115,8 @@ func (o *EntitymanagerAttribute) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -147,8 +147,8 @@ func (o *EntitymanagerAttribute) GetLabelOk() (*string, bool) {
 	return o.Label, true
 }
 
-// &#39;Has&#39;Label returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;Label() bool {
+// HasLabel returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasLabel() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -179,8 +179,8 @@ func (o *EntitymanagerAttribute) GetTypeOk() (*EntitymanagerTypes, bool) {
 	return o.Type, true
 }
 
-// &#39;Has&#39;Type returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;Type() bool {
+// HasType returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -211,8 +211,8 @@ func (o *EntitymanagerAttribute) GetOptionListOk() (*string, bool) {
 	return o.OptionList, true
 }
 
-// &#39;Has&#39;OptionList returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;OptionList() bool {
+// HasOptionList returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasOptionList() bool {
 	if o != nil && !IsNil(o.OptionList) {
 		return true
 	}
@@ -243,8 +243,8 @@ func (o *EntitymanagerAttribute) GetEntityOk() (*string, bool) {
 	return o.Entity, true
 }
 
-// &#39;Has&#39;Entity returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;Entity() bool {
+// HasEntity returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasEntity() bool {
 	if o != nil && !IsNil(o.Entity) {
 		return true
 	}
@@ -275,8 +275,8 @@ func (o *EntitymanagerAttribute) GetDefaultOk() (*string, bool) {
 	return o.Default, true
 }
 
-// &#39;Has&#39;Default returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;Default() bool {
+// HasDefault returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasDefault() bool {
 	if o != nil && !IsNil(o.Default) {
 		return true
 	}
@@ -307,8 +307,8 @@ func (o *EntitymanagerAttribute) GetIsRequiredOk() (*bool, bool) {
 	return o.IsRequired, true
 }
 
-// &#39;Has&#39;IsRequired returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;IsRequired() bool {
+// HasIsRequired returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasIsRequired() bool {
 	if o != nil && !IsNil(o.IsRequired) {
 		return true
 	}
@@ -339,8 +339,8 @@ func (o *EntitymanagerAttribute) GetIsSystemOk() (*bool, bool) {
 	return o.IsSystem, true
 }
 
-// &#39;Has&#39;IsSystem returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;IsSystem() bool {
+// HasIsSystem returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasIsSystem() bool {
 	if o != nil && !IsNil(o.IsSystem) {
 		return true
 	}
@@ -371,8 +371,8 @@ func (o *EntitymanagerAttribute) GetIsRepeatedOk() (*bool, bool) {
 	return o.IsRepeated, true
 }
 
-// &#39;Has&#39;IsRepeated returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;IsRepeated() bool {
+// HasIsRepeated returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasIsRepeated() bool {
 	if o != nil && !IsNil(o.IsRepeated) {
 		return true
 	}
@@ -403,8 +403,8 @@ func (o *EntitymanagerAttribute) GetSortOk() (*int32, bool) {
 	return o.Sort, true
 }
 
-// &#39;Has&#39;Sort returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;Sort() bool {
+// HasSort returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasSort() bool {
 	if o != nil && !IsNil(o.Sort) {
 		return true
 	}
@@ -435,8 +435,8 @@ func (o *EntitymanagerAttribute) GetGroupCodeOk() (*string, bool) {
 	return o.GroupCode, true
 }
 
-// &#39;Has&#39;GroupCode returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;GroupCode() bool {
+// HasGroupCode returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasGroupCode() bool {
 	if o != nil && !IsNil(o.GroupCode) {
 		return true
 	}
@@ -467,8 +467,8 @@ func (o *EntitymanagerAttribute) GetTitleOk() (*map[string]string, bool) {
 	return o.Title, true
 }
 
-// &#39;Has&#39;Title returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;Title() bool {
+// HasTitle returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasTitle() bool {
 	if o != nil && !IsNil(o.Title) {
 		return true
 	}
@@ -499,8 +499,8 @@ func (o *EntitymanagerAttribute) GetRenderAsOk() (*EntitymanagerRenderAs, bool) 
 	return o.RenderAs, true
 }
 
-// &#39;Has&#39;RenderAs returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;RenderAs() bool {
+// HasRenderAs returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasRenderAs() bool {
 	if o != nil && !IsNil(o.RenderAs) {
 		return true
 	}
@@ -531,8 +531,8 @@ func (o *EntitymanagerAttribute) GetAiContextOk() (*EntitymanagerAiContext, bool
 	return o.AiContext, true
 }
 
-// &#39;Has&#39;AiContext returns a boolean if a field has been set.
-func (o *EntitymanagerAttribute) &#39;Has&#39;AiContext() bool {
+// HasAiContext returns a boolean if a field has been set.
+func (o *EntitymanagerAttribute) HasAiContext() bool {
 	if o != nil && !IsNil(o.AiContext) {
 		return true
 	}

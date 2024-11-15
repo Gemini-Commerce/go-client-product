@@ -63,8 +63,8 @@ func (o *EntitymanagerEntityRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *EntitymanagerEntityRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *EntitymanagerEntityRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *EntitymanagerEntityRequest) GetEntityDataOk() (*EntitymanagerEntityIden
 	return o.EntityData, true
 }
 
-// &#39;Has&#39;EntityData returns a boolean if a field has been set.
-func (o *EntitymanagerEntityRequest) &#39;Has&#39;EntityData() bool {
+// HasEntityData returns a boolean if a field has been set.
+func (o *EntitymanagerEntityRequest) HasEntityData() bool {
 	if o != nil && !IsNil(o.EntityData) {
 		return true
 	}
@@ -127,8 +127,8 @@ func (o *EntitymanagerEntityRequest) GetEntityIdOk() (*string, bool) {
 	return o.EntityId, true
 }
 
-// &#39;Has&#39;EntityId returns a boolean if a field has been set.
-func (o *EntitymanagerEntityRequest) &#39;Has&#39;EntityId() bool {
+// HasEntityId returns a boolean if a field has been set.
+func (o *EntitymanagerEntityRequest) HasEntityId() bool {
 	if o != nil && !IsNil(o.EntityId) {
 		return true
 	}

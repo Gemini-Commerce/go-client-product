@@ -64,8 +64,8 @@ func (o *ProductProductVariant) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *ProductProductVariant) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *ProductProductVariant) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -96,8 +96,8 @@ func (o *ProductProductVariant) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *ProductProductVariant) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *ProductProductVariant) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -128,8 +128,8 @@ func (o *ProductProductVariant) GetMaxSaleableQuantityOk() (*int64, bool) {
 	return o.MaxSaleableQuantity, true
 }
 
-// &#39;Has&#39;MaxSaleableQuantity returns a boolean if a field has been set.
-func (o *ProductProductVariant) &#39;Has&#39;MaxSaleableQuantity() bool {
+// HasMaxSaleableQuantity returns a boolean if a field has been set.
+func (o *ProductProductVariant) HasMaxSaleableQuantity() bool {
 	if o != nil && !IsNil(o.MaxSaleableQuantity) {
 		return true
 	}
@@ -160,8 +160,8 @@ func (o *ProductProductVariant) GetAttributesOk() (*map[string]ProtobufAny, bool
 	return o.Attributes, true
 }
 
-// &#39;Has&#39;Attributes returns a boolean if a field has been set.
-func (o *ProductProductVariant) &#39;Has&#39;Attributes() bool {
+// HasAttributes returns a boolean if a field has been set.
+func (o *ProductProductVariant) HasAttributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}

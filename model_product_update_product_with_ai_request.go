@@ -65,8 +65,8 @@ func (o *ProductUpdateProductWithAIRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductUpdateProductWithAIRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductUpdateProductWithAIRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -97,8 +97,8 @@ func (o *ProductUpdateProductWithAIRequest) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *ProductUpdateProductWithAIRequest) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *ProductUpdateProductWithAIRequest) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -129,8 +129,8 @@ func (o *ProductUpdateProductWithAIRequest) GetLocaleOk() (*string, bool) {
 	return o.Locale, true
 }
 
-// &#39;Has&#39;Locale returns a boolean if a field has been set.
-func (o *ProductUpdateProductWithAIRequest) &#39;Has&#39;Locale() bool {
+// HasLocale returns a boolean if a field has been set.
+func (o *ProductUpdateProductWithAIRequest) HasLocale() bool {
 	if o != nil && !IsNil(o.Locale) {
 		return true
 	}
@@ -161,8 +161,8 @@ func (o *ProductUpdateProductWithAIRequest) GetSkipReviewOk() (*bool, bool) {
 	return o.SkipReview, true
 }
 
-// &#39;Has&#39;SkipReview returns a boolean if a field has been set.
-func (o *ProductUpdateProductWithAIRequest) &#39;Has&#39;SkipReview() bool {
+// HasSkipReview returns a boolean if a field has been set.
+func (o *ProductUpdateProductWithAIRequest) HasSkipReview() bool {
 	if o != nil && !IsNil(o.SkipReview) {
 		return true
 	}
@@ -193,8 +193,8 @@ func (o *ProductUpdateProductWithAIRequest) GetAttributesToEnrichOk() ([]Product
 	return o.AttributesToEnrich, true
 }
 
-// &#39;Has&#39;AttributesToEnrich returns a boolean if a field has been set.
-func (o *ProductUpdateProductWithAIRequest) &#39;Has&#39;AttributesToEnrich() bool {
+// HasAttributesToEnrich returns a boolean if a field has been set.
+func (o *ProductUpdateProductWithAIRequest) HasAttributesToEnrich() bool {
 	if o != nil && !IsNil(o.AttributesToEnrich) {
 		return true
 	}

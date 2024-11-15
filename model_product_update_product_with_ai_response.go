@@ -61,8 +61,8 @@ func (o *ProductUpdateProductWithAIResponse) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *ProductUpdateProductWithAIResponse) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *ProductUpdateProductWithAIResponse) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}

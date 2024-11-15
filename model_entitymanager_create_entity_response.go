@@ -62,8 +62,8 @@ func (o *EntitymanagerCreateEntityResponse) GetAttributeWriteErrorsOk() (*Entity
 	return o.AttributeWriteErrors, true
 }
 
-// &#39;Has&#39;AttributeWriteErrors returns a boolean if a field has been set.
-func (o *EntitymanagerCreateEntityResponse) &#39;Has&#39;AttributeWriteErrors() bool {
+// HasAttributeWriteErrors returns a boolean if a field has been set.
+func (o *EntitymanagerCreateEntityResponse) HasAttributeWriteErrors() bool {
 	if o != nil && !IsNil(o.AttributeWriteErrors) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *EntitymanagerCreateEntityResponse) GetEntityOk() (*EntitymanagerEntity,
 	return o.Entity, true
 }
 
-// &#39;Has&#39;Entity returns a boolean if a field has been set.
-func (o *EntitymanagerCreateEntityResponse) &#39;Has&#39;Entity() bool {
+// HasEntity returns a boolean if a field has been set.
+func (o *EntitymanagerCreateEntityResponse) HasEntity() bool {
 	if o != nil && !IsNil(o.Entity) {
 		return true
 	}

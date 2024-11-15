@@ -61,8 +61,8 @@ func (o *ProductMediaGallery) GetEntriesOk() ([]ProductMediaGalleryEntry, bool) 
 	return o.Entries, true
 }
 
-// &#39;Has&#39;Entries returns a boolean if a field has been set.
-func (o *ProductMediaGallery) &#39;Has&#39;Entries() bool {
+// HasEntries returns a boolean if a field has been set.
+func (o *ProductMediaGallery) HasEntries() bool {
 	if o != nil && !IsNil(o.Entries) {
 		return true
 	}

@@ -65,8 +65,8 @@ func (o *ProductListProductsRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductListProductsRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductListProductsRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -97,8 +97,8 @@ func (o *ProductListProductsRequest) GetPageSizeOk() (*string, bool) {
 	return o.PageSize, true
 }
 
-// &#39;Has&#39;PageSize returns a boolean if a field has been set.
-func (o *ProductListProductsRequest) &#39;Has&#39;PageSize() bool {
+// HasPageSize returns a boolean if a field has been set.
+func (o *ProductListProductsRequest) HasPageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -129,8 +129,8 @@ func (o *ProductListProductsRequest) GetPageTokenOk() (*string, bool) {
 	return o.PageToken, true
 }
 
-// &#39;Has&#39;PageToken returns a boolean if a field has been set.
-func (o *ProductListProductsRequest) &#39;Has&#39;PageToken() bool {
+// HasPageToken returns a boolean if a field has been set.
+func (o *ProductListProductsRequest) HasPageToken() bool {
 	if o != nil && !IsNil(o.PageToken) {
 		return true
 	}
@@ -161,8 +161,8 @@ func (o *ProductListProductsRequest) GetFilterOk() (*ListProductsRequestFilter, 
 	return o.Filter, true
 }
 
-// &#39;Has&#39;Filter returns a boolean if a field has been set.
-func (o *ProductListProductsRequest) &#39;Has&#39;Filter() bool {
+// HasFilter returns a boolean if a field has been set.
+func (o *ProductListProductsRequest) HasFilter() bool {
 	if o != nil && !IsNil(o.Filter) {
 		return true
 	}
@@ -193,8 +193,8 @@ func (o *ProductListProductsRequest) GetFilterMaskOk() (*string, bool) {
 	return o.FilterMask, true
 }
 
-// &#39;Has&#39;FilterMask returns a boolean if a field has been set.
-func (o *ProductListProductsRequest) &#39;Has&#39;FilterMask() bool {
+// HasFilterMask returns a boolean if a field has been set.
+func (o *ProductListProductsRequest) HasFilterMask() bool {
 	if o != nil && !IsNil(o.FilterMask) {
 		return true
 	}

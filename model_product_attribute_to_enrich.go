@@ -67,8 +67,8 @@ func (o *ProductAttributeToEnrich) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *ProductAttributeToEnrich) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *ProductAttributeToEnrich) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -99,8 +99,8 @@ func (o *ProductAttributeToEnrich) GetTypeOk() (*ProductAttributeToEnrichType, b
 	return o.Type, true
 }
 
-// &#39;Has&#39;Type returns a boolean if a field has been set.
-func (o *ProductAttributeToEnrich) &#39;Has&#39;Type() bool {
+// HasType returns a boolean if a field has been set.
+func (o *ProductAttributeToEnrich) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -131,8 +131,8 @@ func (o *ProductAttributeToEnrich) GetCanCreateValueOk() (*bool, bool) {
 	return o.CanCreateValue, true
 }
 
-// &#39;Has&#39;CanCreateValue returns a boolean if a field has been set.
-func (o *ProductAttributeToEnrich) &#39;Has&#39;CanCreateValue() bool {
+// HasCanCreateValue returns a boolean if a field has been set.
+func (o *ProductAttributeToEnrich) HasCanCreateValue() bool {
 	if o != nil && !IsNil(o.CanCreateValue) {
 		return true
 	}

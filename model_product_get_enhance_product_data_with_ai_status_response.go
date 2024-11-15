@@ -61,8 +61,8 @@ func (o *ProductGetEnhanceProductDataWithAIStatusResponse) GetJobsOk() ([]GetEnh
 	return o.Jobs, true
 }
 
-// &#39;Has&#39;Jobs returns a boolean if a field has been set.
-func (o *ProductGetEnhanceProductDataWithAIStatusResponse) &#39;Has&#39;Jobs() bool {
+// HasJobs returns a boolean if a field has been set.
+func (o *ProductGetEnhanceProductDataWithAIStatusResponse) HasJobs() bool {
 	if o != nil && !IsNil(o.Jobs) {
 		return true
 	}

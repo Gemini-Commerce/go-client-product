@@ -61,8 +61,8 @@ func (o *ProductAddMediaGalleryEntryResponse) GetMediaGalleryEntryOk() (*Product
 	return o.MediaGalleryEntry, true
 }
 
-// &#39;Has&#39;MediaGalleryEntry returns a boolean if a field has been set.
-func (o *ProductAddMediaGalleryEntryResponse) &#39;Has&#39;MediaGalleryEntry() bool {
+// HasMediaGalleryEntry returns a boolean if a field has been set.
+func (o *ProductAddMediaGalleryEntryResponse) HasMediaGalleryEntry() bool {
 	if o != nil && !IsNil(o.MediaGalleryEntry) {
 		return true
 	}

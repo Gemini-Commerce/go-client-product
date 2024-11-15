@@ -61,8 +61,8 @@ func (o *ProductCreateProductResponseV2) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *ProductCreateProductResponseV2) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *ProductCreateProductResponseV2) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}

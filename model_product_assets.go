@@ -61,8 +61,8 @@ func (o *ProductAssets) GetEntriesOk() ([]ProductAssetsEntry, bool) {
 	return o.Entries, true
 }
 
-// &#39;Has&#39;Entries returns a boolean if a field has been set.
-func (o *ProductAssets) &#39;Has&#39;Entries() bool {
+// HasEntries returns a boolean if a field has been set.
+func (o *ProductAssets) HasEntries() bool {
 	if o != nil && !IsNil(o.Entries) {
 		return true
 	}

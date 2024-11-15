@@ -81,8 +81,8 @@ func (o *ProductProductEntity) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -113,8 +113,8 @@ func (o *ProductProductEntity) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -145,8 +145,8 @@ func (o *ProductProductEntity) GetEntityTypeOk() (*string, bool) {
 	return o.EntityType, true
 }
 
-// &#39;Has&#39;EntityType returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;EntityType() bool {
+// HasEntityType returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasEntityType() bool {
 	if o != nil && !IsNil(o.EntityType) {
 		return true
 	}
@@ -177,8 +177,8 @@ func (o *ProductProductEntity) GetEntityCodeOk() (*string, bool) {
 	return o.EntityCode, true
 }
 
-// &#39;Has&#39;EntityCode returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;EntityCode() bool {
+// HasEntityCode returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasEntityCode() bool {
 	if o != nil && !IsNil(o.EntityCode) {
 		return true
 	}
@@ -209,8 +209,8 @@ func (o *ProductProductEntity) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -241,8 +241,8 @@ func (o *ProductProductEntity) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -273,8 +273,8 @@ func (o *ProductProductEntity) GetVariantAttributesOk() ([]string, bool) {
 	return o.VariantAttributes, true
 }
 
-// &#39;Has&#39;VariantAttributes returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;VariantAttributes() bool {
+// HasVariantAttributes returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasVariantAttributes() bool {
 	if o != nil && !IsNil(o.VariantAttributes) {
 		return true
 	}
@@ -305,8 +305,8 @@ func (o *ProductProductEntity) GetIsConfigurableOk() (*bool, bool) {
 	return o.IsConfigurable, true
 }
 
-// &#39;Has&#39;IsConfigurable returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;IsConfigurable() bool {
+// HasIsConfigurable returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasIsConfigurable() bool {
 	if o != nil && !IsNil(o.IsConfigurable) {
 		return true
 	}
@@ -337,8 +337,8 @@ func (o *ProductProductEntity) GetIsVirtualOk() (*bool, bool) {
 	return o.IsVirtual, true
 }
 
-// &#39;Has&#39;IsVirtual returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;IsVirtual() bool {
+// HasIsVirtual returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasIsVirtual() bool {
 	if o != nil && !IsNil(o.IsVirtual) {
 		return true
 	}
@@ -369,8 +369,8 @@ func (o *ProductProductEntity) GetIsGiftcardOk() (*bool, bool) {
 	return o.IsGiftcard, true
 }
 
-// &#39;Has&#39;IsGiftcard returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;IsGiftcard() bool {
+// HasIsGiftcard returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasIsGiftcard() bool {
 	if o != nil && !IsNil(o.IsGiftcard) {
 		return true
 	}
@@ -401,8 +401,8 @@ func (o *ProductProductEntity) GetHasConfiguratorOk() (*bool, bool) {
 	return o.HasConfigurator, true
 }
 
-// &#39;Has&#39;HasConfigurator returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;HasConfigurator() bool {
+// HasHasConfigurator returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasHasConfigurator() bool {
 	if o != nil && !IsNil(o.HasConfigurator) {
 		return true
 	}
@@ -433,8 +433,8 @@ func (o *ProductProductEntity) GetUrlKeyOk() (*ProductLocalizedText, bool) {
 	return o.UrlKey, true
 }
 
-// &#39;Has&#39;UrlKey returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;UrlKey() bool {
+// HasUrlKey returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasUrlKey() bool {
 	if o != nil && !IsNil(o.UrlKey) {
 		return true
 	}
@@ -465,8 +465,8 @@ func (o *ProductProductEntity) GetMediaVariantAttributesOk() ([]string, bool) {
 	return o.MediaVariantAttributes, true
 }
 
-// &#39;Has&#39;MediaVariantAttributes returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;MediaVariantAttributes() bool {
+// HasMediaVariantAttributes returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasMediaVariantAttributes() bool {
 	if o != nil && !IsNil(o.MediaVariantAttributes) {
 		return true
 	}
@@ -497,8 +497,8 @@ func (o *ProductProductEntity) GetAttributesOk() (*map[string]ProtobufAny, bool)
 	return o.Attributes, true
 }
 
-// &#39;Has&#39;Attributes returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;Attributes() bool {
+// HasAttributes returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasAttributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
@@ -529,8 +529,8 @@ func (o *ProductProductEntity) GetVariantsOk() (*map[string]ProductProductVarian
 	return o.Variants, true
 }
 
-// &#39;Has&#39;Variants returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;Variants() bool {
+// HasVariants returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasVariants() bool {
 	if o != nil && !IsNil(o.Variants) {
 		return true
 	}
@@ -561,8 +561,8 @@ func (o *ProductProductEntity) GetMediaGalleryOk() (*ProductMediaGallery, bool) 
 	return o.MediaGallery, true
 }
 
-// &#39;Has&#39;MediaGallery returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;MediaGallery() bool {
+// HasMediaGallery returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasMediaGallery() bool {
 	if o != nil && !IsNil(o.MediaGallery) {
 		return true
 	}
@@ -593,8 +593,8 @@ func (o *ProductProductEntity) GetMaxSaleableQuantityOk() (*int64, bool) {
 	return o.MaxSaleableQuantity, true
 }
 
-// &#39;Has&#39;MaxSaleableQuantity returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;MaxSaleableQuantity() bool {
+// HasMaxSaleableQuantity returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasMaxSaleableQuantity() bool {
 	if o != nil && !IsNil(o.MaxSaleableQuantity) {
 		return true
 	}
@@ -625,8 +625,8 @@ func (o *ProductProductEntity) GetAssetsOk() (*ProductAssets, bool) {
 	return o.Assets, true
 }
 
-// &#39;Has&#39;Assets returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;Assets() bool {
+// HasAssets returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasAssets() bool {
 	if o != nil && !IsNil(o.Assets) {
 		return true
 	}
@@ -657,8 +657,8 @@ func (o *ProductProductEntity) GetInReviewOk() (*bool, bool) {
 	return o.InReview, true
 }
 
-// &#39;Has&#39;InReview returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;InReview() bool {
+// HasInReview returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasInReview() bool {
 	if o != nil && !IsNil(o.InReview) {
 		return true
 	}
@@ -689,8 +689,8 @@ func (o *ProductProductEntity) GetCreatedAtOk() (*string, bool) {
 	return o.CreatedAt, true
 }
 
-// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;CreatedAt() bool {
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -721,8 +721,8 @@ func (o *ProductProductEntity) GetUpdatedAtOk() (*string, bool) {
 	return o.UpdatedAt, true
 }
 
-// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
-func (o *ProductProductEntity) &#39;Has&#39;UpdatedAt() bool {
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *ProductProductEntity) HasUpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}

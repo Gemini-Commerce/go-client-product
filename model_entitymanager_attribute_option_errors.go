@@ -62,8 +62,8 @@ func (o *EntitymanagerAttributeOptionErrors) GetErrorOk() (*string, bool) {
 	return o.Error, true
 }
 
-// &#39;Has&#39;Error returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOptionErrors) &#39;Has&#39;Error() bool {
+// HasError returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOptionErrors) HasError() bool {
 	if o != nil && !IsNil(o.Error) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *EntitymanagerAttributeOptionErrors) GetOptionOk() (*map[string]string, 
 	return o.Option, true
 }
 
-// &#39;Has&#39;Option returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOptionErrors) &#39;Has&#39;Option() bool {
+// HasOption returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOptionErrors) HasOption() bool {
 	if o != nil && !IsNil(o.Option) {
 		return true
 	}

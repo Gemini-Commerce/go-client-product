@@ -62,8 +62,8 @@ func (o *ProductBulkUpdateRequestPayload) GetUpdateMaskOk() (*ProductFieldMask, 
 	return o.UpdateMask, true
 }
 
-// &#39;Has&#39;UpdateMask returns a boolean if a field has been set.
-func (o *ProductBulkUpdateRequestPayload) &#39;Has&#39;UpdateMask() bool {
+// HasUpdateMask returns a boolean if a field has been set.
+func (o *ProductBulkUpdateRequestPayload) HasUpdateMask() bool {
 	if o != nil && !IsNil(o.UpdateMask) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *ProductBulkUpdateRequestPayload) GetAttributesOk() (*map[string]Protobu
 	return o.Attributes, true
 }
 
-// &#39;Has&#39;Attributes returns a boolean if a field has been set.
-func (o *ProductBulkUpdateRequestPayload) &#39;Has&#39;Attributes() bool {
+// HasAttributes returns a boolean if a field has been set.
+func (o *ProductBulkUpdateRequestPayload) HasAttributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}

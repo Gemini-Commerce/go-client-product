@@ -62,8 +62,8 @@ func (o *EntitymanagerOptionsList) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *EntitymanagerOptionsList) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *EntitymanagerOptionsList) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *EntitymanagerOptionsList) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// &#39;Has&#39;Name returns a boolean if a field has been set.
-func (o *EntitymanagerOptionsList) &#39;Has&#39;Name() bool {
+// HasName returns a boolean if a field has been set.
+func (o *EntitymanagerOptionsList) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}

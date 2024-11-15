@@ -61,8 +61,8 @@ func (o *ProductDeleteResponse) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// &#39;Has&#39;Success returns a boolean if a field has been set.
-func (o *ProductDeleteResponse) &#39;Has&#39;Success() bool {
+// HasSuccess returns a boolean if a field has been set.
+func (o *ProductDeleteResponse) HasSuccess() bool {
 	if o != nil && !IsNil(o.Success) {
 		return true
 	}

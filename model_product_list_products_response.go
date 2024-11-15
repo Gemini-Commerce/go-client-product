@@ -62,8 +62,8 @@ func (o *ProductListProductsResponse) GetProductsOk() ([]ProductProductEntity, b
 	return o.Products, true
 }
 
-// &#39;Has&#39;Products returns a boolean if a field has been set.
-func (o *ProductListProductsResponse) &#39;Has&#39;Products() bool {
+// HasProducts returns a boolean if a field has been set.
+func (o *ProductListProductsResponse) HasProducts() bool {
 	if o != nil && !IsNil(o.Products) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *ProductListProductsResponse) GetNextPageTokenOk() (*string, bool) {
 	return o.NextPageToken, true
 }
 
-// &#39;Has&#39;NextPageToken returns a boolean if a field has been set.
-func (o *ProductListProductsResponse) &#39;Has&#39;NextPageToken() bool {
+// HasNextPageToken returns a boolean if a field has been set.
+func (o *ProductListProductsResponse) HasNextPageToken() bool {
 	if o != nil && !IsNil(o.NextPageToken) {
 		return true
 	}

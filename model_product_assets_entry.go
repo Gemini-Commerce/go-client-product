@@ -66,8 +66,8 @@ func (o *ProductAssetsEntry) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *ProductAssetsEntry) GetAssetGrnOk() (*string, bool) {
 	return o.AssetGrn, true
 }
 
-// &#39;Has&#39;AssetGrn returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) &#39;Has&#39;AssetGrn() bool {
+// HasAssetGrn returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) HasAssetGrn() bool {
 	if o != nil && !IsNil(o.AssetGrn) {
 		return true
 	}
@@ -130,8 +130,8 @@ func (o *ProductAssetsEntry) GetLocalizedAssetGrnOk() (*ProductLocalizedAsset, b
 	return o.LocalizedAssetGrn, true
 }
 
-// &#39;Has&#39;LocalizedAssetGrn returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) &#39;Has&#39;LocalizedAssetGrn() bool {
+// HasLocalizedAssetGrn returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) HasLocalizedAssetGrn() bool {
 	if o != nil && !IsNil(o.LocalizedAssetGrn) {
 		return true
 	}
@@ -162,8 +162,8 @@ func (o *ProductAssetsEntry) GetLocalesOk() ([]string, bool) {
 	return o.Locales, true
 }
 
-// &#39;Has&#39;Locales returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) &#39;Has&#39;Locales() bool {
+// HasLocales returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) HasLocales() bool {
 	if o != nil && !IsNil(o.Locales) {
 		return true
 	}
@@ -194,8 +194,8 @@ func (o *ProductAssetsEntry) GetPositionOk() (*int64, bool) {
 	return o.Position, true
 }
 
-// &#39;Has&#39;Position returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) &#39;Has&#39;Position() bool {
+// HasPosition returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) HasPosition() bool {
 	if o != nil && !IsNil(o.Position) {
 		return true
 	}
@@ -226,8 +226,8 @@ func (o *ProductAssetsEntry) GetMetadataOk() ([]ProductAssetsEntryMetadata, bool
 	return o.Metadata, true
 }
 
-// &#39;Has&#39;Metadata returns a boolean if a field has been set.
-func (o *ProductAssetsEntry) &#39;Has&#39;Metadata() bool {
+// HasMetadata returns a boolean if a field has been set.
+func (o *ProductAssetsEntry) HasMetadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}

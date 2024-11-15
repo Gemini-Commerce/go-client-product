@@ -64,8 +64,8 @@ func (o *ProductUpdateDataToBeReviewedRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductUpdateDataToBeReviewedRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductUpdateDataToBeReviewedRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -96,8 +96,8 @@ func (o *ProductUpdateDataToBeReviewedRequest) GetProductIdOk() (*string, bool) 
 	return o.ProductId, true
 }
 
-// &#39;Has&#39;ProductId returns a boolean if a field has been set.
-func (o *ProductUpdateDataToBeReviewedRequest) &#39;Has&#39;ProductId() bool {
+// HasProductId returns a boolean if a field has been set.
+func (o *ProductUpdateDataToBeReviewedRequest) HasProductId() bool {
 	if o != nil && !IsNil(o.ProductId) {
 		return true
 	}
@@ -128,8 +128,8 @@ func (o *ProductUpdateDataToBeReviewedRequest) GetPayloadOk() (*ProductDataInRev
 	return o.Payload, true
 }
 
-// &#39;Has&#39;Payload returns a boolean if a field has been set.
-func (o *ProductUpdateDataToBeReviewedRequest) &#39;Has&#39;Payload() bool {
+// HasPayload returns a boolean if a field has been set.
+func (o *ProductUpdateDataToBeReviewedRequest) HasPayload() bool {
 	if o != nil && !IsNil(o.Payload) {
 		return true
 	}
@@ -160,8 +160,8 @@ func (o *ProductUpdateDataToBeReviewedRequest) GetPayloadMaskOk() (*string, bool
 	return o.PayloadMask, true
 }
 
-// &#39;Has&#39;PayloadMask returns a boolean if a field has been set.
-func (o *ProductUpdateDataToBeReviewedRequest) &#39;Has&#39;PayloadMask() bool {
+// HasPayloadMask returns a boolean if a field has been set.
+func (o *ProductUpdateDataToBeReviewedRequest) HasPayloadMask() bool {
 	if o != nil && !IsNil(o.PayloadMask) {
 		return true
 	}

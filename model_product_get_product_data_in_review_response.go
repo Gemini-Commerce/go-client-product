@@ -61,8 +61,8 @@ func (o *ProductGetProductDataInReviewResponse) GetDataInReviewOk() (*ProductDat
 	return o.DataInReview, true
 }
 
-// &#39;Has&#39;DataInReview returns a boolean if a field has been set.
-func (o *ProductGetProductDataInReviewResponse) &#39;Has&#39;DataInReview() bool {
+// HasDataInReview returns a boolean if a field has been set.
+func (o *ProductGetProductDataInReviewResponse) HasDataInReview() bool {
 	if o != nil && !IsNil(o.DataInReview) {
 		return true
 	}

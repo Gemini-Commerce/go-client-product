@@ -62,8 +62,8 @@ func (o *ProductBulkDeleteProductsRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductBulkDeleteProductsRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductBulkDeleteProductsRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *ProductBulkDeleteProductsRequest) GetIdsOk() ([]string, bool) {
 	return o.Ids, true
 }
 
-// &#39;Has&#39;Ids returns a boolean if a field has been set.
-func (o *ProductBulkDeleteProductsRequest) &#39;Has&#39;Ids() bool {
+// HasIds returns a boolean if a field has been set.
+func (o *ProductBulkDeleteProductsRequest) HasIds() bool {
 	if o != nil && !IsNil(o.Ids) {
 		return true
 	}

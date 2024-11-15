@@ -61,8 +61,8 @@ func (o *ProductFieldMask) GetPathsOk() ([]string, bool) {
 	return o.Paths, true
 }
 
-// &#39;Has&#39;Paths returns a boolean if a field has been set.
-func (o *ProductFieldMask) &#39;Has&#39;Paths() bool {
+// HasPaths returns a boolean if a field has been set.
+func (o *ProductFieldMask) HasPaths() bool {
 	if o != nil && !IsNil(o.Paths) {
 		return true
 	}

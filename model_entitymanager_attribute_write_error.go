@@ -63,8 +63,8 @@ func (o *EntitymanagerAttributeWriteError) GetErrorCodeOk() (*string, bool) {
 	return o.ErrorCode, true
 }
 
-// &#39;Has&#39;ErrorCode returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeWriteError) &#39;Has&#39;ErrorCode() bool {
+// HasErrorCode returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeWriteError) HasErrorCode() bool {
 	if o != nil && !IsNil(o.ErrorCode) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *EntitymanagerAttributeWriteError) GetAttributeCodeOk() (*string, bool) 
 	return o.AttributeCode, true
 }
 
-// &#39;Has&#39;AttributeCode returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeWriteError) &#39;Has&#39;AttributeCode() bool {
+// HasAttributeCode returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeWriteError) HasAttributeCode() bool {
 	if o != nil && !IsNil(o.AttributeCode) {
 		return true
 	}
@@ -127,8 +127,8 @@ func (o *EntitymanagerAttributeWriteError) GetMessageOk() (*string, bool) {
 	return o.Message, true
 }
 
-// &#39;Has&#39;Message returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeWriteError) &#39;Has&#39;Message() bool {
+// HasMessage returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeWriteError) HasMessage() bool {
 	if o != nil && !IsNil(o.Message) {
 		return true
 	}

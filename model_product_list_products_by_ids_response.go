@@ -61,8 +61,8 @@ func (o *ProductListProductsByIdsResponse) GetProductsOk() ([]ProductProductEnti
 	return o.Products, true
 }
 
-// &#39;Has&#39;Products returns a boolean if a field has been set.
-func (o *ProductListProductsByIdsResponse) &#39;Has&#39;Products() bool {
+// HasProducts returns a boolean if a field has been set.
+func (o *ProductListProductsByIdsResponse) HasProducts() bool {
 	if o != nil && !IsNil(o.Products) {
 		return true
 	}

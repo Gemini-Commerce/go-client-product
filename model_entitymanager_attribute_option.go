@@ -66,8 +66,8 @@ func (o *EntitymanagerAttributeOption) GetOptionOk() (*map[string]string, bool) 
 	return o.Option, true
 }
 
-// &#39;Has&#39;Option returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) &#39;Has&#39;Option() bool {
+// HasOption returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) HasOption() bool {
 	if o != nil && !IsNil(o.Option) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *EntitymanagerAttributeOption) GetSortOk() (*int64, bool) {
 	return o.Sort, true
 }
 
-// &#39;Has&#39;Sort returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) &#39;Has&#39;Sort() bool {
+// HasSort returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) HasSort() bool {
 	if o != nil && !IsNil(o.Sort) {
 		return true
 	}
@@ -130,8 +130,8 @@ func (o *EntitymanagerAttributeOption) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -162,8 +162,8 @@ func (o *EntitymanagerAttributeOption) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -194,8 +194,8 @@ func (o *EntitymanagerAttributeOption) GetValueOk() (*ProductentitymanagerLocali
 	return o.Value, true
 }
 
-// &#39;Has&#39;Value returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) &#39;Has&#39;Value() bool {
+// HasValue returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) HasValue() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}
@@ -226,8 +226,8 @@ func (o *EntitymanagerAttributeOption) GetSwatchesOk() ([]EntitymanagerAttribute
 	return o.Swatches, true
 }
 
-// &#39;Has&#39;Swatches returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeOption) &#39;Has&#39;Swatches() bool {
+// HasSwatches returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeOption) HasSwatches() bool {
 	if o != nil && !IsNil(o.Swatches) {
 		return true
 	}

@@ -62,8 +62,8 @@ func (o *ProductListProductsBySkuRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductListProductsBySkuRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductListProductsBySkuRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *ProductListProductsBySkuRequest) GetSkuOk() (*string, bool) {
 	return o.Sku, true
 }
 
-// &#39;Has&#39;Sku returns a boolean if a field has been set.
-func (o *ProductListProductsBySkuRequest) &#39;Has&#39;Sku() bool {
+// HasSku returns a boolean if a field has been set.
+func (o *ProductListProductsBySkuRequest) HasSku() bool {
 	if o != nil && !IsNil(o.Sku) {
 		return true
 	}

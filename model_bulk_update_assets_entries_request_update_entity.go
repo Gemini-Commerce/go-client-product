@@ -63,8 +63,8 @@ func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetPayloadOk() (*ProductUpd
 	return o.Payload, true
 }
 
-// &#39;Has&#39;Payload returns a boolean if a field has been set.
-func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) &#39;Has&#39;Payload() bool {
+// HasPayload returns a boolean if a field has been set.
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) HasPayload() bool {
 	if o != nil && !IsNil(o.Payload) {
 		return true
 	}
@@ -127,8 +127,8 @@ func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetPayloadMaskOk() (*string
 	return o.PayloadMask, true
 }
 
-// &#39;Has&#39;PayloadMask returns a boolean if a field has been set.
-func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) &#39;Has&#39;PayloadMask() bool {
+// HasPayloadMask returns a boolean if a field has been set.
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) HasPayloadMask() bool {
 	if o != nil && !IsNil(o.PayloadMask) {
 		return true
 	}

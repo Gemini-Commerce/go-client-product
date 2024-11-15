@@ -61,8 +61,8 @@ func (o *ProductBulkUpdateResponseV2) GetProductResponseOk() ([]ProductBulkUpdat
 	return o.ProductResponse, true
 }
 
-// &#39;Has&#39;ProductResponse returns a boolean if a field has been set.
-func (o *ProductBulkUpdateResponseV2) &#39;Has&#39;ProductResponse() bool {
+// HasProductResponse returns a boolean if a field has been set.
+func (o *ProductBulkUpdateResponseV2) HasProductResponse() bool {
 	if o != nil && !IsNil(o.ProductResponse) {
 		return true
 	}

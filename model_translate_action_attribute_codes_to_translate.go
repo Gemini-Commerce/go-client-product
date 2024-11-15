@@ -61,8 +61,8 @@ func (o *TranslateActionAttributeCodesToTranslate) GetCodesOk() ([]string, bool)
 	return o.Codes, true
 }
 
-// &#39;Has&#39;Codes returns a boolean if a field has been set.
-func (o *TranslateActionAttributeCodesToTranslate) &#39;Has&#39;Codes() bool {
+// HasCodes returns a boolean if a field has been set.
+func (o *TranslateActionAttributeCodesToTranslate) HasCodes() bool {
 	if o != nil && !IsNil(o.Codes) {
 		return true
 	}

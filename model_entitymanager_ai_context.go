@@ -63,8 +63,8 @@ func (o *EntitymanagerAiContext) GetMinLengthOk() (*string, bool) {
 	return o.MinLength, true
 }
 
-// &#39;Has&#39;MinLength returns a boolean if a field has been set.
-func (o *EntitymanagerAiContext) &#39;Has&#39;MinLength() bool {
+// HasMinLength returns a boolean if a field has been set.
+func (o *EntitymanagerAiContext) HasMinLength() bool {
 	if o != nil && !IsNil(o.MinLength) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *EntitymanagerAiContext) GetMaxLengthOk() (*string, bool) {
 	return o.MaxLength, true
 }
 
-// &#39;Has&#39;MaxLength returns a boolean if a field has been set.
-func (o *EntitymanagerAiContext) &#39;Has&#39;MaxLength() bool {
+// HasMaxLength returns a boolean if a field has been set.
+func (o *EntitymanagerAiContext) HasMaxLength() bool {
 	if o != nil && !IsNil(o.MaxLength) {
 		return true
 	}
@@ -127,8 +127,8 @@ func (o *EntitymanagerAiContext) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// &#39;Has&#39;Description returns a boolean if a field has been set.
-func (o *EntitymanagerAiContext) &#39;Has&#39;Description() bool {
+// HasDescription returns a boolean if a field has been set.
+func (o *EntitymanagerAiContext) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}

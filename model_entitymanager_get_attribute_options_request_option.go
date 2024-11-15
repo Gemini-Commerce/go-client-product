@@ -62,8 +62,8 @@ func (o *EntitymanagerGetAttributeOptionsRequestOption) GetListCodeOk() (*string
 	return o.ListCode, true
 }
 
-// &#39;Has&#39;ListCode returns a boolean if a field has been set.
-func (o *EntitymanagerGetAttributeOptionsRequestOption) &#39;Has&#39;ListCode() bool {
+// HasListCode returns a boolean if a field has been set.
+func (o *EntitymanagerGetAttributeOptionsRequestOption) HasListCode() bool {
 	if o != nil && !IsNil(o.ListCode) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *EntitymanagerGetAttributeOptionsRequestOption) GetOptionIdOk() (*string
 	return o.OptionId, true
 }
 
-// &#39;Has&#39;OptionId returns a boolean if a field has been set.
-func (o *EntitymanagerGetAttributeOptionsRequestOption) &#39;Has&#39;OptionId() bool {
+// HasOptionId returns a boolean if a field has been set.
+func (o *EntitymanagerGetAttributeOptionsRequestOption) HasOptionId() bool {
 	if o != nil && !IsNil(o.OptionId) {
 		return true
 	}

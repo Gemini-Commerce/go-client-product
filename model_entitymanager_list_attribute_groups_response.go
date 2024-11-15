@@ -61,8 +61,8 @@ func (o *EntitymanagerListAttributeGroupsResponse) GetAttributeGroupsOk() ([]Ent
 	return o.AttributeGroups, true
 }
 
-// &#39;Has&#39;AttributeGroups returns a boolean if a field has been set.
-func (o *EntitymanagerListAttributeGroupsResponse) &#39;Has&#39;AttributeGroups() bool {
+// HasAttributeGroups returns a boolean if a field has been set.
+func (o *EntitymanagerListAttributeGroupsResponse) HasAttributeGroups() bool {
 	if o != nil && !IsNil(o.AttributeGroups) {
 		return true
 	}

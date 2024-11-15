@@ -62,8 +62,8 @@ func (o *ProductBulkUpdateResponseV2Response) GetProductIdOk() (*string, bool) {
 	return o.ProductId, true
 }
 
-// &#39;Has&#39;ProductId returns a boolean if a field has been set.
-func (o *ProductBulkUpdateResponseV2Response) &#39;Has&#39;ProductId() bool {
+// HasProductId returns a boolean if a field has been set.
+func (o *ProductBulkUpdateResponseV2Response) HasProductId() bool {
 	if o != nil && !IsNil(o.ProductId) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *ProductBulkUpdateResponseV2Response) GetAttributesOk() (*map[string]Pro
 	return o.Attributes, true
 }
 
-// &#39;Has&#39;Attributes returns a boolean if a field has been set.
-func (o *ProductBulkUpdateResponseV2Response) &#39;Has&#39;Attributes() bool {
+// HasAttributes returns a boolean if a field has been set.
+func (o *ProductBulkUpdateResponseV2Response) HasAttributes() bool {
 	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}

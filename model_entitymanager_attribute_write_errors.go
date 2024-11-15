@@ -61,8 +61,8 @@ func (o *EntitymanagerAttributeWriteErrors) GetAttributeWriteErrorsOk() ([]Entit
 	return o.AttributeWriteErrors, true
 }
 
-// &#39;Has&#39;AttributeWriteErrors returns a boolean if a field has been set.
-func (o *EntitymanagerAttributeWriteErrors) &#39;Has&#39;AttributeWriteErrors() bool {
+// HasAttributeWriteErrors returns a boolean if a field has been set.
+func (o *EntitymanagerAttributeWriteErrors) HasAttributeWriteErrors() bool {
 	if o != nil && !IsNil(o.AttributeWriteErrors) {
 		return true
 	}

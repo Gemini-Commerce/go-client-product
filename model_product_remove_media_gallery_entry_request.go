@@ -63,8 +63,8 @@ func (o *ProductRemoveMediaGalleryEntryRequest) GetTenantIdOk() (*string, bool) 
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *ProductRemoveMediaGalleryEntryRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *ProductRemoveMediaGalleryEntryRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *ProductRemoveMediaGalleryEntryRequest) GetProductIdOk() (*string, bool)
 	return o.ProductId, true
 }
 
-// &#39;Has&#39;ProductId returns a boolean if a field has been set.
-func (o *ProductRemoveMediaGalleryEntryRequest) &#39;Has&#39;ProductId() bool {
+// HasProductId returns a boolean if a field has been set.
+func (o *ProductRemoveMediaGalleryEntryRequest) HasProductId() bool {
 	if o != nil && !IsNil(o.ProductId) {
 		return true
 	}
@@ -127,8 +127,8 @@ func (o *ProductRemoveMediaGalleryEntryRequest) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *ProductRemoveMediaGalleryEntryRequest) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *ProductRemoveMediaGalleryEntryRequest) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}

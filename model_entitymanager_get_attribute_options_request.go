@@ -62,8 +62,8 @@ func (o *EntitymanagerGetAttributeOptionsRequest) GetTenantIdOk() (*string, bool
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *EntitymanagerGetAttributeOptionsRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *EntitymanagerGetAttributeOptionsRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *EntitymanagerGetAttributeOptionsRequest) GetOptionIdsOk() ([]Entitymana
 	return o.OptionIds, true
 }
 
-// &#39;Has&#39;OptionIds returns a boolean if a field has been set.
-func (o *EntitymanagerGetAttributeOptionsRequest) &#39;Has&#39;OptionIds() bool {
+// HasOptionIds returns a boolean if a field has been set.
+func (o *EntitymanagerGetAttributeOptionsRequest) HasOptionIds() bool {
 	if o != nil && !IsNil(o.OptionIds) {
 		return true
 	}

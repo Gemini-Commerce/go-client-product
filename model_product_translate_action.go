@@ -72,8 +72,8 @@ func (o *ProductTranslateAction) GetAllOk() (map[string]interface{}, bool) {
 	return o.All, true
 }
 
-// &#39;Has&#39;All returns a boolean if a field has been set.
-func (o *ProductTranslateAction) &#39;Has&#39;All() bool {
+// HasAll returns a boolean if a field has been set.
+func (o *ProductTranslateAction) HasAll() bool {
 	if o != nil && !IsNil(o.All) {
 		return true
 	}
@@ -104,8 +104,8 @@ func (o *ProductTranslateAction) GetAttributeCodesOk() (*TranslateActionAttribut
 	return o.AttributeCodes, true
 }
 
-// &#39;Has&#39;AttributeCodes returns a boolean if a field has been set.
-func (o *ProductTranslateAction) &#39;Has&#39;AttributeCodes() bool {
+// HasAttributeCodes returns a boolean if a field has been set.
+func (o *ProductTranslateAction) HasAttributeCodes() bool {
 	if o != nil && !IsNil(o.AttributeCodes) {
 		return true
 	}
@@ -136,8 +136,8 @@ func (o *ProductTranslateAction) GetSourceLanguageOk() (*ProductLanguageCode, bo
 	return o.SourceLanguage, true
 }
 
-// &#39;Has&#39;SourceLanguage returns a boolean if a field has been set.
-func (o *ProductTranslateAction) &#39;Has&#39;SourceLanguage() bool {
+// HasSourceLanguage returns a boolean if a field has been set.
+func (o *ProductTranslateAction) HasSourceLanguage() bool {
 	if o != nil && !IsNil(o.SourceLanguage) {
 		return true
 	}
@@ -168,8 +168,8 @@ func (o *ProductTranslateAction) GetTargetLanguageOk() (*ProductLanguageCode, bo
 	return o.TargetLanguage, true
 }
 
-// &#39;Has&#39;TargetLanguage returns a boolean if a field has been set.
-func (o *ProductTranslateAction) &#39;Has&#39;TargetLanguage() bool {
+// HasTargetLanguage returns a boolean if a field has been set.
+func (o *ProductTranslateAction) HasTargetLanguage() bool {
 	if o != nil && !IsNil(o.TargetLanguage) {
 		return true
 	}
