@@ -1815,6 +1815,7 @@ components:
         locale:
           type: string
       type: object
+      x-golang-getsetvalue-exists: true
     BulkUpdateAssetsEntriesRequestUpdateEntity:
       properties:
         id:
@@ -2010,6 +2011,7 @@ components:
             $ref: '#/components/schemas/entitymanagerAttributeOptionSwatch'
           type: array
       type: object
+      x-golang-getsetvalue-exists: true
     entitymanagerAttributeOptionErrors:
       example:
         error: error
@@ -5318,6 +5320,7 @@ components:
             type: string
           type: object
       type: object
+      x-golang-getsetvalue-exists: true
     productLocalizedText:
       example:
         value:
@@ -5328,6 +5331,7 @@ components:
             type: string
           type: object
       type: object
+      x-golang-getsetvalue-exists: true
     productMediaGallery:
       example:
         entries:
@@ -5810,6 +5814,7 @@ components:
             type: string
           type: object
       type: object
+      x-golang-getsetvalue-exists: true
     protobufAny:
       additionalProperties:
         type: object
