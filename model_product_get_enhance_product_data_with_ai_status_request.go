@@ -117,6 +117,26 @@ func (o *ProductGetEnhanceProductDataWithAIStatusRequest) UnmarshalJSON(data []b
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *ProductGetEnhanceProductDataWithAIStatusRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populates the value of well-known types
+func (o *ProductGetEnhanceProductDataWithAIStatusRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
+}
+
 type NullableProductGetEnhanceProductDataWithAIStatusRequest struct {
 	value *ProductGetEnhanceProductDataWithAIStatusRequest
 	isSet bool

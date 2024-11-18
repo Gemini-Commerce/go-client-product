@@ -117,6 +117,26 @@ func (o *ProductListVariantsBySkuResponse) UnmarshalJSON(data []byte) (err error
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *ProductListVariantsBySkuResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populates the value of well-known types
+func (o *ProductListVariantsBySkuResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
+}
+
 type NullableProductListVariantsBySkuResponse struct {
 	value *ProductListVariantsBySkuResponse
 	isSet bool

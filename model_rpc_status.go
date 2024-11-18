@@ -191,6 +191,26 @@ func (o *RpcStatus) UnmarshalJSON(data []byte) (err error) {
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RpcStatus) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populates the value of well-known types
+func (o *RpcStatus) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
+}
+
 type NullableRpcStatus struct {
 	value *RpcStatus
 	isSet bool

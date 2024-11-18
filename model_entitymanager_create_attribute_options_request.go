@@ -191,6 +191,26 @@ func (o *EntitymanagerCreateAttributeOptionsRequest) UnmarshalJSON(data []byte) 
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *EntitymanagerCreateAttributeOptionsRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populates the value of well-known types
+func (o *EntitymanagerCreateAttributeOptionsRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
+}
+
 type NullableEntitymanagerCreateAttributeOptionsRequest struct {
 	value *EntitymanagerCreateAttributeOptionsRequest
 	isSet bool

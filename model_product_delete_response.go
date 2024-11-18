@@ -117,6 +117,26 @@ func (o *ProductDeleteResponse) UnmarshalJSON(data []byte) (err error) {
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *ProductDeleteResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populates the value of well-known types
+func (o *ProductDeleteResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
+}
+
 type NullableProductDeleteResponse struct {
 	value *ProductDeleteResponse
 	isSet bool

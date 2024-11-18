@@ -154,6 +154,26 @@ func (o *AttributeInReviewString) UnmarshalJSON(data []byte) (err error) {
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *AttributeInReviewString) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populates the value of well-known types
+func (o *AttributeInReviewString) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
+}
+
 type NullableAttributeInReviewString struct {
 	value *AttributeInReviewString
 	isSet bool

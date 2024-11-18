@@ -154,6 +154,26 @@ func (o *EntitymanagerGetAttributeOptionsRequestOption) UnmarshalJSON(data []byt
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *EntitymanagerGetAttributeOptionsRequestOption) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populates the value of well-known types
+func (o *EntitymanagerGetAttributeOptionsRequestOption) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
+}
+
 type NullableEntitymanagerGetAttributeOptionsRequestOption struct {
 	value *EntitymanagerGetAttributeOptionsRequestOption
 	isSet bool
