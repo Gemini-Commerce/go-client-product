@@ -20,10 +20,13 @@ var _ MappedNullable = &BulkUpdateAssetsEntriesRequestUpdateEntity{}
 
 // BulkUpdateAssetsEntriesRequestUpdateEntity struct for BulkUpdateAssetsEntriesRequestUpdateEntity
 type BulkUpdateAssetsEntriesRequestUpdateEntity struct {
-	Id          *string                         `json:"id,omitempty"`
-	Payload     *ProductUpdateAssetEntryPayload `json:"payload,omitempty"`
-	PayloadMask *string                         `json:"payloadMask,omitempty"`
+	Id                   *string                         `json:"id,omitempty"`
+	Payload              *ProductUpdateAssetEntryPayload `json:"payload,omitempty"`
+	PayloadMask          *string                         `json:"payloadMask,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BulkUpdateAssetsEntriesRequestUpdateEntity BulkUpdateAssetsEntriesRequestUpdateEntity
 
 // NewBulkUpdateAssetsEntriesRequestUpdateEntity instantiates a new BulkUpdateAssetsEntriesRequestUpdateEntity object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,55 @@ func (o BulkUpdateAssetsEntriesRequestUpdateEntity) ToMap() (map[string]interfac
 	if !IsNil(o.PayloadMask) {
 		toSerialize["payloadMask"] = o.PayloadMask
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) UnmarshalJSON(data []byte) (err error) {
+	varBulkUpdateAssetsEntriesRequestUpdateEntity := _BulkUpdateAssetsEntriesRequestUpdateEntity{}
+
+	err = json.Unmarshal(data, &varBulkUpdateAssetsEntriesRequestUpdateEntity)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BulkUpdateAssetsEntriesRequestUpdateEntity(varBulkUpdateAssetsEntriesRequestUpdateEntity)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "payload")
+		delete(additionalProperties, "payloadMask")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *BulkUpdateAssetsEntriesRequestUpdateEntity) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableBulkUpdateAssetsEntriesRequestUpdateEntity struct {

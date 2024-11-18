@@ -20,10 +20,13 @@ var _ MappedNullable = &ProductAttributeToEnrich{}
 
 // ProductAttributeToEnrich struct for ProductAttributeToEnrich
 type ProductAttributeToEnrich struct {
-	Code           *string                       `json:"code,omitempty"`
-	Type           *ProductAttributeToEnrichType `json:"type,omitempty"`
-	CanCreateValue *bool                         `json:"canCreateValue,omitempty"`
+	Code                 *string                       `json:"code,omitempty"`
+	Type                 *ProductAttributeToEnrichType `json:"type,omitempty"`
+	CanCreateValue       *bool                         `json:"canCreateValue,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductAttributeToEnrich ProductAttributeToEnrich
 
 // NewProductAttributeToEnrich instantiates a new ProductAttributeToEnrich object
 // This constructor will assign default values to properties that have it defined,
@@ -161,7 +164,55 @@ func (o ProductAttributeToEnrich) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CanCreateValue) {
 		toSerialize["canCreateValue"] = o.CanCreateValue
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductAttributeToEnrich) UnmarshalJSON(data []byte) (err error) {
+	varProductAttributeToEnrich := _ProductAttributeToEnrich{}
+
+	err = json.Unmarshal(data, &varProductAttributeToEnrich)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductAttributeToEnrich(varProductAttributeToEnrich)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "canCreateValue")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductAttributeToEnrich) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductAttributeToEnrich) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductAttributeToEnrich struct {

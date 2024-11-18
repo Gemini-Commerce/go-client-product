@@ -20,8 +20,11 @@ var _ MappedNullable = &ProductBulkUpdateAssetsEntriesResponse{}
 
 // ProductBulkUpdateAssetsEntriesResponse struct for ProductBulkUpdateAssetsEntriesResponse
 type ProductBulkUpdateAssetsEntriesResponse struct {
-	Assets []ProductAssetsEntry `json:"assets,omitempty"`
+	Assets               []ProductAssetsEntry `json:"assets,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductBulkUpdateAssetsEntriesResponse ProductBulkUpdateAssetsEntriesResponse
 
 // NewProductBulkUpdateAssetsEntriesResponse instantiates a new ProductBulkUpdateAssetsEntriesResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,53 @@ func (o ProductBulkUpdateAssetsEntriesResponse) ToMap() (map[string]interface{},
 	if !IsNil(o.Assets) {
 		toSerialize["assets"] = o.Assets
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductBulkUpdateAssetsEntriesResponse) UnmarshalJSON(data []byte) (err error) {
+	varProductBulkUpdateAssetsEntriesResponse := _ProductBulkUpdateAssetsEntriesResponse{}
+
+	err = json.Unmarshal(data, &varProductBulkUpdateAssetsEntriesResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductBulkUpdateAssetsEntriesResponse(varProductBulkUpdateAssetsEntriesResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "assets")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductBulkUpdateAssetsEntriesResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductBulkUpdateAssetsEntriesResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductBulkUpdateAssetsEntriesResponse struct {

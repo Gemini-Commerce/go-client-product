@@ -20,9 +20,12 @@ var _ MappedNullable = &ProductBulkUpdateRequestV2Payload{}
 
 // ProductBulkUpdateRequestV2Payload struct for ProductBulkUpdateRequestV2Payload
 type ProductBulkUpdateRequestV2Payload struct {
-	UpdateMask *ProductFieldMask       `json:"updateMask,omitempty"`
-	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
+	UpdateMask           *ProductFieldMask       `json:"updateMask,omitempty"`
+	Attributes           *map[string]ProtobufAny `json:"attributes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductBulkUpdateRequestV2Payload ProductBulkUpdateRequestV2Payload
 
 // NewProductBulkUpdateRequestV2Payload instantiates a new ProductBulkUpdateRequestV2Payload object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,54 @@ func (o ProductBulkUpdateRequestV2Payload) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductBulkUpdateRequestV2Payload) UnmarshalJSON(data []byte) (err error) {
+	varProductBulkUpdateRequestV2Payload := _ProductBulkUpdateRequestV2Payload{}
+
+	err = json.Unmarshal(data, &varProductBulkUpdateRequestV2Payload)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductBulkUpdateRequestV2Payload(varProductBulkUpdateRequestV2Payload)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "updateMask")
+		delete(additionalProperties, "attributes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductBulkUpdateRequestV2Payload) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductBulkUpdateRequestV2Payload) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductBulkUpdateRequestV2Payload struct {

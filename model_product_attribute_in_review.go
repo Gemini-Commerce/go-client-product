@@ -21,19 +21,22 @@ var _ MappedNullable = &ProductAttributeInReview{}
 
 // ProductAttributeInReview struct for ProductAttributeInReview
 type ProductAttributeInReview struct {
-	Code      *string                          `json:"code,omitempty"`
-	String    *AttributeInReviewString         `json:"string,omitempty"`
-	Int32     *int32                           `json:"int32,omitempty"`
-	Int64     *string                          `json:"int64,omitempty"`
-	Float32   *float32                         `json:"float32,omitempty"`
-	Float64   *float64                         `json:"float64,omitempty"`
-	Boolean   *bool                            `json:"boolean,omitempty"`
-	Source    *ProductAttributeInReviewSource  `json:"source,omitempty"`
-	CreatedAt *time.Time                       `json:"createdAt,omitempty"`
-	JobId     *string                          `json:"jobId,omitempty"`
-	JobType   *ProductAttributeInReviewJobType `json:"jobType,omitempty"`
-	Error     *ProductAttributeInReviewError   `json:"error,omitempty"`
+	Code                 *string                          `json:"code,omitempty"`
+	String               *AttributeInReviewString         `json:"string,omitempty"`
+	Int32                *int32                           `json:"int32,omitempty"`
+	Int64                *string                          `json:"int64,omitempty"`
+	Float32              *float32                         `json:"float32,omitempty"`
+	Float64              *float64                         `json:"float64,omitempty"`
+	Boolean              *bool                            `json:"boolean,omitempty"`
+	Source               *ProductAttributeInReviewSource  `json:"source,omitempty"`
+	CreatedAt            *time.Time                       `json:"createdAt,omitempty"`
+	JobId                *string                          `json:"jobId,omitempty"`
+	JobType              *ProductAttributeInReviewJobType `json:"jobType,omitempty"`
+	Error                *ProductAttributeInReviewError   `json:"error,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductAttributeInReview ProductAttributeInReview
 
 // NewProductAttributeInReview instantiates a new ProductAttributeInReview object
 // This constructor will assign default values to properties that have it defined,
@@ -490,7 +493,64 @@ func (o ProductAttributeInReview) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Error) {
 		toSerialize["error"] = o.Error
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductAttributeInReview) UnmarshalJSON(data []byte) (err error) {
+	varProductAttributeInReview := _ProductAttributeInReview{}
+
+	err = json.Unmarshal(data, &varProductAttributeInReview)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductAttributeInReview(varProductAttributeInReview)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "string")
+		delete(additionalProperties, "int32")
+		delete(additionalProperties, "int64")
+		delete(additionalProperties, "float32")
+		delete(additionalProperties, "float64")
+		delete(additionalProperties, "boolean")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "createdAt")
+		delete(additionalProperties, "jobId")
+		delete(additionalProperties, "jobType")
+		delete(additionalProperties, "error")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductAttributeInReview) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductAttributeInReview) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductAttributeInReview struct {

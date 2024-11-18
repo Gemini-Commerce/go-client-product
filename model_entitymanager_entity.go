@@ -20,15 +20,18 @@ var _ MappedNullable = &EntitymanagerEntity{}
 
 // EntitymanagerEntity struct for EntitymanagerEntity
 type EntitymanagerEntity struct {
-	TenantId      *string                  `json:"tenantId,omitempty"`
-	Id            *string                  `json:"id,omitempty"`
-	Type          *string                  `json:"type,omitempty"`
-	Code          *string                  `json:"code,omitempty"`
-	ParentCode    *string                  `json:"parentCode,omitempty"`
-	Label         *string                  `json:"label,omitempty"`
-	Relationships []string                 `json:"relationships,omitempty"`
-	Attributes    []EntitymanagerAttribute `json:"attributes,omitempty"`
+	TenantId             *string                  `json:"tenantId,omitempty"`
+	Id                   *string                  `json:"id,omitempty"`
+	Type                 *string                  `json:"type,omitempty"`
+	Code                 *string                  `json:"code,omitempty"`
+	ParentCode           *string                  `json:"parentCode,omitempty"`
+	Label                *string                  `json:"label,omitempty"`
+	Relationships        []string                 `json:"relationships,omitempty"`
+	Attributes           []EntitymanagerAttribute `json:"attributes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerEntity EntitymanagerEntity
 
 // NewEntitymanagerEntity instantiates a new EntitymanagerEntity object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,60 @@ func (o EntitymanagerEntity) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *EntitymanagerEntity) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerEntity := _EntitymanagerEntity{}
+
+	err = json.Unmarshal(data, &varEntitymanagerEntity)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerEntity(varEntitymanagerEntity)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "parentCode")
+		delete(additionalProperties, "label")
+		delete(additionalProperties, "relationships")
+		delete(additionalProperties, "attributes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerEntity) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *EntitymanagerEntity) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableEntitymanagerEntity struct {

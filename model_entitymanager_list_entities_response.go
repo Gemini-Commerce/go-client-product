@@ -20,9 +20,12 @@ var _ MappedNullable = &EntitymanagerListEntitiesResponse{}
 
 // EntitymanagerListEntitiesResponse struct for EntitymanagerListEntitiesResponse
 type EntitymanagerListEntitiesResponse struct {
-	Entities []EntitymanagerEntity `json:"entities,omitempty"`
-	NextPage *int32                `json:"nextPage,omitempty"`
+	Entities             []EntitymanagerEntity `json:"entities,omitempty"`
+	NextPage             *int32                `json:"nextPage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerListEntitiesResponse EntitymanagerListEntitiesResponse
 
 // NewEntitymanagerListEntitiesResponse instantiates a new EntitymanagerListEntitiesResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,54 @@ func (o EntitymanagerListEntitiesResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.NextPage) {
 		toSerialize["nextPage"] = o.NextPage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *EntitymanagerListEntitiesResponse) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerListEntitiesResponse := _EntitymanagerListEntitiesResponse{}
+
+	err = json.Unmarshal(data, &varEntitymanagerListEntitiesResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerListEntitiesResponse(varEntitymanagerListEntitiesResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "entities")
+		delete(additionalProperties, "nextPage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerListEntitiesResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *EntitymanagerListEntitiesResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableEntitymanagerListEntitiesResponse struct {

@@ -20,8 +20,11 @@ var _ MappedNullable = &EntitymanagerBulkCreateAttributeResponse{}
 
 // EntitymanagerBulkCreateAttributeResponse struct for EntitymanagerBulkCreateAttributeResponse
 type EntitymanagerBulkCreateAttributeResponse struct {
-	Attributes []EntitymanagerAttribute `json:"attributes,omitempty"`
+	Attributes           []EntitymanagerAttribute `json:"attributes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerBulkCreateAttributeResponse EntitymanagerBulkCreateAttributeResponse
 
 // NewEntitymanagerBulkCreateAttributeResponse instantiates a new EntitymanagerBulkCreateAttributeResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,53 @@ func (o EntitymanagerBulkCreateAttributeResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *EntitymanagerBulkCreateAttributeResponse) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerBulkCreateAttributeResponse := _EntitymanagerBulkCreateAttributeResponse{}
+
+	err = json.Unmarshal(data, &varEntitymanagerBulkCreateAttributeResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerBulkCreateAttributeResponse(varEntitymanagerBulkCreateAttributeResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "attributes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerBulkCreateAttributeResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *EntitymanagerBulkCreateAttributeResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableEntitymanagerBulkCreateAttributeResponse struct {

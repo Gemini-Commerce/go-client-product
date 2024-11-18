@@ -20,9 +20,12 @@ var _ MappedNullable = &ProductBulkUpdateResponseV2Response{}
 
 // ProductBulkUpdateResponseV2Response struct for ProductBulkUpdateResponseV2Response
 type ProductBulkUpdateResponseV2Response struct {
-	ProductId  *string                 `json:"productId,omitempty"`
-	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
+	ProductId            *string                 `json:"productId,omitempty"`
+	Attributes           *map[string]ProtobufAny `json:"attributes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductBulkUpdateResponseV2Response ProductBulkUpdateResponseV2Response
 
 // NewProductBulkUpdateResponseV2Response instantiates a new ProductBulkUpdateResponseV2Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,54 @@ func (o ProductBulkUpdateResponseV2Response) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductBulkUpdateResponseV2Response) UnmarshalJSON(data []byte) (err error) {
+	varProductBulkUpdateResponseV2Response := _ProductBulkUpdateResponseV2Response{}
+
+	err = json.Unmarshal(data, &varProductBulkUpdateResponseV2Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductBulkUpdateResponseV2Response(varProductBulkUpdateResponseV2Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "productId")
+		delete(additionalProperties, "attributes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductBulkUpdateResponseV2Response) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductBulkUpdateResponseV2Response) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductBulkUpdateResponseV2Response struct {

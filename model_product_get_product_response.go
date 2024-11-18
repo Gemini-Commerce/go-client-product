@@ -20,8 +20,11 @@ var _ MappedNullable = &ProductGetProductResponse{}
 
 // ProductGetProductResponse struct for ProductGetProductResponse
 type ProductGetProductResponse struct {
-	Product *ProductProductEntity `json:"product,omitempty"`
+	Product              *ProductProductEntity `json:"product,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductGetProductResponse ProductGetProductResponse
 
 // NewProductGetProductResponse instantiates a new ProductGetProductResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,53 @@ func (o ProductGetProductResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Product) {
 		toSerialize["product"] = o.Product
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductGetProductResponse) UnmarshalJSON(data []byte) (err error) {
+	varProductGetProductResponse := _ProductGetProductResponse{}
+
+	err = json.Unmarshal(data, &varProductGetProductResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductGetProductResponse(varProductGetProductResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "product")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductGetProductResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductGetProductResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductGetProductResponse struct {

@@ -20,8 +20,11 @@ var _ MappedNullable = &ProductUpdateProductWithAIResponse{}
 
 // ProductUpdateProductWithAIResponse struct for ProductUpdateProductWithAIResponse
 type ProductUpdateProductWithAIResponse struct {
-	Id *string `json:"id,omitempty"`
+	Id                   *string `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductUpdateProductWithAIResponse ProductUpdateProductWithAIResponse
 
 // NewProductUpdateProductWithAIResponse instantiates a new ProductUpdateProductWithAIResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,53 @@ func (o ProductUpdateProductWithAIResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductUpdateProductWithAIResponse) UnmarshalJSON(data []byte) (err error) {
+	varProductUpdateProductWithAIResponse := _ProductUpdateProductWithAIResponse{}
+
+	err = json.Unmarshal(data, &varProductUpdateProductWithAIResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductUpdateProductWithAIResponse(varProductUpdateProductWithAIResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductUpdateProductWithAIResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductUpdateProductWithAIResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductUpdateProductWithAIResponse struct {

@@ -20,11 +20,14 @@ var _ MappedNullable = &EntitymanagerBulkCreateAttributeRequest{}
 
 // EntitymanagerBulkCreateAttributeRequest struct for EntitymanagerBulkCreateAttributeRequest
 type EntitymanagerBulkCreateAttributeRequest struct {
-	TenantId   *string                        `json:"tenantId,omitempty"`
-	EntityData *EntitymanagerEntityIdentifier `json:"entityData,omitempty"`
-	EntityId   *string                        `json:"entityId,omitempty"`
-	Attributes []EntitymanagerAttribute       `json:"attributes,omitempty"`
+	TenantId             *string                        `json:"tenantId,omitempty"`
+	EntityData           *EntitymanagerEntityIdentifier `json:"entityData,omitempty"`
+	EntityId             *string                        `json:"entityId,omitempty"`
+	Attributes           []EntitymanagerAttribute       `json:"attributes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerBulkCreateAttributeRequest EntitymanagerBulkCreateAttributeRequest
 
 // NewEntitymanagerBulkCreateAttributeRequest instantiates a new EntitymanagerBulkCreateAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,56 @@ func (o EntitymanagerBulkCreateAttributeRequest) ToMap() (map[string]interface{}
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *EntitymanagerBulkCreateAttributeRequest) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerBulkCreateAttributeRequest := _EntitymanagerBulkCreateAttributeRequest{}
+
+	err = json.Unmarshal(data, &varEntitymanagerBulkCreateAttributeRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerBulkCreateAttributeRequest(varEntitymanagerBulkCreateAttributeRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "entityData")
+		delete(additionalProperties, "entityId")
+		delete(additionalProperties, "attributes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerBulkCreateAttributeRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *EntitymanagerBulkCreateAttributeRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableEntitymanagerBulkCreateAttributeRequest struct {

@@ -20,9 +20,12 @@ var _ MappedNullable = &EntitymanagerAttributeOptionErrors{}
 
 // EntitymanagerAttributeOptionErrors struct for EntitymanagerAttributeOptionErrors
 type EntitymanagerAttributeOptionErrors struct {
-	Error  *string            `json:"error,omitempty"`
-	Option *map[string]string `json:"option,omitempty"`
+	Error                *string            `json:"error,omitempty"`
+	Option               *map[string]string `json:"option,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerAttributeOptionErrors EntitymanagerAttributeOptionErrors
 
 // NewEntitymanagerAttributeOptionErrors instantiates a new EntitymanagerAttributeOptionErrors object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,54 @@ func (o EntitymanagerAttributeOptionErrors) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Option) {
 		toSerialize["option"] = o.Option
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *EntitymanagerAttributeOptionErrors) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerAttributeOptionErrors := _EntitymanagerAttributeOptionErrors{}
+
+	err = json.Unmarshal(data, &varEntitymanagerAttributeOptionErrors)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerAttributeOptionErrors(varEntitymanagerAttributeOptionErrors)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "error")
+		delete(additionalProperties, "option")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerAttributeOptionErrors) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *EntitymanagerAttributeOptionErrors) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableEntitymanagerAttributeOptionErrors struct {

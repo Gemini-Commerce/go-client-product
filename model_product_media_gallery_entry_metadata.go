@@ -20,9 +20,12 @@ var _ MappedNullable = &ProductMediaGalleryEntryMetadata{}
 
 // ProductMediaGalleryEntryMetadata struct for ProductMediaGalleryEntryMetadata
 type ProductMediaGalleryEntryMetadata struct {
-	Roles []string              `json:"roles,omitempty"`
-	Alt   *ProductLocalizedText `json:"alt,omitempty"`
+	Roles                []string              `json:"roles,omitempty"`
+	Alt                  *ProductLocalizedText `json:"alt,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductMediaGalleryEntryMetadata ProductMediaGalleryEntryMetadata
 
 // NewProductMediaGalleryEntryMetadata instantiates a new ProductMediaGalleryEntryMetadata object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,54 @@ func (o ProductMediaGalleryEntryMetadata) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Alt) {
 		toSerialize["alt"] = o.Alt
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductMediaGalleryEntryMetadata) UnmarshalJSON(data []byte) (err error) {
+	varProductMediaGalleryEntryMetadata := _ProductMediaGalleryEntryMetadata{}
+
+	err = json.Unmarshal(data, &varProductMediaGalleryEntryMetadata)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductMediaGalleryEntryMetadata(varProductMediaGalleryEntryMetadata)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "roles")
+		delete(additionalProperties, "alt")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductMediaGalleryEntryMetadata) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductMediaGalleryEntryMetadata) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductMediaGalleryEntryMetadata struct {

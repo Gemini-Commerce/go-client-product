@@ -34,7 +34,10 @@ type ProductCreateProductRequestV2 struct {
 	Attributes             *map[string]ProtobufAny           `json:"attributes,omitempty"`
 	Variants               *map[string]ProductProductVariant `json:"variants,omitempty"`
 	MediaVariantAttributes []string                          `json:"mediaVariantAttributes,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
+
+type _ProductCreateProductRequestV2 ProductCreateProductRequestV2
 
 // NewProductCreateProductRequestV2 instantiates a new ProductCreateProductRequestV2 object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,66 @@ func (o ProductCreateProductRequestV2) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MediaVariantAttributes) {
 		toSerialize["mediaVariantAttributes"] = o.MediaVariantAttributes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductCreateProductRequestV2) UnmarshalJSON(data []byte) (err error) {
+	varProductCreateProductRequestV2 := _ProductCreateProductRequestV2{}
+
+	err = json.Unmarshal(data, &varProductCreateProductRequestV2)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductCreateProductRequestV2(varProductCreateProductRequestV2)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "entityType")
+		delete(additionalProperties, "entityCode")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "isConfigurable")
+		delete(additionalProperties, "variantAttributes")
+		delete(additionalProperties, "isVirtual")
+		delete(additionalProperties, "isGiftcard")
+		delete(additionalProperties, "hasConfigurator")
+		delete(additionalProperties, "urlKey")
+		delete(additionalProperties, "maxSaleableQuantity")
+		delete(additionalProperties, "attributes")
+		delete(additionalProperties, "variants")
+		delete(additionalProperties, "mediaVariantAttributes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductCreateProductRequestV2) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductCreateProductRequestV2) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductCreateProductRequestV2 struct {

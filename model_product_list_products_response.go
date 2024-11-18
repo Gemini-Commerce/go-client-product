@@ -20,9 +20,12 @@ var _ MappedNullable = &ProductListProductsResponse{}
 
 // ProductListProductsResponse struct for ProductListProductsResponse
 type ProductListProductsResponse struct {
-	Products      []ProductProductEntity `json:"products,omitempty"`
-	NextPageToken *string                `json:"nextPageToken,omitempty"`
+	Products             []ProductProductEntity `json:"products,omitempty"`
+	NextPageToken        *string                `json:"nextPageToken,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductListProductsResponse ProductListProductsResponse
 
 // NewProductListProductsResponse instantiates a new ProductListProductsResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,54 @@ func (o ProductListProductsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NextPageToken) {
 		toSerialize["nextPageToken"] = o.NextPageToken
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductListProductsResponse) UnmarshalJSON(data []byte) (err error) {
+	varProductListProductsResponse := _ProductListProductsResponse{}
+
+	err = json.Unmarshal(data, &varProductListProductsResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductListProductsResponse(varProductListProductsResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "products")
+		delete(additionalProperties, "nextPageToken")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductListProductsResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductListProductsResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductListProductsResponse struct {

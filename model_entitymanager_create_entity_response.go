@@ -22,7 +22,10 @@ var _ MappedNullable = &EntitymanagerCreateEntityResponse{}
 type EntitymanagerCreateEntityResponse struct {
 	AttributeWriteErrors *EntitymanagerAttributeWriteErrors `json:"attributeWriteErrors,omitempty"`
 	Entity               *EntitymanagerEntity               `json:"entity,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerCreateEntityResponse EntitymanagerCreateEntityResponse
 
 // NewEntitymanagerCreateEntityResponse instantiates a new EntitymanagerCreateEntityResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,54 @@ func (o EntitymanagerCreateEntityResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Entity) {
 		toSerialize["entity"] = o.Entity
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *EntitymanagerCreateEntityResponse) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerCreateEntityResponse := _EntitymanagerCreateEntityResponse{}
+
+	err = json.Unmarshal(data, &varEntitymanagerCreateEntityResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerCreateEntityResponse(varEntitymanagerCreateEntityResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "attributeWriteErrors")
+		delete(additionalProperties, "entity")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerCreateEntityResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *EntitymanagerCreateEntityResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableEntitymanagerCreateEntityResponse struct {

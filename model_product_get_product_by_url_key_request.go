@@ -20,10 +20,13 @@ var _ MappedNullable = &ProductGetProductByUrlKeyRequest{}
 
 // ProductGetProductByUrlKeyRequest struct for ProductGetProductByUrlKeyRequest
 type ProductGetProductByUrlKeyRequest struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	UrlKey   *string `json:"urlKey,omitempty"`
-	Locale   *string `json:"locale,omitempty"`
+	TenantId             *string `json:"tenantId,omitempty"`
+	UrlKey               *string `json:"urlKey,omitempty"`
+	Locale               *string `json:"locale,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductGetProductByUrlKeyRequest ProductGetProductByUrlKeyRequest
 
 // NewProductGetProductByUrlKeyRequest instantiates a new ProductGetProductByUrlKeyRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,55 @@ func (o ProductGetProductByUrlKeyRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Locale) {
 		toSerialize["locale"] = o.Locale
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductGetProductByUrlKeyRequest) UnmarshalJSON(data []byte) (err error) {
+	varProductGetProductByUrlKeyRequest := _ProductGetProductByUrlKeyRequest{}
+
+	err = json.Unmarshal(data, &varProductGetProductByUrlKeyRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductGetProductByUrlKeyRequest(varProductGetProductByUrlKeyRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "urlKey")
+		delete(additionalProperties, "locale")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductGetProductByUrlKeyRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductGetProductByUrlKeyRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductGetProductByUrlKeyRequest struct {

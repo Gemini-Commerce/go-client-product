@@ -20,10 +20,13 @@ var _ MappedNullable = &EntitymanagerAiContext{}
 
 // EntitymanagerAiContext struct for EntitymanagerAiContext
 type EntitymanagerAiContext struct {
-	MinLength   *string `json:"minLength,omitempty"`
-	MaxLength   *string `json:"maxLength,omitempty"`
-	Description *string `json:"description,omitempty"`
+	MinLength            *string `json:"minLength,omitempty"`
+	MaxLength            *string `json:"maxLength,omitempty"`
+	Description          *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EntitymanagerAiContext EntitymanagerAiContext
 
 // NewEntitymanagerAiContext instantiates a new EntitymanagerAiContext object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,55 @@ func (o EntitymanagerAiContext) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *EntitymanagerAiContext) UnmarshalJSON(data []byte) (err error) {
+	varEntitymanagerAiContext := _EntitymanagerAiContext{}
+
+	err = json.Unmarshal(data, &varEntitymanagerAiContext)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntitymanagerAiContext(varEntitymanagerAiContext)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "minLength")
+		delete(additionalProperties, "maxLength")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EntitymanagerAiContext) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *EntitymanagerAiContext) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableEntitymanagerAiContext struct {

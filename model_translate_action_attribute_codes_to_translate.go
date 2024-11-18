@@ -20,8 +20,11 @@ var _ MappedNullable = &TranslateActionAttributeCodesToTranslate{}
 
 // TranslateActionAttributeCodesToTranslate struct for TranslateActionAttributeCodesToTranslate
 type TranslateActionAttributeCodesToTranslate struct {
-	Codes []string `json:"codes,omitempty"`
+	Codes                []string `json:"codes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _TranslateActionAttributeCodesToTranslate TranslateActionAttributeCodesToTranslate
 
 // NewTranslateActionAttributeCodesToTranslate instantiates a new TranslateActionAttributeCodesToTranslate object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,53 @@ func (o TranslateActionAttributeCodesToTranslate) ToMap() (map[string]interface{
 	if !IsNil(o.Codes) {
 		toSerialize["codes"] = o.Codes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *TranslateActionAttributeCodesToTranslate) UnmarshalJSON(data []byte) (err error) {
+	varTranslateActionAttributeCodesToTranslate := _TranslateActionAttributeCodesToTranslate{}
+
+	err = json.Unmarshal(data, &varTranslateActionAttributeCodesToTranslate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TranslateActionAttributeCodesToTranslate(varTranslateActionAttributeCodesToTranslate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "codes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *TranslateActionAttributeCodesToTranslate) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *TranslateActionAttributeCodesToTranslate) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableTranslateActionAttributeCodesToTranslate struct {

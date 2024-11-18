@@ -20,9 +20,12 @@ var _ MappedNullable = &AttributeInReviewString{}
 
 // AttributeInReviewString struct for AttributeInReviewString
 type AttributeInReviewString struct {
-	Value  *string `json:"value,omitempty"`
-	Locale *string `json:"locale,omitempty"`
+	Value                *string `json:"value,omitempty"`
+	Locale               *string `json:"locale,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AttributeInReviewString AttributeInReviewString
 
 // NewAttributeInReviewString instantiates a new AttributeInReviewString object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,54 @@ func (o AttributeInReviewString) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Locale) {
 		toSerialize["locale"] = o.Locale
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AttributeInReviewString) UnmarshalJSON(data []byte) (err error) {
+	varAttributeInReviewString := _AttributeInReviewString{}
+
+	err = json.Unmarshal(data, &varAttributeInReviewString)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AttributeInReviewString(varAttributeInReviewString)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "locale")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *AttributeInReviewString) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *AttributeInReviewString) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableAttributeInReviewString struct {

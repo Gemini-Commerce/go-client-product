@@ -20,10 +20,13 @@ var _ MappedNullable = &ProductAttributeResponseError{}
 
 // ProductAttributeResponseError struct for ProductAttributeResponseError
 type ProductAttributeResponseError struct {
-	Code          *string `json:"code,omitempty"`
-	Message       *string `json:"message,omitempty"`
-	AttributeCode *string `json:"attributeCode,omitempty"`
+	Code                 *string `json:"code,omitempty"`
+	Message              *string `json:"message,omitempty"`
+	AttributeCode        *string `json:"attributeCode,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductAttributeResponseError ProductAttributeResponseError
 
 // NewProductAttributeResponseError instantiates a new ProductAttributeResponseError object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,55 @@ func (o ProductAttributeResponseError) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AttributeCode) {
 		toSerialize["attributeCode"] = o.AttributeCode
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductAttributeResponseError) UnmarshalJSON(data []byte) (err error) {
+	varProductAttributeResponseError := _ProductAttributeResponseError{}
+
+	err = json.Unmarshal(data, &varProductAttributeResponseError)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductAttributeResponseError(varProductAttributeResponseError)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "message")
+		delete(additionalProperties, "attributeCode")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductAttributeResponseError) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductAttributeResponseError) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductAttributeResponseError struct {

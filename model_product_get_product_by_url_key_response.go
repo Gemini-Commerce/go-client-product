@@ -20,8 +20,11 @@ var _ MappedNullable = &ProductGetProductByUrlKeyResponse{}
 
 // ProductGetProductByUrlKeyResponse struct for ProductGetProductByUrlKeyResponse
 type ProductGetProductByUrlKeyResponse struct {
-	Product *ProductProductEntity `json:"product,omitempty"`
+	Product              *ProductProductEntity `json:"product,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductGetProductByUrlKeyResponse ProductGetProductByUrlKeyResponse
 
 // NewProductGetProductByUrlKeyResponse instantiates a new ProductGetProductByUrlKeyResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,53 @@ func (o ProductGetProductByUrlKeyResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Product) {
 		toSerialize["product"] = o.Product
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductGetProductByUrlKeyResponse) UnmarshalJSON(data []byte) (err error) {
+	varProductGetProductByUrlKeyResponse := _ProductGetProductByUrlKeyResponse{}
+
+	err = json.Unmarshal(data, &varProductGetProductByUrlKeyResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductGetProductByUrlKeyResponse(varProductGetProductByUrlKeyResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "product")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductGetProductByUrlKeyResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductGetProductByUrlKeyResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductGetProductByUrlKeyResponse struct {

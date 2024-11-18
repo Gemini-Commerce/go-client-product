@@ -20,8 +20,11 @@ var _ MappedNullable = &ProductFieldMask{}
 
 // ProductFieldMask struct for ProductFieldMask
 type ProductFieldMask struct {
-	Paths []string `json:"paths,omitempty"`
+	Paths                []string `json:"paths,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProductFieldMask ProductFieldMask
 
 // NewProductFieldMask instantiates a new ProductFieldMask object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,53 @@ func (o ProductFieldMask) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Paths) {
 		toSerialize["paths"] = o.Paths
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductFieldMask) UnmarshalJSON(data []byte) (err error) {
+	varProductFieldMask := _ProductFieldMask{}
+
+	err = json.Unmarshal(data, &varProductFieldMask)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductFieldMask(varProductFieldMask)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "paths")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductFieldMask) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductFieldMask) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductFieldMask struct {

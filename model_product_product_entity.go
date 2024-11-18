@@ -41,7 +41,10 @@ type ProductProductEntity struct {
 	InReview               *bool                             `json:"inReview,omitempty"`
 	CreatedAt              *string                           `json:"createdAt,omitempty"`
 	UpdatedAt              *string                           `json:"updatedAt,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
+
+type _ProductProductEntity ProductProductEntity
 
 // NewProductProductEntity instantiates a new ProductProductEntity object
 // This constructor will assign default values to properties that have it defined,
@@ -805,7 +808,73 @@ func (o ProductProductEntity) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updatedAt"] = o.UpdatedAt
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProductProductEntity) UnmarshalJSON(data []byte) (err error) {
+	varProductProductEntity := _ProductProductEntity{}
+
+	err = json.Unmarshal(data, &varProductProductEntity)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProductProductEntity(varProductProductEntity)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "entityType")
+		delete(additionalProperties, "entityCode")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "variantAttributes")
+		delete(additionalProperties, "isConfigurable")
+		delete(additionalProperties, "isVirtual")
+		delete(additionalProperties, "isGiftcard")
+		delete(additionalProperties, "hasConfigurator")
+		delete(additionalProperties, "urlKey")
+		delete(additionalProperties, "mediaVariantAttributes")
+		delete(additionalProperties, "attributes")
+		delete(additionalProperties, "variants")
+		delete(additionalProperties, "mediaGallery")
+		delete(additionalProperties, "maxSaleableQuantity")
+		delete(additionalProperties, "assets")
+		delete(additionalProperties, "inReview")
+		delete(additionalProperties, "createdAt")
+		delete(additionalProperties, "updatedAt")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ProductProductEntity) GetValue() interface{} {
+	if o == nil || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+
+// SetValue populate the value of well-known types
+func (o *ProductProductEntity) SetValue(value interface{}) {
+	if o == nil || IsNil(value) {
+		return
+	}
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
+	o.AdditionalProperties["value"] = value
+	return
 }
 
 type NullableProductProductEntity struct {
