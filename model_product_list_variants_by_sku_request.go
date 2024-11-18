@@ -20,12 +20,9 @@ var _ MappedNullable = &ProductListVariantsBySkuRequest{}
 
 // ProductListVariantsBySkuRequest struct for ProductListVariantsBySkuRequest
 type ProductListVariantsBySkuRequest struct {
-	TenantId             *string `json:"tenantId,omitempty"`
-	Sku                  *string `json:"sku,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId *string `json:"tenantId,omitempty"`
+	Sku      *string `json:"sku,omitempty"`
 }
-
-type _ProductListVariantsBySkuRequest ProductListVariantsBySkuRequest
 
 // NewProductListVariantsBySkuRequest instantiates a new ProductListVariantsBySkuRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -124,54 +121,7 @@ func (o ProductListVariantsBySkuRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Sku) {
 		toSerialize["sku"] = o.Sku
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductListVariantsBySkuRequest) UnmarshalJSON(data []byte) (err error) {
-	varProductListVariantsBySkuRequest := _ProductListVariantsBySkuRequest{}
-
-	err = json.Unmarshal(data, &varProductListVariantsBySkuRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductListVariantsBySkuRequest(varProductListVariantsBySkuRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "sku")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductListVariantsBySkuRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductListVariantsBySkuRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductListVariantsBySkuRequest struct {

@@ -20,12 +20,9 @@ var _ MappedNullable = &EntitymanagerGetAttributeOptionsRequest{}
 
 // EntitymanagerGetAttributeOptionsRequest struct for EntitymanagerGetAttributeOptionsRequest
 type EntitymanagerGetAttributeOptionsRequest struct {
-	TenantId             *string                                         `json:"tenantId,omitempty"`
-	OptionIds            []EntitymanagerGetAttributeOptionsRequestOption `json:"optionIds,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId  *string                                         `json:"tenantId,omitempty"`
+	OptionIds []EntitymanagerGetAttributeOptionsRequestOption `json:"optionIds,omitempty"`
 }
-
-type _EntitymanagerGetAttributeOptionsRequest EntitymanagerGetAttributeOptionsRequest
 
 // NewEntitymanagerGetAttributeOptionsRequest instantiates a new EntitymanagerGetAttributeOptionsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -124,54 +121,7 @@ func (o EntitymanagerGetAttributeOptionsRequest) ToMap() (map[string]interface{}
 	if !IsNil(o.OptionIds) {
 		toSerialize["optionIds"] = o.OptionIds
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerGetAttributeOptionsRequest) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerGetAttributeOptionsRequest := _EntitymanagerGetAttributeOptionsRequest{}
-
-	err = json.Unmarshal(data, &varEntitymanagerGetAttributeOptionsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerGetAttributeOptionsRequest(varEntitymanagerGetAttributeOptionsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "optionIds")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerGetAttributeOptionsRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerGetAttributeOptionsRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerGetAttributeOptionsRequest struct {

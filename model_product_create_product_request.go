@@ -44,11 +44,8 @@ type ProductCreateProductRequest struct {
 	// Contains a map of additional attributes associated with the product, where the key is the attribute name and the value is any type of value.
 	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
 	// Represents a map of product variants associated with the product, where the key is the variant ID or code, and the value is a ProductVariant message.
-	Variants             *map[string]ProductProductVariant `json:"variants,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Variants *map[string]ProductProductVariant `json:"variants,omitempty"`
 }
-
-type _ProductCreateProductRequest ProductCreateProductRequest
 
 // NewProductCreateProductRequest instantiates a new ProductCreateProductRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -567,66 +564,7 @@ func (o ProductCreateProductRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Variants) {
 		toSerialize["variants"] = o.Variants
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductCreateProductRequest) UnmarshalJSON(data []byte) (err error) {
-	varProductCreateProductRequest := _ProductCreateProductRequest{}
-
-	err = json.Unmarshal(data, &varProductCreateProductRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductCreateProductRequest(varProductCreateProductRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "entityType")
-		delete(additionalProperties, "entityCode")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "isConfigurable")
-		delete(additionalProperties, "variantAttributes")
-		delete(additionalProperties, "isVirtual")
-		delete(additionalProperties, "isGiftcard")
-		delete(additionalProperties, "hasConfigurator")
-		delete(additionalProperties, "urlKey")
-		delete(additionalProperties, "maxSaleableQuantity")
-		delete(additionalProperties, "mediaVariantAttributes")
-		delete(additionalProperties, "attributes")
-		delete(additionalProperties, "variants")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductCreateProductRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductCreateProductRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductCreateProductRequest struct {

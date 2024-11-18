@@ -20,13 +20,10 @@ var _ MappedNullable = &EntitymanagerUpdateAttributeGroupRequestPayload{}
 
 // EntitymanagerUpdateAttributeGroupRequestPayload struct for EntitymanagerUpdateAttributeGroupRequestPayload
 type EntitymanagerUpdateAttributeGroupRequestPayload struct {
-	Label                *ProductentitymanagerLocalizedText `json:"label,omitempty"`
-	Sort                 *int32                             `json:"sort,omitempty"`
-	Visibility           []string                           `json:"visibility,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Label      *ProductentitymanagerLocalizedText `json:"label,omitempty"`
+	Sort       *int32                             `json:"sort,omitempty"`
+	Visibility []string                           `json:"visibility,omitempty"`
 }
-
-type _EntitymanagerUpdateAttributeGroupRequestPayload EntitymanagerUpdateAttributeGroupRequestPayload
 
 // NewEntitymanagerUpdateAttributeGroupRequestPayload instantiates a new EntitymanagerUpdateAttributeGroupRequestPayload object
 // This constructor will assign default values to properties that have it defined,
@@ -160,55 +157,7 @@ func (o EntitymanagerUpdateAttributeGroupRequestPayload) ToMap() (map[string]int
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerUpdateAttributeGroupRequestPayload) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerUpdateAttributeGroupRequestPayload := _EntitymanagerUpdateAttributeGroupRequestPayload{}
-
-	err = json.Unmarshal(data, &varEntitymanagerUpdateAttributeGroupRequestPayload)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerUpdateAttributeGroupRequestPayload(varEntitymanagerUpdateAttributeGroupRequestPayload)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "sort")
-		delete(additionalProperties, "visibility")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerUpdateAttributeGroupRequestPayload) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerUpdateAttributeGroupRequestPayload struct {

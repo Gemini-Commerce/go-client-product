@@ -21,18 +21,15 @@ var _ MappedNullable = &GetEnhanceProductDataWithAIStatusResponseJob{}
 
 // GetEnhanceProductDataWithAIStatusResponseJob struct for GetEnhanceProductDataWithAIStatusResponseJob
 type GetEnhanceProductDataWithAIStatusResponseJob struct {
-	ParentId             *string                            `json:"parentId,omitempty"`
-	JobType              *ProductAttributeInReviewJobType   `json:"jobType,omitempty"`
-	JobStatus            *ProductAttributeInReviewJobStatus `json:"jobStatus,omitempty"`
-	Id                   *string                            `json:"id,omitempty"`
-	StartedAt            *time.Time                         `json:"startedAt,omitempty"`
-	ExecutedAt           *time.Time                         `json:"executedAt,omitempty"`
-	FinishedAt           *time.Time                         `json:"finishedAt,omitempty"`
-	ProductId            *string                            `json:"productId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ParentId   *string                            `json:"parentId,omitempty"`
+	JobType    *ProductAttributeInReviewJobType   `json:"jobType,omitempty"`
+	JobStatus  *ProductAttributeInReviewJobStatus `json:"jobStatus,omitempty"`
+	Id         *string                            `json:"id,omitempty"`
+	StartedAt  *time.Time                         `json:"startedAt,omitempty"`
+	ExecutedAt *time.Time                         `json:"executedAt,omitempty"`
+	FinishedAt *time.Time                         `json:"finishedAt,omitempty"`
+	ProductId  *string                            `json:"productId,omitempty"`
 }
-
-type _GetEnhanceProductDataWithAIStatusResponseJob GetEnhanceProductDataWithAIStatusResponseJob
 
 // NewGetEnhanceProductDataWithAIStatusResponseJob instantiates a new GetEnhanceProductDataWithAIStatusResponseJob object
 // This constructor will assign default values to properties that have it defined,
@@ -349,60 +346,7 @@ func (o GetEnhanceProductDataWithAIStatusResponseJob) ToMap() (map[string]interf
 	if !IsNil(o.ProductId) {
 		toSerialize["productId"] = o.ProductId
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) UnmarshalJSON(data []byte) (err error) {
-	varGetEnhanceProductDataWithAIStatusResponseJob := _GetEnhanceProductDataWithAIStatusResponseJob{}
-
-	err = json.Unmarshal(data, &varGetEnhanceProductDataWithAIStatusResponseJob)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetEnhanceProductDataWithAIStatusResponseJob(varGetEnhanceProductDataWithAIStatusResponseJob)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "parentId")
-		delete(additionalProperties, "jobType")
-		delete(additionalProperties, "jobStatus")
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "startedAt")
-		delete(additionalProperties, "executedAt")
-		delete(additionalProperties, "finishedAt")
-		delete(additionalProperties, "productId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *GetEnhanceProductDataWithAIStatusResponseJob) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableGetEnhanceProductDataWithAIStatusResponseJob struct {

@@ -20,17 +20,14 @@ var _ MappedNullable = &EntitymanagerUpdateAttributeRequestPayload{}
 
 // EntitymanagerUpdateAttributeRequestPayload struct for EntitymanagerUpdateAttributeRequestPayload
 type EntitymanagerUpdateAttributeRequestPayload struct {
-	Label                *string                 `json:"label,omitempty"`
-	Default              *string                 `json:"default,omitempty"`
-	Sort                 *int32                  `json:"sort,omitempty"`
-	GroupCode            *string                 `json:"groupCode,omitempty"`
-	Title                *map[string]string      `json:"title,omitempty"`
-	RenderAs             *EntitymanagerRenderAs  `json:"renderAs,omitempty"`
-	AiContext            *EntitymanagerAiContext `json:"aiContext,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Label     *string                 `json:"label,omitempty"`
+	Default   *string                 `json:"default,omitempty"`
+	Sort      *int32                  `json:"sort,omitempty"`
+	GroupCode *string                 `json:"groupCode,omitempty"`
+	Title     *map[string]string      `json:"title,omitempty"`
+	RenderAs  *EntitymanagerRenderAs  `json:"renderAs,omitempty"`
+	AiContext *EntitymanagerAiContext `json:"aiContext,omitempty"`
 }
-
-type _EntitymanagerUpdateAttributeRequestPayload EntitymanagerUpdateAttributeRequestPayload
 
 // NewEntitymanagerUpdateAttributeRequestPayload instantiates a new EntitymanagerUpdateAttributeRequestPayload object
 // This constructor will assign default values to properties that have it defined,
@@ -308,59 +305,7 @@ func (o EntitymanagerUpdateAttributeRequestPayload) ToMap() (map[string]interfac
 	if !IsNil(o.AiContext) {
 		toSerialize["aiContext"] = o.AiContext
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerUpdateAttributeRequestPayload) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerUpdateAttributeRequestPayload := _EntitymanagerUpdateAttributeRequestPayload{}
-
-	err = json.Unmarshal(data, &varEntitymanagerUpdateAttributeRequestPayload)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerUpdateAttributeRequestPayload(varEntitymanagerUpdateAttributeRequestPayload)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "default")
-		delete(additionalProperties, "sort")
-		delete(additionalProperties, "groupCode")
-		delete(additionalProperties, "title")
-		delete(additionalProperties, "renderAs")
-		delete(additionalProperties, "aiContext")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerUpdateAttributeRequestPayload) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerUpdateAttributeRequestPayload) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerUpdateAttributeRequestPayload struct {

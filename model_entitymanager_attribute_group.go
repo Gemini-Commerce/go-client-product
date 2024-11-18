@@ -20,14 +20,11 @@ var _ MappedNullable = &EntitymanagerAttributeGroup{}
 
 // EntitymanagerAttributeGroup struct for EntitymanagerAttributeGroup
 type EntitymanagerAttributeGroup struct {
-	Code                 *string                            `json:"code,omitempty"`
-	Label                *ProductentitymanagerLocalizedText `json:"label,omitempty"`
-	Sort                 *int32                             `json:"sort,omitempty"`
-	Visibility           []string                           `json:"visibility,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Code       *string                            `json:"code,omitempty"`
+	Label      *ProductentitymanagerLocalizedText `json:"label,omitempty"`
+	Sort       *int32                             `json:"sort,omitempty"`
+	Visibility []string                           `json:"visibility,omitempty"`
 }
-
-type _EntitymanagerAttributeGroup EntitymanagerAttributeGroup
 
 // NewEntitymanagerAttributeGroup instantiates a new EntitymanagerAttributeGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -196,56 +193,7 @@ func (o EntitymanagerAttributeGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerAttributeGroup) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerAttributeGroup := _EntitymanagerAttributeGroup{}
-
-	err = json.Unmarshal(data, &varEntitymanagerAttributeGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerAttributeGroup(varEntitymanagerAttributeGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "sort")
-		delete(additionalProperties, "visibility")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerAttributeGroup) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerAttributeGroup) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerAttributeGroup struct {

@@ -20,11 +20,8 @@ var _ MappedNullable = &ProductListVariantsBySkuResponse{}
 
 // ProductListVariantsBySkuResponse struct for ProductListVariantsBySkuResponse
 type ProductListVariantsBySkuResponse struct {
-	Variants             []ProductProductVariant `json:"variants,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Variants []ProductProductVariant `json:"variants,omitempty"`
 }
-
-type _ProductListVariantsBySkuResponse ProductListVariantsBySkuResponse
 
 // NewProductListVariantsBySkuResponse instantiates a new ProductListVariantsBySkuResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -88,53 +85,7 @@ func (o ProductListVariantsBySkuResponse) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Variants) {
 		toSerialize["variants"] = o.Variants
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductListVariantsBySkuResponse) UnmarshalJSON(data []byte) (err error) {
-	varProductListVariantsBySkuResponse := _ProductListVariantsBySkuResponse{}
-
-	err = json.Unmarshal(data, &varProductListVariantsBySkuResponse)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductListVariantsBySkuResponse(varProductListVariantsBySkuResponse)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "variants")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductListVariantsBySkuResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductListVariantsBySkuResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductListVariantsBySkuResponse struct {

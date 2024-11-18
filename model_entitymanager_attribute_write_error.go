@@ -20,13 +20,10 @@ var _ MappedNullable = &EntitymanagerAttributeWriteError{}
 
 // EntitymanagerAttributeWriteError struct for EntitymanagerAttributeWriteError
 type EntitymanagerAttributeWriteError struct {
-	ErrorCode            *string `json:"errorCode,omitempty"`
-	AttributeCode        *string `json:"attributeCode,omitempty"`
-	Message              *string `json:"message,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ErrorCode     *string `json:"errorCode,omitempty"`
+	AttributeCode *string `json:"attributeCode,omitempty"`
+	Message       *string `json:"message,omitempty"`
 }
-
-type _EntitymanagerAttributeWriteError EntitymanagerAttributeWriteError
 
 // NewEntitymanagerAttributeWriteError instantiates a new EntitymanagerAttributeWriteError object
 // This constructor will assign default values to properties that have it defined,
@@ -160,55 +157,7 @@ func (o EntitymanagerAttributeWriteError) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerAttributeWriteError) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerAttributeWriteError := _EntitymanagerAttributeWriteError{}
-
-	err = json.Unmarshal(data, &varEntitymanagerAttributeWriteError)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerAttributeWriteError(varEntitymanagerAttributeWriteError)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "errorCode")
-		delete(additionalProperties, "attributeCode")
-		delete(additionalProperties, "message")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerAttributeWriteError) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerAttributeWriteError) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerAttributeWriteError struct {

@@ -20,16 +20,13 @@ var _ MappedNullable = &EntitymanagerAttributeOption{}
 
 // EntitymanagerAttributeOption struct for EntitymanagerAttributeOption
 type EntitymanagerAttributeOption struct {
-	Option               *map[string]string                   `json:"option,omitempty"`
-	Sort                 *int64                               `json:"sort,omitempty"`
-	Id                   *string                              `json:"id,omitempty"`
-	Code                 *string                              `json:"code,omitempty"`
-	Value                *ProductentitymanagerLocalizedText   `json:"value,omitempty"`
-	Swatches             []EntitymanagerAttributeOptionSwatch `json:"swatches,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Option   *map[string]string                   `json:"option,omitempty"`
+	Sort     *int64                               `json:"sort,omitempty"`
+	Id       *string                              `json:"id,omitempty"`
+	Code     *string                              `json:"code,omitempty"`
+	Value    *ProductentitymanagerLocalizedText   `json:"value,omitempty"`
+	Swatches []EntitymanagerAttributeOptionSwatch `json:"swatches,omitempty"`
 }
-
-type _EntitymanagerAttributeOption EntitymanagerAttributeOption
 
 // NewEntitymanagerAttributeOption instantiates a new EntitymanagerAttributeOption object
 // This constructor will assign default values to properties that have it defined,
@@ -268,58 +265,7 @@ func (o EntitymanagerAttributeOption) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Swatches) {
 		toSerialize["swatches"] = o.Swatches
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerAttributeOption) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerAttributeOption := _EntitymanagerAttributeOption{}
-
-	err = json.Unmarshal(data, &varEntitymanagerAttributeOption)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerAttributeOption(varEntitymanagerAttributeOption)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "option")
-		delete(additionalProperties, "sort")
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "swatches")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerAttributeOption) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerAttributeOption) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerAttributeOption struct {

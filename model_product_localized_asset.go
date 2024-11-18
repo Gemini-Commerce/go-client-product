@@ -20,11 +20,8 @@ var _ MappedNullable = &ProductLocalizedAsset{}
 
 // ProductLocalizedAsset struct for ProductLocalizedAsset
 type ProductLocalizedAsset struct {
-	Value                *map[string]string `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Value *map[string]string `json:"value,omitempty"`
 }
-
-type _ProductLocalizedAsset ProductLocalizedAsset
 
 // NewProductLocalizedAsset instantiates a new ProductLocalizedAsset object
 // This constructor will assign default values to properties that have it defined,
@@ -88,53 +85,7 @@ func (o ProductLocalizedAsset) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductLocalizedAsset) UnmarshalJSON(data []byte) (err error) {
-	varProductLocalizedAsset := _ProductLocalizedAsset{}
-
-	err = json.Unmarshal(data, &varProductLocalizedAsset)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductLocalizedAsset(varProductLocalizedAsset)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductLocalizedAsset) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductLocalizedAsset) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductLocalizedAsset struct {

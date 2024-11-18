@@ -20,12 +20,9 @@ var _ MappedNullable = &ProductGetProductRequest{}
 
 // ProductGetProductRequest struct for ProductGetProductRequest
 type ProductGetProductRequest struct {
-	TenantId             *string `json:"tenantId,omitempty"`
-	Id                   *string `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId *string `json:"tenantId,omitempty"`
+	Id       *string `json:"id,omitempty"`
 }
-
-type _ProductGetProductRequest ProductGetProductRequest
 
 // NewProductGetProductRequest instantiates a new ProductGetProductRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -124,54 +121,7 @@ func (o ProductGetProductRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductGetProductRequest) UnmarshalJSON(data []byte) (err error) {
-	varProductGetProductRequest := _ProductGetProductRequest{}
-
-	err = json.Unmarshal(data, &varProductGetProductRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductGetProductRequest(varProductGetProductRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductGetProductRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductGetProductRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductGetProductRequest struct {

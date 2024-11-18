@@ -20,12 +20,9 @@ var _ MappedNullable = &ProductGetProductDataInReviewRequest{}
 
 // ProductGetProductDataInReviewRequest struct for ProductGetProductDataInReviewRequest
 type ProductGetProductDataInReviewRequest struct {
-	TenantId             *string `json:"tenantId,omitempty"`
-	Id                   *string `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId *string `json:"tenantId,omitempty"`
+	Id       *string `json:"id,omitempty"`
 }
-
-type _ProductGetProductDataInReviewRequest ProductGetProductDataInReviewRequest
 
 // NewProductGetProductDataInReviewRequest instantiates a new ProductGetProductDataInReviewRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -124,54 +121,7 @@ func (o ProductGetProductDataInReviewRequest) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductGetProductDataInReviewRequest) UnmarshalJSON(data []byte) (err error) {
-	varProductGetProductDataInReviewRequest := _ProductGetProductDataInReviewRequest{}
-
-	err = json.Unmarshal(data, &varProductGetProductDataInReviewRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductGetProductDataInReviewRequest(varProductGetProductDataInReviewRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductGetProductDataInReviewRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductGetProductDataInReviewRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductGetProductDataInReviewRequest struct {

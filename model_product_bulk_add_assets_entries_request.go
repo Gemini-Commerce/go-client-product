@@ -20,13 +20,10 @@ var _ MappedNullable = &ProductBulkAddAssetsEntriesRequest{}
 
 // ProductBulkAddAssetsEntriesRequest struct for ProductBulkAddAssetsEntriesRequest
 type ProductBulkAddAssetsEntriesRequest struct {
-	TenantId             *string            `json:"tenantId,omitempty"`
-	ProductId            *string            `json:"productId,omitempty"`
-	Assets               []ProductAssetData `json:"assets,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId  *string            `json:"tenantId,omitempty"`
+	ProductId *string            `json:"productId,omitempty"`
+	Assets    []ProductAssetData `json:"assets,omitempty"`
 }
-
-type _ProductBulkAddAssetsEntriesRequest ProductBulkAddAssetsEntriesRequest
 
 // NewProductBulkAddAssetsEntriesRequest instantiates a new ProductBulkAddAssetsEntriesRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -160,55 +157,7 @@ func (o ProductBulkAddAssetsEntriesRequest) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Assets) {
 		toSerialize["assets"] = o.Assets
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductBulkAddAssetsEntriesRequest) UnmarshalJSON(data []byte) (err error) {
-	varProductBulkAddAssetsEntriesRequest := _ProductBulkAddAssetsEntriesRequest{}
-
-	err = json.Unmarshal(data, &varProductBulkAddAssetsEntriesRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductBulkAddAssetsEntriesRequest(varProductBulkAddAssetsEntriesRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "productId")
-		delete(additionalProperties, "assets")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductBulkAddAssetsEntriesRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductBulkAddAssetsEntriesRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductBulkAddAssetsEntriesRequest struct {

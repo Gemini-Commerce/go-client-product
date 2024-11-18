@@ -20,11 +20,8 @@ var _ MappedNullable = &ProductDeleteResponse{}
 
 // ProductDeleteResponse struct for ProductDeleteResponse
 type ProductDeleteResponse struct {
-	Success              *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success *bool `json:"success,omitempty"`
 }
-
-type _ProductDeleteResponse ProductDeleteResponse
 
 // NewProductDeleteResponse instantiates a new ProductDeleteResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -88,53 +85,7 @@ func (o ProductDeleteResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductDeleteResponse) UnmarshalJSON(data []byte) (err error) {
-	varProductDeleteResponse := _ProductDeleteResponse{}
-
-	err = json.Unmarshal(data, &varProductDeleteResponse)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductDeleteResponse(varProductDeleteResponse)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductDeleteResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductDeleteResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductDeleteResponse struct {

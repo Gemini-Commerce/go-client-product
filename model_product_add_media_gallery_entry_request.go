@@ -20,15 +20,12 @@ var _ MappedNullable = &ProductAddMediaGalleryEntryRequest{}
 
 // ProductAddMediaGalleryEntryRequest struct for ProductAddMediaGalleryEntryRequest
 type ProductAddMediaGalleryEntryRequest struct {
-	TenantId             *string                            `json:"tenantId,omitempty"`
-	ProductId            *string                            `json:"productId,omitempty"`
-	AssetGrn             *string                            `json:"assetGrn,omitempty"`
-	Position             *int64                             `json:"position,omitempty"`
-	Metadata             []ProductMediaGalleryEntryMetadata `json:"metadata,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId  *string                            `json:"tenantId,omitempty"`
+	ProductId *string                            `json:"productId,omitempty"`
+	AssetGrn  *string                            `json:"assetGrn,omitempty"`
+	Position  *int64                             `json:"position,omitempty"`
+	Metadata  []ProductMediaGalleryEntryMetadata `json:"metadata,omitempty"`
 }
-
-type _ProductAddMediaGalleryEntryRequest ProductAddMediaGalleryEntryRequest
 
 // NewProductAddMediaGalleryEntryRequest instantiates a new ProductAddMediaGalleryEntryRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -232,57 +229,7 @@ func (o ProductAddMediaGalleryEntryRequest) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductAddMediaGalleryEntryRequest) UnmarshalJSON(data []byte) (err error) {
-	varProductAddMediaGalleryEntryRequest := _ProductAddMediaGalleryEntryRequest{}
-
-	err = json.Unmarshal(data, &varProductAddMediaGalleryEntryRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductAddMediaGalleryEntryRequest(varProductAddMediaGalleryEntryRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "productId")
-		delete(additionalProperties, "assetGrn")
-		delete(additionalProperties, "position")
-		delete(additionalProperties, "metadata")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductAddMediaGalleryEntryRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductAddMediaGalleryEntryRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductAddMediaGalleryEntryRequest struct {

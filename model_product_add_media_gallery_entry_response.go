@@ -20,11 +20,8 @@ var _ MappedNullable = &ProductAddMediaGalleryEntryResponse{}
 
 // ProductAddMediaGalleryEntryResponse struct for ProductAddMediaGalleryEntryResponse
 type ProductAddMediaGalleryEntryResponse struct {
-	MediaGalleryEntry    *ProductMediaGalleryEntry `json:"mediaGalleryEntry,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MediaGalleryEntry *ProductMediaGalleryEntry `json:"mediaGalleryEntry,omitempty"`
 }
-
-type _ProductAddMediaGalleryEntryResponse ProductAddMediaGalleryEntryResponse
 
 // NewProductAddMediaGalleryEntryResponse instantiates a new ProductAddMediaGalleryEntryResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -88,53 +85,7 @@ func (o ProductAddMediaGalleryEntryResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.MediaGalleryEntry) {
 		toSerialize["mediaGalleryEntry"] = o.MediaGalleryEntry
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductAddMediaGalleryEntryResponse) UnmarshalJSON(data []byte) (err error) {
-	varProductAddMediaGalleryEntryResponse := _ProductAddMediaGalleryEntryResponse{}
-
-	err = json.Unmarshal(data, &varProductAddMediaGalleryEntryResponse)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductAddMediaGalleryEntryResponse(varProductAddMediaGalleryEntryResponse)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "mediaGalleryEntry")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductAddMediaGalleryEntryResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductAddMediaGalleryEntryResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductAddMediaGalleryEntryResponse struct {

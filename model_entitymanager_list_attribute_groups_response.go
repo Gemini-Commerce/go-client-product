@@ -20,11 +20,8 @@ var _ MappedNullable = &EntitymanagerListAttributeGroupsResponse{}
 
 // EntitymanagerListAttributeGroupsResponse struct for EntitymanagerListAttributeGroupsResponse
 type EntitymanagerListAttributeGroupsResponse struct {
-	AttributeGroups      []EntitymanagerAttributeGroup `json:"attributeGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AttributeGroups []EntitymanagerAttributeGroup `json:"attributeGroups,omitempty"`
 }
-
-type _EntitymanagerListAttributeGroupsResponse EntitymanagerListAttributeGroupsResponse
 
 // NewEntitymanagerListAttributeGroupsResponse instantiates a new EntitymanagerListAttributeGroupsResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -88,53 +85,7 @@ func (o EntitymanagerListAttributeGroupsResponse) ToMap() (map[string]interface{
 	if !IsNil(o.AttributeGroups) {
 		toSerialize["attributeGroups"] = o.AttributeGroups
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerListAttributeGroupsResponse) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerListAttributeGroupsResponse := _EntitymanagerListAttributeGroupsResponse{}
-
-	err = json.Unmarshal(data, &varEntitymanagerListAttributeGroupsResponse)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerListAttributeGroupsResponse(varEntitymanagerListAttributeGroupsResponse)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "attributeGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerListAttributeGroupsResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerListAttributeGroupsResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerListAttributeGroupsResponse struct {

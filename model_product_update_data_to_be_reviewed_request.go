@@ -20,14 +20,11 @@ var _ MappedNullable = &ProductUpdateDataToBeReviewedRequest{}
 
 // ProductUpdateDataToBeReviewedRequest struct for ProductUpdateDataToBeReviewedRequest
 type ProductUpdateDataToBeReviewedRequest struct {
-	TenantId             *string              `json:"tenantId,omitempty"`
-	ProductId            *string              `json:"productId,omitempty"`
-	Payload              *ProductDataInReview `json:"payload,omitempty"`
-	PayloadMask          *string              `json:"payloadMask,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId    *string              `json:"tenantId,omitempty"`
+	ProductId   *string              `json:"productId,omitempty"`
+	Payload     *ProductDataInReview `json:"payload,omitempty"`
+	PayloadMask *string              `json:"payloadMask,omitempty"`
 }
-
-type _ProductUpdateDataToBeReviewedRequest ProductUpdateDataToBeReviewedRequest
 
 // NewProductUpdateDataToBeReviewedRequest instantiates a new ProductUpdateDataToBeReviewedRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -196,56 +193,7 @@ func (o ProductUpdateDataToBeReviewedRequest) ToMap() (map[string]interface{}, e
 	if !IsNil(o.PayloadMask) {
 		toSerialize["payloadMask"] = o.PayloadMask
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductUpdateDataToBeReviewedRequest) UnmarshalJSON(data []byte) (err error) {
-	varProductUpdateDataToBeReviewedRequest := _ProductUpdateDataToBeReviewedRequest{}
-
-	err = json.Unmarshal(data, &varProductUpdateDataToBeReviewedRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductUpdateDataToBeReviewedRequest(varProductUpdateDataToBeReviewedRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "productId")
-		delete(additionalProperties, "payload")
-		delete(additionalProperties, "payloadMask")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductUpdateDataToBeReviewedRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductUpdateDataToBeReviewedRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductUpdateDataToBeReviewedRequest struct {

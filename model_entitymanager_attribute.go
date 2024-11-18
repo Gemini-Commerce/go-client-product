@@ -20,25 +20,22 @@ var _ MappedNullable = &EntitymanagerAttribute{}
 
 // EntitymanagerAttribute struct for EntitymanagerAttribute
 type EntitymanagerAttribute struct {
-	EntityId             *string                 `json:"entityId,omitempty"`
-	Code                 *string                 `json:"code,omitempty"`
-	Label                *string                 `json:"label,omitempty"`
-	Type                 *EntitymanagerTypes     `json:"type,omitempty"`
-	OptionList           *string                 `json:"optionList,omitempty"`
-	Entity               *string                 `json:"entity,omitempty"`
-	Default              *string                 `json:"default,omitempty"`
-	IsRequired           *bool                   `json:"isRequired,omitempty"`
-	IsSystem             *bool                   `json:"isSystem,omitempty"`
-	IsRepeated           *bool                   `json:"isRepeated,omitempty"`
-	Sort                 *int32                  `json:"sort,omitempty"`
-	GroupCode            *string                 `json:"groupCode,omitempty"`
-	Title                *map[string]string      `json:"title,omitempty"`
-	RenderAs             *EntitymanagerRenderAs  `json:"renderAs,omitempty"`
-	AiContext            *EntitymanagerAiContext `json:"aiContext,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EntityId   *string                 `json:"entityId,omitempty"`
+	Code       *string                 `json:"code,omitempty"`
+	Label      *string                 `json:"label,omitempty"`
+	Type       *EntitymanagerTypes     `json:"type,omitempty"`
+	OptionList *string                 `json:"optionList,omitempty"`
+	Entity     *string                 `json:"entity,omitempty"`
+	Default    *string                 `json:"default,omitempty"`
+	IsRequired *bool                   `json:"isRequired,omitempty"`
+	IsSystem   *bool                   `json:"isSystem,omitempty"`
+	IsRepeated *bool                   `json:"isRepeated,omitempty"`
+	Sort       *int32                  `json:"sort,omitempty"`
+	GroupCode  *string                 `json:"groupCode,omitempty"`
+	Title      *map[string]string      `json:"title,omitempty"`
+	RenderAs   *EntitymanagerRenderAs  `json:"renderAs,omitempty"`
+	AiContext  *EntitymanagerAiContext `json:"aiContext,omitempty"`
 }
-
-type _EntitymanagerAttribute EntitymanagerAttribute
 
 // NewEntitymanagerAttribute instantiates a new EntitymanagerAttribute object
 // This constructor will assign default values to properties that have it defined,
@@ -600,67 +597,7 @@ func (o EntitymanagerAttribute) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AiContext) {
 		toSerialize["aiContext"] = o.AiContext
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerAttribute) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerAttribute := _EntitymanagerAttribute{}
-
-	err = json.Unmarshal(data, &varEntitymanagerAttribute)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerAttribute(varEntitymanagerAttribute)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "entityId")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "optionList")
-		delete(additionalProperties, "entity")
-		delete(additionalProperties, "default")
-		delete(additionalProperties, "isRequired")
-		delete(additionalProperties, "isSystem")
-		delete(additionalProperties, "isRepeated")
-		delete(additionalProperties, "sort")
-		delete(additionalProperties, "groupCode")
-		delete(additionalProperties, "title")
-		delete(additionalProperties, "renderAs")
-		delete(additionalProperties, "aiContext")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerAttribute) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerAttribute) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerAttribute struct {

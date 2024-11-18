@@ -20,16 +20,13 @@ var _ MappedNullable = &ProductAssetsEntry{}
 
 // ProductAssetsEntry struct for ProductAssetsEntry
 type ProductAssetsEntry struct {
-	Id                   *string                      `json:"id,omitempty"`
-	AssetGrn             *string                      `json:"assetGrn,omitempty"`
-	LocalizedAssetGrn    *ProductLocalizedAsset       `json:"localizedAssetGrn,omitempty"`
-	Locales              []string                     `json:"locales,omitempty"`
-	Position             *int64                       `json:"position,omitempty"`
-	Metadata             []ProductAssetsEntryMetadata `json:"metadata,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                *string                      `json:"id,omitempty"`
+	AssetGrn          *string                      `json:"assetGrn,omitempty"`
+	LocalizedAssetGrn *ProductLocalizedAsset       `json:"localizedAssetGrn,omitempty"`
+	Locales           []string                     `json:"locales,omitempty"`
+	Position          *int64                       `json:"position,omitempty"`
+	Metadata          []ProductAssetsEntryMetadata `json:"metadata,omitempty"`
 }
-
-type _ProductAssetsEntry ProductAssetsEntry
 
 // NewProductAssetsEntry instantiates a new ProductAssetsEntry object
 // This constructor will assign default values to properties that have it defined,
@@ -268,58 +265,7 @@ func (o ProductAssetsEntry) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductAssetsEntry) UnmarshalJSON(data []byte) (err error) {
-	varProductAssetsEntry := _ProductAssetsEntry{}
-
-	err = json.Unmarshal(data, &varProductAssetsEntry)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductAssetsEntry(varProductAssetsEntry)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "assetGrn")
-		delete(additionalProperties, "localizedAssetGrn")
-		delete(additionalProperties, "locales")
-		delete(additionalProperties, "position")
-		delete(additionalProperties, "metadata")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductAssetsEntry) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductAssetsEntry) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductAssetsEntry struct {

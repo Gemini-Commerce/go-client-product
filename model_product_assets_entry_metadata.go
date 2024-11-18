@@ -20,12 +20,9 @@ var _ MappedNullable = &ProductAssetsEntryMetadata{}
 
 // ProductAssetsEntryMetadata struct for ProductAssetsEntryMetadata
 type ProductAssetsEntryMetadata struct {
-	Roles                []string              `json:"roles,omitempty"`
-	Alt                  *ProductLocalizedText `json:"alt,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Roles []string              `json:"roles,omitempty"`
+	Alt   *ProductLocalizedText `json:"alt,omitempty"`
 }
-
-type _ProductAssetsEntryMetadata ProductAssetsEntryMetadata
 
 // NewProductAssetsEntryMetadata instantiates a new ProductAssetsEntryMetadata object
 // This constructor will assign default values to properties that have it defined,
@@ -124,54 +121,7 @@ func (o ProductAssetsEntryMetadata) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Alt) {
 		toSerialize["alt"] = o.Alt
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductAssetsEntryMetadata) UnmarshalJSON(data []byte) (err error) {
-	varProductAssetsEntryMetadata := _ProductAssetsEntryMetadata{}
-
-	err = json.Unmarshal(data, &varProductAssetsEntryMetadata)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductAssetsEntryMetadata(varProductAssetsEntryMetadata)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "roles")
-		delete(additionalProperties, "alt")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductAssetsEntryMetadata) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductAssetsEntryMetadata) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductAssetsEntryMetadata struct {

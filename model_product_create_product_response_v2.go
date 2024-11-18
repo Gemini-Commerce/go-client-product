@@ -20,11 +20,8 @@ var _ MappedNullable = &ProductCreateProductResponseV2{}
 
 // ProductCreateProductResponseV2 struct for ProductCreateProductResponseV2
 type ProductCreateProductResponseV2 struct {
-	Id                   *string `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id *string `json:"id,omitempty"`
 }
-
-type _ProductCreateProductResponseV2 ProductCreateProductResponseV2
 
 // NewProductCreateProductResponseV2 instantiates a new ProductCreateProductResponseV2 object
 // This constructor will assign default values to properties that have it defined,
@@ -88,53 +85,7 @@ func (o ProductCreateProductResponseV2) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductCreateProductResponseV2) UnmarshalJSON(data []byte) (err error) {
-	varProductCreateProductResponseV2 := _ProductCreateProductResponseV2{}
-
-	err = json.Unmarshal(data, &varProductCreateProductResponseV2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductCreateProductResponseV2(varProductCreateProductResponseV2)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductCreateProductResponseV2) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductCreateProductResponseV2) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductCreateProductResponseV2 struct {

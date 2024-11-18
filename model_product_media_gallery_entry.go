@@ -20,14 +20,11 @@ var _ MappedNullable = &ProductMediaGalleryEntry{}
 
 // ProductMediaGalleryEntry struct for ProductMediaGalleryEntry
 type ProductMediaGalleryEntry struct {
-	Id                   *string                            `json:"id,omitempty"`
-	AssetGrn             *string                            `json:"assetGrn,omitempty"`
-	Position             *int64                             `json:"position,omitempty"`
-	Metadata             []ProductMediaGalleryEntryMetadata `json:"metadata,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id       *string                            `json:"id,omitempty"`
+	AssetGrn *string                            `json:"assetGrn,omitempty"`
+	Position *int64                             `json:"position,omitempty"`
+	Metadata []ProductMediaGalleryEntryMetadata `json:"metadata,omitempty"`
 }
-
-type _ProductMediaGalleryEntry ProductMediaGalleryEntry
 
 // NewProductMediaGalleryEntry instantiates a new ProductMediaGalleryEntry object
 // This constructor will assign default values to properties that have it defined,
@@ -196,56 +193,7 @@ func (o ProductMediaGalleryEntry) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductMediaGalleryEntry) UnmarshalJSON(data []byte) (err error) {
-	varProductMediaGalleryEntry := _ProductMediaGalleryEntry{}
-
-	err = json.Unmarshal(data, &varProductMediaGalleryEntry)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductMediaGalleryEntry(varProductMediaGalleryEntry)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "assetGrn")
-		delete(additionalProperties, "position")
-		delete(additionalProperties, "metadata")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductMediaGalleryEntry) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductMediaGalleryEntry) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductMediaGalleryEntry struct {

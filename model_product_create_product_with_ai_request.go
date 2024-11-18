@@ -20,18 +20,15 @@ var _ MappedNullable = &ProductCreateProductWithAIRequest{}
 
 // ProductCreateProductWithAIRequest struct for ProductCreateProductWithAIRequest
 type ProductCreateProductWithAIRequest struct {
-	TenantId             *string                        `json:"tenantId,omitempty"`
-	Product              *ProductCreateProductRequestV2 `json:"product,omitempty"`
-	Locale               *string                        `json:"locale,omitempty"`
-	ProductBrand         *string                        `json:"productBrand,omitempty"`
-	ProductCode          *string                        `json:"productCode,omitempty"`
-	ProductName          *string                        `json:"productName,omitempty"`
-	SkipReview           *bool                          `json:"skipReview,omitempty"`
-	AttributesToEnrich   []ProductAttributeToEnrich     `json:"attributesToEnrich,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId           *string                        `json:"tenantId,omitempty"`
+	Product            *ProductCreateProductRequestV2 `json:"product,omitempty"`
+	Locale             *string                        `json:"locale,omitempty"`
+	ProductBrand       *string                        `json:"productBrand,omitempty"`
+	ProductCode        *string                        `json:"productCode,omitempty"`
+	ProductName        *string                        `json:"productName,omitempty"`
+	SkipReview         *bool                          `json:"skipReview,omitempty"`
+	AttributesToEnrich []ProductAttributeToEnrich     `json:"attributesToEnrich,omitempty"`
 }
-
-type _ProductCreateProductWithAIRequest ProductCreateProductWithAIRequest
 
 // NewProductCreateProductWithAIRequest instantiates a new ProductCreateProductWithAIRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -340,60 +337,7 @@ func (o ProductCreateProductWithAIRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.AttributesToEnrich) {
 		toSerialize["attributesToEnrich"] = o.AttributesToEnrich
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductCreateProductWithAIRequest) UnmarshalJSON(data []byte) (err error) {
-	varProductCreateProductWithAIRequest := _ProductCreateProductWithAIRequest{}
-
-	err = json.Unmarshal(data, &varProductCreateProductWithAIRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductCreateProductWithAIRequest(varProductCreateProductWithAIRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "product")
-		delete(additionalProperties, "locale")
-		delete(additionalProperties, "productBrand")
-		delete(additionalProperties, "productCode")
-		delete(additionalProperties, "productName")
-		delete(additionalProperties, "skipReview")
-		delete(additionalProperties, "attributesToEnrich")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductCreateProductWithAIRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductCreateProductWithAIRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductCreateProductWithAIRequest struct {

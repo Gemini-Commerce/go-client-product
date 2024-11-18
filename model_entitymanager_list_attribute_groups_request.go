@@ -20,11 +20,8 @@ var _ MappedNullable = &EntitymanagerListAttributeGroupsRequest{}
 
 // EntitymanagerListAttributeGroupsRequest struct for EntitymanagerListAttributeGroupsRequest
 type EntitymanagerListAttributeGroupsRequest struct {
-	TenantId             *string `json:"tenantId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId *string `json:"tenantId,omitempty"`
 }
-
-type _EntitymanagerListAttributeGroupsRequest EntitymanagerListAttributeGroupsRequest
 
 // NewEntitymanagerListAttributeGroupsRequest instantiates a new EntitymanagerListAttributeGroupsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -88,53 +85,7 @@ func (o EntitymanagerListAttributeGroupsRequest) ToMap() (map[string]interface{}
 	if !IsNil(o.TenantId) {
 		toSerialize["tenantId"] = o.TenantId
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerListAttributeGroupsRequest) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerListAttributeGroupsRequest := _EntitymanagerListAttributeGroupsRequest{}
-
-	err = json.Unmarshal(data, &varEntitymanagerListAttributeGroupsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerListAttributeGroupsRequest(varEntitymanagerListAttributeGroupsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerListAttributeGroupsRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerListAttributeGroupsRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerListAttributeGroupsRequest struct {

@@ -27,11 +27,8 @@ type ProductCreateProductResponse struct {
 	// Contains a list of ProductResponseError messages, indicating any errors related to the product creation.
 	ProductErrors []ProductProductResponseError `json:"productErrors,omitempty"`
 	// Contains a list of AttributeResponseError messages, indicating any errors related to the attributes of the product.
-	AttributeErrors      []ProductAttributeResponseError `json:"attributeErrors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AttributeErrors []ProductAttributeResponseError `json:"attributeErrors,omitempty"`
 }
-
-type _ProductCreateProductResponse ProductCreateProductResponse
 
 // NewProductCreateProductResponse instantiates a new ProductCreateProductResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -200,56 +197,7 @@ func (o ProductCreateProductResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AttributeErrors) {
 		toSerialize["attributeErrors"] = o.AttributeErrors
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductCreateProductResponse) UnmarshalJSON(data []byte) (err error) {
-	varProductCreateProductResponse := _ProductCreateProductResponse{}
-
-	err = json.Unmarshal(data, &varProductCreateProductResponse)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductCreateProductResponse(varProductCreateProductResponse)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "productErrors")
-		delete(additionalProperties, "attributeErrors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductCreateProductResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductCreateProductResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductCreateProductResponse struct {

@@ -20,13 +20,10 @@ var _ MappedNullable = &ProductBulkUpdateRequestV2{}
 
 // ProductBulkUpdateRequestV2 struct for ProductBulkUpdateRequestV2
 type ProductBulkUpdateRequestV2 struct {
-	TenantId             *string                            `json:"tenantId,omitempty"`
-	ProductIds           []string                           `json:"productIds,omitempty"`
-	Payload              *ProductBulkUpdateRequestV2Payload `json:"payload,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId   *string                            `json:"tenantId,omitempty"`
+	ProductIds []string                           `json:"productIds,omitempty"`
+	Payload    *ProductBulkUpdateRequestV2Payload `json:"payload,omitempty"`
 }
-
-type _ProductBulkUpdateRequestV2 ProductBulkUpdateRequestV2
 
 // NewProductBulkUpdateRequestV2 instantiates a new ProductBulkUpdateRequestV2 object
 // This constructor will assign default values to properties that have it defined,
@@ -160,55 +157,7 @@ func (o ProductBulkUpdateRequestV2) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Payload) {
 		toSerialize["payload"] = o.Payload
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductBulkUpdateRequestV2) UnmarshalJSON(data []byte) (err error) {
-	varProductBulkUpdateRequestV2 := _ProductBulkUpdateRequestV2{}
-
-	err = json.Unmarshal(data, &varProductBulkUpdateRequestV2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductBulkUpdateRequestV2(varProductBulkUpdateRequestV2)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "productIds")
-		delete(additionalProperties, "payload")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductBulkUpdateRequestV2) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductBulkUpdateRequestV2) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductBulkUpdateRequestV2 struct {

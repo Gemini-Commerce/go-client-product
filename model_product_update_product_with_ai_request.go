@@ -20,15 +20,12 @@ var _ MappedNullable = &ProductUpdateProductWithAIRequest{}
 
 // ProductUpdateProductWithAIRequest struct for ProductUpdateProductWithAIRequest
 type ProductUpdateProductWithAIRequest struct {
-	TenantId             *string                    `json:"tenantId,omitempty"`
-	Id                   *string                    `json:"id,omitempty"`
-	Locale               *string                    `json:"locale,omitempty"`
-	SkipReview           *bool                      `json:"skipReview,omitempty"`
-	AttributesToEnrich   []ProductAttributeToEnrich `json:"attributesToEnrich,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId           *string                    `json:"tenantId,omitempty"`
+	Id                 *string                    `json:"id,omitempty"`
+	Locale             *string                    `json:"locale,omitempty"`
+	SkipReview         *bool                      `json:"skipReview,omitempty"`
+	AttributesToEnrich []ProductAttributeToEnrich `json:"attributesToEnrich,omitempty"`
 }
-
-type _ProductUpdateProductWithAIRequest ProductUpdateProductWithAIRequest
 
 // NewProductUpdateProductWithAIRequest instantiates a new ProductUpdateProductWithAIRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -232,57 +229,7 @@ func (o ProductUpdateProductWithAIRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.AttributesToEnrich) {
 		toSerialize["attributesToEnrich"] = o.AttributesToEnrich
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductUpdateProductWithAIRequest) UnmarshalJSON(data []byte) (err error) {
-	varProductUpdateProductWithAIRequest := _ProductUpdateProductWithAIRequest{}
-
-	err = json.Unmarshal(data, &varProductUpdateProductWithAIRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductUpdateProductWithAIRequest(varProductUpdateProductWithAIRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "locale")
-		delete(additionalProperties, "skipReview")
-		delete(additionalProperties, "attributesToEnrich")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductUpdateProductWithAIRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductUpdateProductWithAIRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductUpdateProductWithAIRequest struct {

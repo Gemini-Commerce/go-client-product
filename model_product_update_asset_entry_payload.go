@@ -20,14 +20,11 @@ var _ MappedNullable = &ProductUpdateAssetEntryPayload{}
 
 // ProductUpdateAssetEntryPayload struct for ProductUpdateAssetEntryPayload
 type ProductUpdateAssetEntryPayload struct {
-	AssetGrn             *string                      `json:"assetGrn,omitempty"`
-	LocalizedAssetGrn    *ProductLocalizedAsset       `json:"localizedAssetGrn,omitempty"`
-	Position             *int64                       `json:"position,omitempty"`
-	Metadata             []ProductAssetsEntryMetadata `json:"metadata,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AssetGrn          *string                      `json:"assetGrn,omitempty"`
+	LocalizedAssetGrn *ProductLocalizedAsset       `json:"localizedAssetGrn,omitempty"`
+	Position          *int64                       `json:"position,omitempty"`
+	Metadata          []ProductAssetsEntryMetadata `json:"metadata,omitempty"`
 }
-
-type _ProductUpdateAssetEntryPayload ProductUpdateAssetEntryPayload
 
 // NewProductUpdateAssetEntryPayload instantiates a new ProductUpdateAssetEntryPayload object
 // This constructor will assign default values to properties that have it defined,
@@ -196,56 +193,7 @@ func (o ProductUpdateAssetEntryPayload) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductUpdateAssetEntryPayload) UnmarshalJSON(data []byte) (err error) {
-	varProductUpdateAssetEntryPayload := _ProductUpdateAssetEntryPayload{}
-
-	err = json.Unmarshal(data, &varProductUpdateAssetEntryPayload)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductUpdateAssetEntryPayload(varProductUpdateAssetEntryPayload)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "assetGrn")
-		delete(additionalProperties, "localizedAssetGrn")
-		delete(additionalProperties, "position")
-		delete(additionalProperties, "metadata")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductUpdateAssetEntryPayload) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductUpdateAssetEntryPayload) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductUpdateAssetEntryPayload struct {

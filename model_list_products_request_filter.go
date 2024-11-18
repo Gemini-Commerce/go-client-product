@@ -21,15 +21,12 @@ var _ MappedNullable = &ListProductsRequestFilter{}
 
 // ListProductsRequestFilter struct for ListProductsRequestFilter
 type ListProductsRequestFilter struct {
-	CreatedAtStart       *time.Time `json:"createdAtStart,omitempty"`
-	CreatedAtEnd         *time.Time `json:"createdAtEnd,omitempty"`
-	UpdatedAtStart       *time.Time `json:"updatedAtStart,omitempty"`
-	UpdatedAtEnd         *time.Time `json:"updatedAtEnd,omitempty"`
-	Status               *bool      `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CreatedAtStart *time.Time `json:"createdAtStart,omitempty"`
+	CreatedAtEnd   *time.Time `json:"createdAtEnd,omitempty"`
+	UpdatedAtStart *time.Time `json:"updatedAtStart,omitempty"`
+	UpdatedAtEnd   *time.Time `json:"updatedAtEnd,omitempty"`
+	Status         *bool      `json:"status,omitempty"`
 }
-
-type _ListProductsRequestFilter ListProductsRequestFilter
 
 // NewListProductsRequestFilter instantiates a new ListProductsRequestFilter object
 // This constructor will assign default values to properties that have it defined,
@@ -233,57 +230,7 @@ func (o ListProductsRequestFilter) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ListProductsRequestFilter) UnmarshalJSON(data []byte) (err error) {
-	varListProductsRequestFilter := _ListProductsRequestFilter{}
-
-	err = json.Unmarshal(data, &varListProductsRequestFilter)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListProductsRequestFilter(varListProductsRequestFilter)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "createdAtStart")
-		delete(additionalProperties, "createdAtEnd")
-		delete(additionalProperties, "updatedAtStart")
-		delete(additionalProperties, "updatedAtEnd")
-		delete(additionalProperties, "status")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ListProductsRequestFilter) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ListProductsRequestFilter) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableListProductsRequestFilter struct {

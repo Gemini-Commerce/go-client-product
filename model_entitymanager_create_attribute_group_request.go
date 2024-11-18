@@ -20,15 +20,12 @@ var _ MappedNullable = &EntitymanagerCreateAttributeGroupRequest{}
 
 // EntitymanagerCreateAttributeGroupRequest struct for EntitymanagerCreateAttributeGroupRequest
 type EntitymanagerCreateAttributeGroupRequest struct {
-	TenantId             *string                            `json:"tenantId,omitempty"`
-	Code                 *string                            `json:"code,omitempty"`
-	Label                *ProductentitymanagerLocalizedText `json:"label,omitempty"`
-	Sort                 *int32                             `json:"sort,omitempty"`
-	Visibility           []string                           `json:"visibility,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId   *string                            `json:"tenantId,omitempty"`
+	Code       *string                            `json:"code,omitempty"`
+	Label      *ProductentitymanagerLocalizedText `json:"label,omitempty"`
+	Sort       *int32                             `json:"sort,omitempty"`
+	Visibility []string                           `json:"visibility,omitempty"`
 }
-
-type _EntitymanagerCreateAttributeGroupRequest EntitymanagerCreateAttributeGroupRequest
 
 // NewEntitymanagerCreateAttributeGroupRequest instantiates a new EntitymanagerCreateAttributeGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -232,57 +229,7 @@ func (o EntitymanagerCreateAttributeGroupRequest) ToMap() (map[string]interface{
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerCreateAttributeGroupRequest) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerCreateAttributeGroupRequest := _EntitymanagerCreateAttributeGroupRequest{}
-
-	err = json.Unmarshal(data, &varEntitymanagerCreateAttributeGroupRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerCreateAttributeGroupRequest(varEntitymanagerCreateAttributeGroupRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "sort")
-		delete(additionalProperties, "visibility")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerCreateAttributeGroupRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerCreateAttributeGroupRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerCreateAttributeGroupRequest struct {

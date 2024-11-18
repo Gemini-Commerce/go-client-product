@@ -20,12 +20,9 @@ var _ MappedNullable = &EntitymanagerAttributeOptionSwatch{}
 
 // EntitymanagerAttributeOptionSwatch struct for EntitymanagerAttributeOptionSwatch
 type EntitymanagerAttributeOptionSwatch struct {
-	Grn                  *string `json:"grn,omitempty"`
-	Hex                  *string `json:"hex,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Grn *string `json:"grn,omitempty"`
+	Hex *string `json:"hex,omitempty"`
 }
-
-type _EntitymanagerAttributeOptionSwatch EntitymanagerAttributeOptionSwatch
 
 // NewEntitymanagerAttributeOptionSwatch instantiates a new EntitymanagerAttributeOptionSwatch object
 // This constructor will assign default values to properties that have it defined,
@@ -124,54 +121,7 @@ func (o EntitymanagerAttributeOptionSwatch) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Hex) {
 		toSerialize["hex"] = o.Hex
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerAttributeOptionSwatch) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerAttributeOptionSwatch := _EntitymanagerAttributeOptionSwatch{}
-
-	err = json.Unmarshal(data, &varEntitymanagerAttributeOptionSwatch)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerAttributeOptionSwatch(varEntitymanagerAttributeOptionSwatch)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "grn")
-		delete(additionalProperties, "hex")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerAttributeOptionSwatch) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerAttributeOptionSwatch) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerAttributeOptionSwatch struct {

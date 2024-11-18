@@ -21,10 +21,7 @@ var _ MappedNullable = &EntitymanagerAttributeWriteErrors{}
 // EntitymanagerAttributeWriteErrors struct for EntitymanagerAttributeWriteErrors
 type EntitymanagerAttributeWriteErrors struct {
 	AttributeWriteErrors []EntitymanagerAttributeWriteError `json:"attributeWriteErrors,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _EntitymanagerAttributeWriteErrors EntitymanagerAttributeWriteErrors
 
 // NewEntitymanagerAttributeWriteErrors instantiates a new EntitymanagerAttributeWriteErrors object
 // This constructor will assign default values to properties that have it defined,
@@ -88,53 +85,7 @@ func (o EntitymanagerAttributeWriteErrors) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.AttributeWriteErrors) {
 		toSerialize["attributeWriteErrors"] = o.AttributeWriteErrors
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerAttributeWriteErrors) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerAttributeWriteErrors := _EntitymanagerAttributeWriteErrors{}
-
-	err = json.Unmarshal(data, &varEntitymanagerAttributeWriteErrors)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerAttributeWriteErrors(varEntitymanagerAttributeWriteErrors)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "attributeWriteErrors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerAttributeWriteErrors) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerAttributeWriteErrors) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerAttributeWriteErrors struct {

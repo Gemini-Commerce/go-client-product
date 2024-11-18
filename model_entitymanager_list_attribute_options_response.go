@@ -20,11 +20,8 @@ var _ MappedNullable = &EntitymanagerListAttributeOptionsResponse{}
 
 // EntitymanagerListAttributeOptionsResponse struct for EntitymanagerListAttributeOptionsResponse
 type EntitymanagerListAttributeOptionsResponse struct {
-	Options              []EntitymanagerAttributeOption `json:"options,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Options []EntitymanagerAttributeOption `json:"options,omitempty"`
 }
-
-type _EntitymanagerListAttributeOptionsResponse EntitymanagerListAttributeOptionsResponse
 
 // NewEntitymanagerListAttributeOptionsResponse instantiates a new EntitymanagerListAttributeOptionsResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -88,53 +85,7 @@ func (o EntitymanagerListAttributeOptionsResponse) ToMap() (map[string]interface
 	if !IsNil(o.Options) {
 		toSerialize["options"] = o.Options
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *EntitymanagerListAttributeOptionsResponse) UnmarshalJSON(data []byte) (err error) {
-	varEntitymanagerListAttributeOptionsResponse := _EntitymanagerListAttributeOptionsResponse{}
-
-	err = json.Unmarshal(data, &varEntitymanagerListAttributeOptionsResponse)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EntitymanagerListAttributeOptionsResponse(varEntitymanagerListAttributeOptionsResponse)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "options")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *EntitymanagerListAttributeOptionsResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerListAttributeOptionsResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableEntitymanagerListAttributeOptionsResponse struct {

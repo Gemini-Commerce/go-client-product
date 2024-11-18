@@ -20,11 +20,8 @@ var _ MappedNullable = &ProductBulkUpdateResponseV2{}
 
 // ProductBulkUpdateResponseV2 struct for ProductBulkUpdateResponseV2
 type ProductBulkUpdateResponseV2 struct {
-	ProductResponse      []ProductBulkUpdateResponseV2Response `json:"productResponse,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ProductResponse []ProductBulkUpdateResponseV2Response `json:"productResponse,omitempty"`
 }
-
-type _ProductBulkUpdateResponseV2 ProductBulkUpdateResponseV2
 
 // NewProductBulkUpdateResponseV2 instantiates a new ProductBulkUpdateResponseV2 object
 // This constructor will assign default values to properties that have it defined,
@@ -88,53 +85,7 @@ func (o ProductBulkUpdateResponseV2) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ProductResponse) {
 		toSerialize["productResponse"] = o.ProductResponse
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductBulkUpdateResponseV2) UnmarshalJSON(data []byte) (err error) {
-	varProductBulkUpdateResponseV2 := _ProductBulkUpdateResponseV2{}
-
-	err = json.Unmarshal(data, &varProductBulkUpdateResponseV2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductBulkUpdateResponseV2(varProductBulkUpdateResponseV2)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "productResponse")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductBulkUpdateResponseV2) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductBulkUpdateResponseV2) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductBulkUpdateResponseV2 struct {

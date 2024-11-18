@@ -20,11 +20,8 @@ var _ MappedNullable = &ProductListProductsByIdsResponse{}
 
 // ProductListProductsByIdsResponse struct for ProductListProductsByIdsResponse
 type ProductListProductsByIdsResponse struct {
-	Products             []ProductProductEntity `json:"products,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Products []ProductProductEntity `json:"products,omitempty"`
 }
-
-type _ProductListProductsByIdsResponse ProductListProductsByIdsResponse
 
 // NewProductListProductsByIdsResponse instantiates a new ProductListProductsByIdsResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -88,53 +85,7 @@ func (o ProductListProductsByIdsResponse) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Products) {
 		toSerialize["products"] = o.Products
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProductListProductsByIdsResponse) UnmarshalJSON(data []byte) (err error) {
-	varProductListProductsByIdsResponse := _ProductListProductsByIdsResponse{}
-
-	err = json.Unmarshal(data, &varProductListProductsByIdsResponse)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProductListProductsByIdsResponse(varProductListProductsByIdsResponse)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "products")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-// GetValue returns the value of well-known types
-func (o *ProductListProductsByIdsResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductListProductsByIdsResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
 }
 
 type NullableProductListProductsByIdsResponse struct {
