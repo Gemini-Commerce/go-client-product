@@ -117,26 +117,6 @@ func (o *EntitymanagerCreateOptionsListResponse) UnmarshalJSON(data []byte) (err
 	return err
 }
 
-// GetValue returns the value of well-known types
-func (o *EntitymanagerCreateOptionsListResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerCreateOptionsListResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
-}
-
 type NullableEntitymanagerCreateOptionsListResponse struct {
 	value *EntitymanagerCreateOptionsListResponse
 	isSet bool

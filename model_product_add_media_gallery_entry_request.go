@@ -265,26 +265,6 @@ func (o *ProductAddMediaGalleryEntryRequest) UnmarshalJSON(data []byte) (err err
 	return err
 }
 
-// GetValue returns the value of well-known types
-func (o *ProductAddMediaGalleryEntryRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductAddMediaGalleryEntryRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
-}
-
 type NullableProductAddMediaGalleryEntryRequest struct {
 	value *ProductAddMediaGalleryEntryRequest
 	isSet bool

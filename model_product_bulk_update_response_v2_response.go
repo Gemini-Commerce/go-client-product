@@ -154,26 +154,6 @@ func (o *ProductBulkUpdateResponseV2Response) UnmarshalJSON(data []byte) (err er
 	return err
 }
 
-// GetValue returns the value of well-known types
-func (o *ProductBulkUpdateResponseV2Response) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *ProductBulkUpdateResponseV2Response) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
-}
-
 type NullableProductBulkUpdateResponseV2Response struct {
 	value *ProductBulkUpdateResponseV2Response
 	isSet bool

@@ -154,26 +154,6 @@ func (o *EntitymanagerAttributeOptionErrors) UnmarshalJSON(data []byte) (err err
 	return err
 }
 
-// GetValue returns the value of well-known types
-func (o *EntitymanagerAttributeOptionErrors) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerAttributeOptionErrors) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
-}
-
 type NullableEntitymanagerAttributeOptionErrors struct {
 	value *EntitymanagerAttributeOptionErrors
 	isSet bool

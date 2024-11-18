@@ -191,26 +191,6 @@ func (o *EntitymanagerUpdateAttributeGroupRequestPayload) UnmarshalJSON(data []b
 	return err
 }
 
-// GetValue returns the value of well-known types
-func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetValue() interface{} {
-	if o == nil || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-
-// SetValue populate the value of well-known types
-func (o *EntitymanagerUpdateAttributeGroupRequestPayload) SetValue(value interface{}) {
-	if o == nil || IsNil(value) {
-		return
-	}
-	if IsNil(o.AdditionalProperties) {
-		o.AdditionalProperties = map[string]interface{}{}
-	}
-	o.AdditionalProperties["value"] = value
-	return
-}
-
 type NullableEntitymanagerUpdateAttributeGroupRequestPayload struct {
 	value *EntitymanagerUpdateAttributeGroupRequestPayload
 	isSet bool
