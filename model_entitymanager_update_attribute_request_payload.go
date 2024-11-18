@@ -20,13 +20,13 @@ var _ MappedNullable = &EntitymanagerUpdateAttributeRequestPayload{}
 
 // EntitymanagerUpdateAttributeRequestPayload struct for EntitymanagerUpdateAttributeRequestPayload
 type EntitymanagerUpdateAttributeRequestPayload struct {
-	Label *string `json:"label,omitempty"`
-	Default *string `json:"default,omitempty"`
-	Sort *int32 `json:"sort,omitempty"`
-	GroupCode *string `json:"groupCode,omitempty"`
-	Title *map[string]string `json:"title,omitempty"`
-	RenderAs *EntitymanagerRenderAs `json:"renderAs,omitempty"`
-	AiContext *EntitymanagerAiContext `json:"aiContext,omitempty"`
+	Label                *string                 `json:"label,omitempty"`
+	Default              *string                 `json:"default,omitempty"`
+	Sort                 *int32                  `json:"sort,omitempty"`
+	GroupCode            *string                 `json:"groupCode,omitempty"`
+	Title                *map[string]string      `json:"title,omitempty"`
+	RenderAs             *EntitymanagerRenderAs  `json:"renderAs,omitempty"`
+	AiContext            *EntitymanagerAiContext `json:"aiContext,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -278,7 +278,7 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) SetAiContext(v Entitymanage
 }
 
 func (o EntitymanagerUpdateAttributeRequestPayload) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -345,22 +345,24 @@ func (o *EntitymanagerUpdateAttributeRequestPayload) UnmarshalJSON(data []byte) 
 
 // GetValue returns the value of well-known types
 func (o *EntitymanagerUpdateAttributeRequestPayload) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *EntitymanagerUpdateAttributeRequestPayload) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableEntitymanagerUpdateAttributeRequestPayload struct {
 	value *EntitymanagerUpdateAttributeRequestPayload
 	isSet bool
@@ -396,5 +398,3 @@ func (v *NullableEntitymanagerUpdateAttributeRequestPayload) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

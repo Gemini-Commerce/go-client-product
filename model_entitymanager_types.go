@@ -21,13 +21,13 @@ type EntitymanagerTypes string
 
 // List of entitymanagerTypes
 const (
-	ENTITYMANAGERTYPES_TEXT EntitymanagerTypes = "TEXT"
-	ENTITYMANAGERTYPES_NUMBER EntitymanagerTypes = "NUMBER"
-	ENTITYMANAGERTYPES_BOOLEAN EntitymanagerTypes = "BOOLEAN"
+	ENTITYMANAGERTYPES_TEXT     EntitymanagerTypes = "TEXT"
+	ENTITYMANAGERTYPES_NUMBER   EntitymanagerTypes = "NUMBER"
+	ENTITYMANAGERTYPES_BOOLEAN  EntitymanagerTypes = "BOOLEAN"
 	ENTITYMANAGERTYPES_DATETIME EntitymanagerTypes = "DATETIME"
 	ENTITYMANAGERTYPES_EXTERNAL EntitymanagerTypes = "EXTERNAL"
-	ENTITYMANAGERTYPES_EMBED EntitymanagerTypes = "EMBED"
-	ENTITYMANAGERTYPES_FLOAT32 EntitymanagerTypes = "FLOAT32"
+	ENTITYMANAGERTYPES_EMBED    EntitymanagerTypes = "EMBED"
+	ENTITYMANAGERTYPES_FLOAT32  EntitymanagerTypes = "FLOAT32"
 )
 
 // All allowed values of EntitymanagerTypes enum
@@ -119,4 +119,3 @@ func (v *NullableEntitymanagerTypes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

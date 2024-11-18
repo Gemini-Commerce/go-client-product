@@ -20,8 +20,8 @@ var _ MappedNullable = &ProductMediaGalleryEntryMetadata{}
 
 // ProductMediaGalleryEntryMetadata struct for ProductMediaGalleryEntryMetadata
 type ProductMediaGalleryEntryMetadata struct {
-	Roles []string `json:"roles,omitempty"`
-	Alt *ProductLocalizedText `json:"alt,omitempty"`
+	Roles                []string              `json:"roles,omitempty"`
+	Alt                  *ProductLocalizedText `json:"alt,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -109,7 +109,7 @@ func (o *ProductMediaGalleryEntryMetadata) SetAlt(v ProductLocalizedText) {
 }
 
 func (o ProductMediaGalleryEntryMetadata) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -156,22 +156,24 @@ func (o *ProductMediaGalleryEntryMetadata) UnmarshalJSON(data []byte) (err error
 
 // GetValue returns the value of well-known types
 func (o *ProductMediaGalleryEntryMetadata) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductMediaGalleryEntryMetadata) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductMediaGalleryEntryMetadata struct {
 	value *ProductMediaGalleryEntryMetadata
 	isSet bool
@@ -207,5 +209,3 @@ func (v *NullableProductMediaGalleryEntryMetadata) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

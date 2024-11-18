@@ -20,14 +20,14 @@ var _ MappedNullable = &ProductCreateProductWithAIRequest{}
 
 // ProductCreateProductWithAIRequest struct for ProductCreateProductWithAIRequest
 type ProductCreateProductWithAIRequest struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	Product *ProductCreateProductRequestV2 `json:"product,omitempty"`
-	Locale *string `json:"locale,omitempty"`
-	ProductBrand *string `json:"productBrand,omitempty"`
-	ProductCode *string `json:"productCode,omitempty"`
-	ProductName *string `json:"productName,omitempty"`
-	SkipReview *bool `json:"skipReview,omitempty"`
-	AttributesToEnrich []ProductAttributeToEnrich `json:"attributesToEnrich,omitempty"`
+	TenantId             *string                        `json:"tenantId,omitempty"`
+	Product              *ProductCreateProductRequestV2 `json:"product,omitempty"`
+	Locale               *string                        `json:"locale,omitempty"`
+	ProductBrand         *string                        `json:"productBrand,omitempty"`
+	ProductCode          *string                        `json:"productCode,omitempty"`
+	ProductName          *string                        `json:"productName,omitempty"`
+	SkipReview           *bool                          `json:"skipReview,omitempty"`
+	AttributesToEnrich   []ProductAttributeToEnrich     `json:"attributesToEnrich,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -307,7 +307,7 @@ func (o *ProductCreateProductWithAIRequest) SetAttributesToEnrich(v []ProductAtt
 }
 
 func (o ProductCreateProductWithAIRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -378,22 +378,24 @@ func (o *ProductCreateProductWithAIRequest) UnmarshalJSON(data []byte) (err erro
 
 // GetValue returns the value of well-known types
 func (o *ProductCreateProductWithAIRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductCreateProductWithAIRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductCreateProductWithAIRequest struct {
 	value *ProductCreateProductWithAIRequest
 	isSet bool
@@ -429,5 +431,3 @@ func (v *NullableProductCreateProductWithAIRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

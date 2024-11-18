@@ -22,7 +22,7 @@ type ProductAttributeInReviewSource string
 // List of productAttributeInReviewSource
 const (
 	PRODUCTATTRIBUTEINREVIEWSOURCE_UNKNOWN ProductAttributeInReviewSource = "ATTRIBUTE_IN_REVIEW_SOURCE_UNKNOWN"
-	PRODUCTATTRIBUTEINREVIEWSOURCE_AI ProductAttributeInReviewSource = "ATTRIBUTE_IN_REVIEW_SOURCE_AI"
+	PRODUCTATTRIBUTEINREVIEWSOURCE_AI      ProductAttributeInReviewSource = "ATTRIBUTE_IN_REVIEW_SOURCE_AI"
 )
 
 // All allowed values of ProductAttributeInReviewSource enum
@@ -109,4 +109,3 @@ func (v *NullableProductAttributeInReviewSource) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

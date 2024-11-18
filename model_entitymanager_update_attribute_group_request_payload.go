@@ -20,9 +20,9 @@ var _ MappedNullable = &EntitymanagerUpdateAttributeGroupRequestPayload{}
 
 // EntitymanagerUpdateAttributeGroupRequestPayload struct for EntitymanagerUpdateAttributeGroupRequestPayload
 type EntitymanagerUpdateAttributeGroupRequestPayload struct {
-	Label *ProductentitymanagerLocalizedText `json:"label,omitempty"`
-	Sort *int32 `json:"sort,omitempty"`
-	Visibility []string `json:"visibility,omitempty"`
+	Label                *ProductentitymanagerLocalizedText `json:"label,omitempty"`
+	Sort                 *int32                             `json:"sort,omitempty"`
+	Visibility           []string                           `json:"visibility,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -142,7 +142,7 @@ func (o *EntitymanagerUpdateAttributeGroupRequestPayload) SetVisibility(v []stri
 }
 
 func (o EntitymanagerUpdateAttributeGroupRequestPayload) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,22 +193,24 @@ func (o *EntitymanagerUpdateAttributeGroupRequestPayload) UnmarshalJSON(data []b
 
 // GetValue returns the value of well-known types
 func (o *EntitymanagerUpdateAttributeGroupRequestPayload) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *EntitymanagerUpdateAttributeGroupRequestPayload) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableEntitymanagerUpdateAttributeGroupRequestPayload struct {
 	value *EntitymanagerUpdateAttributeGroupRequestPayload
 	isSet bool
@@ -244,5 +246,3 @@ func (v *NullableEntitymanagerUpdateAttributeGroupRequestPayload) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

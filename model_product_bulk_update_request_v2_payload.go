@@ -20,8 +20,8 @@ var _ MappedNullable = &ProductBulkUpdateRequestV2Payload{}
 
 // ProductBulkUpdateRequestV2Payload struct for ProductBulkUpdateRequestV2Payload
 type ProductBulkUpdateRequestV2Payload struct {
-	UpdateMask *ProductFieldMask `json:"updateMask,omitempty"`
-	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
+	UpdateMask           *ProductFieldMask       `json:"updateMask,omitempty"`
+	Attributes           *map[string]ProtobufAny `json:"attributes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -109,7 +109,7 @@ func (o *ProductBulkUpdateRequestV2Payload) SetAttributes(v map[string]ProtobufA
 }
 
 func (o ProductBulkUpdateRequestV2Payload) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -156,22 +156,24 @@ func (o *ProductBulkUpdateRequestV2Payload) UnmarshalJSON(data []byte) (err erro
 
 // GetValue returns the value of well-known types
 func (o *ProductBulkUpdateRequestV2Payload) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductBulkUpdateRequestV2Payload) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductBulkUpdateRequestV2Payload struct {
 	value *ProductBulkUpdateRequestV2Payload
 	isSet bool
@@ -207,5 +209,3 @@ func (v *NullableProductBulkUpdateRequestV2Payload) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

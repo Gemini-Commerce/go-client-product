@@ -20,12 +20,12 @@ var _ MappedNullable = &ProductAssetsEntry{}
 
 // ProductAssetsEntry struct for ProductAssetsEntry
 type ProductAssetsEntry struct {
-	Id *string `json:"id,omitempty"`
-	AssetGrn *string `json:"assetGrn,omitempty"`
-	LocalizedAssetGrn *ProductLocalizedAsset `json:"localizedAssetGrn,omitempty"`
-	Locales []string `json:"locales,omitempty"`
-	Position *int64 `json:"position,omitempty"`
-	Metadata []ProductAssetsEntryMetadata `json:"metadata,omitempty"`
+	Id                   *string                      `json:"id,omitempty"`
+	AssetGrn             *string                      `json:"assetGrn,omitempty"`
+	LocalizedAssetGrn    *ProductLocalizedAsset       `json:"localizedAssetGrn,omitempty"`
+	Locales              []string                     `json:"locales,omitempty"`
+	Position             *int64                       `json:"position,omitempty"`
+	Metadata             []ProductAssetsEntryMetadata `json:"metadata,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -241,7 +241,7 @@ func (o *ProductAssetsEntry) SetMetadata(v []ProductAssetsEntryMetadata) {
 }
 
 func (o ProductAssetsEntry) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -304,22 +304,24 @@ func (o *ProductAssetsEntry) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *ProductAssetsEntry) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductAssetsEntry) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductAssetsEntry struct {
 	value *ProductAssetsEntry
 	isSet bool
@@ -355,5 +357,3 @@ func (v *NullableProductAssetsEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

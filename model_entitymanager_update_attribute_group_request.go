@@ -20,10 +20,10 @@ var _ MappedNullable = &EntitymanagerUpdateAttributeGroupRequest{}
 
 // EntitymanagerUpdateAttributeGroupRequest struct for EntitymanagerUpdateAttributeGroupRequest
 type EntitymanagerUpdateAttributeGroupRequest struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Payload *EntitymanagerUpdateAttributeGroupRequestPayload `json:"payload,omitempty"`
-	FieldMask *string `json:"fieldMask,omitempty"`
+	TenantId             *string                                          `json:"tenantId,omitempty"`
+	Code                 *string                                          `json:"code,omitempty"`
+	Payload              *EntitymanagerUpdateAttributeGroupRequestPayload `json:"payload,omitempty"`
+	FieldMask            *string                                          `json:"fieldMask,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -175,7 +175,7 @@ func (o *EntitymanagerUpdateAttributeGroupRequest) SetFieldMask(v string) {
 }
 
 func (o EntitymanagerUpdateAttributeGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,22 +230,24 @@ func (o *EntitymanagerUpdateAttributeGroupRequest) UnmarshalJSON(data []byte) (e
 
 // GetValue returns the value of well-known types
 func (o *EntitymanagerUpdateAttributeGroupRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *EntitymanagerUpdateAttributeGroupRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableEntitymanagerUpdateAttributeGroupRequest struct {
 	value *EntitymanagerUpdateAttributeGroupRequest
 	isSet bool
@@ -281,5 +283,3 @@ func (v *NullableEntitymanagerUpdateAttributeGroupRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

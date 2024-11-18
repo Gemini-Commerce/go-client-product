@@ -20,9 +20,9 @@ var _ MappedNullable = &ProductGetProductByUrlKeyRequest{}
 
 // ProductGetProductByUrlKeyRequest struct for ProductGetProductByUrlKeyRequest
 type ProductGetProductByUrlKeyRequest struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	UrlKey *string `json:"urlKey,omitempty"`
-	Locale *string `json:"locale,omitempty"`
+	TenantId             *string `json:"tenantId,omitempty"`
+	UrlKey               *string `json:"urlKey,omitempty"`
+	Locale               *string `json:"locale,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -142,7 +142,7 @@ func (o *ProductGetProductByUrlKeyRequest) SetLocale(v string) {
 }
 
 func (o ProductGetProductByUrlKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,22 +193,24 @@ func (o *ProductGetProductByUrlKeyRequest) UnmarshalJSON(data []byte) (err error
 
 // GetValue returns the value of well-known types
 func (o *ProductGetProductByUrlKeyRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductGetProductByUrlKeyRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductGetProductByUrlKeyRequest struct {
 	value *ProductGetProductByUrlKeyRequest
 	isSet bool
@@ -244,5 +246,3 @@ func (v *NullableProductGetProductByUrlKeyRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

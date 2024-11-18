@@ -20,7 +20,7 @@ var _ MappedNullable = &EntitymanagerUpdateOptionsListResponse{}
 
 // EntitymanagerUpdateOptionsListResponse struct for EntitymanagerUpdateOptionsListResponse
 type EntitymanagerUpdateOptionsListResponse struct {
-	OptionList *EntitymanagerOptionsList `json:"optionList,omitempty"`
+	OptionList           *EntitymanagerOptionsList `json:"optionList,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *EntitymanagerUpdateOptionsListResponse) SetOptionList(v EntitymanagerOp
 }
 
 func (o EntitymanagerUpdateOptionsListResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -119,22 +119,24 @@ func (o *EntitymanagerUpdateOptionsListResponse) UnmarshalJSON(data []byte) (err
 
 // GetValue returns the value of well-known types
 func (o *EntitymanagerUpdateOptionsListResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *EntitymanagerUpdateOptionsListResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableEntitymanagerUpdateOptionsListResponse struct {
 	value *EntitymanagerUpdateOptionsListResponse
 	isSet bool
@@ -170,5 +172,3 @@ func (v *NullableEntitymanagerUpdateOptionsListResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

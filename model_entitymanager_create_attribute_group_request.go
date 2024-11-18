@@ -20,11 +20,11 @@ var _ MappedNullable = &EntitymanagerCreateAttributeGroupRequest{}
 
 // EntitymanagerCreateAttributeGroupRequest struct for EntitymanagerCreateAttributeGroupRequest
 type EntitymanagerCreateAttributeGroupRequest struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Label *ProductentitymanagerLocalizedText `json:"label,omitempty"`
-	Sort *int32 `json:"sort,omitempty"`
-	Visibility []string `json:"visibility,omitempty"`
+	TenantId             *string                            `json:"tenantId,omitempty"`
+	Code                 *string                            `json:"code,omitempty"`
+	Label                *ProductentitymanagerLocalizedText `json:"label,omitempty"`
+	Sort                 *int32                             `json:"sort,omitempty"`
+	Visibility           []string                           `json:"visibility,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -208,7 +208,7 @@ func (o *EntitymanagerCreateAttributeGroupRequest) SetVisibility(v []string) {
 }
 
 func (o EntitymanagerCreateAttributeGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,22 +267,24 @@ func (o *EntitymanagerCreateAttributeGroupRequest) UnmarshalJSON(data []byte) (e
 
 // GetValue returns the value of well-known types
 func (o *EntitymanagerCreateAttributeGroupRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *EntitymanagerCreateAttributeGroupRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableEntitymanagerCreateAttributeGroupRequest struct {
 	value *EntitymanagerCreateAttributeGroupRequest
 	isSet bool
@@ -318,5 +320,3 @@ func (v *NullableEntitymanagerCreateAttributeGroupRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

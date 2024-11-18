@@ -20,12 +20,12 @@ var _ MappedNullable = &ProductUpdateMediaGalleryEntryRequest{}
 
 // ProductUpdateMediaGalleryEntryRequest struct for ProductUpdateMediaGalleryEntryRequest
 type ProductUpdateMediaGalleryEntryRequest struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	ProductId *string `json:"productId,omitempty"`
-	Id *string `json:"id,omitempty"`
-	AssetGrn *string `json:"assetGrn,omitempty"`
-	Position *int64 `json:"position,omitempty"`
-	Metadata []ProductMediaGalleryEntryMetadata `json:"metadata,omitempty"`
+	TenantId             *string                            `json:"tenantId,omitempty"`
+	ProductId            *string                            `json:"productId,omitempty"`
+	Id                   *string                            `json:"id,omitempty"`
+	AssetGrn             *string                            `json:"assetGrn,omitempty"`
+	Position             *int64                             `json:"position,omitempty"`
+	Metadata             []ProductMediaGalleryEntryMetadata `json:"metadata,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -241,7 +241,7 @@ func (o *ProductUpdateMediaGalleryEntryRequest) SetMetadata(v []ProductMediaGall
 }
 
 func (o ProductUpdateMediaGalleryEntryRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -304,22 +304,24 @@ func (o *ProductUpdateMediaGalleryEntryRequest) UnmarshalJSON(data []byte) (err 
 
 // GetValue returns the value of well-known types
 func (o *ProductUpdateMediaGalleryEntryRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductUpdateMediaGalleryEntryRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductUpdateMediaGalleryEntryRequest struct {
 	value *ProductUpdateMediaGalleryEntryRequest
 	isSet bool
@@ -355,5 +357,3 @@ func (v *NullableProductUpdateMediaGalleryEntryRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

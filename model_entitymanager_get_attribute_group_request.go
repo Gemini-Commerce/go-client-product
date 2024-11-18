@@ -20,8 +20,8 @@ var _ MappedNullable = &EntitymanagerGetAttributeGroupRequest{}
 
 // EntitymanagerGetAttributeGroupRequest struct for EntitymanagerGetAttributeGroupRequest
 type EntitymanagerGetAttributeGroupRequest struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	Code *string `json:"code,omitempty"`
+	TenantId             *string `json:"tenantId,omitempty"`
+	Code                 *string `json:"code,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -109,7 +109,7 @@ func (o *EntitymanagerGetAttributeGroupRequest) SetCode(v string) {
 }
 
 func (o EntitymanagerGetAttributeGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -156,22 +156,24 @@ func (o *EntitymanagerGetAttributeGroupRequest) UnmarshalJSON(data []byte) (err 
 
 // GetValue returns the value of well-known types
 func (o *EntitymanagerGetAttributeGroupRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *EntitymanagerGetAttributeGroupRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableEntitymanagerGetAttributeGroupRequest struct {
 	value *EntitymanagerGetAttributeGroupRequest
 	isSet bool
@@ -207,5 +209,3 @@ func (v *NullableEntitymanagerGetAttributeGroupRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

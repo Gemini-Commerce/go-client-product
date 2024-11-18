@@ -20,9 +20,9 @@ var _ MappedNullable = &ProductAttributeToEnrich{}
 
 // ProductAttributeToEnrich struct for ProductAttributeToEnrich
 type ProductAttributeToEnrich struct {
-	Code *string `json:"code,omitempty"`
-	Type *ProductAttributeToEnrichType `json:"type,omitempty"`
-	CanCreateValue *bool `json:"canCreateValue,omitempty"`
+	Code                 *string                       `json:"code,omitempty"`
+	Type                 *ProductAttributeToEnrichType `json:"type,omitempty"`
+	CanCreateValue       *bool                         `json:"canCreateValue,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -146,7 +146,7 @@ func (o *ProductAttributeToEnrich) SetCanCreateValue(v bool) {
 }
 
 func (o ProductAttributeToEnrich) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -197,22 +197,24 @@ func (o *ProductAttributeToEnrich) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *ProductAttributeToEnrich) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductAttributeToEnrich) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductAttributeToEnrich struct {
 	value *ProductAttributeToEnrich
 	isSet bool
@@ -248,5 +250,3 @@ func (v *NullableProductAttributeToEnrich) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

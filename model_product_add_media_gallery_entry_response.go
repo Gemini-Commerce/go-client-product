@@ -20,7 +20,7 @@ var _ MappedNullable = &ProductAddMediaGalleryEntryResponse{}
 
 // ProductAddMediaGalleryEntryResponse struct for ProductAddMediaGalleryEntryResponse
 type ProductAddMediaGalleryEntryResponse struct {
-	MediaGalleryEntry *ProductMediaGalleryEntry `json:"mediaGalleryEntry,omitempty"`
+	MediaGalleryEntry    *ProductMediaGalleryEntry `json:"mediaGalleryEntry,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *ProductAddMediaGalleryEntryResponse) SetMediaGalleryEntry(v ProductMedi
 }
 
 func (o ProductAddMediaGalleryEntryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -119,22 +119,24 @@ func (o *ProductAddMediaGalleryEntryResponse) UnmarshalJSON(data []byte) (err er
 
 // GetValue returns the value of well-known types
 func (o *ProductAddMediaGalleryEntryResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductAddMediaGalleryEntryResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductAddMediaGalleryEntryResponse struct {
 	value *ProductAddMediaGalleryEntryResponse
 	isSet bool
@@ -170,5 +172,3 @@ func (v *NullableProductAddMediaGalleryEntryResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

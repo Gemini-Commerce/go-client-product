@@ -35,16 +35,16 @@ type ProductCreateProductRequest struct {
 	// Indicates whether the product is virtual or not.
 	IsVirtual *bool `json:"isVirtual,omitempty"`
 	// Specifies whether the product is a gift card or not.
-	IsGiftcard *bool `json:"isGiftcard,omitempty"`
-	HasConfigurator *bool `json:"hasConfigurator,omitempty"`
-	UrlKey *ProductLocalizedText `json:"urlKey,omitempty"`
+	IsGiftcard      *bool                 `json:"isGiftcard,omitempty"`
+	HasConfigurator *bool                 `json:"hasConfigurator,omitempty"`
+	UrlKey          *ProductLocalizedText `json:"urlKey,omitempty"`
 	// Specifies the maximum quantity that can be sold for the product in each order.
-	MaxSaleableQuantity *int64 `json:"maxSaleableQuantity,omitempty"`
+	MaxSaleableQuantity    *int64   `json:"maxSaleableQuantity,omitempty"`
 	MediaVariantAttributes []string `json:"mediaVariantAttributes,omitempty"`
 	// Contains a map of additional attributes associated with the product, where the key is the attribute name and the value is any type of value.
 	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
 	// Represents a map of product variants associated with the product, where the key is the variant ID or code, and the value is a ProductVariant message.
-	Variants *map[string]ProductProductVariant `json:"variants,omitempty"`
+	Variants             *map[string]ProductProductVariant `json:"variants,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -516,7 +516,7 @@ func (o *ProductCreateProductRequest) SetVariants(v map[string]ProductProductVar
 }
 
 func (o ProductCreateProductRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -611,22 +611,24 @@ func (o *ProductCreateProductRequest) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *ProductCreateProductRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductCreateProductRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductCreateProductRequest struct {
 	value *ProductCreateProductRequest
 	isSet bool
@@ -662,5 +664,3 @@ func (v *NullableProductCreateProductRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

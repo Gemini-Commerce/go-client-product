@@ -20,7 +20,7 @@ var _ MappedNullable = &ProductBulkUpdateResponse{}
 
 // ProductBulkUpdateResponse struct for ProductBulkUpdateResponse
 type ProductBulkUpdateResponse struct {
-	ProductResponse []ProductBulkUpdateResponseResponse `json:"productResponse,omitempty"`
+	ProductResponse      []ProductBulkUpdateResponseResponse `json:"productResponse,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *ProductBulkUpdateResponse) SetProductResponse(v []ProductBulkUpdateResp
 }
 
 func (o ProductBulkUpdateResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -119,22 +119,24 @@ func (o *ProductBulkUpdateResponse) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *ProductBulkUpdateResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductBulkUpdateResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductBulkUpdateResponse struct {
 	value *ProductBulkUpdateResponse
 	isSet bool
@@ -170,5 +172,3 @@ func (v *NullableProductBulkUpdateResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

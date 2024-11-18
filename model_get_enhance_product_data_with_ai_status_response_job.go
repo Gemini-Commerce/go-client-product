@@ -21,14 +21,14 @@ var _ MappedNullable = &GetEnhanceProductDataWithAIStatusResponseJob{}
 
 // GetEnhanceProductDataWithAIStatusResponseJob struct for GetEnhanceProductDataWithAIStatusResponseJob
 type GetEnhanceProductDataWithAIStatusResponseJob struct {
-	ParentId *string `json:"parentId,omitempty"`
-	JobType *ProductAttributeInReviewJobType `json:"jobType,omitempty"`
-	JobStatus *ProductAttributeInReviewJobStatus `json:"jobStatus,omitempty"`
-	Id *string `json:"id,omitempty"`
-	StartedAt *time.Time `json:"startedAt,omitempty"`
-	ExecutedAt *time.Time `json:"executedAt,omitempty"`
-	FinishedAt *time.Time `json:"finishedAt,omitempty"`
-	ProductId *string `json:"productId,omitempty"`
+	ParentId             *string                            `json:"parentId,omitempty"`
+	JobType              *ProductAttributeInReviewJobType   `json:"jobType,omitempty"`
+	JobStatus            *ProductAttributeInReviewJobStatus `json:"jobStatus,omitempty"`
+	Id                   *string                            `json:"id,omitempty"`
+	StartedAt            *time.Time                         `json:"startedAt,omitempty"`
+	ExecutedAt           *time.Time                         `json:"executedAt,omitempty"`
+	FinishedAt           *time.Time                         `json:"finishedAt,omitempty"`
+	ProductId            *string                            `json:"productId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -316,7 +316,7 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) SetProductId(v string) {
 }
 
 func (o GetEnhanceProductDataWithAIStatusResponseJob) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -387,22 +387,24 @@ func (o *GetEnhanceProductDataWithAIStatusResponseJob) UnmarshalJSON(data []byte
 
 // GetValue returns the value of well-known types
 func (o *GetEnhanceProductDataWithAIStatusResponseJob) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *GetEnhanceProductDataWithAIStatusResponseJob) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableGetEnhanceProductDataWithAIStatusResponseJob struct {
 	value *GetEnhanceProductDataWithAIStatusResponseJob
 	isSet bool
@@ -438,5 +440,3 @@ func (v *NullableGetEnhanceProductDataWithAIStatusResponseJob) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

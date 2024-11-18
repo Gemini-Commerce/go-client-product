@@ -20,8 +20,8 @@ var _ MappedNullable = &EntitymanagerCreateAttributeOptionsResponse{}
 
 // EntitymanagerCreateAttributeOptionsResponse struct for EntitymanagerCreateAttributeOptionsResponse
 type EntitymanagerCreateAttributeOptionsResponse struct {
-	Options []EntitymanagerAttributeOption `json:"options,omitempty"`
-	Errors []EntitymanagerAttributeOptionErrors `json:"errors,omitempty"`
+	Options              []EntitymanagerAttributeOption       `json:"options,omitempty"`
+	Errors               []EntitymanagerAttributeOptionErrors `json:"errors,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -109,7 +109,7 @@ func (o *EntitymanagerCreateAttributeOptionsResponse) SetErrors(v []Entitymanage
 }
 
 func (o EntitymanagerCreateAttributeOptionsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -156,22 +156,24 @@ func (o *EntitymanagerCreateAttributeOptionsResponse) UnmarshalJSON(data []byte)
 
 // GetValue returns the value of well-known types
 func (o *EntitymanagerCreateAttributeOptionsResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *EntitymanagerCreateAttributeOptionsResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableEntitymanagerCreateAttributeOptionsResponse struct {
 	value *EntitymanagerCreateAttributeOptionsResponse
 	isSet bool
@@ -207,5 +209,3 @@ func (v *NullableEntitymanagerCreateAttributeOptionsResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

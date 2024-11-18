@@ -20,17 +20,17 @@ var _ MappedNullable = &ProductUpdateProductRequestV2{}
 
 // ProductUpdateProductRequestV2 struct for ProductUpdateProductRequestV2
 type ProductUpdateProductRequestV2 struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	AttributesMask *ProductFieldMask `json:"attributesMask,omitempty"`
-	UrlKey *ProductLocalizedText `json:"urlKey,omitempty"`
-	MaxSaleableQuantity *int64 `json:"maxSaleableQuantity,omitempty"`
-	Attributes *map[string]ProtobufAny `json:"attributes,omitempty"`
-	Variants *map[string]ProductProductVariant `json:"variants,omitempty"`
-	MediaVariantAttributes []string `json:"mediaVariantAttributes,omitempty"`
-	InReview *bool `json:"inReview,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantId               *string                           `json:"tenantId,omitempty"`
+	Id                     *string                           `json:"id,omitempty"`
+	Code                   *string                           `json:"code,omitempty"`
+	AttributesMask         *ProductFieldMask                 `json:"attributesMask,omitempty"`
+	UrlKey                 *ProductLocalizedText             `json:"urlKey,omitempty"`
+	MaxSaleableQuantity    *int64                            `json:"maxSaleableQuantity,omitempty"`
+	Attributes             *map[string]ProtobufAny           `json:"attributes,omitempty"`
+	Variants               *map[string]ProductProductVariant `json:"variants,omitempty"`
+	MediaVariantAttributes []string                          `json:"mediaVariantAttributes,omitempty"`
+	InReview               *bool                             `json:"inReview,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _ProductUpdateProductRequestV2 ProductUpdateProductRequestV2
@@ -373,7 +373,7 @@ func (o *ProductUpdateProductRequestV2) SetInReview(v bool) {
 }
 
 func (o ProductUpdateProductRequestV2) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -452,22 +452,24 @@ func (o *ProductUpdateProductRequestV2) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *ProductUpdateProductRequestV2) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductUpdateProductRequestV2) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductUpdateProductRequestV2 struct {
 	value *ProductUpdateProductRequestV2
 	isSet bool
@@ -503,5 +505,3 @@ func (v *NullableProductUpdateProductRequestV2) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

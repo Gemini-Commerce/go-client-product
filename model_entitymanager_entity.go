@@ -20,14 +20,14 @@ var _ MappedNullable = &EntitymanagerEntity{}
 
 // EntitymanagerEntity struct for EntitymanagerEntity
 type EntitymanagerEntity struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Code *string `json:"code,omitempty"`
-	ParentCode *string `json:"parentCode,omitempty"`
-	Label *string `json:"label,omitempty"`
-	Relationships []string `json:"relationships,omitempty"`
-	Attributes []EntitymanagerAttribute `json:"attributes,omitempty"`
+	TenantId             *string                  `json:"tenantId,omitempty"`
+	Id                   *string                  `json:"id,omitempty"`
+	Type                 *string                  `json:"type,omitempty"`
+	Code                 *string                  `json:"code,omitempty"`
+	ParentCode           *string                  `json:"parentCode,omitempty"`
+	Label                *string                  `json:"label,omitempty"`
+	Relationships        []string                 `json:"relationships,omitempty"`
+	Attributes           []EntitymanagerAttribute `json:"attributes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -307,7 +307,7 @@ func (o *EntitymanagerEntity) SetAttributes(v []EntitymanagerAttribute) {
 }
 
 func (o EntitymanagerEntity) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -378,22 +378,24 @@ func (o *EntitymanagerEntity) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *EntitymanagerEntity) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *EntitymanagerEntity) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableEntitymanagerEntity struct {
 	value *EntitymanagerEntity
 	isSet bool
@@ -429,5 +431,3 @@ func (v *NullableEntitymanagerEntity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

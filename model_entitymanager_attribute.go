@@ -20,21 +20,21 @@ var _ MappedNullable = &EntitymanagerAttribute{}
 
 // EntitymanagerAttribute struct for EntitymanagerAttribute
 type EntitymanagerAttribute struct {
-	EntityId *string `json:"entityId,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Label *string `json:"label,omitempty"`
-	Type *EntitymanagerTypes `json:"type,omitempty"`
-	OptionList *string `json:"optionList,omitempty"`
-	Entity *string `json:"entity,omitempty"`
-	Default *string `json:"default,omitempty"`
-	IsRequired *bool `json:"isRequired,omitempty"`
-	IsSystem *bool `json:"isSystem,omitempty"`
-	IsRepeated *bool `json:"isRepeated,omitempty"`
-	Sort *int32 `json:"sort,omitempty"`
-	GroupCode *string `json:"groupCode,omitempty"`
-	Title *map[string]string `json:"title,omitempty"`
-	RenderAs *EntitymanagerRenderAs `json:"renderAs,omitempty"`
-	AiContext *EntitymanagerAiContext `json:"aiContext,omitempty"`
+	EntityId             *string                 `json:"entityId,omitempty"`
+	Code                 *string                 `json:"code,omitempty"`
+	Label                *string                 `json:"label,omitempty"`
+	Type                 *EntitymanagerTypes     `json:"type,omitempty"`
+	OptionList           *string                 `json:"optionList,omitempty"`
+	Entity               *string                 `json:"entity,omitempty"`
+	Default              *string                 `json:"default,omitempty"`
+	IsRequired           *bool                   `json:"isRequired,omitempty"`
+	IsSystem             *bool                   `json:"isSystem,omitempty"`
+	IsRepeated           *bool                   `json:"isRepeated,omitempty"`
+	Sort                 *int32                  `json:"sort,omitempty"`
+	GroupCode            *string                 `json:"groupCode,omitempty"`
+	Title                *map[string]string      `json:"title,omitempty"`
+	RenderAs             *EntitymanagerRenderAs  `json:"renderAs,omitempty"`
+	AiContext            *EntitymanagerAiContext `json:"aiContext,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -546,7 +546,7 @@ func (o *EntitymanagerAttribute) SetAiContext(v EntitymanagerAiContext) {
 }
 
 func (o EntitymanagerAttribute) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -645,22 +645,24 @@ func (o *EntitymanagerAttribute) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *EntitymanagerAttribute) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *EntitymanagerAttribute) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableEntitymanagerAttribute struct {
 	value *EntitymanagerAttribute
 	isSet bool
@@ -696,5 +698,3 @@ func (v *NullableEntitymanagerAttribute) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

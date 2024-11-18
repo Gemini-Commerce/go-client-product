@@ -11,10 +11,10 @@ package product
 
 import (
 	"context"
+	openapiclient "github.com/Gemini-Commerce/go-client-product"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/Gemini-Commerce/go-client-product"
 )
 
 func Test_product_ProductAPIService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService AddMediaGalleryEntry", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.AddMediaGalleryEntry(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService BulkUpdateV2", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.BulkUpdateV2(context.Background()).Execute()
 
@@ -48,7 +48,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService CreateAttributeOptions", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.CreateAttributeOptions(context.Background()).Execute()
 
@@ -60,7 +60,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService CreateEntity", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.CreateEntity(context.Background()).Execute()
 
@@ -72,7 +72,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService CreateOptionsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.CreateOptionsList(context.Background()).Execute()
 
@@ -84,7 +84,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService GetAttributeOption", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.GetAttributeOption(context.Background()).Execute()
 
@@ -96,7 +96,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService GetAttributeOptions", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.GetAttributeOptions(context.Background()).Execute()
 
@@ -108,7 +108,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService GetEntity", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.GetEntity(context.Background()).Execute()
 
@@ -120,7 +120,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService GetOptionsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.GetOptionsList(context.Background()).Execute()
 
@@ -132,7 +132,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService GetProduct", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.GetProduct(context.Background()).Execute()
 
@@ -144,7 +144,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService GetProductByCode", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.GetProductByCode(context.Background()).Execute()
 
@@ -156,7 +156,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService GetProductByUrlKey", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.GetProductByUrlKey(context.Background()).Execute()
 
@@ -168,7 +168,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ListAttributeOptions", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ListAttributeOptions(context.Background()).Execute()
 
@@ -180,7 +180,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ListEntities", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ListEntities(context.Background()).Execute()
 
@@ -192,7 +192,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ListOptionsLists", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ListOptionsLists(context.Background()).Execute()
 
@@ -204,7 +204,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ListProducts", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ListProducts(context.Background()).Execute()
 
@@ -216,7 +216,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ListProductsByIds", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ListProductsByIds(context.Background()).Execute()
 
@@ -228,7 +228,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ListProductsBySku", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ListProductsBySku(context.Background()).Execute()
 
@@ -240,7 +240,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ListVariantsBySku", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ListVariantsBySku(context.Background()).Execute()
 
@@ -252,7 +252,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductBulkAddAssetsEntries", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductBulkAddAssetsEntries(context.Background()).Execute()
 
@@ -264,7 +264,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductBulkCreateAttribute", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductBulkCreateAttribute(context.Background()).Execute()
 
@@ -276,7 +276,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductBulkDeleteProducts", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductBulkDeleteProducts(context.Background()).Execute()
 
@@ -288,7 +288,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductBulkRemoveAssetsEntries", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductBulkRemoveAssetsEntries(context.Background()).Execute()
 
@@ -300,7 +300,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductBulkUpdate(context.Background()).Execute()
 
@@ -312,7 +312,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductBulkUpdateAssetsEntries", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductBulkUpdateAssetsEntries(context.Background()).Execute()
 
@@ -324,7 +324,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductCreateAttributeGroup", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductCreateAttributeGroup(context.Background()).Execute()
 
@@ -336,7 +336,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductCreateProduct", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductCreateProduct(context.Background()).Execute()
 
@@ -348,7 +348,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductCreateProductV2", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductCreateProductV2(context.Background()).Execute()
 
@@ -360,7 +360,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductDelete", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductDelete(context.Background()).Execute()
 
@@ -372,7 +372,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductDeleteAttribute", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductDeleteAttribute(context.Background()).Execute()
 
@@ -384,7 +384,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductDeleteProduct", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductDeleteProduct(context.Background()).Execute()
 
@@ -396,7 +396,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductGetAttributeGroup", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductGetAttributeGroup(context.Background()).Execute()
 
@@ -408,7 +408,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductListAttributeGroups", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductListAttributeGroups(context.Background()).Execute()
 
@@ -420,7 +420,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductUpdateAttribute", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductUpdateAttribute(context.Background()).Execute()
 
@@ -432,7 +432,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductUpdateAttributeGroup", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductUpdateAttributeGroup(context.Background()).Execute()
 
@@ -444,7 +444,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductUpdateProduct", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductUpdateProduct(context.Background()).Execute()
 
@@ -456,7 +456,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductUpdateProductV2", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductUpdateProductV2(context.Background()).Execute()
 
@@ -468,7 +468,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService RemoveMediaGalleryEntry", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.RemoveMediaGalleryEntry(context.Background()).Execute()
 
@@ -480,7 +480,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService UpdateAttributeOptions", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.UpdateAttributeOptions(context.Background()).Execute()
 
@@ -492,7 +492,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService UpdateMediaGalleryEntry", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.UpdateMediaGalleryEntry(context.Background()).Execute()
 
@@ -504,7 +504,7 @@ func Test_product_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService UpdateOptionsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.UpdateOptionsList(context.Background()).Execute()
 

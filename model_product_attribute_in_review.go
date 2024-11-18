@@ -21,18 +21,18 @@ var _ MappedNullable = &ProductAttributeInReview{}
 
 // ProductAttributeInReview struct for ProductAttributeInReview
 type ProductAttributeInReview struct {
-	Code *string `json:"code,omitempty"`
-	String *AttributeInReviewString `json:"string,omitempty"`
-	Int32 *int32 `json:"int32,omitempty"`
-	Int64 *string `json:"int64,omitempty"`
-	Float32 *float32 `json:"float32,omitempty"`
-	Float64 *float64 `json:"float64,omitempty"`
-	Boolean *bool `json:"boolean,omitempty"`
-	Source *ProductAttributeInReviewSource `json:"source,omitempty"`
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	JobId *string `json:"jobId,omitempty"`
-	JobType *ProductAttributeInReviewJobType `json:"jobType,omitempty"`
-	Error *ProductAttributeInReviewError `json:"error,omitempty"`
+	Code                 *string                          `json:"code,omitempty"`
+	String               *AttributeInReviewString         `json:"string,omitempty"`
+	Int32                *int32                           `json:"int32,omitempty"`
+	Int64                *string                          `json:"int64,omitempty"`
+	Float32              *float32                         `json:"float32,omitempty"`
+	Float64              *float64                         `json:"float64,omitempty"`
+	Boolean              *bool                            `json:"boolean,omitempty"`
+	Source               *ProductAttributeInReviewSource  `json:"source,omitempty"`
+	CreatedAt            *time.Time                       `json:"createdAt,omitempty"`
+	JobId                *string                          `json:"jobId,omitempty"`
+	JobType              *ProductAttributeInReviewJobType `json:"jobType,omitempty"`
+	Error                *ProductAttributeInReviewError   `json:"error,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -448,7 +448,7 @@ func (o *ProductAttributeInReview) SetError(v ProductAttributeInReviewError) {
 }
 
 func (o ProductAttributeInReview) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -535,22 +535,24 @@ func (o *ProductAttributeInReview) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *ProductAttributeInReview) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductAttributeInReview) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductAttributeInReview struct {
 	value *ProductAttributeInReview
 	isSet bool
@@ -586,5 +588,3 @@ func (v *NullableProductAttributeInReview) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

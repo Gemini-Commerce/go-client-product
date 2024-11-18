@@ -20,7 +20,7 @@ var _ MappedNullable = &EntitymanagerListAttributeGroupsResponse{}
 
 // EntitymanagerListAttributeGroupsResponse struct for EntitymanagerListAttributeGroupsResponse
 type EntitymanagerListAttributeGroupsResponse struct {
-	AttributeGroups []EntitymanagerAttributeGroup `json:"attributeGroups,omitempty"`
+	AttributeGroups      []EntitymanagerAttributeGroup `json:"attributeGroups,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *EntitymanagerListAttributeGroupsResponse) SetAttributeGroups(v []Entity
 }
 
 func (o EntitymanagerListAttributeGroupsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -119,22 +119,24 @@ func (o *EntitymanagerListAttributeGroupsResponse) UnmarshalJSON(data []byte) (e
 
 // GetValue returns the value of well-known types
 func (o *EntitymanagerListAttributeGroupsResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *EntitymanagerListAttributeGroupsResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableEntitymanagerListAttributeGroupsResponse struct {
 	value *EntitymanagerListAttributeGroupsResponse
 	isSet bool
@@ -170,5 +172,3 @@ func (v *NullableEntitymanagerListAttributeGroupsResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ var _ MappedNullable = &ProductAttributeResponseError{}
 
 // ProductAttributeResponseError struct for ProductAttributeResponseError
 type ProductAttributeResponseError struct {
-	Code *string `json:"code,omitempty"`
-	Message *string `json:"message,omitempty"`
-	AttributeCode *string `json:"attributeCode,omitempty"`
+	Code                 *string `json:"code,omitempty"`
+	Message              *string `json:"message,omitempty"`
+	AttributeCode        *string `json:"attributeCode,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -142,7 +142,7 @@ func (o *ProductAttributeResponseError) SetAttributeCode(v string) {
 }
 
 func (o ProductAttributeResponseError) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,22 +193,24 @@ func (o *ProductAttributeResponseError) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *ProductAttributeResponseError) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductAttributeResponseError) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductAttributeResponseError struct {
 	value *ProductAttributeResponseError
 	isSet bool
@@ -244,5 +246,3 @@ func (v *NullableProductAttributeResponseError) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

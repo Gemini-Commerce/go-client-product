@@ -20,10 +20,10 @@ var _ MappedNullable = &ProductTranslateAction{}
 
 // ProductTranslateAction struct for ProductTranslateAction
 type ProductTranslateAction struct {
-	All map[string]interface{} `json:"all,omitempty"`
-	AttributeCodes *TranslateActionAttributeCodesToTranslate `json:"attributeCodes,omitempty"`
-	SourceLanguage *ProductLanguageCode `json:"sourceLanguage,omitempty"`
-	TargetLanguage *ProductLanguageCode `json:"targetLanguage,omitempty"`
+	All                  map[string]interface{}                    `json:"all,omitempty"`
+	AttributeCodes       *TranslateActionAttributeCodesToTranslate `json:"attributeCodes,omitempty"`
+	SourceLanguage       *ProductLanguageCode                      `json:"sourceLanguage,omitempty"`
+	TargetLanguage       *ProductLanguageCode                      `json:"targetLanguage,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *ProductTranslateAction) SetTargetLanguage(v ProductLanguageCode) {
 }
 
 func (o ProductTranslateAction) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -238,22 +238,24 @@ func (o *ProductTranslateAction) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *ProductTranslateAction) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductTranslateAction) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductTranslateAction struct {
 	value *ProductTranslateAction
 	isSet bool
@@ -289,5 +291,3 @@ func (v *NullableProductTranslateAction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

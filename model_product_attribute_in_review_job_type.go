@@ -21,8 +21,8 @@ type ProductAttributeInReviewJobType string
 
 // List of productAttributeInReviewJobType
 const (
-	PRODUCTATTRIBUTEINREVIEWJOBTYPE_UNKNOWN ProductAttributeInReviewJobType = "ATTRIBUTE_IN_REVIEW_JOB_TYPE_UNKNOWN"
-	PRODUCTATTRIBUTEINREVIEWJOBTYPE_ENRICHMENT ProductAttributeInReviewJobType = "ATTRIBUTE_IN_REVIEW_JOB_TYPE_ENRICHMENT"
+	PRODUCTATTRIBUTEINREVIEWJOBTYPE_UNKNOWN     ProductAttributeInReviewJobType = "ATTRIBUTE_IN_REVIEW_JOB_TYPE_UNKNOWN"
+	PRODUCTATTRIBUTEINREVIEWJOBTYPE_ENRICHMENT  ProductAttributeInReviewJobType = "ATTRIBUTE_IN_REVIEW_JOB_TYPE_ENRICHMENT"
 	PRODUCTATTRIBUTEINREVIEWJOBTYPE_TRANSLATION ProductAttributeInReviewJobType = "ATTRIBUTE_IN_REVIEW_JOB_TYPE_TRANSLATION"
 )
 
@@ -111,4 +111,3 @@ func (v *NullableProductAttributeInReviewJobType) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

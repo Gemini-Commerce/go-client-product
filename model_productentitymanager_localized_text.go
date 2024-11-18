@@ -20,7 +20,7 @@ var _ MappedNullable = &ProductentitymanagerLocalizedText{}
 
 // ProductentitymanagerLocalizedText struct for ProductentitymanagerLocalizedText
 type ProductentitymanagerLocalizedText struct {
-	Value *map[string]string `json:"value,omitempty"`
+	Value                *map[string]string `json:"value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *ProductentitymanagerLocalizedText) SetValue(v map[string]string) {
 }
 
 func (o ProductentitymanagerLocalizedText) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -119,22 +119,24 @@ func (o *ProductentitymanagerLocalizedText) UnmarshalJSON(data []byte) (err erro
 
 // GetValue returns the value of well-known types
 func (o *ProductentitymanagerLocalizedText) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
+
 // SetValue populate the value of well-known types
 func (o *ProductentitymanagerLocalizedText) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableProductentitymanagerLocalizedText struct {
 	value *ProductentitymanagerLocalizedText
 	isSet bool
@@ -170,5 +172,3 @@ func (v *NullableProductentitymanagerLocalizedText) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
