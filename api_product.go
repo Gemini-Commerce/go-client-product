@@ -19,12 +19,649 @@ import (
 	"net/url"
 )
 
+type ProductAPI interface {
+
+	/*
+		AddMediaGalleryEntry Add Media Gallery Entry
+
+		The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry. This operation is asynchronous and may complete after the response.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiAddMediaGalleryEntryRequest
+	*/
+	AddMediaGalleryEntry(ctx context.Context) ApiAddMediaGalleryEntryRequest
+
+	// AddMediaGalleryEntryExecute executes the request
+	//  @return ProductAddMediaGalleryEntryResponse
+	AddMediaGalleryEntryExecute(r ApiAddMediaGalleryEntryRequest) (*ProductAddMediaGalleryEntryResponse, *http.Response, error)
+
+	/*
+		BulkAddAssetsEntries Bulk Add Assets Entries
+
+		The BulkAddAssetsEntries endpoint allows users to add assets. This operation is asynchronous and may complete after the response.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiBulkAddAssetsEntriesRequest
+	*/
+	BulkAddAssetsEntries(ctx context.Context) ApiBulkAddAssetsEntriesRequest
+
+	// BulkAddAssetsEntriesExecute executes the request
+	//  @return ProductBulkAddAssetsEntriesResponse
+	BulkAddAssetsEntriesExecute(r ApiBulkAddAssetsEntriesRequest) (*ProductBulkAddAssetsEntriesResponse, *http.Response, error)
+
+	/*
+		BulkDeleteProducts Bulk Delete Products
+
+		This operation is asynchronous and may complete after the response.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiBulkDeleteProductsRequest
+	*/
+	BulkDeleteProducts(ctx context.Context) ApiBulkDeleteProductsRequest
+
+	// BulkDeleteProductsExecute executes the request
+	//  @return map[string]interface{}
+	BulkDeleteProductsExecute(r ApiBulkDeleteProductsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		BulkEnhanceProductDataWithAI Bulk Enhance Product Data With AI
+
+		The BulkEnhanceProductDataWithAI endpoint allows users to enhance product data using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enrich and optimize product information. This operation is asynchronous and may complete after the response.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiBulkEnhanceProductDataWithAIRequest
+	*/
+	BulkEnhanceProductDataWithAI(ctx context.Context) ApiBulkEnhanceProductDataWithAIRequest
+
+	// BulkEnhanceProductDataWithAIExecute executes the request
+	//  @return map[string]interface{}
+	BulkEnhanceProductDataWithAIExecute(r ApiBulkEnhanceProductDataWithAIRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		BulkRemoveAssetsEntries Bulk Remove Assets Entries
+
+		The BulkRemoveAssetsEntries endpoint allows users to remove assets. This operation is asynchronous and may complete after the response.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiBulkRemoveAssetsEntriesRequest
+	*/
+	BulkRemoveAssetsEntries(ctx context.Context) ApiBulkRemoveAssetsEntriesRequest
+
+	// BulkRemoveAssetsEntriesExecute executes the request
+	//  @return map[string]interface{}
+	BulkRemoveAssetsEntriesExecute(r ApiBulkRemoveAssetsEntriesRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		BulkUpdateAssetsEntries Bulk Update Assets Entries
+
+		The BulkUpdateAssetsEntries endpoint allows users to update assets. This operation is asynchronous and may complete after the response.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiBulkUpdateAssetsEntriesRequest
+	*/
+	BulkUpdateAssetsEntries(ctx context.Context) ApiBulkUpdateAssetsEntriesRequest
+
+	// BulkUpdateAssetsEntriesExecute executes the request
+	//  @return ProductBulkUpdateAssetsEntriesResponse
+	BulkUpdateAssetsEntriesExecute(r ApiBulkUpdateAssetsEntriesRequest) (*ProductBulkUpdateAssetsEntriesResponse, *http.Response, error)
+
+	/*
+		BulkUpdateV2 Bulk Update Products
+
+		Version 2 of bulk updates for product attributes with enhanced payload structure and response format. This operation is asynchronous and may complete after the response.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiBulkUpdateV2Request
+	*/
+	BulkUpdateV2(ctx context.Context) ApiBulkUpdateV2Request
+
+	// BulkUpdateV2Execute executes the request
+	//  @return ProductBulkUpdateResponse
+	BulkUpdateV2Execute(r ApiBulkUpdateV2Request) (*ProductBulkUpdateResponse, *http.Response, error)
+
+	/*
+		CreateAttributeOptions Create Attribute Options
+
+		Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreateAttributeOptionsRequest
+	*/
+	CreateAttributeOptions(ctx context.Context) ApiCreateAttributeOptionsRequest
+
+	// CreateAttributeOptionsExecute executes the request
+	//  @return EntitymanagerCreateAttributeOptionsResponse
+	CreateAttributeOptionsExecute(r ApiCreateAttributeOptionsRequest) (*EntitymanagerCreateAttributeOptionsResponse, *http.Response, error)
+
+	/*
+		CreateEntity Create Entity
+
+		The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system's data model to accommodate diverse business requirements and efficiently manage various types of entities.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreateEntityRequest
+	*/
+	CreateEntity(ctx context.Context) ApiCreateEntityRequest
+
+	// CreateEntityExecute executes the request
+	//  @return EntitymanagerCreateEntityResponse
+	CreateEntityExecute(r ApiCreateEntityRequest) (*EntitymanagerCreateEntityResponse, *http.Response, error)
+
+	/*
+		CreateOptionsList Create Options List
+
+		The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreateOptionsListRequest
+	*/
+	CreateOptionsList(ctx context.Context) ApiCreateOptionsListRequest
+
+	// CreateOptionsListExecute executes the request
+	//  @return EntitymanagerCreateOptionsListResponse
+	CreateOptionsListExecute(r ApiCreateOptionsListRequest) (*EntitymanagerCreateOptionsListResponse, *http.Response, error)
+
+	/*
+		CreateProductWithAI Create Product With AI
+
+		The CreateProductWithAI endpoint allows users to create a new product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product creation process.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreateProductWithAIRequest
+	*/
+	CreateProductWithAI(ctx context.Context) ApiCreateProductWithAIRequest
+
+	// CreateProductWithAIExecute executes the request
+	//  @return ProductCreateProductWithAIResponse
+	CreateProductWithAIExecute(r ApiCreateProductWithAIRequest) (*ProductCreateProductWithAIResponse, *http.Response, error)
+
+	/*
+		GetAttributeOption Get Attribute Option
+
+		Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetAttributeOptionRequest
+	*/
+	GetAttributeOption(ctx context.Context) ApiGetAttributeOptionRequest
+
+	// GetAttributeOptionExecute executes the request
+	//  @return EntitymanagerGetAttributeOptionResponse
+	GetAttributeOptionExecute(r ApiGetAttributeOptionRequest) (*EntitymanagerGetAttributeOptionResponse, *http.Response, error)
+
+	/*
+		GetAttributeOptions Get Attribute Options
+
+		Retrieve a list of attribute options based on the provided tenant ID and list code.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetAttributeOptionsRequest
+	*/
+	GetAttributeOptions(ctx context.Context) ApiGetAttributeOptionsRequest
+
+	// GetAttributeOptionsExecute executes the request
+	//  @return EntitymanagerGetAttributeOptionsResponse
+	GetAttributeOptionsExecute(r ApiGetAttributeOptionsRequest) (*EntitymanagerGetAttributeOptionsResponse, *http.Response, error)
+
+	/*
+		GetEntity Get Entity Details
+
+		Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetEntityRequest
+	*/
+	GetEntity(ctx context.Context) ApiGetEntityRequest
+
+	// GetEntityExecute executes the request
+	//  @return EntitymanagerEntity
+	GetEntityExecute(r ApiGetEntityRequest) (*EntitymanagerEntity, *http.Response, error)
+
+	/*
+		GetOptionsList Get Options List
+
+		Retrieve option lists.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetOptionsListRequest
+	*/
+	GetOptionsList(ctx context.Context) ApiGetOptionsListRequest
+
+	// GetOptionsListExecute executes the request
+	//  @return EntitymanagerGetOptionsListResponse
+	GetOptionsListExecute(r ApiGetOptionsListRequest) (*EntitymanagerGetOptionsListResponse, *http.Response, error)
+
+	/*
+		GetProduct Get Product
+
+		The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetProductRequest
+	*/
+	GetProduct(ctx context.Context) ApiGetProductRequest
+
+	// GetProductExecute executes the request
+	//  @return ProductGetProductResponse
+	GetProductExecute(r ApiGetProductRequest) (*ProductGetProductResponse, *http.Response, error)
+
+	/*
+		GetProductByCode Get Product By Code
+
+		The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetProductByCodeRequest
+	*/
+	GetProductByCode(ctx context.Context) ApiGetProductByCodeRequest
+
+	// GetProductByCodeExecute executes the request
+	//  @return ProductGetProductByCodeResponse
+	GetProductByCodeExecute(r ApiGetProductByCodeRequest) (*ProductGetProductByCodeResponse, *http.Response, error)
+
+	/*
+		GetProductByUrlKey Get Product By Url Key
+
+		The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetProductByUrlKeyRequest
+	*/
+	GetProductByUrlKey(ctx context.Context) ApiGetProductByUrlKeyRequest
+
+	// GetProductByUrlKeyExecute executes the request
+	//  @return ProductGetProductByUrlKeyResponse
+	GetProductByUrlKeyExecute(r ApiGetProductByUrlKeyRequest) (*ProductGetProductByUrlKeyResponse, *http.Response, error)
+
+	/*
+		GetProductDataInReview Get Product Data In Review
+
+		The GetProductDataInReview endpoint allows users to retrieve product data that is currently under review. By making a request to this endpoint, users can access detailed information about the product data that is pending approval or review by authorized personnel. This functionality provides transparency and visibility into the product data review process, enabling users to track the status and progress of product data submissions.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetProductDataInReviewRequest
+	*/
+	GetProductDataInReview(ctx context.Context) ApiGetProductDataInReviewRequest
+
+	// GetProductDataInReviewExecute executes the request
+	//  @return ProductGetProductDataInReviewResponse
+	GetProductDataInReviewExecute(r ApiGetProductDataInReviewRequest) (*ProductGetProductDataInReviewResponse, *http.Response, error)
+
+	/*
+		ListAttributeOptions List Attribute Options
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListAttributeOptionsRequest
+	*/
+	ListAttributeOptions(ctx context.Context) ApiListAttributeOptionsRequest
+
+	// ListAttributeOptionsExecute executes the request
+	//  @return EntitymanagerListAttributeOptionsResponse
+	ListAttributeOptionsExecute(r ApiListAttributeOptionsRequest) (*EntitymanagerListAttributeOptionsResponse, *http.Response, error)
+
+	/*
+		ListEntities List Entities
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListEntitiesRequest
+	*/
+	ListEntities(ctx context.Context) ApiListEntitiesRequest
+
+	// ListEntitiesExecute executes the request
+	//  @return EntitymanagerListEntitiesResponse
+	ListEntitiesExecute(r ApiListEntitiesRequest) (*EntitymanagerListEntitiesResponse, *http.Response, error)
+
+	/*
+		ListOptionsLists List Options Lists
+
+		The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListOptionsListsRequest
+	*/
+	ListOptionsLists(ctx context.Context) ApiListOptionsListsRequest
+
+	// ListOptionsListsExecute executes the request
+	//  @return EntitymanagerListOptionsListsResponse
+	ListOptionsListsExecute(r ApiListOptionsListsRequest) (*EntitymanagerListOptionsListsResponse, *http.Response, error)
+
+	/*
+		ListProducts List Products
+
+		The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListProductsRequest
+	*/
+	ListProducts(ctx context.Context) ApiListProductsRequest
+
+	// ListProductsExecute executes the request
+	//  @return ProductListProductsResponse
+	ListProductsExecute(r ApiListProductsRequest) (*ProductListProductsResponse, *http.Response, error)
+
+	/*
+		ListProductsByIds List Products By Ids
+
+		The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListProductsByIdsRequest
+	*/
+	ListProductsByIds(ctx context.Context) ApiListProductsByIdsRequest
+
+	// ListProductsByIdsExecute executes the request
+	//  @return ProductListProductsByIdsResponse
+	ListProductsByIdsExecute(r ApiListProductsByIdsRequest) (*ProductListProductsByIdsResponse, *http.Response, error)
+
+	/*
+		ListProductsBySku List Products By Sku
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListProductsBySkuRequest
+	*/
+	ListProductsBySku(ctx context.Context) ApiListProductsBySkuRequest
+
+	// ListProductsBySkuExecute executes the request
+	//  @return ProductListProductsBySkuResponse
+	ListProductsBySkuExecute(r ApiListProductsBySkuRequest) (*ProductListProductsBySkuResponse, *http.Response, error)
+
+	/*
+		ListVariantsBySku List Product Variants By Sku
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListVariantsBySkuRequest
+	*/
+	ListVariantsBySku(ctx context.Context) ApiListVariantsBySkuRequest
+
+	// ListVariantsBySkuExecute executes the request
+	//  @return ProductListVariantsBySkuResponse
+	ListVariantsBySkuExecute(r ApiListVariantsBySkuRequest) (*ProductListVariantsBySkuResponse, *http.Response, error)
+
+	/*
+		ProductBulkCreateAttribute Method for ProductBulkCreateAttribute
+
+		Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductBulkCreateAttributeRequest
+	*/
+	ProductBulkCreateAttribute(ctx context.Context) ApiProductBulkCreateAttributeRequest
+
+	// ProductBulkCreateAttributeExecute executes the request
+	//  @return EntitymanagerBulkCreateAttributeResponse
+	ProductBulkCreateAttributeExecute(r ApiProductBulkCreateAttributeRequest) (*EntitymanagerBulkCreateAttributeResponse, *http.Response, error)
+
+	/*
+		ProductBulkUpdate Method for ProductBulkUpdate
+
+		This operation is asynchronous and may complete after the response.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductBulkUpdateRequest
+
+		Deprecated
+	*/
+	ProductBulkUpdate(ctx context.Context) ApiProductBulkUpdateRequest
+
+	// ProductBulkUpdateExecute executes the request
+	//  @return ProductBulkUpdateResponse
+	// Deprecated
+	ProductBulkUpdateExecute(r ApiProductBulkUpdateRequest) (*ProductBulkUpdateResponse, *http.Response, error)
+
+	/*
+		ProductCreateAttributeGroup Method for ProductCreateAttributeGroup
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductCreateAttributeGroupRequest
+	*/
+	ProductCreateAttributeGroup(ctx context.Context) ApiProductCreateAttributeGroupRequest
+
+	// ProductCreateAttributeGroupExecute executes the request
+	//  @return EntitymanagerAttributeGroup
+	ProductCreateAttributeGroupExecute(r ApiProductCreateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error)
+
+	/*
+		ProductCreateProduct Method for ProductCreateProduct
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductCreateProductRequest
+
+		Deprecated
+	*/
+	ProductCreateProduct(ctx context.Context) ApiProductCreateProductRequest
+
+	// ProductCreateProductExecute executes the request
+	//  @return ProductCreateProductResponse
+	// Deprecated
+	ProductCreateProductExecute(r ApiProductCreateProductRequest) (*ProductCreateProductResponse, *http.Response, error)
+
+	/*
+		ProductCreateProductV2 Method for ProductCreateProductV2
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductCreateProductV2Request
+	*/
+	ProductCreateProductV2(ctx context.Context) ApiProductCreateProductV2Request
+
+	// ProductCreateProductV2Execute executes the request
+	//  @return ProductCreateProductResponseV2
+	ProductCreateProductV2Execute(r ApiProductCreateProductV2Request) (*ProductCreateProductResponseV2, *http.Response, error)
+
+	/*
+		ProductDelete Method for ProductDelete
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductDeleteRequest
+
+		Deprecated
+	*/
+	ProductDelete(ctx context.Context) ApiProductDeleteRequest
+
+	// ProductDeleteExecute executes the request
+	//  @return ProductDeleteResponse
+	// Deprecated
+	ProductDeleteExecute(r ApiProductDeleteRequest) (*ProductDeleteResponse, *http.Response, error)
+
+	/*
+		ProductDeleteAttribute Method for ProductDeleteAttribute
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductDeleteAttributeRequest
+	*/
+	ProductDeleteAttribute(ctx context.Context) ApiProductDeleteAttributeRequest
+
+	// ProductDeleteAttributeExecute executes the request
+	//  @return map[string]interface{}
+	ProductDeleteAttributeExecute(r ApiProductDeleteAttributeRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		ProductDeleteProduct Method for ProductDeleteProduct
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductDeleteProductRequest
+	*/
+	ProductDeleteProduct(ctx context.Context) ApiProductDeleteProductRequest
+
+	// ProductDeleteProductExecute executes the request
+	//  @return map[string]interface{}
+	ProductDeleteProductExecute(r ApiProductDeleteProductRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		ProductGetAttributeGroup Method for ProductGetAttributeGroup
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductGetAttributeGroupRequest
+	*/
+	ProductGetAttributeGroup(ctx context.Context) ApiProductGetAttributeGroupRequest
+
+	// ProductGetAttributeGroupExecute executes the request
+	//  @return EntitymanagerAttributeGroup
+	ProductGetAttributeGroupExecute(r ApiProductGetAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error)
+
+	/*
+		ProductListAttributeGroups Method for ProductListAttributeGroups
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductListAttributeGroupsRequest
+	*/
+	ProductListAttributeGroups(ctx context.Context) ApiProductListAttributeGroupsRequest
+
+	// ProductListAttributeGroupsExecute executes the request
+	//  @return EntitymanagerListAttributeGroupsResponse
+	ProductListAttributeGroupsExecute(r ApiProductListAttributeGroupsRequest) (*EntitymanagerListAttributeGroupsResponse, *http.Response, error)
+
+	/*
+		ProductUpdateAttribute Method for ProductUpdateAttribute
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductUpdateAttributeRequest
+	*/
+	ProductUpdateAttribute(ctx context.Context) ApiProductUpdateAttributeRequest
+
+	// ProductUpdateAttributeExecute executes the request
+	//  @return EntitymanagerAttribute
+	ProductUpdateAttributeExecute(r ApiProductUpdateAttributeRequest) (*EntitymanagerAttribute, *http.Response, error)
+
+	/*
+		ProductUpdateAttributeGroup Method for ProductUpdateAttributeGroup
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductUpdateAttributeGroupRequest
+	*/
+	ProductUpdateAttributeGroup(ctx context.Context) ApiProductUpdateAttributeGroupRequest
+
+	// ProductUpdateAttributeGroupExecute executes the request
+	//  @return EntitymanagerAttributeGroup
+	ProductUpdateAttributeGroupExecute(r ApiProductUpdateAttributeGroupRequest) (*EntitymanagerAttributeGroup, *http.Response, error)
+
+	/*
+		ProductUpdateProduct Method for ProductUpdateProduct
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductUpdateProductRequest
+
+		Deprecated
+	*/
+	ProductUpdateProduct(ctx context.Context) ApiProductUpdateProductRequest
+
+	// ProductUpdateProductExecute executes the request
+	//  @return ProductUpdateProductResponse
+	// Deprecated
+	ProductUpdateProductExecute(r ApiProductUpdateProductRequest) (*ProductUpdateProductResponse, *http.Response, error)
+
+	/*
+		ProductUpdateProductV2 Method for ProductUpdateProductV2
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiProductUpdateProductV2Request
+	*/
+	ProductUpdateProductV2(ctx context.Context) ApiProductUpdateProductV2Request
+
+	// ProductUpdateProductV2Execute executes the request
+	//  @return map[string]interface{}
+	ProductUpdateProductV2Execute(r ApiProductUpdateProductV2Request) (map[string]interface{}, *http.Response, error)
+
+	/*
+		RemoveMediaGalleryEntry Remove Media Gallery Entry
+
+		The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product's gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product's gallery. This operation is asynchronous and may complete after the response.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiRemoveMediaGalleryEntryRequest
+	*/
+	RemoveMediaGalleryEntry(ctx context.Context) ApiRemoveMediaGalleryEntryRequest
+
+	// RemoveMediaGalleryEntryExecute executes the request
+	//  @return map[string]interface{}
+	RemoveMediaGalleryEntryExecute(r ApiRemoveMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		UpdateAttributeOptions Update Attribute Options
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdateAttributeOptionsRequest
+	*/
+	UpdateAttributeOptions(ctx context.Context) ApiUpdateAttributeOptionsRequest
+
+	// UpdateAttributeOptionsExecute executes the request
+	//  @return EntitymanagerUpdateAttributeOptionsResponse
+	UpdateAttributeOptionsExecute(r ApiUpdateAttributeOptionsRequest) (*EntitymanagerUpdateAttributeOptionsResponse, *http.Response, error)
+
+	/*
+		UpdateDataToBeReviewed Get Enhance Product Data With AI Status
+
+		The GetEnhanceProductDataWithAIStatus endpoint allows users to retrieve the status of a product data enhancement process using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can check the progress and completion status of the AI-driven product data enhancement operation. This functionality provides visibility and transparency into the AI processing of product data, enabling users to monitor and track the status of the enhancement process.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdateDataToBeReviewedRequest
+	*/
+	UpdateDataToBeReviewed(ctx context.Context) ApiUpdateDataToBeReviewedRequest
+
+	// UpdateDataToBeReviewedExecute executes the request
+	//  @return ProductGetEnhanceProductDataWithAIStatusResponse
+	UpdateDataToBeReviewedExecute(r ApiUpdateDataToBeReviewedRequest) (*ProductGetEnhanceProductDataWithAIStatusResponse, *http.Response, error)
+
+	/*
+		UpdateDataToBeReviewed_0 Update Data To Be Reviewed
+
+		The UpdateDataToBeReviewed endpoint allows users to update product data that is pending review. By sending a request to this endpoint and providing the necessary input data, users can modify and enhance the product information that is currently under review. This functionality enables users to make changes to product data submissions and ensure that the information is accurate and up-to-date before final approval.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdateDataToBeReviewed_0Request
+	*/
+	UpdateDataToBeReviewed_1(ctx context.Context) ApiUpdateDataToBeReviewed_0Request
+
+	// UpdateDataToBeReviewed_1Execute executes the request
+	//  @return map[string]interface{}
+	UpdateDataToBeReviewed_1Execute(r ApiUpdateDataToBeReviewed_0Request) (map[string]interface{}, *http.Response, error)
+
+	/*
+		UpdateMediaGalleryEntry Update Media Gallery Entry
+
+		The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product's gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry. This operation is asynchronous and may complete after the response.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdateMediaGalleryEntryRequest
+	*/
+	UpdateMediaGalleryEntry(ctx context.Context) ApiUpdateMediaGalleryEntryRequest
+
+	// UpdateMediaGalleryEntryExecute executes the request
+	//  @return map[string]interface{}
+	UpdateMediaGalleryEntryExecute(r ApiUpdateMediaGalleryEntryRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		UpdateOptionsList Update Options List
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdateOptionsListRequest
+	*/
+	UpdateOptionsList(ctx context.Context) ApiUpdateOptionsListRequest
+
+	// UpdateOptionsListExecute executes the request
+	//  @return EntitymanagerUpdateOptionsListResponse
+	UpdateOptionsListExecute(r ApiUpdateOptionsListRequest) (*EntitymanagerUpdateOptionsListResponse, *http.Response, error)
+
+	/*
+		UpdateProductWithAI Update Product With AI
+
+		The UpdateProductWithAI endpoint allows users to update an existing product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product update process.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdateProductWithAIRequest
+	*/
+	UpdateProductWithAI(ctx context.Context) ApiUpdateProductWithAIRequest
+
+	// UpdateProductWithAIExecute executes the request
+	//  @return ProductUpdateProductWithAIResponse
+	UpdateProductWithAIExecute(r ApiUpdateProductWithAIRequest) (*ProductUpdateProductWithAIResponse, *http.Response, error)
+}
+
 // ProductAPIService ProductAPI service
 type ProductAPIService service
 
 type ApiAddMediaGalleryEntryRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductAddMediaGalleryEntryRequest
 }
 
@@ -179,7 +816,7 @@ func (a *ProductAPIService) AddMediaGalleryEntryExecute(r ApiAddMediaGalleryEntr
 
 type ApiBulkAddAssetsEntriesRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductBulkAddAssetsEntriesRequest
 }
 
@@ -334,7 +971,7 @@ func (a *ProductAPIService) BulkAddAssetsEntriesExecute(r ApiBulkAddAssetsEntrie
 
 type ApiBulkDeleteProductsRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductBulkDeleteProductsRequest
 }
 
@@ -489,7 +1126,7 @@ func (a *ProductAPIService) BulkDeleteProductsExecute(r ApiBulkDeleteProductsReq
 
 type ApiBulkEnhanceProductDataWithAIRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductBulkEnhanceProductDataWithAIRequest
 }
 
@@ -644,7 +1281,7 @@ func (a *ProductAPIService) BulkEnhanceProductDataWithAIExecute(r ApiBulkEnhance
 
 type ApiBulkRemoveAssetsEntriesRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductBulkRemoveAssetsEntriesRequest
 }
 
@@ -799,7 +1436,7 @@ func (a *ProductAPIService) BulkRemoveAssetsEntriesExecute(r ApiBulkRemoveAssets
 
 type ApiBulkUpdateAssetsEntriesRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductBulkUpdateAssetsEntriesRequest
 }
 
@@ -954,7 +1591,7 @@ func (a *ProductAPIService) BulkUpdateAssetsEntriesExecute(r ApiBulkUpdateAssets
 
 type ApiBulkUpdateV2Request struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductBulkUpdateRequestV2
 }
 
@@ -1109,7 +1746,7 @@ func (a *ProductAPIService) BulkUpdateV2Execute(r ApiBulkUpdateV2Request) (*Prod
 
 type ApiCreateAttributeOptionsRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerCreateAttributeOptionsRequest
 }
 
@@ -1264,7 +1901,7 @@ func (a *ProductAPIService) CreateAttributeOptionsExecute(r ApiCreateAttributeOp
 
 type ApiCreateEntityRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerEntity
 }
 
@@ -1408,7 +2045,7 @@ func (a *ProductAPIService) CreateEntityExecute(r ApiCreateEntityRequest) (*Enti
 
 type ApiCreateOptionsListRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerCreateOptionsListRequest
 }
 
@@ -1563,7 +2200,7 @@ func (a *ProductAPIService) CreateOptionsListExecute(r ApiCreateOptionsListReque
 
 type ApiCreateProductWithAIRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductCreateProductWithAIRequest
 }
 
@@ -1718,7 +2355,7 @@ func (a *ProductAPIService) CreateProductWithAIExecute(r ApiCreateProductWithAIR
 
 type ApiGetAttributeOptionRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerGetAttributeOptionRequest
 }
 
@@ -1873,7 +2510,7 @@ func (a *ProductAPIService) GetAttributeOptionExecute(r ApiGetAttributeOptionReq
 
 type ApiGetAttributeOptionsRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerGetAttributeOptionsRequest
 }
 
@@ -2028,7 +2665,7 @@ func (a *ProductAPIService) GetAttributeOptionsExecute(r ApiGetAttributeOptionsR
 
 type ApiGetEntityRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerEntityRequest
 }
 
@@ -2183,7 +2820,7 @@ func (a *ProductAPIService) GetEntityExecute(r ApiGetEntityRequest) (*Entitymana
 
 type ApiGetOptionsListRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerGetOptionsListRequest
 }
 
@@ -2338,7 +2975,7 @@ func (a *ProductAPIService) GetOptionsListExecute(r ApiGetOptionsListRequest) (*
 
 type ApiGetProductRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductGetProductRequest
 }
 
@@ -2493,7 +3130,7 @@ func (a *ProductAPIService) GetProductExecute(r ApiGetProductRequest) (*ProductG
 
 type ApiGetProductByCodeRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductGetProductByCodeRequest
 }
 
@@ -2648,7 +3285,7 @@ func (a *ProductAPIService) GetProductByCodeExecute(r ApiGetProductByCodeRequest
 
 type ApiGetProductByUrlKeyRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductGetProductByUrlKeyRequest
 }
 
@@ -2803,7 +3440,7 @@ func (a *ProductAPIService) GetProductByUrlKeyExecute(r ApiGetProductByUrlKeyReq
 
 type ApiGetProductDataInReviewRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductGetProductDataInReviewRequest
 }
 
@@ -2958,7 +3595,7 @@ func (a *ProductAPIService) GetProductDataInReviewExecute(r ApiGetProductDataInR
 
 type ApiListAttributeOptionsRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerListAttributeOptionsRequest
 }
 
@@ -3111,7 +3748,7 @@ func (a *ProductAPIService) ListAttributeOptionsExecute(r ApiListAttributeOption
 
 type ApiListEntitiesRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerListEntitiesRequest
 }
 
@@ -3264,7 +3901,7 @@ func (a *ProductAPIService) ListEntitiesExecute(r ApiListEntitiesRequest) (*Enti
 
 type ApiListOptionsListsRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerListOptionsListsRequest
 }
 
@@ -3419,7 +4056,7 @@ func (a *ProductAPIService) ListOptionsListsExecute(r ApiListOptionsListsRequest
 
 type ApiListProductsRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductListProductsRequest
 }
 
@@ -3574,7 +4211,7 @@ func (a *ProductAPIService) ListProductsExecute(r ApiListProductsRequest) (*Prod
 
 type ApiListProductsByIdsRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductListProductsByIdsRequest
 }
 
@@ -3729,7 +4366,7 @@ func (a *ProductAPIService) ListProductsByIdsExecute(r ApiListProductsByIdsReque
 
 type ApiListProductsBySkuRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductListProductsBySkuRequest
 }
 
@@ -3882,7 +4519,7 @@ func (a *ProductAPIService) ListProductsBySkuExecute(r ApiListProductsBySkuReque
 
 type ApiListVariantsBySkuRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductListVariantsBySkuRequest
 }
 
@@ -4035,7 +4672,7 @@ func (a *ProductAPIService) ListVariantsBySkuExecute(r ApiListVariantsBySkuReque
 
 type ApiProductBulkCreateAttributeRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerBulkCreateAttributeRequest
 }
 
@@ -4168,7 +4805,7 @@ func (a *ProductAPIService) ProductBulkCreateAttributeExecute(r ApiProductBulkCr
 
 type ApiProductBulkUpdateRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductBulkUpdateRequest
 }
 
@@ -4305,7 +4942,7 @@ func (a *ProductAPIService) ProductBulkUpdateExecute(r ApiProductBulkUpdateReque
 
 type ApiProductCreateAttributeGroupRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerCreateAttributeGroupRequest
 }
 
@@ -4436,7 +5073,7 @@ func (a *ProductAPIService) ProductCreateAttributeGroupExecute(r ApiProductCreat
 
 type ApiProductCreateProductRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductCreateProductRequest
 }
 
@@ -4572,7 +5209,7 @@ func (a *ProductAPIService) ProductCreateProductExecute(r ApiProductCreateProduc
 
 type ApiProductCreateProductV2Request struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductCreateProductRequestV2
 }
 
@@ -4703,7 +5340,7 @@ func (a *ProductAPIService) ProductCreateProductV2Execute(r ApiProductCreateProd
 
 type ApiProductDeleteRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductDeleteRequest
 }
 
@@ -4838,7 +5475,7 @@ func (a *ProductAPIService) ProductDeleteExecute(r ApiProductDeleteRequest) (*Pr
 
 type ApiProductDeleteAttributeRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerDeleteAttributeRequest
 }
 
@@ -4969,7 +5606,7 @@ func (a *ProductAPIService) ProductDeleteAttributeExecute(r ApiProductDeleteAttr
 
 type ApiProductDeleteProductRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductDeleteProductRequest
 }
 
@@ -5100,7 +5737,7 @@ func (a *ProductAPIService) ProductDeleteProductExecute(r ApiProductDeleteProduc
 
 type ApiProductGetAttributeGroupRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerGetAttributeGroupRequest
 }
 
@@ -5231,7 +5868,7 @@ func (a *ProductAPIService) ProductGetAttributeGroupExecute(r ApiProductGetAttri
 
 type ApiProductListAttributeGroupsRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerListAttributeGroupsRequest
 }
 
@@ -5362,7 +5999,7 @@ func (a *ProductAPIService) ProductListAttributeGroupsExecute(r ApiProductListAt
 
 type ApiProductUpdateAttributeRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerUpdateAttributeRequest
 }
 
@@ -5493,7 +6130,7 @@ func (a *ProductAPIService) ProductUpdateAttributeExecute(r ApiProductUpdateAttr
 
 type ApiProductUpdateAttributeGroupRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerUpdateAttributeGroupRequest
 }
 
@@ -5624,7 +6261,7 @@ func (a *ProductAPIService) ProductUpdateAttributeGroupExecute(r ApiProductUpdat
 
 type ApiProductUpdateProductRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductUpdateProductRequest
 }
 
@@ -5759,7 +6396,7 @@ func (a *ProductAPIService) ProductUpdateProductExecute(r ApiProductUpdateProduc
 
 type ApiProductUpdateProductV2Request struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductUpdateProductRequestV2
 }
 
@@ -5890,7 +6527,7 @@ func (a *ProductAPIService) ProductUpdateProductV2Execute(r ApiProductUpdateProd
 
 type ApiRemoveMediaGalleryEntryRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductRemoveMediaGalleryEntryRequest
 }
 
@@ -6045,7 +6682,7 @@ func (a *ProductAPIService) RemoveMediaGalleryEntryExecute(r ApiRemoveMediaGalle
 
 type ApiUpdateAttributeOptionsRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerUpdateAttributeOptionsRequest
 }
 
@@ -6198,7 +6835,7 @@ func (a *ProductAPIService) UpdateAttributeOptionsExecute(r ApiUpdateAttributeOp
 
 type ApiUpdateDataToBeReviewedRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductGetEnhanceProductDataWithAIStatusRequest
 }
 
@@ -6353,7 +6990,7 @@ func (a *ProductAPIService) UpdateDataToBeReviewedExecute(r ApiUpdateDataToBeRev
 
 type ApiUpdateDataToBeReviewed_0Request struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductUpdateDataToBeReviewedRequest
 }
 
@@ -6508,7 +7145,7 @@ func (a *ProductAPIService) UpdateDataToBeReviewed_1Execute(r ApiUpdateDataToBeR
 
 type ApiUpdateMediaGalleryEntryRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductUpdateMediaGalleryEntryRequest
 }
 
@@ -6663,7 +7300,7 @@ func (a *ProductAPIService) UpdateMediaGalleryEntryExecute(r ApiUpdateMediaGalle
 
 type ApiUpdateOptionsListRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *EntitymanagerUpdateOptionsListRequest
 }
 
@@ -6816,7 +7453,7 @@ func (a *ProductAPIService) UpdateOptionsListExecute(r ApiUpdateOptionsListReque
 
 type ApiUpdateProductWithAIRequest struct {
 	ctx        context.Context
-	ApiService *ProductAPIService
+	ApiService ProductAPI
 	body       *ProductUpdateProductWithAIRequest
 }
 

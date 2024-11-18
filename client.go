@@ -51,7 +51,7 @@ type APIClient struct {
 
 	// API Services
 
-	ProductAPI *ProductAPIService
+	ProductAPI ProductAPI
 }
 
 type service struct {
