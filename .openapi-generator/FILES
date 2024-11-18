@@ -278,4 +278,5 @@ model_protobuf_any.go
 model_rpc_status.go
 model_translate_action_attribute_codes_to_translate.go
 response.go
+test/api_product_test.go
 utils.go
